@@ -3,6 +3,7 @@ module.exports = {
     description: 'Spruce is a minimalistic CSS starter Framework on Sass.',
     github: 'conedevelopment',
     siteUrl: 'https://sprucecss.com',
+    slogen: '🎉 Another CSS Framework',
     title: 'Spruce - Another CSS Framework',
     twitter: 'conedevelopment'
   },

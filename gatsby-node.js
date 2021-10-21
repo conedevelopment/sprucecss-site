@@ -1,33 +1,30 @@
-/*
 import path, { resolve } from 'path';
-import fetch from 'isomorphic-fetch';
 
-async function turnPizzasIntoPages({ graphql, actions }) {
-  // 1. Get a template for this page
-  const pizzaTemplate = path.resolve('./src/templates/Pizza.js');
-  // 2. Query all pizzas
+async function turnDocsIntoPages({ graphql, actions }) {
+  const docsTemplate = path.resolve('./src/templates/Docs.js');
   const { data } = await graphql(`
     query {
-      pizzas: allSanityPizza {
+      docs: allMdx {
         nodes {
-          name
-          slug {
-            current
-          }
+          slug
         }
       }
     }
   `);
-  // 3. Loop over each pizza and create a page for that pizza
-  data.pizzas.nodes.forEach((pizza) => {
+  
+  data.docs.nodes.forEach((doc) => {
     actions.createPage({
-      // What is the URL for this new page??
-      path: `pizza/${pizza.slug.current}`,
-      component: pizzaTemplate,
+      path: `docs/${doc.slug}`,
+      component: docsTemplate,
       context: {
-        slug: pizza.slug.current,
+        slug: doc.slug,
       },
     });
   });
 }
-*/
+
+export async function createPages(params) {
+  await Promise.all([
+    turnDocsIntoPages(params)
+  ]);
+}

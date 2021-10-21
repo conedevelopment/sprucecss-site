@@ -8,10 +8,10 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "gatsby develop",
+    "develop": "cross-env NODE_OPTIONS=\"-r esm\" gatsby develop",
     "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
+    "build": "cross-env NODE_OPTIONS=\"-r esm\" gatsby build",
+    "serve": "cross-env NODE_OPTIONS=\"-r esm\" gatsby serve",
     "clean": "gatsby clean"
   },
   "dependencies": {
@@ -32,5 +32,9 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "sass": "^1.43.2"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "esm": "^3.2.25"
   }
 }
