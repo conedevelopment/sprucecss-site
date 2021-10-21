@@ -1,0 +1,36 @@
+{
+  "name": "spruce-another-css-framework",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Spruce - Another CSS Framework",
+  "author": "Adam Laki",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "gatsby": "^3.14.3",
+    "gatsby-plugin-google-analytics": "^3.14.0",
+    "gatsby-plugin-image": "^1.14.1",
+    "gatsby-plugin-manifest": "^3.14.0",
+    "gatsby-plugin-mdx": "^2.14.0",
+    "gatsby-plugin-react-helmet": "^4.14.0",
+    "gatsby-plugin-sass": "^4.14.0",
+    "gatsby-plugin-sharp": "^3.14.1",
+    "gatsby-plugin-sitemap": "^4.10.0",
+    "gatsby-source-filesystem": "^3.14.0",
+    "gatsby-transformer-sharp": "^3.14.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "sass": "^1.43.2"
+  }
+}
