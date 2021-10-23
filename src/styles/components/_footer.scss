@@ -1,0 +1,122 @@
+@use '../spruce/scss/spruce';
+
+.footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.075);
+
+  &__container {
+    @include spruce.layout-center;
+  }
+
+  &__inner {
+    position: relative;
+    padding: 4rem 0;
+
+    @include spruce.breakpoint(md) {
+      padding: 6rem 0;
+    }
+  }
+
+  &__top {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: calc(var(--spruce-gap-x) * 2);
+    row-gap: var(--spruce-gap-y);
+    align-items: start;
+
+    @include spruce.breakpoint(sm) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include spruce.breakpoint(md) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+
+  &__logo {
+    display: inline-flex;
+    height: 1.25rem;
+
+    @include spruce.breakpoint(md) {
+      height: 1.5rem;
+    }
+
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  &__title {
+    margin: 0 0 1rem;
+    font-size: font-size(1);
+  }
+
+  &__navigation {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li + li {
+      margin-top: 0.5rem;
+    }
+
+    a {
+      color: var(--spruce-color-gray);
+      text-decoration: none;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: hsl(var(--spruce-color-primary));
+      }
+    }
+  }
+
+  &__scroll-to-top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(var(--spruce-color-secondary));
+    height: 2.8rem;
+    width: 2.8rem;
+    border-radius: 0 0 var(--spruce-border-radius-small) var(--spruce-border-radius-small);
+    color: #fff;
+
+    &:hover,
+    &:focus {
+      background-color: hsl(var(--spruce-color-secondary-dark));
+    }
+  }
+
+  &__bottom {
+    margin-top: 4rem;
+    padding-top: 2rem;
+
+    @include spruce.breakpoint(md) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-section__navigation {
+      display: flex;
+      flex-wrap: wrap;
+
+      li {
+        margin: 0 2rem 0 0;
+      }
+    }
+  }
+
+  &__copyright {
+    margin: 1rem 0 0 0;
+    color: var(--spruce-color-gray);
+
+    @include spruce.breakpoint(md) {
+      margin: 0;
+    }
+  }
+}

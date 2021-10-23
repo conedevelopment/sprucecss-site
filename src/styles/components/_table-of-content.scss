@@ -1,0 +1,45 @@
+@use '../spruce/scss/spruce';
+
+.toc {
+  border-left: 1px solid rgba(0, 0, 0, 0.075);
+  padding-left: spruce.get-spacer('m');
+  position: sticky;
+  top: 2rem;
+  align-self: flex-start;
+
+  &__title {
+    // @extend .sidebar-section__title;
+  }
+
+  &__navigation {
+    margin: 1rem 0 0;
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      color: spruce.get-color('text');
+      text-decoration: none;
+
+      &.is-active {
+        position: relative;
+        font-weight: 700;
+        color: spruce.get-color('heading');
+
+        &::before {
+          background-color: spruce.get-color('primary');
+          content: '';
+          width: 0.5rem;
+          border-radius: spruce.$border-radius-sm;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: -1.75rem;
+        }
+      }
+    }
+  }
+}

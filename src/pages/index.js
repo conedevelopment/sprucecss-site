@@ -1,10 +1,17 @@
-import React from "react"
+import React from 'react'
+
+// Import components
+import Header from '../components/Header';
+import Layout from '../components/Layout';
 
 function IndexPage() {
   return (
-    <main>
-      hello
-    </main>
+    <Layout>
+      <Header />
+      <main>
+        hello 2
+      </main>
+    </Layout>
   )
 }
 

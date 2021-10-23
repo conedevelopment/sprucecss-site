@@ -1,0 +1,66 @@
+@use '../spruce/scss/spruce';
+
+.sidebar {
+  position: relative;
+  border-right: 1px solid rgba(0, 0, 0, 0.075);
+  padding-right: spruce.get-spacer('m');
+
+  > * + * {
+    margin-top: 3rem;
+  }
+/*
+  &::before {
+    background-color: #f9f6ff;
+    bottom: 0;
+    content: '';
+    left: -50vw;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+  }
+*/
+
+}
+
+.sidebar-section {
+  &__title {
+    color: #19002F;
+    color: darken(spruce.get-color('primary', 'base', true), 10%);
+    font-size: spruce.$font-size-base;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  &__navigation {
+    margin: 1rem 0 0;
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      color: spruce.get-color('text');
+      text-decoration: none;
+
+      &[aria-current='page'] {
+        position: relative;
+        font-weight: 700;
+        color: spruce.get-color('heading');
+
+        &::before {
+          background-color: spruce.get-color('primary');
+          content: '';
+          width: 0.5rem;
+          border-radius: spruce.$border-radius-sm;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: -1.25rem;
+        }
+      }
+    }
+  }
+}
