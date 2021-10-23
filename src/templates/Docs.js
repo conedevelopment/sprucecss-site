@@ -6,7 +6,7 @@ import Alert from '../components/Alert';
 
 // import Layout from '../components/Layout';
 
-const shortcodes = { Alert };
+const components = { Alert };
 
 export const query = graphql`
   query ($slug: String!) {
@@ -23,7 +23,7 @@ function Post({ data: { mdx: post } }) {
   const { title } = post.frontmatter;
   const { body } = post;
   return (
-    <MDXProvider components={shortcodes}>
+    <MDXProvider components={components}>
       <div>
         <h1>{title}</h1>
         <MDXRenderer>{body}</MDXRenderer>
