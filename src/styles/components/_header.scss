@@ -1,13 +1,7 @@
 @use '../spruce/scss/spruce';
 
 .header-wrapper {
-  background-color: #19002F;
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  // background-image: url('../img/background.jpg');
-  background-blend-mode: overlay;
-  background-repeat: no-repeat;
+  background-color: spruce.get-color('primary-darkest');
 }
 
 .header {
@@ -21,24 +15,26 @@
     display: flex;
     gap: 2rem;
     justify-content: space-between;
-    padding-bottom: 1rem;
-    padding-top: 1rem;
-  }
-
-  &__logo-wrapper {
-    align-items: center;
-    display: flex;
+    height: 5rem;
   }
 
   &__logo {
-    bottom: -0.1em;
-    display: block;
-    height: 1.5rem;
-    position: relative;
-    width: auto;
+    align-items: center;
+    display: flex;
+
+    a {
+      display: inline-flex;
+    }
+
+    svg {
+      bottom: -0.1em;
+      height: 1.75rem;
+      position: relative;
+      width: auto;
+    }
   }
 
-  &__page-title {
+  &__slogen {
     border-left: 1px solid rgba(255, 255, 255, 0.05);
     color: spruce.get-color('secondary');
     font-weight: 700;

@@ -1,16 +1,30 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql  } from 'gatsby';
+
+// Images
+import Logo from '../images/spruce-logo-light.svg';
 
 export default function Header() {
+  const { site } = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+          slogen
+        }
+      }
+    }
+  `);
+  
   return (
     <header className="header">
       <div className="header__container">
         <div className="header__inner">
-          <div className="header__logo-wrapper">
-            <a href="#">
-              <img className="header__logo" src="" alt=""/>
-            </a>
-            <span className="header__page-title">🎉 Another CSS Framework</span>
+          <div className="header__logo">
+            <Link to="/" title={site.siteMetadata.title}>
+              <Logo />
+            </Link>
+            <span className="header__slogen">{site.siteMetadata.slogen}</span>
           </div>
           <nav className="header__navigation">
             <ul>
