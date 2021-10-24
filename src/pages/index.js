@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { StaticImage } from 'gatsby-plugin-image';
 
 // Import components
 import Header from '../components/Header';
@@ -12,8 +13,16 @@ function IndexPage() {
         <div className="hero">
           <div className="hero__container">
             <div className="hero__inner">
-              <h1 className="hero__title">Spruce CSS Framework</h1>
-              <p>A lightweight and modernish CSS base framework for creating a system.</p>
+              <StaticImage src="" alt="" />
+              <div>
+                { /* <StaticImage src="../images/badge.png" alt="" /> */ }
+                <h1 className="hero__title">Spruce CSS Framework</h1>
+                <p className="hero__description">A lightweight and modernish CSS base framework for creating a system.</p>
+                <div className="hero__btns">
+                  <a class="btn btn--primary">Get Started</a>
+                  <a class="btn btn--primary">Download</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

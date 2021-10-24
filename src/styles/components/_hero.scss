@@ -1,0 +1,37 @@
+@use '../spruce/scss/spruce';
+
+.hero {
+  &__container {
+    @include spruce.layout-center;
+  }
+
+  &__inner {
+    align-items: center;
+    display: flex;
+    padding: spruce.get-spacer('xxxl') 0;
+    // flex-direction: column;
+    // text-align: center;
+  }
+
+  &__title {
+    font-family: 'PT Serif', sans-serif;
+    color: #fff;
+    margin: 0;
+    max-width: 50ch;
+  }
+
+  &__description {
+    color: rgba(255, 255, 255, 0.85);
+    margin: spruce.get-spacer('m') 0 0;
+    font-size: spruce.get-font-size('h4');
+    max-width: 50ch;
+  }
+
+  &__btns {
+    margin: spruce.get-spacer('m') 0 0;
+
+    > * {
+      margin-right: spruce.get-spacer('m');
+    }
+  }
+}

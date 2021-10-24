@@ -2,18 +2,10 @@
 
 .footer {
   border-top: 1px solid rgba(0, 0, 0, 0.075);
+  padding: spruce.get-spacer('xxl') 0;
 
   &__container {
     @include spruce.layout-center;
-  }
-
-  &__inner {
-    position: relative;
-    padding: 4rem 0;
-
-    @include spruce.breakpoint(md) {
-      padding: 6rem 0;
-    }
   }
 
   &__top {
@@ -34,21 +26,13 @@
 
   &__logo {
     display: inline-flex;
-    height: 1.25rem;
-
-    @include spruce.breakpoint(md) {
-      height: 1.5rem;
-    }
-
-    img {
-      height: 100%;
-      width: auto;
-    }
+    height: 1.75rem;
   }
 
   &__title {
+    font-family: 'PT Serif', sans-serif;
     margin: 0 0 1rem;
-    font-size: font-size(1);
+    font-size: spruce.get-font-size('h4');
   }
 
   &__navigation {
