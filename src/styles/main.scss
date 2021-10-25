@@ -5,8 +5,9 @@
     )
   ),
   $font-size-base: 1.0375rem,
-  $container-width: 86rem,
-  $font-family-base: #{'Poppins', sans-serif}
+  $font-family-base: #{'Poppins', sans-serif},
+  $font-size-ratio: 1.375,
+  $container-width: 86rem
 );
 
 @use 'layout/documentation';

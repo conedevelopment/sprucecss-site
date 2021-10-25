@@ -8,22 +8,28 @@
   &__inner {
     align-items: center;
     display: flex;
-    padding: spruce.get-spacer('xxxl') 0;
+    gap: 4rem;
+    padding: 7rem 0 9rem;
     // flex-direction: column;
     // text-align: center;
+
+    svg {
+      width: 30%;
+    }
   }
 
   &__title {
+    // color: #fff;
     font-family: 'PT Serif', sans-serif;
-    color: #fff;
+    font-weight: 700;
     margin: 0;
     max-width: 50ch;
   }
 
   &__description {
-    color: rgba(255, 255, 255, 0.85);
-    margin: spruce.get-spacer('m') 0 0;
+    // color: rgba(255, 255, 255, 0.85);
     font-size: spruce.get-font-size('h4');
+    margin: spruce.get-spacer('m') 0 0;
     max-width: 50ch;
   }
 

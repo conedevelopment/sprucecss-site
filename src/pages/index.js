@@ -5,6 +5,9 @@ import { StaticImage } from 'gatsby-plugin-image';
 import Header from '../components/Header';
 import Layout from '../components/Layout';
 
+// Images
+import HeroImage from '../images/hero.svg';
+
 function IndexPage() {
   return (
     <Layout>
@@ -13,7 +16,7 @@ function IndexPage() {
         <div className="hero">
           <div className="hero__container">
             <div className="hero__inner">
-              <StaticImage src="" alt="" />
+              <HeroImage />
               <div>
                 { /* <StaticImage src="../images/badge.png" alt="" /> */ }
                 <h1 className="hero__title">Spruce CSS Framework</h1>
@@ -27,9 +30,11 @@ function IndexPage() {
           </div>
         </div>
       </div>
+      {/*}
       <main>
         hello 2
       </main>
+      */}
     </Layout>
   )
 }

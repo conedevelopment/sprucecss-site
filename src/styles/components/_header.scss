@@ -1,7 +1,7 @@
 @use '../spruce/scss/spruce';
 
 .header-wrapper {
-  background-color: spruce.get-color('primary-darkest');
+  // background-color: spruce.get-color('primary-darkest');
 }
 
 .header {
@@ -11,7 +11,7 @@
 
   &__inner {
     align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     display: flex;
     gap: 2rem;
     justify-content: space-between;
@@ -35,9 +35,9 @@
   }
 
   &__slogen {
-    border-left: 1px solid rgba(255, 255, 255, 0.05);
-    color: spruce.get-color('secondary');
-    font-weight: 700;
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+    color: darken(spruce.get-color('secondary', 'base', true), 10%);
+    font-weight: 600;
     line-height: 1;
     margin-left: 1.5rem;
     padding-left: 1.5rem;
@@ -67,6 +67,7 @@
 
     a {
       color: #fff;
+      color: spruce.get-color('heading');
       text-decoration: none;
 
       &:hover,
