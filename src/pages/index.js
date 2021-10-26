@@ -17,17 +17,19 @@ function IndexPage() {
         <div className="hero">
           <div className="hero__container">
             <div className="hero__inner">
-              <div>
+              <div className="hero__caption">
                 { /* <StaticImage src="../images/badge.png" alt="" /> */ }
-                <Logo />
+                <p className="hero__notification">
+                  <span>New</span>
+                  The first realase (v0.1.) of Spruce is out
+                </p>
                 <h1 className="hero__title">Spruce CSS Framework</h1>
-                <p className="hero__description">A lightweight and modernish CSS base framework for creating a system.</p>
+                <p className="hero__description">An open-source, lightweight and modernish CSS base framework for creating in a system. Give your project the right foundation.</p>
                 <div className="hero__btns">
                   <a class="btn btn--primary">Get Started</a>
-                  <a class="btn btn--primary">Download</a>
                 </div>
               </div>
-              <HeroImage />
+              <HeroImage className="hero__image" />
             </div>
           </div>
         </div>

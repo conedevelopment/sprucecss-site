@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useStaticQuery, graphql  } from 'gatsby';
 
 // Images
-import Logo from '../images/spruce-logo-dark.svg';
+import Logo from '../images/spruce-logo-light.svg';
 
 export default function Header() {
   const { site } = useStaticQuery(graphql`
