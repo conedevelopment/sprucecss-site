@@ -17,6 +17,8 @@
 
   &__caption {
     width: 60%;
+
+    @include spruce.layout-stack(spruce.get-spacer('s'));
   }
 
   &__image {
@@ -24,13 +26,15 @@
   }
 
   &__notification {
+    justify-self: flex-start;
     align-items: center;
-    background-color: spruce.get-color('secondary', 'base', true);
+    background-color: #2180f6;
     border-radius: spruce.$border-radius-sm;
-    color: color.invert(spruce.get-color('secondary', 'base', true));
+    color: #fff;
     display: inline-flex;
     font-size: 1rem;
     padding: spruce.get-spacer('xxs') spruce.get-spacer('s') spruce.get-spacer('xxs') spruce.get-spacer('xxs');
+    width: auto;
 
     span {
       background-color: rgba(0, 0, 0, 0.1);
@@ -49,23 +53,26 @@
   }
 
   &__title {
-    color: #fff;
+    // color: #fff;
     // font-family: 'PT Serif', sans-serif;
     font-weight: 700;
-    margin: 0;
     max-width: 50ch;
+    font-size: 3.6rem;
   }
 
   &__description {
-    color: rgba(255, 255, 255, 0.85);
+    // color: rgba(255, 255, 255, 0.85);
     font-size: spruce.get-font-size('h4');
     line-height: 1.6;
     margin: spruce.get-spacer('m') 0 0;
     max-width: 50ch;
+    margin-top: 1rem;
   }
 
   &__btns {
-    margin: spruce.get-spacer('m') 0 0;
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
 
     > * {
       margin-right: spruce.get-spacer('m');
@@ -74,5 +81,16 @@
 
   .btn {
     padding: spruce.get-spacer('s');
+
+    &__icon {
+      height: 0.9rem;
+      width: 0.9rem;
+      margin-right: 0.5rem;
+    }
+  }
+
+  .install-btn {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: spruce.get-color('heading');
   }
 }

@@ -7,6 +7,7 @@ import Layout from '../components/Layout';
 
 // Images
 import HeroImage from '../images/hero2.svg';
+import CopyIcon from '../images/copy.svg';
 import Logo from '../images/spruce-logo-dark.svg';
 
 function IndexPage() {
@@ -26,7 +27,11 @@ function IndexPage() {
                 <h1 className="hero__title">Spruce CSS Framework</h1>
                 <p className="hero__description">An open-source, lightweight and modernish CSS base framework for creating in a system. Give your project the right foundation.</p>
                 <div className="hero__btns">
-                  <a class="btn btn--primary">Get Started</a>
+                  <a className="btn btn--primary">Get Started</a>
+                  <button className="btn install-btn">
+                    <CopyIcon className="btn__icon" />
+                    npm install sprucecss
+                  </button>
                 </div>
               </div>
               <HeroImage className="hero__image" />
