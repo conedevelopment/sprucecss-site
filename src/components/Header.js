@@ -28,7 +28,7 @@ function Header() {
           </div>
           <nav className="header__navigation">
             <ul>
-              <li><Link to="/docs">Docs</Link></li>
+              <li><Link to="/docs/getting-started/introduction">Docs</Link></li>
               <li><Link to="/changelog">Changelog</Link></li>
               <li><Link to="/spruce-ui">Spruce UI</Link></li>
             </ul>

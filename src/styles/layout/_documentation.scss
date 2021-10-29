@@ -10,7 +10,7 @@
   &__inner {
     display: grid;
     gap: spruce.spacer('xxl');
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 3fr) minmax(0, 1fr);
   }
 
   &__sections {

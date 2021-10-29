@@ -58,8 +58,13 @@
       color: spruce.color('heading');
       text-decoration: none;
 
+      &[aria-current='page'] {
+        font-weight: 700;
+      }
+
       &:hover,
-      &:focus {
+      &:focus,
+      &[aria-current='page'] {
         color: spruce.color('primary');
       }
     }
