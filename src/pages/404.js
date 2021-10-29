@@ -1,5 +1,5 @@
-import * as React from "react"
-import { Link } from "gatsby"
+import * as React from 'react';
+import { Link } from 'gatsby';
 
 // styles
 const pageStyles = {
@@ -51,4 +51,4 @@ const NotFoundPage = () => {
   )
 }
 
-export default NotFoundPage
+export default NotFoundPage;

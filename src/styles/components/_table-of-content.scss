@@ -2,7 +2,7 @@
 
 .toc {
   border-left: 1px solid rgba(0, 0, 0, 0.075);
-  padding-left: spruce.get-spacer('m');
+  padding-left: spruce.spacer('m');
   position: sticky;
   top: 2rem;
   align-self: flex-start;
@@ -21,16 +21,16 @@
     }
 
     a {
-      color: spruce.get-color('text');
+      color: spruce.color('text');
       text-decoration: none;
 
       &.is-active {
         position: relative;
         font-weight: 700;
-        color: spruce.get-color('heading');
+        color: spruce.color('heading');
 
         &::before {
-          background-color: spruce.get-color('primary');
+          background-color: spruce.color('primary');
           content: '';
           width: 0.5rem;
           border-radius: spruce.$border-radius-sm;

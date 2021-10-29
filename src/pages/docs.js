@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react';
 
 function DocsPage() {
   return (
@@ -8,4 +8,4 @@ function DocsPage() {
   )
 }
 
-export default DocsPage
+export default DocsPage;

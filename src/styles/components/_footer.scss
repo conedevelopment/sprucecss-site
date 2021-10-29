@@ -2,7 +2,7 @@
 
 .footer {
   border-top: 1px solid rgba(0, 0, 0, 0.075);
-  padding: spruce.get-spacer('xxl') 0;
+  padding: spruce.spacer('xxl') 0;
 
   &__container {
     @include spruce.layout-center;
@@ -27,12 +27,16 @@
   &__logo {
     display: inline-flex;
     height: 1.75rem;
+
+    .letter,
+    .icon {
+      fill: rgba(0, 0, 0, 0.15) !important; 
+    }
   }
 
   &__title {
-    // font-family: 'PT Serif', sans-serif;
     margin: 0 0 1rem;
-    font-size: spruce.get-font-size('h4');
+    font-size: spruce.font-size('h4');
   }
 
   &__navigation {

@@ -1,10 +1,5 @@
 @use '../spruce/scss/spruce';
 
-.header-wrapper {
-  // background-color: spruce.get-color('primary-darkest');
-  // background: linear-gradient(0, rgb(157 0 255 / 4%), transparent);
-}
-
 .header {
   &__container {
     @include spruce.layout-center;
@@ -14,7 +9,7 @@
     align-items: center;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     display: flex;
-    gap: 2rem;
+    gap: 2rem; 
     justify-content: space-between;
     height: 5rem;
   }
@@ -37,11 +32,9 @@
 
   &__slogen {
     border-left: 1px solid rgba(0, 0, 0, 0.05);
-    // font-weight: 600;
     line-height: 1;
-    margin-left: 1.5rem;
-    padding-left: 1.5rem;
-    // text-transform: uppercase;
+    margin-left: spruce.spacer('m');
+    padding-left: spruce.spacer('m');
   }
 
   &__navigation {
@@ -57,22 +50,17 @@
       padding: 0;
     }
 
-    li {
-      width: auto;
-    }
-
     li + li {
       margin: 0 0 0 2rem;
     }
 
     a {
-      color: #fff;
-      color: spruce.get-color('heading');
+      color: spruce.color('heading');
       text-decoration: none;
 
       &:hover,
       &:focus {
-        color: spruce.get-color('primary');
+        color: spruce.color('primary');
       }
     }
   }

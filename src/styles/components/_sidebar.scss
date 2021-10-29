@@ -3,11 +3,12 @@
 .sidebar {
   position: relative;
   border-right: 1px solid rgba(0, 0, 0, 0.075);
-  padding-right: spruce.get-spacer('m');
+  padding-right: spruce.spacer('m');
 
   > * + * {
     margin-top: 3rem;
   }
+  
 /*
   &::before {
     background-color: #f9f6ff;
@@ -20,13 +21,12 @@
     z-index: -1;
   }
 */
-
 }
 
 .sidebar-section {
   &__title {
     color: #19002F;
-    color: darken(spruce.get-color('primary', 'base', true), 10%);
+    color: darken(spruce.color('primary', 'base', true), 10%);
     font-size: spruce.$font-size-base;
     margin: 0;
     text-transform: uppercase;
@@ -42,16 +42,16 @@
     }
 
     a {
-      color: spruce.get-color('text');
+      color: spruce.color('text');
       text-decoration: none;
 
       &[aria-current='page'] {
         position: relative;
         font-weight: 700;
-        color: spruce.get-color('heading');
+        color: spruce.color('heading');
 
         &::before {
-          background-color: spruce.get-color('primary');
+          background-color: spruce.color('primary');
           content: '';
           width: 0.5rem;
           border-radius: spruce.$border-radius-sm;

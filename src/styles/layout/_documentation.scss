@@ -1,7 +1,7 @@
 @use '../spruce/scss/spruce';
 
 .layout-documentation {
-  padding: spruce.get-spacer('xl') 0;
+  padding: spruce.spacer('xl') 0;
 
   &__container {
     @include spruce.layout-center;
@@ -9,11 +9,11 @@
 
   &__inner {
     display: grid;
-    gap: spruce.get-spacer('xxl');
+    gap: spruce.spacer('xxl');
     grid-template-columns: 1fr 3fr 1fr;
   }
 
   &__sections {
-    @include spruce.layout-stack(spruce.get-spacer('xl'));
+    @include spruce.layout-stack(spruce.spacer('xl'));
   }
 }

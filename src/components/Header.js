@@ -2,9 +2,9 @@ import React from 'react';
 import { Link, useStaticQuery, graphql  } from 'gatsby';
 
 // Images
-import Logo from '../images/spruce-logo-dark.svg';
+import Logo from '../images/spruce-logo.svg';
 
-export default function Header() {
+function Header() {
   const { site } = useStaticQuery(graphql`
     query {
       site {
@@ -33,9 +33,11 @@ export default function Header() {
               <li><Link to="/spruce-ui">Spruce UI</Link></li>
             </ul>
           </nav>
-          <Link to="/docs/getting-started/inroduction" className="btn btn--primary">Download</Link>
+          <Link to="/docs/getting-started/introduction" className="btn btn--primary">Download</Link>
         </div>
       </div>
     </header>
   );
 }
+
+export default Header;

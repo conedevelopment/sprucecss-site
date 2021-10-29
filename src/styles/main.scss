@@ -1,7 +1,8 @@
 @use 'spruce/scss/spruce' with (
   $colors: (
     'base': (
-      'primary-darkest': hsl(272, 100%, 9%)
+      'primary-darkest': hsl(272, 100%, 9%),
+      'ternary': hsl(216, 92%, 55%)
     )
   ),
   $font-size-base: 1.0375rem,
@@ -16,13 +17,8 @@
 @use 'components/footer';
 @use 'components/sidebar';
 @use 'components/table-of-content';
-
-// @use 'components/hero';
-// @use 'components/page-heading';
-// @use 'components/section';
-// @use 'components/dark-mode';
-// @use 'components/footer';
+@use 'components/notification';
 
 body {
-  background-color: spruce.get-color('background');
+  background-color: spruce.color('background');
 }

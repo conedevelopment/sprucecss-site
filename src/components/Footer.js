@@ -2,9 +2,9 @@ import React from 'react';
 import { Link, useStaticQuery, graphql  } from 'gatsby';
 
 // Images
-import Logo from '../images/spruce-logo-dark.svg';
+import Logo from '../images/spruce-logo.svg';
 
-export default function Footer() {
+function Footer() {
   const { site } = useStaticQuery(graphql`
     query {
       site {
@@ -61,3 +61,5 @@ export default function Footer() {
     </footer>
   );
 }
+
+export default Footer;
