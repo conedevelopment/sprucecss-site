@@ -8,24 +8,10 @@
   > * + * {
     margin-top: 3rem;
   }
-  
-/*
-  &::before {
-    background-color: #f9f6ff;
-    bottom: 0;
-    content: '';
-    left: -50vw;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: -1;
-  }
-*/
 }
 
 .sidebar-section {
   &__title {
-    color: #19002F;
     color: darken(spruce.color('primary', 'base', true), 10%);
     font-size: spruce.$font-size-base;
     margin: 0;

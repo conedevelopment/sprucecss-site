@@ -13,7 +13,15 @@
     grid-template-columns: minmax(0, 1fr) minmax(0, 3fr) minmax(0, 1fr);
   }
 
-  &__sections {
-    @include spruce.layout-stack(spruce.spacer('xl'));
+  &__content {
+    @include spruce.layout-stack(spruce.spacer('m'));
+
+    > p:first-of-type {
+      font-size: spruce.$font-size-lg;
+    }
+  }
+
+  &__title {
+    margin: 0;
   }
 }

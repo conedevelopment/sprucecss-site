@@ -4,7 +4,7 @@ module.exports = {
     github: 'conedevelopment',
     siteUrl: 'https://sprucecss.com',
     slogen: '🎉 Another CSS Framework',
-    title: 'Spruce',
+    title: 'Spruce CSS',
     twitter: 'conedevelopment'
   },
   plugins: [

@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 // Import components
 import Layout from '../components/Layout';
 import Notification from '../components/Notification';
+import SEO from '../components/SEO';
 
 // Images
 import HeroImage from '../images/hero.svg';
@@ -12,6 +13,7 @@ import CopyIcon from '../images/copy.svg';
 function IndexPage() {
   return (
     <Layout>
+      <SEO title="Spruce CSS Framework" />
       <main className="hero">
         <div className="hero__container">
           <div className="hero__inner">
