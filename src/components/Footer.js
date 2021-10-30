@@ -3,6 +3,7 @@ import { Link, useStaticQuery, graphql  } from 'gatsby';
 
 // Images
 import Logo from '../images/spruce-logo.svg';
+import ConeLogo from '../images/cone-logo.svg';
 
 function Footer() {
   const { site } = useStaticQuery(graphql`
@@ -55,7 +56,10 @@ function Footer() {
             <li><a href="#">Conditions of Use</a></li>
             <li><a href="#">Privacy</a></li>
           </ul>
-          <p className="footer__copyright">&copy; 2021 conedevelopment.com</p>
+          <p className="footer__copyright">
+            <a href="https://conedevelopment.com/" className="footer__cone-logo"><ConeLogo /></a>
+            &copy; 2021
+          </p>
         </div>
       </div>
     </footer>

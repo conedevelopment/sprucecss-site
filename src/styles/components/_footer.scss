@@ -60,25 +60,6 @@
     }
   }
 
-  &__scroll-to-top {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: hsl(var(--spruce-color-secondary));
-    height: 2.8rem;
-    width: 2.8rem;
-    border-radius: 0 0 var(--spruce-border-radius-small) var(--spruce-border-radius-small);
-    color: #fff;
-
-    &:hover,
-    &:focus {
-      background-color: hsl(var(--spruce-color-secondary-dark));
-    }
-  }
-
   &__bottom {
     margin-top: 4rem;
     padding-top: 2rem;
@@ -100,11 +81,25 @@
   }
 
   &__copyright {
+    align-items: center;
+    display: flex;
     margin: 1rem 0 0 0;
     color: var(--spruce-color-gray);
 
     @include spruce.breakpoint(md) {
       margin: 0;
+    }
+  }
+
+  &__cone-logo {
+    align-items: center;
+    display: inline-flex;
+    height: 0.8rem;
+    margin-right: spruce.spacer(xs);
+
+    svg {
+      height: 100%;
+      width: auto;
     }
   }
 }

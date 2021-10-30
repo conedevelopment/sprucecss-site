@@ -63,8 +63,7 @@
       }
 
       &:hover,
-      &:focus,
-      &[aria-current='page'] {
+      &:focus {
         color: spruce.color('primary');
       }
     }
