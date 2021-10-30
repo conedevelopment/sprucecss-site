@@ -1,4 +1,5 @@
 @use '../spruce/scss/spruce';
+@use '../mixins/title';
 
 .toc {
   border-left: 1px solid rgba(0, 0, 0, 0.075);
@@ -8,7 +9,7 @@
   align-self: flex-start;
 
   &__title {
-    // @extend .sidebar-section__title;
+    @include title.sidebar;
   }
 
   &__navigation {
