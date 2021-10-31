@@ -6,7 +6,7 @@
     )
   ),
   $font-size-base: 1.0375rem,
-  $font-family-base: #{'IBM Plex Sans', sans-serif},
+  $font-family-base: #{'Poppins', sans-serif},
   $container-width: 86rem
 );
 
@@ -21,8 +21,4 @@
 
 body {
   background-color: spruce.color('background');
-}
-
-h1 {
-  font-size: 3.275735rem;
 }
