@@ -1,0 +1,9 @@
+@use '../spruce/scss/spruce';
+
+.preview {
+  @include spruce.layout-stack(spruce.spacer('m'));
+
+  border: 1px solid rgba(0, 0, 0, 0.075);
+  border-radius: spruce.$border-radius-sm;
+  padding: spruce.spacer('m');
+}

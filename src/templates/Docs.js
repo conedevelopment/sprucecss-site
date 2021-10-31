@@ -7,9 +7,11 @@ import { MDXProvider } from '@mdx-js/react';
 import Alert from '../components/Alert';
 import Layout from '../components/Layout';
 import Notification from '../components/Notification';
+import Pre from '../components/Pre';
+import Preview from '../components/Preview';
 import Sidebar from '../components/Sidebar';
 
-const components = { Alert, Notification };
+const components = { Alert, Pre, Notification, Preview };
 
 export const query = graphql`
   query ($slug: String!) {
