@@ -5,6 +5,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 // Import components
 import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
+import SEO from '../components/SEO';
 
 export const query = graphql`
   query ($slug: String!) {
@@ -22,6 +23,7 @@ function Post({ data: { mdx: post } }) {
   const { body } = post;
   return (
     <Layout>
+      <SEO title={title} />
       <main className="layout-documentation">
         <div className="layout-documentation__container">
           <div className="layout-documentation__inner">

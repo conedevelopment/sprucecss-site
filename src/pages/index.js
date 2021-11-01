@@ -13,7 +13,7 @@ import CopyIcon from '../images/copy.svg';
 function IndexPage() {
   return (
     <Layout>
-      <SEO title="Spruce CSS Framework" />
+      <SEO title="Another CSS Framework" />
       <main className="hero">
         <div className="hero__container">
           <div className="hero__inner">
