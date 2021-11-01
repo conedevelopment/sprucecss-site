@@ -9,7 +9,7 @@
 
   &__inner {
     display: grid;
-    gap: spruce.spacer('xxl');
+    gap: spruce.spacer('xl');
     grid-template-columns: minmax(0, 1fr) minmax(0, 3fr) minmax(0, 1fr);
   }
 
