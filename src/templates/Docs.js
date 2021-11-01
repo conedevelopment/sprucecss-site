@@ -1,17 +1,10 @@
 import React from 'react';
 import { graphql  } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { MDXProvider } from '@mdx-js/react';
 
 // Import components
-import Alert from '../components/Alert';
 import Layout from '../components/Layout';
-import Notification from '../components/Notification';
-import Pre from '../components/Pre';
-import Preview from '../components/Preview';
 import Sidebar from '../components/Sidebar';
-
-const components = { Alert, Pre, Notification, Preview };
 
 export const query = graphql`
   query ($slug: String!) {
@@ -33,14 +26,12 @@ function Post({ data: { mdx: post } }) {
         <div className="layout-documentation__container">
           <div className="layout-documentation__inner">
             <Sidebar />
-            <MDXProvider components={components}>
-              <div className="layout-documentation__content">
-                <div className="layout-documentation__heading">
-                  <h1 className="layout-documentation__title">{title}</h1>
-                </div>
-                <MDXRenderer>{body}</MDXRenderer>
+            <div className="layout-documentation__content">
+              <div className="layout-documentation__heading">
+                <h1 className="layout-documentation__title">{title}</h1>
               </div>
-            </MDXProvider>
+              <MDXRenderer>{body}</MDXRenderer>
+            </div>
             <div className="layout-documentation__table-of-content">
               <section className="toc" aria-labelledby="toc-title">
                 <h3 className="toc__title" id="toc-title">On this page</h3>
