@@ -7,7 +7,7 @@
   &__html {
     @include spruce.layout-stack(spruce.spacer('m'));
 
-    padding: spruce.spacer('m');
+    padding: spruce.spacer('l');
   }
 
   .prism-code {

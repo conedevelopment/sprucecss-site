@@ -4,6 +4,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 // Import components
 import Layout from '../components/Layout';
+import TableOfContents from '../components/TableOfContents';
 import Sidebar from '../components/Sidebar';
 import SEO from '../components/SEO';
 
@@ -13,7 +14,8 @@ export const query = graphql`
       frontmatter {
         title
       }
-      body
+      body,
+      tableOfContents(maxDepth: 2)
     }
   }
 `;
@@ -38,12 +40,7 @@ function Post({ data: { mdx: post } }) {
               <section className="toc" aria-labelledby="toc-title">
                 <h3 className="toc__title" id="toc-title">On this page</h3>
                 <nav className="toc__navigation">
-                  <ul>
-                    <li><a href="#">Item 1</a></li>
-                    <li><a className="is-active" href="#">Item 2</a></li>
-                    <li><a href="#">Item 3</a></li>
-                    <li><a href="#">Item 4</a></li>
-                  </ul>
+                  <TableOfContents headings={post.tableOfContents.items} />
                 </nav>
               </section>
             </div>
