@@ -8,6 +8,10 @@
     @include spruce.layout-stack(spruce.spacer('m'));
 
     padding: spruce.spacer('l');
+
+    > * {
+      font-family: spruce.$font-family-base;
+    }
   }
 
   .prism-code {

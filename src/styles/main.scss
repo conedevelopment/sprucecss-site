@@ -6,7 +6,6 @@
     )
   ),
   $font-size-base: 1.0375rem,
-  $font-family-base: #{'Poppins', sans-serif},
   $container-width: 86rem
 );
 
@@ -21,6 +20,19 @@
 @use 'components/code-block';
 @use 'components/preview';
 
+
 body {
+  --spruce-documentation-font-family: 'Poppins', sans-serif;
+  
   background-color: spruce.color('background');
+  font-family: var(--spruce-documentation-font-family);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--spruce-documentation-font-family);
 }
