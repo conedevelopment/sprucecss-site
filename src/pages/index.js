@@ -22,9 +22,9 @@ function IndexPage() {
               <h1 className="hero__title">Spruce CSS Framework</h1>
               <p className="hero__description">An open-source, lightweight and modernish CSS base framework for creating in a system. Give your project the right foundation.</p>
               <div className="hero__btns">
-                <Link to="/docs" className="btn btn--primary">Get Started</Link>
-                <button className="btn install-btn">
-                  <CopyIcon className="btn__icon" />
+                <Link to="/docs" className="btn btn--primary btn--lg">Get Started</Link>
+                <button className="btn btn--install btn--lg">
+                  <CopyIcon className="btn__icon btn__icon--left" />
                   npm install sprucecss
                 </button>
               </div>

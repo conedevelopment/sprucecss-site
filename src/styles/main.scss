@@ -1,8 +1,13 @@
 @use 'spruce/scss/spruce' with (
   $colors: (
-    'base': (
-      'primary-darkest': hsl(272, 100%, 9%),
-      'ternary': hsl(216, 92%, 55%)
+    base: (
+      primary-darkest: hsl(272, 100%, 9%),
+      ternary: hsl(216, 92%, 55%)
+    ),
+    btn: (
+      install-background: hsl(0, 0%, 95%),
+      install-background-hover: hsl(0, 0%, 90%),
+      install-foreground: hsl(0, 0%, 10%),
     )
   ),
   $font-size-base: 1.0375rem,
@@ -35,4 +40,8 @@ h4,
 h5,
 h6 {
   font-family: var(--spruce-documentation-font-family);
+}
+
+.btn--install {
+  @include spruce.btn-variant($color: 'install-foreground', $background: 'install-background');
 }
