@@ -59,6 +59,7 @@
       text-decoration: none;
 
       &[aria-current='page'] {
+        color: spruce.color('primary');
         font-weight: 700;
       }
 
