@@ -36,6 +36,7 @@ function Post({ data: { mdx: post } }) {
               </div>
               <MDXRenderer>{body}</MDXRenderer>
             </div>
+            {post.tableOfContents.items &&
             <div className="layout-documentation__table-of-content">
               <section className="toc" aria-labelledby="toc-title">
                 <h3 className="toc__title" id="toc-title">On this page</h3>
@@ -43,7 +44,7 @@ function Post({ data: { mdx: post } }) {
                   <TableOfContents headings={post.tableOfContents.items} />
                 </nav>
               </section>
-            </div>
+            </div>}
           </div>
         </div>
       </main>
