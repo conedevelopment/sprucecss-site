@@ -14,6 +14,8 @@
     margin: 1rem 0 0;
 
     ul {
+      @include spruce.layout-stack(spruce.spacer(xs));
+
       list-style: none;
       margin: 0;
       padding: 0;
@@ -21,8 +23,14 @@
 
     a {
       color: spruce.color('text');
-      line-height: spruce.$line-height-sm;
+      display: inline-flex;
+      line-height: spruce.$line-height-md;
       text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: spruce.color('primary');
+      }
     }
   }
 }

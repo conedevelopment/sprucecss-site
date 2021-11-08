@@ -27,10 +27,11 @@
 
 
 body {
-  --spruce-documentation-font-family: 'Poppins', sans-serif;
+  --spruce-documentation-heading-font-family: 'Poppins', sans-serif;
+  --spruce-documentation-body-font-family: 'Open Sans', sans-serif;
   
   background-color: spruce.color('background');
-  font-family: var(--spruce-documentation-font-family);
+  font-family: var(--spruce-documentation-body-font-family);
 }
 
 h1,
@@ -39,7 +40,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--spruce-documentation-font-family);
+  font-family: var(--spruce-documentation-heading-font-family);
 }
 
 .btn--install {
