@@ -1,4 +1,5 @@
 @use '../spruce/scss/spruce';
+@use '../variable';
 
 .layout-documentation {
   padding: spruce.spacer('xl') 0;
@@ -55,6 +56,7 @@
   }
 
   &__title {
+    font-size: variable.$page-title-font-size;
     margin: 0;
   }
 }

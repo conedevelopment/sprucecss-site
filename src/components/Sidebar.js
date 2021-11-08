@@ -9,7 +9,7 @@ function Sidebar() {
         <nav className="sidebar-section__navigation">
           <ul>
             <li><Link to="/docs/getting-started/introduction">Introduction</Link></li>
-            <li><Link to="/docs/getting-started/download">Download</Link></li>
+            <li><Link to="/docs/getting-started/installation">Installation</Link></li>
             <li><Link to="/docs/getting-started/structure">Structure and Code</Link></li>
             <li><Link to="/docs/getting-started/sass">Sass</Link></li>
             <li><Link to="/docs/getting-started/accessibility">Accessibility</Link></li>

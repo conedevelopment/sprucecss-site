@@ -1,0 +1,5 @@
+@use 'sass:math';
+@use 'spruce/scss/spruce';
+
+// $page-title-font-size: math.pow(spruce.$font-size-ratio, 5) * spruce.$font-size-base;
+$page-title-font-size: 3.5rem;
