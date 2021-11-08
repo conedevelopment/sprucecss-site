@@ -7,7 +7,7 @@
   &__html {
     @include spruce.layout-stack(spruce.spacer('m'));
 
-    padding: spruce.spacer('l');
+    padding: spruce.spacer('m');
 
     > * {
       font-family: spruce.$font-family-base;

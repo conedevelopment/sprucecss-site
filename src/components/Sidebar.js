@@ -10,7 +10,7 @@ function Sidebar() {
           <ul>
             <li><Link to="/docs/getting-started/introduction">Introduction</Link></li>
             <li><Link to="/docs/getting-started/installation">Installation</Link></li>
-            <li><Link to="/docs/getting-started/structure">Structure and Code</Link></li>
+            <li><Link to="/docs/getting-started/structure-and-code">Structure and Code</Link></li>
             <li><Link to="/docs/getting-started/sass">Sass</Link></li>
             <li><Link to="/docs/getting-started/accessibility">Accessibility</Link></li>
             <li><Link to="/docs/getting-started/contribute">Contribute</Link></li>
@@ -46,20 +46,12 @@ function Sidebar() {
         </nav>
       </section>
       <section className="sidebar-section">
-        <h3 className="sidebar-section__title">Mixins</h3>
-        <nav className="sidebar-section__navigation">
-          <ul>
-            <li><a href="#">Item 1</a></li>
-            <li><a href="#">Item 2</a></li>
-          </ul>
-        </nav>
-      </section>
-      <section className="sidebar-section">
         <h3 className="sidebar-section__title">Utilities</h3>
         <nav className="sidebar-section__navigation">
           <ul>
-            <li><a href="#">Item 1</a></li>
-            <li><a href="#">Item 2</a></li>
+            <li><a href="#">Mixins</a></li>
+            <li><a href="#">Functions</a></li>
+            <li><a href="#">Classes</a></li>
           </ul>
         </nav>
       </section>
