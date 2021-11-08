@@ -1,0 +1,20 @@
+@use '../spruce/scss/spruce';
+
+.page-alert {
+  background-color: spruce.color('warning', 'alert');
+
+  &__container {
+    @include spruce.layout-center;
+  }
+
+  &__inner {
+    color: #fff;
+    font-weight: 700;
+    padding: spruce.spacer(s) 0;
+  }
+
+  p {
+    line-height: spruce.$line-height-sm;
+    margin: 0;
+  }
+}
