@@ -1,8 +1,7 @@
 @use 'spruce/scss/spruce' with (
   $colors: (
     base: (
-      primary-darkest: hsl(272, 100%, 9%),
-      ternary: hsl(216, 92%, 55%)
+      primary-darkest: hsl(272, 100%, 9%)
     ),
     btn: (
       install-background: hsl(0, 0%, 95%),

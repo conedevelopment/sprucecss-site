@@ -1,7 +1,8 @@
 @use '../spruce/scss/spruce';
 
 .page-alert {
-  background-color: spruce.color('warning', 'alert');
+  background-color: spruce.color('info', 'alert');
+  font-size: 1rem;
 
   &__container {
     @include spruce.layout-center;

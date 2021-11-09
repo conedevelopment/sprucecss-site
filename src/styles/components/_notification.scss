@@ -3,7 +3,7 @@
 .notification {
   justify-self: flex-start;
   align-items: center;
-  background-color: spruce.color('ternary');
+  background-color: spruce.color('info', 'alert');
   border-radius: spruce.$border-radius-sm;
   color: #fff;
   display: inline-flex;
