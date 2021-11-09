@@ -1,7 +1,8 @@
-import path, { resolve } from 'path';
+const path = require('path');
 
-async function turnDocsIntoPages({ graphql, actions }) {
+exports.createPages = async ({ graphql, actions }) => {
   const docsTemplate = path.resolve('./src/templates/Docs.js');
+
   const { data } = await graphql(`
     query {
       docs: allMdx {
@@ -21,10 +22,4 @@ async function turnDocsIntoPages({ graphql, actions }) {
       },
     });
   });
-}
-
-export async function createPages(params) {
-  await Promise.all([
-    turnDocsIntoPages(params)
-  ]);
 }

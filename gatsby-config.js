@@ -32,16 +32,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-mdx',
-    /*
-    {
-      resolve: 'gatsby-plugin-mdx',
-      options: {
-        remarkPlugins: [
-          require('remark-slug')
-        ]
-      },
-    },
-    */
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {

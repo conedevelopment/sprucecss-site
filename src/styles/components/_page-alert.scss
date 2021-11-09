@@ -8,13 +8,13 @@
   }
 
   &__inner {
-    color: #fff;
-    font-weight: 700;
     padding: spruce.spacer(s) 0;
   }
 
   p {
-    line-height: spruce.$line-height-sm;
+    color: #fff;
+    font-weight: 700;
+    line-height: spruce.$line-height-md;
     margin: 0;
   }
 }
