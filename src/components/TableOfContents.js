@@ -7,7 +7,7 @@ export default ({ headings }) => (
       .filter(heading => heading.depth !== 1)
       .map(heading => (
         <li key={heading.title}>
-          <Link to={heading.url}>{heading.title}</Link>
+          <a href={heading.url}>{heading.title}</a>
         </li>
       ))}
   </ul>
