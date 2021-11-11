@@ -1,27 +1,11 @@
 @use '../spruce/scss/spruce';
 
 .notification {
-  justify-self: flex-start;
-  align-items: center;
   background-color: spruce.color('info', 'alert');
   border-radius: spruce.$border-radius-sm;
   color: #fff;
   display: inline-flex;
   font-size: 1rem;
-  padding: spruce.spacer('xxs');
-  width: auto;
-
-  &__status {
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: spruce.$border-radius-sm;
-    font-size: spruce.$font-size-sm;
-    font-weight: 700;
-    line-height: 1;
-    padding: 0.5rem;
-    text-transform: uppercase;
-  }
-
-  &__message {
-    margin: 0 spruce.spacer('xs');
-  }
+  line-height: spruce.$line-height-md;
+  padding: spruce.spacer('xs') spruce.spacer('s');
 }

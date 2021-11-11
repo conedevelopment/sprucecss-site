@@ -20,7 +20,7 @@
   }
 
   &__caption {
-    @include spruce.layout-stack(spruce.spacer('s'));
+    @include spruce.layout-stack(spruce.spacer('s'), false);
   }
 
   &__image {

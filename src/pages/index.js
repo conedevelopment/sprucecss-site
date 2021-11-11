@@ -18,7 +18,7 @@ function IndexPage() {
         <div className="hero__container">
           <div className="hero__inner">
             <div className="hero__caption">
-              <Notification status="New" message="The first realase (v0.1.) of Spruce is out."/>
+              <Notification>The first realase (v0.1.) of Spruce is out.</Notification>
               <h1 className="hero__title">Spruce CSS Framework</h1>
               <p className="hero__description">An open-source, lightweight and modernish CSS design system or framework built on Sass. Give your project a solid foundation.</p>
               <div className="hero__btns">

@@ -12,6 +12,7 @@
     gap: 2rem; 
     justify-content: space-between;
     height: 5rem;
+    position: relative;
   }
 
   &__logo {
@@ -32,12 +33,21 @@
 
   &__slogen {
     border-left: 1px solid rgba(0, 0, 0, 0.05);
+    display: none;
     line-height: 1;
     margin-left: spruce.spacer('m');
     padding-left: spruce.spacer('m');
+
+    @include spruce.breakpoint(md) {
+      display: inline;
+    }
   }
 
   &__toggle {
+    @include spruce.breakpoint(md) {
+      display: none;
+    }
+
     svg {
       height: 0.75em;
       width: 0.7em;
@@ -49,6 +59,17 @@
     display: flex;
     flex-grow: 1;
     justify-content: flex-end;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 100%;
+
+    @include spruce.breakpoint(md) {
+      left: auto;
+      position: relative;
+      right: auto;
+      top: auto;
+    }
 
     ul {
       display: flex;
