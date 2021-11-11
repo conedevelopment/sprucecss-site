@@ -35,8 +35,8 @@
     border-left: 1px solid rgba(0, 0, 0, 0.05);
     display: none;
     line-height: 1;
-    margin-left: spruce.spacer('m');
-    padding-left: spruce.spacer('m');
+    margin-left: spruce.spacer(m);
+    padding-left: spruce.spacer(m);
 
     @include spruce.breakpoint(md) {
       display: inline;
@@ -84,17 +84,17 @@
     }
 
     a {
-      color: spruce.color('heading');
+      color: spruce.color(heading);
       text-decoration: none;
 
       &[aria-current='page'] {
-        color: spruce.color('primary');
+        color: spruce.color(primary);
         font-weight: 700;
       }
 
       &:hover,
       &:focus {
-        color: spruce.color('primary');
+        color: spruce.color(primary);
       }
     }
   }

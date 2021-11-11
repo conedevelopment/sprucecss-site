@@ -2,7 +2,7 @@
 
 .footer {
   border-top: 1px solid rgba(0, 0, 0, 0.05);
-  padding: spruce.spacer('xxl') 0;
+  padding: spruce.spacer(xxl) 0;
 
   &__container {
     @include spruce.layout-center;
@@ -36,7 +36,7 @@
 
   &__title {
     margin: 0 0 1rem;
-    font-size: spruce.font-size('h4');
+    font-size: spruce.font-size(h4);
   }
 
   &__navigation {

@@ -1,7 +1,7 @@
 @use '../spruce/scss/spruce';
 
 .layout-documentation {
-  padding: spruce.spacer('xl') 0;
+  padding: spruce.spacer(xl) 0;
 
   &__container {
     @include spruce.layout-center;
@@ -9,19 +9,19 @@
 
   &__inner {
     display: grid;
-    gap: spruce.spacer('l');
+    gap: spruce.spacer(l);
     grid-template-columns: minmax(0, 1fr) minmax(0, 3fr) minmax(0, 1fr);
   }
 
   &__content {
-    @include spruce.layout-stack(spruce.spacer('m'));
+    @include spruce.layout-stack(spruce.spacer(m));
 
     * + h2,
     * + h3,
     * + h4,
     * + h5,
     * + h6 {
-      margin-top: spruce.spacer('l');
+      margin-top: spruce.spacer(l);
     }
 
     > p:first-of-type {

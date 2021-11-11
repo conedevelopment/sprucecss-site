@@ -5,9 +5,9 @@
   border-radius: spruce.$border-radius-sm;
 
   &__html {
-    @include spruce.layout-stack(spruce.spacer('m'));
+    @include spruce.layout-stack(spruce.spacer(m));
 
-    padding: spruce.spacer('m');
+    padding: spruce.spacer(m);
 
     > * {
       font-family: spruce.$font-family-base;

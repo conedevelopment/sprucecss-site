@@ -22,14 +22,14 @@
     }
 
     a {
-      color: spruce.color('text');
+      color: spruce.color(text);
       display: inline-flex;
       line-height: spruce.$line-height-md;
       text-decoration: none;
 
       &:hover,
       &:focus {
-        color: spruce.color('primary');
+        color: spruce.color(primary);
       }
     }
   }

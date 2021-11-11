@@ -23,7 +23,6 @@
 @use 'components/table-of-content';
 @use 'components/notification';
 @use 'components/code-block';
-@use 'components/page-alert';
 @use 'components/preview';
 @use 'components/skip-link';
 
@@ -32,7 +31,7 @@ body {
   --spruce-documentation-heading-font-family: 'Poppins', sans-serif;
   --spruce-documentation-body-font-family: 'Open Sans', sans-serif;
   
-  background-color: spruce.color('background');
+  background-color: spruce.color(background);
   font-family: var(--spruce-documentation-body-font-family);
 }
 
@@ -46,5 +45,5 @@ h6 {
 }
 
 .btn--install {
-  @include spruce.btn-variant($color: 'install-foreground', $background: 'install-background');
+  @include spruce.btn-variant(install-foreground, install-background);
 }

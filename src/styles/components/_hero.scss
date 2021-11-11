@@ -11,7 +11,7 @@
     display: grid;
     gap: 2rem;
     grid-template-columns: minmax(0, 1fr);
-    padding: clamp(spruce.spacer('xxl'), 6vw, spruce.spacer('xxxl')) 0;
+    padding: clamp(spruce.spacer(xxl), 6vw, spruce.spacer(xxxl)) 0;
 
     @include spruce.breakpoint(md) {
       gap: 4rem;
@@ -20,7 +20,7 @@
   }
 
   &__caption {
-    @include spruce.layout-stack(spruce.spacer('s'), false);
+    @include spruce.layout-stack(spruce.spacer(s), false);
   }
 
   &__image {
@@ -38,14 +38,14 @@
   }
 
   &__title {
-    font-size: clamp(spruce.font-size('h1'), 5vw, 3.5rem);
+    font-size: clamp(spruce.font-size(h1), 5vw, 3.5rem);
     max-width: 50ch;
   }
 
   &__description {
-    font-size: spruce.font-size('h4');
+    font-size: spruce.font-size(h4);
     line-height: 1.6;
-    margin: spruce.spacer('m') 0 0;
+    margin: spruce.spacer(m) 0 0;
     max-width: 50ch;
     margin-top: 1rem;
   }
@@ -56,12 +56,12 @@
     align-items: center;
 
     > * {
-      margin-right: spruce.spacer('m');
+      margin-right: spruce.spacer(m);
     }
   }
 
   .install-btn {
     background-color: rgba(0, 0, 0, 0.05);
-    color: spruce.color('heading');
+    color: spruce.color(heading);
   }
 }

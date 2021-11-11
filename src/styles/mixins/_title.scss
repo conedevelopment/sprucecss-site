@@ -1,7 +1,7 @@
 @use '../spruce/scss/spruce';
 
 @mixin sidebar {
-  color: spruce.color('primary');
+  color: spruce.color(primary);
   font-size: spruce.$font-size-base;
   margin: 0;
   text-transform: uppercase;

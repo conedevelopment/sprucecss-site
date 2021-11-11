@@ -4,7 +4,7 @@
 .sidebar {
   position: relative;
   border-right: 1px solid rgba(0, 0, 0, 0.05);
-  padding-right: spruce.spacer('m');
+  padding-right: spruce.spacer(m);
 
   > * + * {
     margin-top: 3rem;
@@ -26,16 +26,16 @@
     }
 
     a {
-      color: spruce.color('text');
+      color: spruce.color(text);
       text-decoration: none;
 
       &[aria-current='page'] {
         position: relative;
         font-weight: 700;
-        color: spruce.color('heading');
+        color: spruce.color(heading);
 
         &::before {
-          background-color: spruce.color('primary');
+          background-color: spruce.color(primary);
           content: '';
           width: 0.5rem;
           border-radius: spruce.$border-radius-sm;
