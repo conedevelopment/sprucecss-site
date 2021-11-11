@@ -37,7 +37,15 @@
     padding-left: spruce.spacer('m');
   }
 
+  &__toggle {
+    svg {
+      height: 0.75em;
+      width: 0.7em;
+    }
+  }
+
   &__navigation {
+    align-items: center;
     display: flex;
     flex-grow: 1;
     justify-content: flex-end;

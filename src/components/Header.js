@@ -43,7 +43,7 @@ function Header() {
               <span className="header__slogen">{site.siteMetadata.slogen}</span>
             </div>
             <nav className="header__navigation">
-              <button className="header__toggle" onClick={handleMenuClick} aria-controls="primary-menu" aria-expanded={menuVisible ? 'true' : 'false'} aria-label={menuVisible ? 'Close navigation' : 'Open navigation'}>
+              <button className="btn btn--primary header__toggle" onClick={handleMenuClick} aria-controls="primary-menu" aria-expanded={menuVisible ? 'true' : 'false'} aria-label={menuVisible ? 'Close navigation' : 'Open navigation'}>
                 <Hamburger />
               </button>
               <ul>
