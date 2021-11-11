@@ -26,7 +26,7 @@ function Post({ data: { mdx: post } }) {
   return (
     <Layout>
       <SEO title={title} />
-      <main className="layout-documentation">
+      <main id="content" className="layout-documentation">
         <div className="layout-documentation__container">
           <div className="layout-documentation__inner">
             <Sidebar />

@@ -6,6 +6,7 @@ function PageAlert(props) {
       <div className="page-alert__container">
         <div className="page-alert__inner">
           {props.children}
+          <button>Close</button>
         </div>
       </div>
     </div>

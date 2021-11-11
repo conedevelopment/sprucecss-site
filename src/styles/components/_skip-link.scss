@@ -1,0 +1,11 @@
+@use '../spruce/scss/spruce';
+
+.skip-link {
+  position: fixed;
+  top: -5rem;
+  left: 2rem;
+
+  &:focus {
+    top: 2rem;
+  }
+}

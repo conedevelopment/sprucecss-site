@@ -12,7 +12,7 @@ const NotFoundPage = () => {
   return (
     <Layout>
       <SEO title="Error 404" />
-      <main className="hero">
+      <main id="content" className="hero">
         <div className="hero__container">
           <div className="hero__inner">
             <div className="hero__caption">

@@ -14,7 +14,7 @@ function IndexPage() {
   return (
     <Layout>
       <SEO title="Another CSS Framework" />
-      <main className="hero">
+      <main id="content" className="hero">
         <div className="hero__container">
           <div className="hero__inner">
             <div className="hero__caption">
