@@ -12,10 +12,12 @@
     gap: 2rem;
     grid-template-columns: minmax(0, 1fr);
     padding: clamp(spruce.spacer(xxl), 6vw, spruce.spacer(xxxl)) 0;
+    text-align: center;
 
     @include spruce.breakpoint(md) {
       gap: 4rem;
       grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+      text-align: left;
     }
   }
 
@@ -51,12 +53,13 @@
   }
 
   &__btns {
-    margin-top: 1.5rem;
-    display: flex;
     align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
 
     > * {
-      margin-right: spruce.spacer(m);
+      margin: spruce.spacer(xs) spruce.spacer(m) spruce.spacer(xs) 0; 
     }
   }
 

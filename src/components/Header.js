@@ -52,7 +52,9 @@ function Header() {
                 <li><Link to="/spruce-ui">Spruce UI</Link></li>
               </ul>
             </nav>
-            <Link to="/docs/getting-started/introduction" className="btn btn--primary">Download</Link>
+            <div className="header__actions">
+              <Link to="/docs/getting-started/introduction" className="btn btn--primary">Download</Link>
+            </div>
           </div>
         </div>
       </header>

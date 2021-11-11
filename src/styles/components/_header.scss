@@ -9,7 +9,7 @@
     align-items: center;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     display: flex;
-    gap: 2rem; 
+    gap: clamp(1.5rem, 1vw, 2rem);
     justify-content: space-between;
     height: 5rem;
     position: relative;
@@ -44,13 +44,23 @@
   }
 
   &__toggle {
+    align-items: center;
+    justify-content: center;
+    height: 2.75rem;
+    padding: 0;
+    width: 2.75rem;
+
     @include spruce.breakpoint(md) {
       display: none;
     }
 
     svg {
-      height: 0.75em;
-      width: 0.7em;
+      height: 1rem;
+      width: 1rem;
+    }
+
+    &[aria-expanded='true'] + ul {
+      display: flex;
     }
   }
 
@@ -59,28 +69,33 @@
     display: flex;
     flex-grow: 1;
     justify-content: flex-end;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 100%;
-
-    @include spruce.breakpoint(md) {
-      left: auto;
-      position: relative;
-      right: auto;
-      top: auto;
-    }
 
     ul {
-      display: flex;
+      display: none;
       flex-wrap: wrap;
+      left: 0;
       list-style: none;
       margin: 0;
       padding: 0;
+      position: absolute;
+      right: 0;
+      top: 100%;
+
+      @include spruce.breakpoint(md) {
+        display: flex;
+        left: auto;
+        position: relative;
+        right: auto;
+        top: auto;
+      }
     }
 
     li + li {
-      margin: 0 0 0 2rem;
+      margin: 1.5rem 0 0;
+
+      @include spruce.breakpoint(md) {
+        margin: 0 0 0 2rem;
+      }
     }
 
     a {
@@ -96,6 +111,14 @@
       &:focus {
         color: spruce.color(primary);
       }
+    }
+  }
+
+  &__actions {
+    display: none;
+
+    @include spruce.breakpoint(md) {
+      display: flex;
     }
   }
 }
