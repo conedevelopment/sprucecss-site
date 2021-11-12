@@ -53,7 +53,7 @@ function Header() {
               </ul>
             </nav>
             <div className="header__actions">
-              <Link to="/docs/getting-started/introduction" className="btn btn--primary">Download</Link>
+              <Link to="/docs/getting-started/installation" className="btn btn--primary">Download</Link>
             </div>
           </div>
         </div>

@@ -7,7 +7,7 @@
 
   &__inner {
     align-items: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    // border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     display: flex;
     gap: clamp(1.5rem, 1vw, 2rem);
     justify-content: space-between;
@@ -34,6 +34,7 @@
   &__slogen {
     border-left: 1px solid rgba(0, 0, 0, 0.05);
     display: none;
+    font-family: spruce.$font-family-heading;
     line-height: 1;
     margin-left: spruce.spacer(m);
     padding-left: spruce.spacer(m);
@@ -68,6 +69,7 @@
     align-items: center;
     display: flex;
     flex-grow: 1;
+    font-family: spruce.$font-family-heading;
     justify-content: flex-end;
 
     ul {

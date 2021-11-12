@@ -17,7 +17,7 @@
 
     @include spruce.breakpoint(md) {
       gap: 4rem;
-      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
       justify-content: flex-start;
       text-align: left;
     }
@@ -44,7 +44,9 @@
   }
 
   &__title {
-    font-size: clamp(spruce.font-size(h1), 5vw, 3.5rem);
+    font-size: clamp(spruce.font-size(h1), 5vw, 4.5rem);
+    line-height: 1;
+    margin-top: 1.5rem;
     max-width: 50ch;
   }
 
@@ -68,7 +70,7 @@
 
   .notification {
     line-height: spruce.$line-height-md;
-    padding: 0.25rem 0.75rem;
+    padding: 0.5rem 0.75rem;
   }
 
   .install-btn {
