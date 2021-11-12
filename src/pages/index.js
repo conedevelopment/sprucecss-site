@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 // Import components
+import DocsCards from '../components/DocsCards';
 import Layout from '../components/Layout';
 import Notification from '../components/Notification';
 import SEO from '../components/SEO';
@@ -33,6 +34,7 @@ function IndexPage() {
           </div>
         </div>
       </main>
+      <DocsCards />
     </Layout>
   )
 }
