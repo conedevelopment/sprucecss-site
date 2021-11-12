@@ -11,12 +11,14 @@
     display: grid;
     gap: 2rem;
     grid-template-columns: minmax(0, 1fr);
+    justify-content: center;
     padding: clamp(spruce.spacer(xxl), 6vw, spruce.spacer(xxxl)) 0;
     text-align: center;
 
     @include spruce.breakpoint(md) {
       gap: 4rem;
       grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+      justify-content: flex-start;
       text-align: left;
     }
   }
@@ -27,7 +29,9 @@
 
   &__image {
     order: -1;
-    max-width: 10rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 22rem;
 
     @include spruce.breakpoint(md) {
       order: 2;
@@ -45,8 +49,7 @@
   }
 
   &__description {
-    font-size: spruce.font-size(h4);
-    line-height: 1.6;
+    font-size: clamp(1rem, 5vw, spruce.font-size(h4));
     margin: spruce.spacer(m) 0 0;
     max-width: 50ch;
     margin-top: 1rem;
@@ -61,6 +64,11 @@
     > * {
       margin: spruce.spacer(xs) spruce.spacer(m) spruce.spacer(xs) 0; 
     }
+  }
+
+  .notification {
+    line-height: spruce.$line-height-md;
+    padding: 0.25rem 0.75rem;
   }
 
   .install-btn {

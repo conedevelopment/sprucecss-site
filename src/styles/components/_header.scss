@@ -38,7 +38,7 @@
     margin-left: spruce.spacer(m);
     padding-left: spruce.spacer(m);
 
-    @include spruce.breakpoint(md) {
+    @include spruce.breakpoint(sm) {
       display: inline;
     }
   }
