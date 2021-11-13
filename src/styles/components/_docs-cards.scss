@@ -2,57 +2,22 @@
 
 .docs-cards {
   // margin-bottom: clamp(spruce.spacer(xxl), 6vw, spruce.spacer(xxxl));
-  margin-bottom: 3rem;
-  margin-left: 2rem;
   overflow-x: auto;
+  margin-bottom: spruce.spacer(xl);
 
   &__container {
+    @include spruce.layout-center;
   }
 
   &__inner {
-    display: flex;
-    padding: 2rem 0;
-
-    .docs-card {
-      min-width: 20rem;
-      width: 20rem;
-      
-      @include spruce.breakpoint(md) {
-          min-width: 24rem;
-          width: 24rem;
-      }
-
-      &:not(:first-child) {
-          margin-left: -10rem;
-  
-          @media (pointer: coarse) {
-              margin-left: 0;
-          }
-      }
-      
-      @media (pointer: coarse) {
-          margin-right: 2rem;
-      }
-
-      @media (pointer: fine) {
-          &:hover:not(:last-child),
-          &:focus:not(:last-child) {
-              box-shadow: 0 0 0.75rem rgba(0, 0, 0, 0.1);
-              transform: translateY(-1rem) rotate(2deg);
-  
-              ~ .docs-card {
-                  transform: translateX(9rem);
-              }
-          }
-      }
-    }
+    @include spruce.layout-grid(3rem, 20rem);
   }
 }
 
 .docs-card {
   background-color: #fff;
   border: 2px solid black;
-  border-radius: 1.5rem;
+  border-radius: 1.25rem;
   // color: #fff;
   display: flex;
   flex-direction: column;
@@ -67,7 +32,9 @@
 
   &__serial-number {
     color: #e9dcff;
-    font-family: spruce.$font-family-heading;
+    color: spruce.color(secondary);
+    color: spruce.color(primary);
+    font-family: var(--spruce-documentation-heading-font-family);
     font-size: 4rem;
     font-weight: 700;
     line-height: 1;
@@ -75,7 +42,8 @@
 
   &__title {
     // color: #fff;
-    font-family: spruce.$font-family-heading;
+    font-family: var(--spruce-documentation-heading-font-family);
+    font-size: spruce.font-size(h3);
     margin: spruce.spacer(m) 0 0;
   }
 }

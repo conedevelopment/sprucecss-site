@@ -29,25 +29,6 @@ function DocsCards(props) {
             <span className="docs-card__serial-number">06</span>
             <h2 className="docs-card__title">Contribute</h2>
           </div>
-          <div className="docs-card">
-            <span className="docs-card__serial-number">07</span>
-            <h2 className="docs-card__title">Appendix</h2>
-          </div><div className="docs-card">
-            <span className="docs-card__serial-number">04</span>
-            <h2 className="docs-card__title">Sass</h2>
-          </div>
-          <div className="docs-card">
-            <span className="docs-card__serial-number">05</span>
-            <h2 className="docs-card__title">Accessibility</h2>
-          </div>
-          <div className="docs-card">
-            <span className="docs-card__serial-number">06</span>
-            <h2 className="docs-card__title">Contribute</h2>
-          </div>
-          <div className="docs-card">
-            <span className="docs-card__serial-number">07</span>
-            <h2 className="docs-card__title">Appendix</h2>
-          </div>
         </div>
       </div>
     </div>
