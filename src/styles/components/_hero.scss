@@ -45,9 +45,15 @@
 
   &__title {
     font-size: clamp(spruce.font-size(h1), 5vw, 4.75rem);
+    letter-spacing: -2px;
     line-height: 1;
     margin-top: 1.5rem;
     max-width: 50ch;
+
+    span {
+      color: spruce.color('primary');
+      margin-left: -0.1em;
+    }
   }
 
   &__description {
@@ -70,7 +76,7 @@
 
   .notification {
     line-height: spruce.$line-height-md;
-    padding: 0.5rem 0.75rem;
+    padding: 0.35rem 0.75rem;
   }
 
   .install-btn {

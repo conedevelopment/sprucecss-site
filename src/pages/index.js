@@ -20,7 +20,7 @@ function IndexPage() {
           <div className="hero__inner">
             <div className="hero__caption">
               <Notification>The first realase (v0.1.) of Spruce is out.</Notification>
-              <h1 className="hero__title">Spruce CSS<br />Framework</h1>
+              <h1 className="hero__title">Spruce CSS<br />Framework <span>.</span></h1>
               <p className="hero__description">An open-source, lightweight and modernish CSS design system or framework built on Sass. Give your project a solid foundation.</p>
               <div className="hero__btns">
                 <Link to="/docs/getting-started/introduction" className="btn btn--primary btn--lg">Get Started</Link>
