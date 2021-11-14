@@ -13,7 +13,7 @@ function Sidebar() {
             <li><Link to="/docs/getting-started/structure-and-code">Structure and Code</Link></li>
             <li><Link to="/docs/getting-started/sass">Sass</Link></li>
             <li><Link to="/docs/getting-started/accessibility">Accessibility</Link></li>
-            <li><Link to="/docs/getting-started/contribute">Contribute</Link></li>
+            <li><Link to="/docs/getting-started/contribution">Contribution</Link></li>
             <li><Link to="/docs/getting-started/appendix">Appendix</Link></li>
           </ul>
         </nav>

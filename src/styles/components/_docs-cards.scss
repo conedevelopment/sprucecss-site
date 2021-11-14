@@ -10,7 +10,7 @@
   }
 
   &__inner {
-    @include spruce.layout-grid(3rem, 20rem);
+    @include spruce.layout-grid(2rem, 16rem);
   }
 }
 
@@ -43,7 +43,6 @@
   &__title {
     // color: #fff;
     font-family: var(--spruce-documentation-heading-font-family);
-    font-size: spruce.font-size(h3);
     margin: spruce.spacer(m) 0 0;
   }
 }
