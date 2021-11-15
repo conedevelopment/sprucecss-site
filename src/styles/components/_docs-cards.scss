@@ -15,6 +15,8 @@
 }
 
 .docs-card {
+  $this: &;
+
   background-color: #fff;
   border: 2px solid black;
   border-radius: 1.25rem;
@@ -24,7 +26,19 @@
   justify-content: space-between;
   min-height: 20rem;
   padding: spruce.spacer(l);
+  text-decoration: none;
   transition: 0.1s ease-in-out;
+
+  &:hover,
+  &:focus {
+    background-color: spruce.color(primary);
+    border-color: spruce.color(primary);
+
+    #{$this}__serial-number,
+    #{$this}__title {
+      color: #fff;
+    }
+  }
 
   @media (prefers-reduced-motion: reduce) {
       transition: none;
