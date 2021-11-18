@@ -10,25 +10,26 @@
       install-foreground: hsl(0, 0%, 10%),
     )
   ),
+  $font-sizes: (
+    h1: 4.75rem
+  ),
   $font-size-base: 1.063rem,
   $font-size-ratio: 1.250,
   $container-width: 86rem
 );
 
-@use 'layout/documentation';
-
+@use 'components/code-block';
+@use 'components/docs-cards';
+@use 'components/error-404';
+@use 'components/footer';
 @use 'components/header';
 @use 'components/hero';
-@use 'components/footer';
-@use 'components/sidebar';
-@use 'components/table-of-content';
 @use 'components/notification';
-@use 'components/code-block';
 @use 'components/preview';
+@use 'components/sidebar';
 @use 'components/skip-link';
-@use 'components/error-404';
-@use 'components/docs-cards';
-
+@use 'components/table-of-content';
+@use 'layout/documentation';
 
 body {
   --spruce-documentation-heading-font-family: 'Poppins', sans-serif;

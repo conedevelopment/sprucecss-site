@@ -7,9 +7,8 @@
 
   &__inner {
     align-items: center;
-    // border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     display: flex;
-    gap: clamp(1.5rem, 1vw, 2rem);
+    gap: clamp(spruce.spacer(m), 1vw, spruce.spacer(l));
     justify-content: space-between;
     height: 5rem;
     position: relative;
@@ -32,20 +31,22 @@
   }
 
   &__slogen {
-    border-left: 1px solid rgba(0, 0, 0, 0.05);
     display: none;
-    font-family: spruce.$font-family-heading;
-    line-height: 1;
-    margin-left: spruce.spacer(m);
-    padding-left: spruce.spacer(m);
 
     @include spruce.breakpoint(sm) {
+      border-left: 1px solid spruce.color(border);
       display: inline;
+      font-family: spruce.$font-family-heading;
+      line-height: 1;
+      margin-left: spruce.spacer(m);
+      padding-left: spruce.spacer(m);
+  
     }
   }
 
   &__toggle {
     align-items: center;
+    border-radius: 1rem;
     justify-content: center;
     height: 2.75rem;
     padding: 0;
@@ -56,8 +57,8 @@
     }
 
     svg {
-      height: 1rem;
-      width: 1rem;
+      height: 0.85rem;
+      width: 0.85rem;
     }
 
     &[aria-expanded='true'] + ul {
@@ -73,19 +74,25 @@
     justify-content: flex-end;
 
     ul {
+      background-color: spruce.color(background);
+      border-top: 1px dashed spruce.color(border);
       display: none;
+      flex-direction: column;
       flex-wrap: wrap;
       left: 0;
       list-style: none;
       margin: 0;
-      padding: 0;
+      padding: spruce.spacer(s) 0;
       position: absolute;
       right: 0;
       top: 100%;
 
       @include spruce.breakpoint(md) {
+        border: 0;
         display: flex;
+        flex-direction: row;
         left: auto;
+        padding: 0;
         position: relative;
         right: auto;
         top: auto;
@@ -93,10 +100,10 @@
     }
 
     li + li {
-      margin: 1.5rem 0 0;
+      margin: spruce.spacer(s) 0 0;
 
       @include spruce.breakpoint(md) {
-        margin: 0 0 0 2rem;
+        margin: 0 0 0 spruce.spacer(m);
       }
     }
 

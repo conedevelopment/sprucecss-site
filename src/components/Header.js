@@ -50,6 +50,7 @@ function Header() {
                 <li><Link to="/docs/getting-started/introduction">Docs</Link></li>
                 <li><Link to="/changelog">Changelog</Link></li>
                 <li><Link to="/spruce-ui">Spruce UI</Link></li>
+                <li><a href="https://github.com/conedevelopment/spruce">GitHub</a></li>
               </ul>
             </nav>
             <div className="header__actions">
