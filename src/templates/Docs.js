@@ -30,7 +30,8 @@ function Post({ data: { mdx: post } }) {
         <div className="layout-documentation__container">
           <div className="layout-documentation__inner">
             <Sidebar />
-            <div className="layout-documentation__body">
+            <article className="layout-documentation__body">
+              <h1 className="layout-documentation__title">{title}</h1>
               {post.tableOfContents.items &&
               <div className="layout-documentation__table-of-content">
                 <section className="toc" aria-labelledby="toc-title">
@@ -40,11 +41,10 @@ function Post({ data: { mdx: post } }) {
                   </nav>
                 </section>
               </div>}
-              <article className="layout-documentation__content">
-                <h1 className="layout-documentation__title">{title}</h1>
+              <div className="layout-documentation__content">
                 <MDXRenderer>{body}</MDXRenderer>
-              </article>
-            </div>
+              </div>
+            </article>
           </div>
         </div>
       </main>

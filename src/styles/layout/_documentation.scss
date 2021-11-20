@@ -20,6 +20,7 @@
   &__body {
     display: grid;
     gap: spruce.spacer(l);
+    grid-auto-rows: min-content;
     grid-template-columns: minmax(0, 1fr);
     
     @include spruce.breakpoint(lg) {
@@ -29,12 +30,17 @@
 
   &__table-of-content {
     @include spruce.breakpoint(lg) {
+      grid-column: 2 / 3;
       order: 2;
     }
   }
 
   &__content {
     @include spruce.layout-stack(spruce.spacer(m));
+
+    @include spruce.breakpoint(lg) {
+      grid-column: 1 / 2;
+    }
 
     > * + h2,
     > * + h3,
@@ -73,5 +79,9 @@
   &__title {
     font-size: spruce.responsive-font-size($size: 3.3rem, $scaler: 40);
     margin: 0;
+
+    @include spruce.breakpoint(lg) {
+      grid-column: 1 / 2;
+    }
   }
 }
