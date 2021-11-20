@@ -4,13 +4,33 @@
   padding: spruce.spacer(xl) 0;
 
   &__container {
-    @include spruce.layout-center;
+    @include spruce.layout-center($gutter: clamp(spruce.spacer(m), 5vw, spruce.spacer(l)));
   }
 
   &__inner {
     display: grid;
     gap: spruce.spacer(l);
-    grid-template-columns: minmax(0, 1fr) minmax(0, 3fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
+
+    @include spruce.breakpoint(sm) {
+      grid-template-columns: minmax(0, 15rem) minmax(0, 3.5fr);
+    }
+  }
+
+  &__body {
+    display: grid;
+    gap: spruce.spacer(l);
+    grid-template-columns: minmax(0, 1fr);
+    
+    @include spruce.breakpoint(lg) {
+      grid-template-columns: minmax(0, 3.5fr) minmax(0, 15rem);
+    }
+  }
+
+  &__table-of-content {
+    @include spruce.breakpoint(lg) {
+      order: 2;
+    }
   }
 
   &__content {

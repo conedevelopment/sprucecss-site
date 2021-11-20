@@ -2,7 +2,7 @@
 
 .header {
   &__container {
-    @include spruce.layout-center;
+    @include spruce.layout-center($gutter: clamp(spruce.spacer(m), 5vw, spruce.spacer(l)));
   }
 
   &__inner {
@@ -86,6 +86,7 @@
       position: absolute;
       right: 0;
       top: 100%;
+      z-index: 10;
 
       @include spruce.breakpoint(md) {
         border: 0;

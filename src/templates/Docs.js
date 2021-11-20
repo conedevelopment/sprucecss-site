@@ -30,21 +30,23 @@ function Post({ data: { mdx: post } }) {
         <div className="layout-documentation__container">
           <div className="layout-documentation__inner">
             <Sidebar />
-            <div className="layout-documentation__content">
-              <div className="layout-documentation__heading">
-                <h1 className="layout-documentation__title">{title}</h1>
-              </div>
-              <MDXRenderer>{body}</MDXRenderer>
+            <div className="layout-documentation__body">
+              {post.tableOfContents.items &&
+              <div className="layout-documentation__table-of-content">
+                <section className="toc" aria-labelledby="toc-title">
+                  <h3 className="toc__title" id="toc-title">On this page</h3>
+                  <nav className="toc__navigation">
+                    <TableOfContents headings={post.tableOfContents.items} />
+                  </nav>
+                </section>
+              </div>}
+              <article className="layout-documentation__content">
+                <div className="layout-documentation__heading">
+                  <h1 className="layout-documentation__title">{title}</h1>
+                </div>
+                <MDXRenderer>{body}</MDXRenderer>
+              </article>
             </div>
-            {post.tableOfContents.items &&
-            <div className="layout-documentation__table-of-content">
-              <section className="toc" aria-labelledby="toc-title">
-                <h3 className="toc__title" id="toc-title">On this page</h3>
-                <nav className="toc__navigation">
-                  <TableOfContents headings={post.tableOfContents.items} />
-                </nav>
-              </section>
-            </div>}
           </div>
         </div>
       </main>
