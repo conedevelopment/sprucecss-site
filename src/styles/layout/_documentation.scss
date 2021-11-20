@@ -19,9 +19,10 @@
 
   &__body {
     display: grid;
-    gap: spruce.spacer(l);
+    column-gap: spruce.spacer(l);
     grid-auto-rows: min-content;
     grid-template-columns: minmax(0, 1fr);
+    row-gap: spruce.spacer(m);
     
     @include spruce.breakpoint(lg) {
       grid-template-columns: minmax(0, 3.5fr) minmax(0, 15rem);
