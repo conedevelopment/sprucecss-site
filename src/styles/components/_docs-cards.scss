@@ -1,8 +1,6 @@
 @use '../spruce/scss/spruce';
 
 .docs-cards {
-  // margin-bottom: clamp(spruce.spacer(xxl), 6vw, spruce.spacer(xxxl));
-  overflow-x: auto;
   margin-bottom: spruce.spacer(xl);
 
   &__container {
@@ -10,7 +8,7 @@
   }
 
   &__inner {
-    @include spruce.layout-grid(2rem, 20rem);
+    @include spruce.layout-grid(spruce.spacer(l), 20rem);
   }
 }
 
@@ -20,12 +18,11 @@
   background-color: #fff;
   border: 2px solid black;
   border-radius: 1.25rem;
-  // color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 20rem;
-  padding: spruce.spacer(l);
+  padding: clamp(spruce.spacer(m), 7vw, spruce.spacer(l));
   text-decoration: none;
   transition: 0.1s ease-in-out;
 
@@ -45,17 +42,14 @@
   }
 
   &__serial-number {
-    color: #e9dcff;
-    color: spruce.color(secondary);
     color: spruce.color(primary);
     font-family: var(--spruce-documentation-heading-font-family);
-    font-size: 4rem;
+    font-size: spruce.responsive-font-size(4rem, 30);
     font-weight: 700;
     line-height: 1;
   }
 
   &__title {
-    // color: #fff;
     font-family: var(--spruce-documentation-heading-font-family);
     margin: spruce.spacer(m) 0 0;
   }

@@ -1,7 +1,6 @@
 @use '../spruce/scss/spruce';
 
 .footer {
-  // border-top: 1px solid rgba(0, 0, 0, 0.05);
   padding: spruce.spacer(xxl) 0;
 
   &__container {
@@ -9,19 +8,7 @@
   }
 
   &__top {
-    display: grid;
-    grid-template-columns: 1fr;
-    column-gap: calc(var(--spruce-gap-x) * 2);
-    row-gap: var(--spruce-gap-y);
-    align-items: start;
-
-    @include spruce.breakpoint(sm) {
-      grid-template-columns: 1fr 1fr;
-    }
-
-    @include spruce.breakpoint(md) {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
+    @include spruce.layout-grid(spruce.spacer(l), 14rem);
   }
 
   &__logo {
@@ -35,12 +22,12 @@
   }
 
   &__title {
-    margin: 0 0 1rem;
+    margin: 0;
     font-size: spruce.font-size(h4);
   }
 
   &__navigation {
-    margin: 0;
+    margin: spruce.spacer(m) 0;
     padding: 0;
     list-style: none;
 
@@ -61,8 +48,8 @@
   }
 
   &__bottom {
-    margin-top: 4rem;
-    padding-top: 2rem;
+    margin-top: spruce.spacer(l);
+    padding-top: spruce.spacer(m);
 
     @include spruce.breakpoint(md) {
       display: flex;
@@ -73,9 +60,10 @@
     .footer__navigation {
       display: flex;
       flex-wrap: wrap;
+      gap: spruce.spacer(l);
 
       li {
-        margin: 0 2rem 0 0;
+        margin: 0;
       }
     }
   }
@@ -83,12 +71,8 @@
   &__copyright {
     align-items: center;
     display: flex;
-    margin: 1rem 0 0 0;
+    gap: spruce.spacer(s);
     color: var(--spruce-color-gray);
-
-    @include spruce.breakpoint(md) {
-      margin: 0;
-    }
   }
 
   &__cone-logo {

@@ -36,12 +36,18 @@
     }
   }
 
-  &__logo {
-    height: 3rem;
+  &__caption {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    @include spruce.breakpoint(md) {
+      align-items: flex-start;
+    }
   }
 
-  .notification {
-    margin: 0;
+  &__logo {
+    height: 3rem;
   }
 
   &__title {
@@ -58,7 +64,7 @@
   }
 
   &__description {
-    font-size: clamp(1rem, 5vw, spruce.font-size(h4));
+    font-size: clamp(spruce.$font-size-base, 5vw + 1rem, spruce.font-size(h4));
     margin: spruce.spacer(m) 0 0;
     max-width: 50ch;
     margin-top: 1rem;
@@ -68,20 +74,15 @@
     align-items: center;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     margin-top: 1.5rem;
 
     > * {
-      margin: spruce.spacer(xs) spruce.spacer(m) spruce.spacer(xs) 0; 
+      margin: spruce.spacer(xs); 
+    
+      @include spruce.breakpoint(md) {
+        margin: spruce.spacer(xs) spruce.spacer(m) spruce.spacer(xs) 0; 
+      }
     }
-  }
-
-  .notification {
-    line-height: spruce.$line-height-md;
-    padding: 0.35rem 0.75rem;
-  }
-
-  .install-btn {
-    background-color: rgba(0, 0, 0, 0.05);
-    color: spruce.color(heading);
   }
 }

@@ -25,7 +25,7 @@
   }
 
   &__title {
-    font-size: clamp(spruce.font-size(h1), 5vw, 3.5rem);
+    font-size: spruce.responsive-font-size(3.5rem, 30);
     line-height: 1.1;
   }
 
