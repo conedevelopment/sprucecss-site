@@ -34,12 +34,12 @@
     display: none;
 
     @include spruce.breakpoint(sm) {
-      border-left: 1px solid spruce.color(border);
+      border-inline-start: 1px solid spruce.color(border);
       display: inline;
       font-family: spruce.$font-family-heading;
       line-height: 1;
-      margin-left: spruce.spacer(m);
-      padding-left: spruce.spacer(m);
+      margin-inline-start: spruce.spacer(m);
+      padding-inline-start: spruce.spacer(m);
   
     }
   }
@@ -101,10 +101,11 @@
     }
 
     li + li {
-      margin: spruce.spacer(s) 0 0;
+      margin-top: spruce.spacer(s);
 
       @include spruce.breakpoint(md) {
-        margin: 0 0 0 spruce.spacer(m);
+        margin-top: 0;
+        margin-inline-start: spruce.spacer(m);
       }
     }
 
