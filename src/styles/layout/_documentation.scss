@@ -16,11 +16,11 @@
   &__content {
     @include spruce.layout-stack(spruce.spacer(m));
 
-    * + h2,
-    * + h3,
-    * + h4,
-    * + h5,
-    * + h6 {
+    > * + h2,
+    > * + h3,
+    > * + h4,
+    > * + h5,
+    > * + h6 {
       margin-top: spruce.spacer(l);
     }
 

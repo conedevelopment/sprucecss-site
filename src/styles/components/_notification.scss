@@ -1,7 +1,7 @@
 @use '../spruce/scss/spruce';
 
 .notification {
-  background-color: spruce.color(info, alert);
+  background-color: spruce.color(danger, alert);
   border-radius: spruce.$border-radius-sm;
   color: #fff;
   display: inline-flex;
