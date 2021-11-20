@@ -41,9 +41,7 @@ function Post({ data: { mdx: post } }) {
                 </section>
               </div>}
               <article className="layout-documentation__content">
-                <div className="layout-documentation__heading">
-                  <h1 className="layout-documentation__title">{title}</h1>
-                </div>
+                <h1 className="layout-documentation__title">{title}</h1>
                 <MDXRenderer>{body}</MDXRenderer>
               </article>
             </div>
