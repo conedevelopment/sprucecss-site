@@ -20,7 +20,7 @@
       --gap: 4rem;
       grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
       justify-content: flex-start;
-      text-align: left;
+      text-align: start;
     }
   }
 
@@ -42,7 +42,7 @@
     flex-direction: column;
 
     @include spruce.breakpoint(md) {
-      align-items: flex-start;
+      align-items: start;
     }
   }
 
@@ -59,7 +59,7 @@
 
     .highlighted {
       color: spruce.color(primary);
-      margin-left: -0.1em;
+      margin-inline-start: -0.1em;
     }
   }
 
@@ -81,7 +81,8 @@
       margin: spruce.spacer(xs); 
     
       @include spruce.breakpoint(md) {
-        margin: spruce.spacer(xs) spruce.spacer(m) spruce.spacer(xs) 0; 
+        margin: spruce.spacer(xs) 0;
+        margin-inline-end: spruce.spacer(m);
       }
     }
   }

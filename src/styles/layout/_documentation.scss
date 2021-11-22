@@ -67,7 +67,7 @@
         position: absolute;
         text-decoration: none;
         top: calc(50% - 0.45em);
-        left: -1.2em;
+        inset-inline-start: -1.2em;
         opacity: 0;
 
         &:focus {
