@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link, useStaticQuery, graphql  } from 'gatsby';
 
 // Images
-import GitHubLogo from "../images/github.svg";
 import Hamburger from "../images/hamburger.svg";
 import Logo from '../images/spruce-logo.svg';
 

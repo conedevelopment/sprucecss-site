@@ -8,24 +8,23 @@ Curabitur posuere placerat odio, a suscipit velit consectetur nec. Proin tincidu
 
 ## Headings
 
-| Tag Name    | Size        |
-| ----------- | ----------- |
+| Tag Name        | Size                                       |
+| --------------- | ------------------------------------------ |
 | ```<h1></h1>``` | ```$font-size-ratio^4 * $font-size-base``` |
 | ```<h2></h2>``` | ```$font-size-ratio^3 * $font-size-base``` |
 | ```<h3></h3>``` | ```$font-size-ratio^2 * $font-size-base``` |
 | ```<h4></h4>``` | ```$font-size-ratio^1 * $font-size-base``` |
-| ```<h5></h5>``` | ```$font-size-base``` |
-| ```<h6></h6>``` | ```$font-size-base``` |
+| ```<h5></h5>``` | ```$font-size-base```                      |
+| ```<h6></h6>``` | ```$font-size-base```                      |
 
-<section className="preview">
-  <div className="preview__html">
-    <h1 className="preview-heading">h1: The quick brown fox jumps over the lazy dog</h1>
-    <h2 className="preview-heading">h2: The quick brown fox jumps over the lazy dog</h2>
-    <h3 className="preview-heading">h3: The quick brown fox jumps over the lazy dog</h3>
-    <h4 className="preview-heading">h4: The quick brown fox jumps over the lazy dog</h4>
-    <h5 className="preview-heading">h5: The quick brown fox jumps over the lazy dog</h5>
-    <h6 className="preview-heading">h6: The quick brown fox jumps over the lazy dog</h6>
-  </div>
+<Preview>
+  <h1 className="preview-heading">h1: The quick brown fox jumps over the lazy dog</h1>
+  <h2 className="preview-heading">h2: The quick brown fox jumps over the lazy dog</h2>
+  <h3 className="preview-heading">h3: The quick brown fox jumps over the lazy dog</h3>
+  <h4 className="preview-heading">h4: The quick brown fox jumps over the lazy dog</h4>
+  <h5 className="preview-heading">h5: The quick brown fox jumps over the lazy dog</h5>
+  <h6 className="preview-heading">h6: The quick brown fox jumps over the lazy dog</h6>
+</Preview>
 
 ```html
 <h1>The quick brown fox jumps over the lazy dog</h1>
@@ -35,7 +34,15 @@ Curabitur posuere placerat odio, a suscipit velit consectetur nec. Proin tincidu
 <h5>The quick brown fox jumps over the lazy dog</h5>
 <h6>The quick brown fox jumps over the lazy dog</h6>
 ```
-</section>
+
+## Blockquote
+
+<Preview>
+  <blockquote>
+    <p>“Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.”</p>
+    <cite>Albert Einstein</cite>
+  </blockquote>
+</Preview>
 
 Phasellus vel tortor mi. Vivamus bibendum erat lacus, quis tincidunt urna dictum non. Fusce vel ex feugiat, faucibus lectus sit amet, accumsan lacus. Quisque cursus leo nunc, ut maximus arcu suscipit ut. Nulla laoreet felis mauris, quis facilisis urna aliquet ac. Ut ultricies eros pharetra, elementum urna non, mollis eros. Proin viverra, ipsum a laoreet laoreet, nunc erat pulvinar quam, vel vehicula enim nibh non velit.
 
@@ -49,7 +56,7 @@ Definition list division.
 
 ## Sass
 
-### Variabls
+### Variables
 
 ```scss
 $font-size-ratio:      1.333;

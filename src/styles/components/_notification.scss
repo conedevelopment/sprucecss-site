@@ -1,10 +1,29 @@
 @use '../spruce/scss/spruce';
 
 .notification {
-  background-color: spruce.color(danger, alert);
   border-radius: spruce.$border-radius-sm;
-  color: #fff;
-  display: inline-flex;
+  display: flex;
   font-size: 1rem;
-  padding: spruce.spacer(xs) spruce.spacer(s);
+  padding: spruce.spacer(s);
+
+  &--danger {
+    background-color: rgba(spruce.color(danger, alert, true), 0.1);
+    border-top: 0.5rem solid spruce.color(danger, alert);
+  }
+
+  &--info {
+    background-color: rgba(spruce.color(info, alert, true), 0.1);
+    border-top: 0.5rem solid spruce.color(info, alert);
+  }
+
+  &__icon {
+    color: spruce.color(info, alert);
+    flex-shrink: 0;
+    margin-inline-end: 0.5rem;
+    margin-top: 0.2rem;
+  }
+
+  &__content {
+
+  }
 }
