@@ -1,23 +1,19 @@
 @use '../spruce/scss/spruce';
 
 .preview {
+  @include spruce.layout-stack(spruce.spacer(m));
   border: 1px solid rgba(0, 0, 0, 0.075);
   border-radius: spruce.$border-radius-sm;
+  padding: spruce.spacer(m);
 
-  &__html {
-    @include spruce.layout-stack(spruce.spacer(m));
-
-    padding: spruce.spacer(m);
-
-    > * {
-      font-family: spruce.$font-family-base;
-    }
+  > * {
+    font-family: spruce.$font-family-base;
   }
+}
 
-  .prism-code {
-    border-top: 1px solid spruce.color(border);
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    margin: 0;
-  }
+
+.button-grid {
+  align-items: start;
+  display: flex;
+  gap: spruce.spacer(m);
 }

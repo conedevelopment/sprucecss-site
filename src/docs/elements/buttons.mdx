@@ -2,12 +2,43 @@
 title: 'Buttons'
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In aliquam nibh in facilisis vestibulum. Pellentesque bibendum lorem risus, ut viverra lectus blandit sit amet. Ut rhoncus a dui ac euismod.
+<p className="lead">Spruce comes with basic button variations like size, width, color, state. You can also generate your custom color variants.</p>
+
+## Configurable Variables
+
+There are some defaults variables that you can configure to customize the button's look.
+
+```scss
+$btn-font-size:    $font-size-base;
+$btn-font-size-sm: 0.8rem;
+$btn-font-size-lg: 1.15rem;
+$btn-font-style:   null;
+$btn-font-weight:  500;
+$btn-padding:      0.75em 1em;
+$btn-padding-sm:   0.5em;
+$btn-padding-lg:   0.9em 1.15em;
+$btn-icon-size:    0.85em;
+```
+
+Also, Spruce manage the colors in a separate Sass map named $colors (under the btn object).
+
+```scss
+$colors: (
+  btn: (
+    primary-background: hsl(261, 52%, 59%),
+    primary-background-hover: hsl(261, 52%, 40%),
+    primary-foreground: hsl(0, 0%, 100%),
+    secondary-background: hsl(350, 100%, 88%),
+    secondary-background-hover: hsl(350, 100%, 92%),
+    secondary-foreground: hsl(350, 100%, 20%)
+  )
+)
+```
 
 ## Defaults
 
 <Preview>
-  <div class="form-group">
+  <div class="button-grid">
     <button type="button" class="btn btn--primary">Primary</button>
     <button type="button" class="btn btn--secondary">Secondary</button>
   </div>
@@ -21,7 +52,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In aliquam nibh in faci
 ## Sizes
 
 <Preview>
-  <div class="form-group">
+  <div class="button-grid">
     <button type="button" class="btn btn--primary btn--sm">Small</button>
     <button type="button" class="btn btn--primary">Medium</button>
     <button type="button" class="btn btn--primary btn--lg">Large</button>
@@ -33,3 +64,5 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In aliquam nibh in faci
 <button type="button" class="btn btn--primary">Medium</button>
 <button type="button" class="btn btn--primary btn--lg">Large</button>
 ```
+
+## Add Custom Button Variant
