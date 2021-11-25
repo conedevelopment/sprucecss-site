@@ -3,4 +3,5 @@
 .prism-code {
   border-radius: spruce.$border-radius-sm;
   padding: spruce.spacer(m);
+  overflow-x: auto;
 }

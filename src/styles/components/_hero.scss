@@ -13,7 +13,7 @@
     gap: var(--gap);
     grid-template-columns: minmax(0, 1fr);
     justify-content: center;
-    padding: clamp(spruce.spacer(xl), 6vw, 7rem) 0;
+    padding: clamp(spruce.spacer(xl), 10vh, 7rem) 0;
     text-align: center;
 
     @include spruce.breakpoint(md) {

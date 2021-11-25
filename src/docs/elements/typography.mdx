@@ -6,7 +6,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. In aliquam nibh in faci
 
 Curabitur posuere placerat odio, a suscipit velit consectetur nec. Proin tincidunt gravida risus eu commodo. Vivamus tempus enim ac metus finibus vestibulum. Donec ac sagittis quam, in ullamcorper dolor. Vestibulum rhoncus tempor lacus in commodo. Morbi finibus sapien sed tortor interdum, vitae ornare mi accumsan. Vestibulum rutrum facilisis tincidunt.
 
-## First Heading
+## Headings
+
+| Tag Name    | Size        |
+| ----------- | ----------- |
+| ```<h1></h1>``` | ```$font-size-ratio^4 * $font-size-base``` |
+| ```<h2></h2>``` | ```$font-size-ratio^3 * $font-size-base``` |
+| ```<h3></h3>``` | ```$font-size-ratio^2 * $font-size-base``` |
+| ```<h4></h4>``` | ```$font-size-ratio^1 * $font-size-base``` |
+| ```<h5></h5>``` | ```$font-size-base``` |
+| ```<h6></h6>``` | ```$font-size-base``` |
 
 <section className="preview">
   <div className="preview__html">
@@ -37,6 +46,42 @@ Phasellus vel tortor mi. Vivamus bibendum erat lacus, quis tincidunt urna dictum
 Definition List Title
 
 Definition list division.
+
+## Sass
+
+### Variabls
+
+```scss
+$font-size-ratio:      1.333;
+
+$font-size-base:       1rem;
+$font-size-sm:         0.9rem;
+$font-size-lg:         1.1rem;
+$font-size-lead:       math.pow($font-size-ratio, 1) * $font-size-base;
+
+$font-sizes: ();
+$font-sizes: map.merge(
+  (
+    h1: math.pow($font-size-ratio, 4) * $font-size-base,
+    h2: math.pow($font-size-ratio, 3) * $font-size-base,
+    h3: math.pow($font-size-ratio, 2) * $font-size-base,
+    h4: math.pow($font-size-ratio, 1) * $font-size-base,
+    h5: $font-size-base,
+    h6: $font-size-base
+  ),
+  $font-sizes
+);
+
+$font-family-base:    #{system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'};
+$font-family-heading: $font-family-base;
+$font-family-cursive: #{SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace};
+
+$line-height-sm:      1.2;
+$line-height-md:      1.5;
+$line-height-lg:      1.8;
+$line-height-base:    $line-height-lg;
+$line-height-heading: calc(2px + 2ex + 2px);
+```
 
 Kitchen Sink
 

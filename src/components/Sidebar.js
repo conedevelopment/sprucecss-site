@@ -32,7 +32,7 @@ function Sidebar() {
         <nav className="sidebar-section__navigation">
           <ul>
             <li><Link to="/docs/elements/typography">Typography</Link></li>
-            <li><a href="#">Item 2</a></li>
+            <li><Link to="/docs/elements/buttons">Buttons</Link></li>
           </ul>
         </nav>
       </section>

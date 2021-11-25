@@ -5,11 +5,13 @@ import { MDXProvider } from '@mdx-js/react';
 import CodeBlock from './src/components/CodeBlock';
 import H2 from './src/components/H2';
 import Notification from './src/components/Notification';
+import Preview from './src/components/Preview';
 
 const components = {
   h2: H2,
   pre: CodeBlock,
-  Notification
+  Notification,
+  Preview
 };
 
 export const wrapRootElement = ({ element }) => {
