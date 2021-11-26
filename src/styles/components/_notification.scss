@@ -1,23 +1,41 @@
 @use '../spruce/scss/spruce';
 
 .notification {
+  $this: &;
+
   border-radius: spruce.$border-radius-sm;
   display: flex;
   font-size: 1rem;
   padding: spruce.spacer(s);
 
-  &--danger {
+  &--wrong {
     background-color: rgba(spruce.color(danger, alert, true), 0.1);
     border-top: 0.5rem solid spruce.color(danger, alert);
+
+    #{$this}__icon {
+      color: spruce.color(danger, alert);
+    }
   }
 
   &--info {
     background-color: rgba(spruce.color(info, alert, true), 0.1);
     border-top: 0.5rem solid spruce.color(info, alert);
+
+    #{$this}__icon {
+      color: spruce.color(info, alert);
+    }
+  }
+
+  &--correct {
+    background-color: rgba(spruce.color(success, alert, true), 0.1);
+    border-top: 0.5rem solid spruce.color(success, alert);
+
+    #{$this}__icon {
+      color: spruce.color(success, alert);
+    }
   }
 
   &__icon {
-    color: spruce.color(info, alert);
     flex-shrink: 0;
     margin-inline-end: 0.5rem;
     margin-top: 0.2rem;
