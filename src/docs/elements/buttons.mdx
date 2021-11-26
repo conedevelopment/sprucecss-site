@@ -54,13 +54,24 @@ title: 'Buttons'
 
 <Preview>
   <div class="button-grid button-grid--stacked">
-    <button type="button" class="btn btn--primary">Read more</button>
-    <button type="button" class="btn btn--secondary">Block button</button>
+    <button type="button" class="btn btn--primary">
+      <Icon type="cross" className="btn__icon btn__icon--left" />
+      Read more
+    </button>
+    <button type="button" class="btn btn--secondary">
+      Block button
+      <Icon type="check" className="btn__icon btn__icon--right" />
+    </button>
   </div>
 </Preview>
 
 ```html
-<button type="button" class="btn btn--primary">Read more</button>
+<button type="button" class="btn btn--primary">
+  <svg class="btn__icon btn__icon--left">
+    <path ... />
+  </svg>
+  Read more
+</button>
 <button type="button" class="btn btn--secondary">Block button</button>
 ```
 
