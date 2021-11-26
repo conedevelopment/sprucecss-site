@@ -16,4 +16,8 @@
   align-items: start;
   display: flex;
   gap: spruce.spacer(m);
+
+  &--stacked {
+    flex-wrap: wrap;
+  }
 }

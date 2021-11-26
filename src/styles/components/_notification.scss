@@ -8,12 +8,24 @@
   font-size: 1rem;
   padding: spruce.spacer(s);
 
+  code,
+  kbd,
+  samp {
+    border: 1px solid;
+  }
+
   &--wrong {
     background-color: rgba(spruce.color(danger, alert, true), 0.1);
     border-top: 0.5rem solid spruce.color(danger, alert);
 
     #{$this}__icon {
       color: spruce.color(danger, alert);
+    }
+
+    code,
+    kbd,
+    samp {
+      border-color: rgba(spruce.color(danger, alert, true), 0.5);
     }
   }
 
@@ -24,6 +36,12 @@
     #{$this}__icon {
       color: spruce.color(info, alert);
     }
+
+    code,
+    kbd,
+    samp {
+      border-color: rgba(spruce.color(info, alert, true), 0.5);
+    }
   }
 
   &--correct {
@@ -32,6 +50,12 @@
 
     #{$this}__icon {
       color: spruce.color(success, alert);
+    }
+
+    code,
+    kbd,
+    samp {
+      border-color: rgba(spruce.color(success, alert, true), 0.5);
     }
   }
 
