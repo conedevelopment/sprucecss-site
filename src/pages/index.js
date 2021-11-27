@@ -8,7 +8,7 @@ import SEO from '../components/SEO';
 
 // Images
 import HeroImage from '../images/hero.svg';
-import CopyIcon from '../images/copy.svg';
+import CopyIcon from '../images/icons/copy.svg';
 
 function IndexPage() {
   return (

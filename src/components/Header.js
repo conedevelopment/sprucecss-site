@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useStaticQuery, graphql  } from 'gatsby';
 
 // Images
-import Hamburger from "../images/hamburger.svg";
+import MenuIcon from "../images/icons/menu.svg";
 import Logo from '../images/spruce-logo.svg';
 
 function Header() {
@@ -43,7 +43,7 @@ function Header() {
             </div>
             <nav className="header__navigation">
               <button className="btn btn--primary header__toggle" onClick={handleMenuClick} aria-controls="primary-menu" aria-expanded={menuVisible ? 'true' : 'false'} aria-label={menuVisible ? 'Close navigation' : 'Open navigation'}>
-                <Hamburger />
+                <MenuIcon />
               </button>
               <ul>
                 <li><Link to="/docs/getting-started/introduction">Docs</Link></li>

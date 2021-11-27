@@ -1,9 +1,9 @@
 import React from 'react';
 
 // Images
-import CheckIcon from "../images/check.svg";
-import InfoIcon from "../images/info.svg";
-import CrossIcon from "../images/cross.svg";
+import CheckIcon from "../images/icons/check.svg";
+import InfoIcon from "../images/icons/info.svg";
+import CrossIcon from "../images/icons/cross.svg";
 
 function Notification({children, type}) {
   let icon;

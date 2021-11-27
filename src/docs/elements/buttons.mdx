@@ -50,30 +50,35 @@ title: 'Buttons'
 <button type="button" class="btn btn--secondary btn--block">Block button</button>
 ```
 
-## Add Icon
+## With Icon
+
+To use any icon with Spruce, you must specify it in image format, preferably in SVG, because we set its height and width. Use with the ```btn__icon``` class combined with the alignment class: ```btn__icon-start``` (left) ```btn__icon-end``` (right).
 
 <Preview>
   <div class="button-grid button-grid--stacked">
     <button type="button" class="btn btn--primary">
-      <Icon type="cross" className="btn__icon btn__icon--left" />
+      <Icon type="arrow-right" className="btn__icon btn__icon--start" />
       Read more
     </button>
     <button type="button" class="btn btn--secondary">
-      Block button
-      <Icon type="check" className="btn__icon btn__icon--right" />
+      Read more
+      <Icon type="arrow-right" className="btn__icon btn__icon--end" />
     </button>
   </div>
 </Preview>
 
 ```html
 <button type="button" class="btn btn--primary">
-  <svg class="btn__icon btn__icon--left">
-    <path ... />
-  </svg>
+  <svg class="btn__icon btn__icon--start">...</svg>
   Read more
 </button>
-<button type="button" class="btn btn--secondary">Block button</button>
+<button type="button" class="btn btn--secondary">
+  Read more
+  <svg class="btn__icon btn__icon--end">...</svg>
+</button>
 ```
+
+<Notification type="info">We use <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties">CSS Logical Properties</a> to position the icons hence the naming: start, end.</Notification>
 
 ## Configurable Variables
 
@@ -107,3 +112,22 @@ $colors: (
 ```
 
 ## Add Custom Button Variant
+
+```scss
+@mixin btn-variant(
+  $color: primary-foreground,
+  $background: primary-background
+) {
+  background-color: function.color(#{$background}, btn);
+  color: function.color(#{$color}, 'btn');
+
+  &:hover {
+    background-color: function.color(#{$background}-hover, btn);
+    color: function.color(#{$color}, btn);
+  }
+
+  &:focus {
+    @include btn-focus($background);
+  }
+}
+```
