@@ -2,6 +2,14 @@
 
 .prism-code {
   border-radius: spruce.$border-radius-sm;
-  padding: spruce.spacer(m);
-  overflow-x: auto;
+  padding: spruce.spacer(xs) spruce.spacer(m);
+
+  > code {
+    @include spruce.scrollbar($background: hsla(0, 0%, 100%, 0.1));
+    background-color: transparent;
+    border-radius: 0;
+    display: block;
+    overflow-x: auto;
+    padding: spruce.spacer(xs) 0;
+  }
 }
