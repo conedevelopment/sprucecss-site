@@ -2,9 +2,11 @@
 title: 'Buttons'
 ---
 
-<p className="lead">Spruce comes with basic button variations like size, width, color, state. You can also generate your custom color variants.</p>
+<p className="lead">Spruce comes with basic button variations like size, width, color, state and can also generate your custom color variants.</p>
 
 ## Defaults
+
+You can use two default color variants named: primary and secondary. To overwrite colors, see the [configurable variables](#configurable-variables) section.
 
 <Preview>
   <div class="button-grid">
@@ -18,25 +20,53 @@ title: 'Buttons'
 <a href="https://conedevelopment.com" class="btn btn--secondary">Secondary</a>
 ```
 
-<Notification type="correct">Use <code>&lt;a&gt;</code> for links and navigation between pages and <code>&lt;button&gt;</code> for actions like a form sending.</Notification>
+<Notification type="correct">Use <code>&lt;a&gt;</code> for links and navigation between pages and <code>&lt;button&gt;</code> for actions (in page) like a form sending or modal opening.</Notification>
 
 ## Sizes
+
+Spruce came with three different button sizes: small, regular, large. Using the standard size, you don't have to use any modifier. For small use: ```btn--sm```, for large use: ```btn--lg``` class.
 
 <Preview>
   <div class="button-grid">
     <button type="button" class="btn btn--primary btn--sm">Small</button>
-    <button type="button" class="btn btn--primary">Medium</button>
+    <button type="button" class="btn btn--primary">Regular</button>
     <button type="button" class="btn btn--primary btn--lg">Large</button>
   </div>
 </Preview>
 
 ```html
 <button type="button" class="btn btn--primary btn--sm">Small</button>
-<button type="button" class="btn btn--primary">Medium</button>
+<button type="button" class="btn btn--primary">Regular</button>
 <button type="button" class="btn btn--primary btn--lg">Large</button>
 ```
 
+## Disabled state
+
+To disable any button element, use the disabled boolean attribute. The disabled style is a bit dimmer (```opacity: 0.5;```) and has the ```pointer-evens: none;``` to prevent the user actions.
+
+The disabled attribute doesn't work on links, so you have to use the ```btn--disabled``` modifier class. Also, you should omit the ```href``` attribute and set the ```aria-disabled="true"```.
+
+<Preview>
+  <div class="button-grid">
+    <button type="button" class="btn btn--primary" disabled>Disabled button</button>
+    <button type="button" class="btn btn--secondary" disabled>Disabled button</button>
+  </div>
+  <div class="button-grid">
+    <a class="btn btn--primary btn--disabled" aria-disabled="true">Disabled button</a>
+    <a class="btn btn--secondary btn--disabled" aria-disabled="true">Disabled button</a>
+  </div>
+</Preview>
+
+```html
+<button type="button" class="btn btn--primary" disabled>Disabled button</button>
+<button type="button" class="btn btn--secondary" disabled>Disabled button</button>
+<a class="btn btn--primary btn--disabled" aria-disabled="true">Disabled button</a>
+<a class="btn btn--secondary btn--disabled" aria-disabled="true">Disabled button</a>
+```
+
 ## Block Buttons
+
+To display a block button, you can use the btn--block modifier class.
 
 <Preview>
   <div class="button-grid button-grid--stacked">
@@ -78,7 +108,7 @@ To use any icon with Spruce, you must specify it in image format, preferably in 
 </button>
 ```
 
-<Notification type="info">We use <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties">CSS Logical Properties</a> to position the icons hence the naming: start, end.</Notification>
+<Notification type="info">We use <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties">CSS Logical Properties</a> for position to support RTL at the icons hence the naming: start, end.</Notification>
 
 ## Configurable Variables
 
@@ -119,7 +149,7 @@ $colors: (
   $background: primary-background
 ) {
   background-color: function.color(#{$background}, btn);
-  color: function.color(#{$color}, 'btn');
+  color: function.color(#{$color}, btn);
 
   &:hover {
     background-color: function.color(#{$background}-hover, btn);
