@@ -19,7 +19,7 @@
     @include spruce.breakpoint(md) {
       --gap: 4rem;
       grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-      justify-content: flex-start;
+      justify-content: start;
       text-align: start;
     }
   }

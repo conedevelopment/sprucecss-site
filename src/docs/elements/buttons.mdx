@@ -115,15 +115,16 @@ To use any icon with Spruce, you must specify it in image format, preferably in 
 There are some defaults variables that you can configure to customize the button's look.
 
 ```scss
-$btn-font-size:    $font-size-base;
-$btn-font-size-sm: 0.8rem;
-$btn-font-size-lg: 1.15rem;
-$btn-font-style:   null;
-$btn-font-weight:  500;
-$btn-padding:      0.75em 1em;
-$btn-padding-sm:   0.5em;
-$btn-padding-lg:   0.9em 1.15em;
-$btn-icon-size:    0.85em;
+$btn-border-radius: $border-radius-sm; // 0.25rem
+$btn-font-size:     $font-size-base; // 1rem
+$btn-font-size-sm:  0.8rem;
+$btn-font-size-lg:  1.15rem;
+$btn-font-style:    null;
+$btn-font-weight:   500;
+$btn-padding:       0.75em 1em;
+$btn-padding-sm:    0.5em;
+$btn-padding-lg:    0.9em 1.15em;
+$btn-icon-size:     0.85em;
 ```
 
 Also, Spruce manage the colors in a separate Sass map named $colors (under the btn object).
@@ -142,6 +143,26 @@ $colors: (
 ```
 
 ## Add Custom Button Variant
+
+You can create new button color variants using the ```btn-variant``` mixin. First, you must declare the new button's colors at the ```$color``` map under the ```btn``` object. After this, all you have to do is to call the mixin on the preferred selector.
+
+```scss
+// You have to specify the additional colors at the very first import of Spruce.
+@use 'spruce/scss/spruce' with (
+  $colors: (
+    btn: (
+      ternary-background: hsl(247, 65%, 49%),
+      ternary-background-hover: hsl(247, 65%, 39%),
+      ternary-foreground: hsl(0, 0%, 100%),
+    )
+  )
+);
+
+// Call the btn-variant mixin with the colors.
+.btn--ternary {
+  @include spruce.btn-variant($color: install-foreground, $background: install-background);
+}
+```
 
 ```scss
 @mixin btn-variant(
