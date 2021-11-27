@@ -1,0 +1,170 @@
+---
+title: 'Forms'
+---
+
+<Preview>
+  <form>
+    <fieldset>
+      <legend>Your Name</legend>
+      <div class="form-group">
+        <label class="form-label" for="first-name">First Name</label>
+        <input class="form-control" id="first-name" name="first-name" type="text"/><span class="form-description">Just a help text for presentation purpose</span>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="last-name">Last Name</label>
+        <input class="form-control" id="last-name" name="last-name" type="text" disabled="disabled"/>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Address</legend>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="street-address">Street Address</label>
+          <input class="form-control form-control--valid" id="street-address" name="street-address" type="text" placeholder="Your street address..."/><span class="field-feedback field-feedback--valid">Looks fine</span>
+        </div>
+      </div>
+      <div class="form-row form-row--mixed">
+        <div class="form-group">
+          <label class="form-label" for="city">City</label>
+          <input class="form-control form-control--invalid" id="city" name="city" type="text"/><span class="field-feedback field-feedback--invalid">Not that fine</span>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="state">State</label>
+          <input class="form-control" id="state" name="state" type="text"/>
+        </div>
+        <div class="form-group form-group--width-auto" style="--col-width: 8ch;">
+          <label class="form-label" for="zip">Zip</label>
+          <input class="form-control" id="zip" name="zip" type="text"/>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Sizes</legend>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="street-address-1">Street Address</label>
+          <input class="form-control form-control--lg" id="street-address-1" name="street-address-1" type="text"/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="street-address-2">Street Address</label>
+          <input class="form-control form-control--sm" id="street-address-2" name="street-address-2" type="text"/>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Do you own or rent?</legend>
+      <div class="form-group form-group--vertical-check">
+        <label class="form-check">
+          <input class="form-check__control" type="radio" value="own" name="property-ownership"/><span class="form-label form-check__label">Own</span>
+        </label>
+        <label class="form-check">
+          <input class="form-check__control" type="radio" value="rent" name="property-ownership"/><span class="form-label form-check__label">Rent</span>
+        </label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Which one of you like?</legend>
+      <div class="form-group form-group--vertical-check">
+        <label class="form-check">
+          <input class="form-check__control" type="checkbox" value="own" name="property-ownership2"/><span class="form-label form-check__label">Own</span>
+        </label>
+        <label class="form-check">
+          <input class="form-check__control" type="checkbox" value="rent" name="property-ownership2" disabled="disabled"/><span class="form-label form-check__label">Rent</span>
+        </label>
+        <label class="form-check">
+          <input class="form-check__control" type="checkbox" value="misc" name="property-ownership2"/><span class="form-label form-check__label">Misc</span>
+        </label>
+        <label class="form-check">
+          <input class="form-check__control" id="indeterminate" type="checkbox" value="misc" name="property-ownership2"/><span class="form-label form-check__label">Indeterminate</span>
+        </label>
+      </div>
+      <div class="form-group form-group--vertical-check">
+        <label class="form-check form-check--lg">
+          <input class="form-check__control" type="checkbox" value="own" name="property-ownership3"/><span class="form-label form-check__label">Own</span>
+        </label>
+        <label class="form-check form-check--lg">
+          <input class="form-check__control" type="checkbox" value="rent" name="property-ownership3" disabled="disabled"/><span class="form-label form-check__label">Rent</span>
+        </label>
+        <label class="form-check form-check--lg">
+          <input class="form-check__control" type="checkbox" value="misc" name="property-ownership3"/><span class="form-label form-check__label">Misc</span>
+        </label>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="cars">Your favorite car brand</label>
+        <select class="form-control" id="cars" name="cars">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="cars2">Your favorite car brand</label>
+        <select class="form-control form-control--lg" id="cars2" name="cars2">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="cars3">Your favorite car brand</label>
+        <select class="form-control form-control--sm" id="cars3" name="cars3">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="cars4">Your favorite car brand</label>
+        <select class="form-control" id="cars4" name="cars4" disabled="disabled">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="cars5">Your favorite car brand</label>
+        <select class="form-control" id="cars5" name="cars5" multiple="multiple">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <button class="btn btn--primary">Save</button>
+        <button class="btn btn--primary" disabled="disabled">Save</button>
+      </div>
+      <div class="form-group">
+        <button class="btn btn--primary btn--sm">Filter</button>
+      </div>
+      <div class="form-group">
+        <button class="btn btn--primary btn--lg">Get Started</button>
+      </div>
+      <div class="form-group">
+        <button class="btn btn--secondary">Save</button>
+        <button class="btn btn--secondary" disabled="disabled">Save</button>
+      </div>
+      <div class="form-group">
+        <button class="btn btn--secondary btn--sm">Filter</button>
+      </div>
+      <div class="form-group">
+        <button class="btn btn--secondary btn--lg">Get Started</button>
+      </div>
+    </fieldset>
+  </form>
+</Preview>
+
+```html
+<h1>The quick brown fox jumps over the lazy dog</h1>
+<h2>The quick brown fox jumps over the lazy dog</h2>
+<h3>The quick brown fox jumps over the lazy dog</h3>
+<h4>The quick brown fox jumps over the lazy dog</h4>
+<h5>The quick brown fox jumps over the lazy dog</h5>
+<h6>The quick brown fox jumps over the lazy dog</h6>
+```
