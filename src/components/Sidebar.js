@@ -19,6 +19,7 @@ function Sidebar() {
           </ul>
         </nav>
       </section>
+      {/*
       <section className="sidebar-section">
         <h3 className="sidebar-section__title">Customize</h3>
         <nav className="sidebar-section__navigation">
@@ -28,6 +29,7 @@ function Sidebar() {
           </ul>
         </nav>
       </section>
+      */}
       <section className="sidebar-section">
         <h3 className="sidebar-section__title">Elements</h3>
         <nav className="sidebar-section__navigation">
@@ -39,6 +41,7 @@ function Sidebar() {
           </ul>
         </nav>
       </section>
+      {/*
       <section className="sidebar-section">
         <h3 className="sidebar-section__title">Layout</h3>
         <nav className="sidebar-section__navigation">
@@ -58,6 +61,7 @@ function Sidebar() {
           </ul>
         </nav>
       </section>
+      */}
     </aside>
   )
 }

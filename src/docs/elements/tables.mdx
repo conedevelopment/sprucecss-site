@@ -60,9 +60,9 @@ Use the ```table``` class on an HTML ```<table>``` element to use the default st
 
 <Notification>Use <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th#attr-scope">scope attribute</a> to define which header relates with which table cells.</Notification>
 
-## Striped Style
+## Striped and Hover Styles
 
-Use the ```table``` class on an HTML ```<table>``` element to use the default styling.
+Use the ```table--striped``` class on a ```<table>``` to display a zebra-striped styling. To add hover style to the table rows, use the ```table--hover``` class.
 
 <Preview>
   <table className="table table--striped table--hover">
@@ -98,7 +98,7 @@ Use the ```table``` class on an HTML ```<table>``` element to use the default st
 </Preview>
 
 ```html
-<table class="table table--striped">
+<table class="table table--striped table--hover">
   <thead>
     <tr>
       <th scope="col">ID</th>
@@ -113,4 +113,19 @@ Use the ```table``` class on an HTML ```<table>``` element to use the default st
 </table>
 ```
 
-## Responsive, Scrollable Tables
+## Responsive, Scrollable Table
+
+Using the ```<div class="table-responsive"></div>``` as a wrapper element you can make the tables horizontally scrollable.
+
+```html
+<div class="table-responsive">
+  <table class="table table--striped table--hover">
+    <thead>
+      ...
+    </thead>
+    <tbody>
+      ...
+    </tbody>
+  </table>
+</div>
+```
