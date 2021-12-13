@@ -57,7 +57,7 @@ function Footer() {
             <li><a href="#">Privacy</a></li>
           </ul>
           <p className="footer__copyright">
-            <a href="https://conedevelopment.com/" className="footer__cone-logo"><ConeLogo /></a>
+            <a href="https://conedevelopment.com/" className="footer__cone-logo" aria-label="Cone"><ConeLogo /></a>
             &copy; 2021
           </p>
         </div>

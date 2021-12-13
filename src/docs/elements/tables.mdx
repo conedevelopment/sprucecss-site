@@ -9,7 +9,7 @@ title: 'Tables'
 Use the ```table``` class on an HTML ```<table>``` element to use the default styling.
 
 <Preview>
-  <table class="table">
+  <table>
     <caption>A generic introduction to the table.</caption>
     <thead>
       <tr>
@@ -65,7 +65,7 @@ Use the ```table``` class on an HTML ```<table>``` element to use the default st
 Use the ```table--striped``` class on a ```<table>``` to display a zebra-striped styling. To add hover style to the table rows, use the ```table--hover``` class.
 
 <Preview>
-  <table className="table table--striped table--hover">
+  <table className="table--striped table--hover">
     <thead>
       <tr>
         <th scope="col">ID</th>
@@ -115,7 +115,7 @@ Use the ```table--striped``` class on a ```<table>``` to display a zebra-striped
 
 ## Responsive, Scrollable Table
 
-Using the ```<div class="table-responsive"></div>``` as a wrapper element you can make the tables horizontally scrollable.
+Adding the ```<div class="table-responsive"></div>``` as a wrapper element you can make the tables horizontally scrollable.
 
 ```html
 <div class="table-responsive">
@@ -128,4 +128,24 @@ Using the ```<div class="table-responsive"></div>``` as a wrapper element you ca
     </tbody>
   </table>
 </div>
+```
+
+## Configurable Variables
+
+There are some defaults variables that you can configure to customize the table's look.
+
+```scss
+$table-responsive-width: 40rem;
+```
+
+Also, Spruce manage the colors in a separate Sass map named ```$colors``` (under the ```table``` object).
+
+```scss
+$colors: (
+  table: (
+    border: hsl(0, 0%, 90%),
+    hover: hsla(0, 0%, 0%, 0.05),
+    stripe: hsla(0, 0%, 0%, 0.025)
+  )
+)
 ```
