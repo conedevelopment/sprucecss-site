@@ -2,18 +2,26 @@
 title: 'Typography'
 ---
 
-Typography 
+<p class="lead">Typography is an essential part of any system. With Spruce, you get basic styles for the most related HTML elements.</p>
+
+- The type scale is REM (root-relative EM) based. The base size is set to 1rem by default, which will usually be 16px (depending on the browser's defaults).
+- You can use four diferent font sizing variables: ```$font-size-base``` (1rem), ```$font-size-sm``` (0.9rem), ```$font-size-lg``` (1.1rem) and ```$font-size-lead``` (math.pow($font-size-ratio, 1) * $font-size-base).
+ 
 
 ## Headings
 
-| Tag Name        | Size                                       |
-| --------------- | ------------------------------------------ |
-| ```<h1></h1>``` | ```$font-size-ratio^4 * $font-size-base``` |
-| ```<h2></h2>``` | ```$font-size-ratio^3 * $font-size-base``` |
-| ```<h3></h3>``` | ```$font-size-ratio^2 * $font-size-base``` |
-| ```<h4></h4>``` | ```$font-size-ratio^1 * $font-size-base``` |
-| ```<h5></h5>``` | ```$font-size-base```                      |
-| ```<h6></h6>``` | ```$font-size-base```                      |
+The font sizes for the heading tags are located in the $font-sizes map. We use the math.pow() Sass function to generate the scale which looks like the following:
+
+```scss
+$font-sizes: (
+  h1: math.pow($font-size-ratio, 4) * $font-size-base,
+  h2: math.pow($font-size-ratio, 3) * $font-size-base,
+  h3: math.pow($font-size-ratio, 2) * $font-size-base,
+  h4: math.pow($font-size-ratio, 1) * $font-size-base,
+  h5: $font-size-base,
+  h6: $font-size-base
+);
+```
 
 <Preview>
   <h1 className="preview-heading">h1: The quick brown fox jumps over the lazy dog</h1>
@@ -25,13 +33,34 @@ Typography
 </Preview>
 
 ```html
-<h1>The quick brown fox jumps over the lazy dog</h1>
-<h2>The quick brown fox jumps over the lazy dog</h2>
-<h3>The quick brown fox jumps over the lazy dog</h3>
-<h4>The quick brown fox jumps over the lazy dog</h4>
-<h5>The quick brown fox jumps over the lazy dog</h5>
-<h6>The quick brown fox jumps over the lazy dog</h6>
+<h1>h1: The quick brown fox jumps over the lazy dog</h1>
+<h2>h2: The quick brown fox jumps over the lazy dog</h2>
+<h3>h3: The quick brown fox jumps over the lazy dog</h3>
+<h4>h4: The quick brown fox jumps over the lazy dog</h4>
+<h5>h5: The quick brown fox jumps over the lazy dog</h5>
+<h6>h6: The quick brown fox jumps over the lazy dog</h6>
 ```
+
+### Get Heading Size
+
+To access any of the ```$font-sizes``` object sizes, you can use the ```spruce.font-size()``` function that allows you also to create responsive font sizing. The ```font-size()``` function utilizes the clamp() CSS function, which gives us the possibility to set a value based on any relative unit (in this case: 5vw + 1rem).
+
+For example you can get the the h2 size like so:
+
+```scss
+font-size: spruce.font-size(h2);
+```
+
+Which will generate the value of:
+```scss
+font-size: clamp(1.7647460938rem, 5vw + 1rem, 2.076171875rem);
+```
+
+For the detailed function, please see the [_font-size.scss file](https://github.com/conedevelopment/spruce/blob/master/scss/function/_font-size.scss).
+
+## Lead
+
+
 
 ## Blockquote
 
