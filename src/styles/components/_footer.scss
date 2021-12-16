@@ -36,13 +36,13 @@
     }
 
     a {
-      color: var(--spruce-color-gray);
+      color: spruce.color(text);
       text-decoration: none;
 
       &:hover,
       &:focus,
       &:active {
-        color: hsl(var(--spruce-color-primary));
+        color: spruce.color(primary);
       }
     }
   }
