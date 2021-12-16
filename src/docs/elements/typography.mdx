@@ -10,7 +10,7 @@ title: 'Typography'
 
 ## Headings
 
-The font sizes for the heading tags are located in the $font-sizes map. We use the math.pow() Sass function to generate the scale which looks like the following:
+The font sizes for the heading tags are located in the $font-sizes map. We use the ```math.pow()``` Sass function to generate the scale which looks like the following:
 
 ```scss
 $font-sizes: (
@@ -60,9 +60,15 @@ For the detailed function, please see the [_font-size.scss file](https://github.
 
 ## Lead
 
+You can create paragraphs with bigger font-size using the ```lead``` class.
+
 <Preview>
-  <p class="lead">Spruce is a Sass-based CSS design system, a minimalistic framework that helps us get our foundation right and manage multiple projects better.</p>
+  <p class="lead">Mauris sit amet ipsum eget orci congue egestas a eu ipsum. Mauris porttitor tincidunt ligula at finibus. Vestibulum feugiat semper aliquet.</p>
 </Preview>
+
+```html
+<p class="lead">Mauris sit amet ipsum eget orci congue egestas a eu ipsum. Mauris porttitor tincidunt ligula at finibus. Vestibulum feugiat semper aliquet.</p>
+```
 
 ## Blockquote
 
@@ -73,15 +79,9 @@ For the detailed function, please see the [_font-size.scss file](https://github.
   </blockquote>
 </Preview>
 
-Phasellus vel tortor mi. Vivamus bibendum erat lacus, quis tincidunt urna dictum non. Fusce vel ex feugiat, faucibus lectus sit amet, accumsan lacus. Quisque cursus leo nunc, ut maximus arcu suscipit ut. Nulla laoreet felis mauris, quis facilisis urna aliquet ac. Ut ultricies eros pharetra, elementum urna non, mollis eros. Proin viverra, ipsum a laoreet laoreet, nunc erat pulvinar quam, vel vehicula enim nibh non velit.
+## Inline Text elements
 
-> “Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.”
-> 
-> Albert Einstein
 
-Definition List Title
-
-Definition list division.
 
 ## Sass
 

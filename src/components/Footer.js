@@ -27,35 +27,33 @@ function Footer() {
             </Link>
           </div>
           <div className="footer__col">
-            <h3 className="footer__title" id="footer-title-01">Documentation</h3>
+            <h3 className="footer__title" id="footer-title-01">Getting Started</h3>
             <ul className="footer__navigation" aria-labelledby="footer-title-01">
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">About</a></li>
+              <li><Link to="/docs/getting-started/introduction">Introduction</Link></li>
+              <li><Link to="/docs/getting-started/installation">Installation</Link></li>
+              <li><Link to="/docs/getting-started/structure-and-code">Structure and Code</Link></li>
+              <li><Link to="/docs/getting-started/sass">Sass</Link></li>
             </ul>
           </div>
           <div className="footer__col">
-            <h3 className="footer__title">Help &amp; Contact</h3>
+            <h3 className="footer__title">Elements</h3>
             <ul className="footer__navigation">
-              <li><a href="#">Resolution Center</a></li>
-              <li><a href="#">Seller Information Center</a></li>
-              <li><a href="#">Contact us</a></li>
+            <li><Link to="/docs/elements/typography">Typography</Link></li>
+            <li><Link to="/docs/elements/tables">Tables</Link></li>
+            <li><Link to="/docs/elements/buttons">Buttons</Link></li>
+            <li><Link to="/docs/elements/forms">Forms</Link></li>
             </ul>
           </div>
           <div className="footer__col">
-            <h3 className="footer__title">Community</h3>
+            <h3 className="footer__title">More Projects</h3>
             <ul className="footer__navigation">
-              <li><a href="#">Announcements</a></li>
-              <li><a href="#">Answer center</a></li>
-              <li><a href="#">Groups</a></li>
+              <li><a href="https://pineco.de/">Pine, our blog</a></li>
+              <li><a href="https://bazar.conedevelopment.com/">Bazar, our Laravel package</a></li>
             </ul>
           </div>
         </div>
         <div className="footer__bottom">
-          <ul className="footer__navigation">
-            <li><a href="#">Conditions of Use</a></li>
-            <li><a href="#">Privacy</a></li>
-          </ul>
+          <p className="footer__information">Code is licensed under <a href="https://github.com/conedevelopment/spruce/blob/master/LICENSE/">MIT</a>, docs is <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> Version 0.1.0</p>
           <p className="footer__copyright">
             <a href="https://conedevelopment.com/" className="footer__cone-logo" aria-label="Cone"><ConeLogo /></a>
             &copy; 2021
