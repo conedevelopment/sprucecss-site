@@ -44,6 +44,11 @@
       &:active {
         color: spruce.color(primary);
       }
+
+      &[aria-current='page'] {
+        color: spruce.color(primary);
+        font-weight: 700;
+      }
     }
   }
 
