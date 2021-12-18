@@ -35,7 +35,16 @@ module.exports = {
         icon: 'src/images/icon.png',
       },
     },
-    'gatsby-plugin-mdx',
+    {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: 'gatsby-remark-responsive-iframe'
+          }
+        ]
+      }
+    },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
