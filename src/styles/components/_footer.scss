@@ -1,4 +1,4 @@
-@use '../spruce/scss/spruce';
+@use '../sprucecss/scss/spruce';
 
 .footer {
   padding: spruce.spacer(xxl) 0;
@@ -73,17 +73,10 @@
     }
   }
 
-  &__copyright {
-    align-items: center;
-    display: flex;
-    gap: spruce.spacer(s);
-    color: var(--spruce-color-gray);
-  }
-
   &__cone-logo {
     align-items: center;
     display: inline-flex;
-    height: 0.8rem;
+    height: 0.9rem;
     margin-right: spruce.spacer(xs);
 
     svg {

@@ -1,4 +1,4 @@
-@use '../spruce/scss/spruce';
+@use '../sprucecss/scss/spruce';
 
 .preview {
   @include spruce.layout-stack(spruce.spacer(m));
