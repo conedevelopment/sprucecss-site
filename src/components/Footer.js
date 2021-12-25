@@ -47,8 +47,8 @@ function Footer() {
           <div className="footer__col">
             <h3 className="footer__title">More Projects</h3>
             <ul className="footer__navigation">
-              <li><a href="https://pineco.de/">Pine, our blog</a></li>
-              <li><a href="https://bazar.conedevelopment.com/">Bazar, our Laravel package</a></li>
+              <li><a href="https://pineco.de/">Pine</a></li>
+              <li><a href="https://bazar.conedevelopment.com/">Bazar</a></li>
             </ul>
           </div>
         </div>
