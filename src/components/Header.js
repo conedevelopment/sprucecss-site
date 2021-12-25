@@ -3,7 +3,7 @@ import { Link, useStaticQuery, graphql  } from 'gatsby';
 
 // Images
 import MenuIcon from "../images/icons/menu.svg";
-import Logo from '../images/spruce-logo.svg';
+import Logo from '../images/spruce-logo-beta.svg';
 
 function Header() {
   const [menuVisible, setMenuVisible] = useState(false);
