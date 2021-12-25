@@ -15,3 +15,24 @@ npm install sprucecss --save
 ```
 yarn add sprucecss
 ```
+
+## Install Manually
+
+[Download the latest release](https://github.com/conedevelopment/sprucecss/archive/refs/heads/main.zip), find the dist folder at the root (where are the compiled files), and use the preferred CSS file (minified, regular).
+
+```html
+<link href="sprucecss.min.css" rel="stylesheet">
+<link href="sprucecss.css" rel="stylesheet">
+```
+
+## Import It With @use
+
+To import it into your project, you must use Sass’s ```@use```, a newer type of ```@import``` that is similar to the JavaScript modules. Unlike using @import, you have to import it in every file where you want to use Spruce, its variables, functions, or mixins.
+
+``` scss
+@use '~sprucecss/scss/spruce';
+```
+
+<Notification type="info">The tilde ~ character means the node_modules folder in a Webpack configuration, so you don’t have to use a relative path.</Notification>
+
+If you need a [simple Sass compile setup](https://pineco.de/the-simplest-sass-compile-setup/), check out our article on Pine.
