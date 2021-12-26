@@ -33,6 +33,24 @@ To import it into your project, you must use Sass’s ```@use```, a newer type o
 @use '~sprucecss/scss/spruce';
 ```
 
+The @use rule loads the mixins, functions, and variables in a namespaced way. If you use the import above, you can refer to the Spruce assets using the “spruce” namespace like so:
+
+```scss
+.section {
+  @include spruce.layout-stack(spruce.spacer(m));
+}
+```
+
+We include the ```layout-stack``` mixin in this example and use the ```spacer``` function to get the “m” sized spacer.
+
+If you don’t want to use namespacing, you have to import like the following:
+
+```scss
+@use '~sprucecss/scss/spruce' as *;
+```
+
+Although the namespacing doesn’t necessary for a simple project, we will show you the examples this way because we like the idea and think it is more future proof.
+
 <Notification type="info">The tilde ~ character means the node_modules folder in a Webpack configuration, so you don’t have to use a relative path.</Notification>
 
 If you need a [simple Sass compile setup](https://pineco.de/the-simplest-sass-compile-setup/), check out our article on Pine.
