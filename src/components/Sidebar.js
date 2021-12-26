@@ -31,6 +31,16 @@ function Sidebar() {
       </section>
       */}
       <section className="sidebar-section">
+        <h3 className="sidebar-section__title">Sass</h3>
+        <nav className="sidebar-section__navigation">
+          <ul>
+            <li><Link to="/docs/sass/variables">Variables</Link></li>
+            <li><Link to="/docs/sass/mixins">Mixins</Link></li>
+            <li><Link to="/docs/sass/functions">Functions</Link></li>
+          </ul>
+        </nav>
+      </section>
+      <section className="sidebar-section">
         <h3 className="sidebar-section__title">Elements</h3>
         <nav className="sidebar-section__navigation">
           <ul>
@@ -42,15 +52,6 @@ function Sidebar() {
         </nav>
       </section>
       {/*
-      <section className="sidebar-section">
-        <h3 className="sidebar-section__title">Layout</h3>
-        <nav className="sidebar-section__navigation">
-          <ul>
-            <li><a href="#">Item 1</a></li>
-            <li><a href="#">Item 2</a></li>
-          </ul>
-        </nav>
-      </section>
       <section className="sidebar-section">
         <h3 className="sidebar-section__title">Utilities</h3>
         <nav className="sidebar-section__navigation">

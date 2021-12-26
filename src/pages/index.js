@@ -20,7 +20,7 @@ function IndexPage() {
             <div className="hero__inner">
               <div className="hero__caption">
                 <h1 className="hero__title">Spruce CSS<br />Framework <span className="highlighted">.</span></h1>
-                <p className="hero__description">An open-source, lightweight and modernish CSS design system or framework built on Sass. Give your project a solid foundation.</p>
+                <p className="hero__description">An open-source, lightweight and modernish CSS design system, framework built on Sass. Give your project a solid foundation.</p>
                 <div className="hero__btns">
                   <Link to="/docs/getting-started/introduction" className="btn btn--primary btn--lg">Get Started</Link>
                   <button className="btn btn--install btn--lg">
