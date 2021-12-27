@@ -5,13 +5,51 @@ title: 'Mixins'
 
 ## breakpoint
 
-breakpoint($breakpoint, $logic: false)
+With the breakpoint mixin, you can create a ```min-width``` based (mobile-first) breakpoint on a predefined breakpoint from the ```$breakpoints``` map.
 
-| Name        | Default Value | Description |
+The predefined breakpoints are the followings:
+
+```scss
+$breakpoints: (
+  xs: 32em,
+  sm: 48em,
+  md: 64em,
+  lg: 80em,
+  xl: 90em,
+  xxl: 110em
+);
+```
+
+| Name        | Default&nbsp;Value | Description |
 | ----------- | ------------- | ------------|
-| $breakpoint | none          |             |
-| $logic      | false         |             |
+| $breakpoint | none          | The name of the key from the ```$breakpoints``` map.            |
+| $logic      | false         | Any custom logic next to the ```min-width``` value connected with the “and” logical operator.            |
 
-[View Source on GitHub]()
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_breakpoint.scss)
 
-### Example
+
+### Example(s)
+
+```scss
+.footer {
+  display: block;
+  align-items: center;
+
+  @include spruce.breakpoint(md) { // @media (min-width: 64em)
+    display: flex;
+    justify-content: space-between;
+  }
+}
+```
+
+```scss
+.footer {
+  display: block;
+  align-items: center;
+
+  @include spruce.breakpoint(md) { // @media screen and (min-width: 64em)
+    display: flex;
+    justify-content: space-between;
+  }
+}
+```
