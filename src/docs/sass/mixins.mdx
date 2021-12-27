@@ -57,7 +57,7 @@ $breakpoints: (
 
 ## btn-variant
 
-Using the btn-variant mixin, you can create a new button variant. First, you must declare the colors of the new button (background, background-hover, foreground) in the $colors map at the very first @use of Spruce.
+Using the ```btn-variant``` mixin, you can create a new button variant. First, you must declare the colors of the new button (background, background-hover, foreground) in the ```$colors``` map at the very first ```@use``` of Spruce.
 
 ### Argument(s)
 
@@ -92,4 +92,27 @@ Declare the colors of the button. The mixin will search for the keys under the b
 
 ```html
 <a href="https://conedevelopment.com" class="btn btn--custom btn--lg">Go to Cone</a>
+```
+
+## layout-center
+
+With the help of the ```layout-center``` mixin, you can center any element.  It is most useful for the generic container element for the main layouts.
+
+### Argument(s)
+
+| Name             | Default&nbsp;Value            | Description                                                                             |
+|------------------|-------------------------------|-----------------------------------------------------------------------------------------|
+| ```$gutter```    | ```spruce.spacer(m)```        | The padding value on either side of the element. The value comes from the $spacers map. |
+| ```$max-width``` | ```spruce.$container-width``` | Set the max-width value of the element.                                                 |
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_layout.scss#L6)
+
+### Example(s)
+
+```scss
+.hero {
+  &__container {
+    @include spruce.layout-center($gutter: clamp(spruce.spacer(m), 5vw, spruce.spacer(l)));
+  }
+}
 ```
