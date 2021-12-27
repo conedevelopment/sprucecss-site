@@ -116,3 +116,32 @@ With the help of the ```layout-center``` mixin, you can center any element.  It 
   }
 }
 ```
+
+## layout-stack
+
+Using the help of the ```layout-stack``` mixin, you can classical stack layout where the elements are stacked under each other.
+
+### Argument(s)
+
+| Name             | Default Value            | Description                                                                             |
+|------------------|-------------------------------|-----------------------------------------------------------------------------------------|
+| ```$gutter```    | ```function.spacer(m)```        | The margin value on either side of the element. The value comes from the $spacers map. |
+| ```$width``` | ```true``` | Set the max-width value of the element.                                                 |
+| ```$align``` | ```none``` | Set the max-width value of the element.                      |
+| ```$split``` | ```0``` | Set the max-width value of the element.                      |
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_layout.scss#L12)
+
+### Example(s)
+
+```scss
+fieldset {
+  @include mixin.layout-stack(function.spacer(s));
+}
+```
+
+@mixin layout-stack(
+  $gutter: function.spacer(m),
+  $width: true,
+  $align: none,
+  $split: 0
+) {
