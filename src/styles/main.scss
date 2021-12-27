@@ -48,3 +48,8 @@ h6 {
 .btn--install {
   @include spruce.btn-variant(install-foreground, install-background);
 }
+
+.table th,
+.table td {
+  min-width: 10rem;
+}
