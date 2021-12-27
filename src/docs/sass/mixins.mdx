@@ -5,7 +5,7 @@ title: 'Mixins'
 
 ## breakpoint
 
-With the breakpoint mixin, you can create a ```min-width``` based (mobile-first) breakpoint on a predefined breakpoint from the ```$breakpoints``` map.
+With the ```breakpoint``` mixin, you can create a ```min-width``` based (mobile-first) breakpoint on a predefined breakpoint from the ```$breakpoints``` map.
 
 The predefined breakpoints are the followings:
 
@@ -20,13 +20,14 @@ $breakpoints: (
 );
 ```
 
-| Name        | Default&nbsp;Value | Description |
-| ----------- | ------------- | ------------|
-| $breakpoint | none          | The name of the key from the ```$breakpoints``` map.            |
-| $logic      | false         | Any custom logic next to the ```min-width``` value connected with the “and” logical operator.            |
+### Argument(s)
+
+| Name              | Default&nbsp;Value | Description                                                                                   |
+|-------------------|--------------------|-----------------------------------------------------------------------------------------------|
+| ```$breakpoint``` |                    | The name of the key from the ```$breakpoints``` map.                                          |
+| ```$logic```      | ```false```        | Any custom logic next to the ```min-width``` value connected with the “and” logical operator. |
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_breakpoint.scss)
-
 
 ### Example(s)
 
@@ -52,4 +53,43 @@ $breakpoints: (
     justify-content: space-between;
   }
 }
+```
+
+## btn-variant
+
+Using the btn-variant mixin, you can create a new button variant. First, you must declare the colors of the new button (background, background-hover, foreground) in the $colors map at the very first @use of Spruce.
+
+### Argument(s)
+
+| Name              | Default&nbsp;Value       | Description                                 |
+|-------------------|--------------------------|---------------------------------------------|
+| ```$foreground``` | ```primary-foreground``` | The value of the button's foreground color. |
+| ```$background``` | ```primary-background``` | The value of the button's background color. |
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_button.scss#L16)
+
+### Example(s)
+
+Declare the colors of the button. The mixin will search for the keys under the btn object.
+
+```scss
+@use '~sprucecss/scss/spruce' with (
+  $colors: (
+    btn: (
+      custom-background: hsl(0, 0%, 95%),
+      custom-background-hover: hsl(0, 0%, 90%),
+      custom-foreground: hsl(0, 0%, 10%),
+    )
+  )
+);
+```
+
+```scss
+.btn--custom {
+  @include spruce.btn-variant(custom-foreground, custom-background);
+}
+```
+
+```html
+<a href="https://conedevelopment.com" class="btn btn--custom btn--lg">Go to Cone</a>
 ```
