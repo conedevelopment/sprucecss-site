@@ -205,3 +205,38 @@ Using the ```layout-flex``` mixin, you can create intrinsic flexbox grids with e
   @include spruce.layout-flex;
 }
 ```
+
+## visually-hidden
+
+Hide something from the screen but keep it visible for assistive technology.
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L7)
+
+### Example(s)
+
+```scss
+.sr-only {
+  @include spruce.visually-hidden;
+}
+```
+
+## text-ellipsis
+
+Crop text and display an ellipsis with multiline support where possible.
+
+### Argument(s)
+
+| Name                   | Default Value | Description                              |
+|------------------------|---------------|------------------------------------------|
+| ```$number-of-lines``` | ```1```       | Multiline text cropping where supported. |
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L20)
+
+### Example(s)
+
+```scss
+.crop-text {
+  @include spruce.text-ellipsis(2);
+  width: 20rem;
+}
+```
