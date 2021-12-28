@@ -11,6 +11,11 @@ import HeroImage from '../images/hero.svg';
 import CopyIcon from '../images/icons/copy.svg';
 
 function IndexPage() {
+  async function copy() {
+    await navigator.clipboard.writeText('npm install sprucecss');
+    alert('Install command copied to the clipboard!');
+  }
+
   return (
     <Layout>
       <SEO title="Another CSS Framework" />
@@ -23,8 +28,8 @@ function IndexPage() {
                 <p className="hero__description">An open-source, lightweight and modernish CSS design system, framework built on Sass. Give your project a solid foundation.</p>
                 <div className="hero__btns">
                   <Link to="/docs/getting-started/introduction" className="btn btn--primary btn--lg">Get Started</Link>
-                  <button className="btn btn--install btn--lg">
-                    <CopyIcon className="btn__icon btn__icon--left" />
+                  <button className="btn btn--install btn--lg" onClick={copy}>
+                    <CopyIcon className="btn__icon btn__icon--start" />
                     npm install sprucecss
                   </button>
                 </div>
