@@ -240,3 +240,53 @@ Crop text and display an ellipsis with multiline support where possible.
   width: 20rem;
 }
 ```
+
+## aspect-ratio
+
+Creat custom aspect ratio for elements.
+
+### Argument(s)
+
+| Name                      | Description                             |
+|---------------------------|-----------------------------------------|
+| ```$width```              | The width of the ratio.                 |
+| ```$height```             | The height of the ratio.                |
+| ```$descendant-element``` | The selector of the descendant element. |
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L38)
+
+### Example(s)
+
+```scss
+.iframe-responsive {
+  @include mixin.aspect-ratio(16, 9, iframe);
+}
+```
+
+## scrollbar
+
+Create natively styled custom scrollbars.
+
+### Argument(s)
+
+| Name                 | Default Value                  | Description                                    |
+|----------------------|--------------------------------|------------------------------------------------|
+| ```$size```          | ```0.5rem```                   | The width or height of the scrollbar.          |
+| ```$foreground```    | ```spruce.color(primary)```    | The color of the scrollbar handle.             |
+| ```$background```    | ```hsla(0, 0%, 0%, 0.1)```     | The background color of the scrollbar.         |
+| ```$border-radius``` | ```spruce.$border-radius-sm``` | The border-radius of the scrollbar and handle. |
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L60)
+
+### Example(s)
+
+```scss
+code {
+  @include spruce.scrollbar($background: hsla(0, 0%, 100%, 0.1));
+  background-color: transparent;
+  border-radius: 0;
+  display: block;
+  overflow-x: auto;
+  padding: spruce.spacer(xs) 0;
+}
+```
