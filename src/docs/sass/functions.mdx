@@ -1,3 +1,32 @@
 ---
 title: 'Functions'
 ---
+
+## color
+
+Get color value by key and type name from the ```$colors``` map. The $colors map is nested, so you can access the color values by multiple levels, separated into groups.
+
+The function returns a CSS custom property with a fallback color, but you can also access just the color value setting the ```$only-color``` value to ```true```.
+
+### Argument(s)
+
+| Name              | Default Value | Description                                                     |
+|-------------------|---------------|-----------------------------------------------------------------|
+| ```$key```        |               | The name of the color.                                          |
+| ```$type```       | ```base```    | The group of the color.                                         |
+| ```$only-color``` | ```false```   | Wheater to get just the color value or the CSS custom property. |
+
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/function/_color.scss#L6)
+
+### Example(s)
+
+```scss
+a {
+  color: spruce.color(primary);
+}
+
+.has-error {
+  color: spruce.color(danger, alert);
+}
+```
