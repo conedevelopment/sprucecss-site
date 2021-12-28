@@ -2,6 +2,27 @@
 title: 'Mixins'
 ---
 
+## aspect-ratio
+
+Creat custom aspect ratio for elements.
+
+### Argument(s)
+
+| Name                      | Description                             |
+|---------------------------|-----------------------------------------|
+| ```$width```              | The width of the ratio.                 |
+| ```$height```             | The height of the ratio.                |
+| ```$descendant-element``` | The selector of the descendant element. |
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L38)
+
+### Example(s)
+
+```scss
+.iframe-responsive {
+  @include mixin.aspect-ratio(16, 9, iframe);
+}
+```
 
 ## breakpoint
 
@@ -206,63 +227,6 @@ Using the ```layout-flex``` mixin, you can create intrinsic flexbox grids with e
 }
 ```
 
-## visually-hidden
-
-Hide something from the screen but keep it visible for assistive technology.
-
-[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L7)
-
-### Example(s)
-
-```scss
-.sr-only {
-  @include spruce.visually-hidden;
-}
-```
-
-## text-ellipsis
-
-Crop text and display an ellipsis with multiline support where possible.
-
-### Argument(s)
-
-| Name                   | Default Value | Description                              |
-|------------------------|---------------|------------------------------------------|
-| ```$number-of-lines``` | ```1```       | Multiline text cropping where supported. |
-
-[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L20)
-
-### Example(s)
-
-```scss
-.crop-text {
-  @include spruce.text-ellipsis(2);
-  width: 20rem;
-}
-```
-
-## aspect-ratio
-
-Creat custom aspect ratio for elements.
-
-### Argument(s)
-
-| Name                      | Description                             |
-|---------------------------|-----------------------------------------|
-| ```$width```              | The width of the ratio.                 |
-| ```$height```             | The height of the ratio.                |
-| ```$descendant-element``` | The selector of the descendant element. |
-
-[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L38)
-
-### Example(s)
-
-```scss
-.iframe-responsive {
-  @include mixin.aspect-ratio(16, 9, iframe);
-}
-```
-
 ## scrollbar
 
 Create natively styled custom scrollbars.
@@ -288,5 +252,40 @@ code {
   display: block;
   overflow-x: auto;
   padding: spruce.spacer(xs) 0;
+}
+```
+
+## text-ellipsis
+
+Crop text and display an ellipsis with multiline support where possible.
+
+### Argument(s)
+
+| Name                   | Default Value | Description                              |
+|------------------------|---------------|------------------------------------------|
+| ```$number-of-lines``` | ```1```       | Multiline text cropping where supported. |
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L20)
+
+### Example(s)
+
+```scss
+.crop-text {
+  @include spruce.text-ellipsis(2);
+  width: 20rem;
+}
+```
+
+## visually-hidden
+
+Hide something from the screen but keep it visible for assistive technology.
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L7)
+
+### Example(s)
+
+```scss
+.sr-only {
+  @include spruce.visually-hidden;
 }
 ```
