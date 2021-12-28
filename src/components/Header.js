@@ -17,7 +17,7 @@ function Header() {
   function handleMenuClick() {
     setMenuVisible(!menuVisible);
   }
-  
+
   const { site } = useStaticQuery(graphql`
     query {
       site {
@@ -28,7 +28,7 @@ function Header() {
       }
     }
   `);
-  
+
   return (
     <>
       <a className="btn btn--primary skip-link" href="#content">Skip to content</a>
@@ -47,7 +47,7 @@ function Header() {
               </button>
               <ul>
                 <li><Link to="/docs/getting-started/introduction">Docs</Link></li>
-                <li><a href="https://github.com/conedevelopment/spruce">GitHub</a></li>
+                <li><a href="https://github.com/conedevelopment/sprucecss">GitHub</a></li>
               </ul>
             </nav>
             <div className="header__actions">
