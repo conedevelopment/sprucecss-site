@@ -47,6 +47,7 @@ function Header() {
               </button>
               <ul>
                 <li><Link to="/docs/getting-started/introduction">Docs</Link></li>
+                <li><a href="https://github.com/conedevelopment/sprucecss/blob/main/CHANGELOG.md">Changelog</a></li>
                 <li><a href="https://github.com/conedevelopment/sprucecss">GitHub</a></li>
               </ul>
             </nav>

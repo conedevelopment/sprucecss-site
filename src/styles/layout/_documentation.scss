@@ -1,7 +1,7 @@
 @use '~sprucecss/scss/spruce';
 
 .layout-documentation {
-  padding: spruce.spacer(xl) 0;
+  padding: clamp(spruce.spacer(l), 5vw, spruce.spacer(xl)) 0;
 
   &__container {
     @include spruce.layout-center($gutter: clamp(spruce.spacer(m), 5vw, spruce.spacer(l)));
@@ -23,7 +23,12 @@
     grid-auto-rows: min-content;
     grid-template-columns: minmax(0, 1fr);
     row-gap: spruce.spacer(m);
-    
+    order: -1;
+
+    @include spruce.breakpoint(sm) {
+      order: 2;
+    }
+
     @include spruce.breakpoint(lg) {
       grid-template-columns: minmax(0, 3.5fr) minmax(0, 15rem);
     }
@@ -56,7 +61,7 @@
 
     h2 {
       position: relative;
-      
+
       &:hover {
         > a {
           opacity: 1;
