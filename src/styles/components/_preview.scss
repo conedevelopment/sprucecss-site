@@ -4,6 +4,7 @@
   @include spruce.layout-stack(spruce.spacer(m));
   border: 1px solid rgba(0, 0, 0, 0.075);
   border-radius: spruce.$border-radius-sm;
+  font-size: 1rem;
   padding: spruce.spacer(m);
 
   > * {
