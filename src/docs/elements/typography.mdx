@@ -6,11 +6,12 @@ title: 'Typography'
 
 - The type scale is REM (root-relative EM) based. The base size is set to 1rem by default, which will usually be 16px (depending on the browser's defaults).
 - You can use four diferent font sizing variables: ```$font-size-base``` (1rem), ```$font-size-sm``` (0.9rem), ```$font-size-lg``` (1.1rem) and ```$font-size-lead``` (math.pow($font-size-ratio, 1) * $font-size-base).
+- You can access the heading font sizes under the ```$font-sizes``` with the [spruce.font-size()](/docs/sass/functions#font-size) function.
 
 
 ## Headings
 
-The font sizes for the heading tags are located in the $font-sizes map. We use the ```math.pow()``` Sass function to generate the scale which looks like the following:
+The font sizes for the heading tags are located in the ```$font-sizes``` map. We use the ```math.pow()``` Sass function to generate the scale which looks like the following:
 
 ```scss
 $font-sizes: (
@@ -43,7 +44,7 @@ $font-sizes: (
 
 ### Get Heading Size
 
-To access any of the ```$font-sizes``` object sizes, you can use the ```spruce.font-size()``` function that allows you also to create responsive font sizing. The ```font-size()``` function utilizes the clamp() CSS function, which gives us the possibility to set a value based on any relative unit (in this case: 5vw + 1rem).
+To access any of the ```$font-sizes``` map sizes, you can use the ```spruce.font-size()``` function that allows you also to create responsive font sizing. The ```font-size()``` function utilizes the clamp() CSS function, which gives us the possibility to set a value based on any relative unit (in this case: 5vw + 1rem).
 
 For example you can get the the h2 size like so:
 
@@ -56,9 +57,17 @@ Which will generate the value of:
 font-size: clamp(1.7647460938rem, 5vw + 1rem, 2.076171875rem);
 ```
 
-For the detailed function, please see the [_font-size.scss file](https://github.com/conedevelopment/sprucecss/blob/master/scss/function/_font-size.scss).
+For the detailed function, please see the [font-size.scss file](https://github.com/conedevelopment/sprucecss/blob/master/scss/function/_font-size.scss).
 
-## Lead
+## Paragraphs and Lead
+
+<Preview>
+  <p>Mauris sit amet ipsum eget orci congue egestas a eu ipsum. Mauris porttitor tincidunt ligula at finibus. Vestibulum feugiat semper aliquet.</p>
+</Preview>
+
+```html
+<p>Mauris sit amet ipsum eget orci congue egestas a eu ipsum. Mauris porttitor tincidunt ligula at finibus. Vestibulum feugiat semper aliquet.</p>
+```
 
 You can create paragraphs with bigger font-size using the ```lead``` class.
 
@@ -75,88 +84,102 @@ You can create paragraphs with bigger font-size using the ```lead``` class.
 <Preview>
   <blockquote>
     <p>“Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.”</p>
-    <cite>Albert Einstein</cite>
   </blockquote>
 </Preview>
 
-## Inline Text elements
-
-
-
-## Sass
-
-### Variables
-
-```scss
-$font-size-ratio:      1.333;
-
-$font-size-base:       1rem;
-$font-size-sm:         0.9rem;
-$font-size-lg:         1.1rem;
-$font-size-lead:       math.pow($font-size-ratio, 1) * $font-size-base;
-
-$font-sizes: ();
-$font-sizes: map.merge(
-  (
-    h1: math.pow($font-size-ratio, 4) * $font-size-base,
-    h2: math.pow($font-size-ratio, 3) * $font-size-base,
-    h3: math.pow($font-size-ratio, 2) * $font-size-base,
-    h4: math.pow($font-size-ratio, 1) * $font-size-base,
-    h5: $font-size-base,
-    h6: $font-size-base
-  ),
-  $font-sizes
-);
-
-$font-family-base:    #{system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'};
-$font-family-heading: $font-family-base;
-$font-family-cursive: #{SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace};
-
-$line-height-sm:      1.2;
-$line-height-md:      1.5;
-$line-height-lg:      1.8;
-$line-height-base:    $line-height-lg;
-$line-height-heading: calc(2px + 2ex + 2px);
+```html
+<blockquote>
+  <p>“Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.”</p>
+</blockquote>
 ```
 
-Kitchen Sink
+## Inline Text elements
 
-Used in expressions to describe work in which all conceivable (and some inconceivable) sources have been mined. In this case, a bunch of markup.
+<Preview>
+  <ul class="inline-text-element-list">
+    <li><abbr title="Accessibility">A11Y</abbr> <code>abbr</code></li>
+    <li><mark>mark element</mark> <code>mark</code></li>
+    <li><del>del element</del> <code>del</code></li>
+    <li><s>strikethrough element</s> <code>s</code></li>
+    <li><ins>ins element</ins> <code>ins</code></li>
+    <li><u>u element</u> <code>u</code></li>
+    <li><small>small element</small> <code>small</code></li>
+    <li><strong>strong element</strong> <code>strong</code> <code>b</code></li>
+    <li><em>em element</em> <code>em</code></li>
+    <li><cite>cite element</cite> <code>cite</code></li>
+    <li>sup <sup>element</sup> <code>sup</code></li>
+    <li>sub <sub>element</sub> <code>sub</code></li>
+</ul>
+</Preview>
 
-## Second Heading
+## Lists
 
-aside
+<Preview>
+<ul>
+  <li>Milk</li>
+  <li>Cheese
+    <ul>
+      <li>Blue cheese</li>
+      <li>Feta</li>
+    </ul>
+  </li>
+</ul>
 
-Defines content aside from the page content
+<ol>
+  <li>Alpha</li>
+  <li>Beta</li>
+  <li>Gamma</li>
+  <li>Delta</li>
+</ol>
 
-blockquote
+<dl>
+  <dt>Chrome</dt>
+  <dd>
+    Nulla accumsan elit ac libero mattis malesuada id sed lorem. Aliquam at commodo dui.
+  </dd>
+  <dt>Firefox</dt>
+  <dd>
+    Morbi fermentum varius arcu, in hendrerit turpis. Ut vestibulum nibh sed lorem blandit, ac ultrices arcu dictum.
+  </dd>
+</dl>
+</Preview>
 
-Defines a section that is quoted from another source
+```html
+<!-- Unordered list -->
+<ul>
+  <li>Milk</li>
+  <li>Cheese
+    <ul>
+      <li>Blue cheese</li>
+      <li>Feta</li>
+    </ul>
+  </li>
+</ul>
 
-*   Unordered List item one
-  *   Nested list item
-    *   Level 3, item one
-    *   Level 3, item two
-    *   Level 3, item three
-    *   Level 3, item four
-  *   List item two
-  *   List item three
-  *   List item four
-*   List item two
-*   List item three
-*   List item four
+<!-- Ordered list -->
+<ol>
+  <li>Alpha</li>
+  <li>Beta</li>
+  <li>Gamma</li>
+  <li>Delta</li>
+</ol>
 
-* * *
+<!-- Definition list -->
+<dl>
+  <dt>Chrome</dt>
+  <dd>
+    Nulla accumsan elit ac libero mattis malesuada id sed lorem. Aliquam at commodo dui.
+  </dd>
+  <dt>Firefox</dt>
+  <dd>
+    Morbi fermentum varius arcu, in hendrerit turpis. Ut vestibulum nibh sed lorem blandit, ac ultrices arcu dictum.
+  </dd>
+</dl>
 
-1.  List item one
-  1.  List item one
-    1.  List item one
-    2.  List item two
-    3.  List item three
-    4.  List item four
-  2.  List item two
-  3.  List item three
-  4.  List item four
-2.  List item two
-3.  List item three
-4.  List item four
+```
+
+## Variables, Helpers
+
+- [Typograhpy related variables](/docs/sass/variables/#typography)
+- [font-size() function](/docs/sass/functions/#font-size)
+- [responsive-font-size() function](/docs/sass/functions/#responsive-font-size)
