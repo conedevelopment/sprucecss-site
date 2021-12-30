@@ -12,7 +12,8 @@
   ),
   $font-size-base: 1.063rem,
   $font-size-ratio: 1.250,
-  $container-width: 86rem
+  $container-width: 86rem,
+  $form-control-font-size: 1rem
 );
 
 @use 'components/code-block';
