@@ -4,6 +4,7 @@
   position: fixed;
   top: -5rem;
   left: 2rem;
+  z-index: 1;
 
   &:focus {
     top: 2rem;
