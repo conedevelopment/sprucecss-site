@@ -2,169 +2,463 @@
 title: 'Forms'
 ---
 
+<p class="lead">Spruce comes with an overall (WIP) form support like styling the different types of inputs or validation.</p>
+
+We differentiate two groups of inputs for stylings: the ```form-control``` class is used for ```input``` (not radio or checkbox), ```textarea```, ```select``` elements, and the ```form-check``` class is used for ```radio``` and ```checkbox```.
+
+## Input
+
+Use the ```form-control``` class on the input (which doesn’t have the type of radio or checkbox) and ```form-label``` on the label elements to apply the formatting.
+
+Wrap the label and the input into ```form-group``` elements to control the two’s margin.
+
 <Preview>
-  <form>
-    <fieldset>
-      <legend>Your Name</legend>
-      <div class="form-group">
-        <label class="form-label" for="first-name">First Name</label>
-        <input class="form-control" id="first-name" name="first-name" type="text"/><span class="form-description">Just a help text for presentation purpose</span>
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="last-name">Last Name</label>
-        <input class="form-control" id="last-name" name="last-name" type="text" disabled="disabled"/>
-      </div>
-    </fieldset>
-    <fieldset>
-      <legend>Address</legend>
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label" for="street-address">Street Address</label>
-          <input class="form-control form-control--valid" id="street-address" name="street-address" type="text" placeholder="Your street address..."/><span class="field-feedback field-feedback--valid">Looks fine</span>
-        </div>
-      </div>
-      <div class="form-row form-row--mixed">
-        <div class="form-group">
-          <label class="form-label" for="city">City</label>
-          <input class="form-control form-control--invalid" id="city" name="city" type="text"/><span class="field-feedback field-feedback--invalid">Not that fine</span>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="state">State</label>
-          <input class="form-control" id="state" name="state" type="text"/>
-        </div>
-        <div class="form-group form-group--width-auto" style="--col-width: 8ch;">
-          <label class="form-label" for="zip">Zip</label>
-          <input class="form-control" id="zip" name="zip" type="text"/>
-        </div>
-      </div>
-    </fieldset>
-    <fieldset>
-      <legend>Sizes</legend>
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label" for="street-address-1">Street Address</label>
-          <input class="form-control form-control--lg" id="street-address-1" name="street-address-1" type="text"/>
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label" for="street-address-2">Street Address</label>
-          <input class="form-control form-control--sm" id="street-address-2" name="street-address-2" type="text"/>
-        </div>
-      </div>
-    </fieldset>
-    <fieldset>
-      <legend>Do you own or rent?</legend>
-      <div class="form-group form-group--vertical-check">
-        <label class="form-check">
-          <input class="form-check__control" type="radio" value="own" name="property-ownership"/><span class="form-label form-check__label">Own</span>
-        </label>
-        <label class="form-check">
-          <input class="form-check__control" type="radio" value="rent" name="property-ownership"/><span class="form-label form-check__label">Rent</span>
-        </label>
-      </div>
-    </fieldset>
-    <fieldset>
-      <legend>Which one of you like?</legend>
-      <div class="form-group form-group--vertical-check">
-        <label class="form-check">
-          <input class="form-check__control" type="checkbox" value="own" name="property-ownership2"/><span class="form-label form-check__label">Own</span>
-        </label>
-        <label class="form-check">
-          <input class="form-check__control" type="checkbox" value="rent" name="property-ownership2" disabled="disabled"/><span class="form-label form-check__label">Rent</span>
-        </label>
-        <label class="form-check">
-          <input class="form-check__control" type="checkbox" value="misc" name="property-ownership2"/><span class="form-label form-check__label">Misc</span>
-        </label>
-        <label class="form-check">
-          <input class="form-check__control" id="indeterminate" type="checkbox" value="misc" name="property-ownership2"/><span class="form-label form-check__label">Indeterminate</span>
-        </label>
-      </div>
-      <div class="form-group form-group--vertical-check">
-        <label class="form-check form-check--lg">
-          <input class="form-check__control" type="checkbox" value="own" name="property-ownership3"/><span class="form-label form-check__label">Own</span>
-        </label>
-        <label class="form-check form-check--lg">
-          <input class="form-check__control" type="checkbox" value="rent" name="property-ownership3" disabled="disabled"/><span class="form-label form-check__label">Rent</span>
-        </label>
-        <label class="form-check form-check--lg">
-          <input class="form-check__control" type="checkbox" value="misc" name="property-ownership3"/><span class="form-label form-check__label">Misc</span>
-        </label>
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="cars">Your favorite car brand</label>
-        <select class="form-control" id="cars" name="cars">
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="mercedes">Mercedes</option>
-          <option value="audi">Audi</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="cars2">Your favorite car brand</label>
-        <select class="form-control form-control--lg" id="cars2" name="cars2">
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="mercedes">Mercedes</option>
-          <option value="audi">Audi</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="cars3">Your favorite car brand</label>
-        <select class="form-control form-control--sm" id="cars3" name="cars3">
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="mercedes">Mercedes</option>
-          <option value="audi">Audi</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="cars4">Your favorite car brand</label>
-        <select class="form-control" id="cars4" name="cars4" disabled="disabled">
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="mercedes">Mercedes</option>
-          <option value="audi">Audi</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="cars5">Your favorite car brand</label>
-        <select class="form-control" id="cars5" name="cars5" multiple="multiple">
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="mercedes">Mercedes</option>
-          <option value="audi">Audi</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <button class="btn btn--primary">Save</button>
-        <button class="btn btn--primary" disabled="disabled">Save</button>
-      </div>
-      <div class="form-group">
-        <button class="btn btn--primary btn--sm">Filter</button>
-      </div>
-      <div class="form-group">
-        <button class="btn btn--primary btn--lg">Get Started</button>
-      </div>
-      <div class="form-group">
-        <button class="btn btn--secondary">Save</button>
-        <button class="btn btn--secondary" disabled="disabled">Save</button>
-      </div>
-      <div class="form-group">
-        <button class="btn btn--secondary btn--sm">Filter</button>
-      </div>
-      <div class="form-group">
-        <button class="btn btn--secondary btn--lg">Get Started</button>
-      </div>
-    </fieldset>
-  </form>
+  <div class="form-group">
+    <label class="form-label" for="your-name">Name</label>
+    <input class="form-control" id="your-name" name="your-name" type="text"/>
+  </div>
+  <div class="form-group">
+    <label class="form-label" for="your-email">Email</label>
+    <input class="form-control" id="your-email" name="your-email" type="email"/>
+  </div>
 </Preview>
 
 ```html
-<h1>The quick brown fox jumps over the lazy dog</h1>
-<h2>The quick brown fox jumps over the lazy dog</h2>
-<h3>The quick brown fox jumps over the lazy dog</h3>
-<h4>The quick brown fox jumps over the lazy dog</h4>
-<h5>The quick brown fox jumps over the lazy dog</h5>
-<h6>The quick brown fox jumps over the lazy dog</h6>
+<div class="form-group">
+  <label class="form-label" for="your-name">Name</label>
+  <input class="form-control" id="your-name" name="your-name" type="text"/>
+</div>
+<div class="form-group">
+  <label class="form-label" for="your-email">Email</label>
+  <input class="form-control" id="your-email" name="your-email" type="email"/>
+</div>
 ```
+
+## Textarea
+
+<Preview>
+  <div class="form-group">
+    <label class="form-label" for="your-message">Your Message</label>
+    <textarea class="form-control" id="your-message" name="your-message" placeholder="Write your message..." rows="4"></textarea>
+  </div>
+</Preview>
+
+```html
+<div class="form-group">
+  <label class="form-label" for="your-message">Your Message</label>
+  <textarea class="form-control" id="your-message" name="your-message" placeholder="Write your message..." rows="4"></textarea>
+</div>
+```
+
+## Select
+
+For multiple options, use the ```multiple``` attribute.
+
+<Preview>
+<div class="form-group">
+  <label class="form-label" for="cars">Your favorite car brand</label>
+  <select class="form-control" id="cars" name="cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="mercedes">Mercedes</option>
+    <option value="audi">Audi</option>
+  </select>
+</div>
+<div class="form-group">
+  <label class="form-label" for="cars5">Your favorite car brand</label>
+  <select class="form-control" id="cars5" name="cars5" multiple="multiple">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="mercedes">Mercedes</option>
+    <option value="audi">Audi</option>
+  </select>
+</div>
+</Preview>
+
+```html
+<div class="form-group">
+  <label class="form-label" for="cars">Your favorite car brand</label>
+  <select class="form-control" id="cars" name="cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="mercedes">Mercedes</option>
+    <option value="audi">Audi</option>
+  </select>
+</div>
+<div class="form-group">
+  <label class="form-label" for="cars5">Your favorite car brand</label>
+  <select class="form-control" id="cars5" name="cars5" multiple="multiple">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="mercedes">Mercedes</option>
+    <option value="audi">Audi</option>
+  </select>
+</div>
+```
+
+## Radio
+
+For styling radio elements, use the ```form-check``` class on the label element and place the ```input``` (with the ```form-check__control``` class) and ```span``` (with the ```form-check__label``` class) inside it.
+
+Adding the ```form-group--vertical-check``` modifier class to the ```form-group``` element, you can stack the radios under each other.
+
+<Preview>
+  <fieldset>
+    <legend>Do you own or rent?</legend>
+    <div class="form-group form-group--vertical-check">
+      <label class="form-check">
+        <input class="form-check__control" type="radio" value="own" name="property-ownership"/>
+        <span class="form-label form-check__label">Own</span>
+      </label>
+      <label class="form-check">
+        <input class="form-check__control" type="radio" value="rent" name="property-ownership"/>
+        <span class="form-label form-check__label">Rent</span>
+      </label>
+    </div>
+  </fieldset>
+</Preview>
+
+```html
+<fieldset>
+  <legend>Do you own or rent?</legend>
+  <div class="form-group form-group--vertical-check">
+    <label class="form-check">
+      <input class="form-check__control" type="radio" value="own" name="property-ownership"/>
+      <span class="form-label form-check__label">Own</span>
+    </label>
+    <label class="form-check">
+      <input class="form-check__control" type="radio" value="rent" name="property-ownership"/>
+      <span class="form-label form-check__label">Rent</span>
+    </label>
+  </div>
+</fieldset>
+```
+
+## Checkbox
+
+For styling checkbox elements, use the ```form-check``` class on the label element and place the ```input``` (with the ```form-check__control``` class) and ```span``` (with the ```form-check__label``` class) inside it. You can also display an indeterminate state programmatically.
+
+Adding the ```form-group--vertical-check``` modifier class to the ```form-group``` element, you can stack the radios under each other.
+
+<Preview>
+  <fieldset>
+    <legend>Which one of you like?</legend>
+    <div class="form-group form-group--vertical-check">
+      <label class="form-check">
+        <input class="form-check__control" type="checkbox" value="own" name="property-ownership2"/>
+        <span class="form-label form-check__label">Own</span>
+      </label>
+      <label class="form-check">
+        <input class="form-check__control" type="checkbox" value="rent" name="property-ownership2" disabled="disabled"/>
+        <span class="form-label form-check__label">Rent</span>
+      </label>
+      <label class="form-check">
+        <input class="form-check__control" type="checkbox" value="misc" name="property-ownership2"/>
+        <span class="form-label form-check__label">Misc</span>
+      </label>
+      <label class="form-check">
+        <input class="form-check__control" id="indeterminate" type="checkbox" value="misc" name="property-ownership2" ref={input => { if (input) { input.indeterminate = true; } }} />
+        <span class="form-label form-check__label">Indeterminate</span>
+      </label>
+    </div>
+  </fieldset>
+</Preview>
+
+```html
+<fieldset>
+  <legend>Which one of you like?</legend>
+  <div class="form-group form-group--vertical-check">
+    <label class="form-check">
+      <input class="form-check__control" type="checkbox" value="own" name="property-ownership2"/><span class="form-label form-check__label">Own</span>
+    </label>
+    <label class="form-check">
+      <input class="form-check__control" type="checkbox" value="rent" name="property-ownership2" disabled="disabled"/><span class="form-label form-check__label">Rent</span>
+    </label>
+    <label class="form-check">
+      <input class="form-check__control" type="checkbox" value="misc" name="property-ownership2"/><span class="form-label form-check__label">Misc</span>
+    </label>
+    <label class="form-check">
+      <input class="form-check__control" id="indeterminate" type="checkbox" value="misc" name="property-ownership2"/><span class="form-label form-check__label">Indeterminate</span>
+    </label>
+  </div>
+</fieldset>
+```
+
+## Fieldset
+
+You can use ```fieldset``` and ```legend``` elements to group more fields and set a vertical margin between them.
+
+<Preview>
+  <fieldset>
+    <legend>Your Name</legend>
+    <div class="form-group">
+      <label class="form-label" for="first-name">First Name</label>
+      <input class="form-control" id="first-name" name="first-name" type="text"/>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="last-name">Last Name</label>
+      <input class="form-control" id="last-name" name="last-name" type="text"/>
+    </div>
+  </fieldset>
+</Preview>
+
+```html
+<fieldset>
+  <legend>Your Name</legend>
+  <div class="form-group">
+    <label class="form-label" for="first-name">First Name</label>
+    <input class="form-control" id="first-name" name="first-name" type="text"/>
+  </div>
+  <div class="form-group">
+    <label class="form-label" for="last-name">Last Name</label>
+    <input class="form-control" id="last-name" name="last-name" type="text"/>
+  </div>
+</fieldset>
+```
+
+## Description
+
+Use the ```form-description``` class to create a description text under an input element.
+
+<Preview>
+  <div class="form-group">
+    <label class="form-label" for="first-name-2">First Name</label>
+    <input class="form-control" id="first-name-2" name="first-name-2" type="text" aria-describedby="first-name-description"/>
+    <span id="first-name-description" class="form-description">Just a help text for presentation purpose.</span>
+  </div>
+</Preview>
+
+## Row
+
+You can create a row stack using ```form-row--mixed``` class. It uses flexbox and automatically sets the columns based on the ```--col-width``` custom property.
+
+<Preview>
+  <div class="form-row--mixed">
+    <div class="form-group" style={{'--col-width': '30ch'}}>
+      <label class="form-label" for="city">City</label>
+      <input class="form-control" id="city" name="city" type="text"/>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="state">State</label>
+      <input class="form-control" id="state" name="state" type="text"/>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="zip">Zip</label>
+      <input class="form-control" id="zip" name="zip" type="text"/>
+    </div>
+  </div>
+</Preview>
+
+```html
+<div class="form-row--mixed">
+  <div class="form-group" style="--col-width: 30ch">
+    <label class="form-label" for="city">City</label>
+    <input class="form-control" id="city" name="city" type="text"/>
+  </div>
+  <div class="form-group">
+    <label class="form-label" for="state">State</label>
+    <input class="form-control" id="state" name="state" type="text"/>
+  </div>
+  <div class="form-group">
+    <label class="form-label" for="zip">Zip</label>
+    <input class="form-control" id="zip" name="zip" type="text"/>
+  </div>
+</div>
+```
+
+## Sizes
+
+You can use different sizes on ```form-control``` and ```form-check``` if needed.
+
+### Text Input Sizes
+
+<Preview>
+  <div class="form-group">
+    <label class="form-label" for="street-address-sm">Street Address (Small)</label>
+    <input class="form-control form-control--sm" id="street-address-sm" name="street-address-sm" type="text"/>
+  </div>
+  <div class="form-group">
+    <label class="form-label" for="street-address-regular">Street Address (Regular)</label>
+    <input class="form-control" id="street-address-regular" name="street-address-regular" type="text"/>
+  </div>
+  <div class="form-group">
+    <label class="form-label" for="street-address-lg">Street Address (Large)</label>
+    <input class="form-control form-control--lg" id="street-address-lg" name="street-address-lg" type="text"/>
+  </div>
+</Preview>
+
+```html
+<div class="form-group">
+  <label class="form-label" for="street-address-sm">Street Address (Small)</label>
+  <input class="form-control form-control--sm" id="street-address-sm" name="street-address-sm" type="text"/>
+</div>
+<div class="form-group">
+  <label class="form-label" for="street-address-regular">Street Address (Regular)</label>
+  <input class="form-control" id="street-address-regular" name="street-address-regular" type="text"/>
+</div>
+<div class="form-group">
+  <label class="form-label" for="street-address-lg">Street Address (Large)</label>
+  <input class="form-control form-control--lg" id="street-address-lg" name="street-address-lg" type="text"/>
+</div>
+
+```
+
+### Select Sizes
+
+<Preview>
+<div class="form-group">
+  <label class="form-label" for="cars">Your favorite car brand (Small)</label>
+  <select class="form-control form-control--sm" id="cars" name="cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="mercedes">Mercedes</option>
+    <option value="audi">Audi</option>
+  </select>
+</div>
+<div class="form-group">
+  <label class="form-label" for="cars">Your favorite car brand (Regular)</label>
+  <select class="form-control form-control" id="cars" name="cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="mercedes">Mercedes</option>
+    <option value="audi">Audi</option>
+  </select>
+</div>
+<div class="form-group">
+  <label class="form-label" for="cars">Your favorite car brand (Large)</label>
+  <select class="form-control form-control--lg" id="cars" name="cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="mercedes">Mercedes</option>
+    <option value="audi">Audi</option>
+  </select>
+</div>
+</Preview>
+
+```html
+<div class="form-group">
+  <label class="form-label" for="cars-sm">Your favorite car brand (Small)</label>
+  <select class="form-control form-control--sm" id="cars-sm" name="cars-sm">
+    <option value="volvo">Volvo</option>
+    ...
+  </select>
+</div>
+<div class="form-group">
+  <label class="form-label" for="cars-regular">Your favorite car brand (Regular)</label>
+  <select class="form-control form-control" id="cars-regular" name="cars-regular">
+    <option value="volvo">Volvo</option>
+    ...
+  </select>
+</div>
+<div class="form-group">
+  <label class="form-label" for="cars-lg">Your favorite car brand (Large)</label>
+  <select class="form-control form-control--lg" id="cars-lg" name="cars-lg">
+    <option value="volvo">Volvo</option>
+    ...
+  </select>
+</div>
+```
+
+### Checkbox, Radio Sizes
+
+<Preview>
+  <fieldset>
+    <legend>Do you own or rent?</legend>
+    <div class="form-group form-group--vertical-check">
+      <label class="form-check">
+        <input class="form-check__control" type="radio" value="own" name="property-ownership-sizes"/>
+        <span class="form-label form-check__label">Own (Regular)</span>
+      </label>
+      <label class="form-check form-check--lg">
+        <input class="form-check__control" type="radio" value="rent" name="property-ownership-sizes"/>
+        <span class="form-label form-check__label">Rent (Large)</span>
+      </label>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Which one of you like?</legend>
+    <div class="form-group form-group--vertical-check">
+      <label class="form-check">
+        <input class="form-check__control" type="checkbox" value="own" name="property-ownership-checkbox-sizes"/>
+        <span class="form-label form-check__label">Own (Regular)</span>
+      </label>
+      <label class="form-check form-check--lg">
+        <input class="form-check__control" type="checkbox" value="rent" name="property-ownership-checkbox-sizes"/>
+        <span class="form-label form-check__label">Rent (Large)</span>
+      </label>
+    </div>
+  </fieldset>
+</Preview>
+
+```html
+<fieldset>
+  <legend>Do you own or rent?</legend>
+  <div class="form-group form-group--vertical-check">
+    <label class="form-check">
+      <input class="form-check__control" type="radio" value="own" name="property-ownership-sizes"/>
+      <span class="form-label form-check__label">Own (Regular)</span>
+    </label>
+    <label class="form-check form-check--lg">
+      <input class="form-check__control" type="radio" value="rent" name="property-ownership-sizes"/>
+      <span class="form-label form-check__label">Rent (Large)</span>
+    </label>
+  </div>
+</fieldset>
+
+<fieldset>
+  <legend>Which one of you like?</legend>
+  <div class="form-group form-group--vertical-check">
+    <label class="form-check">
+      <input class="form-check__control" type="checkbox" value="own" name="property-ownership-checkbox-sizes"/>
+      <span class="form-label form-check__label">Own (Regular)</span>
+    </label>
+    <label class="form-check form-check--lg">
+      <input class="form-check__control" type="checkbox" value="rent" name="property-ownership-checkbox-sizes"/>
+      <span class="form-label form-check__label">Rent (Large)</span>
+    </label>
+  </div>
+</fieldset>
+```
+
+## Validation
+
+You can set valid and invalid states on ```form-control``` elements using the ```form-control--valid``` and ```form-control--invalid``` class modifiers.
+
+Also, you can display separate messages using the ```field-feedback``` class and its modifiers.
+
+<Preview>
+<fieldset>
+  <legend>Address</legend>
+  <div class="form-group">
+    <label class="form-label" for="street-address-validation">Street Address</label>
+    <input class="form-control form-control--valid" id="street-address-validation" name="street-address-validation" type="text" placeholder="Your street address..."/>
+    <span class="field-feedback field-feedback--valid">Looks fine</span>
+  </div>
+  <div class="form-group">
+    <label class="form-label" for="city-validation">City</label>
+    <input class="form-control form-control--invalid" id="city-validation" name="city-validation" type="text"/>
+    <span class="field-feedback field-feedback--invalid">Not that fine</span>
+  </div>
+</fieldset>
+</Preview>
+
+## Disabled
+
+Using the ```disabled``` attribute, you can create disabled state on inputs.
+
+<Preview>
+  <div class="form-group">
+    <label class="form-label" for="your-name-disabled">Name</label>
+    <input class="form-control" id="your-name-disabled" name="your-name-disabled" type="text" disabled/>
+  </div>
+  <div class="form-group">
+    <label class="form-label" for="cars-disabled">Your favorite car brand</label>
+    <select class="form-control" id="cars-disabled" name="cars-disabled" disabled>
+      <option value="volvo">Volvo</option>
+      <option value="saab">Saab</option>
+      <option value="mercedes">Mercedes</option>
+      <option value="audi">Audi</option>
+    </select>
+  </div>
+</Preview>
