@@ -14,7 +14,7 @@ function SEO({ children, location, description, title, image }) {
       }
     }
   `);
-  
+
   return (
     <Helmet titleTemplate={`%s - ${site.siteMetadata.title}`}>
       <html lang="en" />
@@ -26,7 +26,6 @@ function SEO({ children, location, description, title, image }) {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta charSet="utf-8" />
       <meta name="description" content={site.siteMetadata.description} />
-      <meta name='robots' content='noindex, nofollow' />
       {/* Open Graph */}
       {location && <meta property="og:url" content={location.href} />}
       <meta property="og:image" content={image || '/logo.svg'} />
