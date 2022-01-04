@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     description: 'Spruce is a minimalistic CSS starter Framework on Sass.',
     github: 'conedevelopment',
-    version: '0.1.2',
+    version: '0.1.3',
     siteUrl: 'https://sprucecss.com',
     slogen: [
       '🎉 Another CSS Framework',
