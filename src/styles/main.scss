@@ -8,6 +8,13 @@
       install-background: hsl(0, 0%, 95%),
       install-background-hover: hsl(0, 0%, 90%),
       install-foreground: hsl(0, 0%, 10%),
+      decline-background: hsla(0, 0%, 100%, 0.1),
+      decline-background-hover: hsla(0, 0%, 100%, 0.2),
+      decline-foreground: hsl(0, 0%, 100%),
+    ),
+    cookie: (
+      background: hsl(207deg 95% 8%),
+      foreground: hsl(0 0% 100%),
     )
   ),
   $font-size-base: 1.063rem,
@@ -27,6 +34,7 @@
 @use 'components/sidebar';
 @use 'components/skip-link';
 @use 'components/table-of-content';
+@use 'components/cookie-consent';
 @use 'layout/documentation';
 
 body {
@@ -48,6 +56,10 @@ h6 {
 
 .btn--install {
   @include spruce.btn-variant(install-foreground, install-background);
+}
+
+.btn--decline {
+  @include spruce.btn-variant(decline-foreground, decline-background);
 }
 
 .table th,

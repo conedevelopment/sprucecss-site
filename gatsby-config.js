@@ -59,12 +59,23 @@ module.exports = {
       __key: 'pages',
     },
     {
-      resolve: `gatsby-plugin-react-svg`,
+      resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
           include: /images/
         }
       }
+    },
+    {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        googleAnalytics: {
+          cookieName: 'spruce-gdpr-cookies',
+          trackingId: 'UA-91043380-5',
+          anonymize: true
+        },
+        environments: ['production', 'development']
+      },
     },
   ],
 };

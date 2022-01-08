@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useStaticQuery, graphql  } from 'gatsby';
+import CookieConsent from "react-cookie-consent";
 
 // Images
 import MenuIcon from "../images/icons/menu.svg";
@@ -31,6 +32,25 @@ function Header() {
 
   return (
     <>
+      <CookieConsent
+        containerClasses='cookie-consent'
+        contentClasses='cookie-consent__body'
+        buttonWrapperClasses='cookie-consent__btns'
+        declineButtonClasses='btn btn--decline'
+        buttonClasses='btn btn--primary'
+        enableDeclineButton
+        location='none'
+        buttonText='Accept'
+        declineButtonText='Decline'
+        setDeclineCookie={false}
+        disableStyles={true}
+        cookieName='spruce-gdpr-cookies'
+        onDecline={() => {
+          document.cookie = "spruce-gdpr-cookies=false; expires=0; path=/";
+        }}
+      >
+        <p>We use cookies to track analytics data. It helps us to understand how our site is used.</p>
+      </CookieConsent>
       <a className="btn btn--primary skip-link" href="#content">Skip to content</a>
       <header className="header">
         <div className="header__container">

@@ -1,0 +1,24 @@
+@use '~sprucecss/scss/spruce';
+
+.cookie-consent {
+  align-items: center;
+  background-color: spruce.color(background, cookie);
+  color: spruce.color(foreground, cookie);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding: spruce.spacer(m);
+  z-index: 1;
+
+  &__body {
+    p {
+      margin: 0;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    gap: 1rem;
+  }
+}
