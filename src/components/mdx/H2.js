@@ -12,8 +12,8 @@ function H2(props) {
   const link = `#${anchor}`;
   return (
     <>
-      {(props.className !== 'preview-heading') 
-      ? <h2 id={anchor}><a href={link} className="anchor-link" aria-hidden="true">#</a>{props.children}</h2>
+      {(props.className !== 'preview-heading')
+      ? <h2 id={anchor}><a href={link} className="anchor-link" aria-label={props.children}>#</a>{props.children}</h2>
       : <h2 className="preview-heading">{props.children}</h2>}
     </>
   );
