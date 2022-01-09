@@ -8,7 +8,7 @@ function CodeBlock(props) {
 
   return (
     <Highlight { ...defaultProps }
-      code={props?.children?.props?.children.trim()} 
+      code={props?.children?.props?.children.trim()}
       language={
         matches && matches.groups && matches.groups.lang
           ? matches.groups.lang
@@ -17,6 +17,13 @@ function CodeBlock(props) {
       theme={theme}>
       {({className, style, tokens, getLineProps, getTokenProps}) => (
         <pre className={className} style={{...style}}>
+          <span className='prism-code__language'>{matches && matches.groups && matches.groups.lang ? matches.groups.lang: ''}</span>
+          <button
+            className='btn btn--secondary btn--sm prism-code__copy-btn'
+            onClick={() =>  navigator.clipboard.writeText(props?.children?.props?.children.trim())}
+          >
+            Copy
+          </button>
           <code>
             {tokens.map((line, i) => (
               <div key={i} {...getLineProps({line, key: i})}>

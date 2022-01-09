@@ -1,8 +1,41 @@
 @use '~sprucecss/scss/spruce';
 
 .prism-code {
+  $this: &;
+
   border-radius: spruce.$border-radius-sm;
-  padding: spruce.spacer(xs) spruce.spacer(m);
+  padding: 2rem spruce.spacer(m) spruce.spacer(xs);
+  position: relative;
+
+  &:hover {
+    #{$this}__copy-btn {
+      opacity: 1;
+    }
+  }
+
+  &__language {
+    background-color: spruce.color(primary);
+    border-radius: 0 0 spruce.$border-radius-sm spruce.$border-radius-sm;
+    color: #fff;
+    display: inline-block;
+    font-family: var(--spruce-documentation-heading-font-family);
+    font-size: spruce.$font-size-sm;
+    font-weight: 500;
+    left: spruce.spacer(m);
+    line-height: 1;
+    padding: 0.4em 0.6em;
+    position: absolute;
+    text-transform: uppercase;
+    top: 0;
+  }
+
+  &__copy-btn {
+    font-size: 1rem;
+    inset: 0.75rem 0.75rem auto auto;
+    opacity: 0;
+    padding: 0.35em 0.5em;
+    position: absolute;
+  }
 
   > code {
     @include spruce.scrollbar($background: hsla(0, 0%, 100%, 0.1));
