@@ -6,27 +6,12 @@
   border-radius: spruce.$border-radius-sm;
   display: flex;
   font-size: 1rem;
-  padding: spruce.spacer(s);
+  padding: spruce.spacer(s) calc(spruce.spacer(s) + 0.5rem);
 
   code,
   kbd,
   samp {
     border: 1px solid;
-  }
-
-  &--wrong {
-    background-color: rgba(spruce.color(danger, alert, true), 0.1);
-    border-top: 0.5rem solid spruce.color(danger, alert);
-
-    #{$this}__icon {
-      color: spruce.color(danger, alert);
-    }
-
-    code,
-    kbd,
-    samp {
-      border-color: rgba(spruce.color(danger, alert, true), 0.5);
-    }
   }
 
   &--info {
@@ -56,6 +41,21 @@
     kbd,
     samp {
       border-color: rgba(spruce.color(success, alert, true), 0.5);
+    }
+  }
+
+  &--wrong {
+    background-color: rgba(spruce.color(danger, alert, true), 0.1);
+    border-top: 0.5rem solid spruce.color(danger, alert);
+
+    #{$this}__icon {
+      color: spruce.color(danger, alert);
+    }
+
+    code,
+    kbd,
+    samp {
+      border-color: rgba(spruce.color(danger, alert, true), 0.5);
     }
   }
 
