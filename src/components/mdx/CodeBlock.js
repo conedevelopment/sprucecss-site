@@ -5,6 +5,7 @@ import theme from 'prism-react-renderer/themes/nightOwl';
 function CodeBlock(props) {
   const className = props?.children?.props?.className || '';
   const matches = className.match(/language-(?<lang>.*)/);
+  const [isCopied, setIsCopied] = React.useState(false);
 
   return (
     <Highlight { ...defaultProps }
@@ -20,9 +21,13 @@ function CodeBlock(props) {
           <span className='prism-code__language'>{matches && matches.groups && matches.groups.lang ? matches.groups.lang: ''}</span>
           <button
             className='btn btn--secondary btn--sm prism-code__copy-btn'
-            onClick={() =>  navigator.clipboard.writeText(props?.children?.props?.children.trim())}
+            onClick={() => {
+                navigator.clipboard.writeText(props?.children?.props?.children.trim())
+                setIsCopied(true)
+                setTimeout(() => setIsCopied(false), 3000)
+            }}
           >
-            Copy
+            {isCopied ? "🎉 Copied!" : "Copy"}
           </button>
           <code>
             {tokens.map((line, i) => (
