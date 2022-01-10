@@ -30,6 +30,11 @@
       &:focus {
         color: spruce.color(primary);
       }
+
+      &.is-active {
+        color: spruce.color(primary);
+        text-decoration: underline;
+      }
     }
   }
 }
