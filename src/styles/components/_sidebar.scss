@@ -1,9 +1,9 @@
 @use '~sprucecss/scss/spruce';
-@use '../mixins/title';
+@use '../mixin';
 
 .sidebar {
   position: relative;
-  
+
   @include spruce.breakpoint(sm) {
     border-inline-end: 1px solid rgba(0, 0, 0, 0.05);
     padding-inline-end: spruce.spacer(m);
@@ -16,7 +16,7 @@
 
 .sidebar-section {
   &__title {
-    @include title.sidebar;
+    @include mixin.sidebar-title;
   }
 
   &__navigation {
@@ -33,20 +33,7 @@
       text-decoration: none;
 
       &[aria-current='page'] {
-        position: relative;
-        font-weight: 700;
-        color: spruce.color(heading);
-
-        &::before {
-          background-color: spruce.color(primary);
-          content: '';
-          width: 0.5rem;
-          border-radius: spruce.$border-radius-sm;
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          inset-inline-start: -1.25rem;
-        }
+        @include mixin.sidebar-active-menu-marker;
       }
     }
   }

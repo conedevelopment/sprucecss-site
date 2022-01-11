@@ -1,0 +1,25 @@
+@use '~sprucecss/scss/spruce';
+
+@mixin sidebar-active-menu-marker {
+  position: relative;
+  font-weight: 700;
+  color: spruce.color(heading);
+
+  &::before {
+    background-color: spruce.color(primary);
+    content: '';
+    width: 0.5rem;
+    border-radius: spruce.$border-radius-sm;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    inset-inline-start: -1.25rem;
+  }
+}
+
+@mixin sidebar-title {
+  color: spruce.color(primary);
+  font-size: spruce.$font-size-base;
+  margin: 0;
+  text-transform: uppercase;
+}

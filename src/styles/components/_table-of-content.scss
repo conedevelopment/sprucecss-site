@@ -1,12 +1,12 @@
 @use '~sprucecss/scss/spruce';
-@use '../mixins/title';
+@use '../mixin';
 
 .toc {
   position: sticky;
   top: 2rem;
 
   &__title {
-    @include title.sidebar;
+    @include mixin.sidebar-title;
   }
 
   &__navigation {
@@ -32,8 +32,7 @@
       }
 
       &.is-active {
-        color: spruce.color(primary);
-        text-decoration: underline;
+        @include mixin.sidebar-active-menu-marker;
       }
     }
   }
