@@ -4,7 +4,7 @@
   $this: &;
 
   border-radius: spruce.$border-radius-sm;
-  padding: 2rem spruce.spacer(m) spruce.spacer(xs);
+  overflow: hidden;
   position: relative;
 
   &:hover {
@@ -38,11 +38,9 @@
   }
 
   > code {
-    @include spruce.scrollbar($background: hsla(0, 0%, 100%, 0.1));
     background-color: transparent;
-    border-radius: 0;
-    display: block;
+    display: grid;
     overflow-x: auto;
-    padding: spruce.spacer(xs) 0;
+    padding: 2.5rem spruce.spacer(m) spruce.spacer(m);
   }
 }
