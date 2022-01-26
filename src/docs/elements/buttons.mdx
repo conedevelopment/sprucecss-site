@@ -24,7 +24,7 @@ You can use two default color variants named: primary and secondary. To overwrit
 
 ## Sizes
 
-Spruce came with three different button sizes: small, regular, large. Using the standard size, you don't have to use any modifier. For small use: ```btn--sm```, for large use: ```btn--lg``` class.
+Spruce came with three different button sizes: small, regular, large. Using the standard size, you don't have to use any modifier. For small use: `btn--sm`, for large use: `btn--lg` class.
 
 <Preview>
   <div class="button-grid">
@@ -42,9 +42,9 @@ Spruce came with three different button sizes: small, regular, large. Using the 
 
 ## Disabled state
 
-To disable any button element, use the disabled boolean attribute. The disabled style is a bit dimmer (```opacity: 0.5;```) and has the ```pointer-evens: none;``` to prevent the user actions.
+To disable any button element, use the disabled boolean attribute. The disabled style is a bit dimmer (`opacity: 0.5;`) and has the `pointer-evens: none;` to prevent the user actions.
 
-The disabled attribute doesn't work on links, so you have to use the ```btn--disabled``` modifier class. Also, you should omit the ```href``` attribute and set the ```aria-disabled="true"```.
+The disabled attribute doesn't work on links, so you have to use the `btn--disabled` modifier class. Also, you should omit the `href` attribute and set the `aria-disabled="true"`.
 
 <Preview>
   <div class="button-grid">
@@ -66,7 +66,7 @@ The disabled attribute doesn't work on links, so you have to use the ```btn--dis
 
 ## Block Buttons
 
-To display a block button, you can use the ```btn--block``` modifier class.
+To display a block button, you can use the `btn--block` modifier class.
 
 <Preview>
   <div class="button-grid button-grid--stacked">
@@ -82,33 +82,33 @@ To display a block button, you can use the ```btn--block``` modifier class.
 
 ## With Icon
 
-To use any icon with Spruce, you must specify it in image format, preferably in SVG, because we set its height and width. Use with the ```btn__icon``` class combined with the alignment class: ```btn__icon-start``` (left) ```btn__icon-end``` (right).
+To use any icon with Spruce, you must specify it in image format, preferably in SVG, because we set its height and width. Use with the `btn__icon` class on the image. Place it before (left) or after the caption (right) depending on the position.
+
+The `.btn` has `inline-flex` display with a `gap` value.
 
 <Preview>
   <div class="button-grid button-grid--stacked">
     <button type="button" class="btn btn--primary">
-      <Icon type="arrow-right" className="btn__icon btn__icon--start" />
+      <Icon type="arrow-right" className="btn__icon" />
       Read more
     </button>
     <button type="button" class="btn btn--secondary">
       Read more
-      <Icon type="arrow-right" className="btn__icon btn__icon--end" />
+      <Icon type="arrow-right" className="btn__icon" />
     </button>
   </div>
 </Preview>
 
 ```html
 <button type="button" class="btn btn--primary">
-  <svg class="btn__icon btn__icon--start">...</svg>
+  <svg class="btn__icon">...</svg>
   Read more
 </button>
 <button type="button" class="btn btn--secondary">
   Read more
-  <svg class="btn__icon btn__icon--end">...</svg>
+  <svg class="btn__icon">...</svg>
 </button>
 ```
-
-<Notification type="info">We use <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties">CSS Logical Properties</a> for position to support RTL at the icons hence the naming: start, end.</Notification>
 
 ## Configurable Variables
 
@@ -144,7 +144,7 @@ $colors: (
 
 ## Add Custom Button Variant
 
-You can create new button color variants using the ```btn-variant``` mixin. First, you must declare the new button's colors at the ```$color``` map under the ```btn``` object. After this, all you have to do is to call the mixin on the preferred selector.
+You can create new button color variants using the `btn-variant` mixin. First, you must declare the new button's colors at the `$color` map under the `btn` object. After this, all you have to do is to call the mixin on the preferred selector.
 
 ```scss
 // You have to specify the additional colors at the very first import of Spruce.
