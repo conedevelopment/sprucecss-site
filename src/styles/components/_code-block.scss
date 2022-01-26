@@ -1,17 +1,15 @@
+@use 'sass:color';
 @use '~sprucecss/scss/spruce';
+
+.prism-code-wrapper {
+  position: relative;
+}
 
 .prism-code {
   $this: &;
 
   border-radius: spruce.$border-radius-sm;
   overflow: hidden;
-  position: relative;
-
-  &:hover {
-    #{$this}__copy-btn {
-      opacity: 1;
-    }
-  }
 
   &__language {
     background-color: spruce.color(primary);
@@ -30,16 +28,38 @@
   }
 
   &__copy-btn {
+    align-items: center;
+    background-color: color.scale(spruce.color(primary, $only-color: true), $lightness: -30%);
+    display: flex;
     font-size: 1rem;
-    inset: 0.75rem 0.75rem auto auto;
-    opacity: 0;
-    padding: 0.35em 0.5em;
+    height: 2rem;
+    justify-content: center;
+    inset: -0.75rem -0.75rem auto auto;
+    padding: 0;
     position: absolute;
+    width: 2rem;
+
+    &:hover {
+      background-color: color.scale(spruce.color(primary, $only-color: true), $lightness: -10%);
+    }
+
+    .icon {
+      display: inline-flex;
+      font-size: 0.85em;
+      line-height: 1;
+
+      svg {
+        color: #fff;
+        height: 1rem;
+        width: 1rem;
+      }
+    }
   }
 
   > code {
     background-color: transparent;
     display: grid;
+    font-size: 1rem;
     overflow-x: auto;
     padding: 2.5rem spruce.spacer(m) spruce.spacer(m);
   }
