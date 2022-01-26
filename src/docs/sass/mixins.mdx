@@ -234,12 +234,14 @@ Create natively styled custom scrollbars.
 
 ### Argument(s)
 
-| Name                 | Default Value                  | Description                                    |
-|----------------------|--------------------------------|------------------------------------------------|
-| ```$size```          | ```0.5rem```                   | The width or height of the scrollbar.          |
-| ```$foreground```    | ```spruce.color(primary)```    | The color of the scrollbar handle.             |
-| ```$background```    | ```hsla(0, 0%, 0%, 0.1)```     | The background color of the scrollbar.         |
-| ```$border-radius``` | ```spruce.$border-radius-sm``` | The border-radius of the scrollbar and handle. |
+| Name                            | Default Value              | Description                                       |
+| ------------------------------- | -------------------------- | ------------------------------------------------- |
+| `$size`                         | `0.5rem`                   | The width or height of the scrollbar.             |
+| `$thumb-background-color`       | `hsla(0, 0%, 0%, 0.15)`    | The color of the scrollbar handle.                |
+| `$thumb-background-color-hover` | `hsla(0, 0%, 0%, 0.25)`    | The color of the scrollbar handle on hover state. |
+| `$track-background-color`       | `hsla(0, 0%, 0%, 0.05)`    | The background color of the scrollbar.            |
+| `$border-radius`                | `spruce.$border-radius-sm` | The border-radius of the scrollbar and handle.    |
+
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L60)
 
@@ -247,7 +249,9 @@ Create natively styled custom scrollbars.
 
 ```scss
 code {
-  @include spruce.scrollbar($background: hsla(0, 0%, 100%, 0.1));
+  @include spruce.scrollbar(
+    $thumb-background-color: spruce.color(primary)
+  );
   background-color: transparent;
   border-radius: 0;
   display: block;
