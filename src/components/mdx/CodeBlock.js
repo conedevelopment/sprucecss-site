@@ -29,7 +29,7 @@ function CodeBlock(props) {
             }}
           >
 
-            {isCopied ? <span className="icon">🎉</span> : <span className="icon"><CopyIcon /></span>}
+            {isCopied ? <span className="icon">👍</span> : <span className="icon"><CopyIcon /></span>}
           </button>
           <pre className={className} style={{...style}}>
             <span className='prism-code__language'>{matches && matches.groups && matches.groups.lang ? matches.groups.lang: ''}</span>
