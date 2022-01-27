@@ -3,6 +3,7 @@ import Highlight, { defaultProps } from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/nightOwl';
 
 import CopyIcon from '../../images/icons/copy.svg';
+import CopiedIcon from '../../images/icons/copied.svg';
 
 function CodeBlock(props) {
   const className = props?.children?.props?.className || '';
@@ -28,11 +29,10 @@ function CodeBlock(props) {
                 setTimeout(() => setIsCopied(false), 3000)
             }}
           >
-
-            {isCopied ? <span className="icon">👍</span> : <span className="icon"><CopyIcon /></span>}
+            {isCopied ? <CopiedIcon /> : <CopyIcon />}
           </button>
           <pre className={className} style={{...style}}>
-            <span className='prism-code__language'>{matches && matches.groups && matches.groups.lang ? matches.groups.lang: ''}</span>
+            <span className='prism-code__language'>{matches?.groups?.lang || ''}</span>
             <code>
               {tokens.map((line, i) => (
                 <div key={i} {...getLineProps({line, key: i})}>
