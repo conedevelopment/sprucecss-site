@@ -4,17 +4,17 @@ title: 'Functions'
 
 ## color
 
-Get color value by key and type name from the ```$colors``` map. The ```$colors``` map is nested, so you can access the color values by multiple levels, separated into groups.
+Get color value by key and type name from the `$colors` map. The `$colors` map is nested, so you can access the color values by multiple levels, separated into groups.
 
-The function returns a CSS custom property with a fallback color, but you can also access just the color value setting the ```$only-color``` value to ```true```.
+The function returns a CSS custom property with a fallback color, but you can also access just the color value setting the `$only-color` value to `true`.
 
 ### Argument(s)
 
 | Name              | Default Value | Description                                                     |
 |-------------------|---------------|-----------------------------------------------------------------|
-| ```$key```        |               | The name of the color.                                          |
-| ```$type```       | ```base```    | The group of the color.                                         |
-| ```$only-color``` | ```false```   | Wheater to get just the color value or the CSS custom property. |
+| `$key`        |               | The name of the color.                                          |
+| `$type`       | `base`    | The group of the color.                                         |
+| `$only-color` | `false`   | Wheater to get just the color value or the CSS custom property. |
 
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/function/_color.scss#L6)
@@ -33,15 +33,16 @@ a {
 
 ## font-size
 
-Get a value from the ```$font-sizes``` map by key name. By default, the function gives back a fluid font size using ```clamp()```, which amount you can control using the ```$scaler``` value.
+Get a value from the `$font-sizes` map by key name. By default, the function gives back a fluid font size using `clamp()`, which amount you can control using the `$scaler` value.
 
 ### Argument(s)
 
-| Name          | Default Value | Description                                                                  |
-|---------------|---------------|------------------------------------------------------------------------------|
-| ```$key```    |               | The name of the font-size (defaults: h1, h2, h3, h4, h5, h6).                |
-| ```$fluid```  | ```true```    | Whether you want fluid declaration or not.                                   |
-| ```$scaler``` | ```15```      | How much smaller font size do you want for the smaller screen in percentage. |
+| Name            | Default Value                          | Description                                                                  |
+| --------------- | -------------------------------------- | ---------------------------------------------------------------------------- |
+| `$key`          |                                        | The name of the font-size (defaults: h1, h2, h3, h4, h5, h6).                |
+| `$fluid`        | `true`                                 | Whether you want fluid declaration or not.                                   |
+| `$scaler`       | `15`                                   | How much smaller font size do you want for the smaller screen in percentage. |
+| `$optimal-size` | `2vw + 1rem` from the `$settings` map. | The optimal font-size value if `$fluid` is set to `true`.                    |
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/function/_font-size.scss#L6)
 
@@ -60,14 +61,15 @@ Get a value from the ```$font-sizes``` map by key name. By default, the function
 
 ## responsive-font-size
 
-It is hard to get generic font sizes that we can use throughout a whole project. Usually, we need unique ones. For this, we can set fluid declaration, similar to the ```font-size()``` function.
+It is hard to get generic font sizes that we can use throughout a whole project. Usually, we need unique ones. For this, we can set fluid declaration, similar to the `font-size()` function.
 
 ### Argument(s)
 
-| Name          | Default Value | Description                                                                  |
-|---------------|---------------|------------------------------------------------------------------------------|
-| ```$size```   |               | The size of the font with a prefered unit.                                   |
-| ```$scaler``` | ```15```      | How much smaller font size do you want for the smaller screen in percentage. |
+| Name            | Default Value                          | Description                                                                  |
+| --------------- | -------------------------------------- | ---------------------------------------------------------------------------- |
+| `$size`         |                                        | The size of the font with a prefered unit.                                   |
+| `$scaler`       | `15`                                   | How much smaller font size do you want for the smaller screen in percentage. |
+| `$optimal-size` | `2vw + 1rem` from the `$settings` map. | The optimal font-size value if `$fluid` is set to `true`.                    |
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/function/_font-size.scss#L29)
 
@@ -81,13 +83,13 @@ It is hard to get generic font sizes that we can use throughout a whole project.
 
 ## setting
 
-Get a value by key name from the ```$settings``` map.
+Get a value by key name from the `$settings` map.
 
 ### Argument(s)
 
 | Name          | Description                                                                  |
 |---------------|------------------------------------------------------------------------------|
-| ```$key```    | The name of the setting.                                                     |
+| `$key`    | The name of the setting.                                                     |
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/function/_setting.scss#L5)
 
@@ -111,13 +113,13 @@ Get a value by key name from the ```$settings``` map.
 
 ## spacer
 
-Get a value by key name from the ```$spacers``` map.
+Get a value by key name from the `$spacers` map.
 
 ### Argument(s)
 
 | Name          | Description                                                                  |
 |---------------|------------------------------------------------------------------------------|
-| ```$key```    | The name of the spacer.                                                      |
+| `$key`    | The name of the spacer.                                                      |
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/function/_spacer.scss#L5)
 
