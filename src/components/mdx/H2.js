@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from '../../images/icons/link.svg';
 
 function getAnchor(text) {
   return text
@@ -13,7 +14,12 @@ function H2(props) {
   return (
     <>
       {(props.className !== 'preview-heading')
-      ? <h2 id={anchor}><a href={link} className="anchor-link" aria-label={props.children}>#</a>{props.children}</h2>
+      ? <h2 className='anchor-heading' id={anchor}>
+          {props.children}
+          <a href={link} className="anchor-link" aria-label={props.children}>
+            <Link />
+          </a>
+        </h2>
       : <h2 className="preview-heading">{props.children}</h2>}
     </>
   );
