@@ -41,7 +41,7 @@ function Post({ data: { mdx: post } }) {
                   </nav>
                 </section>
               </div>}
-              <div className="layout-documentation__content">
+              <div className="layout-documentation__content entry-content">
                 <MDXRenderer>{body}</MDXRenderer>
               </div>
             </article>

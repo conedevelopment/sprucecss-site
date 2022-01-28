@@ -1,0 +1,16 @@
+@use '~sprucecss/scss/spruce';
+
+.entry-content {
+  @include spruce.layout-stack(spruce.spacer(m));
+
+  > * + h2 {
+    margin-top: spruce.spacer(l);
+  }
+
+  > * + h3,
+  > * + h4,
+  > * + h5,
+  > * + h6 {
+    margin-top: 2.25rem;
+  }
+}

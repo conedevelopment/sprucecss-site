@@ -8,8 +8,8 @@
       install-background: hsl(0, 0%, 95%),
       install-background-hover: hsl(0, 0%, 90%),
       install-foreground: hsl(0, 0%, 10%),
-      decline-background: hsla(0, 0%, 100%, 0.1),
-      decline-background-hover: hsla(0, 0%, 100%, 0.2),
+      decline-background: hsl(207, 39%, 17%),
+      decline-background-hover: hsl(207, 23%, 26%),
       decline-foreground: hsl(0, 0%, 100%),
     ),
     cookie: (
@@ -23,19 +23,22 @@
   $form-control-font-size: 1rem
 );
 
-@use 'components/code-block';
-@use 'components/docs-cards';
-@use 'components/error-404';
-@use 'components/footer';
-@use 'components/header';
-@use 'components/hero';
-@use 'components/notification';
-@use 'components/preview';
-@use 'components/sidebar';
-@use 'components/skip-link';
-@use 'components/table-of-content';
-@use 'components/cookie-consent';
-@use 'layout/documentation';
+@forward 'components/code-block';
+@forward 'components/docs-cards';
+@forward 'components/error-404';
+@forward 'components/footer';
+@forward 'components/header';
+@forward 'components/hero';
+@forward 'components/notification';
+@forward 'components/preview';
+@forward 'components/sidebar';
+@forward 'components/skip-link';
+@forward 'components/table-of-content';
+@forward 'components/cookie-consent';
+@forward 'components/entry-content';
+
+@forward 'layout/documentation';
+@forward 'layout/page';
 
 body {
   --spruce-documentation-heading-font-family: 'Poppins', sans-serif;
