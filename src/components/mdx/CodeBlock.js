@@ -28,6 +28,7 @@ function CodeBlock(props) {
                 setIsCopied(true)
                 setTimeout(() => setIsCopied(false), 3000)
             }}
+            aria-label={isCopied ? 'Copied' : 'Copy'}
           >
             {isCopied ? <CopiedIcon /> : <CopyIcon />}
           </button>
