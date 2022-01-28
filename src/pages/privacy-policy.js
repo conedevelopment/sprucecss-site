@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Cookies from 'universal-cookie';
 
 // Import components
@@ -14,12 +14,9 @@ function PrivacyPolicy() {
     return false;
   });
 
-  useEffect(() => {
-      cookies.remove('spruce-gdpr-cookies');
-  }, [cookieConsent]);
-
   function handleCookie(e) {
     setCookieConsent(! cookieConsent);
+    cookies.remove('spruce-gdpr-cookies');
   }
 
   return (
