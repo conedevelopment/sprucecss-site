@@ -44,7 +44,7 @@
   &__serial-number {
     color: spruce.color(primary);
     font-family: var(--spruce-documentation-heading-font-family);
-    font-size: spruce.responsive-font-size(4rem, 30);
+    font-size: spruce.responsive-font-size(4rem, 30, '4vw + 1rem');
     font-weight: 700;
     line-height: 1;
   }
