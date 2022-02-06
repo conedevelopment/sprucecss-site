@@ -45,7 +45,7 @@ function Footer() {
             </ul>
           </div>
           <div className="footer__col">
-            <h3 className="footer__title">More Projects</h3>
+            <h3 className="footer__title">Other Projects</h3>
             <ul className="footer__navigation">
               <li><a href="https://pineco.de/">Pine</a></li>
               <li><a href="https://bazar.conedevelopment.com/">Bazar</a></li>
