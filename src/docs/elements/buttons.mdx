@@ -173,6 +173,7 @@ You can create new button color variants using the `btn-variant` mixin. First, y
       ternary-background: hsl(247, 65%, 49%),
       ternary-background-hover: hsl(247, 65%, 39%),
       ternary-foreground: hsl(0, 0%, 100%),
+      ternary-foreground-hover: hsl(0, 0%, 100%),
     )
   )
 );
@@ -183,21 +184,4 @@ You can create new button color variants using the `btn-variant` mixin. First, y
 }
 ```
 
-```scss
-@mixin btn-variant(
-  $color: primary-foreground,
-  $background: primary-background
-) {
-  background-color: function.color(#{$background}, btn);
-  color: function.color(#{$color}, btn);
-
-  &:hover {
-    background-color: function.color(#{$background}-hover, btn);
-    color: function.color(#{$color}, btn);
-  }
-
-  &:focus {
-    @include btn-focus($background);
-  }
-}
-```
+More information about the `btn-variant()` please visit the [releated mixin page](/docs/sass/mixins#btn-variant).
