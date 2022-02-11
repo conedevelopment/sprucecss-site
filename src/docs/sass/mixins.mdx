@@ -20,7 +20,7 @@ Creat custom aspect ratio for elements.
 
 ```scss
 .iframe-responsive {
-  @include mixin.aspect-ratio(16, 9, iframe);
+  @include spruce.aspect-ratio(16, 9, iframe);
 }
 ```
 
@@ -147,7 +147,7 @@ Using the help of the ```layout-stack``` mixin, you can classical stack layout w
 
 | Name          | Default Value            | Description                                                                         |
 |---------------|--------------------------|-------------------------------------------------------------------------------------|
-| ```$gutter``` | ```function.spacer(m)``` | The margin value between the elements. The value comes from the ```$spacers``` map. |
+| ```$gutter``` | ```spruce.spacer(m)``` | The margin value between the elements. The value comes from the ```$spacers``` map. |
 | ```$width```  | ```true```               | Set ```width: 100%;``` on the stacked elements.                                     |
 | ```$align```  | ```none```               | Set explicit align to the elements(```none```, ```left```, ```right```).            |
 | ```$split```  | ```0```                  | Split the elements vertically from the nth element.                                 |
