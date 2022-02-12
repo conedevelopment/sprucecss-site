@@ -7,7 +7,8 @@ module.exports = {
     slogen: [
       '🎉 Another CSS Framework',
       '😳 Yesterday I liked it.',
-      '🤨 It could be worse, I think.'
+      '🤨 It could be worse, I think.',
+      '🙄 This is not funny...'
     ],
     title: 'Spruce CSS',
     twitter: 'conedevelopment'

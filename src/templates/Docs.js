@@ -15,7 +15,10 @@ export const query = graphql`
         title
       }
       body,
-      tableOfContents(maxDepth: 2)
+      headings {
+        depth
+        value
+      }
     }
   }
 `;
@@ -32,12 +35,12 @@ function Post({ data: { mdx: post } }) {
             <Sidebar />
             <article className="layout-documentation__body">
               <h1 className="layout-documentation__title">{title}</h1>
-              {post.tableOfContents.items &&
+              {post.headings &&
               <div className="layout-documentation__table-of-content">
                 <section className="toc" aria-labelledby="toc-title">
                   <h3 className="toc__title" id="toc-title">On this page</h3>
                   <nav className="toc__navigation">
-                    <TableOfContents headings={post.tableOfContents.items} />
+                    <TableOfContents headings={post.headings} />
                   </nav>
                 </section>
               </div>}

@@ -1,13 +1,15 @@
 import React from 'react';
+import getAnchor from './utils/getAnchor.js';
 
- function TableOfContents({ headings }) {
+function TableOfContents({ headings }) {
+  console.log(headings);
   return (
     <ul>
       {headings
-        .filter(heading => heading.depth !== 1)
+        .filter(heading => heading.depth > 1 && heading.depth < 4)
         .map(heading => (
-          <li key={heading.title}>
-            <a href={heading.url}>{heading.title}</a>
+          <li className={`heading-${heading.depth}`} key={heading.value}>
+            <a href={`#${getAnchor(heading.value)}`}>{heading.value}</a>
           </li>
         ))}
     </ul>
