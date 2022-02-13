@@ -1,45 +1,61 @@
 @use '~sprucecss/scss/spruce';
 
-.page-navigation {
+.post-navigation {
+  align-items: center;
   border-block-start: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
+  flex-wrap: wrap;
+  gap: spruce.spacer(m);
+  justify-content: space-between;
   margin-block-start: spruce.spacer(l);
   padding-block-start: spruce.spacer(m);
+}
 
-  > * {
-    width: 50%;
-  }
+.post-navigation-item {
+  $this: &;
 
-  &__prev {
-    svg {
-      left: -1.2rem;
+  align-items: center;
+  display: flex;
+  gap: spruce.spacer(s);
+  text-decoration: none;
+
+  &:hover {
+    #{$this}__icon {
+      background-color: spruce.color(primary);
+      color: #fff;
     }
   }
 
-  &__next {
+  &--next {
+    margin-inline-start: auto;
     text-align: right;
+  }
+
+  &__icon {
+    align-items: center;
+    background-color: hsl(259, 53%, 94%);
+    border-radius: spruce.$border-radius-lg;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    height: 3rem;
+    transition: all var(--#{spruce.$prefix}-transition-duration) var(--#{spruce.$prefix}-transition-timing-function);
+    width: 3rem;
 
     svg {
-      right: -1.2rem;
+      height: 1rem;
+      width: 1rem;
     }
+  }
+
+  &__caption {
+    color: spruce.color(text);
+    line-height: spruce.$line-height-md;
   }
 
   &__title {
-    color: var(--meta-color);
+    color: spruce.color(primary);
     display: block;
-  }
-
-  &__link {
-    position: relative;
     font-weight: 700;
-    text-decoration: none;
-
-    svg {
-      position: absolute;
-      top: calc(50% - 0.375rem);
-      height: 0.75rem;
-      width: 0.75rem;
-      fill: rgba(0,0,0,0.15);
-    }
   }
 }

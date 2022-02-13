@@ -40,40 +40,46 @@ function Post({ data: { mdx: post }, pageContext }) {
         <div className="layout-documentation__container">
           <div className="layout-documentation__inner">
             <Sidebar />
-            <article className="layout-documentation__body">
-              <h1 className="layout-documentation__title">{title}</h1>
-              {post.headings &&
-              <div className="layout-documentation__table-of-content">
-                <section className="toc" aria-labelledby="toc-title">
-                  <h3 className="toc__title" id="toc-title">On this page</h3>
-                  <nav className="toc__navigation">
-                    <TableOfContents headings={post.headings} />
-                  </nav>
-                </section>
-              </div>}
-              <div className="layout-documentation__content entry-content">
-                <MDXRenderer>{body}</MDXRenderer>
+            <div>
+              <article className="layout-documentation__body">
+                <h1 className="layout-documentation__title">{title}</h1>
+                {post.headings &&
+                <div className="layout-documentation__table-of-content">
+                  <section className="toc" aria-labelledby="toc-title">
+                    <h3 className="toc__title" id="toc-title">On this page</h3>
+                    <nav className="toc__navigation">
+                      <TableOfContents headings={post.headings} />
+                    </nav>
+                  </section>
+                </div>}
+                <div className="layout-documentation__content entry-content">
+                  <MDXRenderer>{body}</MDXRenderer>
+                </div>
+              </article>
+              <div className="post-navigation">
+                {prev &&
+                  <Link className="post-navigation-item post-navigation-item--prev" to={`/docs/${prev.slug}`}>
+                    <span className="post-navigation-item__icon">
+                      <ArrowLeft />
+                    </span>
+                    <span className="post-navigation-item__caption">
+                      Previous
+                      <span className="post-navigation-item__title">{prev.frontmatter.title}</span>
+                    </span>
+                  </Link>
+                }
+                {next &&
+                  <Link className="post-navigation-item post-navigation-item--next" to={`/docs/${next.slug}`}>
+                    <span className="post-navigation-item__caption">
+                      Next
+                      <span className="post-navigation-item__title">{next.frontmatter.title}</span>
+                    </span>
+                    <span className="post-navigation-item__icon">
+                      <ArrowRight />
+                    </span>
+                  </Link>
+                }
               </div>
-            </article>
-          </div>
-          <div className="page-navigation">
-            <div className="page-navigation__prev">
-              {prev && <span className="page-navigation__title">Prev</span>}
-              {prev &&
-                <Link className="page-navigation__link" to={`/docs/${prev.slug}`}>
-                  <ArrowLeft />
-                  {prev.frontmatter.title}
-                </Link>
-              }
-            </div>
-            <div className="page-navigation__next">
-              {next && <span className="page-navigation__title">Next</span>}
-              {next &&
-                <Link className="page-navigation__link" to={`/docs/${next.slug}`}>
-                  {next.frontmatter.title}
-                  <ArrowRight />
-                </Link>
-              }
             </div>
           </div>
         </div>
