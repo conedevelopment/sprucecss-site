@@ -1,0 +1,45 @@
+@use '~sprucecss/scss/spruce';
+
+.page-navigation {
+  border-block-start: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  margin-block-start: spruce.spacer(l);
+  padding-block-start: spruce.spacer(m);
+
+  > * {
+    width: 50%;
+  }
+
+  &__prev {
+    svg {
+      left: -1.2rem;
+    }
+  }
+
+  &__next {
+    text-align: right;
+
+    svg {
+      right: -1.2rem;
+    }
+  }
+
+  &__title {
+    color: var(--meta-color);
+    display: block;
+  }
+
+  &__link {
+    position: relative;
+    font-weight: 700;
+    text-decoration: none;
+
+    svg {
+      position: absolute;
+      top: calc(50% - 0.375rem);
+      height: 0.75rem;
+      width: 0.75rem;
+      fill: rgba(0,0,0,0.15);
+    }
+  }
+}

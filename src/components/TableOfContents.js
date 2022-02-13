@@ -2,7 +2,6 @@ import React from 'react';
 import getAnchor from './utils/getAnchor.js';
 
 function TableOfContents({ headings }) {
-  console.log(headings);
   return (
     <ul>
       {headings

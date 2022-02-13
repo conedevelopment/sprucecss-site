@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql  } from 'gatsby';
+import { Link, graphql  } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 // Import components
@@ -7,6 +7,10 @@ import Layout from '../components/Layout';
 import TableOfContents from '../components/TableOfContents';
 import Sidebar from '../components/Sidebar';
 import SEO from '../components/SEO';
+
+// Images
+import ArrowLeft from "../images/icons/arrow-left.svg";
+import ArrowRight from '../images/icons/arrow-right.svg';
 
 export const query = graphql`
   query ($slug: String!) {
@@ -23,7 +27,10 @@ export const query = graphql`
   }
 `;
 
-function Post({ data: { mdx: post } }) {
+function Post({ data: { mdx: post }, pageContext }) {
+  const {next, prev} = pageContext;
+  console.log(pageContext);
+
   const { title } = post.frontmatter;
   const { body } = post;
   return (
@@ -48,6 +55,26 @@ function Post({ data: { mdx: post } }) {
                 <MDXRenderer>{body}</MDXRenderer>
               </div>
             </article>
+          </div>
+          <div className="page-navigation">
+            <div className="page-navigation__prev">
+              {prev && <span className="page-navigation__title">Prev</span>}
+              {prev &&
+                <Link className="page-navigation__link" to={`/docs/${prev.slug}`}>
+                  <ArrowLeft />
+                  {prev.frontmatter.title}
+                </Link>
+              }
+            </div>
+            <div className="page-navigation__next">
+              {next && <span className="page-navigation__title">Next</span>}
+              {next &&
+                <Link className="page-navigation__link" to={`/docs/${next.slug}`}>
+                  {next.frontmatter.title}
+                  <ArrowRight />
+                </Link>
+              }
+            </div>
           </div>
         </div>
       </main>

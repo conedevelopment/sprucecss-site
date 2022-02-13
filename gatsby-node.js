@@ -5,20 +5,28 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const { data } = await graphql(`
     query {
-      docs: allMdx {
+      docs: allMdx(sort: {order: ASC, fields: frontmatter___order}) {
         nodes {
           slug
+          frontmatter {
+            title
+          }
         }
       }
     }
   `);
-  
-  data.docs.nodes.forEach((doc) => {
+
+  const docPages = data.docs.nodes;
+
+  docPages.forEach((doc, index) => {
+    console.log(docPages[index]);
     actions.createPage({
       path: `docs/${doc.slug}`,
       component: docsTemplate,
       context: {
         slug: doc.slug,
+        prev: index === 0 ? null : docPages[index - 1],
+        next: index === (docPages.length - 1) ? null : docPages[index + 1]
       },
     });
   });
