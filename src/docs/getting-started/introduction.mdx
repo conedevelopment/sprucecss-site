@@ -3,23 +3,19 @@ title: 'Introduction'
 description: ''
 ---
 
-<p className="lead">Spruce is a Sass-based CSS design system, a minimalistic framework that helps us get the foundation right and better manage multiple projects.</p>
+<p className="lead">Spruce is a Sass-based minimalistic CSS framework that helps us get the foundation right and manage multiple projects better.</p>
 
-By minimalistic, we mean that it contains only the bare minimum needed for a complex system. Besides the form elements, there aren’t any classical components (there will be components, but we will manage them under Spruce UI, under a sister project) in it. Although it seems small, it isn’t.
+By minimalist, we mean that it contains only the bare minimum needed for a complex system. Besides the form elements, there aren’t any classical components in it. The generated CSS is relatively tiny, somewhere around [+1000 lines of code](https://github.com/conedevelopment/sprucecss/blob/main/css/spruce.css) (it uses [normalize.css](https://necolas.github.io/normalize.css/), which takes up +300 lines of code). Although it seems small, it isn’t. Spruce CSS uses Sass with many variables, mixins, and functions to ease the work.
 
-<Notification type="wrong" icon={false}>Please, note that we are considering Spruce beta until the 1.0 release. <strong>At this point, a lot of things are missing, could and will change.</strong> We plan to release the first major version in the next 3-6 months.</Notification>
+<Notification type="wrong" icon={false}>Spruce CSS is in beta until the 1.0 release. <strong>At this point, many things are missing, could, and will change.</strong> We plan to release the first major version in the next 3-6 months (until 2022 July).</Notification>
 
-## Why Make Another CSS Framework?
-
-As you may know, there are a great many CSS frameworks. Everybody can choose one that suits their work of style or project requirements well. So why make another one? It is certainly not because we can do it better but because we want to do it our way.
-
-We are sure everybody uses a CSS system; it can be a complete framework or a set of custom utilities. Everyone uses some subset for the new projects as we do. But managing it is something that will be a burden after a time. So why not outsource it, make it better, and create a package?
+<Notification type="info" icon={true}>Spruce UI will be a separate sister project of Spruce CSS, where you will find pre-built components.We plan to start to work on it at the end of this year (2022).</Notification>
 
 ## What Spruce Wants to Be?
 
 - It wants to be a little bit better with each release.
-- It wants to be minimalistic and small, with just the essential necessities for any project.
-- It wants to be modern. Defining modern is challenging in a constantly changing environment, but the essence here is to follow the new things in CSS.
+- It wants to be minimal and small, with just the necessities for any project.
+- It wants to be modern. Defining modern is challenging in a constantly changing environment, but the essence here is to **follow the new things in CSS**.
 - It wants to separate the basic framework from a UI or component library. For UI, we plan to do a separate project named Spruce UI.
 - It wants to be semantic and follow accessibility best practices where possible.
 - It wants to do less (we will see if it actually happens).
@@ -30,7 +26,13 @@ We are sure everybody uses a CSS system; it can be a complete framework or a set
 - Although it has some design opinion, it is not something to help you design. The goal is to give you the correct patterns and a small system; the UI is your job.
 - Spruce is just a tool. It can help you, but alone it can’t make your code better. You have to do your homework.
 
-## Sure, It Is Opinionated
+## Why Make Another CSS Framework?
+
+As you may know, there are a great many CSS frameworks. Everybody can choose one that suits their work of style or project requirements well. So why make another one? It is certainly not because we can do it better but because we want to do it our way.
+
+We are sure everybody uses a CSS system; it can be a complete framework or a set of custom utilities. Everyone uses some subset for the new projects as we do. But managing it is something that will be a burden after a time. So why not outsource it, make it better, and create a package?
+
+## It Is Opinionated
 Each system is opinionated but on a different level; this is valid for Spruce too. We don’t want to vote for any particular solution (because there are always more than one), but we will show you what we think is the best right now (for us for sure). We don’t believe there is a good or bad solution, but we can learn from any of them.
 
 ## We Left the Grid Out
