@@ -5,6 +5,13 @@
   position: sticky;
   top: 2rem;
 
+  @include spruce.breakpoint(lg) {
+    @include spruce.scrollbar($size: 0.3rem);
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: calc(100vh - 4rem);
+  }
+
   &__title {
     @include mixin.sidebar-title;
   }

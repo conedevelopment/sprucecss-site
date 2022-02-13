@@ -29,7 +29,6 @@ export const query = graphql`
 
 function Post({ data: { mdx: post }, pageContext }) {
   const {next, prev} = pageContext;
-  console.log(pageContext);
 
   const { title } = post.frontmatter;
   const { body } = post;
@@ -43,7 +42,7 @@ function Post({ data: { mdx: post }, pageContext }) {
             <div>
               <article className="layout-documentation__body">
                 <h1 className="layout-documentation__title">{title}</h1>
-                {post.headings &&
+                {post.headings.length !== 0 &&
                 <div className="layout-documentation__table-of-content">
                   <section className="toc" aria-labelledby="toc-title">
                     <h3 className="toc__title" id="toc-title">On this page</h3>
