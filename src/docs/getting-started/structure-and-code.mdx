@@ -9,22 +9,37 @@ order: 3
 
 - Where it is possible, we use elements and/or attributes to style elements, but it is still a class-based framework.
 - We use Stylelint with a [modified configuration](https://github.com/conedevelopment/sprucecss/blob/main/.stylelintrc.json) with [stylelint-config-sass-guidelines](https://www.npmjs.com/package/stylelint-config-sass-guidelines) preset to quality control.
-- We alphabetize the property declaration order. It is practical, no joke.
+- We [alphabetize](https://jerrylowm.medium.com/alphabetize-your-css-properties-for-crying-out-loud-780eb1852153) the property declaration order. It is practical, no joke.
 - We use mostly BEM when a more complicated structure is necessary.
 - We try not to use px as units. Right now, it is only present at border values.
+- We use modern Sass with `@use` and `@forward`.
 
-## Developing with Spruce
+## BEM (Block Element Modifier)
+
+For writing complex components, we use [BEM](http://getbem.com/naming/), a simple naming convention that helps to create manageable code. A simple example looks like this:
+
+- Block: a component element, like `.btn`.
+- Element: a child element of the component like `.btn__icon`.
+- Modifier: a flag that someway modifies the component like `.btn--primary`.
+
+## Class vs. Classless Frameworks
+
+A classless framework doesn’t specify classes and special markup for your elements. You use regular HTML elements. The advantage is that you only need to load a CSS file and get many styling right away.
+
+We think this approach has more problems in the long run, so we use classes. Of course, we also style just elements where it is convenient (like text-related elements).
+
+## The Source Code of Spruce
 
 Spruce uses npm scripts to compile Sass and to do other tasks. You can see all of the scripts in the [package.json file](https://github.com/conedevelopment/sprucecss/blob/main/package.json).
 
 **Our two main scripts are:**
 
-- ```npm run dev``` is for development purposes. It will fire up the development preview, a pug-based, simple HTML page where you can see all the styled elements.
-- ```npm run prod``` is for production. It will create the right compiled CSS files.
+- `npm run dev` is for development purposes. It will fire up the development preview (which is a sandbox for us), a pug-based, simple HTML page where you can see all the styled elements.
+- `npm run prod` is for production. It will create the right compiled CSS files.
 
-## The Structure of the Project
+### The Structure of the Project
 
-You can find the main code under the ```scss``` folder at the root. The ```.vscode``` folder contains a VS Code configuration file. The ```preview``` folder is a developer helper where we can see the effect of the modification right away.
+You can find the main code under the `scss` folder at the root. The `.vscode` folder contains a VS Code configuration file. The `preview` folder is a developer helper where we can see the effect of the modification right away.
 
 ```scss
 sprucecss/
@@ -46,6 +61,8 @@ sprucecss/
 ├─ README.md
 ├─ ...
 ```
+
+If you plan to contribute first, please visit our [contributon](/docs/getting-started/contribution/). Thank you!
 
 ## Browser Support
 
