@@ -1,7 +1,7 @@
 import React from 'react';
-import getAnchor from './utils/getAnchor.js';
+import getAnchor from '../utils/getAnchor.js';
 
-function TableOfContents({ headings }) {
+const TableOfContents = ({ headings }) => {
   return (
     <ul>
       {headings

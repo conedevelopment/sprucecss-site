@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from '../../images/icons/link.svg';
-import getAnchor from '../utils/getAnchor.js';
+import getAnchor from '../../utils/getAnchor.js';
 
 function H2(props) {
   const anchor = getAnchor(props.children);

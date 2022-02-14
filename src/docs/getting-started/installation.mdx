@@ -19,22 +19,30 @@ yarn add sprucecss
 
 ## Install Manually
 
-[Download the latest release](https://github.com/conedevelopment/sprucecss/archive/refs/heads/main.zip), find the dist folder at the root (where are the compiled files), and use the preferred CSS file (minified, regular).
+[Download the latest release](https://github.com/conedevelopment/sprucecss/archive/refs/heads/main.zip), find the dist folder at the root (the compiled files), and use the preferred CSS file (minified, regular).
 
 ```html
 <link href="spruce.min.css" rel="stylesheet">
 <link href="spruce.css" rel="stylesheet">
 ```
 
-## Import It With @use
+## Using Spruce CSS with Sass
 
-To import it into your project, you must use Sass’s ```@use```, a newer type of ```@import``` that is similar to the JavaScript modules. Unlike using @import, you have to import it in every file where you want to use Spruce, its variables, functions, or mixins.
+The manageability of Spruce CSS comes from its Sass features which are variables, mixins, and functions. You should use the preprocessor for the proper workflow (e.g., overwriting the default [variables](/docs/sass/variables)).
+
+With the help of the [mixins](/docs/sass/mixins) and [functions](/docs/sass/functions), you can write code and access values easier.
+
+### Import It With @use
+
+To import it into your project, you must use Sass’s `@use`, a newer type of `@import` similar to the JavaScript modules. Unlike using `@import`, you have to import (use it) it in every file where you want to use Spruce, its variables, functions, or mixins.
 
 ``` scss
 @use '~sprucecss/scss/spruce';
 ```
 
-The @use rule loads the mixins, functions, and variables in a namespaced way. If you use the import above, you can refer to the Spruce assets using the “spruce” namespace like so:
+### Namespacing
+
+The `@use` rule loads the mixins, functions, and variables in a namespaced way. If you use the import above, you can refer to the Spruce assets using the “spruce” namespace like so:
 
 ```scss
 .section {
@@ -42,16 +50,26 @@ The @use rule loads the mixins, functions, and variables in a namespaced way. If
 }
 ```
 
-We include the ```layout-stack``` mixin in this example and use the ```spacer``` function to get the “m” sized spacer.
+We include the <a href="/docs/sass/mixins/#layout-stack" class="code-link">`layout-stack`</a> mixin in this example and use the <a href="/docs/sass/functions#spacer" class="code-link">`spacer`</a> function to get the “m” sized spacer.
 
 If you don’t want to use namespacing, you have to import like the following:
 
 ```scss
 @use '~sprucecss/scss/spruce' as *;
+
+.section {
+  @include layout-stack(spacer(m));
+}
 ```
 
 Although the namespacing doesn’t necessary for a simple project, we will show you the examples this way because we like the idea and think it is more future proof.
 
-<Notification type="info">The tilde <code>~</code> character means the <code>node_modules</code> folder in a Webpack configuration, so you don’t have to use a relative path.</Notification>
+<Notification type="info">The tilde <code>~</code> character means (at the @use) a shorthand to the <code>node_modules</code> folder in a Webpack configuration, so you don’t have to use a relative path.</Notification>
 
 If you need a [simple Sass compile setup](https://pineco.de/the-simplest-sass-compile-setup/), check out our article on Pine.
+
+## Compiling Sass
+
+Depending on your development setup, using Sass could be a burden. We think that Sass is a handy tool and easy to use. One of the more significant barriers is compiling; because of this reason, we wrote an article about [a simple Sass compile setup](https://pineco.de/the-simplest-sass-compile-setup/).
+
+Also, we made a [Spruce CSS Starter Kit](https://github.com/conedevelopment/sprucecss-starter-kit) which is a starter template. It includes a basic compile setup and, of course, Spruce CSS. You can find more information about it on GitHub.

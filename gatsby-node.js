@@ -19,7 +19,6 @@ exports.createPages = async ({ graphql, actions }) => {
   const docPages = data.docs.nodes;
 
   docPages.forEach((doc, index) => {
-    console.log(docPages[index]);
     actions.createPage({
       path: `docs/${doc.slug}`,
       component: docsTemplate,
