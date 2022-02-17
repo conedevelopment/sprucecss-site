@@ -5,17 +5,21 @@ order: 6
 
 <p class="lead">Internationalization (i18n) means preparing the code, design to handle different languages and writing modes.</p>
 
+Thanks for the logical properties and values; we can do more with i18n just with CSS.
+
 The simplest example is the right-to-left (RTL) writing mode used by Arabic and Hebrew languages, among others. When you write RTL, you should mirror (simplified) your site: your logo in the header moves to the right side, and all of your layout and text alignment also similarly change place.
 
-For more information, check out this excellent video from [Moriel Schottlender](https://twitter.com/mooeypoo) hosted by [Jason Lengstorf](https://www.jason.af/):
+For more information, check out this excellent introductory video from [Moriel Schottlender](https://twitter.com/mooeypoo) hosted by [Jason Lengstorf](https://www.jason.af/):
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/OHF2h1_fBCM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Logical Properties and Values
 
-CSS Logical Properties and Values is a newer CSS module to control the layout logically. Instead of physical left or right values, we have logical left or right, depending on the writing mode.
+CSS Logical Properties and Values is a newer CSS module to control the layout logically. Instead of physical left or right (also top and bottom) values, we have logical left or right, depending on the writing mode.
 
 Spruce uses these logical properties and values, but this is a new feature for us too.
+
+It has relatively [good support](https://caniuse.com/css-logical-props), but we still have to test our code well.
 
 **For more information, please visit the following pages:**
 

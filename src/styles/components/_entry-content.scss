@@ -28,4 +28,9 @@
       }
     }
   }
+
+  iframe,
+  img {
+    border-radius: spruce.$border-radius-sm;
+  }
 }
