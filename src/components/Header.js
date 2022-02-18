@@ -24,7 +24,7 @@ function Header() {
       site {
         siteMetadata {
           title
-          slogen
+          slogan
         }
       }
     }
@@ -59,7 +59,7 @@ function Header() {
               <Link to="/" title={site.siteMetadata.title}>
                 <Logo />
               </Link>
-              <span className="header__slogen">{site.siteMetadata.slogen[Math.floor(Math.random() * site.siteMetadata.slogen.length)]}</span>
+              <span className="header__slogan">{site.siteMetadata.slogan[Math.floor(Math.random() * site.siteMetadata.slogan.length)]}</span>
             </div>
             <nav className="header__navigation">
               <button className="btn btn--primary header__toggle" onClick={handleMenuClick} aria-controls="primary-menu" aria-expanded={menuVisible ? 'true' : 'false'} aria-label={menuVisible ? 'Close navigation' : 'Open navigation'}>

@@ -30,7 +30,7 @@
     }
   }
 
-  &__slogen {
+  &__slogan {
     display: none;
 
     @include spruce.breakpoint(sm) {
@@ -40,7 +40,7 @@
       line-height: 1;
       margin-inline-start: spruce.spacer(m);
       padding-inline-start: spruce.spacer(m);
-  
+
     }
   }
 
