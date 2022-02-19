@@ -3,28 +3,6 @@ title: 'Mixins'
 order: 10
 ---
 
-## aspect-ratio
-
-Creat custom aspect ratio for elements.
-
-### Argument(s)
-
-| Name                      | Description                             |
-|---------------------------|-----------------------------------------|
-| ```$width```              | The width of the ratio.                 |
-| ```$height```             | The height of the ratio.                |
-| ```$descendant-element``` | The selector of the descendant element. |
-
-[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L38)
-
-### Example(s)
-
-```scss
-.iframe-responsive {
-  @include spruce.aspect-ratio(16, 9, iframe);
-}
-```
-
 ## breakpoint
 
 With the ```breakpoint``` mixin, you can create a ```min-width``` based (mobile-first) breakpoint on a predefined breakpoint from the ```$breakpoints``` map.
@@ -77,11 +55,13 @@ $breakpoints: (
 }
 ```
 
-## btn-variant
+## Button
+
+### btn-variant
 
 Using the ```btn-variant``` mixin, you can create a new button variant. First, you must declare the colors of the new button (background, background-hover, foreground) in the ```$colors``` map at the very first ```@use``` of Spruce.
 
-### Argument(s)
+#### Argument(s)
 
 | Name              | Default Value       | Description                                 |
 |-------------------|--------------------------|---------------------------------------------|
@@ -90,7 +70,7 @@ Using the ```btn-variant``` mixin, you can create a new button variant. First, y
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_button.scss#L16)
 
-### Example(s)
+#### Example(s)
 
 Declare the colors of the button. The mixin will search for the keys under the btn object.
 
@@ -117,11 +97,25 @@ Declare the colors of the button. The mixin will search for the keys under the b
 <a href="https://conedevelopment.com" class="btn btn--custom btn--lg">Go to Cone</a>
 ```
 
-## layout-center
+### btn-focus
+
+## Form
+
+### field-focus
+
+### field-disabled
+
+### field-icon
+
+### form-check
+
+## Layout
+
+### layout-center
 
 With the help of the ```layout-center``` mixin, you can center any element.  It is most useful for the generic container element for the main layouts.
 
-### Argument(s)
+#### Argument(s)
 
 | Name             | Default Value            | Description                                                                             |
 |------------------|-------------------------------|-----------------------------------------------------------------------------------------|
@@ -130,7 +124,7 @@ With the help of the ```layout-center``` mixin, you can center any element.  It 
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_layout.scss#L6)
 
-### Example(s)
+#### Example(s)
 
 ```scss
 .hero {
@@ -140,11 +134,11 @@ With the help of the ```layout-center``` mixin, you can center any element.  It 
 }
 ```
 
-## layout-stack
+### layout-stack
 
 Using the help of the ```layout-stack``` mixin, you can classical stack layout where the elements are stacked under each other.
 
-### Argument(s)
+#### Argument(s)
 
 | Name          | Default Value            | Description                                                                         |
 |---------------|--------------------------|-------------------------------------------------------------------------------------|
@@ -154,7 +148,7 @@ Using the help of the ```layout-stack``` mixin, you can classical stack layout w
 | ```$split```  | ```0```                  | Split the elements vertically from the nth element.                                 |
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_layout.scss#L16)
 
-### Example(s)
+#### Example(s)
 
 ```scss
 ul {
@@ -162,11 +156,11 @@ ul {
 }
 ```
 
-## layout-grid
+### layout-grid
 
 With the help of the ```layout-grid``` mixin you can create auto-fit grid layouts where you can determine the columns' min-width.
 
-### Argument(s)
+#### Argument(s)
 
 | Name           | Default Value          | Description                                                                         |
 |----------------|------------------------|-------------------------------------------------------------------------------------|
@@ -175,7 +169,7 @@ With the help of the ```layout-grid``` mixin you can create auto-fit grid layout
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_layout.scss#L64)
 
-### Example(s)
+#### Example(s)
 
 ```scss
 .docs-cards {
@@ -185,11 +179,11 @@ With the help of the ```layout-grid``` mixin you can create auto-fit grid layout
 }
 ```
 
-## layout-sidebar
+### layout-sidebar
 
 Using the ```layout-sidebar``` mixin, you can create a two-column sidebar layout declaring the sidebar width explicitly.
 
-### Argument(s)
+#### Argument(s)
 
 | Name                 | Default Value          | Description                                                                         |
 |----------------------|------------------------|-------------------------------------------------------------------------------------|
@@ -198,7 +192,7 @@ Using the ```layout-sidebar``` mixin, you can create a two-column sidebar layout
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_layout.scss#L79)
 
-### Example(s)
+#### Example(s)
 
 ```scss
 .docs-template {
@@ -206,11 +200,11 @@ Using the ```layout-sidebar``` mixin, you can create a two-column sidebar layout
 }
 ```
 
-## layout-flex
+### layout-flex
 
 Using the ```layout-flex``` mixin, you can create intrinsic flexbox grids with explicit column width.
 
-### Argument(s)
+#### Argument(s)
 
 | Name                  | Default Value          | Description                                                                         |
 |-----------------------|------------------------|-------------------------------------------------------------------------------------|
@@ -219,7 +213,7 @@ Using the ```layout-flex``` mixin, you can create intrinsic flexbox grids with e
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_layout.scss#L100)
 
-### Example(s)
+#### Example(s)
 
 ```scss
 .form-row--mixed {
@@ -229,11 +223,72 @@ Using the ```layout-flex``` mixin, you can create intrinsic flexbox grids with e
 }
 ```
 
-## scrollbar
+## generate-color-variables
+
+## Utilities
+
+### aspect-ratio
+
+Creat custom aspect ratio for elements.
+
+#### Argument(s)
+
+| Name                      | Description                             |
+|---------------------------|-----------------------------------------|
+| ```$width```              | The width of the ratio.                 |
+| ```$height```             | The height of the ratio.                |
+| ```$descendant-element``` | The selector of the descendant element. |
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L38)
+
+#### Example(s)
+
+```scss
+.iframe-responsive {
+  @include spruce.aspect-ratio(16, 9, iframe);
+}
+```
+
+### text-ellipsis
+
+Crop text and display an ellipsis with multiline support where possible.
+
+#### Argument(s)
+
+| Name                   | Default Value | Description                              |
+|------------------------|---------------|------------------------------------------|
+| ```$number-of-lines``` | ```1```       | Multiline text cropping where supported. |
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L20)
+
+#### Example(s)
+
+```scss
+.crop-text {
+  @include spruce.text-ellipsis(2);
+  width: 20rem;
+}
+```
+
+### visually-hidden
+
+Hide something from the screen but keep it visible for assistive technology.
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L7)
+
+#### Example(s)
+
+```scss
+.sr-only {
+  @include spruce.visually-hidden;
+}
+```
+
+### scrollbar
 
 Create natively styled custom scrollbars.
 
-### Argument(s)
+#### Argument(s)
 
 | Name                            | Default Value              | Description                                       |
 | ------------------------------- | -------------------------- | ------------------------------------------------- |
@@ -246,7 +301,7 @@ Create natively styled custom scrollbars.
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L60)
 
-### Example(s)
+#### Example(s)
 
 ```scss
 code {
@@ -261,37 +316,8 @@ code {
 }
 ```
 
-## text-ellipsis
+### clear-btn
 
-Crop text and display an ellipsis with multiline support where possible.
+### clear-list
 
-### Argument(s)
-
-| Name                   | Default Value | Description                              |
-|------------------------|---------------|------------------------------------------|
-| ```$number-of-lines``` | ```1```       | Multiline text cropping where supported. |
-
-[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L20)
-
-### Example(s)
-
-```scss
-.crop-text {
-  @include spruce.text-ellipsis(2);
-  width: 20rem;
-}
-```
-
-## visually-hidden
-
-Hide something from the screen but keep it visible for assistive technology.
-
-[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L7)
-
-### Example(s)
-
-```scss
-.sr-only {
-  @include spruce.visually-hidden;
-}
-```
+### a11y-card-link
