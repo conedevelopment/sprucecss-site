@@ -30,6 +30,7 @@
   &__copy-btn {
     align-items: center;
     background-color: color.scale(spruce.color(primary, $only-color: true), $lightness: -30%);
+    border-radius: spruce.$border-radius-sm;
     display: flex;
     font-size: 1rem;
     height: 2rem;

@@ -27,8 +27,7 @@ $primary-lightest: hsl(259, 53%, 94%);
   $font-size-base: 1.063rem,
   $font-size-ratio: 1.250,
   $container-width: 86rem,
-  $form-control-font-size: 1rem,
-  $btn-border-radius: 0.5rem
+  $form-control-font-size: 1rem
 );
 
 @forward 'components/code-block';
