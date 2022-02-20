@@ -38,8 +38,8 @@ function Header() {
         containerClasses='cookie-consent'
         contentClasses='cookie-consent__body'
         buttonWrapperClasses='cookie-consent__btns'
-        declineButtonClasses='btn btn--decline'
-        buttonClasses='btn btn--primary'
+        declineButtonClasses='btn btn--decline btn--rounded'
+        buttonClasses='btn btn--primary btn--rounded'
         enableDeclineButton
         location='none'
         buttonText='Accept'
@@ -73,10 +73,10 @@ function Header() {
               </ul>
             </nav>
             <div className="header__actions">
-              <a href="https://github.com/conedevelopment/sprucecss" aria-label="GitHub" className="btn btn--primary btn--icon">
+              <a href="https://github.com/conedevelopment/sprucecss" aria-label="GitHub" className="btn btn--primary btn--icon btn--rounded">
                 <GitHubIcon className="btn__icon"/>
               </a>
-              <a href="https://twitter.com/conedevelopment" aria-label="GitHub" className="btn btn--primary btn--icon">
+              <a href="https://twitter.com/conedevelopment" aria-label="GitHub" className="btn btn--primary btn--icon btn--rounded">
                 <TwitterIcon className="btn__icon"/>
               </a>
             </div>
