@@ -20,6 +20,14 @@ function Sidebar() {
         </nav>
       </section>
       <section className="sidebar-section">
+        <h3 className="sidebar-section__title">Customization</h3>
+        <nav className="sidebar-section__navigation">
+          <ul>
+            <li><Link to="/docs/customization/settings">Settings</Link></li>
+          </ul>
+        </nav>
+      </section>
+      <section className="sidebar-section">
         <h3 className="sidebar-section__title">Sass</h3>
         <nav className="sidebar-section__navigation">
           <ul>
