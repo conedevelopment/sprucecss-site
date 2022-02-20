@@ -5,6 +5,8 @@ import CookieConsent from "react-cookie-consent";
 // Images
 import MenuIcon from "../images/icons/menu.svg";
 import Logo from '../images/spruce-logo-beta.svg';
+import GitHubIcon from "../images/icons/github.svg";
+import TwitterIcon from "../images/icons/twitter.svg";
 
 function Header() {
   const [menuVisible, setMenuVisible] = useState(false);
@@ -67,12 +69,16 @@ function Header() {
               </button>
               <ul>
                 <li><Link to="/docs/getting-started/introduction">Docs</Link></li>
-                <li><a href="https://github.com/conedevelopment/sprucecss/blob/main/CHANGELOG.md">Changelog</a></li>
-                <li><a href="https://github.com/conedevelopment/sprucecss">GitHub</a></li>
+                <li><a href="https://github.com/conedevelopment/sprucecss/releases">Releases</a></li>
               </ul>
             </nav>
             <div className="header__actions">
-              <Link to="/docs/getting-started/installation" className="btn btn--primary">Download</Link>
+              <a href="https://github.com/conedevelopment/sprucecss" aria-label="GitHub" className="btn btn--primary btn--icon">
+                <GitHubIcon className="btn__icon"/>
+              </a>
+              <a href="https://twitter.com/conedevelopment" aria-label="GitHub" className="btn btn--primary btn--icon">
+                <TwitterIcon className="btn__icon"/>
+              </a>
             </div>
           </div>
         </div>

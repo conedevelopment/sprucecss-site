@@ -130,6 +130,7 @@
 
     @include spruce.breakpoint(md) {
       display: flex;
+      gap: spruce.spacer(s);
     }
   }
 }

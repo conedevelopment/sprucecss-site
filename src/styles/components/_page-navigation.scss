@@ -33,7 +33,7 @@
 
   &__icon {
     align-items: center;
-    background-color: hsl(259, 53%, 94%);
+    background-color: spruce.color(primary-lightest);
     border-radius: spruce.$border-radius-lg;
     display: flex;
     flex-shrink: 0;

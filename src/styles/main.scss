@@ -1,6 +1,11 @@
+@use 'sass:color';
+
+$primary-lightest: hsl(259, 53%, 94%);
+
 @use '~sprucecss/scss/spruce' with (
   $colors: (
     base: (
+      primary-lightest: $primary-lightest,
       primary-darkest: hsl(272, 100%, 9%),
       heading: hsl(271deg, 100%, 9%)
     ),
@@ -22,7 +27,8 @@
   $font-size-base: 1.063rem,
   $font-size-ratio: 1.250,
   $container-width: 86rem,
-  $form-control-font-size: 1rem
+  $form-control-font-size: 1rem,
+  $btn-border-radius: 0.5rem
 );
 
 @forward 'components/code-block';
