@@ -5,7 +5,7 @@ order: 11
 
 ## breakpoint
 
-With the ```breakpoint``` mixin, you can create a ```min-width``` based (mobile-first) breakpoint on a predefined breakpoint from the ```$breakpoints``` map.
+With the `breakpoint` mixin, you can create a `min-width` based (mobile-first) breakpoint on a predefined breakpoint from the `$breakpoints` map.
 
 The predefined breakpoints are the followings:
 
@@ -24,8 +24,8 @@ $breakpoints: (
 
 | Name              | Default Value | Description                                                                                   |
 |-------------------|---------------|-----------------------------------------------------------------------------------------------|
-| ```$breakpoint``` |               | The name of the key from the ```$breakpoints``` map.                                          |
-| ```$logic```      | ```false```   | Any custom logic next to the ```min-width``` value connected with the “and” logical operator. |
+| `$breakpoint`     |               | The name of the key from the `$breakpoints` map.                                              |
+| `$logic`          | `false`       | Any custom logic next to the `min-width` value connected with the “and” logical operator.     |
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_breakpoint.scss)
 
@@ -59,14 +59,14 @@ $breakpoints: (
 
 ### btn-variant
 
-Using the ```btn-variant``` mixin, you can create a new button variant. First, you must declare the colors of the new button (background, background-hover, foreground) in the ```$colors``` map at the very first ```@use``` of Spruce.
+Using the `btn-variant` mixin, you can create a new button variant. First, you must declare the colors of the new button (background, background-hover, foreground) in the `$colors` map at the very first `@use` of Spruce.
 
 #### Argument(s)
 
-| Name              | Default Value       | Description                                 |
-|-------------------|--------------------------|---------------------------------------------|
-| ```$foreground``` | ```primary-foreground``` | The value of the button's foreground color. |
-| ```$background``` | ```primary-background``` | The value of the button's background color. |
+| Name              | Default Value    | Description                                 |
+|-------------------|------------------|---------------------------------------------|
+| `$foreground` | `primary-foreground` | The value of the button's foreground color. |
+| `$background` | `primary-background` | The value of the button's background color. |
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_button.scss#L16)
 
@@ -99,15 +99,125 @@ Declare the colors of the button. The mixin will search for the keys under the b
 
 ### btn-focus
 
+The `btn-focus()` is a small internal helper mixin to set up the focus state of the buttons. It is called by the `btn-variant()`, and it accepts a color value (or a color variable).
+
+#### Argument(s)
+
+| Name                         | Default Value            | Description                                 |
+|------------------------------|--------------------------|---------------------------------------------|
+| ```$box-shadow```      |                          | The color value of the box shadow.          |
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_button.scss#L6)
+
+#### Example(s)
+
+```scss
+.btn--primary:focus {
+  @include spruce.btn-focus(spruce.color(primary));
+}
+```
+
 ## Form
 
 ### field-focus
 
+The `field-focus()` is a small internal helper mixin to set up the focus state of the form fields. We call it on the `.form-control` and `.form-check` classes.
+
+#### Argument(s)
+
+| Name                         | Default Value            | Description                                 |
+|------------------------------|--------------------------|---------------------------------------------|
+| `$border`                    |                          | The color value of the border.              |
+| `$box-shadow`                |                          | The color value of the box shadow.          |
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_form.scss#L6)
+
+#### Example(s)
+
+```scss
+.form-control:focus {
+  @include spruce.field-focus(
+    spruce.color(border-focus, form),
+    spruce.color(shadow-focus, form)
+  );
+}
+```
+
 ### field-disabled
+
+The `field-disabled()` is a small internal helper mixin to set up the disabled state on form fields. We call it on the `.form-control` and `.form-check` classes.
+
+#### Argument(s)
+
+| Name                         | Default Value            | Description                                 |
+|------------------------------|--------------------------|---------------------------------------------|
+| `$background`                |                          | The color value of the background.          |
+| `$border`                    |                          | The color value of the border.              |
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_form.scss#L16)
+
+#### Example(s)
+
+```scss
+.form-control:[disabled],
+.form-control:[disabled='true'] {
+  @include spruce.field-disabled(
+    spruce.color(background-disabled, form),
+    spruce.color(border-disabled, form)
+  );
+}
+```
 
 ### field-icon
 
+The `field-icon()` mixin is a getter function for form input backgrounds. Spruce CSS uses custom images (used as [inline SVG](https://github.com/conedevelopment/sprucecss/blob/main/scss/variable/_index.scss#L229)) for various inputs (checkbox, radio, select, success, error states).
+
+This mixin first replaces the given color value as a fill value on the SVG image then escapes it.
+
+It is helpful for dark mode because we can’t pass a CSS variable to an inline SVG, so we have to overwrite it.
+
+#### Argument(s)
+
+| Name                         | Default Value            | Description                                 |
+|------------------------------|--------------------------|---------------------------------------------|
+| `$icon`                      |                          | The name of the icon variable.              |
+| `$color`                     |                          | The color value of the fill.              |
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_form.scss#L26)
+
+#### Example(s)
+
+```scss
+select {
+  &:not([multiple]):not([size]) {
+    @include spruce.field-icon($select-image, spruce.color(select-foreground, form));
+  }
+}
+
+```
+
 ### form-check
+
+The `form-check()` mixin is a helper to create custom checkboxes. It accepts three selectors and generates radio and checkbox styles.
+
+<Notification type="info">There are scenarios (unfortunately) where it is easier to modify the CSS code than the HTML markup. In our case, we usually style the checkboxes and radios in the <a href="https://hu.wordpress.org/plugins/contact-form-7/">Custom Form 7</a> plugin.</Nofitication>
+
+#### Argument(s)
+
+| Name                         | Default Value            | Description                                    |
+|------------------------------|--------------------------|------------------------------------------------|
+| `$parent`                    |                          | The selector of the parent element.            |
+| `$input`                     |                          | The selector of the input element.             |
+| `$label`                     |                          | The selector of the label element.             |
+| `$has-sizes`                 | `false`                  | Turn on the sizes variants (`*--sm`, `*--lg`). |
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_form.scss#L34)
+
+#### Example(s)
+
+```scss
+@include form-check('.form-check', '.form-check__control', '.form-check__label', true);
+```
 
 ## Layout
 
