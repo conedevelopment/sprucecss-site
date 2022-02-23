@@ -28,7 +28,7 @@ function SEO({ children, location, description, title, image }) {
       <meta name="description" content={site.siteMetadata.description} />
       {/* Open Graph */}
       {location && <meta property="og:url" content={location.href} />}
-      <meta property="og:image" content={image || '/logo.svg'} />
+      <meta property="og:image" content={image || '/social-card.png'} />
       <meta property="og:title" content={title} key="ogtitle" />
       <meta
         propery="og:site_name"
