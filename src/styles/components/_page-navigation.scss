@@ -39,7 +39,7 @@
     flex-shrink: 0;
     justify-content: center;
     height: 3rem;
-    transition: all var(--#{spruce.$prefix}-transition-duration) var(--#{spruce.$prefix}-transition-timing-function);
+    transition: all var(--#{spruce.setting(prefix)}-transition-duration) var(--#{spruce.setting(prefix)}-transition-timing-function);
     width: 3rem;
 
     svg {

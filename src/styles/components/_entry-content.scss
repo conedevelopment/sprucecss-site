@@ -18,7 +18,7 @@
     text-decoration: none;
 
     code {
-      transition: var(--#{spruce.$prefix}-transition-duration) var(--#{spruce.$prefix}-transition-timing-function);
+      transition: var(--#{spruce.setting(prefix)}-transition-duration) var(--#{spruce.setting(prefix)}-transition-timing-function);
     }
 
     &:hover {

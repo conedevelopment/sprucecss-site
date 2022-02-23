@@ -70,11 +70,11 @@ h6 {
 }
 
 .btn--install {
-  @include spruce.btn-variant(install-foreground, install-background);
+  @include spruce.btn-variant(install);
 }
 
 .btn--decline {
-  @include spruce.btn-variant(decline-foreground, decline-background);
+  @include spruce.btn-variant(decline);
 }
 
 .table th,

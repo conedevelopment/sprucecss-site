@@ -6,13 +6,13 @@ order: 13
 <p class="lead">Typography is an essential part of any system. With Spruce, you get basic styles for the most related HTML elements.</p>
 
 - The type scale is REM (root-relative EM) based. The base size is set to 1rem by default, which will usually be 16px (depending on the browser's defaults).
-- You can use four diferent font sizing variables: ```$font-size-base``` (1rem), ```$font-size-sm``` (0.9rem), ```$font-size-lg``` (1.1rem) and ```$font-size-lead``` (math.pow($font-size-ratio, 1) * $font-size-base).
-- You can access the heading font sizes under the ```$font-sizes``` with the [spruce.font-size()](/docs/sass/functions#font-size) function.
+- You can use four diferent font sizing variables: `$font-size-base` (1rem), `$font-size-sm` (0.9rem), `$font-size-lg` (1.1rem) and `$font-size-lead` (math.pow($font-size-ratio, 1) * $font-size-base).
+- You can access the heading font sizes under the `$font-sizes` with the [spruce.font-size()](/docs/sass/functions#font-size) function.
 
 
 ## Headings
 
-The font sizes for the heading tags are located in the ```$font-sizes``` map. We use the ```math.pow()``` Sass function to generate the scale which looks like the following:
+The font sizes for the heading tags are located in the `$font-sizes` map. We use the `math.pow()` Sass function to generate the scale which looks like the following:
 
 ```scss
 $font-sizes: (
@@ -45,7 +45,7 @@ $font-sizes: (
 
 ### Get Heading Size
 
-To access any of the ```$font-sizes``` map sizes, you can use the ```spruce.font-size()``` function that allows you also to create responsive font sizing. The ```font-size()``` function utilizes the clamp() CSS function, which gives us the possibility to set a value based on any relative unit (in this case: 5vw + 1rem).
+To access any of the `$font-sizes` map sizes, you can use the `spruce.font-size()` function that allows you also to create responsive font sizing. The `font-size()` function utilizes the clamp() CSS function, which gives us the possibility to set a value based on any relative unit (in this case: 5vw + 1rem).
 
 For example you can get the the h2 size like so:
 
@@ -70,7 +70,7 @@ For the detailed function, please see the [font-size.scss file](https://github.c
 <p>Mauris sit amet ipsum eget orci congue egestas a eu ipsum. Mauris porttitor tincidunt ligula at finibus. Vestibulum feugiat semper aliquet.</p>
 ```
 
-You can create paragraphs with bigger font-size using the ```lead``` class.
+You can create paragraphs with bigger font-size using the `lead` class.
 
 <Preview>
   <p class="lead">Mauris sit amet ipsum eget orci congue egestas a eu ipsum. Mauris porttitor tincidunt ligula at finibus. Vestibulum feugiat semper aliquet.</p>

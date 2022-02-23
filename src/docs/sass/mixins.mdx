@@ -63,10 +63,10 @@ Using the `btn-variant` mixin, you can create a new button variant. First, you m
 
 #### Argument(s)
 
-| Name              | Default Value    | Description                                 |
-|-------------------|------------------|---------------------------------------------|
-| `$foreground` | `primary-foreground` | The value of the button's foreground color. |
-| `$background` | `primary-background` | The value of the button's background color. |
+| Name              | Default Value    | Description                                     |
+|-------------------|------------------|-------------------------------------------------|
+| `$foreground`     | `primary-foreground` | The value of the button's foreground color. |
+| `$background`     | `primary-background` | The value of the button's background color. |
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_button.scss#L16)
 
@@ -79,9 +79,7 @@ Declare the colors of the button. The mixin will search for the keys under the b
   $colors: (
     btn: (
       custom-background: hsl(0, 0%, 95%),
-      custom-background-hover: hsl(0, 0%, 80%),
-      custom-foreground: hsl(0, 0%, 10%),
-      custom-foreground-hover: hsl(0, 0%, 10%),
+      custom-foreground: hsl(0, 0%, 10%)
     )
   )
 );
@@ -105,7 +103,7 @@ The `btn-focus()` is a small internal helper mixin to set up the focus state of 
 
 | Name                         | Default Value            | Description                                 |
 |------------------------------|--------------------------|---------------------------------------------|
-| ```$box-shadow```      |                          | The color value of the box shadow.          |
+| `$box-shadow`                |                          | The color value of the box shadow.          |
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_button.scss#L6)
 
@@ -261,6 +259,7 @@ Using the help of the `layout-stack` mixin, you can classical stack layout where
 | `$width`      | `true`                   | Set `width: 100%;` on the stacked elements.                                         |
 | `$align`      | `none`                   | Set explicit align to the elements(`none`, `left`, `right`).                        |
 | `$split`      | `0`                      | Split the elements vertically from the nth element.                                 |
+
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_layout.scss#L16)
 
 #### Example(s)
@@ -350,9 +349,9 @@ Creat custom aspect ratio for elements.
 
 | Name                      | Description                             |
 |---------------------------|-----------------------------------------|
-| ```$width```              | The width of the ratio.                 |
-| ```$height```             | The height of the ratio.                |
-| ```$descendant-element``` | The selector of the descendant element. |
+| `$width`                  | The width of the ratio.                 |
+| `$height`                 | The height of the ratio.                |
+| `$descendant-element`     | The selector of the descendant element. |
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L38)
 
@@ -372,7 +371,7 @@ Crop text and display an ellipsis with multiline support where possible.
 
 | Name                   | Default Value | Description                              |
 |------------------------|---------------|------------------------------------------|
-| ```$number-of-lines``` | ```1```       | Multiline text cropping where supported. |
+| `$number-of-lines`     | `1`           | Multiline text cropping where supported. |
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L20)
 
