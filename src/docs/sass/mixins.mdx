@@ -59,16 +59,15 @@ $breakpoints: (
 
 ### btn-variant
 
-Using the `btn-variant` mixin, you can create a new button variant. First, you must declare the colors of the new button (background, background-hover, foreground) in the `$colors` map at the very first `@use` of Spruce.
+Using the `btn-variant` mixin, you can create a new button variant. First, you must declare the colors of the new button (background, foreground is required) in the `$colors` map at the very first `@use` of Spruce.
 
 #### Argument(s)
 
-| Name              | Default Value    | Description                                     |
-|-------------------|------------------|-------------------------------------------------|
-| `$foreground`     | `primary-foreground` | The value of the button's foreground color. |
-| `$background`     | `primary-background` | The value of the button's background color. |
+| Name              | Default Value        | Description                                                |
+|-------------------|----------------------|------------------------------------------------------------|
+| `$type`           | `primary`            | The name/prefix of the related colors under the `btn` map. |
 
-[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_button.scss#L16)
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_button.scss#L13)
 
 #### Example(s)
 
@@ -85,9 +84,25 @@ Declare the colors of the button. The mixin will search for the keys under the b
 );
 ```
 
+In many cases, declaring just the background and foreground color is enough. Spruce will generate the rest (hover states). But if you want to control more or use dark mode (where you want to overwrite the color values), you can be more specific.
+
+```scss
+@use '~sprucecss/scss/spruce' with (
+  $colors: (
+    btn: (
+      primary-background: hsl(261 52% 59%),
+      primary-background-hover: hsl(261 52% 49%),
+      primary-foreground: hsl(0 0% 100%),
+      primary-foreground-hover: hsl(0 0% 100%),
+      primary-shadow-focus: hsl(261 52% 59% / 0.25),
+    )
+  )
+);
+```
+
 ```scss
 .btn--custom {
-  @include spruce.btn-variant(custom-foreground, custom-background);
+  @include spruce.btn-variant(custom);
 }
 ```
 
