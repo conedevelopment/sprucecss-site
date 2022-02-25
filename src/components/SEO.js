@@ -33,7 +33,7 @@ function SEO({ children, location, description, title, image, frontPage }) {
       {/* Open Graph */}
       {location && <meta property="og:url" content={location.href} />}
       <meta property="og:image" content={image || `${site.siteMetadata.siteUrl}/social-card.png`} />
-      <meta property="og:title" content={title} key="ogtitle" />
+      <meta property="og:title" content={frontPage ? `${title}` : `${title} - ${site.siteMetadata.title}`} key="ogtitle" />
       <meta
         propery="og:site_name"
         content={site.siteMetadata.title}
@@ -44,7 +44,7 @@ function SEO({ children, location, description, title, image, frontPage }) {
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       {site.siteMetadata.twitter && <meta name="twitter:creator" content={site.siteMetadata.twitter} />}
-      <meta name="twitter:title" content={title} />
+      <meta name="twitter:title" content={frontPage ? `${title}` : `${title} - ${site.siteMetadata.title}`} />
       <meta name="twitter:image" content={image || `${site.siteMetadata.siteUrl}/social-card.png`} />
 
       {children}
