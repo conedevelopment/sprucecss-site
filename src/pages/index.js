@@ -18,7 +18,7 @@ function IndexPage() {
 
   return (
     <Layout>
-      <SEO title="Another CSS Framework" />
+      <SEO title="Spruce CSS - Minimal, modern CSS framework" frontPage={true} />
       <main id="content">
         <section className="hero">
           <div className="hero__container">
