@@ -41,6 +41,7 @@ function Sidebar() {
         <h3 className="sidebar-section__title">Elements</h3>
         <nav className="sidebar-section__navigation">
           <ul>
+            <li><Link to="/docs/elements/generators">Generators</Link></li>
             <li><Link to="/docs/elements/typography">Typography</Link></li>
             <li><Link to="/docs/elements/tables">Tables</Link></li>
             <li><Link to="/docs/elements/buttons">Buttons</Link></li>
