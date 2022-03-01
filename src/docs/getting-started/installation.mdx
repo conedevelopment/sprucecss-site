@@ -68,6 +68,21 @@ Although the namespacing doesn’t necessary for a simple project, we will show 
 
 If you need a [simple Sass compile setup](https://pineco.de/the-simplest-sass-compile-setup/), check out our article on Pine.
 
+### Load Styles
+
+Importing Spruce means you load its variables, functions, and mixins. To use its styles, you have to include them with a mixin explicitly.
+
+These mixins are called generators (a naming convention in Spruce CSS only). We wanted to distinguish because there are many of them, and their only purpose is to generate CSS styles.
+
+You can control the flow of the style generation in a lot of ways (for more information, [please visit our Generators page](/docs/elements/generators)), but there are two main mixins to use:
+
+```scss
+@use '~sprucecss/scss/spruce';
+
+@include spruce.generate-content;
+@include spruce.generate-form;
+```
+
 ## Compiling Sass
 
 Depending on your development setup, using Sass could be a burden. We think that Sass is a handy tool and easy to use. One of the more significant barriers is compiling; because of this reason, we wrote an article about [a simple Sass compile setup](https://pineco.de/the-simplest-sass-compile-setup/).
