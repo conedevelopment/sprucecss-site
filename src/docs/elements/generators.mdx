@@ -2,3 +2,51 @@
 title: 'Generators'
 order: 13
 ---
+
+## generate-color-variables
+
+Using `generate-color-variables()`, we can generate our CSS variables from a map object everywhere we want. You can find [an example in the core](https://github.com/conedevelopment/sprucecss/blob/main/scss/_root.scss#L7).
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_color.scss#L4)
+
+#### Argument(s)
+
+| Name                  | Default Value          | Description                                                |
+|-----------------------|------------------------|------------------------------------------------------------|
+| `$colors`             | `spruce.$colors`       | The color Sass map.                                        |
+| `$selector`           | `:root`                | The selector which will scope the CSS custom properties.   |
+
+#### Example(s)
+
+```scss
+@include spruce.generate-color-variables(
+  spruce.$colors,
+  ':root'
+);
+
+```
+
+## generate-content
+
+### generate-normalize
+### generate-root
+### generate-accessibility
+### generate-default
+### generate-divider
+### generate-media
+### generate-table
+### generate-typography
+### generate-utilities
+
+## generate-form
+
+### generate-btn
+### generate-form-check
+### generate-form-control
+### generate-form-description
+### generate-fieldset
+### generate-form-group
+### generate-form-label
+### generate-form-row
+### generate-form-select
+### generate-field-feedback

@@ -353,29 +353,6 @@ Using the `layout-flex` mixin, you can create intrinsic flexbox grids with expli
 }
 ```
 
-## generate-color-variables
-
-Using `generate-color-variables()`, we can generate our CSS variables from a map object everywhere we want. You can find [an example in the core](https://github.com/conedevelopment/sprucecss/blob/main/scss/_root.scss#L7).
-
-[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_color.scss#L4)
-
-#### Argument(s)
-
-| Name                  | Default Value          | Description                                                |
-|-----------------------|------------------------|------------------------------------------------------------|
-| `$colors`             | `spruce.$colors`       | The color Sass map.                                        |
-| `$selector`           | `:root`                | The selector which will scope the CSS custom properties.   |
-
-#### Example(s)
-
-```scss
-@include spruce.generate-color-variables(
-  spruce.$colors,
-  ':root'
-);
-
-```
-
 ## Utilities
 
 ### aspect-ratio
