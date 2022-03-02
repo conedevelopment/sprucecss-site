@@ -3,6 +3,20 @@ title: 'Generators'
 order: 13
 ---
 
+<p class="lead">The generators are special (a naming convention in Spruce CSS only) mixins, which we use to generate base styles.</p>
+
+By default Spruce CSS doesn’t generate styles; importing it, you access the variables, mixins, and functions but nothing more. If you wish to use the styling, you have to include them explicitly.
+
+## The goal of the generators
+
+The goal is to separate other Spruce CSS functionality from the style generation and modularity. There can be cases where you don’t need all or any of the given CSS code.
+
+## The difference between generator mixin and a regular mixin
+
+- A generator mixin is always prefixed with `generator-*`.
+- A generator mixin gives back complete declarations with selectors (you may parameter the selectors). It is a wrapper to call style declarations.
+- A generator mixin is usually used once per project. Including any of them more than once may generate unnecessary repetition and bloat.
+
 ## generate-color-variables
 
 Using `generate-color-variables()`, we can generate our CSS variables from a map object everywhere we want. You can find [an example in the core](https://github.com/conedevelopment/sprucecss/blob/main/scss/_root.scss#L7).
@@ -28,25 +42,42 @@ Using `generate-color-variables()`, we can generate our CSS variables from a map
 
 ## generate-content
 
-### generate-normalize
-### generate-root
-### generate-accessibility
-### generate-default
-### generate-divider
-### generate-media
-### generate-table
-### generate-typography
-### generate-utilities
+To generate the element related styles (everything under the element folder), use `generate-content`. It is a shorthand to call all the mixins from below the list.
+
+```scss
+@use '~sprucecss/scss/spruce';
+
+@include spruce.generate-content;
+```
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_generator.scss#L6)
+
+- [generate-normalize](https://github.com/conedevelopment/sprucecss/blob/main/scss/plugin/_normalize.scss)
+- [generate-root](https://github.com/conedevelopment/sprucecss/blob/main/scss/element/_root.scss)
+- [generate-accessibility](https://github.com/conedevelopment/sprucecss/blob/main/scss/element/_accessibility.scss)
+- [generate-default](https://github.com/conedevelopment/sprucecss/blob/main/scss/element/_default.scss)
+- [generate-divider](https://github.com/conedevelopment/sprucecss/blob/main/scss/element/_divider.scss)
+- [generate-media](https://github.com/conedevelopment/sprucecss/blob/main/scss/element/_media.scss)
+- [generate-table](https://github.com/conedevelopment/sprucecss/blob/main/scss/element/_table.scss)
+- [generate-typography](https://github.com/conedevelopment/sprucecss/blob/main/scss/element/_typography.scss)
+- [generate-utilities](https://github.com/conedevelopment/sprucecss/blob/main/scss/element/_utilities.scss)
 
 ## generate-form
 
-### generate-btn
-### generate-form-check
-### generate-form-control
-### generate-form-description
-### generate-fieldset
-### generate-form-group
-### generate-form-label
-### generate-form-row
-### generate-form-select
-### generate-field-feedback
+To generate the form related styles (everything under the form folder), use `generate-form`. It is a shorthand to call all the mixins from below the list.
+
+```scss
+@use '~sprucecss/scss/spruce';
+
+@include spruce.generate-form;
+```
+- [generate-btn](https://github.com/conedevelopment/sprucecss/blob/main/scss/form/_button.scss)
+- [generate-form-check](https://github.com/conedevelopment/sprucecss/blob/main/scss/form/_check.scss)
+- [generate-form-control](https://github.com/conedevelopment/sprucecss/blob/main/scss/form/_control.scss)
+- [generate-form-description](https://github.com/conedevelopment/sprucecss/blob/main/scss/form/_description.scss)
+- [generate-fieldset](https://github.com/conedevelopment/sprucecss/blob/main/scss/form/_fieldset.scss)
+- [generate-form-group](https://github.com/conedevelopment/sprucecss/blob/main/scss/form/_group.scss)
+- [generate-form-label](https://github.com/conedevelopment/sprucecss/blob/main/scss/form/_label.scss)
+- [generate-form-row](https://github.com/conedevelopment/sprucecss/blob/main/scss/form/_row.scss)
+- [generate-form-select](https://github.com/conedevelopment/sprucecss/blob/main/scss/form/_select.scss)
+- [generate-field-feedback](https://github.com/conedevelopment/sprucecss/blob/main/scss/form/_validation.scss)

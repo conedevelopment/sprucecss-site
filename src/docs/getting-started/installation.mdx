@@ -72,7 +72,7 @@ If you need a [simple Sass compile setup](https://pineco.de/the-simplest-sass-co
 
 Importing Spruce means you load its variables, functions, and mixins. To use its styles, you have to include them with a mixin explicitly.
 
-These mixins are called generators (a naming convention in Spruce CSS only). We wanted to distinguish because there are many of them, and their only purpose is to generate CSS styles.
+To load the styles, you need to include a generator mixin. A generator (a naming convention in Spruce CSS only) mixin is a wrapper mixin whose goal is to import a specified style, usually once in your project. These are complete declarations with selectors, so you can’t use them inside code blocks.
 
 You can control the flow of the style generation in a lot of ways (for more information, [please visit our Generators page](/docs/elements/generators)), but there are two main mixins to use:
 
