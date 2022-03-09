@@ -16,7 +16,6 @@ Use the `table` class on an HTML `<table>` element to use the default styling.
       <tr>
         <th scope="col">ID</th>
         <th scope="col">Name</th>
-        <th scope="col">Number</th>
         <th scope="col">Block of Text</th>
       </tr>
     </thead>
@@ -24,13 +23,11 @@ Use the `table` class on an HTML `<table>` element to use the default styling.
       <tr>
         <th scope="row">1</th>
         <td>John&nbsp;Doe</td>
-        <td>900</td>
         <td>Nullam quis risus eget urna mollis ornare vel eu leo.</td>
       </tr>
       <tr>
         <th scope="row">2</th>
         <td><a href="#">Jane&nbsp;Doe</a></td>
-        <td>1200</td>
         <td>Vestibulum id ligula porta felis euismod semper. Donec ullamcorper nulla non metus auctor fringilla.</td>
       </tr>
     </tbody>
@@ -44,7 +41,6 @@ Use the `table` class on an HTML `<table>` element to use the default styling.
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Name</th>
-      <th scope="col">Number</th>
       <th scope="col">Block of Text</th>
     </tr>
   </thead>
@@ -52,7 +48,6 @@ Use the `table` class on an HTML `<table>` element to use the default styling.
     <tr>
       <th scope="row">1</th>
       <td>John Doe</td>
-      <td>900</td>
       <td>Nullam quis risus eget urna mollis ornare vel eu leo.</td>
     </tr>
   </tbody>
@@ -72,7 +67,6 @@ Use the `table--striped` class on a `<table>` to display a zebra-striped styling
         <th scope="col">ID</th>
         <th scope="col">Name</th>
         <th scope="col">Number</th>
-        <th scope="col">Block of Text</th>
       </tr>
     </thead>
     <tbody>
@@ -80,19 +74,16 @@ Use the `table--striped` class on a `<table>` to display a zebra-striped styling
         <th scope="row">1</th>
         <td>John&nbsp;Doe</td>
         <td>900</td>
-        <td>Nullam quis risus eget urna mollis ornare vel eu leo.</td>
       </tr>
       <tr>
         <th scope="row">2</th>
         <td><a href="#">Jane&nbsp;Doe</a></td>
         <td>1200</td>
-        <td>Vestibulum id ligula porta felis euismod semper. Donec ullamcorper nulla non metus auctor fringilla.</td>
       </tr>
       <tr>
         <th scope="row">3</th>
         <td>Jim&nbsp;Doe</td>
         <td>1200</td>
-        <td>Vestibulum id ligula porta felis euismod semper. Donec ullamcorper nulla non metus auctor fringilla.</td>
       </tr>
     </tbody>
   </table>
@@ -105,7 +96,145 @@ Use the `table--striped` class on a `<table>` to display a zebra-striped styling
       <th scope="col">ID</th>
       <th scope="col">Name</th>
       <th scope="col">Number</th>
-      <th scope="col">Block of Text</th>
+    </tr>
+  </thead>
+  <tbody>
+    ...
+  </tbody>
+</table>
+```
+
+## Clear Style
+
+Use the `table--clear-border` class on a `<table>` to remove the default border style.
+
+<Preview>
+  <table className="table--clear-border">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>John&nbsp;Doe</td>
+        <td>900</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td><a href="#">Jane&nbsp;Doe</a></td>
+        <td>1200</td>
+      </tr>
+    </tbody>
+  </table>
+</Preview>
+
+```html
+<table class="table table--clear-border">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    ...
+  </tbody>
+</table>
+```
+
+## Small Style
+
+Use the `table--sm` class on a `<table>` to make it smaller.
+
+<Preview>
+  <table className="table--sm">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>John&nbsp;Doe</td>
+        <td>900</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td><a href="#">Jane&nbsp;Doe</a></td>
+        <td>1200</td>
+      </tr>
+    </tbody>
+  </table>
+</Preview>
+
+```html
+<table class="table table--sm">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    ...
+  </tbody>
+</table>
+```
+
+## Rounded Style
+
+Use the `table--rounded` class on a `<table>` to make rounded background. For the best result use it with `table--striped` and `table--clear-border`.
+
+<Preview>
+  <table className="table--rounded table--striped table--clear-border">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>John&nbsp;Doe</td>
+        <td>900</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jane&nbsp;Doe</td>
+        <td>1200</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Jack&nbsp;Doe</td>
+        <td>200</td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td>Jill&nbsp;Doe</td>
+        <td>1400</td>
+      </tr>
+    </tbody>
+  </table>
+</Preview>
+
+```html
+<table class="table table--rounded table--striped table--clear-border">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Number</th>
     </tr>
   </thead>
   <tbody>
@@ -131,22 +260,9 @@ Adding the `<div class="table-responsive"></div>` as a wrapper element you can m
 </div>
 ```
 
-## Configurable Variables
+## Variables
 
 There are some defaults variables that you can configure to customize the table's look.
 
-```scss
-$table-responsive-width: 40rem;
-```
-
-Also, Spruce manage the colors in a separate Sass map named `$colors` (under the `table` object).
-
-```scss
-$colors: (
-  table: (
-    border: hsl(0, 0%, 90%),
-    hover: hsla(0, 0%, 0%, 0.05),
-    stripe: hsla(0, 0%, 0%, 0.025)
-  )
-)
-```
+- [Colors](http://localhost:8000/docs/sass/variables/#colors)
+- [Display](http://localhost:8000/docs/sass/variables/#tables)
