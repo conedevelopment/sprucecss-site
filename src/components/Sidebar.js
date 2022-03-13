@@ -46,6 +46,7 @@ function Sidebar() {
             <li><Link to="/docs/elements/tables">Tables</Link></li>
             <li><Link to="/docs/elements/buttons">Buttons</Link></li>
             <li><Link to="/docs/elements/forms">Forms</Link></li>
+            <li><Link to="/docs/elements/media">Media</Link></li>
           </ul>
         </nav>
       </section>
