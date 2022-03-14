@@ -243,6 +243,59 @@ Use the `table--rounded` class on a `<table>` to make rounded background. For th
 </table>
 ```
 
+## In Line Style
+
+Use the `table--in-line` class on a `<table>` to remove the inline padding from the first (on start) and last (on end) `<th>` and `<td>` element.
+
+<Preview>
+  <table className="table--in-line">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>John&nbsp;Doe</td>
+        <td>900</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jane&nbsp;Doe</td>
+        <td>1200</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Jack&nbsp;Doe</td>
+        <td>200</td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td>Jill&nbsp;Doe</td>
+        <td>1400</td>
+      </tr>
+    </tbody>
+  </table>
+</Preview>
+
+```html
+<table class="table table--in-line">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    ...
+  </tbody>
+</table>
+```
+
 ## Responsive, Scrollable Table
 
 Adding the `<div class="table-responsive"></div>` as a wrapper element you can make the tables horizontally scrollable.
