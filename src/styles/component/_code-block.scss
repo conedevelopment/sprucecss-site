@@ -3,6 +3,13 @@
 
 .prism-code-wrapper {
   position: relative;
+
+  &:hover,
+  &:focus-within {
+    .prism-code__copy-btn {
+      opacity: 1;
+    }
+  }
 }
 
 .prism-code {
@@ -29,16 +36,17 @@
 
   &__copy-btn {
     align-items: center;
-    background-color: color.scale(spruce.color(primary, $only-color: true), $lightness: -30%);
+    background-color: spruce.color(primary);
     border-radius: spruce.$border-radius-sm;
     display: flex;
     font-size: 1rem;
-    height: 2rem;
+    height: 1.75rem;
     justify-content: center;
-    inset: -0.75rem -0.75rem auto auto;
+    inset: 0.5rem 0.5rem auto auto;
+    opacity: 0;
     padding: 0;
     position: absolute;
-    width: 2rem;
+    width: 1.75rem;
 
     &:hover {
       background-color: color.scale(spruce.color(primary, $only-color: true), $lightness: -10%);
@@ -46,8 +54,8 @@
 
     svg {
       color: #fff;
-      height: 1rem;
-      width: 1rem;
+      height: 0.85rem;
+      width: 0.85rem;
     }
   }
 
