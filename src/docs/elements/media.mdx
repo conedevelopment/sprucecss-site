@@ -3,7 +3,11 @@ title: 'Media'
 order: 17
 ---
 
+<p class="lead">Under media, you can find some of the media-related styles and utilities.</p>
+
 ## Images
+
+In Spruce, we use a general responsive styling for all images. We also disable the `user-select`.
 
 <Preview>
   <img src="https://images.unsplash.com/photo-1515060939377-d73d9c162a66?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2052&q=80" alt="A sandy beach with teal colored water from above." />
@@ -20,16 +24,57 @@ img {
 
 ## Figure
 
+To create an image caption, use the `figure` and `figcaption` element with the `.figure` and `.figure-caption`.
+
 <Preview>
 <figure class="figure">
-  <img class="figure-img img-fluid rounded" src="https://images.unsplash.com/photo-1534179639155-4910efc143c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="..."/>
-  <figcaption class="figure-caption">A caption for the above image.</figcaption>
+  <img src="https://images.unsplash.com/photo-1534179639155-4910efc143c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="A sandy beach from above with a lot of colorful sunshades."/>
+  <figcaption class="figure-caption">The beach where we were sunbathing last summer.</figcaption>
 </figure>
 </Preview>
 
 ```html
 <figure class="figure">
   <img src="..." alt="..."/>
-  <figcaption class="figure-caption">A caption for the above image.</figcaption>
+  <figcaption class="figure-caption">The beach where we were sunbathing last summer.</figcaption>
 </figure>
 ```
+
+## Containers with Aspect Ratio
+
+With embedded iframes, the responsivity doesn’t work. We used to need hacks to achieve and mimic an aspect ratio (e.g., in the case of YouTube videos), but today we have a CSS property named [aspect-ratio](https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio).
+
+For this purpose, we have some utility named:
+
+- `aspect-ratio-16-9`
+- `aspect-ratio-4-3`
+- `aspect-ratio-1-1`
+
+
+<Preview>
+<div class="aspect-ratio-16-9">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/-6Xl9tBWt54" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>
+</div>
+</Preview>
+
+```html
+<div class="aspect-ratio-16-9">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/-6Xl9tBWt54" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>
+</div>
+```
+
+<Preview>
+<div class="aspect-ratio-4-3">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d41126.9496578375!2d17.890734642764393!3d46.95617814407089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1shu!2shu!4v1646924792947!5m2!1shu!2shu" width="600" height="450" style="border:0;" allowfullscreen="allowfullscreen" loading="lazy"></iframe>
+</div>
+</Preview>
+
+```html
+<div class="aspect-ratio-4-3">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d41126.9496578375!2d17.890734642764393!3d46.95617814407089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1shu!2shu!4v1646924792947!5m2!1shu!2shu" width="600" height="450" style="border:0;" allowfullscreen="allowfullscreen" loading="lazy"></iframe>
+</div>
+```
+
+<Notification type="info">
+Please note that you must explicitly enable this using the <a href="/docs/customization/settings#utilities">utilities</a> switch under the $settings map.
+</Notification>
