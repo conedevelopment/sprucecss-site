@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useStaticQuery, graphql  } from 'gatsby';
-import CookieConsent from "react-cookie-consent";
+import CookieConsent from 'react-cookie-consent';
 
 // Images
-import MenuIcon from "../images/icons/menu.svg";
+import MenuIcon from '../images/icons/menu.svg';
 import Logo from '../images/spruce-logo-beta.svg';
-import GitHubIcon from "../images/icons/github.svg";
-import TwitterIcon from "../images/icons/twitter.svg";
+import GitHubIcon from '../images/icons/github.svg';
+import TwitterIcon from '../images/icons/twitter.svg';
 
 function Header() {
   const [menuVisible, setMenuVisible] = useState(false);

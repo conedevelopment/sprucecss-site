@@ -1,0 +1,20 @@
+@use '~sprucecss/scss/spruce';
+
+@include spruce.generate-color-variables(
+  spruce.$dark-colors,
+  ':root[data-theme-mode="dark"]'
+);
+
+[data-theme-mode="dark"] {
+  color-scheme: dark;
+
+  .header__logo {
+    .icon {
+      color: spruce.color(primary);
+    }
+
+    .letter {
+      color: spruce.color(text);
+    }
+  }
+}
