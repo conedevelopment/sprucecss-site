@@ -6,7 +6,7 @@
     }
 
     [data-theme-mode="dark"] {
-      --spruce-header-logo-letter-color: hsl(0 0% 100%);
+      --spruce-header-logo-letter-color: hsl(0 0% 95%);
       --spruce-header-logo-icon-color: hsl(261 54% 70%);
     }
   </style>

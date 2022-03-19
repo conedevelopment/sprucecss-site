@@ -8,13 +8,28 @@
 [data-theme-mode="dark"] {
   color-scheme: dark;
 
-  .header__logo {
-    .icon {
-      color: spruce.color(primary);
+  select.form-control:not([multiple]):not([size]) {
+    @debug spruce.color(primary);
+
+    @include spruce.field-icon(
+      spruce.$select-image,
+      spruce.color(primary, $only-color: true)
+    );
+  }
+
+  .post-navigation-item {
+    $this: &;
+
+    &:hover {
+      .post-navigation-item__icon {
+        background-color: hsl(207 23% 26%);
+        color: hsl(0 0% 100%);
+      }
     }
 
-    .letter {
-      color: spruce.color(text);
+    &__icon {
+      background-color: hsl(207 39% 17%);
+      color: hsl(0 0% 100%);
     }
   }
 }
