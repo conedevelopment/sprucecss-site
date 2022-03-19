@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useStaticQuery, graphql  } from 'gatsby';
 
 // Images
-import Logo from '../images/spruce-logo.svg';
+import Logo from '../images/spruce-logo-footer.svg';
 import ConeLogo from '../images/cone-logo.svg';
 
 function Footer() {

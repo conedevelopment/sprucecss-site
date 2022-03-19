@@ -16,7 +16,7 @@
   $this: &;
 
   background-color: spruce.color(background);
-  border: 2px solid black;
+  border: 2px solid spruce.color(border, docs-card);
   border-radius: 1.25rem;
   display: flex;
   flex-direction: column;

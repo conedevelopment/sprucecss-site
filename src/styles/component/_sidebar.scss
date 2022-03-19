@@ -5,7 +5,7 @@
   position: relative;
 
   @include spruce.breakpoint(sm) {
-    border-inline-end: 1px solid rgba(0, 0, 0, 0.05);
+    border-inline-end: 1px solid spruce.color(border);
     padding-inline-end: spruce.spacer(m);
   }
 

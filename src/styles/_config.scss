@@ -9,7 +9,7 @@ $dark-color-secondary: hsl(227 92% 55%);
 $dark-color-black: hsl(205 100% 2%);
 $dark-color-white: hsl(0 0% 100%);
 
-$dark-color-gray-light: hsl(0 0% 100%);
+$dark-color-gray-light: hsl(0 0% 100% / 8%);
 $dark-color-gray: hsl(0 0% 97%);
 
 $dark-color-danger: hsl(0 71% 51%);
@@ -20,7 +20,7 @@ $dark-color-success: hsl(150 100% 33%);
     base: (
       primary-lightest: $primary-lightest,
       primary-darkest: hsl(272, 100%, 9%),
-      heading: hsl(271deg, 100%, 9%)
+      heading: hsl(271, 100%, 9%)
     ),
     btn: (
       install-background: hsl(0, 0%, 95%),
@@ -33,8 +33,11 @@ $dark-color-success: hsl(150 100% 33%);
       decline-foreground-hover: hsl(0, 0%, 100%),
     ),
     cookie: (
-      background: hsl(207deg 95% 8%),
+      background: hsl(207 95% 8%),
       foreground: hsl(0 0% 100%),
+    ),
+    docs-card: (
+      border: hsl(0 0% 0%)
     )
   ),
   $dark-colors: (
@@ -58,12 +61,6 @@ $dark-color-success: hsl(150 100% 33%);
     selection: (
       foreground: $dark-color-white,
       background: $dark-color-primary
-    ),
-    alert: (
-      danger: $dark-color-danger,
-      info: hsl(195 100% 42%),
-      success: $dark-color-success,
-      warning: hsl(48 89% 55%)
     ),
     btn: (
       primary-background: $dark-color-primary,
@@ -99,6 +96,9 @@ $dark-color-success: hsl(150 100% 33%);
       hover: hsl(0 0% 0% / 0.05),
       text: $dark-color-gray,
       stripe: hsl(0 0% 0% / 0.025)
+    ),
+    docs-card: (
+      border: hsl(0 0% 100% / 8%)
     )
   ),
   $font-size-base: 1.063rem,
