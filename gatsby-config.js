@@ -8,7 +8,6 @@ module.exports = {
       '🎉 Another CSS Framework',
       '😳 Yesterday I liked it.',
       '🤨 It could be worse, I think.',
-      '🙄 This is not funny, I know.',
       '👔 It is far from elegant.'
     ],
     title: 'Spruce CSS',

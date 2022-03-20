@@ -20,9 +20,9 @@ function CodeBlock(props) {
       }
       theme={theme}>
       {({className, style, tokens, getLineProps, getTokenProps}) => (
-        <div className='prism-code-wrapper'>
+        <div className="prism-code-wrapper">
           <button
-            className='btn btn--primary btn--sm prism-code__copy-btn'
+            className="btn btn--primary btn--sm prism-code__copy-btn"
             onClick={() => {
                 navigator.clipboard.writeText(props?.children?.props?.children.trim())
                 setIsCopied(true)
@@ -33,7 +33,7 @@ function CodeBlock(props) {
             {isCopied ? <CopiedIcon /> : <CopyIcon />}
           </button>
           <pre className={className} style={{...style}}>
-            <span className='prism-code__language'>{matches?.groups?.lang || ''}</span>
+            <span className="prism-code__language">{matches?.groups?.lang || ''}</span>
             <code>
               {tokens.map((line, i) => (
                 <div key={i} {...getLineProps({line, key: i})}>

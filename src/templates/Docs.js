@@ -6,7 +6,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from '../components/Layout';
 import TableOfContents from '../components/TableOfContents';
 import Sidebar from '../components/Sidebar';
-import SEO from '../components/SEO';
+import Seo from '../components/Seo';
 
 // Images
 import ArrowLeft from "../images/icons/arrow-left.svg";
@@ -34,7 +34,7 @@ function Post({ data: { mdx: post }, pageContext }) {
   const { body } = post;
   return (
     <Layout>
-      <SEO title={title} />
+      <Seo title={title} />
       <main id="content" className="layout-documentation">
         <div className="layout-documentation__container">
           <div className="layout-documentation__inner">

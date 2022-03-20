@@ -27,6 +27,7 @@ export const wrapRootElement = ({ element }) => {
 export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
     <script
+      key="theme-mode"
       dangerouslySetInnerHTML={{
         __html: `
           (function() {

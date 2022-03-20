@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 
 // Import components
 import Layout from '../components/Layout';
-import SEO from '../components/SEO';
+import Seo from '../components/Seo';
 
 // Images
 import NotFoundImage from '../images/not-found.svg';
@@ -11,7 +11,7 @@ import NotFoundImage from '../images/not-found.svg';
 function NotFoundPage() {
   return (
     <Layout>
-      <SEO title="Error 404" />
+      <Seo title="Error 404" />
       <main id="content" className="hero">
         <div className="error-404__container">
           <div className="error-404__inner">

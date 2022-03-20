@@ -8,7 +8,7 @@ function H3(props) {
   return (
     <>
       {(props.className !== 'preview-heading')
-      ? <h3 className='anchor-heading' id={anchor}>
+      ? <h3 className="anchor-heading" id={anchor}>
           {props.children}
           <a href={link} className="anchor-link" aria-label={props.children}>
             <Link />

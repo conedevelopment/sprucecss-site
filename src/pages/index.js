@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 // Import components
 import DocsCards from '../components/DocsCards';
 import Layout from '../components/Layout';
-import SEO from '../components/SEO';
+import Seo from '../components/Seo';
 
 // Images
 import HeroImage from '../images/hero.svg';
@@ -18,7 +18,7 @@ function IndexPage() {
 
   return (
     <Layout>
-      <SEO title="Spruce CSS - Minimal, modern CSS framework" frontPage={true} />
+      <Seo title="Spruce CSS - Minimal, modern CSS framework" frontPage={true} />
       <main id="content">
         <section className="hero">
           <div className="hero__container">

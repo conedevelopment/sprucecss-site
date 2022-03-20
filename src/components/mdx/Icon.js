@@ -1,11 +1,11 @@
 import React from 'react';
 
 // Images
-import CheckIcon from "../../images/icons/check.svg";
-import InfoIcon from "../../images/icons/info.svg";
-import CrossIcon from "../../images/icons/cross.svg";
-import Copy from "../../images/icons/copy.svg";
-import ArrowRightIcon from "../../images/icons/arrow-right.svg";
+import CheckIcon from '../../images/icons/check.svg';
+import InfoIcon from '../../images/icons/info.svg';
+import CrossIcon from '../../images/icons/cross.svg';
+import Copy from '../../images/icons/copy.svg';
+import ArrowRightIcon from '../../images/icons/arrow-right.svg';
 
 function Icon({type, className}) {
   let icon;

@@ -3,7 +3,7 @@ import Cookies from 'universal-cookie';
 
 // Import components
 import Layout from '../components/Layout';
-import SEO from '../components/SEO';
+import Seo from '../components/Seo';
 
 function PrivacyPolicy() {
   const cookies = new Cookies();
@@ -21,7 +21,7 @@ function PrivacyPolicy() {
 
   return (
     <Layout>
-      <SEO title="Privacy Policy" />
+      <Seo title="Privacy Policy" />
       <main id="content" className="layout-page">
         <div className="layout-page__container">
           <article className="layout-page__inner entry-content">
