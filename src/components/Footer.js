@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useStaticQuery, graphql  } from 'gatsby';
+import ThemeModeToggle from './ThemeModeToggle';
 
 // Images
 import Logo from '../images/spruce-logo-footer.svg';
@@ -55,6 +56,7 @@ function Footer() {
         <div className="footer__bottom">
           <p className="footer__information">Code is licensed under <a href="https://github.com/conedevelopment/sprucecss/blob/master/LICENSE/">MIT</a>, docs is <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. - Version <strong>{site.siteMetadata.version}</strong> - <Link to="/privacy-policy">Privacy Policy</Link></p>
           <a href="https://conedevelopment.com/" className="footer__cone-logo" aria-label="Cone"><ConeLogo /></a>
+          <ThemeModeToggle />
         </div>
       </div>
     </footer>
