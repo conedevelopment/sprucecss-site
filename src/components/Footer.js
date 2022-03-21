@@ -54,8 +54,10 @@ function Footer() {
           </div>
         </div>
         <div className="footer__bottom">
-          <p className="footer__information">Code is licensed under <a href="https://github.com/conedevelopment/sprucecss/blob/master/LICENSE/">MIT</a>, docs is <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. - Version <strong>{site.siteMetadata.version}</strong> - <Link to="/privacy-policy">Privacy Policy</Link></p>
-          <a href="https://conedevelopment.com/" className="footer__cone-logo" aria-label="Cone"><ConeLogo /></a>
+          <div className="footer__information-wrapper">
+            <a href="https://conedevelopment.com/" className="footer__cone-logo" aria-label="Cone"><ConeLogo /></a>
+            <p className="footer__information">Code is licensed under <a href="https://github.com/conedevelopment/sprucecss/blob/master/LICENSE/">MIT</a>, docs is <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. - Version <strong>{site.siteMetadata.version}</strong> - <Link to="/privacy-policy">Privacy Policy</Link></p>
+          </div>
           <ThemeModeToggle />
         </div>
       </div>

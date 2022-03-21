@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
+// Images
+import SystemMode from '../images/icons/theme-mode/system-mode.svg';
+import LightMode from '../images/icons/theme-mode/light-mode.svg';
+import DarkMode from '../images/icons/theme-mode/dark-mode.svg';
+
 function ThemeModeToggle() {
   let [selected, setSelected] = useState('system');
   let handleChange = (e) => {
@@ -16,11 +21,9 @@ function ThemeModeToggle() {
   return (
     <div className="theme-switcher">
       <span className={`theme-switcher__icon is-${selected}`}>
-        {/*
-        <?php echo vilkrig_get_icon_svg('ui', 'system-mode', 'icon is-system'); ?>
-        <?php echo vilkrig_get_icon_svg('ui', 'light-mode', 'icon is-light'); ?>
-        <?php echo vilkrig_get_icon_svg('ui', 'dark-mode', 'icon is-dark'); ?>
-        */}
+        <SystemMode className="is-system" />
+        <LightMode className="is-light" />
+        <DarkMode className="is-dark" />
       </span>
       <select
         className="form-control form-control--sm theme-switcher__select"

@@ -80,6 +80,13 @@
     }
   }
 
+  &__information-wrapper {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: spruce.spacer(s);
+  }
+
   strong {
     color: spruce.color(heading);
   }
