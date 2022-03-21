@@ -13,7 +13,7 @@
     pointer-events: none;
     position: absolute;
     width: 2rem;
-    color: spruce.color(select-foreground, form);
+    color: spruce.color(heading);
 
     &.is-system .is-system { display: inline-block; }
     &.is-light .is-light { display: inline-block; }
