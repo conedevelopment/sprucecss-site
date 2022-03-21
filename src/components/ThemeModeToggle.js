@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 function ThemeModeToggle() {
-  let [selected, setSelected] = useState('');
+  let [selected, setSelected] = useState('system');
   let handleChange = (e) => {
     localStorage.setItem('preferred-theme', e.target.value);
     setSelected(e.target.value);
@@ -9,13 +9,13 @@ function ThemeModeToggle() {
   };
 
   useEffect(() => {
-    let lastSelected = localStorage.getItem('preferred-theme') ?? '';
+    let lastSelected = localStorage.getItem('preferred-theme') ?? 'system';
     setSelected(lastSelected);
   }, []);
 
   return (
     <div className="theme-switcher">
-      <span className="theme-switcher__icon">
+      <span className={`theme-switcher__icon is-${selected}`}>
         {/*
         <?php echo vilkrig_get_icon_svg('ui', 'system-mode', 'icon is-system'); ?>
         <?php echo vilkrig_get_icon_svg('ui', 'light-mode', 'icon is-light'); ?>

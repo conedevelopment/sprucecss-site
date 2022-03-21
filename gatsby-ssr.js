@@ -31,10 +31,14 @@ export const onRenderBody = ({ setHeadComponents }) => {
       dangerouslySetInnerHTML={{
         __html: `
           (function() {
+            let darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
             function setTheme(theme) {
               window.__theme = theme;
 
               if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme-mode', 'dark');
+              } else if (theme === 'system' && darkQuery.matches) {
                 document.documentElement.setAttribute('data-theme-mode', 'dark');
               } else {
                 document.documentElement.removeAttribute('data-theme-mode');
@@ -53,8 +57,6 @@ export const onRenderBody = ({ setHeadComponents }) => {
             try {
               preferredTheme = localStorage.getItem('preferred-theme');
             } catch (e) {}
-
-            let darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
             setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
           })();
