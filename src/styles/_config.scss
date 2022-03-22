@@ -38,6 +38,11 @@ $dark-color-success: hsl(150 100% 33%);
     ),
     docs-card: (
       border: hsl(0 0% 0%)
+    ),
+    scrollbar: (
+      thumb-background: hsla(0, 0%, 0%, 0.15),
+      thumb-background-hover:	hsla(0, 0%, 0%, 0.25),
+      track-background:	hsla(0, 0%, 0%, 0.05)
     )
   ),
   $dark-colors: (
@@ -101,6 +106,11 @@ $dark-color-success: hsl(150 100% 33%);
     ),
     docs-card: (
       border: hsl(0 0% 100% / 8%)
+    ),
+    scrollbar: (
+      thumb-background: hsla(0, 0%, 100%, 0.15),
+      thumb-background-hover:	hsla(0, 0%, 100%, 0.25),
+      track-background:	hsla(0, 0%, 100%, 0.05)
     )
   ),
   $font-size-base: 1.063rem,
