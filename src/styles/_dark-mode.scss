@@ -9,8 +9,6 @@
   color-scheme: dark;
 
   select.form-control:not([multiple]):not([size]) {
-    @debug spruce.color(primary);
-
     @include spruce.field-icon(
       spruce.$select-image,
       spruce.color(primary, $only-color: true)
