@@ -41,7 +41,7 @@ function Seo({ children, location, description, title, image, frontPage }) {
       <meta name="twitter:card" content="summary_large_image" />
       {site.siteMetadata.twitter && <meta name="twitter:creator" content={site.siteMetadata.twitter} />}
       <meta name="twitter:title" content={frontPage ? `${title}` : `${title} - ${site.siteMetadata.title}`} />
-      <meta name="twitter:image" content={image || `${site.siteMetadata.siteUrl}/social-card.png`} />
+      <meta name="twitter:image" content={image || `${site.siteMetadata.siteUrl}/social-card-twitter.png`} />
 
       {children}
     </Helmet>
