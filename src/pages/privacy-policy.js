@@ -3,7 +3,7 @@ import Cookies from 'universal-cookie';
 
 // Import components
 import Layout from '../components/Layout';
-import Seo from '../components/Seo';
+import Seo from '../components/SearchEngineOptimalization';
 
 function PrivacyPolicy() {
   const cookies = new Cookies();

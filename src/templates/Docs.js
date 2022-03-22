@@ -6,7 +6,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from '../components/Layout';
 import TableOfContents from '../components/TableOfContents';
 import Sidebar from '../components/Sidebar';
-import Seo from '../components/Seo';
+import Seo from '../components/SearchEngineOptimalization';
 
 // Images
 import ArrowLeft from "../images/icons/arrow-left.svg";

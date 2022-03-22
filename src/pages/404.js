@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 
 // Import components
 import Layout from '../components/Layout';
-import Seo from '../components/Seo';
+import Seo from '../components/SearchEngineOptimalization';
 
 // Images
 import NotFoundImage from '../images/not-found.svg';

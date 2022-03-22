@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 // Import components
 import DocsCards from '../components/DocsCards';
 import Layout from '../components/Layout';
-import Seo from '../components/Seo';
+import Seo from '../components/SearchEngineOptimalization';
 
 // Images
 import HeroImage from '../images/hero.svg';
