@@ -271,7 +271,7 @@ Using the help of the `layout-stack` mixin, you can classical stack layout where
 | Name          | Default Value            | Description                                                                         |
 |---------------|--------------------------|-------------------------------------------------------------------------------------|
 | `$gap`        | `spruce.spacer(m)`       | The margin value between the elements. The value comes from the `$spacers` map.     |
-| `$width`      | `true`                   | Set `width: 100%;` on the stacked elements.                                         |
+| `$width`      | `false`                  | Set `width: 100%;` on the stacked elements.                                         |
 | `$align`      | `none`                   | Set explicit align to the elements(`none`, `left`, `right`).                        |
 | `$important`  | `false`                  | Add !important on descandent elements to `margin-block-start`.                      |
 | `$split`      | `0`                      | Split the elements vertically from the nth element.                                 |
@@ -396,13 +396,13 @@ Create natively styled custom scrollbars.
 
 #### Argument(s)
 
-| Name                            | Default Value              | Description                                       |
-| ------------------------------- | -------------------------- | ------------------------------------------------- |
-| `$thumb-background-color`       | `hsla(0, 0%, 0%, 0.15)`    | The color of the scrollbar handle.                |
-| `$thumb-background-color-hover` | `hsla(0, 0%, 0%, 0.25)`    | The color of the scrollbar handle on hover state. |
-| `$track-background-color`       | `hsla(0, 0%, 0%, 0.05)`    | The background color of the scrollbar.            |
-| `$size`                         | `0.5rem`                   | The width or height of the scrollbar.             |
-| `$border-radius`                | `spruce.$border-radius-sm` | The border-radius of the scrollbar and handle.    |
+| Name                            | Default Value                                     | Description                                       |
+| ------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| `$thumb-background-color`       | `spruce.color(thumb-background, scrollbar)`       | The color of the scrollbar handle.                |
+| `$thumb-background-color-hover` | `spruce.color(thumb-background-hover, scrollbar)` | The color of the scrollbar handle on hover state. |
+| `$track-background-color`       | `spruce.color(track-background, scrollbar)`       | The background color of the scrollbar.            |
+| `$size`                         | `0.5rem`                                          | The width or height of the scrollbar.             |
+| `$border-radius`                | `spruce.$border-radius-sm`                        | The border-radius of the scrollbar and handle.    |
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L38)
 
