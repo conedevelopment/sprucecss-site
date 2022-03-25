@@ -7,7 +7,7 @@ order: 13
 
 Get color value by key and type name from the `$colors` map. The `$colors` map is nested, so you can access the color values by multiple levels, separated into groups.
 
-The function returns a CSS custom property with a fallback color, but you can also access just the color value setting the `$only-color` value to `true`.
+**The function returns a CSS custom property** with a fallback color, but you can also access just the color value setting the `$only-color` value to `true`.
 
 ### Argument(s)
 
@@ -59,10 +59,6 @@ Get a value from the `$font-sizes` map by key name. By default, the function giv
   font-size: spruce.font-size(h3, $scaler: 30);
 }
 ```
-
-## transition
-
-[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/function/_transition.scss)
 
 ## responsive-font-size
 
@@ -143,3 +139,25 @@ Get a value by key name from the `$spacers` map.
 ## svg-escape
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/function/_utilities.scss#L20)
+
+## transition
+
+Get the transition values by key name. **The function returns a CSS custom property**.
+
+### Argument(s)
+
+| Name       | Description                                                                             |
+|------------|-----------------------------------------------------------------------------------------|
+| `$key`     | The name of the transition attribut. Possible values: `duration` and `timing-function`. |
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/function/_transition.scss)
+
+### Example(s)
+
+```scss
+.custom-link {
+  transition-duration: spruce.transition(duration);
+  transition-property: all;
+  transition-timing-function: spruce.transition(timing-function);
+}
+```
