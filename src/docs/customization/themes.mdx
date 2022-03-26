@@ -3,4 +3,146 @@ title: 'Themes'
 order: 10
 ---
 
-<p class="lead">...</p>
+<p class="lead">Spruce uses CSS custom properties to handle the theming. It means that we can easily overwrite the colors if needed (like in a case of a dark theme mode).</p>
+
+## Detect Dark Mode
+
+The way you achieve a theme mode or dark mode can be different project by project. How to handle the mechanics is also on a project.
+
+Spruce CSS gives you the structure to handle themes, but it’s on you to manage end detect them.
+
+We usually add a `data-theme-mode` attribute on the HTML element and do the styling based on its value. We detect the `prefers-color-scheme` and user settings and then add the dark value if needed.
+
+```html
+<html lang="en" data-theme-mode="dark">
+```
+
+## Set up a Dark Theme Mode
+
+Setting up any theme mode is simple but can be tricky because we have to redeclare the used colors (from the `$colors` map). For redeclaring dark mode, we have a predefined empty `$dark-colors` map which you can use when importing Spruce (but you can use any object you like).
+
+First, declare the new colors, and keep in mind you have to use the same key names because we will overwrite them.
+
+The following values are the ones that we use for this site’s dark mode.
+
+```scss
+@use 'sass:color';
+
+$dark-color-primary: hsl(261 54% 70%);
+$dark-color-secondary: hsl(227 92% 55%);
+
+$dark-color-black: hsl(206 88% 6%);
+$dark-color-white: hsl(0 0% 95%);
+
+$dark-color-gray: hsl(0 0% 97%);
+$dark-color-gray-dark: hsl(0 0% 100% / 8%);
+
+$dark-color-danger: hsl(0 71% 51%);
+$dark-color-success: hsl(150 100% 33%);
+
+@use '~sprucecss/scss/spruce' with (
+  $dark-colors: (
+    base: (
+      primary: $dark-color-primary,
+      secondary: $dark-color-secondary,
+      background: $dark-color-black,
+      heading: $dark-color-white,
+      text: $dark-color-gray,
+      link: $dark-color-primary,
+      link-hover: color.scale($dark-color-primary, $lightness: -20%),
+      border: $dark-color-gray-dark,
+      mark-background: hsl(50 100% 80%),
+      mark-foreground: $dark-color-black,
+      code-background: hsl(207deg 64% 21%),
+      code-foreground: $dark-color-white,
+      blockquote-border: $dark-color-primary
+    ),
+    selection: (
+      foreground: $dark-color-white,
+      background: $dark-color-primary
+    ),
+    alert: (
+      danger: $dark-color-danger,
+      info: hsl(195 100% 42%),
+      success: $dark-color-success,
+      warning: hsl(48 89% 55%)
+    ),
+    btn: (
+      primary-background: hsl(261 52% 59%),
+      primary-foreground: $dark-color-white,
+      primary-shadow-focus: color.adjust(hsl(261 52% 59%), $alpha: -0.75),
+      secondary-background: $dark-color-secondary,
+      secondary-foreground: $dark-color-white,
+      secondary-shadow-focus: color.adjust($dark-color-secondary, $alpha: -0.75),
+      install-background: hsl(207, 39%, 17%),
+      install-background-hover: hsl(207, 23%, 26%),
+      install-foreground: hsl(0, 0%, 100%),
+      install-foreground-hover: hsl(0, 0%, 100%),
+    ),
+    form: (
+      background: color.scale($dark-color-black, $lightness: 5%),
+      background-disabled: $dark-color-black,
+      border: $dark-color-gray-dark,
+      border-disabled: $dark-color-gray-dark,
+      border-focus: $dark-color-primary,
+      shadow-focus: color.adjust($dark-color-primary, $alpha: -0.75),
+      check-foreground: $dark-color-black,
+      check-background: $dark-color-primary,
+      invalid: $dark-color-danger,
+      invalid-shadow: color.adjust($dark-color-danger, $alpha: -0.75),
+      label: $dark-color-white,
+      legend: $dark-color-white,
+      placeholder: hsl(0 0% 60%),
+      text: $dark-color-gray,
+      select-foreground: $dark-color-primary,
+      valid: $dark-color-success,
+      valid-shadow: color.adjust($dark-color-success, $alpha: -0.75)
+    ),
+    table: (
+      border: $dark-color-gray-dark,
+      caption: $dark-color-gray,
+      heading: $dark-color-white,
+      hover: hsl(0 0% 0% / 0.05),
+      text: $dark-color-gray,
+      stripe: hsl(0 0% 0% / 0.025)
+    ),
+    scrollbar: (
+      thumb-background: hsla(0, 0%, 100%, 0.15),
+      thumb-background-hover: hsla(0, 0%, 100%, 0.25),
+      track-background:	hsla(0, 0%, 100%, 0.05)
+    )
+  )
+);
+```
+
+## Generate the Variables
+
+Use the `generate-color-variables` to generate out the color variables under a specified selector.
+
+```scss
+@use '~sprucecss/scss/spruce';
+
+@include spruce.generate-color-variables(
+  spruce.$dark-colors,
+  ':root[data-theme-mode="dark"]'
+);
+```
+
+## Overwrite and Set Up Other Necessities
+
+Usually, setting up a theme is not just mean overwriting the color variables. We want to do more.
+
+For example, we want to set the `color-scheme` to dark to discolor the scrollbars. Also, in the case of Spruce CSS, we maybe want to change the select image too.
+
+```scss
+[data-theme-mode="dark"] {
+  color-scheme: dark;
+
+  select.form-control:not([multiple]):not([size]) {
+    @include spruce.field-icon(
+      spruce.$select-image,
+      spruce.color(primary, $only-color: true)
+    );
+  }
+}
+```
