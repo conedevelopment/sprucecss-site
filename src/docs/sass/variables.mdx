@@ -167,7 +167,7 @@ Because the colors are in a Sass map, it is easy to overwrite them or add new va
 
 
 ```scss
-@use '../../scss/spruce' with (
+@use '~sprucecss/scss/spruce' with (
   $colors: (
     base: (
       primary: rgb(75 38% 110%),
@@ -230,7 +230,7 @@ Using the [spacer()](/docs/sass/functions/#spacer) helper function we can get an
 You can easily overwrite each value or add new ones.
 
 ```scss
-@use '../../scss/spruce' with (
+@use '~sprucecss/scss/spruce' with (
   $spacer: 2rem,
   $spacers: (
     xl: 10rem
@@ -245,7 +245,7 @@ A solution for this problem looks like something like this:
 ```scss
 $spacer: 1.5rem
 
-@use '../../scss/spruce' with (
+@use '~sprucecss/scss/spruce' with (
   $spacer: $spacer,
   $spacers: (
     xl: $spacer  * 6
