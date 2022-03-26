@@ -192,9 +192,32 @@ $dark-colors: map.deep-merge(
 );
 ```
 
-<Notification type="info">
-The documentation of the dark mode is on its way and will be live in the next few weeks with version 0.4.
-</Notification>
+### List Colors
+
+In this example, you can see how you can generate a component - an alert - using Spruce’s colors with Sass’s `@each` and `map.get`.
+
+```scss
+@use 'sass:color';
+@use 'sass:map';
+@use '~sprucecss/scss/spruce';
+
+.alert {
+  border: 1px solid;
+  border-left: 0.35rem solid;
+  border-radius: spruce.$border-radius-lg;
+  font-weight: 500;
+  gap: spruce.spacer(m);
+  justify-content: space-between;
+  padding: 0.65em 1em;
+
+  @each $name, $value in map.get(spruce.$colors, alert) {
+    @at-root .alert--#{$name} {
+      background-color: color.scale($value, $lightness: 90%);
+      color: color.scale($value, $lightness: -30%);
+    }
+  }
+}
+```
 
 ## Spacers
 
