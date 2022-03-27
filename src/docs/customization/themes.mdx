@@ -3,15 +3,13 @@ title: 'Themes'
 order: 10
 ---
 
-<p class="lead">Spruce uses CSS custom properties to handle the theming. It means that we can easily overwrite the colors if needed (like in a case of a dark theme mode).</p>
+<p class="lead">Spruce uses CSS custom properties to handle the theming. It means that you can easily overwrite the colors if needed (like in a case of a dark theme mode).</p>
 
 ## Detect Dark Mode
 
-The way you achieve a theme mode or dark mode can be different project by project. How to handle the mechanics is also on a project.
+Achieving a dark or any color mode can be different project by project. Spruce CSS gives you the structure to handle themes, but it’s on you to manage end detect them.
 
-Spruce CSS gives you the structure to handle themes, but it’s on you to manage end detect them.
-
-We usually add a `data-theme-mode` attribute on the HTML element and do the styling based on its value. We detect the `prefers-color-scheme` and user settings and then add the dark value if needed.
+Our method usually adds a `data-theme-mode` attribute on the HTML element and does the styling based on its value. We detect the `prefers-color-scheme` and/or the user settings, then add the dark value if needed.
 
 ```html
 <html lang="en" data-theme-mode="dark">
@@ -19,7 +17,7 @@ We usually add a `data-theme-mode` attribute on the HTML element and do the styl
 
 ## Set up a Dark Theme Mode
 
-Setting up any theme mode is simple but can be tricky because we have to redeclare the used colors (from the `$colors` map). For redeclaring dark mode, we have a predefined empty `$dark-colors` map which you can use when importing Spruce (but you can use any object you like).
+Setting up any theme mode is simple but can be tricky and complicated because of the many values (from the `$colors` map). For redeclaring dark mode, we have a predefined empty `$dark-colors` map which you can use when importing Spruce (but you can use any object you like).
 
 First, declare the new colors, and keep in mind you have to use the same key names because we will overwrite them.
 
@@ -117,7 +115,7 @@ $dark-color-success: hsl(150 100% 33%);
 
 ## Generate the Variables
 
-Use the `generate-color-variables` to generate out the color variables under a specified selector.
+Use the `generate-color-variables` to generate the color variables under a specified selector.
 
 ```scss
 @use '~sprucecss/scss/spruce';
@@ -128,11 +126,11 @@ Use the `generate-color-variables` to generate out the color variables under a s
 );
 ```
 
-## Overwrite and Set Up Other Necessities
+## Set Up Other Necessities
 
 Usually, setting up a theme is not just mean overwriting the color variables. We want to do more.
 
-For example, we want to set the `color-scheme` to dark to discolor the scrollbars. Also, in the case of Spruce CSS, we maybe want to change the select image too.
+For example, we want to set the `color-scheme` to `dark` to discolor the scrollbars. Also, in the case of Spruce CSS, we may wish to change the select image too.
 
 ```scss
 [data-theme-mode="dark"] {
