@@ -2,7 +2,7 @@
 
 .post-navigation {
   align-items: center;
-  border-block-start: 1px solid rgba(0, 0, 0, 0.05);
+  border-block-start: 1px solid spruce.color(border);
   display: flex;
   flex-wrap: wrap;
   gap: spruce.spacer(m);

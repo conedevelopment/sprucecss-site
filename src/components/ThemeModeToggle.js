@@ -26,7 +26,11 @@ function ThemeModeToggle() {
         <DarkMode className="is-dark" />
       </span>
       <select
-        className="form-control form-control--sm theme-switcher__select"
+        className="
+          form-control
+          form-control--sm
+          theme-switcher__select
+        "
         aria-label="Select a theme"
         onChange={handleChange}
         value={selected}
