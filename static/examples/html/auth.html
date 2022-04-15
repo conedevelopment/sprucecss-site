@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script>
+    (function() {
+      console.log('hi');
+
+      let darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      let preferredTheme;
+
+      function setTheme(theme) {
+        window.__theme = theme;
+
+        if (theme === 'dark') {
+          document.documentElement.setAttribute('data-theme-mode', 'dark');
+        } else if (theme === 'system' && darkQuery.matches) {
+          document.documentElement.setAttribute('data-theme-mode', 'dark');
+        } else {
+          document.documentElement.removeAttribute('data-theme-mode');
+        }
+      };
+
+      window.__setPreferredTheme = function(theme) {
+        setTheme(theme);
+        try {
+          localStorage.setItem('preferred-theme', theme);
+        } catch (e) {}
+      };
+
+      try {
+        preferredTheme = localStorage.getItem('preferred-theme');
+      } catch (e) {}
+
+      setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Spruce CSS - Auth Example</title>
+  <link rel="icon" href="../assets/img/favicon.png" sizes="32x32">
+  <link rel="stylesheet" href="../assets/css/main.css?time=1650019719297">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;family=Poppins:wght@400;700&amp;display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main class="auth-screen">
+    <div class="auth-screen__inner">
+      <div class="auth-screen__sidebar">
+        <div class="auth-sidebar">
+          <a href="https://sprucecss.com/examples">
+            <img class="auth-sidebar__logo" src="../assets/img/spruce-logo-light.svg" alt="Spruce CSS">
+          </a>
+          <div class="auth-sidebar__caption">
+            <h2 class="auth-sidebar__title">Morbi nec ultricies risus curabitur nibh eros</h2>
+            <p>Morbi nec ultricies risus. Curabitur nibh eros, facilisis et elementum vitae</p>
+          </div>
+          <div class="auth-sidebar__footer">
+            <div class="theme-switcher">
+              <span class="theme-switcher__icon">
+                <svg class="icon icon-system" aria-hidden="true" role="img" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                  <use xlink:href="#system-mode"></use>
+                </svg>
+                <svg class="icon icon-light" aria-hidden="true" role="img" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                  <use xlink:href="#light-mode"></use>
+                </svg>
+                <svg class="icon icon-dark" aria-hidden="true" role="img" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                  <use xlink:href="#dark-mode"></use>
+                </svg>
+              </span>
+              <select class="form-control form-control--sm theme-switcher__select" aria-label="Select a theme">
+                <option value="system">System</option>
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+              </select>
+            </div>
+            <p class="auth-sidebar__credit">Photo by <a href="https://unsplash.com/@maritafox?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Marita Kavelashvili</a> on <a href="https://unsplash.com/s/photos/pine-forest?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="auth-screen__form">
+        <div class="auth-form">
+          <h1 class="auth-form__title">Login</h1>
+          <p>Donec quis magna sed dolor blandit facilisis ut sed velit. Pellentesque a malesuada nisl.</p>
+          <form method="POST" action="#">
+            <div class="form-group-stack">
+              <div class="form-group">
+                <label class="form-label" for="email">Email</label>
+                <input class="form-control form-control--lg" id="email" type="text" name="email" value required autocomplete="off" autofocus>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="password" style="display: flex; justify-content: space-between;">Password <a href="#">Forgot password?</a>
+                </label>
+                <input class="form-control form-control--lg" id="password" type="password" name="password" require autocomplete="off">
+              </div>
+              <div class="form-group">
+                <label class="form-check form-check--lg" for="remember">
+                  <input class="form-check__control" id="remember" type="checkbox" name="remember">
+                  <span class="form-label form-check__label">Remember me</span>
+                </label>
+              </div>
+              <div class="form-group">
+                <button class="btn btn--primary btn--lg btn--block" type="submit">Login</button>
+              </div>
+            </div>
+          </form>
+          <p>Not a member? <a href="#">Sign up</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+      <symbol id="arrow-forward" viewBox="0 0 24 24">
+        <path d="M12,0l-2.115,2.115l8.37,8.385l-18.255,0l-0,3l18.255,0l-8.37,8.385l2.115,2.115l12,-12l-12,-12Z" fill="currentColor" />
+      </symbol>
+      <symbol id="system-mode" viewBox="0 0 24 24">
+        <path d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H1c-.55 0-1 .45-1 1s.45 1 1 1h22c.55 0 1-.45 1-1s-.45-1-1-1h-3zM5 6h14c.55 0 1 .45 1 1v8c0 .55-.45 1-1 1H5c-.55 0-1-.45-1-1V7c0-.55.45-1 1-1z" fill="currentColor" />
+      </symbol>
+      <symbol id="light-mode" viewBox="0 0 24 24">
+        <path d="M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0 c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2 c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1 C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06 c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41 l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41 c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36 c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z" fill="currentColor" />
+      </symbol>
+      <symbol id="dark-mode" viewBox="0 0 24 24">
+        <path d="M11.01,3.05C6.51,3.54,3,7.36,3,12c0,4.97,4.03,9,9,9c4.63,0,8.45-3.5,8.95-8c0.09-0.79-0.78-1.42-1.54-0.95 c-0.84,0.54-1.84,0.85-2.91,0.85c-2.98,0-5.4-2.42-5.4-5.4c0-1.06,0.31-2.06,0.84-2.89C12.39,3.94,11.9,2.98,11.01,3.05z" fill="currentColor" />
+      </symbol>
+    </defs>
+  </svg>
+
+  <script src="../assets/js/theme-switcher.js"></script>
+</body>
+
+</html>

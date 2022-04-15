@@ -1,0 +1,11 @@
+@use 'sprucecss/scss/spruce';
+
+.auth-form {
+  @include spruce.layout-stack(spruce.spacer(s));
+  max-width: 100%;
+  width: 40rem;
+}
+
+.form-group-stack {
+  @include spruce.layout-stack(spruce.spacer(s));
+}
