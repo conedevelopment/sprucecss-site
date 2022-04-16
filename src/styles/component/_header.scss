@@ -8,10 +8,14 @@
   &__inner {
     align-items: center;
     display: flex;
-    gap: spruce.spacer(l);
+    gap: spruce.spacer(s);
     justify-content: space-between;
     height: 5rem;
     position: relative;
+
+    @include spruce.breakpoint(md) {
+      gap: spruce.spacer(l);
+    }
   }
 
   &__logo {
@@ -126,11 +130,15 @@
   }
 
   &__actions {
-    display: none;
+    display: flex;
+    gap: spruce.spacer(s);
 
-    @include spruce.breakpoint(md) {
-      display: flex;
-      gap: spruce.spacer(s);
+    .btn--twitter {
+      display: none;
+
+      @include spruce.breakpoint(md) {
+        display: inline-flex;
+      }
     }
   }
 }
