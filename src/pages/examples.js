@@ -4,6 +4,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 // Import components
 import Layout from '../components/Layout';
 import Seo from '../components/SearchEngineOptimalization';
+import PageHeading from '../components/PageHeading';
 
 function Examples() {
   return (
@@ -11,16 +12,10 @@ function Examples() {
       <Seo title="Examples" />
       <main id="content" className="layout-example">
         <div className="layout-example__container">
-          <div className="page-heading">
-            <h1 className="page-heading__title">Examples</h1>
-            <div className="page-heading__caption">
-              <p className="page-heading__meta">Quick and straightforward examples to see how you can start with and use Spruce CSS.</p>
-              <div className="page-heading__btns">
-                <a href="#" className="btn btn--primary btn--rounded">Download</a>
-                <a href="#" className="btn btn--install btn--rounded">Github</a>
-              </div>
-            </div>
-          </div>
+          <PageHeading
+            title="Examples"
+            description="Quick and straightforward examples to see how you can start with and use Spruce CSS."
+          />
           <div className="example-grid">
             <article className="example-item">
               <a href="https://sprucecss.com/examples/html/auth.html">

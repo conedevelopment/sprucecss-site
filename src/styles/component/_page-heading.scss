@@ -1,3 +1,51 @@
-.page-heading {
+@use '~sprucecss/scss/spruce';
 
+.page-heading {
+  --gap: spruce.spacer(m);
+
+  align-items: center;
+  display: grid;
+  gap: spruce.spacer(s);
+  grid-template-columns: minmax(0, 1fr);
+  justify-content: center;
+  padding: clamp(spruce.spacer(l), 10vh, 6rem) 0;
+  text-align: center;
+
+  @include spruce.breakpoint(md) {
+    --gap: spruce.spacer(l);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+    justify-content: start;
+    text-align: start;
+  }
+
+  &__title {
+    font-size: spruce.responsive-font-size(
+      $size: 4rem,
+      $scaler: 40,
+      $optimal-size: '4vw + 1rem'
+    );
+    letter-spacing: -2px;
+    line-height: 1;
+    margin-block: 0;
+    max-width: 50ch;
+  }
+
+  &__description {
+    font-size: spruce.responsive-font-size(
+      $size: 1.25rem,
+      $scaler: 40,
+      $optimal-size: '0.25vw + 1rem'
+    );
+    margin: spruce.spacer(m) 0 0;
+    max-width: 50ch;
+    margin-block: 0;
+  }
+
+  &__btns {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: spruce.spacer(s);
+    margin-block-start: spruce.spacer(xs);
+  }
 }
