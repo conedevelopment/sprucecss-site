@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ExampleItem({title, url, github, children }) {
+export default function ExampleItem({title, url, github, children }) {
   return (
     <article className="example-item">
       <a className="example-item__link" href={url}>
@@ -11,8 +11,3 @@ function ExampleItem({title, url, github, children }) {
     </article>
   );
 }
-
-export default ExampleItem;
-
-
-

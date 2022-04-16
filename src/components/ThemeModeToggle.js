@@ -5,7 +5,7 @@ import SystemMode from '../images/icons/theme-mode/system-mode.svg';
 import LightMode from '../images/icons/theme-mode/light-mode.svg';
 import DarkMode from '../images/icons/theme-mode/dark-mode.svg';
 
-function ThemeModeToggle() {
+export default function ThemeModeToggle() {
   let [selected, setSelected] = useState('system');
   let handleChange = (e) => {
     localStorage.setItem('preferred-theme', e.target.value);
@@ -40,7 +40,5 @@ function ThemeModeToggle() {
         <option value="dark">Dark</option>
       </select>
     </div>
-  )
+  );
 }
-
-export default ThemeModeToggle

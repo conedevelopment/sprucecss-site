@@ -7,7 +7,7 @@ import CrossIcon from '../../images/icons/cross.svg';
 import Copy from '../../images/icons/copy.svg';
 import ArrowRightIcon from '../../images/icons/arrow-right.svg';
 
-function Icon({type, className}) {
+export default function Icon({type, className}) {
   let icon;
 
   if (type === 'check') {
@@ -24,5 +24,3 @@ function Icon({type, className}) {
 
   return icon;
 }
-
-export default Icon;

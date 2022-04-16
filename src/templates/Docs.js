@@ -9,7 +9,7 @@ import Sidebar from '../components/Sidebar';
 import Seo from '../components/SearchEngineOptimalization';
 
 // Images
-import ArrowLeft from "../images/icons/arrow-left.svg";
+import ArrowLeft from '../images/icons/arrow-left.svg';
 import ArrowRight from '../images/icons/arrow-right.svg';
 
 export const query = graphql`
@@ -27,7 +27,7 @@ export const query = graphql`
   }
 `;
 
-function Post({ data: { mdx: post }, pageContext }) {
+export default function Post({ data: { mdx: post }, pageContext }) {
   const {next, prev} = pageContext;
 
   const { title } = post.frontmatter;
@@ -86,5 +86,3 @@ function Post({ data: { mdx: post }, pageContext }) {
     </Layout>
   );
 };
-
-export default Post;

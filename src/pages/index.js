@@ -10,7 +10,7 @@ import Seo from '../components/SearchEngineOptimalization';
 import HeroImage from '../images/hero.svg';
 import CopyIcon from '../images/icons/copy.svg';
 
-function IndexPage() {
+export default function IndexPage() {
   async function copy() {
     await navigator.clipboard.writeText('npm install sprucecss');
     alert('Install command copied to the clipboard!');
@@ -41,7 +41,5 @@ function IndexPage() {
         <DocsCards />
       </main>
     </Layout>
-  )
+  );
 }
-
-export default IndexPage;

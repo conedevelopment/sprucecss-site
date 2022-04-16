@@ -1,7 +1,7 @@
 import React from 'react';
 import getAnchor from '../utils/getAnchor.js';
 
-const TableOfContents = ({ headings }) => {
+export default function TableOfContents({ headings }) {
   return (
     <ul>
       {headings
@@ -18,7 +18,5 @@ const TableOfContents = ({ headings }) => {
           </li>
         ))}
     </ul>
-  )
+  );
 }
-
-export default TableOfContents;

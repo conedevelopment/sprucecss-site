@@ -2,7 +2,7 @@ import React from 'react';
 import Link from '../../images/icons/link.svg';
 import getAnchor from '../../utils/getAnchor.js';
 
-function H3(props) {
+export default function H3(props) {
   const anchor = getAnchor(props.children);
   const link = `#${anchor}`;
   return (
@@ -18,5 +18,3 @@ function H3(props) {
     </>
   );
 };
-
-export default H3;

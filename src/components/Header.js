@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Link, useStaticQuery, graphql  } from "gatsby";
-import CookieConsent from "react-cookie-consent";
+import { Link, useStaticQuery, graphql  } from 'gatsby';
+import CookieConsent from 'react-cookie-consent';
 
 // Images
-import MenuIcon from "../images/icons/menu.svg";
-import Logo from "../images/spruce-logo-beta.svg";
-import GitHubIcon from "../images/icons/github.svg";
-import TwitterIcon from "../images/icons/twitter.svg";
+import MenuIcon from '../images/icons/menu.svg';
+import Logo from '../images/spruce-logo-beta.svg';
+import GitHubIcon from '../images/icons/github.svg';
+import TwitterIcon from '../images/icons/twitter.svg';
 
-function Header() {
+export default function Header() {
   const { site } = useStaticQuery(graphql`
     query {
       site {
@@ -88,5 +88,3 @@ function Header() {
     </>
   );
 }
-
-export default Header;

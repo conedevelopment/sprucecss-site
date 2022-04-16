@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from "react-helmet";
+import { Helmet } from 'react-helmet';
 
 // Components
 import Footer from './Footer';
@@ -8,7 +8,7 @@ import Header from './Header';
 // Styles
 import '../styles/main.scss';
 
-function Layout(props) {
+export default function Layout(props) {
   return (
     <>
       <Helmet>
@@ -22,5 +22,3 @@ function Layout(props) {
     </>
   );
 }
-
-export default Layout;

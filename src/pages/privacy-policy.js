@@ -5,7 +5,7 @@ import Cookies from 'universal-cookie';
 import Layout from '../components/Layout';
 import Seo from '../components/SearchEngineOptimalization';
 
-function PrivacyPolicy() {
+export default function PrivacyPolicy() {
   const cookies = new Cookies();
   const [cookieConsent, setCookieConsent] = useState(() => {
     if (cookies.get('spruce-gdpr-cookies')) {
@@ -46,6 +46,5 @@ function PrivacyPolicy() {
         </div>
       </main>
     </Layout>
-  )
+  );
 }
-export default PrivacyPolicy

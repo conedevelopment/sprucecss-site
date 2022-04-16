@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 
 // Import components
-import Layout from "../components/Layout";
-import Seo from "../components/SearchEngineOptimalization";
-import PageHeading from "../components/PageHeading";
-import ExampleItem from "../components/ExampleItem";
+import Layout from '../components/Layout';
+import Seo from '../components/SearchEngineOptimalization';
+import PageHeading from '../components/PageHeading';
+import ExampleItem from '../components/ExampleItem';
 
-function Examples() {
+export default function Examples() {
   return (
     <Layout>
       <Seo title="Examples" />
@@ -38,6 +38,5 @@ function Examples() {
         </div>
       </main>
     </Layout>
-  )
+  );
 }
-export default Examples

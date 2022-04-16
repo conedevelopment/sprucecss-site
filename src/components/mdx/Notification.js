@@ -5,7 +5,7 @@ import CheckIcon from '../../images/icons/check.svg';
 import InfoIcon from '../../images/icons/info.svg';
 import CrossIcon from '../../images/icons/cross.svg';
 
-function Notification({children, type, icon = true}) {
+export default function Notification({children, type, icon = true}) {
   let iconSVG;
 
   if (type === 'wrong') {
@@ -25,5 +25,3 @@ function Notification({children, type, icon = true}) {
     </div>
   )
 }
-
-export default Notification;

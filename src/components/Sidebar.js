@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-function Sidebar() {
+export default function Sidebar() {
   return (
     <aside className="sidebar layout-documentation__sidebar">
       <section className="sidebar-section">
@@ -52,7 +52,5 @@ function Sidebar() {
         </nav>
       </section>
     </aside>
-  )
+  );
 }
-
-export default Sidebar;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function PageHeading({title, description, children }) {
+export default function PageHeading({title, description, children }) {
   return (
     <div className="page-heading">
       {title && <h1 className="page-heading__title">{ title }</h1>}
@@ -13,5 +13,3 @@ function PageHeading({title, description, children }) {
     </div>
   );
 }
-
-export default PageHeading;

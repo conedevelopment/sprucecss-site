@@ -5,7 +5,7 @@ import theme from 'prism-react-renderer/themes/nightOwl';
 import CopyIcon from '../../images/icons/copy.svg';
 import CopiedIcon from '../../images/icons/copied.svg';
 
-function CodeBlock(props) {
+export default function CodeBlock(props) {
   const className = props?.children?.props?.className || '';
   const matches = className.match(/language-(?<lang>.*)/);
   const [isCopied, setIsCopied] = React.useState(false);
@@ -49,5 +49,3 @@ function CodeBlock(props) {
     </Highlight>
   )
 }
-
-export default CodeBlock;

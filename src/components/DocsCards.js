@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-function DocsCards(props) {
+export default function DocsCards(props) {
   return (
     <div className="docs-cards">
       <div className="docs-cards__container">
@@ -35,7 +35,3 @@ function DocsCards(props) {
     </div>
   )
 }
-
-export default DocsCards;
-
-

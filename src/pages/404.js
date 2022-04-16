@@ -8,7 +8,7 @@ import Seo from '../components/SearchEngineOptimalization';
 // Images
 import NotFoundImage from '../images/not-found.svg';
 
-function NotFoundPage() {
+export default function NotFoundPage() {
   return (
     <Layout>
       <Seo title="Error 404" />
@@ -27,7 +27,5 @@ function NotFoundPage() {
         </div>
       </main>
     </Layout>
-  )
+  );
 }
-
-export default NotFoundPage;

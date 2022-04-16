@@ -6,7 +6,7 @@ import ThemeModeToggle from './ThemeModeToggle';
 import Logo from '../images/spruce-logo-footer.svg';
 import ConeLogo from '../images/cone-logo.svg';
 
-function Footer() {
+export default function Footer() {
   const { site } = useStaticQuery(graphql`
     query {
       site {
@@ -64,5 +64,3 @@ function Footer() {
     </footer>
   );
 }
-
-export default Footer;
