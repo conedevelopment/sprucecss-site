@@ -1,26 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useStaticQuery, graphql  } from 'gatsby';
-import CookieConsent from 'react-cookie-consent';
+import React, { useState, useEffect } from "react";
+import { Link, useStaticQuery, graphql  } from "gatsby";
+import CookieConsent from "react-cookie-consent";
 
 // Images
-import MenuIcon from '../images/icons/menu.svg';
-import Logo from '../images/spruce-logo-beta.svg';
-import GitHubIcon from '../images/icons/github.svg';
-import TwitterIcon from '../images/icons/twitter.svg';
+import MenuIcon from "../images/icons/menu.svg";
+import Logo from "../images/spruce-logo-beta.svg";
+import GitHubIcon from "../images/icons/github.svg";
+import TwitterIcon from "../images/icons/twitter.svg";
 
 function Header() {
-  const [menuVisible, setMenuVisible] = useState(false);
-
-  useEffect(() => {
-    if(menuVisible === true) {
-      document.querySelector('.header__navigation ul').firstChild.focus();
-    }
-  });
-
-  function handleMenuClick() {
-    setMenuVisible(!menuVisible);
-  }
-
   const { site } = useStaticQuery(graphql`
     query {
       site {
@@ -32,21 +20,34 @@ function Header() {
     }
   `);
 
+  const [menuVisible, setMenuVisible] = useState(false);
+  const [slogan, setslogan] = useState(site.siteMetadata.slogan[Math.floor(Math.random() * site.siteMetadata.slogan.length)]);
+
+  useEffect(() => {
+    if(menuVisible === true) {
+      document.querySelector(".header__navigation ul").firstChild.focus();
+    }
+  }, [menuVisible]);
+
+  function handleMenuClick() {
+    setMenuVisible(!menuVisible);
+  }
+
   return (
     <>
       <CookieConsent
-        containerClasses='cookie-consent'
-        contentClasses='cookie-consent__body'
-        buttonWrapperClasses='cookie-consent__btns'
-        declineButtonClasses='btn btn--decline btn--rounded'
-        buttonClasses='btn btn--primary btn--rounded'
+        containerClasses="cookie-consent"
+        contentClasses="cookie-consent__body"
+        buttonWrapperClasses="cookie-consent__btns"
+        declineButtonClasses="btn btn--decline btn--rounded"
+        buttonClasses="btn btn--primary btn--rounded"
         enableDeclineButton
-        location='none'
-        buttonText='Accept'
-        declineButtonText='Decline'
+        location="none"
+        buttonText="Accept"
+        declineButtonText="Decline"
         setDeclineCookie={false}
         disableStyles={true}
-        cookieName='spruce-gdpr-cookies'
+        cookieName="spruce-gdpr-cookies"
         onDecline={() => {
           document.cookie = "spruce-gdpr-cookies=false; expires=0; path=/";
         }}
@@ -61,10 +62,10 @@ function Header() {
               <Link to="/" title={site.siteMetadata.title}>
                 <Logo />
               </Link>
-              <span className="header__slogan">{site.siteMetadata.slogan[Math.floor(Math.random() * site.siteMetadata.slogan.length)]}</span>
+              <span className="header__slogan">{slogan}</span>
             </div>
             <nav className="header__navigation">
-              <button className="btn btn--primary header__toggle" onClick={handleMenuClick} aria-controls="primary-menu" aria-expanded={menuVisible ? 'true' : 'false'} aria-label={menuVisible ? 'Close navigation' : 'Open navigation'}>
+              <button className="btn btn--primary header__toggle" onClick={handleMenuClick} aria-controls="primary-menu" aria-expanded={menuVisible ? "true" : "false"} aria-label={menuVisible ? "Close navigation" : "Open navigation"}>
                 <MenuIcon />
               </button>
               <ul>
