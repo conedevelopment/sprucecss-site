@@ -39,7 +39,7 @@ export default function Post({ data: { mdx: post }, pageContext }) {
         <div className="layout-documentation__container">
           <div className="layout-documentation__inner">
             <Sidebar />
-            <div>
+            <div className="layout-documentation__body-helper">
               <article className="layout-documentation__body">
                 <h1 className="layout-documentation__title">{title}</h1>
                 {post.headings.length !== 0 &&

@@ -16,6 +16,7 @@ export default function Examples() {
           <PageHeading
             title="Examples"
             description="Quick and straightforward examples to see how you can start with and use Spruce CSS."
+            showDot={true}
           >
             <a href="https://github.com/conedevelopment/sprucecss-examples/archive/refs/heads/master.zip">Download</a>
             <a href="https://github.com/conedevelopment/sprucecss-examples">Github</a>
