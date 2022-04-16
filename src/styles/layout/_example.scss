@@ -11,24 +11,45 @@
 }
 
 .example-grid {
+  --columns: 1;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: spruce.spacer(m);
+  grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+  gap: spruce.spacer(l);
+
+  @include spruce.breakpoint(md) {
+    --columns: 2;
+  }
+
+  @include spruce.breakpoint(lg) {
+    --columns: 3;
+  }
 }
 
 .example-item {
-  a {
+  $this: &;
+
+  &__link {
+    display: block;
     text-decoration: none;
+
+    &:hover {
+      #{$this}__thumbnail {
+        transform: scale(1.05);
+      }
+    }
   }
 
   &__thumbnail {
     border: 1px solid spruce.color(border);
     border-radius: spruce.$border-radius-lg;
+    transition-duration: spruce.transition(duration);
+    transition-property: transform;
+    transition-timing-function: spruce.transition(timing-function);
   }
 
   &__title {
     font-size: spruce.font-size(h3);
-    margin-block: 0;
+    margin-block: spruce.spacer(m) spruce.spacer(xxs);
   }
 
   &__links {
