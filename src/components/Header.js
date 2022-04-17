@@ -69,8 +69,8 @@ export default function Header() {
                 <MenuIcon />
               </button>
               <ul>
-                <li><Link to="/docs/getting-started/introduction">Docs</Link></li>
-                <li><Link to="/examples">Examples</Link></li>
+                <li><Link to="/docs/getting-started/introduction/">Docs</Link></li>
+                <li><Link to="/examples/">Examples</Link></li>
                 <li><a href="https://github.com/conedevelopment/sprucecss/releases">Releases</a></li>
               </ul>
             </nav>
