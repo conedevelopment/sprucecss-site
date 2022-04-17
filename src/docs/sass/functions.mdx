@@ -118,9 +118,9 @@ Get a value by key name from the `$spacers` map.
 
 ### Argument(s)
 
-| Name          | Description                                                                  |
-|---------------|------------------------------------------------------------------------------|
-| `$key`        | The name of the spacer.                                                      |
+| Name          | Description              |
+|---------------|--------------------------|
+| `$key`        | The name of the spacer.  |
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/function/_spacer.scss#L5)
 
@@ -134,7 +134,27 @@ Get a value by key name from the `$spacers` map.
 
 ## str-replace
 
+Replace any specified value in a string.
+
+### Argument(s)
+
+| Name            | Default Value  | Description           |
+| --------------- | -------------- | ----------------------|
+| `$string`       |                | Initial string.       |
+| `$search`       |                | Substring to replace. |
+| `$replace`      | `''`           | New value.            |
+
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/function/_utilities.scss#L9)
+
+```scss
+// Get custom icon background for input and select fields
+@mixin field-icon(
+  $icon,
+  $color
+) {
+  background-image: url('#{svg-escape(str-replace($icon, "#COLOR#", $color))}');
+}
+```
 
 ## svg-escape
 
