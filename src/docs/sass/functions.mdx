@@ -88,9 +88,9 @@ Get a value by key name from the `$settings` map.
 
 ### Argument(s)
 
-| Name          | Description                                                                  |
-|---------------|------------------------------------------------------------------------------|
-| `$key`        | The name of the setting.                                                     |
+| Name          | Description              |
+|---------------|--------------------------|
+| `$key`        | The name of the setting. |
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/function/_setting.scss#L5)
 
@@ -146,6 +146,8 @@ Replace any specified value in a string.
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/function/_utilities.scss#L9)
 
+### Example(s)
+
 ```scss
 // Get custom icon background for input and select fields
 @mixin field-icon(
@@ -158,7 +160,27 @@ Replace any specified value in a string.
 
 ## svg-escape
 
+Escape the special characters in SVG when used as a `data:image`. The characters are declared under the <code><a href="https://github.com/conedevelopment/sprucecss/blob/main/scss/config/_index.scss#L14">$escaping-characters</a></code> map.
+
+### Argument(s)
+
+| Name            | Description                    |
+| --------------- | -------------------------------|
+| `$svg`          | The `<svg>` element to escape. |
+
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/function/_utilities.scss#L20)
+
+### Example(s)
+
+```scss
+// Get custom icon background for input and select fields
+@mixin field-icon(
+  $icon,
+  $color
+) {
+  background-image: url('#{svg-escape(str-replace($icon, "#COLOR#", $color))}');
+}
+```
 
 ## transition
 
