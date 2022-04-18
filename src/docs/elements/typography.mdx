@@ -5,10 +5,11 @@ order: 15
 
 <p class="lead">Typography is an essential part of any system. With Spruce, you get basic styles for the most related HTML elements.</p>
 
-- The type scale is REM (root-relative EM) based. The base size is set to 1rem by default, which will usually be 16px (depending on the browser's defaults).
+- The type scale is REM (root-relative EM) based. The base size is set to 1rem by default through `$font-size-base`, which will usually be 16px (depending on the browser's defaults). You can also change the ratio with the `$font-size-ratio` variable.
 - You can use four diferent font sizing variables: `$font-size-base` (1rem), `$font-size-sm` (0.9rem), `$font-size-lg` (1.1rem) and `$font-size-lead` (math.pow($font-size-ratio, 1) * $font-size-base).
 - You can access the heading font sizes under the `$font-sizes` with the [spruce.font-size()](/docs/sass/functions#font-size) function.
 
+[View More Typography Variables on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/config/_typography.scss)
 
 ## Headings
 
@@ -45,9 +46,9 @@ $font-sizes: (
 
 ### Get Heading Size
 
-To access any of the `$font-sizes` map sizes, you can use the `spruce.font-size()` function that allows you also to create responsive font sizing. The `font-size()` function utilizes the clamp() CSS function, which gives us the possibility to set a value based on any relative unit (in this case: 5vw + 1rem).
+To access any of the `$font-sizes` map sizes, you can use the `spruce.font-size()` function that allows you also to create responsive font sizing. The `font-size()` function utilizes the <code><a hhre="https://developer.mozilla.org/en-US/docs/Web/CSS/clamp">clamp()</a></code> CSS function, which gives us the possibility to set a value based on any relative unit (in this case: 5vw + 1rem).
 
-For example you can get the the h2 size like so:
+For example you can get the the `h2` size like so:
 
 ```scss
 font-size: spruce.font-size(h2);
@@ -98,6 +99,7 @@ You can create paragraphs with bigger font-size using the `lead` class.
 
 <Preview>
   <ul class="inline-text-element-list">
+    <li><code>code element</code> <code>code</code></li>
     <li><abbr title="Accessibility">A11Y</abbr> <code>abbr</code></li>
     <li><mark>mark element</mark> <code>mark</code></li>
     <li><del>del element</del> <code>del</code></li>
@@ -110,8 +112,24 @@ You can create paragraphs with bigger font-size using the `lead` class.
     <li><cite>cite element</cite> <code>cite</code></li>
     <li>sup <sup>element</sup> <code>sup</code></li>
     <li>sub <sub>element</sub> <code>sub</code></li>
-</ul>
+  </ul>
 </Preview>
+
+```html
+<code>code element</code>
+<abbr title="Accessibility">A11Y</abbr>
+<mark>mark element</mark>
+<del>del element</del>
+<s>strikethrough element</s>
+<ins>ins element</ins>
+<u>u element</u>
+<small>small element</small>
+<strong>strong element</strong>
+<em>em element</em>
+<cite>cite element</cite>
+sup <sup>element</sup>
+sub <sub>element</sub>
+```
 
 ## Lists
 
