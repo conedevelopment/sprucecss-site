@@ -365,7 +365,7 @@ Crop text and display an ellipsis with multiline support where possible.
 |------------------------|---------------|------------------------------------------|
 | `$number-of-lines`     | `1`           | Multiline text cropping where supported. |
 
-[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L20)
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L18)
 
 #### Example(s)
 
@@ -380,7 +380,7 @@ Crop text and display an ellipsis with multiline support where possible.
 
 Hide something from the screen but keep it visible for assistive technology.
 
-[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L7)
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L5)
 
 #### Example(s)
 
@@ -404,7 +404,7 @@ Create natively styled custom scrollbars.
 | `$size`                         | `0.5rem`                                          | The width or height of the scrollbar.             |
 | `$border-radius`                | `spruce.$border-radius-sm`                        | The border-radius of the scrollbar and handle.    |
 
-[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L38)
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L36)
 
 #### Example(s)
 
@@ -425,7 +425,7 @@ code {
 
 Clear the default browser button styles.
 
-[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L66)
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L64)
 
 
 #### Example(s)
@@ -440,7 +440,7 @@ Clear the default browser button styles.
 
 Remove the `list-style`, `margin`, and `padding` stylings from the element.
 
-[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L77)
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L75)
 
 #### Example(s)
 
@@ -452,8 +452,33 @@ ul {
 
 ### a11y-card-link
 
-[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L84)
+Create better card component linking by only using the title’s link (and not the whole block). [Please visit this article about cards](https://inclusive-components.design/cards/) by Heydon Pickering for more information about the technique.
+
+| Name                            | Default Value  | Description                                                                      |
+| ------------------------------- | -------------- | -------------------------------------------------------------------------------- |
+| `$link`                         |                | The selector of the link element.                                                |
+| `$at-root`                      | `false`        | Wheater output the link as a child of the parent component or at the root level. |
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L82)
+
+#### Example(s)
+
+```scss
+.card {
+  @include spruce.a11y-card-link('.card__link', true);
+  border: 1px solid spruce.color(border);
+  border-radius: spruce.$border-radius-lg;
+  padding: spruce.spacer(m);
+
+  &__link {
+    color: spruce.color(heading);
+    font-size: spruce.font-size(h3);
+    font-weight: 700;
+    text-decoration: none;
+  }
+}
+```
 
 ### word-wrap
 
-[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L107)
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L105)
