@@ -3,8 +3,6 @@
   let preferredTheme;
 
   function setTheme(theme) {
-    window.__theme = theme;
-
     if (theme === 'dark') {
       document.documentElement.setAttribute('data-theme-mode', 'dark');
     } else if (theme === 'system' && darkQuery.matches) {
@@ -14,16 +12,6 @@
     }
   };
 
-  window.__setPreferredTheme = function(theme) {
-    setTheme(theme);
-    try {
-      localStorage.setItem('preferred-theme', theme);
-    } catch (e) {}
-  };
-
-  try {
-    preferredTheme = localStorage.getItem('preferred-theme');
-  } catch (e) {}
-
+  preferredTheme = localStorage.getItem('preferred-theme');
   setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
 })();

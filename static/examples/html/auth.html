@@ -4,14 +4,10 @@
 <head>
   <script>
     (function() {
-      console.log('hi');
-
       let darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
       let preferredTheme;
 
       function setTheme(theme) {
-        window.__theme = theme;
-
         if (theme === 'dark') {
           document.documentElement.setAttribute('data-theme-mode', 'dark');
         } else if (theme === 'system' && darkQuery.matches) {
@@ -21,17 +17,7 @@
         }
       };
 
-      window.__setPreferredTheme = function(theme) {
-        setTheme(theme);
-        try {
-          localStorage.setItem('preferred-theme', theme);
-        } catch (e) {}
-      };
-
-      try {
-        preferredTheme = localStorage.getItem('preferred-theme');
-      } catch (e) {}
-
+      preferredTheme = localStorage.getItem('preferred-theme');
       setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'));
     })();
   </script>
@@ -40,10 +26,10 @@
   <meta name="color-scheme" content="light dark">
   <title>Spruce CSS - Auth Example</title>
   <link rel="icon" href="../assets/img/favicon.png" sizes="32x32">
-  <link rel="stylesheet" href="../assets/css/main.css?time=1650019719297">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;family=Poppins:wght@400;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/auth.css?time=1650277432011">
 </head>
 
 <body>
