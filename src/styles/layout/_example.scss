@@ -26,17 +26,9 @@
 }
 
 .example-item {
-  $this: &;
-
   &__link {
     display: block;
     text-decoration: none;
-
-    &:hover {
-      #{$this}__thumbnail {
-        transform: scale(1.05);
-      }
-    }
   }
 
   &__thumbnail {
