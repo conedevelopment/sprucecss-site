@@ -56,14 +56,14 @@
       $scaler: 40,
       $optimal-size: '4vw + 1rem'
     );
-    letter-spacing: -2px;
+    font-weight: 700;
+    letter-spacing: -3px;
     line-height: 1;
     margin: 0;
     max-width: 50ch;
 
-    .highlighted {
-      color: spruce.color(primary);
-      margin-inline-start: -0.1em;
+    .solid {
+      font-weight: 400;
     }
   }
 

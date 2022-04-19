@@ -33,7 +33,7 @@
 
   &__thumbnail {
     border: 1px solid spruce.color(border);
-    border-radius: 0.75rem;
+    border-radius: spruce.$border-radius-lg;
     transition-duration: spruce.transition(duration);
     transition-property: transform;
     transition-timing-function: spruce.transition(timing-function);
