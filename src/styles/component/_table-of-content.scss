@@ -24,7 +24,7 @@
   &__navigation {
     margin: 1rem 0 0;
 
-    ul {
+    ol {
       @include spruce.layout-stack(spruce.spacer(xs));
 
       list-style: none;

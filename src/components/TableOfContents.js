@@ -3,7 +3,7 @@ import getAnchor from '../utils/getAnchor.js';
 
 export default function TableOfContents({ headings }) {
   return (
-    <ul>
+    <ol>
       {headings
         .filter(
           heading => heading.depth > 1 &&
@@ -17,6 +17,6 @@ export default function TableOfContents({ headings }) {
             <a href={`#${getAnchor(heading.value)}`}>{heading.value}</a>
           </li>
         ))}
-    </ul>
+    </ol>
   );
 }
