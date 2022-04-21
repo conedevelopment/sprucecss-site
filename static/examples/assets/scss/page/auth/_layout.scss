@@ -41,13 +41,30 @@
   &__form {
     align-items: center;
     display: flex;
+    flex-direction: column;
     height: 100%;
     justify-content: center;
     padding: spruce.spacer(l);
 
     @include spruce.breakpoint(md) {
       margin-inline-start: 30rem;
+      min-height: 100vh;
       width: calc(100vw - 30rem);
+    }
+  }
+
+  &__footer {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: spruce.spacer(m);
+    justify-content: space-between;
+    margin-block-start: auto;
+    padding-block-start: spruce.spacer(m);
+    width: 100%;
+
+    p {
+      margin-block: 0;
     }
   }
 }

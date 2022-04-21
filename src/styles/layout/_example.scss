@@ -19,10 +19,6 @@
   @include spruce.breakpoint(md) {
     --columns: 2;
   }
-
-  @include spruce.breakpoint(lg) {
-    --columns: 3;
-  }
 }
 
 .example-item {
@@ -41,7 +37,12 @@
 
   &__title {
     font-size: spruce.font-size(h3);
-    margin-block: spruce.spacer(m) spruce.spacer(xxs);
+    margin-block: spruce.spacer(m) 0;
+  }
+
+  &__description {
+    color: spruce.color(text);
+    margin-block: spruce.spacer(xs) spruce.spacer(xxs);
   }
 
   &__links {

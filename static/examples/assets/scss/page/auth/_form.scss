@@ -2,8 +2,13 @@
 
 .auth-form {
   @include spruce.layout-stack(spruce.spacer(s));
+  margin-block: auto;
   max-width: 100%;
   width: 40rem;
+
+  @include spruce.breakpoint(md) {
+    padding-block-start: spruce.spacer(m);
+  }
 }
 
 .form-group-stack {
