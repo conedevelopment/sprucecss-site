@@ -11,7 +11,7 @@
 
   @include spruce.breakpoint(md) {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
-    justify-content: start;
+    justify-content: flex-start;
     text-align: start;
   }
 
@@ -37,7 +37,7 @@
     flex-direction: column;
 
     @include spruce.breakpoint(md) {
-      align-items: start;
+      align-items: flex-start;
     }
   }
 
