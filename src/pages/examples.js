@@ -38,7 +38,7 @@ export default function Examples() {
             <ExampleItem
               title="Article"
               url="https://sprucecss.com/examples/html/article.html"
-              description="A centered, breakint oug article layout for seeing the typography."
+              description="A centered, breaking-out article layout for seeing the typography."
               github="https://github.com/conedevelopment/sprucecss-examples/tree/master/assets/scss/page/article"
             >
               <StaticImage
