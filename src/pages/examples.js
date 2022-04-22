@@ -24,7 +24,7 @@ export default function Examples() {
             <ExampleItem
               title="Authentication"
               url="https://sprucecss.com/examples/html/auth.html"
-              description="A simple login example where you can check out the form styling and some usage of Spruce’s mixins and functions. Dark mode included."
+              description="A simple login example where you can check out the form styling and some usage of Spruce’s mixins and functions."
               github="https://github.com/conedevelopment/sprucecss-examples/tree/master/assets/scss/page/auth"
             >
               <StaticImage
@@ -32,6 +32,20 @@ export default function Examples() {
                 width={ 1200 }
                 quality={ 90 }
                 alt="A generic login screen with a sidebar."
+                className="example-item__thumbnail"
+              />
+            </ExampleItem>
+            <ExampleItem
+              title="Article"
+              url="https://sprucecss.com/examples/html/article.html"
+              description="A centered, breakint oug article layout for seeing the typography."
+              github="https://github.com/conedevelopment/sprucecss-examples/tree/master/assets/scss/page/article"
+            >
+              <StaticImage
+                src={"../images/examples/article.png"}
+                width={ 1200 }
+                quality={ 90 }
+                alt="A simple article layout."
                 className="example-item__thumbnail"
               />
             </ExampleItem>
