@@ -109,7 +109,7 @@
 
       @include spruce.breakpoint(md) {
         margin-top: 0;
-        margin-inline-start: spruce.spacer(m);
+        margin-inline-start: 2.5rem;
       }
     }
 
