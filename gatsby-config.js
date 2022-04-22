@@ -6,9 +6,9 @@ module.exports = {
     siteUrl: 'https://sprucecss.com',
     slogan: [
       '🎉 Another CSS Framework',
-      '😳 Yesterday I liked it.',
-      '🤨 It could be worse, I think.',
-      '👔 It is far from elegant.'
+      '😳 Yesterday I liked it',
+      '🤨 It could be worse, I think',
+      '👔 It is far from elegant'
     ],
     title: 'Spruce CSS',
     twitter: 'conedevelopment'
