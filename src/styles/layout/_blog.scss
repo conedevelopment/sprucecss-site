@@ -1,0 +1,53 @@
+@use '~sprucecss/scss/spruce';
+
+.layout-blog {
+  padding-block: 0 clamp(spruce.spacer(l), 5vw, spruce.spacer(xl));
+
+  &__container {
+    @include spruce.layout-center(
+      clamp(spruce.spacer(m), 5vw, spruce.spacer(l))
+    );
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  }
+}
+
+.blog-item {
+  &__link {
+    display: block;
+    text-decoration: none;
+  }
+
+  &__thumbnail {
+    border: 1px solid spruce.color(border);
+    border-radius: spruce.$border-radius-lg;
+    transition-duration: spruce.transition(duration);
+    transition-property: transform;
+    transition-timing-function: spruce.transition(timing-function);
+  }
+
+  &__caption {
+    margin-block-start: spruce.spacer(m);
+  }
+
+  &__title {
+    font-size: spruce.font-size(h3);
+    margin-block: 0;
+
+    a {
+      color: spruce.color(heading);
+    }
+  }
+
+  &__description {
+    color: spruce.color(text);
+    margin-block: spruce.spacer(xs) spruce.spacer(xxs);
+  }
+
+  &__links {
+    @include spruce.clear-list;
+  }
+}
