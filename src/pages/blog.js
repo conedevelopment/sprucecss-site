@@ -11,21 +11,39 @@ export default function Blog() {
     <Layout>
       <Seo title="Blog" />
       <main id="content" className="layout-blog">
-        <div className="layout-blog__container">
+        <div className="container">
+          <PageHeading
+            title="Blog"
+            description="Spruce how-to and generic front-end development articles."
+          />
           <div className="layout-blog__inner">
-            <div className="layout-blog__heading">
-              <PageHeading
-                title="Blog"
-                description="Quick and straightforward examples to see how you can start with and use Spruce CSS."
+            <div className="blog-card">
+              <StaticImage
+                src={"../images/blog/writing-better-css.png"}
+                width={ 600 }
+                quality={ 90 }
+                alt=""
+                className="blog-card__thumbnail"
               />
+              <p className="blog-card__meta">
+                <a className="blog-card__tag" href="#">#css</a>
+                <span className="blog-card__date">April 14, 2022</span>
+              </p>
+              <h2 className="blog-card__title"><a href="#" className="blog-card__link">Write Better CSS</a></h2>
             </div>
-            <div className="layout-blog__list">
-              <div className="blog-list">
-                <div className="blog-item">
-                  <h2 className="blog-item__title"><a href="#" className="blog-item__link">Blog article #1</a></h2>
-                  <p className="blog-item__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dapibus viverra lectus, sit amet dictum ipsum lacinia accumsan. Donec dapibus condimentum varius.</p>
-                </div>
-              </div>
+            <div className="blog-card">
+              <StaticImage
+                src={"../images/blog/how-to-create-a-new-button-variant.png"}
+                width={ 600 }
+                quality={ 90 }
+                alt=""
+                className="blog-card__thumbnail"
+              />
+              <p className="blog-card__meta">
+                <a className="blog-card__tag" href="#">#how-to</a>
+                <span className="blog-card__date">March 29, 2022</span>
+              </p>
+              <h2 className="blog-card__title"><a href="#" className="blog-card__link">How to Create a New Button Variant</a></h2>
             </div>
           </div>
         </div>

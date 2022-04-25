@@ -5,14 +5,14 @@ import { StaticImage } from 'gatsby-plugin-image';
 import Layout from '../components/Layout';
 import Seo from '../components/SearchEngineOptimalization';
 import PageHeading from '../components/PageHeading';
-import ExampleItem from '../components/ExampleItem';
+import ExampleCard from '../components/ExampleCard';
 
 export default function Examples() {
   return (
     <Layout>
       <Seo title="Examples" />
       <main id="content" className="layout-example">
-        <div className="layout-example__container">
+        <div className="container">
           <PageHeading
             title="Examples"
             description="Quick and straightforward examples to see how you can start with and use Spruce CSS."
@@ -21,7 +21,7 @@ export default function Examples() {
             <a href="https://github.com/conedevelopment/sprucecss-examples">Github</a>
           </PageHeading>
           <div className="example-grid">
-            <ExampleItem
+            <ExampleCard
               title="Authentication"
               url="https://sprucecss.com/examples/html/auth.html"
               description="A simple login example where you can check out the form styling and some usage of Spruce’s mixins and functions."
@@ -32,10 +32,10 @@ export default function Examples() {
                 width={ 1200 }
                 quality={ 90 }
                 alt="A generic login screen with a sidebar."
-                className="example-item__thumbnail"
+                className="example-card__thumbnail"
               />
-            </ExampleItem>
-            <ExampleItem
+            </ExampleCard>
+            <ExampleCard
               title="Article"
               url="https://sprucecss.com/examples/html/article.html"
               description="A centered, breaking-out article layout for seeing the typography."
@@ -46,9 +46,9 @@ export default function Examples() {
                 width={ 1200 }
                 quality={ 90 }
                 alt="A simple article layout."
-                className="example-item__thumbnail"
+                className="example-card__thumbnail"
               />
-            </ExampleItem>
+            </ExampleCard>
           </div>
         </div>
       </main>

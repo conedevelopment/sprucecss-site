@@ -2,12 +2,6 @@
 
 .layout-example {
   padding-block: 0 clamp(spruce.spacer(l), 5vw, spruce.spacer(xl));
-
-  &__container {
-    @include spruce.layout-center(
-      clamp(spruce.spacer(m), 5vw, spruce.spacer(l))
-    );
-  }
 }
 
 .example-grid {
@@ -21,7 +15,7 @@
   }
 }
 
-.example-item {
+.example-card {
   &__link {
     display: block;
     text-decoration: none;
@@ -30,9 +24,6 @@
   &__thumbnail {
     border: 1px solid spruce.color(border);
     border-radius: spruce.$border-radius-lg;
-    transition-duration: spruce.transition(duration);
-    transition-property: transform;
-    transition-timing-function: spruce.transition(timing-function);
   }
 
   &__caption {

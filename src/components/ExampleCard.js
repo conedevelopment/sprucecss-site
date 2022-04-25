@@ -1,15 +1,15 @@
 import React from 'react';
 
-export default function ExampleItem({title, description, url, github, children }) {
+export default function ExampleCard({title, description, url, github, children }) {
   return (
-    <article className="example-item">
-      <a className="example-item__link" href={url}>
+    <article className="example-card">
+      <a className="example-card__link" href={url}>
         { children }
       </a>
-      <div class="example-item__caption">
+      <div class="example-card__caption">
         {title &&
-          <h2 className="example-item__title">
-            <a className="example-item__link" href={url}>
+          <h2 className="example-card__title">
+            <a className="example-card__link" href={url}>
               { title }
             </a>
           </h2>

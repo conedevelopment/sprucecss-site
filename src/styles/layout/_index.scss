@@ -2,3 +2,11 @@
 @forward 'example';
 @forward 'blog';
 @forward 'page';
+
+@use '~sprucecss/scss/spruce';
+
+.container {
+  @include spruce.layout-center(
+    clamp(spruce.spacer(m), 5vw, spruce.spacer(l))
+  );
+}
