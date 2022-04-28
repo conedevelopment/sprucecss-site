@@ -14,8 +14,8 @@ export default function ExampleCard({title, description, url, github, children }
             </a>
           </h2>
         }
-        {description && <p className="example-item__description">{ description }</p>}
-        {github && <a className="example-item__github" href={ github }>GitHub</a>}
+        {description && <p className="example-card__description">{ description }</p>}
+        {github && <a className="example-card__github" href={ github }>GitHub</a>}
       </div>
     </article>
   );

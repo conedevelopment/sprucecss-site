@@ -6,7 +6,7 @@
   gap: spruce.spacer(s);
   grid-template-columns: minmax(0, 1fr);
   justify-content: center;
-  padding-block: clamp(spruce.spacer(xxl), 10vw, 7rem);
+  padding-block: clamp(spruce.spacer(xxl), 10vw, 6rem) clamp(spruce.spacer(xxl), 10vw, 7rem);
   text-align: center;
 
   @include spruce.breakpoint(md) {
