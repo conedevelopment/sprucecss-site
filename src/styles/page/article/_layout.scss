@@ -1,0 +1,17 @@
+@use 'sprucecss/scss/spruce';
+
+.container {
+  &--wide {
+    @include spruce.layout-center(
+      clamp(spruce.spacer(m), 5vw, spruce.spacer(l)),
+      80rem
+    );
+  }
+
+  &--narrow {
+    @include spruce.layout-center(
+      clamp(spruce.spacer(m), 5vw, spruce.spacer(l)),
+      65rem
+    );
+  }
+}

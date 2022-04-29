@@ -1,0 +1,8 @@
+@use 'sprucecss/scss/spruce';
+
+.post-footer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-block: spruce.spacer(l) spruce.spacer(xl);
+}

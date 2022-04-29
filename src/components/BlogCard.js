@@ -3,7 +3,6 @@ import { Link } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 export default function BlogCard({ post }) {
-  console.log(post);
   const image = getImage(post.frontmatter.featuredImage);
 
   return (
