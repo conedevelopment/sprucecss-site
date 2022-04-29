@@ -11,18 +11,20 @@
 }
 
 .blog-card {
-  &__link {
-    display: block;
-    text-decoration: none;
-  }
-
   &__thumbnail {
     border-radius: spruce.$border-radius-lg;
   }
 
-  &__meta {
+  &__tags {
+    column-gap: spruce.spacer(s);
     display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__meta {
     column-gap: spruce.spacer(m);
+    display: flex;
+    flex-wrap: wrap;
     row-gap: spruce.spacer(xs);
   }
 
@@ -36,6 +38,7 @@
 
     a {
       color: spruce.color(heading);
+      text-decoration: none;
     }
   }
 }

@@ -1,5 +1,4 @@
 import React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
 import { graphql } from 'gatsby';
 
 // Import components
@@ -21,7 +20,7 @@ export default function Blog({ data }) {
           <div className="layout-blog__inner">
             {data.allMdx.nodes.map((post) => {
               return (
-                <BlogCard post={post} />
+                <BlogCard key={post.slug} post={post} />
               )
             })}
           </div>
@@ -43,6 +42,11 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           tags
+          featuredImage {
+            childImageSharp {
+              gatsbyImageData(width: 700, placeholder: BLURRED, formats: AUTO)
+            }
+          }
         }
       }
     }
