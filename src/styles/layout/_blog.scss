@@ -4,37 +4,45 @@
   padding-block: 0 clamp(spruce.spacer(l), 5vw, spruce.spacer(xl));
 
   &__inner {
+    --columns: 1;
+
     display: grid;
     gap: spruce.spacer(l);
-    grid-template-columns: repeat(3, minmax(0, 2fr));
+    grid-template-columns: repeat(var(--columns), minmax(0, 2fr));
+
+    @include spruce.breakpoint(sm) { --columns: 2; }
+    @include spruce.breakpoint(lg) { --columns: 3; }
   }
 }
 
 .blog-card {
+  @include spruce.layout-stack(
+    spruce.spacer(s)
+  );
+
   &__thumbnail {
     border-radius: spruce.$border-radius-lg;
   }
 
-  &__tags {
-    column-gap: spruce.spacer(s);
-    display: flex;
-    flex-wrap: wrap;
-  }
-
+  &__tags,
   &__meta {
-    column-gap: spruce.spacer(m);
+    column-gap: var(--column-gap);
     display: flex;
     flex-wrap: wrap;
     row-gap: spruce.spacer(xs);
   }
 
-  &__caption {
-    margin-block-start: spruce.spacer(m);
+  &__tags {
+    --column-gap: #{spruce.spacer(s)}
+  }
+
+  &__meta {
+    --column-gap: #{spruce.spacer(m)}
   }
 
   &__title {
     font-size: spruce.font-size(h3);
-    margin-block: 0;
+    margin-block-start: spruce.spacer(xs);
 
     a {
       color: spruce.color(heading);

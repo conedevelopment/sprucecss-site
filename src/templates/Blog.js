@@ -6,17 +6,6 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from '../components/Layout';
 import Seo from '../components/SearchEngineOptimalization';
 
-export const query = graphql`
-  query ($slug: String!) {
-    mdx(slug: {eq: $slug}) {
-      frontmatter {
-        title
-      }
-      body
-    }
-  }
-`;
-
 export default function Post({ data: { mdx: post } }) {
   const { title } = post.frontmatter;
   const { body } = post;
@@ -38,3 +27,14 @@ export default function Post({ data: { mdx: post } }) {
     </Layout>
   );
 };
+
+export const query = graphql`
+  query ($slug: String!) {
+    mdx(slug: {eq: $slug}) {
+      frontmatter {
+        title
+      }
+      body
+    }
+  }
+`;
