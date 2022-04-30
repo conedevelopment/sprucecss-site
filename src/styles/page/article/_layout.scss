@@ -15,3 +15,7 @@
     );
   }
 }
+
+.post {
+  padding-block-end: clamp(spruce.spacer(l), 5vw, spruce.spacer(xl));
+}

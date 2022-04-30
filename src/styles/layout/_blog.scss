@@ -24,20 +24,11 @@
     border-radius: spruce.$border-radius-lg;
   }
 
-  &__tags,
   &__meta {
-    column-gap: var(--column-gap);
+    column-gap: spruce.spacer(m);
     display: flex;
     flex-wrap: wrap;
     row-gap: spruce.spacer(xs);
-  }
-
-  &__tags {
-    --column-gap: #{spruce.spacer(s)}
-  }
-
-  &__meta {
-    --column-gap: #{spruce.spacer(m)}
   }
 
   &__title {

@@ -62,8 +62,6 @@ exports.createPages = async ({ graphql, actions }) => {
   const blogPages = dataBlog.data.posts.nodes;
   const tags = dataBlog.data.tagsGroup.group;
 
-  console.log(tags);
-
   docPages.forEach((doc, index) => {
     actions.createPage({
       path: `docs/${doc.slug}`,
@@ -88,7 +86,6 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Make tag pages
   tags.forEach(tag => {
-    console.log(tag);
     actions.createPage({
       path: `blog/tag/${tag.fieldValue}`,
       component: tagTemplate,
