@@ -43,3 +43,31 @@ h6 {
 .table td {
   min-width: 10rem;
 }
+
+.anchor-heading {
+  padding-inline-end: 2rem;
+  position: relative;
+
+  &:hover {
+    > a {
+      opacity: 1;
+    }
+  }
+
+  > a {
+    position: absolute;
+    text-decoration: none;
+    top: calc(50% - 0.625em);
+    inset-inline-end: 0;
+    opacity: 0;
+
+    &:focus {
+      opacity: 1;
+    }
+
+    svg {
+      height: 1.25rem;
+      width: 1.25rem;
+    }
+  }
+}

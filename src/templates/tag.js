@@ -8,7 +8,6 @@ import PageHeading from '../components/PageHeading';
 import BlogCard from '../components/BlogCard';
 
 export default function TagPage({ data, pageContext: { tag }}) {
-  console.log(data);
   return (
     <Layout>
       <Seo title={`#${tag}`} />
@@ -48,6 +47,7 @@ export const pageQuery = graphql`
                 gatsbyImageData(width: 700, placeholder: BLURRED, formats: AUTO)
               }
             }
+            alt
           }
         }
       }

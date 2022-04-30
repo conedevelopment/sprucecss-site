@@ -33,4 +33,8 @@
   iframe {
     border-radius: spruce.$border-radius-lg;
   }
+
+  > .gatsby-image-wrapper:first-child + * {
+    margin-block-start: spruce.spacer(l);
+  }
 }

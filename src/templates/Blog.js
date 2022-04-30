@@ -59,7 +59,7 @@ export default function Post({ data: { mdx: post } }) {
         </div>
         <div class="container--wide">
           <div class="post-content">
-            <GatsbyImage image={image} />
+            <GatsbyImage image={image} alt={post.frontmatter.alt} />
             <MDXRenderer>{body}</MDXRenderer>
           </div>
         </div>
@@ -80,6 +80,7 @@ export const query = graphql`
             gatsbyImageData(width: 1600, height: 700, placeholder: BLURRED, formats: AUTO)
           }
         }
+        alt
       }
       body
     }

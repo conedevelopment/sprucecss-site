@@ -47,6 +47,7 @@ export const pageQuery = graphql`
               gatsbyImageData(width: 700, placeholder: BLURRED, formats: AUTO)
             }
           }
+          alt
         }
       }
     }
