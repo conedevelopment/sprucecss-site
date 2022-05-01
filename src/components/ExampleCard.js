@@ -6,7 +6,7 @@ export default function ExampleCard({title, description, url, github, children }
       <a className="example-card__link" href={url}>
         { children }
       </a>
-      <div class="example-card__caption">
+      <div className="example-card__caption">
         {title &&
           <h2 className="example-card__title">
             <a className="example-card__link" href={url}>
