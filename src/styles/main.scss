@@ -39,6 +39,10 @@ h6 {
   @include spruce.btn-variant(decline);
 }
 
+.lead {
+  color: spruce.color(heading);
+}
+
 .table th,
 .table td {
   min-width: 10rem;

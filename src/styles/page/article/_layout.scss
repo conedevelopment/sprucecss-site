@@ -4,14 +4,14 @@
   &--wide {
     @include spruce.layout-center(
       clamp(spruce.spacer(m), 5vw, spruce.spacer(l)),
-      80rem
+      65rem
     );
   }
 
   &--narrow {
     @include spruce.layout-center(
       clamp(spruce.spacer(m), 5vw, spruce.spacer(l)),
-      65rem
+      55rem
     );
   }
 }

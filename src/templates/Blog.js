@@ -77,7 +77,7 @@ export const query = graphql`
         tags
         featuredImage {
           childImageSharp {
-            gatsbyImageData(width: 1600, height: 700, placeholder: BLURRED, formats: AUTO)
+            gatsbyImageData(width: 1200, placeholder: BLURRED, formats: AUTO)
           }
         }
         alt
