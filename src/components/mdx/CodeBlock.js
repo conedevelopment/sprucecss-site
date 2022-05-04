@@ -1,6 +1,7 @@
 import React from 'react';
 import Highlight, { defaultProps } from 'prism-react-renderer';
-import theme from 'prism-react-renderer/themes/nightOwl';
+import nightOwl from 'prism-react-renderer/themes/nightOwl';
+import nightOwlLight from 'prism-react-renderer/themes/nightOwlLight';
 
 import CopyIcon from '../../images/icons/copy.svg';
 import CopiedIcon from '../../images/icons/copied.svg';
@@ -9,6 +10,12 @@ export default function CodeBlock(props) {
   const className = props?.children?.props?.className || '';
   const matches = className.match(/language-(?<lang>.*)/);
   const [isCopied, setIsCopied] = React.useState(false);
+  const theme = document.documentElement.getAttribute('data-theme-mode') ?? 'light';
+
+  const themes = {
+    light: nightOwlLight,
+    dark: nightOwl,
+  };
 
   return (
     <Highlight { ...defaultProps }
@@ -18,7 +25,7 @@ export default function CodeBlock(props) {
           ? matches.groups.lang
           : ''
       }
-      theme={theme}>
+      theme={themes[theme]}>
       {({className, style, tokens, getLineProps, getTokenProps}) => (
         <div className="prism-code-wrapper">
           <button
@@ -47,5 +54,5 @@ export default function CodeBlock(props) {
         </div>
       )}
     </Highlight>
-  )
+  );
 }

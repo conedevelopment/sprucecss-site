@@ -3,15 +3,14 @@
 .container {
   &--wide {
     @include spruce.layout-center(
-      clamp(spruce.spacer(m), 5vw, spruce.spacer(l)),
-      65rem
+      clamp(spruce.spacer(m), 5vw, spruce.spacer(l))
     );
   }
 
   &--narrow {
     @include spruce.layout-center(
       clamp(spruce.spacer(m), 5vw, spruce.spacer(l)),
-      55rem
+      60rem
     );
   }
 }

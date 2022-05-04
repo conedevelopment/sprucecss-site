@@ -14,7 +14,7 @@ export default function Post({ data: { mdx: post } }) {
 
   return (
     <Layout>
-      <Seo title={title} />
+      <Seo title={title} image={post.frontmatter.featuredImage.childImageSharp.gatsbyImageData.images.fallback.src} />
       <main id="content" className="post">
         <div className="post-heading">
           <div className="container--narrow">
@@ -57,7 +57,7 @@ export default function Post({ data: { mdx: post } }) {
             </div>
           </div>
         </div>
-        <div className="container--wide">
+        <div className="container--narrow">
           <div className="post-content">
             <GatsbyImage image={image} alt={post.frontmatter.alt} />
             <MDXRenderer>{body}</MDXRenderer>

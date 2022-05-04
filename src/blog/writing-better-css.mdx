@@ -29,7 +29,7 @@ Declaring the properties based on the alphabet is convenient and straightforward
 
 In CSS, we can create different property grouping logics like typography, layout, etc. But what happens if we get a new property, like the aspect-ratio? Is it fit somewhere, or do we have to create a new group? Does it break any recent order? How do we track any other new property?
 
-Using the ABC is nothing more than simplification. It is worth giving it a try. With Stylelint, you can quickly check the order (or fix it). For this, we use the Sass Guidelines config https://www.npmjs.com/package/stylelint-config-sass-guidelines. For the implementation, see. https://github.com/conedevelopment/sprucecss/blob/main/.stylelintrc.json
+Using the ABC is nothing more than simplification. It is worth giving it a try. With Stylelint, you can quickly check the order (or fix it). For this, we use the [Sass Guidelines config](https://www.npmjs.com/package/stylelint-config-sass-guidelines). [For the implementation, see](https://github.com/conedevelopment/sprucecss/blob/main/.stylelintrc.json).
 
 ### Alphabetized Properties Example
 
@@ -58,7 +58,7 @@ Some excellent CSS architecture:
 
 ### A BEM component example
 
-The following example is the .btn styling from Spruce CSS. For the complete example, check out the source code on GitHub https://github.com/conedevelopment/sprucecss/blob/main/scss/form/_button.scss.
+The following example is the .btn styling from Spruce CSS. For the complete example, [check out the source code on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/form/_button.scss).
 
 ```scss
 .btn {
@@ -114,13 +114,13 @@ The following example is the .btn styling from Spruce CSS. For the complete exam
 
 Quality control in CSS is a must. We can easily lint, prefix, and purge our code, so why not?
 
-We should use the tools of the modern developer. I use Stylelint to lint my stylesheets with the Sass Guidelines and Autoprefixer to prefix some code (and check browser support) (https://github.com/browserslist/browserslist#best-practices).
+We should use the tools of the modern developer. I use Stylelint to lint my stylesheets with the Sass Guidelines and Autoprefixer to prefix some code (and [check browser support](https://github.com/browserslist/browserslist#best-practices)).
 
 I usually write SCSS. I like Sass; it is programmatic CSS which can be handy. It is also a way of processing your code. On a basic level, you can write fewer lines of code, separate them, and merge them as you wish. On a more intermediate level, you can make your small framework. Compiling Sass is easy with sass-cli; I wrote a simple guide about it on Pine.
 
 If your codebase is vast and you don’t control it from the start, you can use Purge CSS to remove the unnecessary lines. For example, if you use the complete bootstrap grid, you will rarely use all of the classes. You can make your CSS 30-50% lighter if you purge it before publishing.
 
-## Go Modern, Real Modern
+## Go Modern
 
 CSS is evolving fast lately 🥳. We don’t get prefixed properties; the vendors open the support almost simultaneously. If we get a new feature, we can practically use them. Of course, the collective support of the new feature isn’t that easy; always are some exceptions, but we rarely see new stuff with less than 80% on caniuse.com.
 
@@ -130,7 +130,7 @@ Use the new things like aspect-ratio, grid, and logical properties. They simplif
 
 If you worry about backward compatibility, make your code progressively enhanced and use @support. And keep in mind that inclusion is still necessary with the new features.
 
-If you need a quick recap about modern CSS, check out the Writing Better CSS article (https://www.aleksandrhovhannisyan.com/blog/writing-better-css/) by Aleksandr Hovhannisyan.
+If you need a recap about modern CSS, check out the [Writing Better CSS article](https://www.aleksandrhovhannisyan.com/blog/writing-better-css/) by Aleksandr Hovhannisyan.
 
 ## Flexbox and Grid Are a Must
 
