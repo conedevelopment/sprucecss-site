@@ -14,8 +14,6 @@ export default function CodeBlock(props) {
   let [theme, setTheme] = useContext(ThemeContext);
   let systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 
-  console.log(systemTheme);
-
   const className = props?.children?.props?.className || '';
   const matches = className.match(/language-(?<lang>.*)/);
   const [isCopied, setIsCopied] = React.useState(false);
