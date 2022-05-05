@@ -1,16 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import nightOwl from 'prism-react-renderer/themes/nightOwl';
 import nightOwlLight from 'prism-react-renderer/themes/nightOwlLight';
 
+// Components
+import ThemeContext from '../../components/ThemeContext';
+
+// Images
 import CopyIcon from '../../images/icons/copy.svg';
 import CopiedIcon from '../../images/icons/copied.svg';
 
 export default function CodeBlock(props) {
+  let [theme, setTheme] = useContext(ThemeContext);
+  let systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+
+  console.log(systemTheme);
+
   const className = props?.children?.props?.className || '';
   const matches = className.match(/language-(?<lang>.*)/);
   const [isCopied, setIsCopied] = React.useState(false);
-  const theme = document.documentElement.getAttribute('data-theme-mode') ?? 'light';
 
   const themes = {
     light: nightOwlLight,
@@ -25,15 +33,15 @@ export default function CodeBlock(props) {
           ? matches.groups.lang
           : ''
       }
-      theme={themes[theme]}>
+      theme={themes[(theme === 'system' ? systemTheme : theme)]}>
       {({className, style, tokens, getLineProps, getTokenProps}) => (
         <div className="prism-code-wrapper">
           <button
             className="btn btn--primary btn--sm prism-code__copy-btn"
             onClick={() => {
-                navigator.clipboard.writeText(props?.children?.props?.children.trim())
-                setIsCopied(true)
-                setTimeout(() => setIsCopied(false), 3000)
+              navigator.clipboard.writeText(props?.children?.props?.children.trim())
+              setIsCopied(true)
+              setTimeout(() => setIsCopied(false), 3000)
             }}
             aria-label={isCopied ? 'Copied' : 'Copy'}
           >

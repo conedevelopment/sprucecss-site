@@ -9,6 +9,7 @@ import H3 from './src/components/mdx/H3';
 import Notification from './src/components/mdx/Notification';
 import Preview from './src/components/mdx/Preview';
 import Table from './src/components/mdx/Table';
+import { ThemeProvider } from './src/components/ThemeContext';
 
 const components = {
   h2: H2,
@@ -21,5 +22,11 @@ const components = {
 };
 
 export const wrapRootElement = ({ element }) => {
-  return <MDXProvider components={components}>{element}</MDXProvider>
+  return (
+    <MDXProvider components={components}>
+      <ThemeProvider>
+        {element}
+      </ThemeProvider>
+    </MDXProvider>
+  );
 }

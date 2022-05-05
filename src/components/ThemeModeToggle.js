@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
+
+// Components
+import ThemeContext from '../components/ThemeContext';
 
 // Images
 import SystemMode from '../images/icons/theme-mode/system-mode.svg';
@@ -6,7 +9,8 @@ import LightMode from '../images/icons/theme-mode/light-mode.svg';
 import DarkMode from '../images/icons/theme-mode/dark-mode.svg';
 
 export default function ThemeModeToggle() {
-  let [selected, setSelected] = useState('system');
+  let [selected, setSelected] = useContext(ThemeContext);
+
   let handleChange = (e) => {
     localStorage.setItem('preferred-theme', e.target.value);
     setSelected(e.target.value);
@@ -14,8 +18,7 @@ export default function ThemeModeToggle() {
   };
 
   useEffect(() => {
-    let lastSelected = localStorage.getItem('preferred-theme') ?? 'system';
-    setSelected(lastSelected);
+    setSelected(localStorage.getItem('preferred-theme') ?? 'system');
   }, []);
 
   return (
