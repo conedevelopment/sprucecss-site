@@ -2,7 +2,7 @@
 
 .post-heading {
   text-align: center;
-  margin-block: 8rem spruce.spacer(xl);
+  margin-block: clamp(5rem, 10vw + 1rem, 7rem) spruce.spacer(xl);
 
   &__inner {
     align-items: center;
