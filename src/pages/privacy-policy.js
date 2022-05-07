@@ -15,6 +15,7 @@ export default function PrivacyPolicy() {
   });
 
   function handleCookie(e) {
+    console.log('remove cookie');
     setCookieConsent(! cookieConsent);
     cookies.remove('spruce-gdpr-cookies');
   }

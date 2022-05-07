@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, graphql  } from 'gatsby';
+import { Link, useStaticQuery, graphql  } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
@@ -14,7 +14,7 @@ export default function Post({ data: { mdx: post } }) {
 
   return (
     <Layout>
-      <Seo title={title} image={post.frontmatter.featuredImage.childImageSharp.gatsbyImageData.images.fallback.src} />
+      <Seo title={title} image={`https://sprucecss.com/${post.frontmatter.featuredImage.childImageSharp.gatsbyImageData.images.fallback.src}`} />
       <main id="content" className="post">
         <div className="post-heading">
           <div className="container--narrow">
