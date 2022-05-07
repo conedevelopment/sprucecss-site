@@ -1,4 +1,4 @@
-import path, { resolve } from 'path';
+const path = require('path');
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
@@ -61,7 +61,7 @@ exports.createPages = async ({ graphql, actions }) => {
   docPages.forEach((doc, index) => {
     actions.createPage({
       path: `docs/${doc.slug}`,
-      component: resolve('./src/templates/docs.js'),
+      component: path.resolve('./src/templates/docs.js'),
       context: {
         slug: doc.slug,
         prev: index === 0 ? null : docPages[index - 1],
@@ -73,7 +73,7 @@ exports.createPages = async ({ graphql, actions }) => {
   blogPages.forEach((post) => {
     actions.createPage({
       path: `blog/${post.slug}`,
-      component: resolve('./src/templates/blog.js'),
+      component: path.resolve('./src/templates/blog.js'),
       context: {
         slug: post.slug,
       }
@@ -84,7 +84,7 @@ exports.createPages = async ({ graphql, actions }) => {
   tags.forEach(tag => {
     actions.createPage({
       path: `blog/tag/${tag.fieldValue}`,
-      component: resolve('./src/templates/tag.js'),
+      component: path.resolve('./src/templates/tag.js'),
       context: {
         tag: tag.fieldValue,
       },
