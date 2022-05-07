@@ -14,36 +14,54 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 };
 
 exports.createPages = async ({ graphql, actions }) => {
-  const docTemplate = path.resolve('./src/templates/docs.js');
+  const blogTemplate = path.resolve('./src/templates/blog.js');
   const tagTemplate = path.resolve('./src/templates/tag.js');
 
-  const dataDocs = await graphql(`
+  const dataBlog = await graphql(`
     query {
-      docs: allMdx(
-        sort: {order: ASC, fields: frontmatter___order}
-        filter: {fields: {collection: {eq: "docs"}}}
+      posts: allMdx(
+        sort: {order: DESC, fields: frontmatter___date}
+        filter: {fields: {collection: {eq: "blog"}}}
       ) {
         nodes {
           slug
           frontmatter {
             title
+            date
+            tags
           }
+        }
+      }
+      tagsGroup: allMdx(limit: 2000) {
+        group(field: frontmatter___tags) {
+          fieldValue
         }
       }
     }
   `);
 
-  const docPages = dataDocs.data.docs.nodes;
 
-  docPages.forEach((doc, index) => {
+  const blogPages = dataBlog.data.posts.nodes;
+  const tags = dataBlog.data.tagsGroup.group;
+
+  blogPages.forEach((post) => {
     actions.createPage({
-      path: `docs/${doc.slug}`,
-      component: docTemplate,
+      path: `blog/${post.slug}`,
+      component: blogTemplate,
       context: {
-        slug: doc.slug,
-        prev: index === 0 ? null : docPages[index - 1],
-        next: index === (docPages.length - 1) ? null : docPages[index + 1]
+        slug: post.slug,
       }
+    });
+  });
+
+  // Make tag pages
+  tags.forEach(tag => {
+    actions.createPage({
+      path: `blog/tag/${tag.fieldValue}`,
+      component: tagTemplate,
+      context: {
+        tag: tag.fieldValue,
+      },
     });
   });
 }
