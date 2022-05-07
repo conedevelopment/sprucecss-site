@@ -14,8 +14,27 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 };
 
 exports.createPages = async ({ graphql, actions }) => {
+  const docTemplate = path.resolve('./src/templates/docs.js');
   const blogTemplate = path.resolve('./src/templates/blog.js');
   const tagTemplate = path.resolve('./src/templates/tag.js');
+
+  console.log(docTemplate);
+
+  const dataDocs = await graphql(`
+    query {
+      docs: allMdx(
+        sort: {order: ASC, fields: frontmatter___order}
+        filter: {fields: {collection: {eq: "docs"}}}
+      ) {
+        nodes {
+          slug
+          frontmatter {
+            title
+          }
+        }
+      }
+    }
+  `);
 
   const dataBlog = await graphql(`
     query {
@@ -41,8 +60,21 @@ exports.createPages = async ({ graphql, actions }) => {
   `);
 
 
+  const docPages = dataDocs.data.docs.nodes;
   const blogPages = dataBlog.data.posts.nodes;
   const tags = dataBlog.data.tagsGroup.group;
+
+  docPages.forEach((doc, index) => {
+    actions.createPage({
+      path: `docs/${doc.slug}`,
+      component: docTemplate,
+      context: {
+        slug: doc.slug,
+        prev: index === 0 ? null : docPages[index - 1],
+        next: index === (docPages.length - 1) ? null : docPages[index + 1]
+      }
+    });
+  });
 
   blogPages.forEach((post) => {
     actions.createPage({
