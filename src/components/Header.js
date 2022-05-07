@@ -48,6 +48,9 @@ export default function Header() {
         setDeclineCookie={false}
         disableStyles={true}
         cookieName="spruce-gdpr-cookies"
+        onAccept={() => {
+          window.location.reload();
+        }}
         onDecline={() => {
           document.cookie = "spruce-gdpr-cookies=false; expires=0; path=/";
         }}

@@ -6,17 +6,18 @@ import Layout from '../components/Layout';
 import Seo from '../components/SearchEngineOptimalization';
 
 export default function PrivacyPolicy() {
-  const cookie = new Cookies();
+  const cookies = new Cookies();
   const [cookieConsent, setCookieConsent] = useState(() => {
-    if (cookie.get('spruce-gdpr-cookies')) {
-      return cookie.get('spruce-gdpr-cookies');
+    if (cookies.get('spruce-gdpr-cookies')) {
+      return cookies.get('spruce-gdpr-cookies');
     }
     return false;
   });
 
   function handleCookie(e) {
     setCookieConsent(! cookieConsent);
-    document.cookie = 'cookiename=spruce-gdpr-cookies; expires = Thu, 01 Jan 1970 00:00:00 GMT';
+    cookies.remove('spruce-gdpr-cookies');
+    window.location.reload();
   }
 
   return (
