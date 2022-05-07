@@ -14,7 +14,7 @@ export default function Post({ data: { mdx: post } }) {
 
   return (
     <Layout>
-      <Seo title={title} image={`https://sprucecss.com/${post.frontmatter.featuredImage.childImageSharp.gatsbyImageData.images.fallback.src}`} />
+      <Seo title={title} image={`https://sprucecss.com${post.frontmatter.featuredImage.childImageSharp.gatsbyImageData.images.fallback.src}`} />
       <main id="content" className="post">
         <div className="post-heading">
           <div className="container--narrow">
