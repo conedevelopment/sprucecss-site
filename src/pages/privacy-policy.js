@@ -16,10 +16,7 @@ export default function PrivacyPolicy() {
 
   function handleCookie(e) {
     setCookieConsent(! cookieConsent);
-    cookies.remove('spruce-gdpr-cookies', {
-      sameSite: 'lax',
-      secure: true,
-    });
+    document.cookie = "spruce-gdpr-cookies=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
     window.location.reload();
   }
 
