@@ -14,7 +14,10 @@ export default function ThemeModeToggle() {
   let handleChange = (e) => {
     localStorage.setItem('preferred-theme', e.target.value);
     setSelected(e.target.value);
-    window.__setPreferredTheme(e.target.value);
+
+    if (typeof window !== 'undefined') {
+      window.__setPreferredTheme(e.target.value);
+    }
   };
 
   useEffect(() => {

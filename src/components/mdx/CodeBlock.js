@@ -8,7 +8,11 @@ import ThemeContext from '../../components/ThemeContext';
 
 export default function CodeBlock(props) {
   let [theme, setTheme] = useContext(ThemeContext);
-  let systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  let systemTheme = 'light';
+
+  if (typeof window !== 'undefined') {
+    systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
 
   const className = props?.children?.props?.className || '';
   const matches = className.match(/language-(?<lang>.*)/);
