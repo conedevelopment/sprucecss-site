@@ -6,17 +6,17 @@ import Layout from '../components/Layout';
 import Seo from '../components/SearchEngineOptimalization';
 
 export default function PrivacyPolicy() {
-  const cookies = new Cookies();
+  const cookie = new Cookies();
   const [cookieConsent, setCookieConsent] = useState(() => {
-    if (cookies.get('spruce-gdpr-cookies')) {
-      return cookies.get('spruce-gdpr-cookies');
+    if (cookie.get('spruce-gdpr-cookies')) {
+      return cookie.get('spruce-gdpr-cookies');
     }
     return false;
   });
 
   function handleCookie(e) {
     setCookieConsent(! cookieConsent);
-    cookies.remove('spruce-gdpr-cookies');
+    cookie.remove('spruce-gdpr-cookies');
   }
 
   return (
