@@ -3,13 +3,7 @@ import React, { useState } from 'react';
 const ThemeContext = React.createContext();
 
 export function ThemeProvider({ children }) {
-  let defaultTheme = 'light';
-
-  if (typeof document !== 'undefined' && document.documentElement.getAttribute('data-theme-mode')) {
-    defaultTheme = document.documentElement.getAttribute('data-theme-mode');
-  }
-
-  const [theme, setTheme] = useState(defaultTheme);
+  const [theme, setTheme] = useState(document.documentElement.getAttribute('data-theme-mode') ?? 'light');
 
   return (
     <ThemeContext.Provider value={[theme, setTheme]}>
