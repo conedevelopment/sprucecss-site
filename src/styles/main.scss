@@ -16,6 +16,7 @@ body {
   --spruce-documentation-body-font-family: 'Open Sans', sans-serif;
 
   background-color: spruce.color(background);
+  background: linear-gradient(180deg, #f1f4fa, transparent);
   font-family: var(--spruce-documentation-body-font-family);
 }
 

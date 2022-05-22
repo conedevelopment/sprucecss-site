@@ -7,6 +7,7 @@
 
   &__inner {
     align-items: center;
+    border-block-end: 1px solid spruce.color(border);
     display: flex;
     gap: spruce.spacer(s);
     justify-content: space-between;
@@ -15,6 +16,7 @@
 
     @include spruce.breakpoint(md) {
       gap: spruce.spacer(l);
+      height: 6rem;
     }
   }
 
@@ -78,7 +80,7 @@
     justify-content: flex-end;
 
     ul {
-      background-color: spruce.color(background);
+      background-color: transparent;
       border-top: 1px dashed spruce.color(border);
       display: none;
       flex-direction: column;
