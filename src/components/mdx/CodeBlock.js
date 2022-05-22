@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 
 export default function CodeBlock(props) {

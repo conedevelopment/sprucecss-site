@@ -19,9 +19,9 @@ export default function Notification({children, type, icon = true}) {
   return (
     <div className={`notification notification--${type ?? 'info'}`}>
       {icon ? iconSVG : null}
-      <div className="notification__content">
+      <p className="notification__content">
         {children}
-      </div>
+      </p>
     </div>
   )
 }
