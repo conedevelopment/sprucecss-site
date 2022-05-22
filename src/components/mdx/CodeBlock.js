@@ -1,26 +1,9 @@
 import React, { useContext } from 'react';
 import Highlight, { defaultProps } from 'prism-react-renderer';
-import nightOwl from 'prism-react-renderer/themes/nightOwl';
-import nightOwlLight from 'prism-react-renderer/themes/nightOwlLight';
-
-// Components
-import ThemeContext from '../../components/ThemeContext';
 
 export default function CodeBlock(props) {
-  let [theme, setTheme] = useContext(ThemeContext);
-  let systemTheme = 'light';
-
-  if (typeof window !== 'undefined') {
-    systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  }
-
   const className = props?.children?.props?.className || '';
   const matches = className.match(/language-(?<lang>.*)/);
-
-  const themes = {
-    light: nightOwlLight,
-    dark: nightOwl,
-  };
 
   return (
     <Highlight { ...defaultProps }
@@ -30,7 +13,7 @@ export default function CodeBlock(props) {
           ? matches.groups.lang
           : ''
       }
-      theme={themes[(theme === 'system' ? systemTheme : theme)]}>
+      theme={false}>
       {({className, style, tokens, getLineProps, getTokenProps}) => (
         <div className="prism-code-wrapper">
           <pre className={className} style={{...style}}>

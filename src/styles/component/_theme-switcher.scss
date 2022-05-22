@@ -15,9 +15,9 @@
     width: 2rem;
     color: spruce.color(heading);
 
-    &.is-system .is-system { display: inline-block; }
-    &.is-light .is-light { display: inline-block; }
-    &.is-dark .is-dark { display: inline-block; }
+    &--system .system { display: inline-block; }
+    &--light .light { display: inline-block; }
+    &--dark .dark { display: inline-block; }
 
     svg {
       display: none;

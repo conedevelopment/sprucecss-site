@@ -2,7 +2,7 @@
 
 @mixin sidebar-active-menu-marker {
   position: relative;
-  font-weight: 700;
+  font-weight: 600;
   color: spruce.color(heading);
 
   &::before {
@@ -18,8 +18,7 @@
 }
 
 @mixin sidebar-title {
-  color: spruce.color(primary);
+  color: spruce.color(heading);
   font-size: spruce.$font-size-base;
-  margin: 0;
-  text-transform: uppercase;
+  margin-block: 0;
 }
