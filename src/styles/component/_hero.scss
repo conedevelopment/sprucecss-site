@@ -9,19 +9,20 @@
   &__inner {
     --gap: 2rem;
     align-items: center;
-    display: grid;
+    // display: grid;
     gap: var(--gap);
     grid-template-columns: minmax(0, 1fr);
     justify-content: center;
     padding: clamp(spruce.spacer(xl), 10vh, 7rem) 0;
     text-align: center;
-
+/*
     @include spruce.breakpoint(md) {
       --gap: 4rem;
       grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
       justify-content: flex-start;
       text-align: start;
     }
+    */
   }
 
   &__image {
@@ -70,8 +71,9 @@
   &__description {
     font-size: clamp(spruce.$font-size-base, 5vw + 1rem, spruce.font-size(h4));
     margin: spruce.spacer(m) 0 0;
-    max-width: 50ch;
+    max-width: 60ch;
     margin-top: 1rem;
+    margin-inline: auto;
   }
 
   &__btns {

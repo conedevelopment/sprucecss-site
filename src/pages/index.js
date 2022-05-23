@@ -23,9 +23,9 @@ export default function IndexPage() {
         <section className="hero">
           <div className="hero__container">
             <div className="hero__inner">
-              <HeroImage className="hero__image" />
-              <div className="hero__caption">
-                <h1 className="hero__title">Spruce CSS<br /> <span className="solid">Framework</span></h1>
+              {/* <HeroImage className="hero__image" />
+              <div className="hero__caption"> */}
+                <h1 className="hero__title">Spruce CSS <span className="solid">Framework</span></h1>
                 <p className="hero__description">An open-source, lightweight and modernish CSS design system, framework built on Sass. Give your project a solid foundation.</p>
                 <div className="hero__btns">
                   <Link to="/docs/getting-started/introduction" className="btn btn--primary btn--lg btn--rounded">Get Started</Link>
@@ -34,7 +34,7 @@ export default function IndexPage() {
                     npm install sprucecss
                   </button>
                 </div>
-              </div>
+              {/* </div>*/}
             </div>
           </div>
         </section>

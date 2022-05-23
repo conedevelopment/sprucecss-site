@@ -1,13 +1,13 @@
 @use '~sprucecss/scss/spruce';
 
 .header {
+  // border-block-end: 1px solid spruce.color(border);
   &__container {
     @include spruce.layout-center(clamp(spruce.spacer(m), 5vw, spruce.spacer(l)));
   }
 
   &__inner {
     align-items: center;
-    border-block-end: 1px solid spruce.color(border);
     display: flex;
     gap: spruce.spacer(s);
     justify-content: space-between;
@@ -16,7 +16,7 @@
 
     @include spruce.breakpoint(md) {
       gap: spruce.spacer(l);
-      height: 6rem;
+      height: 5rem;
     }
   }
 
