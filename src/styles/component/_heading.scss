@@ -1,0 +1,17 @@
+@use '~sprucecss/scss/spruce';
+
+.heading {
+  @include spruce.layout-stack(spruce.spacer(m));
+  margin-block-end: spruce.spacer(l);
+  text-align: center;
+
+  &__subtitle {
+    font-family: spruce.$font-family-heading;
+    font-size: spruce.responsive-font-size(1.2rem);
+  }
+
+  &__title {
+    font-size: spruce.responsive-font-size(3rem);
+    margin-block: 0;
+  }
+}
