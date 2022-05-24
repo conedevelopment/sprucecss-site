@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-// Import components
+// Components
 import DocsCards from '../components/DocsCards';
 import Layout from '../components/Layout';
+import GettingStarted from '../components/GettingStarted';
 import Seo from '../components/SearchEngineOptimalization';
 
 // Images
@@ -38,6 +39,7 @@ export default function IndexPage() {
             </div>
           </div>
         </section>
+        <GettingStarted />
         <DocsCards />
       </main>
     </Layout>

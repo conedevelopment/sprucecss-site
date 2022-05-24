@@ -1,0 +1,12 @@
+@use '~sprucecss/scss/spruce';
+
+.getting-started {
+  margin-block-end: 5rem;
+
+  &__inner {
+    background-color: #EDE8F8;
+    background-color: #f1f8ff;
+    border-radius: 2rem;
+    padding: spruce.spacer(l);
+  }
+}
