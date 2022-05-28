@@ -12,7 +12,7 @@
 @use '~sprucecss/scss/spruce';
 
 body {
-  --spruce-documentation-heading-font-family: 'Poppins', sans-serif;
+  --spruce-documentation-heading-font-family: 'Sora', sans-serif;
   --spruce-documentation-body-font-family: 'Open Sans', sans-serif;
 
   background-color: spruce.color(background);
@@ -33,13 +33,9 @@ h6 {
   border-radius: 1rem;
 }
 
-.btn--install {
-  @include spruce.btn-variant(install);
-}
-
-.btn--decline {
-  @include spruce.btn-variant(decline);
-}
+.btn--install { @include spruce.btn-variant(install); }
+.btn--decline {  @include spruce.btn-variant(decline); }
+.btn--black {  @include spruce.btn-variant(black); }
 
 .lead {
   color: spruce.color(heading);

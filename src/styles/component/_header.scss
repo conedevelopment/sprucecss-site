@@ -77,7 +77,7 @@
     display: flex;
     flex-grow: 1;
     font-family: spruce.$font-family-heading;
-    justify-content: flex-end;
+    justify-content: center;
 
     ul {
       background-color: transparent;
@@ -111,7 +111,7 @@
 
       @include spruce.breakpoint(md) {
         margin-top: 0;
-        margin-inline-start: 2rem;
+        margin-inline-start: 3rem;
       }
     }
 

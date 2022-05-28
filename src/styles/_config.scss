@@ -22,7 +22,7 @@ $dark-color-success: hsl(150 100% 33%);
       primary-lightest: $primary-lightest,
       primary-dark: hsl(261deg 52% 35%),
       primary-darkest: hsl(272, 100%, 9%),
-      heading: hsl(271, 100%, 9%)
+      heading: hsl(0, 0%, 0%)
     ),
     btn: (
       install-background: hsl(0, 0%, 95%),
@@ -33,6 +33,10 @@ $dark-color-success: hsl(150 100% 33%);
       decline-background-hover: hsl(207, 23%, 26%),
       decline-foreground: hsl(0, 0%, 100%),
       decline-foreground-hover: hsl(0, 0%, 100%),
+      black-background: hsl(0, 0%, 0%),
+      black-background-hover: hsl(0, 0%, 5%),
+      black-foreground: hsl(0, 0%, 100%),
+      black-foreground-hover: hsl(0, 0%, 100%),
     ),
     cookie: (
       background: hsl(207 95% 8%),
