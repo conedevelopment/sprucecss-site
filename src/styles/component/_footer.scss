@@ -1,7 +1,6 @@
 @use '~sprucecss/scss/spruce';
 
 .footer {
-  border-block-start: 1px solid spruce.color(border);
   padding: spruce.spacer(xxl) 0;
 
   &__container {

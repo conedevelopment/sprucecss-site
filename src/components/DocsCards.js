@@ -6,7 +6,6 @@ export default function DocsCards(props) {
     <div className="docs-cards">
       <div className="docs-cards__container">
         <div className="heading">
-          <p className="heading__subtitle">Getting Started</p>
           <h2 className="heading__title">Documentation</h2>
         </div>
         <div className="docs-cards__inner">
