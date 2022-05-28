@@ -4,7 +4,7 @@ import CookieConsent from 'react-cookie-consent';
 
 // Images
 import MenuIcon from '../images/icons/menu.svg';
-import Logo from '../images/spruce-logo-beta.svg';
+import Logo from '../images/spruce-logo.svg';
 import GitHubIcon from '../images/icons/github.svg';
 import TwitterIcon from '../images/icons/twitter.svg';
 
