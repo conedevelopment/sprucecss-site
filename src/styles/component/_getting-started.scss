@@ -8,5 +8,15 @@
     background-color: #f1f8ff;
     border-radius: 2rem;
     padding: spruce.spacer(l);
+
+    --columns: 1;
+
+    display: grid;
+    gap: spruce.spacer(l);
+    grid-template-columns: repeat(var(--columns), minmax(0, 2fr));
+
+    @include spruce.breakpoint(sm) { --columns: 2; }
+    @include spruce.breakpoint(md) { --columns: 3; }
+
   }
 }
