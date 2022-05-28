@@ -1,7 +1,8 @@
 import React from 'react';
 
 // Images
-import Icon from '../images/icons/examples.svg';
+import Examples from '../images/icons/examples.svg';
+import Documentation from '../images/icons/documentation.svg';
 
 export default function GettingStarted({ title, description, url, github, children }) {
   return (
@@ -12,11 +13,12 @@ export default function GettingStarted({ title, description, url, github, childr
         </div>
         <div className="getting-started__inner">
           <div>
+            <Documentation style={{width: "4rem", height: "4rem"}} />
             <h3>Documentation</h3>
             <p>Nam eget accumsan leo, ac laoreet nibh. Vivamus et justo lobortis, egestas turpis et, convallis orci.</p>
           </div>
           <div>
-            <Icon style={{width: "4rem", height: "4rem"}} />
+            <Examples style={{width: "4rem", height: "4rem"}} />
             <h3>Examples</h3>
             <p>Praesent in enim interdum, eleifend nunc sed, mollis enim. Sed lobortis neque ex, nec condimentum felis porta eget.</p>
           </div>
