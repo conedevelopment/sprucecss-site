@@ -79,10 +79,10 @@ export default function Header() {
               </ul>
             </nav>
             <div className="header__actions">
-              <a href="https://github.com/conedevelopment/sprucecss" aria-label="GitHub" className="btn btn--black btn--icon btn--rounded btn--github">
+              <a href="https://github.com/conedevelopment/sprucecss" aria-label="GitHub" className="btn btn--primary btn--icon btn--rounded btn--github">
                 <GitHubIcon className="btn__icon"/>
               </a>
-              <a href="https://twitter.com/conedevelopment" aria-label="GitHub" className="btn btn--black btn--icon btn--rounded btn--twitter">
+              <a href="https://twitter.com/conedevelopment" aria-label="GitHub" className="btn btn--primary btn--icon btn--rounded btn--twitter">
                 <TwitterIcon className="btn__icon"/>
               </a>
             </div>

@@ -6,6 +6,7 @@
   &__inner {
     background-color: #EDE8F8;
     background-color: #f1f8ff;
+    background-color: #eff4fd;
     border-radius: 2rem;
     padding: spruce.spacer(l);
 
@@ -18,5 +19,13 @@
     @include spruce.breakpoint(sm) { --columns: 2; }
     @include spruce.breakpoint(md) { --columns: 3; }
 
+  }
+}
+
+.getting-started-card {
+  @include spruce.layout-stack(spruce.spacer(s));
+  &__icon {
+    height: 3rem;
+    width: 3rem;
   }
 }
