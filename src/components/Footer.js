@@ -46,10 +46,11 @@ export default function Footer() {
             </ul>
           </div>
           <div className="footer__col">
-            <h3 className="footer__title">Other Projects</h3>
+            <h3 className="footer__title">More From Us</h3>
             <ul className="footer__navigation">
-              <li><a href="https://pineco.de/">Pine</a></li>
-              <li><a href="https://bazar.conedevelopment.com/">Bazar</a></li>
+              <li><a href="https://conedevelopment.com/services/">Services</a></li>
+              <li><a href="https://pineco.de/">Pine - A web development blog</a></li>
+              <li><a href="https://root.conedevelopment.com/">Root - An admin package for Laravel</a></li>
             </ul>
           </div>
         </div>

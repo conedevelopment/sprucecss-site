@@ -1,8 +1,8 @@
 import React from 'react';
 
 // Images
-import Examples from '../images/icons/examples.svg';
-import Documentation from '../images/icons/documentation.svg';
+import Examples from '../images/icons/docs.svg';
+import Documentation from '../images/icons/extension.svg';
 import Blog from '../images/icons/blog.svg';
 
 export default function GettingStarted({ title, description, url, github, children }) {
