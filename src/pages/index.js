@@ -27,7 +27,7 @@ export default function IndexPage() {
               {/* <HeroImage className="hero__image" />
               <div className="hero__caption"> */}
                 <h1 className="hero__title">Spruce CSS <span className="solid">Framework</span></h1>
-                <p className="hero__description">An open-source, lightweight and modernish CSS design system, framework built on Sass. Give your project a solid foundation.</p>
+                <p className="hero__description">An open-source, lightweight and modern CSS design system, framework built on Sass. Give your project a solid foundation.</p>
                 <div className="hero__btns">
                   <Link to="/docs/getting-started/introduction" className="btn btn--primary btn--lg btn--rounded">Get Started</Link>
                   <button className="btn btn--install btn--lg btn--rounded" onClick={copy}>
