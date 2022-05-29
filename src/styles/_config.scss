@@ -22,7 +22,8 @@ $dark-color-success: hsl(150 100% 33%);
       primary-lightest: $primary-lightest,
       primary-dark: hsl(261deg 52% 35%),
       primary-darkest: hsl(272, 100%, 9%),
-      heading: hsl(0, 0%, 0%)
+      heading: hsl(0, 0%, 0%),
+      getting-started: #eff4fd,
     ),
     btn: (
       install-background: hsl(0, 0%, 95%),
@@ -68,7 +69,8 @@ $dark-color-success: hsl(150 100% 33%);
       mark-foreground: $dark-color-black,
       code-background: hsl(207deg 64% 21%),
       code-foreground: $dark-color-white,
-      blockquote-border: $dark-color-primary
+      blockquote-border: $dark-color-primary,
+      getting-started: #072135
     ),
     selection: (
       foreground: $dark-color-white,

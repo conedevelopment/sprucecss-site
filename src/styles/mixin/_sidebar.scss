@@ -8,12 +8,12 @@
   &::before {
     background-color: spruce.color(primary);
     content: '';
-    width: 0.5rem;
-    border-radius: spruce.$border-radius-sm;
+    width: 0.3rem;
+    border-radius: 0 spruce.$border-radius-sm spruce.$border-radius-sm 0;
     position: absolute;
     top: 0;
     bottom: 0;
-    inset-inline-start: -1.25rem;
+    inset-inline-start: -1rem;
   }
 }
 
