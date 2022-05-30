@@ -23,9 +23,16 @@
 }
 
 .getting-started-card {
+  @include spruce.a11y-card-link('.getting-started-card__link', true);
   @include spruce.layout-stack(spruce.spacer(s));
+
   &__icon {
     height: 4rem;
     width: 4rem;
+  }
+
+  &__link {
+    color: spruce.color(heading);
+    text-decoration: none;
   }
 }
