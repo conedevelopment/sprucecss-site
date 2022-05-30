@@ -49,7 +49,6 @@
   }
 
   &__bottom {
-    margin-top: spruce.spacer(l);
     padding-top: spruce.spacer(m);
 
     @include spruce.breakpoint(md) {
