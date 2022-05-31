@@ -2,7 +2,7 @@
   <style type="text/css">
     :root {
       --letter-color: hsl(271 100% 9%);
-      --icon-color: hsl(261 52% 59%);
+      --icon-color: hsl(269 36% 53%);
     }
 
     [data-theme-mode="dark"] {
