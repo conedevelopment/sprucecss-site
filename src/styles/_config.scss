@@ -16,8 +16,6 @@ $dark-color-danger: hsl(0 71% 51%);
 $dark-color-success: hsl(150 100% 33%);
 
 @use '~sprucecss/scss/spruce' with (
-  $color-primary: hsl(269 36% 53%),
-  $color-secondary: hsl(233 55% 51%),
   $colors: (
     base: (
       border: #f5eef7,
