@@ -17,7 +17,7 @@ export default function GettingStarted() {
           <div className="getting-started-card">
             <Documentation className="getting-started-card__icon" />
             <h3>
-              <Link className="getting-started-card__link" to="/docs/getting-started/installation">Documentation</Link>
+              <Link className="getting-started-card__link" to="/docs/getting-started/introduction">Documentation</Link>
             </h3>
             <p>Nam eget accumsan leo, ac laoreet nibh. Vivamus et justo lobortis, egestas turpis et, convallis orci.</p>
           </div>

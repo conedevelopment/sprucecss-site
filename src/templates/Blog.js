@@ -4,6 +4,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 // Import components
+import GettingStarted from '../components/GettingStarted';
 import Layout from '../components/Layout';
 import Seo from '../components/SearchEngineOptimalization';
 
@@ -64,6 +65,7 @@ export default function Post({ data: { mdx: post } }) {
           </div>
         </div>
       </main>
+      <GettingStarted />
     </Layout>
   );
 };
