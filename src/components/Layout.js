@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 
 // Components
 import Footer from './Footer';
-import Header from './Header';
+import SiteHeader from './SiteHeader';
 
 // Styles
 import '../styles/main.scss';
@@ -19,7 +19,7 @@ export default function Layout(props) {
         <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
       </Helmet>
-      <Header />
+      <SiteHeader />
       {props.children}
       <Footer />
     </>

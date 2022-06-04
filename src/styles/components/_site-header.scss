@@ -1,23 +1,13 @@
 @use '~sprucecss/scss/spruce';
 
-.header {
-  // border-block-end: 1px solid spruce.color(border);
-  &__container {
-    @include spruce.layout-center(clamp(spruce.spacer(m), 5vw, spruce.spacer(l)));
-  }
-
+.site-header {
   &__inner {
     align-items: center;
     display: flex;
-    gap: spruce.spacer(s);
+    gap: clamp(#{spruce.spacer(s)}, 3vw + 1rem, #{spruce.spacer(l)});
     justify-content: space-between;
     height: 5rem;
     position: relative;
-
-    @include spruce.breakpoint(md) {
-      gap: spruce.spacer(l);
-      height: 5rem;
-    }
   }
 
   &__logo {
