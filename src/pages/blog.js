@@ -5,7 +5,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Seo from '../components/SearchEngineOptimalization';
 import PageHeading from '../components/PageHeading';
-import BlogCard from '../components/BlogCard';
+import Card from '../components/card/Blog';
 
 export default function Blog({ data }) {
   return (
@@ -20,7 +20,7 @@ export default function Blog({ data }) {
           <div className="layout-blog__inner">
             {data.allMdx.nodes.map((post) => {
               return (
-                <BlogCard key={post.slug} post={post} />
+                <Card key={post.slug} post={post} />
               )
             })}
           </div>

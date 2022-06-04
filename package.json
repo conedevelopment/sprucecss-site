@@ -1,8 +1,8 @@
 {
   "name": "spruce-site",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
-  "description": "Spruce CSS Documentation Page",
+  "description": "Spruce CSS Documentation",
   "author": "Cone",
   "keywords": [
     "gatsby"

@@ -43,14 +43,14 @@
 
   &__serial-number {
     color: spruce.color(primary);
-    font-family: var(--spruce-documentation-heading-font-family);
+    font-family: var(--doc-heading-font-family);
     font-size: spruce.responsive-font-size(4rem, 30, '4vw + 1rem');
     font-weight: 700;
     line-height: 1;
   }
 
   &__title {
-    font-family: var(--spruce-documentation-heading-font-family);
+    font-family: var(--doc-heading-font-family);
     margin: spruce.spacer(m) 0 0;
   }
 }

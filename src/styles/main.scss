@@ -1,24 +1,18 @@
 // Load Spruce CSS
 @forward 'config';
-@forward 'styles';
-@forward 'dark-mode';
 
 // Load components
-@forward 'component';
-@forward 'layout';
-@forward 'prism';
-@forward 'page/article';
+@forward 'components';
+@forward 'layouts';
 
 @use '~sprucecss/scss/spruce';
 
 body {
-  // --spruce-documentation-heading-font-family: 'Manrope', sans-serif;
-  --spruce-documentation-heading-font-family: 'Sora', sans-serif;
-  --spruce-documentation-body-font-family: 'Open Sans', sans-serif;
+  --doc-heading-font-family: 'Sora', sans-serif;
+  --doc-body-font-family: 'Open Sans', sans-serif;
 
   background-color: spruce.color(background);
-  // background: linear-gradient(180deg, #f1f4fa, transparent);
-  font-family: var(--spruce-documentation-body-font-family);
+  font-family: var(--doc-body-font-family);
 }
 
 h1,
@@ -27,7 +21,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--spruce-documentation-heading-font-family);
+  font-family: var(--doc-heading-font-family);
 }
 
 .btn--rounded {
@@ -35,7 +29,7 @@ h6 {
 }
 
 .btn--install { @include spruce.btn-variant(install); }
-.btn--decline {  @include spruce.btn-variant(decline); }
+.btn--decline { @include spruce.btn-variant(decline); }
 
 .lead {
   color: spruce.color(heading);

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
-export default function BlogCard({post}) {
+export default function Card({post}) {
   const image = getImage(post.frontmatter.featuredImage);
 
   return (

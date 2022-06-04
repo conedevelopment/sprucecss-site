@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function ExampleCard({title, description, url, github, children }) {
+export default function Card({title, description, url, github, children }) {
   return (
     <article className="example-card">
       <a className="example-card__link" href={url}>

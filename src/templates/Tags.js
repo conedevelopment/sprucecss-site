@@ -5,7 +5,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Seo from '../components/SearchEngineOptimalization';
 import PageHeading from '../components/PageHeading';
-import BlogCard from '../components/BlogCard';
+import Card from '../components/card/Blog';
 
 export default function TagPage({ data, pageContext: { tag }}) {
   return (
@@ -19,7 +19,7 @@ export default function TagPage({ data, pageContext: { tag }}) {
           <div className="layout-blog__inner">
             {data.allMdx.edges.map((post) => {
               return (
-                <BlogCard key={post.slug} post={post.node} />
+                <Card key={post.slug} post={post.node} />
               )
             })}
           </div>

@@ -5,7 +5,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import Layout from '../components/Layout';
 import Seo from '../components/SearchEngineOptimalization';
 import PageHeading from '../components/PageHeading';
-import ExampleCard from '../components/ExampleCard';
+import Card from '../components/card/Example';
 
 export default function Examples() {
   return (
@@ -21,7 +21,7 @@ export default function Examples() {
             <a href="https://github.com/conedevelopment/sprucecss-examples">Github</a>
           </PageHeading>
           <div className="example-grid">
-            <ExampleCard
+            <Card
               title="Authentication"
               url="https://sprucecss.com/examples/html/auth.html"
               description="A simple login example where you can check out the form styling and some usage of Spruce’s mixins and functions."
@@ -34,8 +34,8 @@ export default function Examples() {
                 alt="A generic login screen with a sidebar."
                 className="example-card__thumbnail"
               />
-            </ExampleCard>
-            <ExampleCard
+            </Card>
+            <Card
               title="Article"
               url="https://sprucecss.com/examples/html/article.html"
               description="A centered, breaking-out article layout for seeing the typography."
@@ -48,7 +48,7 @@ export default function Examples() {
                 alt="A simple article layout."
                 className="example-card__thumbnail"
               />
-            </ExampleCard>
+            </Card>
           </div>
         </div>
       </main>

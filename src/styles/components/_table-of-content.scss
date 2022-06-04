@@ -1,5 +1,5 @@
 @use '~sprucecss/scss/spruce';
-@use '../mixin';
+@use '../mixins' as *;
 
 .toc {
   position: sticky;
@@ -18,7 +18,7 @@
   }
 
   &__title {
-    @include mixin.sidebar-title;
+    @include sidebar-title;
   }
 
   &__navigation {
@@ -45,7 +45,7 @@
       }
 
       &.is-active {
-        @include mixin.sidebar-active-menu-marker;
+        @include sidebar-active-menu-marker;
       }
     }
   }

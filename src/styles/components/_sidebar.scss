@@ -1,5 +1,5 @@
 @use '~sprucecss/scss/spruce';
-@use '../mixin';
+@use '../mixins' as *;
 
 .sidebar {
   @include spruce.scrollbar(
@@ -23,7 +23,7 @@
 
 .sidebar-section {
   &__title {
-    @include mixin.sidebar-title;
+    @include sidebar-title;
   }
 
   &__navigation {
@@ -43,7 +43,7 @@
       text-decoration: none;
 
       &[aria-current='page'] {
-        @include mixin.sidebar-active-menu-marker;
+        @include sidebar-active-menu-marker;
       }
     }
   }
