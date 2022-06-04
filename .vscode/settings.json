@@ -5,5 +5,12 @@
     "titleBar.activeBackground": "#19002f",
     "titleBar.inactiveBackground": "#110020"
   },
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": ["javascript", "javascriptreact", "html", "typescriptreact"],
+  "eslint.workingDirectories": [
+    "./src"
+  ]
 }

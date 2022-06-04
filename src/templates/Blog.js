@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useStaticQuery, graphql  } from 'gatsby';
+import { Link, graphql  } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
