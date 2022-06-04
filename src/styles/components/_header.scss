@@ -37,7 +37,10 @@
   }
 
   &__slogan {
+    @include spruce.clear-btn;
+    cursor: default;
     display: none;
+    user-select: none;
 
     @include spruce.breakpoint(sm) {
       border-inline-start: 1px solid spruce.color(border);

@@ -21,13 +21,28 @@ export default function Header() {
   `);
 
   const [menuVisible, setMenuVisible] = useState(false);
-  const [slogan, setslogan] = useState(site.siteMetadata.slogan[Math.floor(Math.random() * site.siteMetadata.slogan.length)]);
+  const [slogan, setSlogan] = useState(site.siteMetadata.slogan[Math.floor(Math.random() * site.siteMetadata.slogan.length)]);
 
   useEffect(() => {
     if(menuVisible === true) {
       document.querySelector(".header__navigation ul").firstChild.focus();
     }
   }, [menuVisible]);
+
+  async function handleSlogan() {
+    getSlogan();
+  }
+
+  function getSlogan() {
+    let newSlogan = site.siteMetadata.slogan[Math.floor(Math.random() * site.siteMetadata.slogan.length)];
+
+    if (newSlogan !== slogan) {
+      setSlogan(newSlogan);
+      return;
+    }
+
+    getSlogan();
+  }
 
   function handleMenuClick() {
     setMenuVisible(!menuVisible);
@@ -65,7 +80,7 @@ export default function Header() {
               <Link to="/" title={site.siteMetadata.title}>
                 <Logo />
               </Link>
-              <span className="header__slogan">{slogan}</span>
+              <button className="header__slogan" onClick={handleSlogan} aria-live="assertive">{slogan}</button>
             </div>
             <nav className="header__navigation">
               <button className="btn btn--primary header__toggle" onClick={handleMenuClick} aria-controls="primary-menu" aria-expanded={menuVisible ? "true" : "false"} aria-label={menuVisible ? "Close navigation" : "Open navigation"}>

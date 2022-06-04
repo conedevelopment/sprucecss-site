@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
 // Components
 import Docs from '../components/Docs';
