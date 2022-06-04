@@ -1,0 +1,41 @@
+@use 'dark-colors' as dark;
+
+@use '~sprucecss/scss/spruce' with (
+  $colors: (
+    base: (
+      card-border: hsl(287 36% 95%),
+      primary-lightest: hsl(259 53% 94%),
+      primary-dark: hsl(261deg 52% 35%),
+      primary-darkest: hsl(272 100% 9%),
+      heading: hsl(0 0% 0%),
+      getting-started: hsl(219 78% 96%)
+    ),
+    btn: (
+      install-background: hsl(0, 0%, 95%),
+      install-background-hover: hsl(0, 0%, 90%),
+      install-foreground: hsl(0, 0%, 10%),
+      decline-background: hsl(207, 39%, 17%),
+      decline-foreground: hsl(0, 0%, 100%)
+    ),
+    cookie: (
+      background: hsl(207 95% 8%),
+      foreground: hsl(0 0% 100%),
+    ),
+    docs-card: (
+      border: hsl(0 0% 0%)
+    ),
+    scrollbar: (
+      thumb-background: hsl(0 0% 0% / 0.15),
+      thumb-background-hover:	hsl(0 0% 0% / 0.25),
+      track-background:	hsl(0 0% 0% / 0.05)
+    ),
+    breadcrumb: (
+      arrow: hsl(0 0% 0% / 0.1)
+    )
+  ),
+  $dark-colors: dark.$colors,
+  $font-size-base: 1.063rem,
+  $font-size-ratio: 1.250,
+  $container-width: 86rem,
+  $form-control-font-size: 1rem
+);

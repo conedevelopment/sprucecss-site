@@ -36,7 +36,6 @@ h6 {
 
 .btn--install { @include spruce.btn-variant(install); }
 .btn--decline {  @include spruce.btn-variant(decline); }
-.btn--black {  @include spruce.btn-variant(black); }
 
 .lead {
   color: spruce.color(heading);
