@@ -12,7 +12,9 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "sass-lint": "stylelint src/styles/**/*.scss",
+    "sass-lint-with-fix": "stylelint src/styles/**/*.scss --fix"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
@@ -39,5 +41,10 @@
     "sass": "^1.51.0",
     "sprucecss": "^0.7.2",
     "universal-cookie": "^4.0.4"
+  },
+  "devDependencies": {
+    "eslint-config-react-app": "^7.0.1",
+    "stylelint": "^14.8.5",
+    "stylelint-config-sass-guidelines": "^9.0.1"
   }
 }

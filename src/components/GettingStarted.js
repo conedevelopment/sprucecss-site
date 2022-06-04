@@ -6,7 +6,7 @@ import Documentation from '../images/icons/book.svg';
 import Examples from '../images/icons/nanotechnology.svg';
 import Blog from '../images/icons/carbon.svg';
 
-export default function GettingStarted({ title, description, url, github, children }) {
+export default function GettingStarted() {
   return (
     <div className="getting-started">
       <div className="container">
