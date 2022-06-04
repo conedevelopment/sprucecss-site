@@ -83,8 +83,8 @@ export default function SiteHeader() {
               <button className="site-header__slogan" onClick={handleSlogan} aria-live="assertive">{slogan}</button>
             </div>
             <nav className="site-header__navigation">
-              <button className="btn btn--primary site-header__toggle" onClick={handleMenuClick} aria-controls="primary-menu" aria-expanded={menuVisible ? "true" : "false"} aria-label={menuVisible ? "Close navigation" : "Open navigation"}>
-                <MenuIcon width="30" height="30" />
+              <button className="btn btn--primary btn--icon btn--rounded site-header__toggle" onClick={handleMenuClick} aria-controls="primary-menu" aria-expanded={menuVisible ? "true" : "false"} aria-label={menuVisible ? "Close navigation" : "Open navigation"}>
+                <MenuIcon className="btn__icon" width="30" height="30" />
               </button>
               <ul>
                 <li><Link to="/docs/getting-started/introduction">Docs</Link></li>
