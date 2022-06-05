@@ -3,7 +3,7 @@
 
 .toc {
   position: sticky;
-  top: 2rem;
+  inset-block-start: 2rem;
 
   @include spruce.breakpoint(lg) {
     @include spruce.scrollbar(
@@ -22,15 +22,13 @@
   }
 
   &__navigation {
-    margin: 1rem 0 0;
+    margin-block-start: 1rem;
 
     ol {
+      @include spruce.clear-list;
       @include spruce.layout-stack(spruce.spacer(xs));
 
-      list-style: none;
-      margin: 0;
       max-width: 95%;
-      padding: 0;
     }
 
     a {

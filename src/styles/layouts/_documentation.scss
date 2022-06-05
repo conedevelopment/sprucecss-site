@@ -1,11 +1,7 @@
 @use '~sprucecss/scss/spruce';
 
-.layout-documentation {
+.l-documentation {
   padding-block: clamp(spruce.spacer(m), 5vw, spruce.spacer(l)) clamp(spruce.spacer(l), 5vw, spruce.spacer(xl));
-
-  &__container {
-    @include spruce.layout-center(clamp(spruce.spacer(m), 5vw, spruce.spacer(l)));
-  }
 
   &__inner {
     display: grid;

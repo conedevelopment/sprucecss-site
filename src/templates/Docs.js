@@ -35,15 +35,15 @@ export default function Post({ data: { mdx: post }, pageContext }) {
   return (
     <Layout>
       <Seo title={title} />
-      <main id="content" className="layout-documentation">
+      <main id="content" className="l-documentation">
         <div className="container">
-          <div className="layout-documentation__inner">
+          <div className="l-documentation__inner">
             <Sidebar />
-            <div className="layout-documentation__body-helper">
-              <article className="layout-documentation__body">
-                <h1 className="layout-documentation__title">{title}</h1>
+            <div className="l-documentation__body-helper">
+              <article className="l-documentation__body">
+                <h1 className="l-documentation__title">{title}</h1>
                 {post.headings.length !== 0 &&
-                <div className="layout-documentation__table-of-content">
+                <div className="l-documentation__table-of-content">
                   <section className="toc" aria-labelledby="toc-title">
                     <h3 className="toc__title" id="toc-title">On this page</h3>
                     <nav className="toc__navigation">
@@ -51,7 +51,7 @@ export default function Post({ data: { mdx: post }, pageContext }) {
                     </nav>
                   </section>
                 </div>}
-                <div className="layout-documentation__content post-content">
+                <div className="l-documentation__content post-content">
                   <MDXRenderer>{body}</MDXRenderer>
                 </div>
               </article>

@@ -18,7 +18,7 @@
 
   &--info {
     background-color: color.change(spruce.color(info, alert, true), $alpha: 0.1);
-    border-top: 0.5rem solid spruce.color(info, alert);
+    border-block-start: 0.5rem solid spruce.color(info, alert);
 
     #{$this}__icon {
       color: spruce.color(info, alert);
@@ -33,7 +33,7 @@
 
   &--correct {
     background-color: color.change(spruce.color(success, alert, true), $alpha: 0.1);
-    border-top: 0.5rem solid spruce.color(success, alert);
+    border-block-start: 0.5rem solid spruce.color(success, alert);
 
     #{$this}__icon {
       color: spruce.color(success, alert);
@@ -48,7 +48,7 @@
 
   &--wrong {
     background-color: color.change(spruce.color(danger, alert, true), $alpha: 0.1);
-    border-top: 0.5rem solid spruce.color(danger, alert);
+    border-block-start: 0.5rem solid spruce.color(danger, alert);
 
     #{$this}__icon {
       color: spruce.color(danger, alert);

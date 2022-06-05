@@ -66,7 +66,7 @@
     ul {
       @include spruce.clear-list;
       background-color: spruce.color(background);
-      border-top: 1px dashed spruce.color(border);
+      border-block-start: 1px dashed spruce.color(border);
       column-gap: spruce.spacer(l);
       display: none;
       flex-direction: column;

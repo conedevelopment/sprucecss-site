@@ -42,8 +42,8 @@
     margin-block: 0;
 
     + li::before {
-      border-bottom: 2px solid spruce.color(arrow, breadcrumb);
-      border-right: 2px solid spruce.color(arrow, breadcrumb);
+      border-block-end: 2px solid spruce.color(arrow, breadcrumb);
+      border-inline-end: 2px solid spruce.color(arrow, breadcrumb);
       content: '';
       display: inline-flex;
       height: 0.4em;
