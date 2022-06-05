@@ -23,10 +23,8 @@
 }
 
 .inline-text-element-list {
+  @include spruce.clear-list;
   @include spruce.layout-stack(spruce.spacer(s));
-  list-style: none;
-  margin: 0;
-  padding: 0;
 
   @include spruce.breakpoint(sm) {
     columns: 2 auto;

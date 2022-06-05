@@ -59,7 +59,7 @@ export default function Post({ data: { mdx: post } }) {
           </div>
         </div>
         <div className="container--narrow">
-          <div className="post-content">
+          <div className="post-content post-content--blog">
             <GatsbyImage image={image} alt={post.frontmatter.alt} />
             <MDXRenderer>{body}</MDXRenderer>
           </div>

@@ -22,7 +22,7 @@
   &:hover {
     #{$this}__icon {
       background-color: spruce.color(primary);
-      color: #fff;
+      color: hsl(0 0% 100%);
     }
   }
 
