@@ -1,19 +1,19 @@
 @use '~sprucecss/scss/spruce';
 
 @mixin sidebar-active-menu-marker {
-  position: relative;
-  font-weight: 600;
   color: spruce.color(heading);
+  font-weight: 600;
+  position: relative;
 
   &::before {
     background-color: spruce.color(primary);
-    content: '';
-    width: 0.3rem;
     border-radius: 0 spruce.$border-radius-sm spruce.$border-radius-sm 0;
+    bottom: 0;
+    content: '';
+    inset-inline-start: -1rem;
     position: absolute;
     top: 0;
-    bottom: 0;
-    inset-inline-start: -1rem;
+    width: 0.3rem;
   }
 }
 

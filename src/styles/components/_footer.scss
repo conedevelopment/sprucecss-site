@@ -17,15 +17,15 @@
   }
 
   &__title {
-    margin: 0;
     font-size: spruce.font-size(h4);
+    margin: 0;
   }
 
   &__navigation {
     font-size: 1rem;
+    list-style: none;
     margin: spruce.spacer(m) 0;
     padding: 0;
-    list-style: none;
 
     li + li {
       margin-top: 0.5rem;
@@ -52,8 +52,8 @@
     padding-top: spruce.spacer(m);
 
     @include spruce.breakpoint(md) {
-      display: flex;
       align-items: center;
+      display: flex;
       justify-content: space-between;
     }
 

@@ -13,9 +13,8 @@
 
   &__caption {
     @include spruce.layout-stack(spruce.spacer(s), false);
-
-    margin-inline: auto;
     margin-block-start: spruce.spacer(m);
+    margin-inline: auto;
     max-width: 45rem;
   }
 
@@ -35,9 +34,9 @@
   &__btns {
     align-items: center;
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
     gap: spruce.spacer(m);
+    justify-content: center;
     margin-block-start: spruce.spacer(m);
   }
 }

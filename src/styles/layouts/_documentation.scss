@@ -26,8 +26,8 @@
   }
 
   &__body {
-    display: grid;
     column-gap: spruce.spacer(xl);
+    display: grid;
     grid-auto-rows: min-content;
     grid-template-columns: minmax(0, 1fr);
     row-gap: spruce.spacer(m);

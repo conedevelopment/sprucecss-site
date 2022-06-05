@@ -9,12 +9,11 @@
     0.5rem,
     0.15rem
   );
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
   padding-inline-end: spruce.spacer(m);
   position: sticky;
   top: 2rem;
-
-  overflow-y: auto;
-  max-height: calc(100vh - 4rem);
 
   > * + * {
     margin-top: 3rem;

@@ -25,10 +25,6 @@
     line-height: 1;
     margin-block: 0;
     max-width: 50ch;
-
-    .highlighted {
-      color: spruce.color(primary);
-    }
   }
 
   &__caption {
@@ -43,13 +39,13 @@
 
   &__description {
     font-size: spruce.responsive-font-size(
-      $size: 1.25rem,
-      $scaler: 40,
-      $optimal-size: '0.25vw + 1rem'
+      $size: 1.35rem,
+      $scaler: 30,
+      $optimal-size: '1vw + 1rem'
     );
     margin: spruce.spacer(m) 0 0;
-    max-width: 50ch;
     margin-block: 0;
+    max-width: 50ch;
   }
 
   &__btns {

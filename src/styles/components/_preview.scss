@@ -27,7 +27,7 @@
   @include spruce.layout-stack(spruce.spacer(s));
 
   @include spruce.breakpoint(sm) {
-    columns: 2 auto;
     column-gap: spruce.spacer(l);
+    columns: 2 auto;
   }
 }

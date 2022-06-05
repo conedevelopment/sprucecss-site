@@ -24,7 +24,7 @@ $colors: (
     border: $color-gray-dark,
     mark-background: hsl(50 100% 80%),
     mark-foreground: $color-black,
-    code-background: hsl(207deg 64% 21%),
+    code-background: hsl(207 64% 21%),
     code-foreground: $color-white,
     blockquote-border: $color-primary,
     getting-started: #072135
@@ -40,8 +40,8 @@ $colors: (
     secondary-background: $color-secondary,
     secondary-foreground: $color-white,
     secondary-shadow-focus: color.adjust($color-secondary, $alpha: -0.75),
-    install-background: hsl(207, 39%, 17%),
-    install-background-hover: hsl(207, 23%, 26%),
+    install-background: hsl(207 39% 17%),
+    install-background-hover: hsl(207 23% 26%),
     install-foreground: hsl(0 0% 100%),
     install-foreground-hover: hsl(0 0% 100%),
   ),
@@ -83,4 +83,4 @@ $colors: (
   breadcrumb: (
     arrow: hsl(0 0% 100% / 0.1)
   )
-)
+);

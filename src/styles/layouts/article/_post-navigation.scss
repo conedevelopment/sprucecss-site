@@ -37,14 +37,16 @@
     border-radius: 1rem;
     display: flex;
     flex-shrink: 0;
-    justify-content: center;
     height: 3rem;
+    justify-content: center;
     transition: all var(--#{spruce.setting(prefix)}-transition-duration) var(--#{spruce.setting(prefix)}-transition-timing-function);
     width: 3rem;
 
     svg {
-      height: 1rem;
-      width: 1rem;
+      --dimension: 1rem;
+
+      height: var(--dimension);
+      width: var(--dimension);
     }
   }
 

@@ -1,15 +1,15 @@
 @use 'sprucecss/scss/spruce';
 
 .post-heading {
-  text-align: center;
   margin-block: clamp(5rem, 10vw + 1rem, 7rem) spruce.spacer(xl);
+  text-align: center;
 
   &__inner {
     align-items: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     gap: spruce.spacer(s);
+    justify-content: center;
   }
 
   &__title {
@@ -19,9 +19,9 @@
 
   &__meta {
     align-items: center;
+    column-gap: spruce.spacer(m);
     display: flex;
     flex-wrap: wrap;
-    column-gap: spruce.spacer(m);
     justify-content: center;
     margin-block-start: spruce.spacer(l);
     row-gap: spruce.spacer(xs);
@@ -32,8 +32,8 @@
   @include spruce.clear-list;
   align-items: center;
   display: flex;
-  overflow-x: auto;
   max-width: 100%;
+  overflow-x: auto;
   white-space: nowrap;
 
   > li {
@@ -56,7 +56,7 @@
   [aria-current='page'] {
     @include spruce.text-ellipsis(1);
     display: inline-flex;
-    text-align: start;
     max-width: 20ch;
+    text-align: start;
   }
 }

@@ -5,7 +5,7 @@
   ':root[data-theme-mode="dark"]'
 );
 
-[data-theme-mode="dark"] {
+[data-theme-mode='dark'] {
   color-scheme: dark;
 
   select.form-control:not([multiple]):not([size]) {
