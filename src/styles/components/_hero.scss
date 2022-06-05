@@ -2,94 +2,42 @@
 @use '~sprucecss/scss/spruce';
 
 .hero {
-  &__container {
-    @include spruce.layout-center(clamp(spruce.spacer(m), 5vw, spruce.spacer(l)));
-  }
-
-  &__inner {
-    --gap: 2rem;
-    align-items: center;
-    // display: grid;
-    gap: var(--gap);
-    grid-template-columns: minmax(0, 1fr);
-    justify-content: center;
-    padding: clamp(spruce.spacer(xxl), 15vh, 8rem) 0;
-    text-align: center;
-    /*
-    @include spruce.breakpoint(md) {
-      --gap: 4rem;
-      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-      justify-content: flex-start;
-      text-align: start;
-    }
-    */
-  }
-
-  &__image {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 22rem;
-    order: -1;
-
-    @include spruce.breakpoint(md) {
-      max-width: none;
-      order: 2;
-    }
-  }
-
-  &__caption {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-
-    @include spruce.breakpoint(md) {
-      align-items: flex-start;
-    }
-  }
-
-  &__logo {
-    height: 3rem;
-  }
+  padding: clamp(spruce.spacer(xxl), 15vh, 8rem) 0;
+  text-align: center;
 
   &__title {
     font-size: spruce.responsive-font-size(
       $size: 4.2rem,
-      $scaler: 40,
+      $scaler: 30,
       $optimal-size: '4vw + 1rem'
     );
-    font-weight: 700;
     letter-spacing: -3px;
     line-height: 1;
-    margin: 0;
+    margin-block: 0;
     max-width: 50ch;
 
-    .solid {
+    span {
       font-weight: 400;
     }
   }
 
   &__description {
-    font-size: clamp(spruce.$font-size-base, 5vw + 1rem, spruce.font-size(h4));
-    margin: spruce.spacer(m) 0 0;
-    max-width: 60ch;
-    margin-top: 1rem;
+    font-size: spruce.responsive-font-size(
+      $size: 1.35rem,
+      $scaler: 30,
+      $optimal-size: '1vw + 1rem'
+    );
+    margin-block: 1.25rem 0;
     margin-inline: auto;
+    max-width: 60ch;
   }
 
   &__btns {
     align-items: center;
     display: flex;
     flex-wrap: wrap;
+    gap: spruce.spacer(m);
     justify-content: center;
-    margin-top: 1.5rem;
-
-    > * {
-      margin: spruce.spacer(xs);
-
-      @include spruce.breakpoint(md) {
-        margin: spruce.spacer(xs) 0;
-        margin-inline-end: spruce.spacer(m);
-      }
-    }
+    margin-top: 2.15rem;
   }
 }

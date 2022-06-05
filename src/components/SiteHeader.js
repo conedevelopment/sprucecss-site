@@ -29,7 +29,7 @@ export default function SiteHeader() {
     }
   }, [menuVisible]);
 
-  async function handleSlogan() {
+  function handleSlogan() {
     getSlogan();
   }
 
