@@ -1,30 +1,28 @@
 @use '~sprucecss/scss/spruce';
 
-.docs-cards {
+.doc-cards {
   margin-bottom: spruce.spacer(xl);
-
-  &__container {
-    @include spruce.layout-center(clamp(spruce.spacer(m), 5vw, spruce.spacer(l)));
-  }
 
   &__inner {
     @include spruce.layout-grid(spruce.spacer(l), 20rem);
   }
 }
 
-.docs-card {
+.doc-card {
   $this: &;
 
   background-color: spruce.color(background);
-  border: 1px solid #d4dbe9;
-  border-radius: 1.25rem;
+  border: 1px solid spruce.color(card-border);
+  border-radius: var(--doc-border-radius-sm);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 20rem;
   padding: clamp(spruce.spacer(m), 7vw, spruce.spacer(l));
   text-decoration: none;
-  transition: 0.1s ease-in-out;
+  transition-duration: spruce.transition(duration);
+  transition-property: all;
+  transition-timing-function: spruce.transition(timing-function);
 
   &:hover,
   &:focus {
@@ -33,12 +31,8 @@
 
     #{$this}__serial-number,
     #{$this}__title {
-      color: #fff;
+      color: hsl(0 0% 100%);
     }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-      transition: none;
   }
 
   &__serial-number {
@@ -51,6 +45,6 @@
 
   &__title {
     font-family: var(--doc-heading-font-family);
-    margin: spruce.spacer(m) 0 0;
+    margin-block: spruce.spacer(m) 0;
   }
 }
