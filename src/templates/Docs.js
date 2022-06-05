@@ -85,4 +85,4 @@ export default function Post({ data: { mdx: post }, pageContext }) {
       </main>
     </Layout>
   );
-};
+}

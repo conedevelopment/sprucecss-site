@@ -1,11 +1,7 @@
 @use 'sass:color';
 @use '~sprucecss/scss/spruce';
 
-.error-404 {
-  &__container {
-    @include spruce.layout-center(clamp(spruce.spacer(m), 5vw, spruce.spacer(l)));
-  }
-
+.l-error-404 {
   &__inner {
     padding: clamp(spruce.spacer(xxl), 6vw, spruce.spacer(xxxl)) 0;
     text-align: center;
@@ -18,22 +14,22 @@
   &__caption {
     @include spruce.layout-stack(spruce.spacer(s), false);
 
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: spruce.spacer(m);
+    margin-inline: auto;
+    margin-block-start: spruce.spacer(m);
     max-width: 45rem;
   }
 
   &__title {
     font-size: spruce.responsive-font-size(3.5rem, 30);
-    line-height: 1.1;
   }
 
   &__description {
-    font-size: spruce.font-size(h4);
-    line-height: 1.6;
-    margin: spruce.spacer(m) 0 0;
-    margin-top: 1rem;
+    font-size: spruce.responsive-font-size(
+      $size: 1.35rem,
+      $scaler: 30,
+      $optimal-size: '1vw + 1rem'
+    );
+    margin-block: spruce.spacer(s) 0;
   }
 
   &__btns {
@@ -41,10 +37,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 1.5rem;
-
-    > * {
-      margin: spruce.spacer(xs)
-    }
+    gap: spruce.spacer(m);
+    margin-block-start: spruce.spacer(m);
   }
 }

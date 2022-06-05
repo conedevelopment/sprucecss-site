@@ -68,7 +68,7 @@ export default function Post({ data: { mdx: post } }) {
       <GettingStarted />
     </Layout>
   );
-};
+}
 
 export const query = graphql`
   query ($slug: String!) {
