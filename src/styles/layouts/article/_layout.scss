@@ -1,20 +1,5 @@
 @use 'sprucecss/scss/spruce';
 
-.container {
-  &--wide {
-    @include spruce.layout-center(
-      clamp(spruce.spacer(m), 5vw, spruce.spacer(l))
-    );
-  }
-
-  &--narrow {
-    @include spruce.layout-center(
-      clamp(spruce.spacer(m), 5vw, spruce.spacer(l)),
-      60rem
-    );
-  }
-}
-
 .post {
   padding-block-end: clamp(spruce.spacer(l), 5vw, spruce.spacer(xl));
 }

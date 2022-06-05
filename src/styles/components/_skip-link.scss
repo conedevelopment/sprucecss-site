@@ -1,12 +1,11 @@
 @use '~sprucecss/scss/spruce';
 
 .skip-link {
+  inset: -5rem auto auto 2rem;
   position: fixed;
-  top: -5rem;
-  left: 2rem;
   z-index: 1;
 
   &:focus {
-    top: 2rem;
+    inset-block-start: 2rem;
   }
 }

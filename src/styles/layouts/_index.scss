@@ -1,13 +1,6 @@
+@forward 'container';
 @forward 'documentation';
 @forward 'example';
 @forward 'blog';
 @forward 'page';
 @forward 'article';
-
-@use '~sprucecss/scss/spruce';
-
-.container {
-  @include spruce.layout-center(
-    clamp(spruce.spacer(m), 5vw, spruce.spacer(l))
-  );
-}

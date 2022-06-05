@@ -1,6 +1,6 @@
 @use '~sprucecss/scss/spruce';
 
-.layout-blog {
+.l-blog {
   padding-block: 0 clamp(spruce.spacer(l), 5vw, spruce.spacer(xl));
 
   &__inner {
@@ -12,32 +12,5 @@
 
     @include spruce.breakpoint(sm) { --columns: 2; }
     @include spruce.breakpoint(lg) { --columns: 3; }
-  }
-}
-
-.blog-card {
-  @include spruce.layout-stack(
-    spruce.spacer(s)
-  );
-
-  &__thumbnail {
-    border-radius: spruce.$border-radius-lg;
-  }
-
-  &__meta {
-    column-gap: spruce.spacer(m);
-    display: flex;
-    flex-wrap: wrap;
-    row-gap: spruce.spacer(xs);
-  }
-
-  &__title {
-    font-size: spruce.font-size(h3);
-    margin-block-start: spruce.spacer(xs);
-
-    a {
-      color: spruce.color(heading);
-      text-decoration: none;
-    }
   }
 }

@@ -7,9 +7,11 @@
   text-decoration: none;
 
   &__avatar {
-    border-radius: 1.25rem;
-    height: 2.5rem;
-    width: 2.5rem;
+    --dimension: 2.5rem;
+
+    border-radius: calc(var(--dimension) / 2);
+    height: var(--dimension);
+    width: var(--dimension);
   }
 
   &__name {

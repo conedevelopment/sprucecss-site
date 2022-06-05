@@ -1,0 +1,28 @@
+@use '~sprucecss/scss/spruce';
+
+.blog-card {
+  @include spruce.layout-stack(
+    spruce.spacer(s)
+  );
+
+  &__thumbnail {
+    border-radius: spruce.$border-radius-lg;
+  }
+
+  &__meta {
+    column-gap: spruce.spacer(m);
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: spruce.spacer(xs);
+  }
+
+  &__title {
+    font-size: spruce.font-size(h3);
+    margin-block-start: spruce.spacer(xs);
+
+    a {
+      color: spruce.color(heading);
+      text-decoration: none;
+    }
+  }
+}

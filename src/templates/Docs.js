@@ -36,7 +36,7 @@ export default function Post({ data: { mdx: post }, pageContext }) {
     <Layout>
       <Seo title={title} />
       <main id="content" className="layout-documentation">
-        <div className="layout-documentation__container">
+        <div className="container">
           <div className="layout-documentation__inner">
             <Sidebar />
             <div className="layout-documentation__body-helper">
@@ -51,7 +51,7 @@ export default function Post({ data: { mdx: post }, pageContext }) {
                     </nav>
                   </section>
                 </div>}
-                <div className="layout-documentation__content entry-content">
+                <div className="layout-documentation__content post-content">
                   <MDXRenderer>{body}</MDXRenderer>
                 </div>
               </article>

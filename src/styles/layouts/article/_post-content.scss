@@ -1,13 +1,15 @@
 @use 'sprucecss/scss/spruce';
 
 .post-content {
-  @include spruce.layout-stack;
+  @include spruce.layout-stack(spruce.spacer(m));
 
-  :is(dd, dl, dl, h1, h2, h3, h4, h5, h6, hr, ul, ol, p, blockquote, .prism-code-wrapper, .notification) {
-    @include spruce.layout-center(
-      null,
-      45rem
-    );
+  &--blog {
+    :is(dd, dl, dl, h1, h2, h3, h4, h5, h6, hr, ul, ol, p, blockquote, .prism-code-wrapper, .notification) {
+      @include spruce.layout-center(
+        null,
+        45rem
+      );
+    }
   }
 
   * + h1,
@@ -16,16 +18,22 @@
   * + h4,
   * + h5,
   * + h6 {
-    margin-top: spruce.spacer(l);
+    margin-block-start: spruce.spacer(l);
   }
 
-  h1 + *,
-  h2 + *,
-  h3 + *,
-  h4 + *,
-  h5 + *,
-  h6 + * {
-    margin-top: spruce.spacer(s);
+  .code-link {
+    text-decoration: none;
+
+    code {
+      transition: var(--#{spruce.setting(prefix)}-transition-duration) var(--#{spruce.setting(prefix)}-transition-timing-function);
+    }
+
+    &:hover {
+      code {
+        background-color: spruce.color(primary);
+        color: #fff;
+      }
+    }
   }
 
   img,

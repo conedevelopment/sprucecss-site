@@ -11,13 +11,13 @@ export default function Blog({ data }) {
   return (
     <Layout>
       <Seo title="Blog" />
-      <main id="content" className="layout-blog">
+      <main id="content" className="l-blog">
         <div className="container">
           <PageHeading
             title="Blog"
             description="Spruce how-to and generic front-end development articles."
           />
-          <div className="layout-blog__inner">
+          <div className="l-blog__inner">
             {data.allMdx.nodes.map((post) => {
               return (
                 <Card key={post.slug} post={post} />
