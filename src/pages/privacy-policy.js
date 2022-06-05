@@ -27,11 +27,11 @@ export default function PrivacyPolicy() {
   return (
     <Layout>
       <Seo title="Privacy Policy" />
-      <main id="content" className="layout-page">
-        <div className="layout-page__container">
-          <article className="layout-page__inner entry-content">
-            <h1 className="layout-page__title">Privacy Policy</h1>
-            <p className="layout-page__meta">Updated on 28 January 2022</p>
+      <main id="content" className="l-page">
+        <div className="l-page__container">
+          <article className="l-page__inner entry-content">
+            <h1 className="l-page__title">Privacy Policy</h1>
+            <p className="l-page__meta">Updated on 28 January 2022</p>
             <h2>Cookies</h2>
             <p>If you accept the cookies in the consent banner, you accept <a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage">Google Analytics tracking</a>, which uses cookies.</p>
             <p>We store this choice of you in the <code>spruce-gdpr-cookies</code> cookie.</p>
