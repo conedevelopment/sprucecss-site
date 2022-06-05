@@ -11,7 +11,7 @@ export default function Examples() {
   return (
     <Layout>
       <Seo title="Examples" />
-      <main id="content" className="layout-example">
+      <main id="content" className="l-example">
         <div className="container">
           <PageHeading
             title="Examples"
@@ -20,7 +20,7 @@ export default function Examples() {
             <a href="https://github.com/conedevelopment/sprucecss-examples/archive/refs/heads/master.zip">Download</a>
             <a href="https://github.com/conedevelopment/sprucecss-examples">Github</a>
           </PageHeading>
-          <div className="example-grid">
+          <div className="l-example__inner">
             <Card
               title="Authentication"
               url="https://sprucecss.com/examples/html/auth.html"

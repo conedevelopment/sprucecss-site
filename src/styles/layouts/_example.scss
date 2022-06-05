@@ -1,50 +1,14 @@
 @use '~sprucecss/scss/spruce';
 
-.layout-example {
+.l-example {
   padding-block: 0 clamp(spruce.spacer(l), 5vw, spruce.spacer(xl));
-}
 
-.example-grid {
-  --columns: 1;
-  display: grid;
-  grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
-  gap: spruce.spacer(l);
+  &__inner {
+    --columns: 1;
+    display: grid;
+    gap: spruce.spacer(l);
+    grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
 
-  @include spruce.breakpoint(md) {
-    --columns: 2;
-  }
-}
-
-.example-card {
-  &__link {
-    display: block;
-    text-decoration: none;
-  }
-
-  &__thumbnail {
-    border: 1px solid spruce.color(border);
-    border-radius: spruce.$border-radius-lg;
-  }
-
-  &__caption {
-    margin-block-start: spruce.spacer(m);
-  }
-
-  &__title {
-    font-size: spruce.font-size(h3);
-    margin-block: 0;
-
-    a {
-      color: spruce.color(heading);
-    }
-  }
-
-  &__description {
-    color: spruce.color(text);
-    margin-block: spruce.spacer(xs) spruce.spacer(xxs);
-  }
-
-  &__links {
-    @include spruce.clear-list;
+    @include spruce.breakpoint(md) { --columns: 2; }
   }
 }
