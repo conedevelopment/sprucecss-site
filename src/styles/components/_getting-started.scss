@@ -1,24 +1,23 @@
 @use '~sprucecss/scss/spruce';
 
 .getting-started {
-  margin-block-end: 5rem;
+
+  &--mbe {
+    margin-block-end: spruce.spacer(xxl);
+  }
 
   &__inner {
-    background-color: #EDE8F8;
-    background-color: #f1f8ff;
-    background-color: spruce.color(getting-started);
-    border-radius: 2rem;
-    padding: spruce.spacer(l);
-
     --columns: 1;
 
+    background-color: spruce.color(getting-started);
+    border-radius: var(--doc-border-radius-lg);
     display: grid;
     gap: spruce.spacer(l);
     grid-template-columns: repeat(var(--columns), minmax(0, 2fr));
+    padding: clamp(2rem, 5vw, #{spruce.spacer(l)});
 
     @include spruce.breakpoint(sm) { --columns: 2; }
     @include spruce.breakpoint(md) { --columns: 3; }
-
   }
 }
 
@@ -27,8 +26,10 @@
   @include spruce.layout-stack(spruce.spacer(s));
 
   &__icon {
-    height: 4rem;
-    width: 4rem;
+    --dimension: 4rem;
+
+    height: var(--dimension);
+    width: var(--dimension);
   }
 
   &__link {

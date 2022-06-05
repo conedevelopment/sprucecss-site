@@ -13,7 +13,7 @@ export default function IndexPage() {
       <Seo title="Spruce CSS - Minimal, modern CSS framework" frontPage={true} />
       <main id="content">
         <Hero />
-        <GettingStarted />
+        <GettingStarted classes="getting-started--mbe" />
         <Docs />
       </main>
     </Layout>
