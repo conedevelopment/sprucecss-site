@@ -1,6 +1,7 @@
 @use '~sprucecss/scss/spruce';
 
 .site-footer {
+  font-size: 1rem;
   padding-block: spruce.spacer(xxl);
 
   &__top {
