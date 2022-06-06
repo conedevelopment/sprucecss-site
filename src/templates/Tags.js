@@ -11,12 +11,12 @@ export default function TagPage({ data, pageContext: { tag }}) {
   return (
     <Layout>
       <Seo title={`#${tag}`} />
-      <main id="content" className="layout-blog">
+      <main id="content" className="l-blog">
         <div className="container">
           <PageHeading
             title={`#${tag}`}
           />
-          <div className="layout-blog__inner">
+          <div className="l-blog__inner">
             {data.allMdx.edges.map((post) => {
               return (
                 <Card key={post.slug} post={post.node} />
