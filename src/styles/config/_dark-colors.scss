@@ -14,6 +14,7 @@ $color-success: hsl(150 100% 33%);
 
 $colors: (
   base: (
+    card-border: hsl(207 90% 13%),
     primary: $color-primary,
     secondary: $color-secondary,
     background: $color-black,
@@ -71,9 +72,6 @@ $colors: (
     hover: hsl(0 0% 100% / 0.05),
     text: $color-gray,
     stripe: hsl(0 0% 100% / 0.025)
-  ),
-  docs-card: (
-    border: hsl(0 0% 100% / 8%)
   ),
   scrollbar: (
     thumb-background: hsl(0 0% 100% / 0.15),
