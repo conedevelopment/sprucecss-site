@@ -6,7 +6,7 @@
   );
 
   &__thumbnail {
-    border-radius: var(--doc-border-radius-sm);
+    border-radius: spruce.$border-radius-lg;
   }
 
   &__meta {

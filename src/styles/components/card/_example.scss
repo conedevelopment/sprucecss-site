@@ -8,7 +8,7 @@
 
   &__thumbnail {
     border: 1px solid spruce.color(border);
-    border-radius: var(--doc-border-radius-sm);
+    border-radius: spruce.$border-radius-lg;
   }
 
   &__caption {
