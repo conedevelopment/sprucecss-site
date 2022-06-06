@@ -38,7 +38,7 @@
 
   img,
   iframe {
-    border-radius: var(--doc-border-radius-sm);
+    border-radius: spruce.$border-radius-lg;
   }
 
   > .gatsby-image-wrapper:first-child + * {

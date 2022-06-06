@@ -10,11 +10,14 @@
     0.5rem,
     0.15rem
   );
-  max-height: calc(100vh - 4rem);
   overflow-y: auto;
   padding-inline-end: spruce.spacer(m);
-  position: sticky;
   inset-block-start: 2rem;
+
+  @include spruce.breakpoint(sm) {
+    max-height: calc(100vh - 4rem);
+    position: sticky;
+  }
 }
 
 .sidebar-section {

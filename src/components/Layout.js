@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 
 // Components
-import Footer from './Footer';
+import SiteFooter from './SiteFooter';
 import SiteHeader from './SiteHeader';
 
 // Styles
@@ -21,7 +21,7 @@ export default function Layout(props) {
       </Helmet>
       <SiteHeader />
       {props.children}
-      <Footer />
+      <SiteFooter />
     </>
   );
 }

@@ -1,11 +1,7 @@
 @use '~sprucecss/scss/spruce';
 
-.footer {
-  padding: spruce.spacer(xxl) 0;
-
-  &__container {
-    @include spruce.layout-center(clamp(spruce.spacer(m), 5vw, spruce.spacer(l)));
-  }
+.site-footer {
+  padding-block: spruce.spacer(xxl);
 
   &__top {
     @include spruce.layout-grid(spruce.spacer(l), 14rem);
@@ -18,18 +14,13 @@
 
   &__title {
     font-size: spruce.font-size(h4);
-    margin: 0;
+    margin-block: 0 spruce.spacer(m);
   }
 
   &__navigation {
+    @include spruce.clear-list;
+    @include spruce.layout-stack(spruce.spacer(s));
     font-size: 1rem;
-    list-style: none;
-    margin: spruce.spacer(m) 0;
-    padding: 0;
-
-    li + li {
-      margin-top: 0.5rem;
-    }
 
     a {
       color: spruce.color(text);
@@ -37,34 +28,24 @@
 
       &:hover,
       &:focus,
-      &:active {
+      &:active,
+      &[aria-current='page'] {
         color: spruce.color(primary);
       }
 
       &[aria-current='page'] {
-        color: spruce.color(primary);
         font-weight: 700;
       }
     }
   }
 
   &__bottom {
-    padding-top: spruce.spacer(m);
+    padding-block-start: spruce.spacer(l);
 
     @include spruce.breakpoint(md) {
       align-items: center;
       display: flex;
       justify-content: space-between;
-    }
-
-    .footer__navigation {
-      display: flex;
-      flex-wrap: wrap;
-      gap: spruce.spacer(l);
-
-      li {
-        margin: 0;
-      }
     }
   }
 
@@ -72,7 +53,7 @@
     align-items: center;
     display: inline-flex;
     height: 0.9rem;
-    margin-right: spruce.spacer(xs);
+    margin-inline-end: spruce.spacer(xs);
 
     svg {
       height: 100%;
