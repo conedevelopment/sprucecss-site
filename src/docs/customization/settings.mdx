@@ -12,8 +12,10 @@ You can access any setting with the [setting() helper function](/docs/sass/funct
 ```scss
 $settings: (
   color-fallback: false,
-  hyphens:  true,
+  html-smooth-scrolling: true,
+  hyphens: true,
   optimal-responsive-font-size: '2vw + 1rem',
+  optimal-spacer-size: '5vw',
   prefix: 'spruce',
   utilities: false
 );
@@ -47,6 +49,18 @@ Turn on the color fallback:
 );
 ```
 
+## html-smooth-scrolling
+
+Turn off the smooth scrolling (`scroll-behavior: smooth;`) on the html element. You maybe need this because you work with a SPA, and it interferes with its transitions.
+
+```scss
+@use '~sprucecss/scss/spruce' with (
+  $settings: (
+    html-smooth-scrolling: false
+  )
+);
+```
+
 ## hyphens
 
 By default Spruce uses a simple hyphenation setup [which you can find here](https://github.com/conedevelopment/sprucecss/blob/main/scss/element/_typography.scss#L13).
@@ -64,7 +78,7 @@ Turn off the hyphenation:
 
 ## optimal-responsive-font-size
 
-Optimal size used at `font-size()` and `responsive-font-size()` function which is used in a `clamp()` function as the middle value.
+Optimal responsive font size used at `font-size()` and `responsive-font-size()` function which is used in a `clamp()` function as the middle value.
 
 Using the mentioned functions, you can modify this value per call too. A global fallback is a much-needed thing here, but we need to fine-tune it uniquely in some cases (like bigger sizes).
 
@@ -85,6 +99,26 @@ We added a simple formula: one value with a relative viewport unit (vw) to make 
 - [font-size()](/docs/sass/functions/#font-size)
 - [responsive-font-size()](/docs/sass/functions/#responsive-font-size)
 - [clamp()](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp())
+
+
+## optimal-spacer-size
+
+Optimal spacer size used at `spacer-clamp()` function which is used in a `clamp()` function as the middle value.
+
+Using the mentioned function, you can modify this value per call too. A global fallback is a much-needed thing here, but we need to fine-tune it uniquely in some cases (like bigger or smaller sizes).
+
+Modify the optimal spacer size value:
+
+```scss
+@use '~sprucecss/scss/spruce' with (
+  $settings: (
+    optimal-spacer-size: '5vw'
+  )
+);
+```
+
+### References
+- [spacer-clamp()](/docs/sass/functions/#spacer-clamp)
 
 ## prefix
 
