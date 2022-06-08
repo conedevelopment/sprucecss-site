@@ -132,6 +132,32 @@ Get a value by key name from the `$spacers` map.
 }
 ```
 
+## spacer-clamp
+
+Create a `clamp()` declaration with values from the $spacers map. The goal of this helper function is to create fluid spacers more easily.
+
+### Argument(s)
+
+| Name              | Description                                                               |
+|-------------------|---------------------------------------------------------------------------|
+| `$min`            | The name of the spacer.                                                   |
+| `$max`            | The name of the spacer.                                                   |
+| `$optimal`        | The optimal value which is fallback to the `optimal-spacer-size` setting. |
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/function/_spacer.scss#L13)
+
+### Example(s)
+
+```scss
+.block {
+  padding: spruce.spacer-clamp(m, l);
+}
+
+.block {
+  padding: spruce.spacer-clamp(xs, s, '2vw');
+}
+```
+
 ## str-replace
 
 Replace any specified value in a string.
