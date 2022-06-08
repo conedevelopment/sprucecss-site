@@ -8,8 +8,8 @@
 @use '~sprucecss/scss/spruce';
 
 body {
-  --doc-heading-font-family: 'Sora', sans-serif;
-  --doc-body-font-family: 'Open Sans', sans-serif;
+  --doc-heading-font-family: 'Sora', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --doc-body-font-family: 'Open Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --doc-border-radius-sm: 0.75rem;
   --doc-border-radius-lg: 2rem;
 
