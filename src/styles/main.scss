@@ -17,6 +17,10 @@ body {
   font-family: var(--doc-body-font-family);
 }
 
+html {
+  scroll-behavior: unset;
+}
+
 h1,
 h2,
 h3,

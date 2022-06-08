@@ -2,6 +2,19 @@ import React from 'react';
 import getAnchor from '../utils/getAnchor.js';
 
 export default function TableOfContents({ headings }) {
+  function handleScroll(e) {
+    e.preventDefault();
+
+    let hash = e.target.getAttribute('href');
+
+    document.querySelector(hash).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+
+    window.history.pushState({}, '', hash);
+  }
+
   return (
     <ol>
       {headings
@@ -14,7 +27,7 @@ export default function TableOfContents({ headings }) {
         )
         .map(heading => (
           <li className={`heading-${heading.depth}`} key={heading.value}>
-            <a href={`#${getAnchor(heading.value)}`}>{heading.value}</a>
+            <a href={`#${getAnchor(heading.value)}`} onClick={handleScroll}>{heading.value}</a>
           </li>
         ))}
     </ol>
