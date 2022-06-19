@@ -20,7 +20,7 @@
 
   &__navigation {
     @include spruce.clear-list;
-    @include spruce.layout-stack(spruce.spacer(s));
+    @include spruce.layout-stack(spruce.spacer(xs));
     font-size: 1rem;
 
     a {

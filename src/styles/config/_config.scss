@@ -1,6 +1,11 @@
 @use 'dark-colors' as dark;
 
 @use '~sprucecss/scss/spruce' with (
+  //$color-secondary: rgb(101, 36, 214),
+  $color-primary: rgb(45, 51, 234),
+  // $color-primary: hsl(238 71% 49%),
+  // $color-primary: #812BB2,
+  $color-secondary: hsl(209 96% 26%),
   $colors: (
     base: (
       card-border: hsl(220 32% 87%),
