@@ -8,31 +8,11 @@
   &__inner {
     --columns: 1;
 
-    background-color: spruce.color(getting-started);
-    border-radius: var(--doc-border-radius-lg);
     display: grid;
     gap: spruce.spacer(l);
     grid-template-columns: repeat(var(--columns), minmax(0, 2fr));
-    padding: clamp(2rem, 5vw, #{spruce.spacer(l)});
 
     @include spruce.breakpoint(sm) { --columns: 2; }
     @include spruce.breakpoint(md) { --columns: 3; }
-  }
-}
-
-.getting-started-card {
-  @include spruce.a11y-card-link('.getting-started-card__link', true);
-  @include spruce.layout-stack(spruce.spacer(s));
-
-  &__icon {
-    --dimension: 4rem;
-
-    height: var(--dimension);
-    width: var(--dimension);
-  }
-
-  &__link {
-    color: spruce.color(heading);
-    text-decoration: none;
   }
 }
