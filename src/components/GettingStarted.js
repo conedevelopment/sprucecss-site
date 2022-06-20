@@ -8,7 +8,7 @@ import Blog from '../images/icons/blog.svg';
 
 export default function GettingStarted({ classes }) {
   return (
-    <div className={`getting-started ${classes}`}>
+    <div className="getting-started">
       <div className="container">
         <div className="heading">
           <h2 className="heading__title">Explore</h2>

@@ -1,9 +1,7 @@
 @use '~sprucecss/scss/spruce';
 
 .site-footer {
-  background-color: #f9f9f9;
-  background-color: spruce.color(getting-started);
-  background-color: #f5f8ff;
+  background-color: spruce.color(footer-background);
   font-size: 1rem;
   padding-block: spruce.spacer(xxl);
 

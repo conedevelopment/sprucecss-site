@@ -1,7 +1,7 @@
 @use '~sprucecss/scss/spruce';
 
 .l-blog {
-  padding-block: 0 clamp(spruce.spacer(l), 5vw, spruce.spacer(xl));
+  padding-block: 0 clamp(spruce.spacer(xl), 8vw, 7rem);
 
   &__inner {
     --columns: 1;

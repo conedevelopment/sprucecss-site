@@ -1,9 +1,7 @@
 @use '~sprucecss/scss/spruce';
 
 .getting-started {
-  &--mbe {
-    margin-block-end: spruce.spacer(xxl);
-  }
+  margin-block-end: clamp(spruce.spacer(xl), 8vw, 7rem);
 
   &__inner {
     --columns: 1;

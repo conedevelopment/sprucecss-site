@@ -1,11 +1,7 @@
 @use 'dark-colors' as dark;
 
 @use '~sprucecss/scss/spruce' with (
-  //$color-secondary: rgb(101, 36, 214),
-  $color-primary: rgb(45, 51, 234),
-  // $color-primary: hsl(238 71% 49%),
-  // $color-primary: #812BB2,
-  $color-secondary: hsl(209 96% 26%),
+  $color-primary: hsl(262 71% 49%),
   $colors: (
     base: (
       card-border: hsl(220 32% 87%),
@@ -13,7 +9,7 @@
       primary-dark: hsl(261deg 52% 35%),
       primary-darkest: hsl(272 100% 9%),
       heading: hsl(0 0% 0%),
-      getting-started: hsl(219 78% 96%)
+      footer-background: hsl(222 100% 98%)
     ),
     btn: (
       install-background: hsl(0, 0%, 95%),
