@@ -3,6 +3,8 @@
 .doc-card {
   $this: &;
 
+  @include spruce.a11y-card-link('.doc-card__link', true);
+
   background-color: spruce.color(background);
   border: 1px solid spruce.color(card-border);
   border-radius: var(--doc-border-radius-sm);
@@ -22,7 +24,7 @@
     border-color: spruce.color(primary);
 
     #{$this}__serial-number,
-    #{$this}__title {
+    #{$this}__link {
       color: hsl(0 0% 100%);
     }
   }
@@ -38,5 +40,10 @@
   &__title {
     font-family: var(--doc-heading-font-family);
     margin-block: spruce.spacer(m) 0;
+  }
+
+  &__link {
+    color: spruce.color(heading);
+    text-decoration: none;
   }
 }
