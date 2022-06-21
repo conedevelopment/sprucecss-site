@@ -69,8 +69,8 @@
     background-color: spruce.color(background);
     border: 4px solid spruce.color(background);
     border-radius: 1rem;
-    inset: calc(-1rem - 4px) -1rem auto auto;
     height: 2rem;
+    inset: calc(-1rem - 4px) -1rem auto auto;
     position: absolute;
     width: 2rem;
   }

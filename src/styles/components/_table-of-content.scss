@@ -2,8 +2,8 @@
 @use '../mixins' as *;
 
 .toc {
-  position: sticky;
   inset-block-start: 2rem;
+  position: sticky;
 
   @include spruce.breakpoint(lg) {
     @include spruce.scrollbar(

@@ -46,8 +46,8 @@ pre[class*='language-'] {
 pre[class*='language-'] {
   border-radius: spruce.$border-radius-sm;
   display: grid;
-  overflow: auto;
   margin-block: 0;
+  overflow: auto;
   padding: spruce.spacer(m);
 }
 
