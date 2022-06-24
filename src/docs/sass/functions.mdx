@@ -60,6 +60,29 @@ Get a value from the `$font-sizes` map by key name. By default, the function giv
 }
 ```
 
+## get-css-variable
+
+Add the prefix value to a CSS custom properties. To set any CSS variable with prefix use the <code><a href="/docs/sass/mixins#set-css-variable">set-css-variable</a></code> function.
+
+
+#### Argument(s)
+
+| Name       | Description                                        |
+|------------|----------------------------------------------------|
+| `$var`     | The name of the variable without the prefix value. |
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/function/_css-variable.scss#L6)
+
+#### Example(s)
+
+```scss
+.container {
+  @include spruce.layout-center(
+    spruce.get-css-variable(--container-gap)
+  );
+}
+```
+
 ## responsive-font-size
 
 It is hard to get generic font sizes that we can use throughout a whole project. Usually, we need unique ones. For this, we can set fluid declaration, similar to the `font-size()` function.

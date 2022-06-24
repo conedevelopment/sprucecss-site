@@ -353,6 +353,28 @@ Using the `layout-flex` mixin, you can create intrinsic flexbox grids with expli
 }
 ```
 
+## set-css-variable
+
+Declare CSS custom properties through Spruce CSS to add the prefix. To get any CSS variable with prefix use the <code><a href="/docs/sass/functions#get-css-variable">get-css-variable</a></code> function.
+
+#### Argument(s)
+
+| Name        | Description                              |
+|-------------|------------------------------------------|
+| `$vars`     | A Sass map of key, value pairs.          |
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_css-variable.scss#L6)
+
+#### Example(s)
+
+```scss
+:root {
+  @include spruce.set-css-variable((
+    --container-gap: spruce.spacer-clamp(m, l)
+  ));
+}
+```
+
 ## Utilities
 
 ### text-ellipsis
