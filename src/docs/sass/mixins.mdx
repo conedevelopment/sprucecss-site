@@ -243,10 +243,10 @@ With the help of the `layout-center` mixin, you can center any element.  It is m
 
 #### Argument(s)
 
-| Name             | Default Value             | Description                                                                               |
-|------------------|---------------------------|-------------------------------------------------------------------------------------------|
-| `$gap`           | `spruce.spacer(m)`        | The padding value on either side of the element. The value comes from the `$spacers` map. |
-| `$max-width`     | `spruce.$container-width` | Set the max-width value of the element.                                                   |
+| Name             | Default Value             | Description                                                                                                                        |
+|------------------|---------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| `$gap`           | `m`                       | The padding value on either side of the element. The value comes from the `$spacers` map, use any declared key name for shorthand. |
+| `$max-width`     | `spruce.$container-width` | Set the max-width value of the element.                                                                                            |
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_layout.scss#L6)
 
@@ -268,13 +268,13 @@ Using the help of the `layout-stack` mixin, you can classical stack layout where
 
 #### Argument(s)
 
-| Name          | Default Value            | Description                                                                         |
-|---------------|--------------------------|-------------------------------------------------------------------------------------|
-| `$gap`        | `spruce.spacer(m)`       | The margin value between the elements. The value comes from the `$spacers` map.     |
-| `$width`      | `false`                  | Set `width: 100%;` on the stacked elements.                                         |
-| `$align`      | `none`                   | Set explicit align to the elements(`none`, `left`, `right`).                        |
-| `$important`  | `false`                  | Add !important on descandent elements to `margin-block-start`.                      |
-| `$split`      | `0`                      | Split the elements vertically from the nth element.                                 |
+| Name          | Default Value            | Description                                                                                                              |
+|---------------|--------------------------|--------------------------------------------------------------------------------------------------------------------------|
+| `$gap`        | `m`                      | The margin value between the elements. The value comes from the `$spacers` map, use any declared key name for shorthand. |
+| `$width`      | `false`                  | Set `width: 100%;` on the stacked elements.                                                                              |
+| `$align`      | `none`                   | Set explicit align to the elements(`none`, `left`, `right`).                                                             |
+| `$important`  | `false`                  | Add !important on descandent elements to `margin-block-start`.                                                           |
+| `$split`      | `0`                      | Split the elements vertically from the nth element.                                                                      |
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_layout.scss#L16)
 
@@ -282,7 +282,7 @@ Using the help of the `layout-stack` mixin, you can classical stack layout where
 
 ```scss
 ul {
-  @include spruce.layout-stack(spruce.spacer(xs));
+  @include spruce.layout-stack(xs);
 }
 ```
 
@@ -292,10 +292,10 @@ With the help of the `layout-grid` mixin you can create auto-fit grid layouts wh
 
 #### Argument(s)
 
-| Name           | Default Value          | Description                                                                         |
-|----------------|------------------------|-------------------------------------------------------------------------------------|
-| `$gap`         | `spruce.spacer(m)`     | The gutter value between the elements. The value comes from the `$spacers` map.     |
-| `$minimum`     | `12.5rem`              | The minimum value of the child elements where it automatically breaks.              |
+| Name           | Default Value          | Description                                                                                                              |
+|----------------|------------------------|--------------------------------------------------------------------------------------------------------------------------|
+| `$gap`         | `m`                    | The gutter value between the elements. The value comes from the `$spacers` map, use any declared key name for shorthand. |
+| `$minimum`     | `12.5rem`              | The minimum value of the child elements where it automatically breaks.                                                   |
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_layout.scss#L64)
 
@@ -304,7 +304,7 @@ With the help of the `layout-grid` mixin you can create auto-fit grid layouts wh
 ```scss
 .docs-cards {
   &__inner {
-    @include spruce.layout-grid(spruce.spacer(l), 20rem);
+    @include spruce.layout-grid(l, 20rem);
   }
 }
 ```
@@ -315,10 +315,10 @@ Using the `layout-sidebar` mixin, you can create a two-column sidebar layout dec
 
 #### Argument(s)
 
-| Name                 | Default Value          | Description                                                                         |
-|----------------------|------------------------|-------------------------------------------------------------------------------------|
-| `$gap`               | `spruce.spacer(m)`     | The gutter value between the elements. The value comes from the `$spacers` map.     |
-| `$sidebar-width`     | `18.75rem`             | The width of the sidebar element.                                                   |
+| Name                 | Default Value          | Description                                                                                                              |
+|----------------------|------------------------|--------------------------------------------------------------------------------------------------------------------------|
+| `$gap`               | `m`                    | The gutter value between the elements. The value comes from the `$spacers` map, use any declared key name for shorthand. |
+| `$sidebar-width`     | `18.75rem`             | The width of the sidebar element.                                                                                        |
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_layout.scss#L79)
 
@@ -326,7 +326,7 @@ Using the `layout-sidebar` mixin, you can create a two-column sidebar layout dec
 
 ```scss
 .docs-template {
-  @include spruce.layout-sidebar(spruce.spacer(l), 22rem);
+  @include spruce.layout-sidebar(l, 22rem);
 }
 ```
 
@@ -336,10 +336,10 @@ Using the `layout-flex` mixin, you can create intrinsic flexbox grids with expli
 
 #### Argument(s)
 
-| Name                  | Default Value          | Description                                                                         |
-|-----------------------|------------------------|-------------------------------------------------------------------------------------|
-| `$gap`                | `spruce.spacer(m)`     | The gutter value between the elements. The value comes from the `$spacers` map.     |
-| `$width-variable`     | `--col-width`          | The optimal width of the columns.                                                   |
+| Name                  | Default Value          | Description                                                                                                              |
+|-----------------------|------------------------|--------------------------------------------------------------------------------------------------------------------------|
+| `$gap`                | `m`                    | The gutter value between the elements. The value comes from the `$spacers` map, use any declared key name for shorthand. |
+| `$width-variable`     | `--col-width`          | The optimal width of the columns.                                                                                        |
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_layout.scss#L100)
 
