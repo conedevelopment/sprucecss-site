@@ -1,0 +1,128 @@
+---
+title: 'Why Use Sass?'
+date: 2022-06-25
+featuredImage: ../images/blog/why-use-sass.png
+alt: 'Sass is the most popular CSS preprocessor. It is a great tool to manage your stylesheets differently and (maybe) better.'
+published: true
+tags: ['sass']
+---
+
+<p class="lead">Sass is the most popular CSS preprocessor. It is a great tool to manage your stylesheets differently and (maybe) better.</p>
+
+Sass is a simplified programming language; you can use conditions, loops, etc. Its best features aren’t the variables or the nesting (although these were the primary selling points) but that you can program it, write mixins and functions, and use its core functionalities like color manipulation.
+
+It isn’t a CSS competitor; it is something that complements it. You still write CSS but have some extra functionality, so if you want to drop it at some point, no problem.
+
+## Do We Need Sass at All?
+
+The same generic question as always and also the same answer: it depends on your need, on your context.
+
+I think Sass can improve any project. Sure it gives an extra layer, but in the world of the CSS-in-JS solutions, I don’t think it is a big problem.
+It is still helpful for a simple project because it is easy to set up and use through npm scripts. You can use its basic functionalities like the modules and nesting.
+If you are serious, it does not disappoint. Sass has more intermediate and advanced tools to help you build anything complex like your own CSS framework.
+
+Sass is a little bit for CSS, like jQuery for JavaScript. It shows a direction. Today we have variables in plain CSS (which is a different variable, a more powerful one), too, which is progress.
+
+So do we need it? I use it in almost all my projects because it is comfortable. I also use it for Spruce because it shows its true power there.
+
+## @use and @forward
+
+Sass has a modular import system, similar to the JS modules. It replaced the classic @import rule. The @import wasn’t an advanced solution; it worked like the CSS one, except it “merged” the imported file.
+
+Now - using [@use](https://sass-lang.com/documentation/at-rules/use) or [@forward](https://sass-lang.com/documentation/at-rules/forward) - you can create namespaces when importing. You must import (@use) the dependency in any file you need (no more global import), but in the compiled result, it will be present only once.
+
+At first, it can be more complicated than the regular @import, but in the long run, it is superior.
+
+Spruce CSS uses the module system. If you want to import it (after npm install), you need to use the following code:
+
+```scss
+@use 'sprucecss/scss/spruce';
+```
+
+Because of the filename, you will get the “spruce” namespace. To import it without a namespace, you can do the following:
+
+```scss
+@use 'sprucecss/scss/spruce' as *;
+```
+
+Both imports are fine. I use the first one to separate the tools of the frameworks from other codes. As you see, you can use similarly named functions, mixins, and variables under different namespaces.
+
+```scss
+@use 'sprucecss/scss/spruce';
+
+.container {
+  @include spruce.layout-center(l);
+}
+```
+
+## Mixins and Functions
+
+You can create reusable styles using [@mixin](https://sass-lang.com/documentation/at-rules/mixin). A mixin can be anything from small to large, but usually, we use them when we have to rewrite (in a repetitive way) multiple lines.
+
+A classic example is the breakpoint mixin, which you can meet in many CSS frameworks.
+
+```scss
+$breakpoints: (
+  xs: 32em,
+  sm: 48em,
+  md: 64em,
+  lg: 80em,
+  xl: 90em,
+  xxl: 110em
+);
+
+@mixin breakpoint(
+  $breakpoint,
+  $logic: false
+) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    $breakpoint: map.get($breakpoints, $breakpoint);
+
+    @if $logic {
+      @media #{$logic} and (min-width: $breakpoint) {
+        @content;
+      }
+    } @else {
+      @media (min-width: $breakpoint) {
+        @content;
+      }
+    }
+  } @else {
+    @error 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+```
+
+Mixins can generate bigger chunks of content too. In Spruce, the [generators](https://sprucecss.com/docs/elements/generators) do this. Including this framework with @use in your project doesn’t generate any CSS code by default. You need to call one of the generator mixins.
+
+The functions in Sass are similar to any function you know. It gets a value and returns something. You can make a lot of cool stuff with them. One frequent example is making a getter from a map:
+
+```scss
+$settings: (
+  color-fallback: false,
+  html-smooth-scrolling: true,
+  hyphens: true,
+  optimal-responsive-font-size: '2vw + 1rem',
+  optimal-spacer-size: '5vw',
+  prefix: 'spruce',
+  utilities: false
+);
+
+@function setting($key) {
+  @if not map.has-key($settings, $key) {
+    @error 'The #{$key} key name doesn\'t exist at the $settings map.';
+  }
+
+  @return map.get($settings, $key);
+}
+```
+
+## It is Well Documented and Maintained
+
+Interestingly, when searching for something for Sass, you usually find an old article (+5 years old). Don’t be fooled. Most of these articles are irrelevant because they show an external solution that is now in the core.
+
+Although Sass can be complicated, you can find almost everything in the official documentation. It is also good to see that Sass is still evolving. Did you know that it was first released at the end of 2006? The core developers and maintainers are outstanding.
+
+## Summary
+
+I think Sass is a fantastic tool, but I still believe it isn’t critical. It can help any developer write a bit better code but is still CSS (and have alternatives). For complex systems, it can be necessary; for simple tasks, it can be good if it is present too. It is a maintained, well-developed library with a lot of users. It is also more than you read in this article, so please visit the [official site](https://sass-lang.com/).
