@@ -95,7 +95,7 @@ $breakpoints: (
 
 Mixins can generate bigger chunks of content too. In Spruce, the [generators](https://sprucecss.com/docs/elements/generators) do this. Including this framework with `@use` in your project doesn’t generate any CSS code by default. You need to call one of the generator mixins.
 
-The functions in Sass are similar to any function you know. It gets a value and returns something. You can make a lot of cool stuff with them. One frequent example is making a getter from a map:
+**The functions in Sass are similar to any function you know.** It gets a value and returns something. You can make a lot of cool stuff with them. One frequent example is making a getter from a map:
 
 ```scss
 $settings: (
@@ -117,11 +117,40 @@ $settings: (
 }
 ```
 
+## Nesting and the Parent Selector
+
+The nesting is always one of the first things that come up when we speak about Sass. It is a neat feature that makes it possible to embed any CSS selector inside of another one, like so:
+
+```scss
+.header {
+  .navigation {
+	font-weight: 700;
+  }
+}
+```
+
+It helps us write shorter CSS and allows us to group them logically.
+
+The nesting will be really helpful when we use the parent selector. The [parent selector](https://sass-lang.com/documentation/style-rules/parent-selector) (`&`) is a unique Sass selector that refers to the outer selector.
+
+```scss
+.link {
+  color: red;
+
+  &:hover,
+  &:focus {
+    color: blue;
+  }
+}
+```
+
 ## It is Well Documented and Maintained
 
 Interestingly, when searching for something for Sass, you usually find an old article (+5 years old). Don’t be fooled. Most of these articles are irrelevant because they show an external solution that is now in the core.
 
-Although Sass can be complicated, you can find almost everything in the official documentation. It is also good to see that Sass is still evolving. Did you know that it was first released at the end of 2006? The core developers and maintainers are outstanding.
+Although Sass can be complicated, you can find almost everything in the official documentation. It is also good to see that Sass is still evolving. Did you know that it was first released at the end of 2006?
+
+And the most important: the core developers and maintainers are outstanding.
 
 ## Summary
 
