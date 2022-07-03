@@ -8,8 +8,13 @@ import GettingStarted from '../components/GettingStarted';
 import Layout from '../components/Layout';
 import Seo from '../components/SearchEngineOptimalization';
 
-export default function Post({ data: { mdx: post } }) {
-  const { title } = post.frontmatter;
+export default function Post({
+  data: {
+    mdx: post,
+    mdx: { frontmatter : { title } }
+  }
+}) {
+  // const { title } = post.frontmatter;
   const { body } = post;
   const image = getImage(post.frontmatter.featuredImage);
 

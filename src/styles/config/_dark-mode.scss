@@ -11,7 +11,7 @@
   select.form-control:not([multiple]):not([size]) {
     @include spruce.field-icon(
       spruce.$select-image,
-      spruce.color(primary, $only-color: true)
+      hsl(0 0% 100%)
     );
   }
 
