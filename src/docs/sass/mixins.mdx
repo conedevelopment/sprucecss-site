@@ -353,6 +353,27 @@ Using the `layout-flex` mixin, you can create intrinsic flexbox grids with expli
 }
 ```
 
+## selection
+
+Using the `selection` mixin, you can simplify the `::selection` declarations.  Pick a background color value from the `base` subsection by name and let it calculate the contrast color for the foreground automatically.
+#### Argument(s)
+
+| Name          | Default Value          | Description                                                                                                               |
+|---------------|------------------------|---------------------------------------------------------------------------------------------------------------------------|
+| `$background` | `primary`              | The background color code or the name of the color from the `base` subsection from `$colors` map.                         |
+| `$foreground` | `null`                 | The foreground color code. It will get a contrasting pair (black or white) if left empty, based on the background value.  |
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_selection.scss)
+
+#### Example(s)
+
+```scss
+.footer {
+  // @include spruce.selection(hsl(262 71% 49%));
+  @include spruce.selection(secondary);
+}
+```
+
 ## set-css-variable
 
 Declare CSS custom properties through Spruce CSS to add the prefix. To get any CSS variable with prefix use the <code><a href="/docs/sass/functions#get-css-variable">get-css-variable</a></code> function.
