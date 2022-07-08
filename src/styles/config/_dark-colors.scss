@@ -61,7 +61,7 @@ $colors: (
     legend: $color-white,
     placeholder: hsl(0 0% 60%),
     text: $color-gray,
-    select-foreground: hsl(0 100% 50%),
+    select-foreground: hsl(0 0% 100%),
     valid: $color-success,
     valid-shadow: color.adjust($color-success, $alpha: -0.75)
   ),
