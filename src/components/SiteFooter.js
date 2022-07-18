@@ -51,6 +51,7 @@ export default function SiteFooter() {
               <li><a href="https://conedevelopment.com/services/">Services</a></li>
               <li><a href="https://pineco.de/">Pine - A web development blog</a></li>
               <li><a href="https://root.conedevelopment.com/">Root - An admin package for Laravel</a></li>
+              <li><a href="https://bite-sized-a11y.com/">Bite-Sized Accessibility</a></li>
             </ul>
           </div>
         </div>
