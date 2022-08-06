@@ -31,8 +31,6 @@ export const query = graphql`
 export default function Post({ data: { mdx: post }, pageContext }) {
   const {next, prev} = pageContext;
 
-  console.log(post);
-
   const { title, github } = post.frontmatter;
   const { body } = post;
   return (
