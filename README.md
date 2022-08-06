@@ -11,7 +11,7 @@
   </a>
 </p>
 
-**This Gatsby project contains the website of Spruce CSS.**
+**Spruce CSS uses [Gatsby](https://www.gatsbyjs.org/) for its documentation.**
 
 ## Installation
 
