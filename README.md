@@ -13,6 +13,8 @@
 
 **Spruce CSS uses [Gatsby](https://www.gatsbyjs.org/) for its documentation.**
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/32f689b9-2e24-462f-be66-22e1233d7f9b/deploy-status)](https://app.netlify.com/sites/sprucecss/deploys)
+
 ## Installation
 
 1.  **Clone the repository**
