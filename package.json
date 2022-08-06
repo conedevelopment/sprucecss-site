@@ -19,6 +19,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
+    "dotenv": "^16.0.1",
     "gatsby": "^4.16.0",
     "gatsby-plugin-gdpr-cookies": "^2.0.9",
     "gatsby-plugin-image": "^2.16.0",

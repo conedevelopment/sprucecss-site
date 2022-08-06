@@ -1,3 +1,7 @@
+const dotenv = require('dotenv');
+
+dotenv.config({ path: '.env' });
+
 module.exports = {
   siteMetadata: {
     description: 'Spruce CSS is a modern, minimal CSS Framework built on Sass.',
@@ -79,7 +83,7 @@ module.exports = {
       options: {
         googleAnalytics: {
           cookieName: 'spruce-gdpr-cookies',
-          trackingId: 'UA-91043380-5',
+          trackingId: process.env.ANALYTICS_ID,
           anonymize: true
         },
         environments: ['production', 'development']
