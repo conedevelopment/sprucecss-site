@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Card({title, description, url, github, children }) {
+export default function Card({ title, description, url, github, children }) {
   return (
     <article className="example-card">
       <a className="example-card__link" href={url}>
@@ -10,12 +10,12 @@ export default function Card({title, description, url, github, children }) {
         {title &&
           <h2 className="example-card__title">
             <a className="example-card__link" href={url}>
-              { title }
+              {title}
             </a>
           </h2>
         }
-        {description && <p className="example-card__description">{ description }</p>}
-        {github && <a className="example-card__github" href={ github }>GitHub</a>}
+        {description && <p className="example-card__description">{description}</p>}
+        {github && <a className="example-card__github" href={github}>GitHub</a>}
       </div>
     </article>
   );

@@ -17,6 +17,7 @@ export const query = graphql`
     mdx(slug: {eq: $slug}) {
       frontmatter {
         title
+        github
       }
       body,
       headings {
@@ -30,7 +31,9 @@ export const query = graphql`
 export default function Post({ data: { mdx: post }, pageContext }) {
   const {next, prev} = pageContext;
 
-  const { title } = post.frontmatter;
+  console.log(post);
+
+  const { title, github } = post.frontmatter;
   const { body } = post;
   return (
     <Layout>
@@ -53,6 +56,7 @@ export default function Post({ data: { mdx: post }, pageContext }) {
                 </div>}
                 <div className="l-documentation__content post-content">
                   <MDXRenderer>{body}</MDXRenderer>
+                  {github && <div><a href={github}>Edit on GitHub</a></div>}
                 </div>
               </article>
               <div className="post-navigation">
