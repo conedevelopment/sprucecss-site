@@ -110,26 +110,6 @@ In many cases, declaring just the background and foreground color is enough. Spr
 <a href="https://conedevelopment.com" class="btn btn--custom btn--lg">Go to Cone</a>
 ```
 
-### btn-focus
-
-The `btn-focus()` is a small internal helper mixin to set up the focus state of the buttons. It is called by the `btn-variant()`, and it accepts a color value (or a color variable).
-
-#### Argument(s)
-
-| Name                         | Default Value            | Description                                 |
-|------------------------------|--------------------------|---------------------------------------------|
-| `$box-shadow`                |                          | The color value of the box shadow.          |
-
-[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_button.scss#L6)
-
-#### Example(s)
-
-```scss
-.btn--primary:focus {
-  @include spruce.btn-focus(spruce.color(primary));
-}
-```
-
 ## Form
 
 ### field-focus
