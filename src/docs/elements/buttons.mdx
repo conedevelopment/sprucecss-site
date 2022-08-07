@@ -112,6 +112,32 @@ The `.btn` has `inline-flex` display with a `gap` value.
 </button>
 ```
 
+You can also use the `.btn__icon--sm` modifier to make the icons smaller.
+
+<Preview>
+  <div class="button-grid button-grid--stacked">
+    <button type="button" class="btn btn--primary">
+      <Icon type="arrow-right" className="btn__icon btn__icon--sm" />
+      Read more
+    </button>
+    <button type="button" class="btn btn--secondary">
+      Read more
+      <Icon type="arrow-right" className="btn__icon btn__icon--sm" />
+    </button>
+  </div>
+</Preview>
+
+```html
+<button type="button" class="btn btn--primary">
+  <svg class="btn__icon btn__icon--sm">...</svg>
+  Read more
+</button>
+<button type="button" class="btn btn--secondary">
+  Read more
+  <svg class="btn__icon btn__icon--sm">...</svg>
+</button>
+```
+
 ## Icon
 
 To make an only icon button use the `btn--icon` modifier class. If you create an icon button, use `aria-label` to add a caption.
@@ -133,57 +159,12 @@ To make an only icon button use the `btn--icon` modifier class. If you create an
 
 ## Configurable Variables
 
-There are some defaults variables that you can configure to customize the button's look.
+There are [default variables](/docs/sass/variables#buttons) that you can configure to customize the button's look.
 
-```scss
-$btn-border-radius: $border-radius-sm; // 0.25rem
-$btn-font-size:     $font-size-base; // 1rem
-$btn-font-size-sm:  0.8rem;
-$btn-font-size-lg:  1.15rem;
-$btn-font-style:    null;
-$btn-font-weight:   500;
-$btn-padding:       0.75em 1em;
-$btn-padding-sm:    0.5em;
-$btn-padding-lg:    0.9em 1.15em;
-$btn-icon-size:     0.85em;
-```
-
-Also, Spruce manage the colors in a separate Sass map named $colors (under the btn object).
-
-```scss
-$colors: (
-  btn: (
-    primary-background: hsl(261, 52%, 59%),
-    primary-background-hover: hsl(261, 52%, 40%),
-    primary-foreground: hsl(0, 0%, 100%),
-    secondary-background: hsl(350, 100%, 88%),
-    secondary-background-hover: hsl(350, 100%, 92%),
-    secondary-foreground: hsl(350, 100%, 20%)
-  )
-)
-```
+Also, Spruce manage the colors in a separate Sass map named [$colors](/docs/sass/variables#colors) (under the btn object).
 
 ## Add Custom Button Variant
 
 You can create new button color variants using the `btn-variant` mixin. First, you must declare the new button's colors at the `$color` map under the `btn` object. After this, all you have to do is to call the mixin on the preferred selector.
-
-```scss
-// You have to specify the additional colors at the very first import of Spruce.
-@use '~sprucecss/scss/spruce' with (
-  $colors: (
-    btn: (
-      ternary-background: hsl(247, 65%, 49%),
-      ternary-background-hover: hsl(247, 65%, 39%),
-      ternary-foreground: hsl(0, 0%, 100%),
-      ternary-foreground-hover: hsl(0, 0%, 100%),
-    )
-  )
-);
-
-// Call the btn-variant mixin with the colors.
-.btn--ternary {
-  @include spruce.btn-variant($color: install-foreground, $background: install-background);
-}
-```
 
 More information about the `btn-variant()` please visit the [releated mixin page](/docs/sass/mixins#btn-variant).
