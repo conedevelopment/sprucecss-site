@@ -47,20 +47,7 @@ $font-sizes: (
 
 ### Get Heading Size
 
-To access any of the `$font-sizes` map sizes, you can use the `spruce.font-size()` function that allows you also to create responsive font sizing. The `font-size()` function utilizes the <code><a hhre="https://developer.mozilla.org/en-US/docs/Web/CSS/clamp">clamp()</a></code> CSS function, which gives us the possibility to set a value based on any relative unit (in this case: 5vw + 1rem).
-
-For example you can get the the `h2` size like so:
-
-```scss
-font-size: spruce.font-size(h2);
-```
-
-Which will generate the value of:
-```scss
-font-size: clamp(1.7647460938rem, 5vw + 1rem, 2.076171875rem);
-```
-
-For the detailed function, please see the [font-size.scss file](https://github.com/conedevelopment/sprucecss/blob/master/scss/function/_font-size.scss).
+To access any of the `$font-sizes` map sizes, you can use the <code><a href="/docs/sass/functions#font-size">font-size()</a></code> function that allows you also to create responsive font sizing. The function utilizes the <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clamp">clamp()</a></code> CSS function to set a minimum, optimal and maximum value.
 
 ## Paragraphs and Lead
 
