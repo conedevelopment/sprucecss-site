@@ -18,7 +18,8 @@ $settings: (
   optimal-responsive-font-size: '2vw + 1rem',
   optimal-spacer-size: '5vw',
   prefix: 'spruce',
-  utilities: false
+  utilities: false,
+  print: false
 );
 ```
 
@@ -145,6 +146,8 @@ Generated CSS custom properties:
 }
 ```
 
+You can also set `null` value to remove them.
+
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/_root.scss)
 
 ## utilities
@@ -157,6 +160,18 @@ Right now, you can globally turn them on using this snippet:
 @use '~sprucecss/scss/spruce' with (
   $settings: (
     utilities: true
+  )
+);
+```
+
+## print
+
+Spruce comes with a small set of print styles. To turn them on, set the `print` value to `true`.
+
+```scss
+@use '~sprucecss/scss/spruce' with (
+  $settings: (
+    print: true
   )
 );
 ```
