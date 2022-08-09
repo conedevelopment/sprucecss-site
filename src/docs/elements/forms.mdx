@@ -19,8 +19,7 @@ Use the `form-control` class on the input (that doesn’t have the type of radio
 
 Wrap the label and the input into `form-group` elements to control the two’s margin.
 
-
-[form-control related variables](/docs/sass/variables#control)
+[Form-control related variables.](/docs/sass/variables#control)
 
 <Preview>
   <div class="form-group">
@@ -62,7 +61,7 @@ Wrap the label and the input into `form-group` elements to control the two’s m
 
 ## Textarea
 
-Use the form-control class on any textarea to style it. To set the global height of it use the <code><a href="/docs/sass/variables#control">$form-control-textarea-height</a></code> variable.
+Use the `form-control` class on any textarea element to style it. To set the global height of it use the <code><a href="/docs/sass/variables#control">$form-control-textarea-height</a></code> variable.
 
 <Preview>
   <div class="form-group">
@@ -80,46 +79,48 @@ Use the form-control class on any textarea to style it. To set the global height
 
 ## Select
 
-For multiple options, use the `multiple` attribute.
+Use the `form-control` class on any select element to style it. Use the `multiple` attribute for multiple option select.
+
+[Select related variables.](/docs/sass/variables#select)
 
 <Preview>
 <div class="form-group">
-  <label class="form-label" for="cars">Your favorite car brand</label>
-  <select class="form-control" id="cars" name="cars">
-    <option value="volvo">Volvo</option>
-    <option value="saab">Saab</option>
-    <option value="mercedes">Mercedes</option>
-    <option value="audi">Audi</option>
+  <label class="form-label" for="front-end-frameworks">Front-end Frameworks</label>
+  <select class="form-control" id="front-end-frameworks">
+    <option value="react">React</option>
+    <option value="vue">Vue</option>
+    <option value="svelte">Svelte</option>
+    <option value="ember">Ember</option>
   </select>
 </div>
 <div class="form-group">
-  <label class="form-label" for="cars5">Your favorite car brand</label>
-  <select class="form-control" id="cars5" name="cars5" multiple="multiple">
-    <option value="volvo">Volvo</option>
-    <option value="saab">Saab</option>
-    <option value="mercedes">Mercedes</option>
-    <option value="audi">Audi</option>
+  <label class="form-label" for="front-end-frameworks-multiple">Front-end Frameworks (Mulitple)</label>
+  <select class="form-control" id="front-end-frameworks-multiple" multiple="multiple">
+    <option value="react">React</option>
+    <option value="vue">Vue</option>
+    <option value="svelte">Svelte</option>
+    <option value="ember">Ember</option>
   </select>
 </div>
 </Preview>
 
 ```html
 <div class="form-group">
-  <label class="form-label" for="cars">Your favorite car brand</label>
-  <select class="form-control" id="cars" name="cars">
-    <option value="volvo">Volvo</option>
-    <option value="saab">Saab</option>
-    <option value="mercedes">Mercedes</option>
-    <option value="audi">Audi</option>
+  <label class="form-label" for="front-end-frameworks">Front-end Frameworks</label>
+  <select class="form-control" id="front-end-frameworks">
+    <option value="react">React</option>
+    <option value="vue">Vue</option>
+    <option value="svelte">Svelte</option>
+    <option value="ember">Ember</option>
   </select>
 </div>
 <div class="form-group">
-  <label class="form-label" for="cars5">Your favorite car brand</label>
-  <select class="form-control" id="cars5" name="cars5" multiple="multiple">
-    <option value="volvo">Volvo</option>
-    <option value="saab">Saab</option>
-    <option value="mercedes">Mercedes</option>
-    <option value="audi">Audi</option>
+  <label class="form-label" for="front-end-frameworks-multiple">Front-end Frameworks (Mulitple)</label>
+  <select class="form-control" id="front-end-frameworks-multiple" multiple="multiple">
+    <option value="react">React</option>
+    <option value="vue">Vue</option>
+    <option value="svelte">Svelte</option>
+    <option value="ember">Ember</option>
   </select>
 </div>
 ```
