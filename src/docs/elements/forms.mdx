@@ -4,15 +4,23 @@ order: 19
 github: 'https://github.com/conedevelopment/sprucecss-site/blob/main/src/docs/elements/forms.mdx'
 ---
 
-<p class="lead">Spruce comes with an overall (WIP) form support like styling the different types of inputs or validation.</p>
+<p class="lead">Spruce CSS comes with overall form support for styling the different native elements. Also, it has some form layout helpers.</p>
 
-We differentiate two groups of inputs for stylings: the `form-control` class is used for `input` (not radio or checkbox), `textarea`, `select` elements, and the `form-check` class is used for `radio` and `checkbox`.
+We differentiate the following groups for styling:
+- the `form-control` class is used for input (not radio, checkbox, range, or file), textarea, select elements,
+- the `form-check` is used for radio and checkbox,
+- the `form-switch` is used for switch-styled checkboxes,
+- the `form-range` is used for range typed input,
+- the `form-file` is used for file typed input.
 
 ## Input
 
-Use the `form-control` class on the input (which doesn’t have the type of radio or checkbox) and `form-label` on the label elements to apply the formatting.
+Use the `form-control` class on the input (that doesn’t have the type of radio, checkbox or range) and `form-label` on the label elements to apply the formatting.
 
 Wrap the label and the input into `form-group` elements to control the two’s margin.
+
+
+[form-control related variables](/docs/sass/variables#control)
 
 <Preview>
   <div class="form-group">
@@ -22,6 +30,14 @@ Wrap the label and the input into `form-group` elements to control the two’s m
   <div class="form-group">
     <label class="form-label" for="your-email">Email</label>
     <input class="form-control" id="your-email" name="your-email" type="email"/>
+  </div>
+  <div class="form-group">
+    <label class="form-label" for="your-birthday">Birthday</label>
+    <input class="form-control" id="your-birthday" name="your-birthday" type="date"/>
+  </div>
+  <div class="form-group">
+    <label class="form-label" for="your-color">Your favorite color</label>
+    <input class="form-control" id="your-color" name="your-color" type="color" value="#6524d6"/>
   </div>
 </Preview>
 
@@ -34,9 +50,19 @@ Wrap the label and the input into `form-group` elements to control the two’s m
   <label class="form-label" for="your-email">Email</label>
   <input class="form-control" id="your-email" name="your-email" type="email"/>
 </div>
+<div class="form-group">
+  <label class="form-label" for="your-birthday">Birthday</label>
+  <input class="form-control" id="your-birthday" name="your-birthday" type="date"/>
+</div>
+<div class="form-group">
+  <label class="form-label" for="your-color">Your favorite color</label>
+  <input class="form-control" id="your-color" name="your-color" type="color" value="#6524d6"/>
+</div>
 ```
 
 ## Textarea
+
+Use the form-control class on any textarea to style it. To set the global height of it use the <code><a href="/docs/sass/variables#control">$form-control-textarea-height</a></code> variable.
 
 <Preview>
   <div class="form-group">
