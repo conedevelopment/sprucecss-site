@@ -32,13 +32,13 @@
     prism: (
       color: hsl(243 14% 29%),
       background: hsl(0 0% 98%),
-      comment: hsl(223 14% 65%),
+      comment: hsl(225 14% 46%),
       punctuation: hsl(279 50% 53%),
       namespace: hsl(182 86% 33%),
       deleted: hsla(1 83% 63% / 0.56),
       boolean: hsl(0 44% 53%),
       number: hsl(315 90% 35%),
-      constant: hsl(221 63% 56%),
+      constant: rgb(63, 107, 202),
       class-name: hsl(0 0% 7%),
       regex: hsl(1 48% 59%)
     )
