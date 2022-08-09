@@ -129,19 +129,27 @@ Use the `form-control` class on any select element to style it. Use the `multipl
 
 For styling radio elements, use the `form-check` class on the label element and place the `input` (with the `form-check__control` class) and `span` (with the `form-check__label` class) inside it.
 
-Adding the `form-group--vertical-check` modifier class to the `form-group` element, you can stack the radios under each other.
+Adding the `form-group--vertical-check` modifier class to the `form-group` element, you can stack them vertically or with the `form-group--horizontal-check` horizontally.
 
 <Preview>
   <fieldset>
-    <legend>Do you own or rent?</legend>
+    <legend>Radio (Vertical)</legend>
     <div class="form-group form-group--vertical-check">
       <label class="form-check">
-        <input class="form-check__control" type="radio" value="own" name="property-ownership"/>
-        <span class="form-label form-check__label">Own</span>
+        <input class="form-check__control" type="radio" value="react" name="radio-example-vertical"/>
+        <span class="form-label form-check__label">React</span>
       </label>
       <label class="form-check">
-        <input class="form-check__control" type="radio" value="rent" name="property-ownership"/>
-        <span class="form-label form-check__label">Rent</span>
+        <input class="form-check__control" type="radio" value="vue" name="radio-example-vertical" disabled="disabled"/>
+        <span class="form-label form-check__label">Vue</span>
+      </label>
+      <label class="form-check">
+        <input class="form-check__control" type="radio" value="svelte" name="radio-example-vertical"/>
+        <span class="form-label form-check__label">Svelte</span>
+      </label>
+      <label class="form-check">
+        <input class="form-check__control" type="radio" value="ember" name="radio-example-vertical"/>
+        <span class="form-label form-check__label">Ember</span>
       </label>
     </div>
   </fieldset>
@@ -149,15 +157,71 @@ Adding the `form-group--vertical-check` modifier class to the `form-group` eleme
 
 ```html
 <fieldset>
-  <legend>Do you own or rent?</legend>
+  <legend>Radio (Vertical)</legend>
   <div class="form-group form-group--vertical-check">
     <label class="form-check">
-      <input class="form-check__control" type="radio" value="own" name="property-ownership"/>
-      <span class="form-label form-check__label">Own</span>
+      <input class="form-check__control" type="radio" value="react" name="radio-example-vertical"/>
+      <span class="form-label form-check__label">React</span>
     </label>
     <label class="form-check">
-      <input class="form-check__control" type="radio" value="rent" name="property-ownership"/>
-      <span class="form-label form-check__label">Rent</span>
+      <input class="form-check__control" type="radio" value="vue" name="radio-example-vertical" disabled="disabled"/>
+      <span class="form-label form-check__label">Vue</span>
+    </label>
+    <label class="form-check">
+      <input class="form-check__control" type="radio" value="svelte" name="radio-example-vertical"/>
+      <span class="form-label form-check__label">Svelte</span>
+    </label>
+    <label class="form-check">
+      <input class="form-check__control" type="radio" value="ember" name="radio-example-vertical"/>
+      <span class="form-label form-check__label">Ember</span>
+    </label>
+  </div>
+</fieldset>
+```
+
+<Preview>
+  <fieldset>
+    <legend>Radio (Horizontal)</legend>
+    <div class="form-group form-group--horizontal-check">
+      <label class="form-check">
+        <input class="form-check__control" type="radio" value="react" name="radio-example-horizontal"/>
+        <span class="form-label form-check__label">React</span>
+      </label>
+      <label class="form-check">
+        <input class="form-check__control" type="radio" value="vue" name="radio-example-horizontal"/>
+        <span class="form-label form-check__label">Vue</span>
+      </label>
+      <label class="form-check">
+        <input class="form-check__control" type="radio" value="svelte" name="radio-example-horizontal"/>
+        <span class="form-label form-check__label">Svelte</span>
+      </label>
+      <label class="form-check">
+        <input class="form-check__control" type="radio" value="ember" name="radio-example-horizontal"/>
+        <span class="form-label form-check__label">Ember</span>
+      </label>
+    </div>
+  </fieldset>
+</Preview>
+
+```html
+<fieldset>
+  <legend>Radio (Horizontal)</legend>
+  <div class="form-group form-group--horizontal-check">
+    <label class="form-check">
+      <input class="form-check__control" type="radio" value="react" name="radio-example-horizontal"/>
+      <span class="form-label form-check__label">React</span>
+    </label>
+    <label class="form-check">
+      <input class="form-check__control" type="radio" value="vue" name="radio-example-horizontal"/>
+      <span class="form-label form-check__label">Vue</span>
+    </label>
+    <label class="form-check">
+      <input class="form-check__control" type="radio" value="svelte" name="radio-example-horizontal"/>
+      <span class="form-label form-check__label">Svelte</span>
+    </label>
+    <label class="form-check">
+      <input class="form-check__control" type="radio" value="ember" name="radio-example-horizontal"/>
+      <span class="form-label form-check__label">Ember</span>
     </label>
   </div>
 </fieldset>
@@ -215,6 +279,52 @@ Adding the `form-group--vertical-check` modifier class to the `form-group` eleme
     </label>
   </div>
 </fieldset>
+```
+
+## Switch
+
+The switch is a styled checkbox. Use the `form-switch` class to display it.
+
+<Preview>
+<div class="form-group form-group--vertical-check">
+  <label class="form-switch form-switch--sm">
+    <span class="form-label form-switch__label">Enable notifications</span>
+    <input class="form-switch__control" type="checkbox" value="true"/>
+  </label>
+  <label class="form-switch">
+    <input class="form-switch__control" type="checkbox" value="true"/>
+    <span class="form-label form-switch__label">Enable notifications</span>
+  </label>
+  <label class="form-switch form-switch--lg form-switch--block">
+    <span class="form-label form-switch__label">Enable notifications</span>
+    <input class="form-switch__control" type="checkbox" value="true"/>
+  </label>
+  <label class="form-switch form-switch--lg form-switch--block">
+    <input class="form-switch__control" type="checkbox" value="true" disabled="disabled"/>
+    <span class="form-label form-switch__label">Enable notifications</span>
+  </label>
+</div>
+</Preview>
+
+```html
+<div class="form-group form-group--vertical-check">
+  <label class="form-switch form-switch--sm">
+    <span class="form-label form-switch__label">Enable notifications</span>
+    <input class="form-switch__control" type="checkbox" value="true"/>
+  </label>
+  <label class="form-switch">
+    <input class="form-switch__control" type="checkbox" value="true"/>
+    <span class="form-label form-switch__label">Enable notifications</span>
+  </label>
+  <label class="form-switch form-switch--lg form-switch--block">
+    <span class="form-label form-switch__label">Enable notifications</span>
+    <input class="form-switch__control" type="checkbox" value="true"/>
+  </label>
+  <label class="form-switch form-switch--lg form-switch--block">
+    <input class="form-switch__control" type="checkbox" value="true" disabled="disabled"/>
+    <span class="form-label form-switch__label">Enable notifications</span>
+  </label>
+</div>
 ```
 
 ## Fieldset
