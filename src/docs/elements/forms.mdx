@@ -15,11 +15,11 @@ We differentiate the following groups for styling:
 
 ## Input
 
-Use the `form-control` class on the input (that doesn’t have the type of radio, checkbox or range) and `form-label` on the label elements to apply the formatting.
+Use the `form-control` class on the input (that doesn’t have the type of radio, checkbox, or range) and `form-label` on the label elements to apply the formatting.
 
 Wrap the label and the input into `form-group` elements to control the two’s margin.
 
-You can set two additional size with: `form-control--sm` and `form-control--lg` modifier class.
+You can set two additional sizes with `form-control--sm` and `form-control--lg` modifier class.
 
 [Form-control related variables.](/docs/sass/variables#control)
 
@@ -67,7 +67,7 @@ Use the `form-file` class on an `input[type="file"]` to nativly stlye the file i
 
 - You can size the input with `form-file--sm` and `form-file--lg`.
 - The styling is the same as the `.btn`.
-- The focus state is differs from the button because we can't set box-shadow (it will be cut down).
+- The focus state differs from the button because we can’t set box-shadow (it will be cut down).
 
 [Form-file related variables.](/docs/sass/variables#file)
 
@@ -109,7 +109,7 @@ Use the `form-file` class on an `input[type="file"]` to nativly stlye the file i
 
 ## Range
 
-Use the `form-range` class on an `input[type="range"]` to nativly stlye the range input.
+Use the `form-range` class on an `input[type="range"]` to natively style the range input.
 
 - You can size the input with `form-range--sm` and `form-range--lg`.
 
@@ -155,7 +155,7 @@ Use the `form-control` class on any textarea element to style it. To set the glo
 
 ## Select
 
-Use the `form-control` class on any select element to style it. Use the `multiple` attribute for multiple option select.
+Use the `form-control` class on any select element to style it. Use the `multiple` attributes for multiple option selection.
 
 [Select related variables.](/docs/sass/variables#select)
 
@@ -208,7 +208,7 @@ For styling radio elements, use the `form-check` class on the label element and 
 - Use the `form-group--vertical-check` modifier class to align the group vertically,
 - and the `form-group--horizontal-check` to align horizontally.
 
-You can set two additional size with: `form-check--sm` and `form-check--lg` modifier class.
+You can set two additional sizes with `form-check--sm` and `form-check--lg` modifier class.
 
 [Check related variables.](/docs/sass/variables#check)
 
@@ -310,7 +310,7 @@ You can set two additional size with: `form-check--sm` and `form-check--lg` modi
 
 ## Checkbox
 
-For styling checkbox elements, use the `form-check` class on the label element and place the `input` (with the `form-check__control` class) and `span` (with the `form-check__label` class) inside it. You can also display an indeterminate state programmatically.
+Use the `form-check` class on the label element for styling checkbox elements and place the input (with the `form-check__control` class) and span (with the `form-check__label` class) inside it.  You can also display an indeterminate state programmatically.
 
 <Preview>
   <fieldset>
@@ -364,7 +364,7 @@ For styling checkbox elements, use the `form-check` class on the label element a
 
 The switch is a styled checkbox. Use the `form-switch` class to display it.
 
-You can set two additional size with: `form-switch--sm` and `form-switch--lg` modifier class.
+You can set two additional sizes with `form-switch--sm` and `form-switch--lg` modifier class.
 
 [Switch related variables.](/docs/sass/variables#switch)
 
@@ -450,7 +450,7 @@ Use the `form-description` class to create a description text under an input ele
   <div class="form-group">
     <label class="form-label" for="first-name-2">First Name</label>
     <input class="form-control" id="first-name-2" name="first-name-2" type="text" aria-describedby="first-name-description"/>
-    <span id="first-name-description" class="form-description">Just a help text for presentation purpose.</span>
+    <span id="first-name-description" class="form-description">Just a help text for presentation purposes.</span>
   </div>
 </Preview>
 
@@ -498,12 +498,12 @@ Using the `disabled` attribute, you can create disabled state on inputs.
 
 ## Form Group
 
-Form-group is the generic container class for form elements. Besides the basic implementations you can use the followings:
+Form-group is the generic container class for form elements. Besides the basic implementations, you can use the followings:
 
-- `form-group--vertical-check`: to stack the radio, checkbox and switches vertically.
-- `form-group--horizontal-check`: to stack the radio, checkbox and switches horizontally.
+- `form-group--vertical-check`: to stack the radio, checkbox, and switches vertically.
+- `form-group--horizontal-check`: to stack the radio, checkbox, and switches horizontally.
 - `form-group--row`: to align the label to the left side of the group.
-- `form-group--stacked`: to stack the inputs beside eachother.
+- `form-group--stacked`: to stack the inputs beside each other.
 
 <Preview>
   <fieldset>
