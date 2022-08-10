@@ -61,6 +61,80 @@ You can set two additional size with: `form-control--sm` and `form-control--lg` 
 </div>
 ```
 
+## File
+
+Use the `form-file` class on an `input[type="file"]` to nativly stlye the file input.
+
+- You can size the input with `form-file--sm` and `form-file--lg`.
+- The styling is the same as the `.btn`.
+- The focus state is differs from the button because we can't set box-shadow (it will be cut down).
+
+[Form-file related variables.](/docs/sass/variables#file)
+
+<Preview>
+  <fieldset>
+    <legend>File Inputs</legend>
+    <div class="form-group">
+      <label class="form-label" for="avatar-lg">Avatar (Large)</label>
+      <input class="form-file form-file--lg" type="file" id="avatar-lg" accept="image/png, image/jpeg"/>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="avatar">Avatar</label>
+      <input class="form-file form-file" type="file" id="avatar" accept="image/png, image/jpeg"/>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="files">Files</label>
+      <input class="form-file form-file--sm" type="file" id="files" multiple="multiple" accept="image/png, image/jpeg"/>
+    </div>
+  </fieldset>
+</Preview>
+
+```html
+  <fieldset>
+    <legend>File Inputs</legend>
+    <div class="form-group">
+      <label class="form-label" for="avatar-lg">Avatar (Large)</label>
+      <input class="form-file form-file--lg" type="file" id="avatar-lg" accept="image/png, image/jpeg"/>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="avatar">Avatar</label>
+      <input class="form-file form-file" type="file" id="avatar" accept="image/png, image/jpeg"/>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="files">Files</label>
+      <input class="form-file form-file--sm" type="file" id="files" multiple="multiple" accept="image/png, image/jpeg"/>
+    </div>
+  </fieldset>
+```
+
+## Range
+
+Use the `form-range` class on an `input[type="range"]` to nativly stlye the range input.
+
+- You can size the input with `form-range--sm` and `form-range--lg`.
+
+[Form-range related variables.](/docs/sass/variables#range)
+
+<Preview>
+  <fieldset>
+    <legend>Range</legend>
+    <div class="form-group">
+      <label class="form-label" for="rating">Your Rating</label>
+      <input class="form-range form-range--lg" type="range" id="rating" min="-10" max="10"/>
+    </div>
+  </fieldset>
+</Preview>
+
+```html
+<fieldset>
+  <legend>Range</legend>
+  <div class="form-group">
+    <label class="form-label" for="rating">Your Rating</label>
+    <input class="form-range form-range--lg" type="range" id="rating" min="-10" max="10"/>
+  </div>
+</fieldset>
+```
+
 ## Textarea
 
 Use the `form-control` class on any textarea element to style it. To set the global height of it use the <code><a href="/docs/sass/variables#control">$form-control-textarea-height</a></code> variable.
@@ -450,12 +524,12 @@ Using the `disabled` attribute, you can create disabled state on inputs.
     <input class="form-control" id="your-name-disabled" name="your-name-disabled" type="text" disabled/>
   </div>
   <div class="form-group">
-    <label class="form-label" for="cars-disabled">Your favorite car brand</label>
-    <select class="form-control" id="cars-disabled" name="cars-disabled" disabled>
-      <option value="volvo">Volvo</option>
-      <option value="saab">Saab</option>
-      <option value="mercedes">Mercedes</option>
-      <option value="audi">Audi</option>
+    <label class="form-label" for="front-end-frameworks-disabled">Front-end Frameworks</label>
+    <select class="form-control" id="front-end-frameworks-disabled" disabled>
+      <option value="react">React</option>
+      <option value="vue">Vue</option>
+      <option value="svelte">Svelte</option>
+      <option value="ember">Ember</option>
     </select>
   </div>
 </Preview>
