@@ -19,6 +19,8 @@ Use the `form-control` class on the input (that doesn’t have the type of radio
 
 Wrap the label and the input into `form-group` elements to control the two’s margin.
 
+You can set two additional size with: `form-control--sm` and `form-control--lg` modifier class.
+
 [Form-control related variables.](/docs/sass/variables#control)
 
 <Preview>
@@ -129,7 +131,12 @@ Use the `form-control` class on any select element to style it. Use the `multipl
 
 For styling radio elements, use the `form-check` class on the label element and place the `input` (with the `form-check__control` class) and `span` (with the `form-check__label` class) inside it.
 
-Adding the `form-group--vertical-check` modifier class to the `form-group` element, you can stack them vertically or with the `form-group--horizontal-check` horizontally.
+- Use the `form-group--vertical-check` modifier class to align the group vertically,
+- and the `form-group--horizontal-check` to align horizontally.
+
+You can set two additional size with: `form-check--sm` and `form-check--lg` modifier class.
+
+[Check related variables.](/docs/sass/variables#check)
 
 <Preview>
   <fieldset>
@@ -231,27 +238,25 @@ Adding the `form-group--vertical-check` modifier class to the `form-group` eleme
 
 For styling checkbox elements, use the `form-check` class on the label element and place the `input` (with the `form-check__control` class) and `span` (with the `form-check__label` class) inside it. You can also display an indeterminate state programmatically.
 
-Adding the `form-group--vertical-check` modifier class to the `form-group` element, you can stack the radios under each other.
-
 <Preview>
   <fieldset>
-    <legend>Which one of you like?</legend>
+    <legend>Checkbox</legend>
     <div class="form-group form-group--vertical-check">
       <label class="form-check">
-        <input class="form-check__control" type="checkbox" value="own" name="property-ownership2"/>
-        <span class="form-label form-check__label">Own</span>
+        <input class="form-check__control" type="checkbox" id="indeterminate" value="react" name="checkbox-example"/>
+        <span class="form-label form-check__label">React</span>
       </label>
       <label class="form-check">
-        <input class="form-check__control" type="checkbox" value="rent" name="property-ownership2" disabled="disabled"/>
-        <span class="form-label form-check__label">Rent</span>
+        <input class="form-check__control" type="checkbox" value="vue" name="checkbox-example" disabled="disabled"/>
+        <span class="form-label form-check__label">Vue</span>
       </label>
       <label class="form-check">
-        <input class="form-check__control" type="checkbox" value="misc" name="property-ownership2"/>
-        <span class="form-label form-check__label">Misc</span>
+        <input class="form-check__control" type="checkbox" value="svelte" name="checkbox-example"/>
+        <span class="form-label form-check__label">Svelte</span>
       </label>
       <label class="form-check">
-        <input class="form-check__control" id="indeterminate" type="checkbox" value="misc" name="property-ownership2" ref={input => { if (input) { input.indeterminate = true; } }} />
-        <span class="form-label form-check__label">Indeterminate</span>
+        <input class="form-check__control" type="checkbox" value="ember" name="checkbox-example"/>
+        <span class="form-label form-check__label">Ember</span>
       </label>
     </div>
   </fieldset>
@@ -284,6 +289,10 @@ Adding the `form-group--vertical-check` modifier class to the `form-group` eleme
 ## Switch
 
 The switch is a styled checkbox. Use the `form-switch` class to display it.
+
+You can set two additional size with: `form-switch--sm` and `form-switch--lg` modifier class.
+
+[Switch related variables.](/docs/sass/variables#switch)
 
 <Preview>
 <div class="form-group form-group--vertical-check">
@@ -407,161 +416,6 @@ You can create a row stack using `form-row--mixed` class. It uses flexbox and au
     <input class="form-control" id="zip" name="zip" type="text"/>
   </div>
 </div>
-```
-
-## Sizes
-
-You can use different sizes on `form-control` and `form-check` if needed.
-
-### Text Input Sizes
-
-<Preview>
-  <div class="form-group">
-    <label class="form-label" for="street-address-sm">Street Address (Small)</label>
-    <input class="form-control form-control--sm" id="street-address-sm" name="street-address-sm" type="text"/>
-  </div>
-  <div class="form-group">
-    <label class="form-label" for="street-address-regular">Street Address (Regular)</label>
-    <input class="form-control" id="street-address-regular" name="street-address-regular" type="text"/>
-  </div>
-  <div class="form-group">
-    <label class="form-label" for="street-address-lg">Street Address (Large)</label>
-    <input class="form-control form-control--lg" id="street-address-lg" name="street-address-lg" type="text"/>
-  </div>
-</Preview>
-
-```html
-<div class="form-group">
-  <label class="form-label" for="street-address-sm">Street Address (Small)</label>
-  <input class="form-control form-control--sm" id="street-address-sm" name="street-address-sm" type="text"/>
-</div>
-<div class="form-group">
-  <label class="form-label" for="street-address-regular">Street Address (Regular)</label>
-  <input class="form-control" id="street-address-regular" name="street-address-regular" type="text"/>
-</div>
-<div class="form-group">
-  <label class="form-label" for="street-address-lg">Street Address (Large)</label>
-  <input class="form-control form-control--lg" id="street-address-lg" name="street-address-lg" type="text"/>
-</div>
-
-```
-
-### Select Sizes
-
-<Preview>
-<div class="form-group">
-  <label class="form-label" for="cars">Your favorite car brand (Small)</label>
-  <select class="form-control form-control--sm" id="cars" name="cars">
-    <option value="volvo">Volvo</option>
-    <option value="saab">Saab</option>
-    <option value="mercedes">Mercedes</option>
-    <option value="audi">Audi</option>
-  </select>
-</div>
-<div class="form-group">
-  <label class="form-label" for="cars">Your favorite car brand (Regular)</label>
-  <select class="form-control form-control" id="cars" name="cars">
-    <option value="volvo">Volvo</option>
-    <option value="saab">Saab</option>
-    <option value="mercedes">Mercedes</option>
-    <option value="audi">Audi</option>
-  </select>
-</div>
-<div class="form-group">
-  <label class="form-label" for="cars">Your favorite car brand (Large)</label>
-  <select class="form-control form-control--lg" id="cars" name="cars">
-    <option value="volvo">Volvo</option>
-    <option value="saab">Saab</option>
-    <option value="mercedes">Mercedes</option>
-    <option value="audi">Audi</option>
-  </select>
-</div>
-</Preview>
-
-```html
-<div class="form-group">
-  <label class="form-label" for="cars-sm">Your favorite car brand (Small)</label>
-  <select class="form-control form-control--sm" id="cars-sm" name="cars-sm">
-    <option value="volvo">Volvo</option>
-    ...
-  </select>
-</div>
-<div class="form-group">
-  <label class="form-label" for="cars-regular">Your favorite car brand (Regular)</label>
-  <select class="form-control form-control" id="cars-regular" name="cars-regular">
-    <option value="volvo">Volvo</option>
-    ...
-  </select>
-</div>
-<div class="form-group">
-  <label class="form-label" for="cars-lg">Your favorite car brand (Large)</label>
-  <select class="form-control form-control--lg" id="cars-lg" name="cars-lg">
-    <option value="volvo">Volvo</option>
-    ...
-  </select>
-</div>
-```
-
-### Checkbox, Radio Sizes
-
-<Preview>
-  <fieldset>
-    <legend>Do you own or rent?</legend>
-    <div class="form-group form-group--vertical-check">
-      <label class="form-check">
-        <input class="form-check__control" type="radio" value="own" name="property-ownership-sizes"/>
-        <span class="form-label form-check__label">Own (Regular)</span>
-      </label>
-      <label class="form-check form-check--lg">
-        <input class="form-check__control" type="radio" value="rent" name="property-ownership-sizes"/>
-        <span class="form-label form-check__label">Rent (Large)</span>
-      </label>
-    </div>
-  </fieldset>
-
-  <fieldset>
-    <legend>Which one of you like?</legend>
-    <div class="form-group form-group--vertical-check">
-      <label class="form-check">
-        <input class="form-check__control" type="checkbox" value="own" name="property-ownership-checkbox-sizes"/>
-        <span class="form-label form-check__label">Own (Regular)</span>
-      </label>
-      <label class="form-check form-check--lg">
-        <input class="form-check__control" type="checkbox" value="rent" name="property-ownership-checkbox-sizes"/>
-        <span class="form-label form-check__label">Rent (Large)</span>
-      </label>
-    </div>
-  </fieldset>
-</Preview>
-
-```html
-<fieldset>
-  <legend>Do you own or rent?</legend>
-  <div class="form-group form-group--vertical-check">
-    <label class="form-check">
-      <input class="form-check__control" type="radio" value="own" name="property-ownership-sizes"/>
-      <span class="form-label form-check__label">Own (Regular)</span>
-    </label>
-    <label class="form-check form-check--lg">
-      <input class="form-check__control" type="radio" value="rent" name="property-ownership-sizes"/>
-      <span class="form-label form-check__label">Rent (Large)</span>
-    </label>
-  </div>
-</fieldset>
-
-<fieldset>
-  <legend>Which one of you like?</legend>
-  <div class="form-group form-group--vertical-check">
-    <label class="form-check">
-      <input class="form-check__control" type="checkbox" value="own" name="property-ownership-checkbox-sizes"/>
-      <span class="form-label form-check__label">Own (Regular)</span>
-    </label>
-    <label class="form-check form-check--lg">
-      <input class="form-check__control" type="checkbox" value="rent" name="property-ownership-checkbox-sizes"/>
-      <span class="form-label form-check__label">Rent (Large)</span>
-    </label>
-  </div>
-</fieldset>
 ```
 
 ## Validation
