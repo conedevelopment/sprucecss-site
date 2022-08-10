@@ -30,10 +30,6 @@ h6 {
   font-family: var(--doc-heading-font-family);
 }
 
-.btn--rounded {
-  border-radius: 1rem;
-}
-
 .btn--install { @include spruce.btn-variant(install); }
 .btn--decline { @include spruce.btn-variant(decline); }
 

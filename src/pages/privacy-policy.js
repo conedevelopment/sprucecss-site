@@ -39,7 +39,7 @@ export default function PrivacyPolicy() {
               <div>
                 <p>If you want to opt-out or accept our cookies, please press the button below.</p>
                 <div>
-                  <button className="btn btn--decline btn--rounded" onClick={handleCookie}>Decline Cookies</button>
+                  <button className="btn btn--decline" onClick={handleCookie}>Decline Cookies</button>
                 </div>
               </div>
               : ''

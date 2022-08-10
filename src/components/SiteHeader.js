@@ -54,8 +54,8 @@ export default function SiteHeader() {
         containerClasses="cookie-consent"
         contentClasses="cookie-consent__body"
         buttonWrapperClasses="cookie-consent__btns"
-        declineButtonClasses="btn btn--decline btn--rounded"
-        buttonClasses="btn btn--primary btn--rounded"
+        declineButtonClasses="btn btn--decline"
+        buttonClasses="btn btn--primary"
         enableDeclineButton
         location="none"
         buttonText="Accept"
@@ -83,7 +83,7 @@ export default function SiteHeader() {
               <button className="site-header__slogan" onClick={handleSlogan} aria-live="assertive">{slogan}</button>
             </div>
             <nav className="site-header__navigation">
-              <button className="btn btn--primary btn--icon btn--rounded site-header__toggle" onClick={handleMenuClick} aria-controls="primary-menu" aria-expanded={menuVisible ? "true" : "false"} aria-label={menuVisible ? "Close navigation" : "Open navigation"}>
+              <button className="btn btn--primary btn--icon site-header__toggle" onClick={handleMenuClick} aria-controls="primary-menu" aria-expanded={menuVisible ? "true" : "false"} aria-label={menuVisible ? "Close navigation" : "Open navigation"}>
                 <MenuIcon className="btn__icon" width="30" height="30" />
               </button>
               <ul>
@@ -94,10 +94,10 @@ export default function SiteHeader() {
               </ul>
             </nav>
             <div className="site-header__actions">
-              <a href="https://github.com/conedevelopment/sprucecss" aria-label="GitHub" className="btn btn--primary btn--icon btn--rounded btn--github">
+              <a href="https://github.com/conedevelopment/sprucecss" aria-label="GitHub" className="btn btn--primary btn--icon btn--github">
                 <GitHubIcon className="btn__icon" width="30" height="30" />
               </a>
-              <a href="https://twitter.com/conedevelopment" aria-label="GitHub" className="btn btn--primary btn--icon btn--rounded btn--twitter">
+              <a href="https://twitter.com/conedevelopment" aria-label="GitHub" className="btn btn--primary btn--icon btn--twitter">
                 <TwitterIcon className="btn__icon" width="30" height="30" />
               </a>
             </div>

@@ -20,7 +20,7 @@ export default function NotFoundPage() {
               <h1 className="l-error-404__title">Ooops! You weren’t supposed to see this</h1>
               <p className="l-error-404__description">We couldn’t find the page you were looking for.</p>
               <div className="l-error-404__btns">
-                <Link to="/" className="btn btn--primary btn--rounded">Go home</Link>
+                <Link to="/" className="btn btn--primary">Go home</Link>
               </div>
             </div>
           </div>
