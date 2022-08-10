@@ -454,44 +454,6 @@ Use the `form-description` class to create a description text under an input ele
   </div>
 </Preview>
 
-## Row
-
-You can create a row stack using `form-row--mixed` class. It uses flexbox and automatically sets the columns based on the `--col-width` custom property.
-
-<Preview>
-  <div class="form-row--mixed">
-    <div class="form-group" style={{'--col-width': '30ch'}}>
-      <label class="form-label" for="city">City</label>
-      <input class="form-control" id="city" name="city" type="text"/>
-    </div>
-    <div class="form-group">
-      <label class="form-label" for="state">State</label>
-      <input class="form-control" id="state" name="state" type="text"/>
-    </div>
-    <div class="form-group">
-      <label class="form-label" for="zip">Zip</label>
-      <input class="form-control" id="zip" name="zip" type="text"/>
-    </div>
-  </div>
-</Preview>
-
-```html
-<div class="form-row--mixed">
-  <div class="form-group" style="--col-width: 30ch">
-    <label class="form-label" for="city">City</label>
-    <input class="form-control" id="city" name="city" type="text"/>
-  </div>
-  <div class="form-group">
-    <label class="form-label" for="state">State</label>
-    <input class="form-control" id="state" name="state" type="text"/>
-  </div>
-  <div class="form-group">
-    <label class="form-label" for="zip">Zip</label>
-    <input class="form-control" id="zip" name="zip" type="text"/>
-  </div>
-</div>
-```
-
 ## Validation
 
 You can set valid and invalid states on `form-control` elements using the `form-control--valid` and `form-control--invalid` class modifiers.
@@ -533,3 +495,120 @@ Using the `disabled` attribute, you can create disabled state on inputs.
     </select>
   </div>
 </Preview>
+
+## Form Group
+
+Form-group is the generic container class for form elements. Besides the basic implementations you can use the followings:
+
+- `form-group--vertical-check`: to stack the radio, checkbox and switches vertically.
+- `form-group--horizontal-check`: to stack the radio, checkbox and switches horizontally.
+- `form-group--row`: to align the label to the left side of the group.
+- `form-group--stacked`: to stack the inputs beside eachother.
+
+<Preview>
+  <fieldset>
+    <legend>Form Group Row</legend>
+    <div class="form-group--row">
+      <label class="form-label" for="first-name-row">First Name</label>
+      <input class="form-control" id="first-name-row" type="text"/>
+      <span class="form-description">Just a help text for presentation purpose</span>
+    </div>
+    <div class="form-group--row">
+      <label class="form-label" for="front-end-frameworks-row">Front-end Frameworks</label>
+      <select class="form-control" id="front-end-frameworks-row">
+        <option value="react">React</option>
+        <option value="vue">Vue</option>
+        <option value="svelte">Svelte</option>
+        <option value="ember">Ember</option>
+      </select>
+    </div>
+  </fieldset>
+</Preview>
+
+```html
+<fieldset>
+  <legend>Form Group Row</legend>
+  <div class="form-group--row">
+    <label class="form-label" for="first-name-row">First Name</label>
+    <input class="form-control" id="first-name-row" type="text"/>
+    <span class="form-description">Just a help text for presentation purpose</span>
+  </div>
+  <div class="form-group--row">
+    <label class="form-label" for="front-end-frameworks-row">Front-end Frameworks</label>
+    <select class="form-control" id="front-end-frameworks-row">
+      <option value="react">React</option>
+      <option value="vue">Vue</option>
+      <option value="svelte">Svelte</option>
+      <option value="ember">Ember</option>
+    </select>
+  </div>
+</fieldset>
+```
+
+<Preview>
+  <fieldset>
+    <legend>Form Group Stacked</legend>
+    <div class="form-group--stacked">
+      <input class="form-control" type="text" aria-label="First Name"/>
+      <input class="form-control" type="text" aria-label="Last Name"/>
+    </div>
+    <div class="form-group--stacked">
+      <input class="form-control" type="text" aria-label="First Name"/>
+      <input class="form-control" type="text" aria-label="Last Name"/>
+      <button class="btn btn--primary">Submit</button>
+    </div>
+  </fieldset>
+</Preview>
+
+```html
+<fieldset>
+  <legend>Form Group Stacked</legend>
+  <div class="form-group--stacked">
+    <input class="form-control" type="text" aria-label="First Name"/>
+    <input class="form-control" type="text" aria-label="Last Name"/>
+  </div>
+  <div class="form-group--stacked">
+    <input class="form-control" type="text" aria-label="First Name"/>
+    <input class="form-control" type="text" aria-label="Last Name"/>
+    <button class="btn btn--primary">Submit</button>
+  </div>
+</fieldset>
+```
+
+## Row
+
+You can create a row stack using `form-row--mixed` class. It uses flexbox and automatically sets the columns based on the `--col-width` custom property.
+
+<Preview>
+  <div class="form-row--mixed">
+    <div class="form-group" style={{'--col-width': '30ch'}}>
+      <label class="form-label" for="city">City</label>
+      <input class="form-control" id="city" name="city" type="text"/>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="state">State</label>
+      <input class="form-control" id="state" name="state" type="text"/>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="zip">Zip</label>
+      <input class="form-control" id="zip" name="zip" type="text"/>
+    </div>
+  </div>
+</Preview>
+
+```html
+<div class="form-row--mixed">
+  <div class="form-group" style="--col-width: 30ch">
+    <label class="form-label" for="city">City</label>
+    <input class="form-control" id="city" name="city" type="text"/>
+  </div>
+  <div class="form-group">
+    <label class="form-label" for="state">State</label>
+    <input class="form-control" id="state" name="state" type="text"/>
+  </div>
+  <div class="form-group">
+    <label class="form-label" for="zip">Zip</label>
+    <input class="form-control" id="zip" name="zip" type="text"/>
+  </div>
+</div>
+```
