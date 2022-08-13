@@ -23,6 +23,7 @@ export default function TableOfContents({ headings }) {
           heading.depth < 4 &&
           heading.value !== 'Example(s)' &&
           heading.value !== 'Argument(s)' &&
+          heading.value !== 'Parameter(s)' &&
           heading.value !== 'References'
         )
         .map(heading => (
