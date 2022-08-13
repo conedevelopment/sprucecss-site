@@ -15,6 +15,7 @@ export default function Sidebar() {
             <li><Link to="/docs/getting-started/accessibility">Accessibility</Link></li>
             <li><Link to="/docs/getting-started/internationalization">Internationalization</Link></li>
             <li><Link to="/docs/getting-started/print">Print</Link></li>
+            <li><Link to="/docs/getting-started/js">JS</Link></li>
             <li><Link to="/docs/getting-started/contribution">Contribution</Link></li>
             <li><Link to="/docs/getting-started/appendix">Appendix</Link></li>
           </ul>

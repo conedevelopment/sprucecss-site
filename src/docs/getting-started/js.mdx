@@ -1,0 +1,24 @@
+---
+title: 'JS'
+order: 8
+github: 'https://github.com/conedevelopment/sprucecss-site/blob/main/src/docs/getting-started/js.mdx'
+---
+
+<p class="lead">Spruce has some print-related styles. Nothing severe or fancy, but a set of minimal styles.</p>
+
+You can turn on basic print styles from the `$settings` map; set the `print` to `true` to turn it on.
+
+```scss
+@use '~sprucecss/scss/spruce' with (
+  $settings: (
+    print: true
+  )
+);
+```
+
+[Print-related variables](/docs/sass/variables#print).
+
+**You get the following with the print styles:**
+- with the `$print-page-margin` variable (default value: 2cm), you can control the margin of the page.
+- With the `$print-hidden-elements`, you can hide elements from print view.
+- You get the URLs of the links after `<a>` elements.
