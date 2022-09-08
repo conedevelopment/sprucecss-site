@@ -1,0 +1,39 @@
+@use '~sprucecss/scss/spruce';
+
+.l-component {
+  padding-block-start: spruce.spacer-clamp(m, l);
+  padding-block-end: spruce.spacer-clamp(l, xl);
+
+  &__header {
+    @include spruce.layout-stack(s);
+    margin-block-end: spruce.spacer-clamp(l, xl);
+    max-width: 70ch;
+  }
+
+  &__body {
+    column-gap: spruce.spacer(xl);
+    display: grid;
+    grid-auto-rows: min-content;
+    grid-template-columns: minmax(0, 1fr);
+    padding-block-start: spruce.spacer-clamp(l, xl);
+    row-gap: spruce.spacer(m);
+
+
+    @include spruce.breakpoint(lg) {
+      grid-template-columns: minmax(0, 15rem) minmax(0, 3.5fr) minmax(0, 15rem);
+    }
+  }
+
+  &__table-of-content {
+    font-size: 1rem;
+  }
+
+  &__title {
+    font-size: spruce.responsive-font-size(
+      $size: 3.3rem,
+      $scaler: 40,
+      $optimal-size: '3vw + 1rem'
+    );
+    margin: 0;
+  }
+}

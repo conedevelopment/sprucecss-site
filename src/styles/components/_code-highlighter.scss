@@ -6,11 +6,20 @@
   overflow: hidden;
 
   &__header {
+    align-items: center;
     background-color: spruce.color(header-background, code-highlighter);
     border-block-end: 1px solid spruce.color(border);
     border-start-start-radius: spruce.$border-radius-sm;
     border-start-end-radius: spruce.$border-radius-sm;
+    display: flex;
+    gap: spruce.spacer(m);
+    justify-content: space-between;
     padding: spruce.spacer(s);
+  }
+
+  &__title {
+    font-size: spruce.font-size(h5);
+    margin-block: 0;
   }
 
   &__group {
