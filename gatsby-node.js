@@ -30,6 +30,22 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
+  const dataUI = await graphql(`
+    query {
+      docs: allMdx(
+        sort: {order: ASC, fields: frontmatter___order}
+        filter: {fields: {collection: {eq: "component"}}}
+      ) {
+        nodes {
+          slug
+          frontmatter {
+            title
+          }
+        }
+      }
+    }
+  `);
+
   const dataBlog = await graphql(`
     query {
       posts: allMdx(
@@ -55,6 +71,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
 
   const docPages = dataDocs.data.docs.nodes;
+  const uiPages = dataUI.data.docs.nodes;
   const blogPages = dataBlog.data.posts.nodes;
   const tags = dataBlog.data.tagsGroup.group;
 
@@ -66,6 +83,18 @@ exports.createPages = async ({ graphql, actions }) => {
         slug: doc.slug,
         prev: index === 0 ? null : docPages[index - 1],
         next: index === (docPages.length - 1) ? null : docPages[index + 1]
+      }
+    });
+  });
+
+  uiPages.forEach((post, index) => {
+    actions.createPage({
+      path: post.slug,
+      component: path.resolve('./src/templates/Component.js'),
+      context: {
+        slug: post.slug,
+        prev: index === 0 ? null : uiPages[index - 1],
+        next: index === (uiPages.length - 1) ? null : uiPages[index + 1]
       }
     });
   });

@@ -17,7 +17,6 @@ export const query = graphql`
     mdx(slug: {eq: $slug}) {
       frontmatter {
         title
-        github
       }
       body,
       headings {
@@ -31,7 +30,7 @@ export const query = graphql`
 export default function Post({ data: { mdx: post }, pageContext }) {
   const {next, prev} = pageContext;
 
-  const { title, github } = post.frontmatter;
+  const { title } = post.frontmatter;
   const { body } = post;
   return (
     <Layout>
@@ -54,12 +53,11 @@ export default function Post({ data: { mdx: post }, pageContext }) {
                 </div>}
                 <div className="l-documentation__content post-content">
                   <MDXRenderer>{body}</MDXRenderer>
-                  {github && <div><a href={github}>Edit on GitHub</a></div>}
                 </div>
               </article>
               <div className="post-navigation">
                 {prev &&
-                  <Link className="post-navigation-item post-navigation-item--prev" to={`/docs/${prev.slug}`}>
+                  <Link className="post-navigation-item post-navigation-item--prev" to={`/${prev.slug}`}>
                     <span className="post-navigation-item__icon">
                       <ArrowLeft />
                     </span>
@@ -70,7 +68,7 @@ export default function Post({ data: { mdx: post }, pageContext }) {
                   </Link>
                 }
                 {next &&
-                  <Link className="post-navigation-item post-navigation-item--next" to={`/docs/${next.slug}`}>
+                  <Link className="post-navigation-item post-navigation-item--next" to={`/${next.slug}`}>
                     <span className="post-navigation-item__caption">
                       Next
                       <span className="post-navigation-item__title">{next.frontmatter.title}</span>
