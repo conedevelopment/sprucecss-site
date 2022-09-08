@@ -5,7 +5,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 // Import components
 import Layout from '../components/Layout';
 import TableOfContents from '../components/TableOfContents';
-import Sidebar from '../components/Sidebar';
+import SidebarComponent from '../components/SidebarComponent';
 import Seo from '../components/SearchEngineOptimalization';
 
 // Images
@@ -38,10 +38,22 @@ export default function Post({ data: { mdx: post }, pageContext }) {
       <main id="content" className="l-documentation">
         <div className="container">
           <div className="l-documentation__inner">
-            <Sidebar />
+            <SidebarComponent />
             <div className="l-documentation__body-helper">
               <article className="l-documentation__body">
                 <h1 className="l-documentation__title">{title}</h1>
+                <div className="l-documentation__code-highlighter code-highlighter">
+                  <div className="code-highlighter__header">
+                    <div className="code-highlighter__group">
+                      <button className="btn btn--primary btn--sm">SCSS</button>
+                      <button className="btn btn--primary btn--sm">HTML</button>
+                      <button className="btn btn--primary btn--sm">JS</button>
+                    </div>
+                  </div>
+                  <div className="code-highlighter__body" style={{height: "30rem"}}>
+                    <iframe src="https://cone-simplepay.netlify.app/" frameborder="0"></iframe>
+                  </div>
+                </div>
                 {post.headings.length !== 0 &&
                 <div className="l-documentation__table-of-content">
                   <section className="toc" aria-labelledby="toc-title">

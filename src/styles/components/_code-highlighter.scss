@@ -1,0 +1,21 @@
+@use '~sprucecss/scss/spruce';
+
+.code-highlighter {
+  border: 1px solid spruce.color(border);
+  border-radius: spruce.$border-radius-sm;
+  overflow: hidden;
+
+  &__header {
+    background-color: spruce.color(header-background, code-highlighter);
+    border-block-end: 1px solid spruce.color(border);
+    border-start-start-radius: spruce.$border-radius-sm;
+    border-start-end-radius: spruce.$border-radius-sm;
+    padding: spruce.spacer(s);
+  }
+
+  &__group {
+    align-items: center;
+    display: flex;
+    gap: spruce.spacer(xs);
+  }
+}
