@@ -52,9 +52,9 @@ export default function Post({ data: { mdx: post }, pageContext }) {
               </div>
               <div className="code-highlighter__group">
                 <button className="btn btn--primary btn--sm">PREVIEW</button>
-                <button className="btn btn--decline btn--sm">HTML</button>
-                <button className="btn btn--decline btn--sm">SCSS</button>
-                <button className="btn btn--decline btn--sm">JS</button>
+                <button className="btn btn--discrete btn--sm">HTML</button>
+                <button className="btn btn--discrete btn--sm">SCSS</button>
+                <button className="btn btn--discrete btn--sm">JS</button>
               </div>
             </div>
             <div className="code-highlighter__body" style={{height: "34rem"}}>
