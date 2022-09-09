@@ -12,7 +12,8 @@
     border-start-start-radius: spruce.$border-radius-sm;
     border-start-end-radius: spruce.$border-radius-sm;
     display: flex;
-    gap: spruce.spacer(m);
+    flex-wrap: wrap;
+    gap: spruce.spacer(xs) spruce.spacer(m);
     justify-content: space-between;
     padding: spruce.spacer(s);
   }
@@ -22,9 +23,19 @@
     margin-block: 0;
   }
 
+  &__open-new {
+    font-size: spruce.$font-size-sm;
+    line-height: 1;
+  }
+
   &__group {
     align-items: center;
     display: flex;
-    gap: spruce.spacer(xs);
+    gap: spruce.spacer(xxs) spruce.spacer(xs);
+
+    &--column {
+      align-items: flex-start;
+      flex-direction: column;
+    }
   }
 }
