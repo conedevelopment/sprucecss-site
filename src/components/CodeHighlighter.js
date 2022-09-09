@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import CodeHighlighterNavItem from './CodeHighlighterNavItem';
-import CodeHighlighterContent from './CodeHighlighterContent';
+import CodeHighlighterItem from './CodeHighlighterItem';
 
-export default function CodeHighlighter({ defaultTab = 'preview', title, externalUrl }) {
+export default function CodeHighlighter({ defaultTab = 'preview', title, externalUrl, children }) {
   const [activeTab, setActiveTab] = useState(defaultTab);
+
+  console.log(children);
 
   return (
     <div className="code-highlighter">
@@ -15,14 +17,17 @@ export default function CodeHighlighter({ defaultTab = 'preview', title, externa
           </a>
         </div>
         <div className="code-highlighter__group">
-          <CodeHighlighterNavItem title="Preview" id="preview" activeTab={activeTab} setActiveTab={setActiveTab}/>
-          <CodeHighlighterNavItem title="HTML" id="html" activeTab={activeTab} setActiveTab={setActiveTab}/>
-          <CodeHighlighterNavItem title="SCSS" id="scss" activeTab={activeTab} setActiveTab={setActiveTab}/>
-          <CodeHighlighterNavItem title="JS" id="js" activeTab={activeTab} setActiveTab={setActiveTab}/>
+          {children.map((child) => {
+            return <CodeHighlighterNavItem key={child.props.id} title={child.props.title} id={child.props.id} activeTab={activeTab} setActiveTab={setActiveTab}/>;
+          })}
         </div>
       </div>
       <div className="code-highlighter__body" style={{height: "34rem"}}>
-        <iframe src="https://cone-simplepay.netlify.app/" frameborder="0"></iframe>
+        {children.map((child) => {
+          console.log(child.props.children);
+          return <CodeHighlighterItem key={child.props.id} id={child.props.id} activeTab={activeTab}>{child.props.children}</CodeHighlighterItem>;
+        })}
+        {/*<iframe src="https://cone-simplepay.netlify.app/" frameborder="0"></iframe>*/}
       </div>
     </div>
   );

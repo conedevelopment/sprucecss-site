@@ -4,6 +4,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 // Import components
 import CodeHighlighter from '../components/CodeHighlighter';
+import CodeHighlighterItem from '../components/CodeHighlighterItem';
 import Layout from '../components/Layout';
 import TableOfContents from '../components/TableOfContents';
 import SidebarComponent from '../components/SidebarComponent';
@@ -46,7 +47,12 @@ export default function Post({ data: { mdx: post }, pageContext }) {
             title='Header 01'
             externalUrl='#'
           >
-
+            <CodeHighlighterItem title="Preview" id="preview">
+              <iframe src="https://cone-simplepay.netlify.app/" frameborder="0"></iframe>
+            </CodeHighlighterItem>
+            <CodeHighlighterItem title="HTML" id="html">
+              hello
+            </CodeHighlighterItem>
           </CodeHighlighter>
           <article className="l-component__inner">
             <SidebarComponent />
