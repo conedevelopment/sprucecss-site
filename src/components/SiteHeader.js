@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import CookieConsent from 'react-cookie-consent';
 

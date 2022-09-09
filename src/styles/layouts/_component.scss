@@ -9,10 +9,6 @@
     max-width: 70ch;
   }
 
-  &__code-highlighter {
-    margin-block-end: spruce.spacer-clamp(l, xl);
-  }
-
   &__inner {
     column-gap: spruce.spacer(xl);
     display: grid;
@@ -36,5 +32,9 @@
       $optimal-size: '3vw + 1rem'
     );
     margin-block: 0;
+  }
+
+  .code-highlighter {
+    margin-block-end: spruce.spacer-clamp(l, xl);
   }
 }

@@ -3,13 +3,13 @@ import { Link, graphql  } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 // Import components
+import CodeHighlighter from '../components/CodeHighlighter';
 import Layout from '../components/Layout';
 import TableOfContents from '../components/TableOfContents';
 import SidebarComponent from '../components/SidebarComponent';
 import Seo from '../components/SearchEngineOptimalization';
 
 // Images
-import OpenNew from '../images/icons/open-in-new.svg';
 import ArrowLeft from '../images/icons/arrow-left.svg';
 import ArrowRight from '../images/icons/arrow-right.svg';
 
@@ -42,25 +42,12 @@ export default function Post({ data: { mdx: post }, pageContext }) {
             <h1 className="l-component__title">{title}</h1>
             <p className="lead">Spruce is a Sass-based minimalistic CSS framework that helps you get the foundation right and manage multiple projects better.</p>
           </div>
-          <div className="l-component__code-highlighter code-highlighter">
-            <div className="code-highlighter__header">
-              <div className="code-highlighter__group code-highlighter__group--column">
-                <h2 className="code-highlighter__title">Header 01</h2>
-                <a className="code-highlighter__open-new" href="#" target="_blank">
-                  Open in New Window
-                </a>
-              </div>
-              <div className="code-highlighter__group">
-                <button className="btn btn--primary btn--sm">PREVIEW</button>
-                <button className="btn btn--discrete btn--sm">HTML</button>
-                <button className="btn btn--discrete btn--sm">SCSS</button>
-                <button className="btn btn--discrete btn--sm">JS</button>
-              </div>
-            </div>
-            <div className="code-highlighter__body" style={{height: "34rem"}}>
-              <iframe src="https://cone-simplepay.netlify.app/" frameborder="0"></iframe>
-            </div>
-          </div>
+          <CodeHighlighter
+            title='Header 01'
+            externalUrl='#'
+          >
+
+          </CodeHighlighter>
           <article className="l-component__inner">
             <SidebarComponent />
             <div className="l-component__content post-content">
