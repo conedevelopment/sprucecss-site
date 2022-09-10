@@ -5,8 +5,6 @@ import CodeHighlighterItem from './CodeHighlighterItem';
 export default function CodeHighlighter({ defaultTab = 'preview', title, externalUrl, children }) {
   const [activeTab, setActiveTab] = useState(defaultTab);
 
-  console.log(children);
-
   return (
     <div className="code-highlighter">
       <div className="code-highlighter__header">
@@ -22,12 +20,10 @@ export default function CodeHighlighter({ defaultTab = 'preview', title, externa
           })}
         </div>
       </div>
-      <div className="code-highlighter__body" style={{height: "34rem"}}>
+      <div className="code-highlighter__body">
         {children.map((child) => {
-          console.log(child.props.children);
-          return <CodeHighlighterItem key={child.props.id} id={child.props.id} activeTab={activeTab}>{child.props.children}</CodeHighlighterItem>;
+          return <CodeHighlighterItem key={child.props.id} id={child.props.id} code={child.props.code} activeTab={activeTab}>{child.props.children}</CodeHighlighterItem>;
         })}
-        {/*<iframe src="https://cone-simplepay.netlify.app/" frameborder="0"></iframe>*/}
       </div>
     </div>
   );

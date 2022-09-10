@@ -48,10 +48,39 @@ export default function Post({ data: { mdx: post }, pageContext }) {
             externalUrl='#'
           >
             <CodeHighlighterItem title="Preview" id="preview">
-              <iframe src="https://cone-simplepay.netlify.app/" frameborder="0"></iframe>
+              <iframe src="https://cone-simplepay.netlify.app/" frameborder="0" style={{height: "34rem"}}></iframe>
             </CodeHighlighterItem>
-            <CodeHighlighterItem title="HTML" id="html">
-              hello
+            <CodeHighlighterItem title="SCSS" id="scss" code={`
+$settings: (
+  color-fallback: false,
+  html-smooth-scrolling: true,
+  hyphens: true,
+  optimal-responsive-font-size: '2vw + 1rem',
+  optimal-spacer-size: '5vw',
+  prefix: 'spruce',
+  utilities: false,
+  print: false
+);
+              `}
+            >
+            </CodeHighlighterItem>
+            <CodeHighlighterItem title="HTML" id="html" code={`
+<article class="card post-5626 post type-post status-publish format-standard has-post-thumbnail hentry category-accessibility">
+  <h2 class="card__title">
+    <a href="https://pineco.de/should-we-open-links-in-a-new-tab/"> Should We Open Links in a New Tab? </a>
+  </h2>
+  <p class="card__meta">
+    <span class="category-links">
+      <span class="category-link is-accessibility">Accessibility</span>
+    </span>
+    <span class="posted-on">
+      <span class="sr-only">Posted on </span>
+      <time datetime="2022-01-31T19:45:33+01:00">Jan 31, 2022</time>
+    </span>
+  </p>
+</article>
+              `}
+            >
             </CodeHighlighterItem>
           </CodeHighlighter>
           <article className="l-component__inner">
