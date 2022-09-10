@@ -19,6 +19,11 @@ export const query = graphql`
     mdx(slug: {eq: $slug}) {
       frontmatter {
         title
+        lead
+        codeScss
+        codeTitle
+        codeExternalURL
+        codeHTML
       }
       body,
       headings {
@@ -34,6 +39,7 @@ export default function Post({ data: { mdx: post }, pageContext }) {
 
   const { title } = post.frontmatter;
   const { body } = post;
+
   return (
     <Layout>
       <Seo title={title} />
@@ -41,47 +47,15 @@ export default function Post({ data: { mdx: post }, pageContext }) {
         <div className="container">
           <div className="l-component__header">
             <h1 className="l-component__title">{title}</h1>
-            <p className="lead">Spruce is a Sass-based minimalistic CSS framework that helps you get the foundation right and manage multiple projects better.</p>
+            <p className="lead">{post.frontmatter.lead}</p>
           </div>
           <CodeHighlighter
-            title='Header 01'
-            externalUrl='#'
+            title={post.frontmatter.codeTitle}
+            externalUrl={post.frontmatter.codeExternalURL}
           >
-            <CodeHighlighterItem title="Preview" id="preview">
-              <iframe src="https://cone-simplepay.netlify.app/" frameborder="0" style={{height: "34rem"}}></iframe>
-            </CodeHighlighterItem>
-            <CodeHighlighterItem title="SCSS" id="scss" code={`
-$settings: (
-  color-fallback: false,
-  html-smooth-scrolling: true,
-  hyphens: true,
-  optimal-responsive-font-size: '2vw + 1rem',
-  optimal-spacer-size: '5vw',
-  prefix: 'spruce',
-  utilities: false,
-  print: false
-);
-              `}
-            >
-            </CodeHighlighterItem>
-            <CodeHighlighterItem title="HTML" id="html" code={`
-<article class="card post-5626 post type-post status-publish format-standard has-post-thumbnail hentry category-accessibility">
-  <h2 class="card__title">
-    <a href="https://pineco.de/should-we-open-links-in-a-new-tab/"> Should We Open Links in a New Tab? </a>
-  </h2>
-  <p class="card__meta">
-    <span class="category-links">
-      <span class="category-link is-accessibility">Accessibility</span>
-    </span>
-    <span class="posted-on">
-      <span class="sr-only">Posted on </span>
-      <time datetime="2022-01-31T19:45:33+01:00">Jan 31, 2022</time>
-    </span>
-  </p>
-</article>
-              `}
-            >
-            </CodeHighlighterItem>
+            {post.frontmatter.codeExternalURL && <CodeHighlighterItem title="Preview" id="preview"><iframe src={post.frontmatter.codeExternalURL} frameborder="0" title={post.frontmatter.codeTitle} style={{height: "34rem"}}></iframe></CodeHighlighterItem>}
+            {post.frontmatter.codeScss && <CodeHighlighterItem title="SCSS" id="scss" code={post.frontmatter.codeScss}></CodeHighlighterItem>}
+            {post.frontmatter.codeHTML && <CodeHighlighterItem title="HTML" id="html" code={post.frontmatter.codeHTML}></CodeHighlighterItem>}
           </CodeHighlighter>
           <article className="l-component__inner">
             <SidebarComponent />

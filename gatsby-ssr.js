@@ -9,8 +9,6 @@ import H3 from './src/components/mdx/H3';
 import Notification from './src/components/mdx/Notification';
 import Preview from './src/components/mdx/Preview';
 import Table from './src/components/mdx/Table';
-import CodeHighlighter from './src/components/CodeHighlighter';
-import CodeHighlighterItem from './src/components/CodeHighlighterItem';
 
 const components = {
   h2: H2,
@@ -19,10 +17,7 @@ const components = {
   Notification,
   Preview,
   Icon,
-  table: Table,
-  CodeHighlighter,
-  CodeHighlighterItem,
-  wrapper: ({ children }) => <>{children}</>
+  table: Table
 };
 
 export const wrapRootElement = ({ element }) => {
