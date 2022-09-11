@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function CodeHighlighterNavItem({ id, title, activeTab, setActiveTab }) {
+export default function CodeTabNav({ id, title, activeTab, setActiveTab }) {
   function handleClick() {
     setActiveTab(id);
   };

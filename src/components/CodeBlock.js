@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Highlight, { defaultProps } from "prism-react-renderer"
 
 const CodeBlock = ({ children, className }) => {
-  console.log(children);
 	const language = className ? className.replace(/language-/, "") : "javascript"
 	return (
     <Highlight { ...defaultProps }

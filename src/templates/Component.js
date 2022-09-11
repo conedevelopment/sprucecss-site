@@ -3,8 +3,8 @@ import { Link, graphql  } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 // Import components
-import CodeHighlighter from '../components/CodeHighlighter';
-import CodeHighlighterItem from '../components/CodeHighlighterItem';
+import CodeTab from '../components/CodeTab';
+import CodeTabItem from '../components/CodeTabItem';
 import Layout from '../components/Layout';
 import TableOfContents from '../components/TableOfContents';
 import SidebarComponent from '../components/SidebarComponent';
@@ -20,10 +20,11 @@ export const query = graphql`
       frontmatter {
         title
         lead
-        codeScss
         codeTitle
-        codeExternalURL
+        codeURL
+        codeSCSS
         codeHTML
+        codeJS
       }
       body,
       headings {
@@ -37,8 +38,10 @@ export const query = graphql`
 export default function Post({ data: { mdx: post }, pageContext }) {
   const {next, prev} = pageContext;
 
-  const { title } = post.frontmatter;
+  const { title, codeTitle, codeURL, codeSCSS, codeHTML, codeJS } = post.frontmatter;
   const { body } = post;
+
+  console.log(codeJS);
 
   return (
     <Layout>
@@ -49,14 +52,22 @@ export default function Post({ data: { mdx: post }, pageContext }) {
             <h1 className="l-component__title">{title}</h1>
             <p className="lead">{post.frontmatter.lead}</p>
           </div>
-          <CodeHighlighter
-            title={post.frontmatter.codeTitle}
-            externalUrl={post.frontmatter.codeExternalURL}
+          {codeTitle &&
+          <CodeTab
+            title={codeTitle}
+            url={codeURL}
           >
-            {post.frontmatter.codeExternalURL && <CodeHighlighterItem title="Preview" id="preview"><iframe src={post.frontmatter.codeExternalURL} frameborder="0" title={post.frontmatter.codeTitle} style={{height: "34rem"}}></iframe></CodeHighlighterItem>}
-            {post.frontmatter.codeScss && <CodeHighlighterItem title="SCSS" id="scss" code={post.frontmatter.codeScss}></CodeHighlighterItem>}
-            {post.frontmatter.codeHTML && <CodeHighlighterItem title="HTML" id="html" code={post.frontmatter.codeHTML}></CodeHighlighterItem>}
-          </CodeHighlighter>
+            {codeURL.length &&
+            <CodeTabItem title="Preview" id="preview">
+              <iframe src={codeURL} frameBorder="0" title={codeTitle} style={{height: "34rem"}} loading="lazy"></iframe>
+            </CodeTabItem>}
+            {codeSCSS.length &&
+            <CodeTabItem title="SCSS" id="scss" code={codeSCSS}></CodeTabItem>}
+            {codeHTML.length &&
+            <CodeTabItem title="HTML" id="html" code={codeHTML}></CodeTabItem>}
+            {codeJS.length &&
+            <CodeTabItem title="JS" id="js" code={codeJS}></CodeTabItem>}
+          </CodeTab>}
           <article className="l-component__inner">
             <SidebarComponent />
             <div className="l-component__content post-content">
