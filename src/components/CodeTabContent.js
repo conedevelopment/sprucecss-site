@@ -1,9 +1,9 @@
 import React from 'react';
 import CodeBlock from './CodeBlock';
 
-export default function CodeTabItem({id, activeTab, code, children}) {
+export default function CodeTabContent({id, activeTab, code, children}) {
   return (
-    activeTab === id ? <div>
+    activeTab === id ? <div id={`tab-content-${id}`} role="tabpanel">
       {id !== 'preview' ? <CodeBlock className={id}>{code.trim()}</CodeBlock> : null}
       {id === 'preview' ? children : null}
     </div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import CodeTabNav from './CodeTabNav';
-import CodeTabItem from './CodeTabItem';
+import CodeTabControl from './CodeTabControl';
+import CodeTabContent from './CodeTabContent';
 
 export default function CodeTab({ defaultTab = 'preview', title, url, children }) {
   const [activeTab, setActiveTab] = useState(defaultTab);
@@ -14,18 +14,18 @@ export default function CodeTab({ defaultTab = 'preview', title, url, children }
             Open in New Window
           </a>
         </div>
-        <div className="code-tab__group">
+        <ul className="code-tab__group" role="tab">
           {children.map((child) => {
             if (typeof child.props !== 'undefined') {
-              return <CodeTabNav key={child.props.id} title={child.props.title} id={child.props.id} activeTab={activeTab} setActiveTab={setActiveTab}/>;
+              return <li role="presentation"><CodeTabControl key={child.props.id} title={child.props.title} id={child.props.id} activeTab={activeTab} setActiveTab={setActiveTab}/></li>;
             }
           })}
-        </div>
+        </ul>
       </div>
       <div className="code-tab__body">
         {children.map((child) => {
           if (typeof child.props !== 'undefined') {
-            return <CodeTabItem key={child.props.id} id={child.props.id} code={child.props.code} activeTab={activeTab}>{child.props.children}</CodeTabItem>;
+            return <CodeTabContent key={child.props.id} id={child.props.id} code={child.props.code} activeTab={activeTab}>{child.props.children}</CodeTabContent>;
           }
         })}
       </div>

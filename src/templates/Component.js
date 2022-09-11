@@ -4,7 +4,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 // Import components
 import CodeTab from '../components/CodeTab';
-import CodeTabItem from '../components/CodeTabItem';
+import CodeTabContent from '../components/CodeTabContent';
 import Layout from '../components/Layout';
 import TableOfContents from '../components/TableOfContents';
 import SidebarComponent from '../components/SidebarComponent';
@@ -59,15 +59,15 @@ export default function Post({ data: { mdx: post }, pageContext }) {
               url={codeURL}
             >
               {codeURL.length &&
-              <CodeTabItem title="Preview" id="preview">
+              <CodeTabContent title="Preview" id="preview">
                 <iframe src={codeURL} frameBorder="0" title={codeTitle} style={{height: "34rem"}} loading="lazy"></iframe>
-              </CodeTabItem>}
+              </CodeTabContent>}
               {codeSCSS.length &&
-              <CodeTabItem title="SCSS" id="scss" code={codeSCSS}></CodeTabItem>}
+              <CodeTabContent title="SCSS" id="scss" code={codeSCSS}></CodeTabContent>}
               {codeHTML.length &&
-              <CodeTabItem title="HTML" id="html" code={codeHTML}></CodeTabItem>}
+              <CodeTabContent title="HTML" id="html" code={codeHTML}></CodeTabContent>}
               {codeJS.length &&
-              <CodeTabItem title="JS" id="js" code={codeJS}></CodeTabItem>}
+              <CodeTabContent title="JS" id="js" code={codeJS}></CodeTabContent>}
             </CodeTab>}
           </div>
           <article className="l-component__inner">
