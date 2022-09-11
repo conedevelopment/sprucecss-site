@@ -29,9 +29,12 @@
   }
 
   &__group {
+    @include spruce.clear-list;
     align-items: center;
     display: flex;
     gap: spruce.spacer(xxs) spruce.spacer(xs);
+
+    > * + * { margin-block-start: 0; }
 
     &--column {
       align-items: flex-start;

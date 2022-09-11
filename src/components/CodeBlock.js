@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Highlight, { defaultProps } from "prism-react-renderer"
 
 const CodeBlock = ({ children, className }) => {

@@ -3,7 +3,7 @@ import CodeBlock from './CodeBlock';
 
 export default function CodeTabContent({id, activeTab, code, children}) {
   return (
-    activeTab === id ? <div id={`tab-content-${id}`} role="tabpanel">
+    activeTab === id ? <div id={`tab-content-${id}`} role="tabpanel" aria-labelledby={`tab-control-${id}`}>
       {id !== 'preview' ? <CodeBlock className={id}>{code.trim()}</CodeBlock> : null}
       {id === 'preview' ? children : null}
     </div>
