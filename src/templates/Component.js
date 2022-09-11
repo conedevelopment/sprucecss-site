@@ -52,22 +52,24 @@ export default function Post({ data: { mdx: post }, pageContext }) {
             <h1 className="l-component__title">{title}</h1>
             <p className="lead">{post.frontmatter.lead}</p>
           </div>
-          {codeTitle &&
-          <CodeTab
-            title={codeTitle}
-            url={codeURL}
-          >
-            {codeURL.length &&
-            <CodeTabItem title="Preview" id="preview">
-              <iframe src={codeURL} frameBorder="0" title={codeTitle} style={{height: "34rem"}} loading="lazy"></iframe>
-            </CodeTabItem>}
-            {codeSCSS.length &&
-            <CodeTabItem title="SCSS" id="scss" code={codeSCSS}></CodeTabItem>}
-            {codeHTML.length &&
-            <CodeTabItem title="HTML" id="html" code={codeHTML}></CodeTabItem>}
-            {codeJS.length &&
-            <CodeTabItem title="JS" id="js" code={codeJS}></CodeTabItem>}
-          </CodeTab>}
+          <div className="l-component__code-tab">
+            {codeTitle &&
+            <CodeTab
+              title={codeTitle}
+              url={codeURL}
+            >
+              {codeURL.length &&
+              <CodeTabItem title="Preview" id="preview">
+                <iframe src={codeURL} frameBorder="0" title={codeTitle} style={{height: "34rem"}} loading="lazy"></iframe>
+              </CodeTabItem>}
+              {codeSCSS.length &&
+              <CodeTabItem title="SCSS" id="scss" code={codeSCSS}></CodeTabItem>}
+              {codeHTML.length &&
+              <CodeTabItem title="HTML" id="html" code={codeHTML}></CodeTabItem>}
+              {codeJS.length &&
+              <CodeTabItem title="JS" id="js" code={codeJS}></CodeTabItem>}
+            </CodeTab>}
+          </div>
           <article className="l-component__inner">
             <SidebarComponent />
             <div className="l-component__content post-content">

@@ -8,7 +8,8 @@
       primary-dark: hsl(261deg 52% 35%),
       primary-darkest: hsl(272 100% 9%),
       heading: hsl(0 0% 0%),
-      footer-background: hsl(222 100% 98%)
+      footer-background: hsl(222 100% 98%),
+      code-tab-background: hsl(222 100% 98%)
     ),
     btn: (
       install-background: hsl(0 0% 95%),
@@ -32,9 +33,6 @@
     ),
     breadcrumb: (
       arrow: hsl(0 0% 0% / 0.1)
-    ),
-    code-highlighter: (
-      header-background: hsl(222 100% 98%)
     ),
     prism: (
       color: hsl(243 14% 29%),

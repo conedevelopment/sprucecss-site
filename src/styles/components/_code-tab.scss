@@ -7,7 +7,7 @@
 
   &__header {
     align-items: center;
-    background-color: spruce.color(header-background, code-highlighter);
+    background-color: spruce.color(code-tab-background);
     border-block-end: 1px solid spruce.color(border);
     border-start-start-radius: spruce.$border-radius-sm;
     border-start-end-radius: spruce.$border-radius-sm;
