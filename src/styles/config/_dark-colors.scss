@@ -45,6 +45,10 @@ $colors: (
     install-background-hover: hsl(207 23% 26%),
     install-foreground: hsl(0 0% 100%),
     install-foreground-hover: hsl(0 0% 100%),
+    discrete-background: rgba(245, 245, 245, 0.1),
+    discrete-background-hover: hsl(261 52% 59%),
+    discrete-foreground: hsl(0 0% 100%),
+    discrete-foreground-hover: hsl(0 0% 100%)
   ),
   form: (
     background: color.scale($color-black, $lightness: 5%),
@@ -80,6 +84,9 @@ $colors: (
   ),
   breadcrumb: (
     arrow: hsl(0 0% 100% / 0.1)
+  ),
+  code-highlighter: (
+    header-background: hsl(0 0% 0% / 0.15)
   ),
   prism: (
     color: hsl(217 34% 88%),
