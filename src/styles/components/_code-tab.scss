@@ -24,21 +24,29 @@
   }
 
   &__open-new {
+    align-items: center;
     font-size: spruce.$font-size-sm;
+    display: flex;
+    gap: spruce.spacer(xs);
     line-height: 1;
+
+    svg {
+      height: 0.85em;
+      width: 0.85em;
+    }
   }
 
   &__group {
     @include spruce.clear-list;
     align-items: center;
     display: flex;
+    flex-wrap: wrap;
     gap: spruce.spacer(xxs) spruce.spacer(xs);
 
     > * + * { margin-block-start: 0; }
 
-    &--column {
-      align-items: flex-start;
-      flex-direction: column;
+    &--title {
+      gap: spruce.spacer(xxs) spruce.spacer(s);
     }
   }
 }

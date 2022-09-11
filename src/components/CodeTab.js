@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
+
+// Import components
 import CodeTabControl from './CodeTabControl';
 import CodeTabContent from './CodeTabContent';
+
+// Images
+import OpenNew from '../images/icons/open-in-new.svg';
 
 export default function CodeTab({ defaultTab = 'preview', title, url, children }) {
   const [activeTab, setActiveTab] = useState(defaultTab);
@@ -8,9 +13,10 @@ export default function CodeTab({ defaultTab = 'preview', title, url, children }
   return (
     <div className="code-tab">
       <div className="code-tab__header">
-        <div className="code-tab__group code-tab__group--column">
+        <div className="code-tab__group code-tab__group--title">
           <h2 className="code-tab__title">{title}</h2>
           <a className="code-tab__open-new" href={url} target="_blank" rel="noreferrer">
+            <OpenNew/>
             Open in New Window
           </a>
         </div>
