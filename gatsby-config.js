@@ -75,8 +75,7 @@ module.exports = {
       options: {
         name: `component`,
         remote: `https://adamlaki:${process.env.GITHUB_PERSONAL_ACCESS_TOKEN}@github.com/conedevelopment/spruceui`,
-        branch: `master`,
-        patterns: [`./ui/**/*.mdx`]
+        branch: `master`
       }
     },
     {
