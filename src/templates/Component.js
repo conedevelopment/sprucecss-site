@@ -9,10 +9,7 @@ import Layout from '../components/Layout';
 import TableOfContents from '../components/TableOfContents';
 import SidebarComponent from '../components/SidebarComponent';
 import Seo from '../components/SearchEngineOptimalization';
-
-// Images
-import ArrowLeft from '../images/icons/arrow-left.svg';
-import ArrowRight from '../images/icons/arrow-right.svg';
+import PostNavigation from '../components/PostNavigation';
 
 export const query = graphql`
   query ($slug: String!) {
@@ -104,30 +101,7 @@ export default function Post({ data: { mdx: post }, data: { allFile: files }, pa
               </section>
             </div>}
           </article>
-          <div className="post-navigation">
-            {prev &&
-              <Link className="post-navigation-item post-navigation-item--prev" to={`/${prev.slug}`}>
-                <span className="post-navigation-item__icon">
-                  <ArrowLeft />
-                </span>
-                <span className="post-navigation-item__caption">
-                  Previous
-                  <span className="post-navigation-item__title">{prev.frontmatter.title}</span>
-                </span>
-              </Link>
-            }
-            {next &&
-              <Link className="post-navigation-item post-navigation-item--next" to={`/${next.slug}`}>
-                <span className="post-navigation-item__caption">
-                  Next
-                  <span className="post-navigation-item__title">{next.frontmatter.title}</span>
-                </span>
-                <span className="post-navigation-item__icon">
-                  <ArrowRight />
-                </span>
-              </Link>
-            }
-          </div>
+          <PostNavigation prev={prev} next={next}/>
         </div>
       </main>
     </Layout>
