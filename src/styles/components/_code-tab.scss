@@ -49,4 +49,11 @@
       gap: spruce.spacer(xxs) spruce.spacer(s);
     }
   }
+
+  &__body {
+    [role='tabpanel'] {
+      max-height: 40rem;
+      overflow-y: auto;
+    }
+  }
 }
