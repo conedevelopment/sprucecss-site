@@ -9,8 +9,8 @@
     align-items: center;
     background-color: spruce.color(code-tab-background);
     border-block-end: 1px solid spruce.color(border);
-    border-start-start-radius: spruce.$border-radius-sm;
     border-start-end-radius: spruce.$border-radius-sm;
+    border-start-start-radius: spruce.$border-radius-sm;
     display: flex;
     flex-wrap: wrap;
     gap: spruce.spacer(xs) spruce.spacer(m);
@@ -25,8 +25,8 @@
 
   &__open-new {
     align-items: center;
-    font-size: spruce.$font-size-sm;
     display: flex;
+    font-size: spruce.$font-size-sm;
     gap: spruce.spacer(xs);
     line-height: 1;
 
