@@ -89,7 +89,6 @@ export default function SiteHeader() {
               <ul>
                 <li><Link to="/docs/getting-started/introduction">Docs</Link></li>
                 <li><Link to="/ui/getting-started/introduction">Components</Link></li>
-                <li><Link to="/examples">Examples</Link></li>
                 <li><Link to="/blog">Blog</Link></li>
                 <li><a href="https://github.com/conedevelopment/sprucecss/releases">Releases</a></li>
               </ul>

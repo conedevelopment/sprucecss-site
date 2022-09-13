@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 
 // Images
 import Documentation from '../images/icons/documentation.svg';
-import Examples from '../images/icons/examples.svg';
+import Components from '../images/icons/components.svg';
 import Blog from '../images/icons/blog.svg';
 
 export default function GettingStarted({ classes }) {
@@ -22,11 +22,11 @@ export default function GettingStarted({ classes }) {
             <p>Learn about Spruce CSS through our extensive documentation.</p>
           </div>
           <div className="getting-started-card">
-            <Examples className="getting-started-card__icon" />
+            <Components className="getting-started-card__icon" />
             <h3>
-              <Link className="getting-started-card__link" to="/examples">Examples</Link>
+              <Link className="getting-started-card__link" to="/ui/getting-started/introduction">Components</Link>
             </h3>
-            <p>Explore the look and feel of Spruce through simple examples.</p>
+            <p>Explore our extensive UI library built with Spruce CSS.</p>
           </div>
           <div className="getting-started-card">
             <Blog className="getting-started-card__icon" />
