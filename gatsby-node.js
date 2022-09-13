@@ -7,26 +7,13 @@ exports.onCreateNode = async ({ node, getNode, actions, loadNodeContent }) => {
       node.internal.mediaType === 'text/html' ||
       node.internal.mediaType === 'application/javascript') {
     await loadNodeContent(node);
-    let slug = '';
-
-    if (node.internal.mediaType === 'text/x-scss') {
-      slug = path.basename(node.absolutePath, '.scss');
-    }
-
-    if (node.internal.mediaType === 'text/html') {
-      slug = path.basename(node.absolutePath, '.html');
-    }
-
-    if (node.internal.mediaType === 'application/javascript') {
-      slug = path.basename(node.absolutePath, '.js');
-    }
+    const slug = 'ui/' + path.parse(node.relativePath).dir.split('/')[1] + '/' + path.parse(node.relativePath).name;
 
     createNodeField({
       node,
       name: 'slug',
       value: slug,
     });
-
   }
 
   if (node.internal.type === `Mdx`) {

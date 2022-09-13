@@ -22,26 +22,45 @@ export const query = graphql`
         lead
         codeTitle
         codeURL
-        codeSCSS
-        codeHTML
-        codeJS
       }
       body,
       headings {
         depth
         value
       }
+    },
+    allFile(
+      filter: {sourceInstanceName: {eq: "component"}, fields: {slug: {eq: $slug}}}
+    ) {
+      nodes {
+        internal {
+          content
+          mediaType
+        }
+      }
     }
   }
 `;
 
-export default function Post({ data: { mdx: post }, pageContext }) {
+export default function Post({ data: { mdx: post }, data: { allFile: files }, pageContext }) {
   const {next, prev} = pageContext;
 
-  const { title, codeTitle, codeURL, codeSCSS, codeHTML, codeJS } = post.frontmatter;
+  const { title, codeTitle, codeURL } = post.frontmatter;
   const { body } = post;
 
-  console.log(codeJS);
+  let scss = null;
+  let html = null;
+  let js = null;
+
+  files.nodes.length && files.nodes.map((node) => {
+    if (node.internal.mediaType === 'text/x-scss') {
+      scss = node.internal.content;
+    } else if (node.internal.mediaType === 'text/html') {
+      html = node.internal.content;
+    } else if (node.internal.mediaType === 'application/javascript') {
+      js = node.internal.content;
+    }
+  });
 
   return (
     <Layout>
@@ -59,15 +78,15 @@ export default function Post({ data: { mdx: post }, pageContext }) {
               url={codeURL}
             >
               {codeURL.length &&
-              <CodeTabContent title="Preview" id="preview">
-                <iframe src={codeURL} frameBorder="0" title={codeTitle} style={{height: "34rem"}} loading="lazy"></iframe>
+              <CodeTabContent title='Preview' id='preview'>
+                <iframe src={codeURL} frameBorder='0' title={codeTitle} style={{height: '34rem'}} loading='lazy'></iframe>
               </CodeTabContent>}
-              {codeSCSS.length &&
-              <CodeTabContent title="SCSS" id="scss" code={codeSCSS}></CodeTabContent>}
-              {codeHTML.length &&
-              <CodeTabContent title="HTML" id="html" code={codeHTML}></CodeTabContent>}
-              {codeJS.length &&
-              <CodeTabContent title="JS" id="js" code={codeJS}></CodeTabContent>}
+              {scss &&
+              <CodeTabContent title="SCSS" id="scss" code={scss}></CodeTabContent>}
+              {html &&
+              <CodeTabContent title="HTML" id="html" code={html}></CodeTabContent>}
+              {js &&
+              <CodeTabContent title="JS" id="js" code={js}></CodeTabContent>}
             </CodeTab>}
           </div>
           <article className="l-component__inner">

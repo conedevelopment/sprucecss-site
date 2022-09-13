@@ -22,15 +22,15 @@ export default function CodeTab({ defaultTab = 'preview', title, url, children }
         </div>
         <ul className="code-tab__group" role="tab">
           {children.map((child) => {
-            if (typeof child.props !== 'undefined') {
-              return <li role="presentation"><CodeTabControl key={child.props.id} title={child.props.title} id={child.props.id} activeTab={activeTab} setActiveTab={setActiveTab}/></li>;
+            if (child !== null && typeof child.props !== 'undefined') {
+              return <li role="presentation" key={child.props.id}><CodeTabControl title={child.props.title} id={child.props.id} activeTab={activeTab} setActiveTab={setActiveTab}/></li>;
             }
           })}
         </ul>
       </div>
       <div className="code-tab__body">
         {children.map((child) => {
-          if (typeof child.props !== 'undefined') {
+          if (child !== null && typeof child.props !== 'undefined') {
             return <CodeTabContent key={child.props.id} id={child.props.id} code={child.props.code} activeTab={activeTab}>{child.props.children}</CodeTabContent>;
           }
         })}
