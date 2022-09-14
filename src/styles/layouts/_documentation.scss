@@ -13,6 +13,13 @@
     }
   }
 
+  &__sidebar {
+    @include spruce.breakpoint(sm) {
+      max-height: calc(100vh - 4rem);
+      position: sticky;
+    }
+  }
+
   &__body-helper {
     order: -1;
 

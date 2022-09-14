@@ -86,22 +86,26 @@ export default function Post({ data: { mdx: post }, data: { allFile: files }, pa
               <CodeTabContent title="JS" id="js" code={js}></CodeTabContent>}
             </CodeTab>}
           </div>
-          <article className="l-component__inner">
+          <div className="l-component__inner">
             <SidebarComponent />
-            <div className="l-component__content post-content">
-              <MDXRenderer>{body}</MDXRenderer>
+            <div className="l-component__body-helper">
+              <div className="l-component__body">
+                {post.headings.length !== 0 &&
+                <div className="l-component__table-of-content">
+                  <section className="toc" aria-labelledby="toc-title">
+                    <h3 className="toc__title" id="toc-title">On this page</h3>
+                    <nav className="toc__navigation">
+                      <TableOfContents headings={post.headings} />
+                    </nav>
+                  </section>
+                </div>}
+                <article className="l-component__content post-content">
+                  <MDXRenderer>{body}</MDXRenderer>
+                </article>
+              </div>
+              <PostNavigation prev={prev} next={next}/>
             </div>
-            {post.headings.length !== 0 &&
-            <div className="l-component__table-of-content">
-              <section className="toc" aria-labelledby="toc-title">
-                <h3 className="toc__title" id="toc-title">On this page</h3>
-                <nav className="toc__navigation">
-                  <TableOfContents headings={post.headings} />
-                </nav>
-              </section>
-            </div>}
-          </article>
-          <PostNavigation prev={prev} next={next}/>
+          </div>
         </div>
       </main>
     </Layout>

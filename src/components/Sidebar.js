@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 
 export default function Sidebar() {
   return (
-    <aside className="sidebar layout-documentation__sidebar">
+    <aside className="sidebar l-documentation__sidebar">
       <section className="sidebar-section">
         <h3 className="sidebar-section__title">Getting Started</h3>
         <nav className="sidebar-section__navigation">
