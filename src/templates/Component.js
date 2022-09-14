@@ -18,6 +18,7 @@ export const query = graphql`
         title
         lead
         codeURL
+        previewHeight
       }
       body,
       headings {
@@ -41,7 +42,7 @@ export const query = graphql`
 export default function Post({location, data: { mdx: post }, data: { allFile: files }, pageContext }) {
   const {next, prev} = pageContext;
 
-  const { title, codeURL } = post.frontmatter;
+  const { title, codeURL, previewHeight } = post.frontmatter;
   const { body } = post;
 
   let scss = null;
@@ -75,7 +76,7 @@ export default function Post({location, data: { mdx: post }, data: { allFile: fi
             >
               {codeURL.length &&
               <CodeTabContent title='Preview' id='preview'>
-                <iframe src={codeURL} frameBorder='0' title={title} style={{height: '34rem'}} loading='lazy'></iframe>
+                <iframe src={codeURL} frameBorder='0' title={title} style={{height: previewHeight}} loading='lazy'></iframe>
               </CodeTabContent>}
               {scss &&
               <CodeTabContent title="SCSS" id="scss" code={scss}></CodeTabContent>}
