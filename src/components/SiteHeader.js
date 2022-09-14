@@ -5,10 +5,11 @@ import CookieConsent from 'react-cookie-consent';
 // Images
 import MenuIcon from '../images/icons/menu.svg';
 import Logo from '../images/spruce-logo.svg';
+import LogoUI from '../images/spruce-ui-logo.svg';
 import GitHubIcon from '../images/icons/github.svg';
 import TwitterIcon from '../images/icons/twitter.svg';
 
-export default function SiteHeader() {
+export default function SiteHeader({ location }) {
   const { site } = useStaticQuery(graphql`
     query {
       site {
@@ -20,6 +21,7 @@ export default function SiteHeader() {
     }
   `);
 
+  const isUI = location && location.pathname.indexOf('ui') > -1 ? 'ui-page' : '';
   const [menuVisible, setMenuVisible] = useState(false);
   const [slogan, setSlogan] = useState(site.siteMetadata.slogan[Math.floor(Math.random() * site.siteMetadata.slogan.length)]);
 
@@ -76,9 +78,9 @@ export default function SiteHeader() {
       <header className="site-header">
         <div className="container">
           <div className="site-header__inner">
-            <div className="site-header__logo">
+            <div className={`site-header__logo ${isUI ? 'site-header__logo--ui' : ''}`}>
               <Link to="/" title={site.siteMetadata.title}>
-                <Logo width="131" height="30" />
+                {isUI ? <LogoUI width="131" height="30" /> : <Logo width="131" height="30" />}
               </Link>
               <button className="site-header__slogan" onClick={handleSlogan} aria-live="assertive">{slogan}</button>
             </div>

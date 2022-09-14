@@ -39,7 +39,7 @@ export const query = graphql`
   }
 `;
 
-export default function Post({ data: { mdx: post }, data: { allFile: files }, pageContext }) {
+export default function Post({location, data: { mdx: post }, data: { allFile: files }, pageContext }) {
   const {next, prev} = pageContext;
 
   const { title, codeTitle, codeURL } = post.frontmatter;
@@ -60,8 +60,8 @@ export default function Post({ data: { mdx: post }, data: { allFile: files }, pa
   });
 
   return (
-    <Layout>
-      <Seo title={title} />
+    <Layout location={location}>
+      <Seo title={title} location={location} />
       <main id="content" className="l-component">
         <div className="container">
           <div className="l-component__header">
