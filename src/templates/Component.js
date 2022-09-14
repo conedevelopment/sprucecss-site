@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, graphql  } from 'gatsby';
+import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 // Import components
@@ -17,7 +17,6 @@ export const query = graphql`
       frontmatter {
         title
         lead
-        codeTitle
         codeURL
       }
       body,
@@ -42,7 +41,7 @@ export const query = graphql`
 export default function Post({location, data: { mdx: post }, data: { allFile: files }, pageContext }) {
   const {next, prev} = pageContext;
 
-  const { title, codeTitle, codeURL } = post.frontmatter;
+  const { title, codeURL } = post.frontmatter;
   const { body } = post;
 
   let scss = null;
@@ -69,14 +68,14 @@ export default function Post({location, data: { mdx: post }, data: { allFile: fi
             <p className="lead">{post.frontmatter.lead}</p>
           </div>
           <div className="l-component__code-tab">
-            {codeTitle &&
+            {codeURL &&
             <CodeTab
-              title={codeTitle}
+              title={title}
               url={codeURL}
             >
               {codeURL.length &&
               <CodeTabContent title='Preview' id='preview'>
-                <iframe src={codeURL} frameBorder='0' title={codeTitle} style={{height: '34rem'}} loading='lazy'></iframe>
+                <iframe src={codeURL} frameBorder='0' title={title} style={{height: '34rem'}} loading='lazy'></iframe>
               </CodeTabContent>}
               {scss &&
               <CodeTabContent title="SCSS" id="scss" code={scss}></CodeTabContent>}
