@@ -25,6 +25,7 @@ export default function Sidebar() {
         <h3 className="sidebar-section__title">Sections</h3>
         <nav className="sidebar-section__navigation">
           <ul>
+            <li><Link to="/ui/section/gallery">Gallery</Link></li>
             <li><Link to="/ui/section/site-header">Site Header</Link></li>
           </ul>
         </nav>
