@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Spruce UI - Auth Page</title>
+    <link rel="icon" href="http://localhost:3000/img/favicon.svg" type="image/svg+xml"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&amp;family=Sora:wght@400;500;600;700&amp;display=swap"/>
+    <link rel="stylesheet" href="http://localhost:3000/css/spruce.css?time=1663239436345"/>
+    <link rel="stylesheet" href="http://localhost:3000/css/page/auth.css?time=1663239436345"/>
+    <link rel="stylesheet" href="http://localhost:3000/css/component/auth-form.css?time=1663239436345"/>
+    <link rel="stylesheet" href="http://localhost:3000/css/component/theme-switcher.css?time=1663239436345"/>
+  </head>
+  <body>
+    <main class="auth-screen">
+      <div class="auth-screen__inner">
+        <div class="auth-screen__form"><a class="auth-screen__logo" href="#"><img src="http://localhost:3000/img/spruce-ui-logo.svg" alt="Spruce UI"/></a>
+          <div class="auth-form">
+            <h1 class="auth-form__title">Welcome back</h1>
+            <p>Donec quis magna sed dolor blandit facilisis ut sed velit. Pellentesque a malesuada nisl.</p>
+            <form method="POST" action="#">
+              <div class="form-group-stack">
+                <div class="form-group">
+                  <label class="form-label" for="email">Email</label>
+                  <input class="form-control form-control--lg" id="email" type="text" name="email" required="required" autocomplete="off" autofocus="autofocus"/>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="password" style="display: flex; justify-content: space-between;">Password <a href="#">Forgot password?</a></label>
+                  <input class="form-control form-control--lg" id="password" type="password" name="password" required="required" autocomplete="off"/>
+                </div>
+                <div class="form-group">
+                  <label class="form-check form-check--lg" for="remember">
+                    <input class="form-check__control" id="remember" type="checkbox" name="remember"/><span class="form-label form-check__label">Remember me</span>
+                  </label>
+                </div>
+                <div class="form-group">
+                  <button class="btn btn--primary btn--lg btn--block" type="submit">Login</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="auth-screen__footer">
+            <p>Not a member? <a href="#">Sign up</a></p>
+          </div>
+        </div>
+        <div class="auth-screen__sidebar"></div>
+      </div>
+    </main>
+  </body>
+</html>

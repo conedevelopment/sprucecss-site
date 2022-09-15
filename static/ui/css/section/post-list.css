@@ -1,0 +1,16 @@
+.l-post-list__inner {
+  --columns: 1;
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(var(--columns), minmax(0, 2fr));
+}
+@media (min-width: 48em) {
+  .l-post-list__inner {
+    --columns: 2;
+  }
+}
+@media (min-width: 64em) {
+  .l-post-list__inner {
+    --columns: 3;
+  }
+}

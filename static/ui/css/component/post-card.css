@@ -1,0 +1,33 @@
+.post-card {
+  position: relative;
+}
+.card__link::before {
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.post-card > * {
+  margin-block-end: 0;
+  margin-block-start: 0;
+}
+.post-card > * + * {
+  margin-block-start: 1rem;
+}
+.post-card__thumbnail {
+  border-radius: 0.425rem;
+}
+.post-card__meta {
+  column-gap: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 0.5rem;
+}
+.post-card__title {
+  font-size: clamp(1.328125rem, 2vw + 1rem, 1.5625rem);
+  margin-block-start: 0.5rem;
+}
+.post-card__title a {
+  color: var(--spruce-base-color-heading);
+  text-decoration: none;
+}

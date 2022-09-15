@@ -1,0 +1,32 @@
+.theme-switcher {
+  color: var(--spruce-base-color-text);
+  display: inline-flex;
+  position: relative;
+}
+.theme-switcher[data-theme-mode=system] .icon-system {
+  display: inline-block;
+}
+.theme-switcher[data-theme-mode=light] .icon-light {
+  display: inline-block;
+}
+.theme-switcher[data-theme-mode=dark] .icon-dark {
+  display: inline-block;
+}
+.theme-switcher__icon {
+  align-items: center;
+  color: var(--spruce-base-color-heading);
+  display: flex;
+  inset: 0 auto 0 0;
+  justify-content: center;
+  pointer-events: none;
+  position: absolute;
+  width: 2em;
+}
+.theme-switcher__icon svg {
+  display: none;
+  height: 0.85em;
+  width: 0.85em;
+}
+.theme-switcher__select {
+  padding-inline-start: 2em;
+}
