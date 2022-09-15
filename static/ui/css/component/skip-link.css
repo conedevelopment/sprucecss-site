@@ -1,7 +1,0 @@
-.skip-link {
-  inset: -50vh auto auto 1.5rem;
-  position: fixed;
-}
-.skip-link:focus {
-  inset-block-start: 1.5rem;
-}
