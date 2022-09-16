@@ -54,7 +54,6 @@ export default function Post({location, data: { mdx: post }, data: { allFile: fi
   let js = null;
 
   files.nodes.length && files.nodes.map((node) => {
-    console.log(node);
     if (node.fields.type === 'scss') {
       scss = node.internal.content;
     } else if (node.fields.type === 'html') {
