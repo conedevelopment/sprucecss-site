@@ -34,6 +34,9 @@ export const query = graphql`
           content
           mediaType
         }
+        fields {
+          type
+        }
       }
     }
   }
@@ -45,16 +48,20 @@ export default function Post({location, data: { mdx: post }, data: { allFile: fi
   const { title, codeURL, previewHeight } = post.frontmatter;
   const { body } = post;
 
+  let preview = null;
   let scss = null;
   let html = null;
   let js = null;
 
   files.nodes.length && files.nodes.map((node) => {
-    if (node.internal.mediaType === 'text/x-scss') {
+    console.log(node);
+    if (node.fields.type === 'scss') {
       scss = node.internal.content;
-    } else if (node.internal.mediaType === 'text/html') {
+    } else if (node.fields.type === 'html') {
       html = node.internal.content;
-    } else if (node.internal.mediaType === 'application/javascript') {
+    } else if (node.fields.type === 'preview') {
+      preview = node.internal.content;
+    } else if (node.fields.type === 'js') {
       js = node.internal.content;
     }
   });
@@ -74,9 +81,9 @@ export default function Post({location, data: { mdx: post }, data: { allFile: fi
               title={title}
               url={codeURL}
             >
-              {codeURL.length &&
+              {preview &&
               <CodeTabContent title='Preview' id='preview'>
-                <iframe src={codeURL} frameBorder='0' title={title} style={{height: previewHeight}} loading='lazy'></iframe>
+                <iframe srcDoc={preview} frameBorder='0' title={title} style={{height: previewHeight}} loading='lazy'></iframe>
               </CodeTabContent>}
               {scss &&
               <CodeTabContent title="SCSS" id="scss" code={scss}></CodeTabContent>}

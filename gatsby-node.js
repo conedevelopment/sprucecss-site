@@ -7,12 +7,34 @@ exports.onCreateNode = async ({ node, getNode, actions, loadNodeContent }) => {
       node.internal.mediaType === 'text/html' ||
       node.internal.mediaType === 'application/javascript') {
     await loadNodeContent(node);
-    const slug = 'ui/' + path.parse(node.relativePath).dir.split('/')[1] + '/' + path.parse(node.relativePath).name;
+
+    let type = '';
+    let slug = 'ui/' + path.parse(node.relativePath).dir.split('/')[1] + '/' + path.parse(node.relativePath).name;
+
+    if (node.internal.mediaType && path.parse(node.relativePath).name.includes('preview')) {
+      slug = 'ui/' + path.parse(node.relativePath).dir.split('/')[1] + '/' + path.parse(node.relativePath).name.replace('-preview','');
+    }
+
+    if (node.internal.mediaType === 'text/x-scss') {
+      type = 'scss';
+    } else if (node.internal.mediaType === 'text/html' && !path.parse(node.relativePath).name.includes('preview')) {
+      type = 'html';
+    } else if (node.internal.mediaType === 'text/html' && path.parse(node.relativePath).name.includes('preview')) {
+      type = 'preview';
+    } else if (node.internal.mediaType === 'application/javascript') {
+      type = 'javascript';
+    }
 
     createNodeField({
       node,
       name: 'slug',
       value: slug,
+    });
+
+    createNodeField({
+      node,
+      name: 'type',
+      value: type,
     });
   }
 
