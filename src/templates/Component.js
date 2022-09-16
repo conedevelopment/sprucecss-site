@@ -60,7 +60,7 @@ export default function Post({location, data: { mdx: post }, data: { allFile: fi
       html = node.internal.content;
     } else if (node.fields.type === 'preview') {
       preview = node.internal.content;
-    } else if (node.fields.type === 'js') {
+    } else if (node.fields.type === 'javascript') {
       js = node.internal.content;
     }
   });
