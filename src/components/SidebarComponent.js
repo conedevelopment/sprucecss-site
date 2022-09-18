@@ -16,6 +16,8 @@ export default function Sidebar() {
         <h3 className="sidebar-section__title">Components</h3>
         <nav className="sidebar-section__navigation">
           <ul>
+            <li><Link to="/ui/component/breadcrumb">Breadcrumb</Link></li>
+            <li><Link to="/ui/component/container">Container</Link></li>
             <li><Link to="/ui/component/post-card">Post Card</Link></li>
             <li><Link to="/ui/component/theme-switcher">Theme Switcher</Link></li>
           </ul>
@@ -36,6 +38,7 @@ export default function Sidebar() {
         <h3 className="sidebar-section__title">Pages</h3>
         <nav className="sidebar-section__navigation">
           <ul>
+            <li><Link to="/ui/page/auth">Auth</Link></li>
             <li><Link to="/ui/page/post">Post</Link></li>
           </ul>
         </nav>
