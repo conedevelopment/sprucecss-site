@@ -16,9 +16,17 @@ export default function Sidebar() {
         <h3 className="sidebar-section__title">Components</h3>
         <nav className="sidebar-section__navigation">
           <ul>
+            <li><Link to="/ui/component/accordion-card">Accordion Card</Link></li>
+            <li><Link to="/ui/component/accordion-list">Accordion List</Link></li>
+            <li><Link to="/ui/component/auth-form">Auth Form</Link></li>
             <li><Link to="/ui/component/breadcrumb">Breadcrumb</Link></li>
             <li><Link to="/ui/component/container">Container</Link></li>
+            <li><Link to="/ui/component/cookie-consent">Cookie Consent</Link></li>
+            <li><Link to="/ui/component/cookie-consent">Cookie Consent</Link></li>
+            <li><Link to="/ui/component/post-author">Post Author</Link></li>
             <li><Link to="/ui/component/post-card">Post Card</Link></li>
+            <li><Link to="/ui/component/site-navigation">Site Navigation</Link></li>
+            <li><Link to="/ui/component/skip-link">Skip Link</Link></li>
             <li><Link to="/ui/component/theme-switcher">Theme Switcher</Link></li>
           </ul>
         </nav>
