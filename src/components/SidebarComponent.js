@@ -19,9 +19,8 @@ export default function Sidebar() {
             <li><Link to="/ui/component/accordion-card">Accordion Card</Link></li>
             <li><Link to="/ui/component/accordion-list">Accordion List</Link></li>
             <li><Link to="/ui/component/auth-form">Auth Form</Link></li>
-            <li><Link to="/ui/component/breadcrumb">Breadcrumb</Link></li>
+            <li><Link to="/ui/component/breadcrumb-list">Breadcrumb List</Link></li>
             <li><Link to="/ui/component/container">Container</Link></li>
-            <li><Link to="/ui/component/cookie-consent">Cookie Consent</Link></li>
             <li><Link to="/ui/component/cookie-consent">Cookie Consent</Link></li>
             <li><Link to="/ui/component/post-author">Post Author</Link></li>
             <li><Link to="/ui/component/post-card">Post Card</Link></li>
