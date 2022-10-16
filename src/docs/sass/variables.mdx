@@ -571,14 +571,55 @@ $escaping-characters: (
 
 ## Breakpoints
 
+We store the breakpoints in the `$breakpoints` map, which we use in the <code><a href="/docs/sass/mixins#breakpoint">breakpoint</a></code> mixin.
+
+[View on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/config/_breakpoint.scss)
+
+<table class="table table--striped table--clear-border table--sm">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>xs</td>
+      <td>32em</td>
+    </tr>
+    <tr>
+      <td>sm</td>
+      <td>48em</td>
+    </tr>
+    <tr>
+      <td>md</td>
+      <td>64em</td>
+    </tr>
+    <tr>
+      <td>lg</td>
+      <td>80em</td>
+    </tr>
+    <tr>
+      <td>xl</td>
+      <td>90em</td>
+    </tr>
+    <tr>
+      <td>xxl</td>
+      <td>110em</td>
+    </tr>
+  </tbody>
+</table>
+
 ```scss
-$breakpoints: (
-  xs: 32em,
-  sm: 48em,
-  md: 64em,
-  lg: 80em,
-  xl: 90em,
-  xxl: 110em
+@use '~sprucecss/scss/spruce' with (
+  $breakpoints: (
+    xs: 32em,
+    sm: 48em,
+    md: 64em,
+    lg: 80em,
+    xl: 90em,
+    xxl: 110em
+  )
 );
 ```
 
