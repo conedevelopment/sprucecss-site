@@ -325,7 +325,17 @@ $heading-font-weight: 700;
 
 ### Line Height
 
-<table class="table table--striped">
+The `line-height`  is always an interesting property when we set up the base typography. In Spruce, we use the:
+
+- `$line-height-base`, which is set on the `body` element,
+- `$line-height-heading`, which is set on the headings.
+The other variables (*-sm, *-md, *-lg) are generic helpers because there aren’t too many good answers here.
+
+We use the formula for `$line-height-heding` from [Jesús Ricarte](https://kittygiraudel.com/2020/05/18/using-calc-to-figure-out-optimal-line-height/); give it a read!
+
+[View on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/config/_typography.scss#L33)
+
+<table class="table table--striped table--clear-border table--sm">
   <thead>
     <tr>
       <th>Name</th>
@@ -357,11 +367,13 @@ $heading-font-weight: 700;
 </table>
 
 ```scss
-$line-height-sm: 1.2;
-$line-height-md: 1.5;
-$line-height-lg: 1.8;
-$line-height-base: $line-height-lg;
-$line-height-heading: calc(2px + 2ex + 2px);
+@use '~sprucecss/scss/spruce' with (
+  $line-height-sm: 1.2,
+  $line-height-md: 1.5,
+  $line-height-lg: 1.8,
+  $line-height-base: $line-height-lg,
+  $line-height-heading: calc(2px + 2ex + 2px)
+);
 ```
 
 ### Inline Elements
