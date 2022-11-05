@@ -296,7 +296,7 @@ $font-size-base: 1rem;
 $font-size-sm: 0.9rem;
 $font-size-lg: 1.1rem;
 
-$font-size-lead: clamp(#{$font-size-lg}, 2vw, #{map.get($font-sizes, h4)}) !default;
+$font-size-lead: clamp(#{$font-size-lg}, 2vw, #{map.get($font-sizes, h4)});
 
 $font-sizes: ();
 $font-sizes: map.merge(
@@ -410,6 +410,11 @@ $btn-icon-padding-lg: 0.9em;
 
 $btn-icon-size-sm: 0.85em;
 $btn-icon-size: 1em;
+
+$btn-focus-ring-type: outline;
+$btn-focus-ring-box-shadow-type: outside;
+$btn-focus-ring-width: 2px;
+$btn-focus-ring-offset: 2px;
 ```
 
 ## Forms
@@ -457,6 +462,11 @@ $form-control-padding-lg: 0.65em 1em;
 $form-control-border-width: 1px;
 $form-control-border-radius: $border-radius-sm;
 
+$form-control-focus-ring-type: box-shadow;
+$form-control-focus-ring-box-shadow-type: outside;
+$form-control-focus-ring-width: 0.25rem;
+$form-control-focus-ring-offset: 2px;
+
 $form-control-color-padding: 0.5em;
 $form-control-color-padding-sm: 0.25em;
 $form-control-color-padding-lg: 0.75em;
@@ -482,25 +492,30 @@ $form-range-track-broder-radius: 0.15rem;
 $form-range-thumb-height: 1rem;
 $form-range-thumb-width: 1rem;
 $form-range-thumb-broder-radius: 0.25rem;
+
+$form-range-focus-ring-type: outline;
+$form-range-focus-ring-box-shadow-type: outside;
+$form-range-focus-ring-width: 2px;
+$form-range-focus-ring-offset: 2px;
 ```
 
 ### Check
 
 ```scss
-$form-check-border-width: 1px !default;
-$form-check-checkbox-border-radius: $border-radius-sm !default;
-$form-check-font-size: 1.125rem !default;
-$form-check-font-size-sm: $font-size-base !default;
-$form-check-font-size-lg: $font-size-lg !default;
-$form-check-font-weight: $form-label-font-weight !default;
-$form-check-line-height: $line-height-heading !default;
-$form-check-margin-block-start: 0.1em !default;
-$form-check-vertical-alignment: center !default;
+$form-check-border-width: 1px;
+$form-check-checkbox-border-radius: $border-radius-sm;
+$form-check-font-size: 1.125rem;
+$form-check-font-size-sm: $font-size-base;
+$form-check-font-size-lg: $font-size-lg;
+$form-check-font-weight: $form-label-font-weight;
+$form-check-line-height: $line-height-heading;
+$form-check-margin-block-start: 0.1em;
+$form-check-vertical-alignment: center;
 
-$form-check-focus-ring-type: outline !default;
-$form-check-focus-ring-box-shadow-type: outside !default;
-$form-check-focus-ring-width: 2px !default;
-$form-check-focus-ring-offset: 2px !default;
+$form-check-focus-ring-type: outline;
+$form-check-focus-ring-box-shadow-type: outside;
+$form-check-focus-ring-width: 2px;
+$form-check-focus-ring-offset: 2px;
 ```
 
 ### Switch
@@ -548,14 +563,14 @@ $form-input-shadow-width: 0.25rem;
 ## Tables
 
 ```scss
-$table-responsive-width: 40rem !default;
-$table-line-height: $line-height-md !default;
-$table-padding: map.get($spacers, s) !default;
-$table-padding-sm: map.get($spacers, xs) !default;
+$table-responsive-width: 40rem;
+$table-line-height: $line-height-md;
+$table-padding: map.get($spacers, s);
+$table-padding-sm: map.get($spacers, xs);
 
-$table-caption-font-size: null !default;
-$table-caption-font-style: null !default;
-$table-caption-font-weight: null !default;
+$table-caption-font-size: null;
+$table-caption-font-style: null;
+$table-caption-font-weight: null;
 
 ```
 
