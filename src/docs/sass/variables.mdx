@@ -85,7 +85,8 @@ $colors: (
     border: $color-gray-light,
     mark-background: hsl(50 100% 80%),
     mark-foreground: $color-black,
-    code-background: hsl(261 52% 95%),
+    marker: $color-primary,
+    code-background: color.change($color-primary, $lightness: 95%),
     code-foreground: $color-black,
     blockquote-border: $color-primary
   ),
@@ -102,29 +103,31 @@ $colors: (
   btn: (
     primary-background: $color-primary,
     primary-foreground: $color-white,
-    primary-shadow-focus: color.adjust($color-primary, $alpha: -0.75),
     secondary-background: $color-secondary,
-    secondary-foreground: $color-white,
-    secondary-shadow-focus: color.adjust($color-secondary, $alpha: -0.75)
+    secondary-foreground: $color-white
   ),
   form: (
     background: $color-white,
     background-disabled: hsl(0 0% 95%),
-    border: $color-gray-light,
+    border: hsl(260 4% 70%),
     border-disabled: $color-gray-light,
     border-focus: $color-primary,
-    shadow-focus: color.adjust($color-primary, $alpha: -0.75),
+    ring-focus: color.adjust($color-primary, $alpha: -0.75),
     check-foreground: $color-white,
     check-background: $color-primary,
+    check-focus-ring: $color-primary,
     invalid: $color-danger,
-    invalid-shadow: color.adjust($color-danger, $alpha: -0.75),
+    invalid-focus-ring: color.adjust($color-danger, $alpha: -0.75),
     label: $color-black,
     legend: $color-black,
     placeholder: hsl(208 7% 40%),
+    range-thumb-background: $color-primary,
+    range-thumb-focus-ring: $color-primary,
+    range-track-background: $color-gray-light,
     text: $color-gray,
-    select-foreground: $color-primary,
+    select-foreground: $color-black,
     valid: $color-success,
-    valid-shadow: color.adjust($color-success, $alpha: -0.75)
+    valid-focus-ring: color.adjust($color-success, $alpha: -0.75)
   ),
   table: (
     border: $color-gray-light,
@@ -545,10 +548,15 @@ $form-input-shadow-width: 0.25rem;
 ## Tables
 
 ```scss
-$table-responsive-width: 40rem;
-$table-line-height: $line-height-md;
-$table-padding: map.get($spacers, s);
-$table-padding-sm: map.get($spacers, xxs) map.get($spacers, xs);
+$table-responsive-width: 40rem !default;
+$table-line-height: $line-height-md !default;
+$table-padding: map.get($spacers, s) !default;
+$table-padding-sm: map.get($spacers, xs) !default;
+
+$table-caption-font-size: null !default;
+$table-caption-font-style: null !default;
+$table-caption-font-weight: null !default;
+
 ```
 
 ## Layout
