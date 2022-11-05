@@ -293,7 +293,7 @@ $font-size-base: 1rem;
 $font-size-sm: 0.9rem;
 $font-size-lg: 1.1rem;
 
-$font-size-lead: math.pow($font-size-ratio, 1) * $font-size-base;
+$font-size-lead: clamp(#{$font-size-lg}, 2vw, #{map.get($font-sizes, h4)}) !default;
 
 $font-sizes: ();
 $font-sizes: map.merge(
@@ -589,6 +589,8 @@ $container-width: 84rem;
 ## Character escaping
 
 We use the `$escaping-characters` under the <code><a href="/docs/sass/functions/#svg-escape">svg-escape</a></code> function to neutralize the characters when we use inline SVG through `data:image`.
+
+[View on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/config/_escaping-characters.scss)
 
 ```scss
 $escaping-characters: (

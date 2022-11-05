@@ -359,6 +359,39 @@ Use the `form-check` class on the label element for styling checkbox elements an
   </div>
 </fieldset>
 ```
+Using the`$form-check-vertical-alignment` variable, you can control the checkbox and radio input's vertical alignment. Also, with the additional `.form-check--vertical-start` and `.form-check--vertical--center` you can do it individually.
+
+<Preview>
+  <fieldset>
+    <legend>Checkbox Alignment</legend>
+    <div class="form-group form-group--vertical-check">
+      <label class="form-check form-check--vertical-center">
+        <input class="form-check__control" type="checkbox" id="indeterminate" value="long-1" name="checkbox-long"/>
+        <span class="form-label form-check__label">Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent sit amet sapien libero. Aenean tristique sed ligula nec tempor. In turpis nisi, rhoncus at urna sed, imperdiet imperdiet orci.</span>
+      </label>
+      <label class="form-check">
+        <input class="form-check__control form-check--vertical-start" type="checkbox" value="long-2" name="checkbox-long"/>
+        <span class="form-label form-check__label">Pellentesque lectus risus, ornare a gravida in, egestas euismod urna. Nullam rhoncus nisi sit amet quam accumsan, blandit tempor sem tristique. Mauris tempor quam sagittis tristique facilisis. Donec aliquet ac nisi eget facilisis.</span>
+      </label>
+    </div>
+  </fieldset>
+</Preview>
+
+```html
+<fieldset>
+  <legend>Checkbox Alignment</legend>
+  <div class="form-group form-group--vertical-check">
+    <label class="form-check form-check--vertical-center">
+      <input class="form-check__control" type="checkbox" id="indeterminate" value="long-1" name="checkbox-long"/>
+      <span class="form-label form-check__label">Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent sit amet sapien libero. Aenean tristique sed ligula nec tempor. In turpis nisi, rhoncus at urna sed, imperdiet imperdiet orci.</span>
+    </label>
+    <label class="form-check">
+      <input class="form-check__control form-check--vertical-start" type="checkbox" value="long-2" name="checkbox-long"/>
+      <span class="form-label form-check__label">Pellentesque lectus risus, ornare a gravida in, egestas euismod urna. Nullam rhoncus nisi sit amet quam accumsan, blandit tempor sem tristique. Mauris tempor quam sagittis tristique facilisis. Donec aliquet ac nisi eget facilisis.</span>
+    </label>
+  </div>
+</fieldset>
+```
 
 ## Switch
 
