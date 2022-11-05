@@ -10,6 +10,8 @@ Get color value by key and type name from the `$colors` map. The `$colors` map i
 
 **The function returns a CSS custom property** with a fallback color, but you can also access just the color value setting the `$only-color` value to `true`.
 
+<Notification type="info">The <code>color</code> function also handles <code>null</code> values, which means in Sass that your declaration block won’t render if the value you access is null.</Notification>
+
 ### Argument(s)
 
 | Name              | Default Value | Description                                                       |
