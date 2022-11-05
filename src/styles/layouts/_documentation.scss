@@ -5,7 +5,7 @@
 
   &__inner {
     display: grid;
-    gap: spruce.spacer(l);
+    gap: spruce.spacer(xl);
     grid-template-columns: minmax(0, 1fr);
 
     @include spruce.breakpoint(sm) {
