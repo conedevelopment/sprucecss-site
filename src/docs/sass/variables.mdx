@@ -484,13 +484,20 @@ $form-range-thumb-broder-radius: 0.25rem;
 ### Check
 
 ```scss
-$form-check-border-width: 1px;
-$form-check-font-size: $font-size-base;
-$form-check-font-size-sm: $font-size-sm;
-$form-check-font-size-lg: $font-size-lg;
-$form-check-font-weight: $form-label-font-weight;
-$form-check-line-height: $line-height-heading;
-$form-check-margin-bottom: -0.1em;
+$form-check-border-width: 1px !default;
+$form-check-checkbox-border-radius: $border-radius-sm !default;
+$form-check-font-size: 1.125rem !default;
+$form-check-font-size-sm: $font-size-base !default;
+$form-check-font-size-lg: $font-size-lg !default;
+$form-check-font-weight: $form-label-font-weight !default;
+$form-check-line-height: $line-height-heading !default;
+$form-check-margin-block-start: 0.1em !default;
+$form-check-vertical-alignment: center !default;
+
+$form-check-focus-ring-type: outline !default;
+$form-check-focus-ring-box-shadow-type: outside !default;
+$form-check-focus-ring-width: 2px !default;
+$form-check-focus-ring-offset: 2px !default;
 ```
 
 ### Switch
@@ -552,12 +559,36 @@ $container-width: 84rem;
 
 ## Transition and Animation
 
+<table class="table table--striped table--sm table--font-size-reset">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$transition-duration</td>
+      <td>0.15s</td>
+    </tr>
+    <tr>
+      <td>$transition-timing-function</td>
+      <td>ease-in-out</td>
+    </tr>
+  </tbody>
+</table>
+
 ```scss
-$transition-duration: 0.15s;
-$transition-timing-function: ease-in-out;
+@use '~sprucecss/scss/spruce' with (
+  $transition-duration: 0.15s,
+  $transition-timing-function: ease-in-out
+);
+
 ```
 
 ## Character escaping
+
+We use the `$escaping-characters` under the <code><a href="/docs/sass/functions/#svg-escape">svg-escape</a></code> function to neutralize the characters when we use inline SVG through `data:image`.
 
 ```scss
 $escaping-characters: (
@@ -575,7 +606,7 @@ We store the breakpoints in the `$breakpoints` map, which we use in the <code><a
 
 [View on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/config/_breakpoint.scss)
 
-<table class="table table--striped table--clear-border table--sm">
+<table class="table table--striped table--sm table--font-size-reset">
   <thead>
     <tr>
       <th>Name</th>
@@ -629,7 +660,7 @@ To learn more about the print option, [please visit the related page](/docs/gett
 
 [View on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/config/_print.scss)
 
-<table class="table table--striped table--clear-border table--sm">
+<table class="table table--striped table--sm table--font-size-reset">
   <thead>
     <tr>
       <th>Name</th>
