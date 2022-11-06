@@ -47,6 +47,14 @@ h6 {
   td {
     min-width: 10rem;
   }
+
+  &--striped > tbody > tr:nth-child(odd) {
+    background-color: spruce.color(stripe, table);
+  }
+
+  &--striped > tbody > tr:nth-child(even) {
+    background-color: transparent;
+  }
 }
 
 .anchor-heading {
