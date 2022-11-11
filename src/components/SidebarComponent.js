@@ -9,6 +9,7 @@ export default function Sidebar() {
         <nav className="sidebar-section__navigation">
           <ul>
             <li><Link to="/ui/getting-started/introduction">Introduction</Link></li>
+            <li><Link to="/ui/getting-started/how-to-use">How to Use</Link></li>
           </ul>
         </nav>
       </section>
