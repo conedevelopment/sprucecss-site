@@ -36,6 +36,8 @@ export default function Sidebar() {
         <nav className="sidebar-section__navigation">
           <ul>
             <li><Link to="/ui/section/gallery">Gallery</Link></li>
+            <li><Link to="/ui/section/post-content">Post Content</Link></li>
+            <li><Link to="/ui/section/post-heading">Post Heading</Link></li>
             <li><Link to="/ui/section/post-list">Post List</Link></li>
             <li><Link to="/ui/section/site-footer">Site Footer</Link></li>
             <li><Link to="/ui/section/site-header">Site Header</Link></li>

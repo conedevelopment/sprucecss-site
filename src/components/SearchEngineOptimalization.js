@@ -16,7 +16,6 @@ export default function Seo({ children, location, description, title, image, fro
     }
   `);
 
-
   return (
     <Helmet>
       <html lang="en"/>
