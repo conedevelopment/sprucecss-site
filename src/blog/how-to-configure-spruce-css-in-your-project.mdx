@@ -28,6 +28,15 @@ We need an **_index.scss**, a **_config.scss**, and a **_styles.scss** file in t
 <Notification type="info">
 You can see this file structure in action at our <a href="https://github.com/conedevelopment/sprucecss-starter-kit">Spruce CSS Starter Kit</a>.</Notification>
 
+## __index.scss
+
+In this file, we just forward all of the config files.
+
+```scss
+@forward 'config';
+@forward 'styles';
+```
+
 ## _config.scss
 
 Inside the** _config.scss** file, we set our Spruce CSS customizations as you see under the [settings](/docs/customization/settings) and [variabled](/docs/sass/variables).
@@ -54,8 +63,17 @@ Inside the **_styles.scss** file, we set the [generators](/docs/elements/generat
 @include spruce.generate-form;
 ```
 
+## main.scss
+
+For the complete picture, we include the main file here, where the first step is loading the config.
+
+```scss
+@forward 'config';
+// @forward 'components';
+```
+
 ## The Advantages of This Structure
-You separated every config-related code inside one folder, which is always nice.
-For example, you can easily extend this structure in the future if you need another theme, like a dark one.
-You can load the config in multiple files, which are usually handy (or you need just the **_config.scss**).
+- You separated every config-related code inside one folder, which is always nice.
+- For example, you can easily extend this structure in the future if you need another theme, like a dark one.
+- You can load the config in multiple files, which are usually handy (or you need just the **_config.scss**).
 
