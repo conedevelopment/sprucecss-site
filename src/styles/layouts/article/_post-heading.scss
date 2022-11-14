@@ -55,8 +55,8 @@
 
   [aria-current='page'] {
     @include spruce.text-ellipsis(1);
-    display: inline-flex;
-    max-width: 20ch;
+    display: inline-block;
     text-align: start;
+    width: 20ch;
   }
 }
