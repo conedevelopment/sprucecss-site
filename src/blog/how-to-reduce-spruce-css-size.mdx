@@ -3,9 +3,35 @@ title: 'How to Reduce Spruce CSS Size'
 date: 2022-11-14
 featuredImage: '../images/blog/how-to-03.png'
 alt: ''
-published: false
+published: true
 tags: ['how-to']
 ---
 
-<p class="lead">lead</p>
+<p class="lead">We try to make Spruce CSS smaller but still, we talk about 1000+ lines of code. Sometimes we don’t need all of them.</p>
+
+This framework only writes out any code if we tell it explicitly through a mixin. We call these mixins generators. We can control the size of our codebase by using or omitting them.
+
+Usually, we use the following two:
+
+```scss
+@use 'sprucecss/scss/spruce';
+
+@include spruce.generate-content;
+@include spruce.generate-form;
+```
+
+You can see that from the [source code](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_generator.scss) that these two mixins generate a lot smaller ones which we can utilize.
+
+If you only need one type of button and nothing more from the forms, you can use the following:
+
+```scss
+@use 'sprucecss/scss/spruce';
+
+@include spruce.generate-content;
+@include spruce.generate-btn('.btn');
+
+.btn--primary { @include spruce.btn-variant(primary); }
+```
+
+<Notification type="info">Please visit our <a href="/blog/how-to-configure-spruce-css-in-your-project">first how-to article</a> to learn more about how you should set up your config files.</Notification>
 
