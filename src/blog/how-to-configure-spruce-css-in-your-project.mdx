@@ -11,9 +11,9 @@ tags: ['how-to']
 
 A config setting is needed to set your custom values and generate Spruce’s styles.
 
-We can utilize Sass’s newer [index file feature](https://sass-lang.com/documentation/at-rules/use#index-files). Create a **config** folder inside your **scss** folder.
+We can utilize Sass’s newer [index file feature](https://sass-lang.com/documentation/at-rules/use#index-files).
 
-We need an **_index.scss**, a **_config.scss**, and a **_styles.scss** file in this folder. Inside the **_index.scss** file, we forward the others to our main entry point (that we compile into a single CSS file) **main.scss**, which is in the root of the `scss` folder.
+Create a **config** folder inside your **scss** folder. We need an **_index.scss**, a **_config.scss**, and a **_styles.scss** file in this folder. Inside the **_index.scss** file, we forward the others to our main entry point (that we compile into a single CSS file) **main.scss**, which is in the root of the `scss` folder.
 
 ```scss
 .
@@ -39,7 +39,7 @@ In this file, we just forward all of the config files.
 
 ## _config.scss
 
-Inside the** _config.scss** file, we set our Spruce CSS customizations as you see under the [settings](/docs/customization/settings) and [variabled](/docs/sass/variables).
+Inside the** _config.scss** file, we set our Spruce CSS customizations as you see under the [settings](/docs/customization/settings) and [variables](/docs/sass/variables).
 
 ```scss
 @use 'sprucecss/scss/spruce' with (
@@ -75,5 +75,5 @@ For the complete picture, we include the main file here, where the first step is
 ## The Advantages of This Structure
 - You separated every config-related code inside one folder, which is always nice.
 - For example, you can easily extend this structure in the future if you need another theme, like a dark one.
-- You can load the config in multiple files, which are usually handy (or you need just the **_config.scss**).
+- You can load the config in multiple files, which are usually handy (or just the **_config.scss**).
 
