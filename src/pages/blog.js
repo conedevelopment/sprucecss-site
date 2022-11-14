@@ -34,7 +34,7 @@ export const pageQuery = graphql`
   query {
     allMdx(
       sort: {order: DESC, fields: frontmatter___date}
-      filter: {fields: {collection: {eq: "blog"}}}
+      filter: {fields: {collection: {eq: "blog"}}, frontmatter: {published: {eq: true}}}
     ) {
       nodes {
         slug

@@ -79,7 +79,10 @@ export default function Post({
 
 export const query = graphql`
   query ($slug: String!) {
-    mdx(slug: {eq: $slug}) {
+    mdx(
+      slug: {eq: $slug}
+      frontmatter: {published: {eq: true}}
+    ) {
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
