@@ -1,7 +1,6 @@
 @use '~sprucecss/scss/spruce';
 
 .prism-code-wrapper {
-  border-radius: spruce.$border-radius-sm;
   overflow: hidden;
   position: relative;
 }
