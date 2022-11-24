@@ -45,7 +45,10 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-      tagsGroup: allMdx(limit: 2000) {
+      tagsGroup: allMdx(
+        limit: 2000
+        filter: {fields: {collection: {eq: "blog"}}, frontmatter: {published: {eq: true}}}
+      ) {
         group(field: frontmatter___tags) {
           fieldValue
         }
