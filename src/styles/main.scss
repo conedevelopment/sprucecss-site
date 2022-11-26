@@ -33,6 +33,7 @@ h6 {
 .btn--rounded { border-radius: spruce.$border-radius-lg; }
 .btn--install { @include spruce.btn-variant(install); }
 .btn--decline { @include spruce.btn-variant(decline); }
+.btn--discrete { @include spruce.btn-variant(discrete); }
 
 .lead {
   color: spruce.color(heading);

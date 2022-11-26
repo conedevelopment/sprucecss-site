@@ -17,11 +17,7 @@ export default function Seo({ children, location, description, title, image, fro
   `);
 
   return (
-    <Helmet
-      bodyAttributes={{
-        class: 'new-class-for-body'
-      }}
-    >
+    <Helmet>
       <html lang="en"/>
       <title>{frontPage ? `${title}` : `${title} - ${site.siteMetadata.title}`}</title>
 

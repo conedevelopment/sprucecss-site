@@ -71,6 +71,14 @@ module.exports = {
       __key: 'pages',
     },
     {
+      resolve: `gatsby-source-git`,
+      options: {
+        name: `component`,
+        remote: `https://adamlaki:${process.env.GITHUB_PERSONAL_ACCESS_TOKEN}@github.com/conedevelopment/spruceui`,
+        branch: `main`
+      }
+    },
+    {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {

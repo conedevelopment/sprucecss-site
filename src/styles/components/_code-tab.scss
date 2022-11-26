@@ -1,0 +1,72 @@
+@use '~sprucecss/scss/spruce';
+
+.code-tab {
+  border: 1px solid spruce.color(border);
+  border-radius: spruce.$border-radius-sm;
+  overflow: hidden;
+
+  &__header {
+    align-items: center;
+    background-color: spruce.color(code-tab-background);
+    border-block-end: 1px solid spruce.color(border);
+    border-start-end-radius: spruce.$border-radius-sm;
+    border-start-start-radius: spruce.$border-radius-sm;
+    display: flex;
+    flex-wrap: wrap;
+    gap: spruce.spacer(xs) spruce.spacer(m);
+    justify-content: space-between;
+    padding: spruce.spacer(s);
+  }
+
+  &__title {
+    font-size: spruce.font-size(h5);
+    margin-block: 0;
+  }
+
+  &__open-new {
+    align-items: center;
+    display: flex;
+    font-size: spruce.$font-size-sm;
+    gap: spruce.spacer(xs);
+    line-height: 1;
+
+    svg {
+      height: 0.85em;
+      width: 0.85em;
+    }
+  }
+
+  &__group {
+    @include spruce.clear-list;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: spruce.spacer(xxs) spruce.spacer(xs);
+
+    > * + * { margin-block-start: 0; }
+
+    &--title {
+      gap: spruce.spacer(xxs) spruce.spacer(s);
+    }
+  }
+
+  &__body {
+    .prism-code {
+      @include spruce.scrollbar(
+        $size: 0.5rem,
+        $border-radius: 0.15rem
+      );
+      max-height: 40rem;
+    }
+  }
+
+  &__inner {
+    position: relative;
+
+    .copy-btn {
+      inset: spruce.spacer(m) spruce.spacer(m) auto auto;
+      position: absolute;
+      z-index: 1;
+    }
+  }
+}

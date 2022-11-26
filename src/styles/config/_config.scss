@@ -8,14 +8,19 @@
       primary-dark: hsl(261deg 52% 35%),
       primary-darkest: hsl(272 100% 9%),
       heading: hsl(0 0% 0%),
-      footer-background: hsl(222 100% 98%)
+      footer-background: hsl(222 100% 98%),
+      code-tab-background: hsl(222 100% 98%)
     ),
     btn: (
-      install-background: hsl(0, 0%, 95%),
-      install-background-hover: hsl(0, 0%, 90%),
-      install-foreground: hsl(0, 0%, 10%),
-      decline-background: hsl(207, 39%, 17%),
-      decline-foreground: hsl(0, 0%, 100%)
+      install-background: hsl(0 0% 95%),
+      install-background-hover: hsl(0 0% 90%),
+      install-foreground: hsl(0 0% 10%),
+      decline-background: hsl(207 39% 17%),
+      decline-foreground: hsl(0 0% 100%),
+      discrete-background: hsla(206 40% 17% / 0.1),
+      discrete-background-hover: hsl(262 71% 49%),
+      discrete-foreground: hsl(0 0% 10%),
+      discrete-foreground-hover: hsl(0 0% 100%)
     ),
     cookie: (
       background: hsl(207 95% 8%),
@@ -47,6 +52,5 @@
   $font-size-base: 1.063rem,
   $font-size-ratio: 1.25,
   $container-width: 88rem,
-  $form-control-font-size: 1rem,
-  $table-padding-sm: 0.5em
+  $form-control-font-size: 1rem
 );

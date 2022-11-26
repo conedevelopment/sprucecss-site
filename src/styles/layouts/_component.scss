@@ -1,22 +1,22 @@
 @use '~sprucecss/scss/spruce';
 
-.l-documentation {
-  padding-block: clamp(spruce.spacer(m), 5vw, spruce.spacer(l)) clamp(spruce.spacer(l), 5vw, spruce.spacer(xl));
+.l-component {
+  padding-block-end: spruce.spacer-clamp(l, xl);
+
+  &__header {
+    @include spruce.layout-stack(s);
+    margin-block: spruce.spacer-clamp(xl, xxl);
+    max-width: 70ch;
+  }
 
   &__inner {
     display: grid;
-    gap: spruce.spacer(xl);
+    gap: spruce.spacer(l);
+    grid-auto-rows: min-content;
     grid-template-columns: minmax(0, 1fr);
 
     @include spruce.breakpoint(sm) {
       grid-template-columns: minmax(0, 15rem) minmax(0, 3.5fr);
-    }
-  }
-
-  &__sidebar {
-    @include spruce.breakpoint(sm) {
-      max-height: calc(100vh - 4rem);
-      position: sticky;
     }
   }
 
@@ -37,6 +37,13 @@
 
     @include spruce.breakpoint(lg) {
       grid-template-columns: minmax(0, 3.5fr) minmax(0, 15rem);
+    }
+  }
+
+  &__sidebar {
+    @include spruce.breakpoint(md) {
+      max-height: calc(100vh - 4rem);
+      position: sticky;
     }
   }
 
@@ -61,10 +68,10 @@
       $scaler: 40,
       $optimal-size: '3vw + 1rem'
     );
-    margin: 0;
+    margin-block: 0;
+  }
 
-    @include spruce.breakpoint(lg) {
-      grid-column: 1 / 2;
-    }
+  &__code-tab {
+    margin-block-end: spruce.spacer-clamp(l, xl);
   }
 }

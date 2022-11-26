@@ -13,6 +13,7 @@
   &__logo {
     align-items: center;
     display: flex;
+    position: relative;
 
     a {
       display: inline-flex;
@@ -23,6 +24,13 @@
       height: 1.75rem;
       position: relative;
       width: auto;
+    }
+
+    &--ui {
+
+      svg {
+        height: 2.14rem;
+      }
     }
   }
 
