@@ -26,6 +26,9 @@ export default function Seo({ children, location, description, title, image, fro
       <meta charSet="utf-8" />
       <meta name="description" content={site.siteMetadata.description} />
 
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
       {/* Open Graph */}
       {location && <meta property="og:url" content={location.href} />}
       <meta property="og:image" content={image || `${site.siteMetadata.siteUrl}/social-card.png`} />
