@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import CopyIcon from '../images/icons/copy.svg';
+import Check from '../images/icons/check-simple.svg';
 
 export default function CodeBlockCopyBtn(props) {
   const [isCopied, setIsCopied] = useState(false);
@@ -24,9 +25,9 @@ export default function CodeBlockCopyBtn(props) {
   }
 
   return (
-    <button onClick={handleCopyClick} class="btn btn--primary btn--icon btn--sm copy-btn">
-      <CopyIcon className="btn__icon" />
-      {isCopied ? 'Copied!' : 'Copy'}
+    <button onClick={handleCopyClick} class="btn btn--primary btn--icon btn--sm copy-btn" aria-label=
+    {isCopied ? 'Copied!' : 'Copy'}>
+      {isCopied ? <Check className="btn__icon" /> : <CopyIcon className="btn__icon" />}
     </button>
   );
 };
