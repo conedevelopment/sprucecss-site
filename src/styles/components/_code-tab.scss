@@ -48,25 +48,19 @@
     &--title {
       gap: spruce.spacer(xxs) spruce.spacer(s);
     }
+
+    &--tabs {
+      margin-inline-start: auto;
+
+      li {
+        display: inline-flex;
+      }
+    }
   }
 
   &__body {
     .prism-code {
-      @include spruce.scrollbar(
-        $size: 0.5rem,
-        $border-radius: 0.15rem
-      );
       max-height: 40rem;
-    }
-  }
-
-  &__inner {
-    position: relative;
-
-    .copy-btn {
-      inset: spruce.spacer(m) spruce.spacer(m) auto auto;
-      position: absolute;
-      z-index: 1;
     }
   }
 }

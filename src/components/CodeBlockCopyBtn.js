@@ -6,10 +6,12 @@ export default function CodeBlockCopyBtn(props) {
   const [isCopied, setIsCopied] = useState(false);
 
   async function copyTextToClipboard() {
+    const code = document.querySelector(`#tab-content-${props.id}`).dataset.code;
+
     if ('clipboard' in navigator) {
-      return await navigator.clipboard.writeText(props.code);
+      return await navigator.clipboard.writeText(code);
     } else {
-      return document.execCommand('copy', true, props.code);
+      return document.execCommand('copy', true, code);
     }
   }
 
@@ -25,7 +27,7 @@ export default function CodeBlockCopyBtn(props) {
   }
 
   return (
-    <button onClick={handleCopyClick} class="btn btn--primary btn--icon btn--sm copy-btn" aria-label=
+    <button disabled={props.id !== 'preview' ? false : true} onClick={handleCopyClick} className="btn btn--primary btn--icon btn--sm copy-btn" aria-label=
     {isCopied ? 'Copied!' : 'Copy'}>
       {isCopied ? <Check className="btn__icon" /> : <CopyIcon className="btn__icon" />}
     </button>

@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Import components
 import CodeTabControl from './CodeTabControl';
 import CodeTabContent from './CodeTabContent';
+import CodeBlockCopyBtn from './CodeBlockCopyBtn';
 
 // Images
 import OpenNew from '../images/icons/open-in-new.svg';
@@ -20,13 +21,14 @@ export default function CodeTab({ defaultTab = 'preview', title, url, children }
             Open in New Window
           </a>
         </div>
-        <ul className="code-tab__group" role="tab">
+        <ul className="code-tab__group code-tab__group--tabs" role="tab">
           {children.map((child) => {
             if (child !== null && typeof child.props !== 'undefined') {
               return <li role="presentation" key={child.props.id}><CodeTabControl title={child.props.title} id={child.props.id} activeTab={activeTab} setActiveTab={setActiveTab}/></li>;
             }
           })}
         </ul>
+        <CodeBlockCopyBtn id={activeTab}/>
       </div>
       <div className="code-tab__body">
         {children.map((child) => {
