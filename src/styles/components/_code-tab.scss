@@ -50,7 +50,9 @@
     }
 
     &--tabs {
-      margin-inline-start: auto;
+      @include spruce.breakpoint(sm) {
+        margin-inline-start: auto;
+      }
 
       li {
         display: inline-flex;
