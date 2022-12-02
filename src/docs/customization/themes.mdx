@@ -64,8 +64,10 @@ $colors: (
   ),
   btn: (
     primary-background: hsl(261 52% 59%),
+    primary-background-hover: hsl(261 52% 65%),
     primary-foreground: $color-white,
     secondary-background: $color-secondary,
+    secondary-background-hover: color.adjust($color-secondary, $lightness: 5%),
     secondary-foreground: $color-white,
     install-background: hsl(207 39% 17%),
     install-background-hover: hsl(207 23% 26%),
@@ -106,9 +108,6 @@ $colors: (
     thumb-background: hsl(0 0% 100% / 0.15),
     thumb-background-hover:	hsl(0 0% 100% / 0.25),
     track-background:	hsl(0 0% 100% / 0.05)
-  ),
-  breadcrumb: (
-    arrow: hsl(0 0% 100% / 0.1)
   )
 );
 ```
