@@ -86,16 +86,5 @@ module.exports = {
         }
       }
     },
-    {
-      resolve: `gatsby-plugin-gdpr-cookies`,
-      options: {
-        googleAnalytics: {
-          cookieName: 'spruce-gdpr-cookies',
-          trackingId: process.env.ANALYTICS_ID,
-          anonymize: true
-        },
-        environments: ['production', 'development']
-      },
-    },
   ],
 };
