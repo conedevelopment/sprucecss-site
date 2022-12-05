@@ -37,7 +37,9 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          slug
+          fields {
+            slug
+          }
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title

@@ -11,7 +11,7 @@ import PostNavigation from '../components/PostNavigation';
 
 export const query = graphql`
   query ($slug: String!) {
-    mdx(slug: {eq: $slug}) {
+    mdx(fields: {slug: {eq: $slug}}) {
       frontmatter {
         title
         github

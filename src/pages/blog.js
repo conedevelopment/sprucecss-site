@@ -37,7 +37,9 @@ export const pageQuery = graphql`
       filter: {fields: {collection: {eq: "blog"}}, frontmatter: {published: {eq: true}}}
     ) {
       nodes {
-        slug
+        fields {
+          slug
+        }
         frontmatter {
           date(formatString: "MMMM DD, YYYY")
           title

@@ -1,11 +1,34 @@
 const path = require('path');
+const { createFilePath } = require('gatsby-source-filesystem');
 
 exports.onCreateNode = async ({ node, getNode, actions, loadNodeContent }) => {
   const { createNodeField } = actions;
 
+  if (node.internal.type === `Mdx`) {
+    const parent = getNode(node.parent);
+    const collection = parent.sourceInstanceName;
+
+    createNodeField({
+      node,
+      name: 'collection',
+      value: collection,
+    });
+
+    if (getNode(node.parent).sourceInstanceName !== 'component') {
+      createNodeField({
+        node,
+        name: 'slug',
+        value: createFilePath({ node, getNode })
+      });
+    }
+  }
+
   if (node.internal.mediaType === 'text/x-scss' ||
       node.internal.mediaType === 'text/html' ||
-      node.internal.mediaType === 'application/javascript') {
+      node.internal.mediaType === 'application/javascript' &&
+      getNode(node.parent)?.sourceInstanceName === 'component') {
+    console.log('RUN FOR COMPONENTS');
+
     await loadNodeContent(node);
 
     let type = '';
@@ -25,6 +48,8 @@ exports.onCreateNode = async ({ node, getNode, actions, loadNodeContent }) => {
       type = 'javascript';
     }
 
+    console.log('Component slug: ', slug);
+
     createNodeField({
       node,
       name: 'slug',
@@ -37,16 +62,6 @@ exports.onCreateNode = async ({ node, getNode, actions, loadNodeContent }) => {
       value: type,
     });
   }
-
-  if (node.internal.type === `Mdx`) {
-    const parent = getNode(node.parent);
-    let collection = parent.sourceInstanceName;
-    createNodeField({
-      node,
-      name: 'collection',
-      value: collection,
-    });
-  }
 };
 
 exports.createPages = async ({ graphql, actions }) => {
@@ -57,9 +72,11 @@ exports.createPages = async ({ graphql, actions }) => {
         filter: {fields: {collection: {eq: "docs"}}}
       ) {
         nodes {
-          slug
           frontmatter {
             title
+          }
+          fields {
+            slug
           }
         }
       }
@@ -73,9 +90,11 @@ exports.createPages = async ({ graphql, actions }) => {
         filter: {fields: {collection: {eq: "component"}}}
       ) {
         nodes {
-          slug
           frontmatter {
             title
+          }
+          fields {
+            slug
           }
         }
       }
@@ -89,11 +108,13 @@ exports.createPages = async ({ graphql, actions }) => {
         filter: {fields: {collection: {eq: "blog"}}, frontmatter: {published: {eq: true}}}
       ) {
         nodes {
-          slug
           frontmatter {
             title
             date
             tags
+          }
+          fields {
+            slug
           }
         }
       }
@@ -127,6 +148,9 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   uiPages.forEach((post, index) => {
+    console.log('MISSING SLUG: ', post.slug);
+    console.log('MISSING POST: ', post);
+
     actions.createPage({
       path: post.slug,
       component: path.resolve('./src/templates/Component.js'),

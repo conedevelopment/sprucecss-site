@@ -80,7 +80,7 @@ export default function Post({
 export const query = graphql`
   query ($slug: String!) {
     mdx(
-      slug: {eq: $slug}
+      fields: {slug: {eq: $slug}}
       frontmatter: {published: {eq: true}}
     ) {
       frontmatter {
