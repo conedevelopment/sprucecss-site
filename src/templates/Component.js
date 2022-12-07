@@ -20,11 +20,7 @@ export const query = graphql`
         codeURL
         previewHeight
       }
-      body,
-      headings {
-        depth
-        value
-      }
+      body
     },
     allFile(
       filter: {sourceInstanceName: {eq: "component"}, fields: {slug: {eq: $slug}}}
@@ -96,7 +92,7 @@ export default function Post({location, data: { mdx: post }, data: { allFile: fi
             <SidebarComponent />
             <div className="l-component__body-helper">
               <div className="l-component__body">
-                {post.headings.length !== 0 &&
+                {/* post.headings.length !== 0 &&
                 <div className="l-component__table-of-content">
                   <section className="toc" aria-labelledby="toc-title">
                     <h3 className="toc__title" id="toc-title">On this page</h3>
@@ -104,7 +100,7 @@ export default function Post({location, data: { mdx: post }, data: { allFile: fi
                       <TableOfContents headings={post.headings} />
                     </nav>
                   </section>
-                </div>}
+              </div> */}
                 <article className="l-component__content post-content">
                   <MDXRenderer>{body}</MDXRenderer>
                 </article>

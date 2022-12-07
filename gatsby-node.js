@@ -14,20 +14,17 @@ exports.onCreateNode = async ({ node, getNode, actions, loadNodeContent }) => {
       value: collection,
     });
 
-    if (getNode(node.parent).sourceInstanceName !== 'component') {
-      createNodeField({
-        node,
-        name: 'slug',
-        value: createFilePath({ node, getNode })
-      });
-    }
+    createNodeField({
+      node,
+      name: 'slug',
+      value: createFilePath({ node, getNode })
+    });
   }
 
   if (node.internal.mediaType === 'text/x-scss' ||
       node.internal.mediaType === 'text/html' ||
-      node.internal.mediaType === 'application/javascript' &&
-      getNode(node.parent)?.sourceInstanceName === 'component') {
-    console.log('RUN FOR COMPONENTS');
+      node.internal.mediaType === 'application/javascript') {
+    // console.log('RUN FOR COMPONENTS');
 
     await loadNodeContent(node);
 
@@ -48,13 +45,15 @@ exports.onCreateNode = async ({ node, getNode, actions, loadNodeContent }) => {
       type = 'javascript';
     }
 
-    console.log('Component slug: ', slug);
+    // console.log('Component slug: ', slug);
 
     createNodeField({
       node,
       name: 'slug',
       value: slug,
     });
+
+    // console.log('Component slug field: ', slugField);
 
     createNodeField({
       node,
@@ -85,8 +84,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const dataUI = await graphql(`
     query {
-      docs: allMdx(
-        sort: {order: ASC, fields: frontmatter___order}
+      allMdx(
         filter: {fields: {collection: {eq: "component"}}}
       ) {
         nodes {
@@ -131,7 +129,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
 
   const docPages = dataDocs.data.docs.nodes;
-  const uiPages = dataUI.data.docs.nodes;
+  const uiPages = dataUI.data.nodes;
   const blogPages = dataBlog.data.posts.nodes;
   const tags = dataBlog.data.tagsGroup.group;
 
@@ -147,9 +145,11 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
+  console.log(uiPages.length);
+
   uiPages.forEach((post, index) => {
-    console.log('MISSING SLUG: ', post.slug);
-    console.log('MISSING POST: ', post);
+    // console.log('MISSING SLUG: ', post.slug);
+    // console.log('MISSING POST: ', post);
 
     actions.createPage({
       path: post.slug,
