@@ -127,11 +127,14 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
+  // console.log(dataUI);
 
   const docPages = dataDocs.data.docs.nodes;
-  const uiPages = dataUI.data.nodes;
+  const uiPages = dataUI.data.allMdx.nodes;
   const blogPages = dataBlog.data.posts.nodes;
   const tags = dataBlog.data.tagsGroup.group;
+
+  // console.log('UI pages query data: ', uiPages);
 
   docPages.forEach((doc, index) => {
     actions.createPage({
@@ -145,29 +148,29 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
-  console.log(uiPages.length);
-
   uiPages.forEach((post, index) => {
-    // console.log('MISSING SLUG: ', post.slug);
+    console.log('MISSING SLUG: ', post.fields.slug);
     // console.log('MISSING POST: ', post);
 
-    actions.createPage({
-      path: post.slug,
-      component: path.resolve('./src/templates/Component.js'),
-      context: {
-        slug: post.slug,
-        prev: index === 0 ? null : uiPages[index - 1],
-        next: index === (uiPages.length - 1) ? null : uiPages[index + 1]
-      }
-    });
+    if (post.slug) {
+      actions.createPage({
+        path: post.fields.slug,
+        component: path.resolve('./src/templates/Component.js'),
+        context: {
+          slug: post.slug,
+          prev: index === 0 ? null : uiPages[index - 1],
+          next: index === (uiPages.length - 1) ? null : uiPages[index + 1]
+        }
+      });
+    }
   });
 
   blogPages.forEach((post) => {
     actions.createPage({
-      path: `blog/${post.slug}`,
+      path: `blog/${post.fields.slug}`,
       component: path.resolve('./src/templates/Blog.js'),
       context: {
-        slug: post.slug,
+        slug: post.fields.slug,
       }
     });
   });

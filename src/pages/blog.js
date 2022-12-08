@@ -20,7 +20,7 @@ export default function Blog({ data }) {
           <div className="l-blog__inner">
             {data.allMdx.nodes.map((post) => {
               return (
-                <Card key={post.slug} post={post} />
+                <Card key={post.fields.slug} post={post} />
               )
             })}
           </div>
@@ -33,7 +33,6 @@ export default function Blog({ data }) {
 export const pageQuery = graphql`
   query {
     allMdx(
-      sort: {order: DESC, fields: frontmatter___date}
       filter: {fields: {collection: {eq: "blog"}}, frontmatter: {published: {eq: true}}}
     ) {
       nodes {

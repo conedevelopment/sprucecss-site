@@ -7,7 +7,7 @@ export default function Card({post}) {
 
   return (
     <div className="blog-card">
-      <Link to={`/blog/${post.slug}`}>
+      <Link to={`/blog${post.fields.slug}`}>
         <GatsbyImage className="blog-card__thumbnail" image={image} alt={post.frontmatter.alt} />
       </Link>
       <div className="blog-card__meta">
