@@ -99,7 +99,7 @@ export default function Post({location, data: { mdx: post }, data: { allFile: fi
                 {post.headings.length !== 0 &&
                 <div className="l-component__table-of-content">
                   <section className="toc" aria-labelledby="toc-title">
-                    <h3 className="toc__title" id="toc-title">On this page</h3>
+                    <h2 className="toc__title" id="toc-title">On this page</h2>
                     <nav className="toc__navigation">
                       <TableOfContents headings={post.headings} />
                     </nav>

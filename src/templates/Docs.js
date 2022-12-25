@@ -43,7 +43,7 @@ export default function Post({ data: { mdx: post }, pageContext }) {
                 {post.headings.length !== 0 &&
                 <div className="l-documentation__table-of-content">
                   <section className="toc" aria-labelledby="toc-title">
-                    <h3 className="toc__title" id="toc-title">On this page</h3>
+                    <h2 className="toc__title" id="toc-title">On this page</h2>
                     <nav className="toc__navigation">
                       <TableOfContents headings={post.headings} />
                     </nav>
