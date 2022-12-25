@@ -64,6 +64,7 @@ exports.onCreateNode = async ({ node, getNode, actions, loadNodeContent }) => {
 };
 
 exports.createPages = async ({ graphql, actions }) => {
+  /*
   const dataDocs = await graphql(`
     query {
       docs: allMdx(
@@ -98,7 +99,7 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `);
-
+*/
   const dataBlog = await graphql(`
     query {
       posts: allMdx(
@@ -135,7 +136,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const tags = dataBlog.data.tagsGroup.group;
 
   // console.log('UI pages query data: ', uiPages);
-
+/*
   docPages.forEach((doc, index) => {
     actions.createPage({
       path: `docs/${doc.slug}`,
@@ -147,9 +148,10 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     });
   });
-
+  */
+/*
   uiPages.forEach((post, index) => {
-    console.log('MISSING SLUG: ', post.fields.slug);
+    // console.log('MISSING SLUG: ', post.fields.slug);
     // console.log('MISSING POST: ', post);
 
     if (post.slug) {
@@ -164,6 +166,7 @@ exports.createPages = async ({ graphql, actions }) => {
       });
     }
   });
+*/
 
   blogPages.forEach((post) => {
     actions.createPage({
@@ -176,6 +179,7 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   // Make tag pages
+  /*
   tags.forEach(tag => {
     actions.createPage({
       path: `blog/tag/${tag.fieldValue}`,
@@ -185,4 +189,5 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     });
   });
+  */
 }
