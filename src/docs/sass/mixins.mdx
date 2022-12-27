@@ -437,6 +437,32 @@ Declare CSS custom properties through Spruce CSS to add the prefix. To get any C
 }
 ```
 
+## transition
+
+This mixin aims to query the [transition variables](/docs/sass/variables#transition-and-animation) easier. Usually, you only need the global values (e.g., for anything with a custom hover animation), but you can also overwrite the three basic arguments.
+
+#### Argument(s)
+
+| Name              | Default Value     | Description                                                      |
+|-------------------|-------------------|------------------------------------------------------------------|
+| `$duration`       | `duration`        | Get the `$transition-duration` value or set a custom one.        |
+| `$property`       | `all`             | Set the `transition-property` to `all`.                          |
+| `$timing-function`| `timing-function` | Get the `$transition-timing-function` value or set a custom one. |
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_transition.scss#L3)
+
+#### Example(s)
+
+```scss
+.custom-link {
+  @include spruce.transition;
+
+  &:hover {
+    background-color: pink;
+  }
+}
+```
+
 ## Utilities
 
 ### text-ellipsis
