@@ -67,8 +67,9 @@ Using the `btn-variant` mixin, you can create a new button variant. First, you m
 | Name              | Default Value        | Description                                                |
 |-------------------|----------------------|------------------------------------------------------------|
 | `$type`           | `primary`            | The name/prefix of the related colors under the `btn` map. |
+| `$focus`          | `true`               | Set it `true` if you want to display a focus outline ring. |
 
-[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_button.scss#L13)
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_button.scss#L32)
 
 #### Example(s)
 
@@ -109,6 +110,26 @@ In many cases, declaring just the background and foreground color is enough. Spr
 
 ```html
 <a href="https://conedevelopment.com" class="btn btn--custom btn--lg">Go to Cone</a>
+```
+
+### btn-variant-outline
+
+Using the `btn-variant-outline` mixin, you can create a new outlined button variant. First, you must declare the colors of the new button (background, foreground is required) in the `$colors` map at the very first `@use` of Spruce.
+
+#### Argument(s)
+
+| Name              | Default Value        | Description                                                |
+|-------------------|----------------------|------------------------------------------------------------|
+| `$type`           | `primary`            | The name/prefix of the related colors under the `btn` map. |
+| `$focus`          | `true`               | Set it `true` if you want to display a focus outline ring. |
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_button.scss#L63)
+
+#### Example(s)
+
+```scss
+.btn--outline-primary { @include btn-variant-outline(primary); }
+.btn--outline-secondary { @include btn-variant-outline(secondary); }
 ```
 
 ## font-face
