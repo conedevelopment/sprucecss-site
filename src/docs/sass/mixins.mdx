@@ -111,6 +111,37 @@ In many cases, declaring just the background and foreground color is enough. Spr
 <a href="https://conedevelopment.com" class="btn btn--custom btn--lg">Go to Cone</a>
 ```
 
+## font-face
+
+The `font-face` mixin is a helper to generate a `@font-face` declaration. This is a minimal and modern font-face declaration, so it only supports the `.woff2` format (under the `$src` argument).
+
+### Argument(s)
+
+| Name             | Default Value | Description                                                                                                                          |
+|------------------|---------------|--------------------------------------------------------------------------------------------------------------------------------------|
+| `$font-family`   | `null`        | The name of the font family.                                                                                                         |
+| `$src`           | `null`        | The URL path to the font file.                                                                                                       |
+| `$font-weight`   | `400`         | The wieght of the font.                                                                                                              |
+| `$font-style`    | `normal`      | The style of the font.                                                                                                               |
+| `$font-display`  | `swap`        | The <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display">font-display</a></code> property value. |
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_font-face.scss#L3)
+
+#### Example(s)
+
+```scss
+@include spruce.font-face(
+  'Montserrat',
+  '../fonts/montserrat-v25-latin-ext_latin-regular.woff2'
+);
+
+@include spruce.font-face(
+  'Montserrat',
+  '../fonts/montserrat-v25-latin-ext_latin-700.woff2',
+  '700'
+);
+```
+
 ## Form
 
 ### focus-ring
