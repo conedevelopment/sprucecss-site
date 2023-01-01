@@ -20,13 +20,6 @@ const components = {
   table: Table
 };
 
-export const wrapRootElement = ({ element }) => {
-  return (
-    <MDXProvider components={components}>
-      {element}
-    </MDXProvider>
-  );
-}
 
 export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([

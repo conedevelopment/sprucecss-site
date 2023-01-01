@@ -8,10 +8,8 @@ import GettingStarted from '../components/GettingStarted';
 import Layout from '../components/Layout';
 import Seo from '../components/SearchEngineOptimalization';
 
-export default function Post(props) {
-  console.log(props);
-  const { body } = props.data.mdx;
-  const { title, featuredImage, tags, date, alt } = props.data.mdx.frontmatter;
+export default function Post({ data: { mdx }, children }) {
+  const { title, featuredImage, tags, date, alt } = mdx.frontmatter;
   const image = getImage(featuredImage);
 
   return (
@@ -63,7 +61,7 @@ export default function Post(props) {
           <div className="container--narrow">
             <div className="post-content post-content--blog">
               <GatsbyImage image={image} alt={alt} />
-              {body}
+              {children}
             </div>
           </div>
         </article>
@@ -90,7 +88,6 @@ export const query = graphql`
         }
         alt
       }
-      body
     }
   }
 `;

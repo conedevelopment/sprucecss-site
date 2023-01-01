@@ -19,11 +19,3 @@ const components = {
   Icon,
   table: Table
 };
-
-export const wrapRootElement = ({ element }) => {
-  return (
-    <MDXProvider components={components}>
-      {element}
-    </MDXProvider>
-  );
-}
