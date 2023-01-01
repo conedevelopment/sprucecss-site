@@ -103,7 +103,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const dataBlog = await graphql(`
     query {
       posts: allMdx(
-        sort: {order: DESC, fields: frontmatter___date}
+        sort: {frontmatter: {date: DESC}}
         filter: {fields: {collection: {eq: "blog"}}, frontmatter: {published: {eq: true}}}
       ) {
         nodes {
@@ -121,7 +121,7 @@ exports.createPages = async ({ graphql, actions }) => {
         limit: 2000
         filter: {fields: {collection: {eq: "blog"}}, frontmatter: {published: {eq: true}}}
       ) {
-        group(field: frontmatter___tags) {
+        group(field: {frontmatter: {tags: SELECT}}) {
           fieldValue
         }
       }
@@ -130,10 +130,10 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // console.log(dataUI);
 
-  const docPages = dataDocs.data.docs.nodes;
-  const uiPages = dataUI.data.allMdx.nodes;
+  // const docPages = dataDocs.data.docs.nodes;
+  // const uiPages = dataUI.data.allMdx.nodes;
   const blogPages = dataBlog.data.posts.nodes;
-  const tags = dataBlog.data.tagsGroup.group;
+  // const tags = dataBlog.data.tagsGroup.group;
 
   // console.log('UI pages query data: ', uiPages);
 /*
@@ -169,8 +169,11 @@ exports.createPages = async ({ graphql, actions }) => {
 */
 
   blogPages.forEach((post) => {
+    console.log(post);
+    console.log(`blog/${post.fields.slug}`);
+    console.log(actions);
     actions.createPage({
-      path: `blog/${post.fields.slug}`,
+      path: `blog${post.fields.slug}`,
       component: path.resolve('./src/templates/Blog.js'),
       context: {
         slug: post.fields.slug,

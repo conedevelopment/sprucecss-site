@@ -8,19 +8,15 @@ import GettingStarted from '../components/GettingStarted';
 import Layout from '../components/Layout';
 import Seo from '../components/SearchEngineOptimalization';
 
-export default function Post({
-  data: {
-    mdx: post,
-    mdx: { frontmatter : { title } }
-  }
-}) {
-  // const { title } = post.frontmatter;
-  const { body } = post;
-  const image = getImage(post.frontmatter.featuredImage);
+export default function Post(props) {
+  console.log(props);
+  const { body } = props.data.mdx;
+  const { title, featuredImage, tags, date, alt } = props.data.mdx.frontmatter;
+  const image = getImage(featuredImage);
 
   return (
     <Layout>
-      <Seo title={title} image={`https://sprucecss.com${post.frontmatter.featuredImage.childImageSharp.gatsbyImageData.images.fallback.src}`} />
+      <Seo title={title} image={`https://sprucecss.com${featuredImage.childImageSharp.gatsbyImageData.images.fallback.src}`} />
       <main id="content" className="post">
         <article>
           <div className="post-heading">
@@ -44,21 +40,21 @@ export default function Post({
                     <span className="post-author__name">by Adam Laki</span>
                   </a>
                   <span>
-                    Posted in {post.frontmatter.tags
+                    Posted in {tags
                       .filter(tag => tag.length > 0)
                       .map((tag, i) => (
                         <span key={tag}>
                           <Link to={`/blog/tag/${tag}`} className="blog-card__tag">
                             #{tag}
                           </Link>
-                          {i < post.frontmatter.tags.length - 1 ? ', ' : ''}
+                          {i < tags.length - 1 ? ', ' : ''}
                         </span>
                       ))
                     }
                   </span>
                   <span>
                     <span className="sr-only">Posted on</span>
-                    <span>{post.frontmatter.date}</span>
+                    <span>{date}</span>
                   </span>
                 </div>
               </div>
@@ -66,8 +62,8 @@ export default function Post({
           </div>
           <div className="container--narrow">
             <div className="post-content post-content--blog">
-              <GatsbyImage image={image} alt={post.frontmatter.alt} />
-              <MDXRenderer>{body}</MDXRenderer>
+              <GatsbyImage image={image} alt={alt} />
+              {body}
             </div>
           </div>
         </article>
