@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, graphql  } from 'gatsby';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 // Import components
 import Layout from '../components/Layout';
@@ -16,16 +15,14 @@ export const query = graphql`
         title
         github
       }
-      body
     }
   }
 `;
 
-export default function Post({ data: { mdx: post }, pageContext }) {
+export default function Post({ data: { mdx }, children, pageContext }) {
   const {next, prev} = pageContext;
 
-  const { title, github } = post.frontmatter;
-  const { body } = post;
+  const { title, github } = mdx.frontmatter;
   return (
     <Layout>
       <Seo title={title} />
@@ -46,7 +43,7 @@ export default function Post({ data: { mdx: post }, pageContext }) {
                   </section>
   </div> */}
                 <div className="l-documentation__content post-content">
-                  <MDXRenderer>{body}</MDXRenderer>
+                  {children}
                   {github && <div><a href={github}>Edit on GitHub</a></div>}
                 </div>
               </article>
