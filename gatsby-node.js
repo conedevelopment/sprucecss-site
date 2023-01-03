@@ -60,11 +60,11 @@ exports.onCreateNode = async ({ node, getNode, actions, loadNodeContent }) => {
 };
 
 exports.createPages = async ({ graphql, actions }) => {
-  /*
-  const dataDocs = await graphql(`
+
+  const { data: { docs: { nodes: docsNodes } } } = await graphql(`
     query {
       docs: allMdx(
-        sort: {order: ASC, fields: frontmatter___order}
+        sort: {frontmatter: {order: ASC}}
         filter: {fields: {collection: {eq: "docs"}}}
       ) {
         nodes {
@@ -74,12 +74,13 @@ exports.createPages = async ({ graphql, actions }) => {
           fields {
             slug
           }
+          internal {
+            contentFilePath
+          }
         }
       }
     }
   `);
-
-*/
 
   const { data: { allMdx: { nodes: uiNodes } } } = await graphql(`
     query {
@@ -134,22 +135,19 @@ exports.createPages = async ({ graphql, actions }) => {
 
 
   // const docPages = dataDocs.data.docs.nodes;
-  // const uiPages = dataUI.data.allMdx.nodes;
   // const tags = dataBlog.data.tagsGroup.group;
 
-/*
-  docPages.forEach((doc, index) => {
+  docsNodes.forEach((node, index) => {
     actions.createPage({
-      path: `docs/${doc.slug}`,
-      component: path.resolve('./src/templates/Docs.js'),
+      path: `docs/${node.fields.slug}`,
+      component: `${path.resolve('./src/templates/Docs.js')}?__contentFilePath=${node.internal.contentFilePath}`,
       context: {
-        slug: doc.slug,
-        prev: index === 0 ? null : docPages[index - 1],
-        next: index === (docPages.length - 1) ? null : docPages[index + 1]
+        slug: node.fields.slug,
+        prev: index === 0 ? null : docsNodes[index - 1],
+        next: index === (docsNodes.length - 1) ? null : docsNodes[index + 1]
       }
     });
   });
-  */
 
   uiNodes.forEach((node, index) => {
     if (node.fields.slug) {
