@@ -38,16 +38,17 @@ export const query = graphql`
   }
 `;
 
-export default function Post({location, data: { mdx: post }, data: { allFile: files }, pageContext }) {
+export default function Post({location, data: { mdx }, children, data: { allFile: files }, pageContext }) {
   const {next, prev} = pageContext;
 
-  const { title, codeURL, previewHeight } = post.frontmatter;
-  const { body } = post;
+  const { title, codeURL, previewHeight, lead } = mdx.frontmatter;
 
   let preview = null;
   let scss = null;
   let html = null;
   let js = null;
+
+  console.log(files);
 
   files.nodes.length && files.nodes.map((node) => {
     if (node.fields.type === 'scss') {
@@ -68,7 +69,7 @@ export default function Post({location, data: { mdx: post }, data: { allFile: fi
         <div className="container">
           <div className="l-component__header">
             <h1 className="l-component__title">{title}</h1>
-            <p className="lead">{post.frontmatter.lead}</p>
+            <p className="lead">{lead}</p>
           </div>
           <div className="l-component__code-tab">
             {codeURL &&
@@ -102,7 +103,7 @@ export default function Post({location, data: { mdx: post }, data: { allFile: fi
                   </section>
               </div> */}
                 <article className="l-component__content post-content">
-                  <MDXRenderer>{body}</MDXRenderer>
+                  {children}
                 </article>
               </div>
               <PostNavigation prev={prev} next={next}/>

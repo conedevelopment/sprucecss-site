@@ -19,6 +19,8 @@ exports.onCreateNode = async ({ node, getNode, actions, loadNodeContent }) => {
       name: 'slug',
       value: createFilePath({ node, getNode })
     });
+
+    console.log('ORIGI SLUG', createFilePath({ node, getNode }));
   }
 
   if (node.internal.mediaType === 'text/x-scss' ||
@@ -29,10 +31,10 @@ exports.onCreateNode = async ({ node, getNode, actions, loadNodeContent }) => {
     await loadNodeContent(node);
 
     let type = '';
-    let slug = 'ui/' + path.parse(node.relativePath).dir.split('/')[1] + '/' + path.parse(node.relativePath).name;
+    let slug = '/ui/' + path.parse(node.relativePath).dir.split('/')[1] + '/' + path.parse(node.relativePath).name + '/';
 
     if (node.internal.mediaType && path.parse(node.relativePath).name.includes('preview')) {
-      slug = 'ui/' + path.parse(node.relativePath).dir.split('/')[1] + '/' + path.parse(node.relativePath).name.replace('-preview','');
+      slug = '/ui/' + path.parse(node.relativePath).dir.split('/')[1] + '/' + path.parse(node.relativePath).name.replace('-preview','') + '/';
     }
 
     if (node.internal.mediaType === 'text/x-scss') {
@@ -45,7 +47,8 @@ exports.onCreateNode = async ({ node, getNode, actions, loadNodeContent }) => {
       type = 'javascript';
     }
 
-    // console.log('Component slug: ', slug);
+    console.log('Component slug: ', slug);
+    console.log('Component slug: ', type);
 
     createNodeField({
       node,
@@ -83,6 +86,8 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
+*/
+
   const dataUI = await graphql(`
     query {
       allMdx(
@@ -95,11 +100,14 @@ exports.createPages = async ({ graphql, actions }) => {
           fields {
             slug
           }
+          internal {
+            contentFilePath
+          }
         }
       }
     }
   `);
-*/
+
   const dataBlog = await graphql(`
     query {
       posts: allMdx(
@@ -135,7 +143,6 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // const docPages = dataDocs.data.docs.nodes;
   // const uiPages = dataUI.data.allMdx.nodes;
-  const blogPages = dataBlog.data.posts.nodes;
   // const tags = dataBlog.data.tagsGroup.group;
 
   // console.log('UI pages query data: ', uiPages);
@@ -152,26 +159,26 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
   */
-/*
-  uiPages.forEach((post, index) => {
-    // console.log('MISSING SLUG: ', post.fields.slug);
-    // console.log('MISSING POST: ', post);
 
-    if (post.slug) {
+  dataUI.data.allMdx.nodes.forEach((node, index) => {
+    // console.log('MISSING SLUG: ', node.fields.slug);
+    // console.log('MISSING node: ', node);
+
+    if (node.fields.slug) {
       actions.createPage({
-        path: post.fields.slug,
-        component: path.resolve('./src/templates/Component.js'),
+        path: node.fields.slug,
+        component: `${path.resolve('./src/templates/Component.js')}?__contentFilePath=${node.internal.contentFilePath}`,
         context: {
-          slug: post.slug,
-          prev: index === 0 ? null : uiPages[index - 1],
-          next: index === (uiPages.length - 1) ? null : uiPages[index + 1]
+          slug: node.fields.slug,
+          prev: index === 0 ? null : dataUI.data.allMdx.nodes[index - 1],
+          next: index === (dataUI.data.allMdx.nodes.length - 1) ? null : dataUI.data.allMdx.nodes[index + 1]
         }
       });
     }
   });
-*/
 
-  blogPages.forEach((node) => {
+
+  dataBlog.data.posts.nodes.forEach((node) => {
     // console.log(node);
     // console.log(`blog/${node.fields.slug}`);
     // console.log(actions);
