@@ -3,8 +3,10 @@ const { createFilePath } = require('gatsby-source-filesystem');
 
 exports.onCreateNode = async ({ node, getNode, actions, loadNodeContent }) => {
   const { createNodeField } = actions;
+  const type = node.internal.type;
+  const mediaType = node.internal.mediaType;
 
-  if (node.internal.type === `Mdx`) {
+  if (type === `Mdx`) {
     const parent = getNode(node.parent);
     const collection = parent.sourceInstanceName;
 
@@ -19,36 +21,29 @@ exports.onCreateNode = async ({ node, getNode, actions, loadNodeContent }) => {
       name: 'slug',
       value: createFilePath({ node, getNode })
     });
-
-    console.log('ORIGI SLUG', createFilePath({ node, getNode }));
   }
 
-  if (node.internal.mediaType === 'text/x-scss' ||
-      node.internal.mediaType === 'text/html' ||
-      node.internal.mediaType === 'application/javascript') {
-    // console.log('RUN FOR COMPONENTS');
-
+  if (mediaType === 'text/x-scss' ||
+      mediaType === 'text/html' ||
+      mediaType === 'application/javascript') {
     await loadNodeContent(node);
 
-    let type = '';
-    let slug = '/ui/' + path.parse(node.relativePath).dir.split('/')[1] + '/' + path.parse(node.relativePath).name + '/';
+    let shortMediaType = null;
+    let slug = `/ui/${path.parse(node.relativePath).dir.split('/')[1]}/${path.parse(node.relativePath).name}/`;
 
-    if (node.internal.mediaType && path.parse(node.relativePath).name.includes('preview')) {
-      slug = '/ui/' + path.parse(node.relativePath).dir.split('/')[1] + '/' + path.parse(node.relativePath).name.replace('-preview','') + '/';
+    if (mediaType && path.parse(node.relativePath).name.includes('preview')) {
+      slug = `/ui/${path.parse(node.relativePath).dir.split('/')[1]}/${path.parse(node.relativePath).name.replace('-preview','')}/`;
     }
 
-    if (node.internal.mediaType === 'text/x-scss') {
-      type = 'scss';
-    } else if (node.internal.mediaType === 'text/html' && !path.parse(node.relativePath).name.includes('preview')) {
-      type = 'html';
-    } else if (node.internal.mediaType === 'text/html' && path.parse(node.relativePath).name.includes('preview')) {
-      type = 'preview';
-    } else if (node.internal.mediaType === 'application/javascript') {
-      type = 'javascript';
+    if (mediaType === 'text/x-scss') {
+      shortMediaType = 'scss';
+    } else if (mediaType === 'text/html' && !path.parse(node.relativePath).name.includes('preview')) {
+      shortMediaType = 'html';
+    } else if (mediaType === 'text/html' && path.parse(node.relativePath).name.includes('preview')) {
+      shortMediaType = 'preview';
+    } else if (mediaType === 'application/javascript') {
+      shortMediaType = 'javascript';
     }
-
-    console.log('Component slug: ', slug);
-    console.log('Component slug: ', type);
 
     createNodeField({
       node,
@@ -56,12 +51,10 @@ exports.onCreateNode = async ({ node, getNode, actions, loadNodeContent }) => {
       value: slug,
     });
 
-    // console.log('Component slug field: ', slugField);
-
     createNodeField({
       node,
       name: 'type',
-      value: type,
+      value: shortMediaType,
     });
   }
 };
@@ -88,7 +81,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
 */
 
-  const dataUI = await graphql(`
+  const { data: { allMdx: { nodes: uiNodes } } } = await graphql(`
     query {
       allMdx(
         filter: {fields: {collection: {eq: "component"}}}
@@ -108,7 +101,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
-  const dataBlog = await graphql(`
+  const { data: { posts: { nodes: blogNodes } } } = await graphql(`
     query {
       posts: allMdx(
         sort: {frontmatter: {date: DESC}}
@@ -139,13 +132,11 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
-  // console.log(dataUI);
 
   // const docPages = dataDocs.data.docs.nodes;
   // const uiPages = dataUI.data.allMdx.nodes;
   // const tags = dataBlog.data.tagsGroup.group;
 
-  // console.log('UI pages query data: ', uiPages);
 /*
   docPages.forEach((doc, index) => {
     actions.createPage({
@@ -160,28 +151,21 @@ exports.createPages = async ({ graphql, actions }) => {
   });
   */
 
-  dataUI.data.allMdx.nodes.forEach((node, index) => {
-    // console.log('MISSING SLUG: ', node.fields.slug);
-    // console.log('MISSING node: ', node);
-
+  uiNodes.forEach((node, index) => {
     if (node.fields.slug) {
       actions.createPage({
         path: node.fields.slug,
         component: `${path.resolve('./src/templates/Component.js')}?__contentFilePath=${node.internal.contentFilePath}`,
         context: {
           slug: node.fields.slug,
-          prev: index === 0 ? null : dataUI.data.allMdx.nodes[index - 1],
-          next: index === (dataUI.data.allMdx.nodes.length - 1) ? null : dataUI.data.allMdx.nodes[index + 1]
+          prev: index === 0 ? null : uiNodes[index - 1],
+          next: index === (uiNodes.length - 1) ? null : uiNodes[index + 1]
         }
       });
     }
   });
 
-
-  dataBlog.data.posts.nodes.forEach((node) => {
-    // console.log(node);
-    // console.log(`blog/${node.fields.slug}`);
-    // console.log(actions);
+  blogNodes.forEach((node) => {
     actions.createPage({
       path: `blog${node.fields.slug}`,
       component: `${path.resolve('./src/templates/Blog.js')}?__contentFilePath=${node.internal.contentFilePath}`,
