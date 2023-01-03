@@ -134,12 +134,11 @@ exports.createPages = async ({ graphql, actions }) => {
   `);
 
 
-  // const docPages = dataDocs.data.docs.nodes;
   // const tags = dataBlog.data.tagsGroup.group;
 
   docsNodes.forEach((node, index) => {
     actions.createPage({
-      path: `docs/${node.fields.slug}`,
+      path: `docs${node.fields.slug}`,
       component: `${path.resolve('./src/templates/Docs.js')}?__contentFilePath=${node.internal.contentFilePath}`,
       context: {
         slug: node.fields.slug,
