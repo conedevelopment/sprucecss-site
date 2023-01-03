@@ -115,6 +115,9 @@ exports.createPages = async ({ graphql, actions }) => {
           fields {
             slug
           }
+          internal {
+            contentFilePath
+          }
         }
       }
       tagsGroup: allMdx(
@@ -168,15 +171,15 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 */
 
-  blogPages.forEach((post) => {
-    console.log(post);
-    console.log(`blog/${post.fields.slug}`);
-    console.log(actions);
+  blogPages.forEach((node) => {
+    // console.log(node);
+    // console.log(`blog/${node.fields.slug}`);
+    // console.log(actions);
     actions.createPage({
-      path: `blog${post.fields.slug}`,
-      component: path.resolve('./src/templates/Blog.js'),
+      path: `blog${node.fields.slug}`,
+      component: `${path.resolve('./src/templates/Blog.js')}?__contentFilePath=${node.internal.contentFilePath}`,
       context: {
-        slug: post.fields.slug,
+        slug: node.fields.slug,
       }
     });
   });

@@ -18,7 +18,7 @@ import Table from './mdx/Table';
 // Styles
 import '../styles/main.scss';
 
-const components = {
+const shortcodes = {
   h2: H2,
   h3: H3,
   pre: CodeBlock,
@@ -37,7 +37,7 @@ export default function Layout(props) {
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&family=Sora:wght@400;500;600;700&display=swap" />
       </Helmet>
       <SiteHeader location={props.location} />
-      <MDXProvider components={components}>
+      <MDXProvider components={shortcodes}>
         {props.children}
       </MDXProvider>
       <SiteFooter />

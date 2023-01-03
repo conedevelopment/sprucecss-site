@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link, graphql  } from 'gatsby';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 // Import components
 import GettingStarted from '../components/GettingStarted';
 import Layout from '../components/Layout';
 import Seo from '../components/SearchEngineOptimalization';
+
+// https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/
 
 export default function Post({ data: { mdx }, children }) {
   const { title, featuredImage, tags, date, alt } = mdx.frontmatter;
