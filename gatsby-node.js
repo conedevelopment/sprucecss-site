@@ -85,6 +85,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const { data: { allMdx: { nodes: uiNodes } } } = await graphql(`
     query {
       allMdx(
+        sort: {frontmatter: {order: ASC}}
         filter: {fields: {collection: {eq: "component"}}}
       ) {
         nodes {
