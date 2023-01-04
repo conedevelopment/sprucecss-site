@@ -45,12 +45,6 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-mdx'
     },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [`gatsby-remark-responsive-iframe`],
-      },
-    },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {

@@ -18,17 +18,22 @@ export default function TableOfContents({ headings }) {
   return (
     <ol>
       {headings
-        .filter(
-          heading => heading.depth > 1 &&
-          heading.depth < 4 &&
-          heading.value !== 'Example(s)' &&
-          heading.value !== 'Argument(s)' &&
-          heading.value !== 'Parameter(s)' &&
-          heading.value !== 'References'
-        )
         .map(heading => (
-          <li className={`heading-${heading.depth}`} key={heading.value}>
-            <a href={`#${getAnchor(heading.value)}`} onClick={handleScroll}>{heading.value}</a>
+          <li key={heading.title}>
+            <a href={`#${getAnchor(heading.url)}`} onClick={handleScroll}>{heading.title}</a>
+            {heading.items && <ol>
+              {heading.items
+                .filter(
+                  subheading => subheading.title !== 'Example(s)' &&
+                  subheading.title !== 'Argument(s)' &&
+                  subheading.title !== 'Parameter(s)' &&
+                  subheading.title !== 'References'
+                ).map(subheading => (
+                  <li key={subheading.title}>
+                    <a href={`#${getAnchor(subheading.url)}`} onClick={handleScroll}>{subheading.title}</a>
+                  </li>
+                ))}
+            </ol>}
           </li>
         ))}
     </ol>

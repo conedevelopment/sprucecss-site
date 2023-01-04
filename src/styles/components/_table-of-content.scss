@@ -29,6 +29,11 @@
       @include spruce.layout-stack(spruce.spacer(xs));
 
       max-width: 95%;
+
+      ol {
+        margin-block-start: spruce.spacer(xs);
+        margin-inline-start: spruce.spacer(s);
+      }
     }
 
     a {
@@ -41,14 +46,6 @@
       &:focus {
         color: spruce.color(primary);
       }
-
-      &.is-active {
-        @include sidebar-active-menu-marker;
-      }
     }
-  }
-
-  .heading-3 {
-    margin-inline-start: spruce.spacer(s);
   }
 }

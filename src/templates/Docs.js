@@ -15,6 +15,7 @@ export const query = graphql`
         title
         github
       }
+      tableOfContents(maxDepth: 3)
     }
   }
 `;
@@ -33,15 +34,15 @@ export default function Post({ data: { mdx }, children, pageContext }) {
             <div className="l-documentation__body-helper">
               <article className="l-documentation__body">
                 <h1 className="l-documentation__title">{title}</h1>
-                {/* post.headings.length !== 0 &&
-                <div className="l-documentation__table-of-content">
-                  <section className="toc" aria-labelledby="toc-title">
-                    <h3 className="toc__title" id="toc-title">On this page</h3>
-                    <nav className="toc__navigation">
-                      <TableOfContents headings={post.headings} />
-                    </nav>
-                  </section>
-  </div> */}
+                {mdx.tableOfContents.length !== 0 &&
+                  <div className="l-documentation__table-of-content">
+                    <section className="toc" aria-labelledby="toc-title">
+                      <h3 className="toc__title" id="toc-title">On this page</h3>
+                      <nav className="toc__navigation">
+                        <TableOfContents headings={mdx.tableOfContents.items} />
+                      </nav>
+                    </section>
+                  </div>}
                 <div className="l-documentation__content post-content">
                   {children}
                   {github && <div><a href={github}>Edit on GitHub</a></div>}
