@@ -13,8 +13,8 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "sass-lint": "stylelint src/styles/**/*.scss",
-    "sass-lint-with-fix": "stylelint src/styles/**/*.scss --fix"
+    "sass:lint": "stylelint src/styles/**/*.scss",
+    "sass:lint:fix": "stylelint src/styles/**/*.scss --fix"
   },
   "dependencies": {
     "@mdx-js/mdx": "^2.2.1",
