@@ -33,6 +33,7 @@ export default function Blog({ data }) {
 export const pageQuery = graphql`
   query {
     allMdx(
+      sort: {frontmatter: {date: DESC}}
       filter: {fields: {collection: {eq: "blog"}}, frontmatter: {published: {eq: true}}}
     ) {
       nodes {

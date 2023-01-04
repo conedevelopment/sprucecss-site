@@ -102,7 +102,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
-  const { data: { posts: { nodes: blogNodes } } } = await graphql(`
+  const { data: { posts: { nodes: blogNodes }, tagsGroup: { group: tagNodes} } } = await graphql(`
     query {
       posts: allMdx(
         sort: {frontmatter: {date: DESC}}
@@ -172,16 +172,13 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
-  // Make tag pages
-  /*
-  tags.forEach(tag => {
+  tagNodes.forEach(node => {
     actions.createPage({
-      path: `blog/tag/${tag.fieldValue}`,
+      path: `blog/tag/${node.fieldValue}`,
       component: path.resolve('./src/templates/Tags.js'),
       context: {
-        tag: tag.fieldValue,
+        tag: node.fieldValue,
       },
     });
   });
-  */
 }
