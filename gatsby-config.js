@@ -6,7 +6,7 @@ module.exports = {
   siteMetadata: {
     description: 'Spruce CSS is a modern, minimal CSS Framework built on Sass.',
     github: 'conedevelopment',
-    version: '1.1.0',
+    version: '1.2.0',
     siteUrl: 'https://sprucecss.com',
     slogan: [
       '🎉 Another CSS Framework',
@@ -43,14 +43,13 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-mdx',
+      resolve: 'gatsby-plugin-mdx'
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
       options: {
-        gatsbyRemarkPlugins: [
-          {
-            resolve: 'gatsby-remark-responsive-iframe'
-          }
-        ]
-      }
+        plugins: [`gatsby-remark-responsive-iframe`],
+      },
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
