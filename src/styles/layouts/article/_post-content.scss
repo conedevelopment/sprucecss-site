@@ -44,6 +44,12 @@
     border-radius: spruce.$border-radius-sm;
   }
 
+  iframe {
+    aspect-ratio: 16 / 10;
+    height: auto;
+    width: 100;
+  }
+
   > .gatsby-image-wrapper:first-child + * {
     margin-block-start: spruce.spacer(l);
   }

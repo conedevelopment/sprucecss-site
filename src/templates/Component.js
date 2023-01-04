@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 // Import components
 import CodeTab from '../components/CodeTab';
@@ -8,23 +7,19 @@ import CodeTabContent from '../components/CodeTabContent';
 import Layout from '../components/Layout';
 import TableOfContents from '../components/TableOfContents';
 import SidebarComponent from '../components/SidebarComponent';
-import Seo from '../components/SearchEngineOptimalization';
+import Seo from '../components/Seo';
 import PostNavigation from '../components/PostNavigation';
 
 export const query = graphql`
   query ($slug: String!) {
-    mdx(slug: {eq: $slug}) {
+    mdx(fields: {slug: {eq: $slug}}) {
       frontmatter {
         title
         lead
         codeURL
         previewHeight
       }
-      body,
-      headings {
-        depth
-        value
-      }
+      tableOfContents(maxDepth: 3)
     },
     allFile(
       filter: {sourceInstanceName: {eq: "component"}, fields: {slug: {eq: $slug}}}
@@ -42,11 +37,9 @@ export const query = graphql`
   }
 `;
 
-export default function Post({location, data: { mdx: post }, data: { allFile: files }, pageContext }) {
-  const {next, prev} = pageContext;
-
-  const { title, codeURL, previewHeight } = post.frontmatter;
-  const { body } = post;
+export default function Post({location, data: { mdx }, children, data: { allFile: files }, pageContext }) {
+  const { next, prev } = pageContext;
+  const { title, codeURL, previewHeight, lead } = mdx.frontmatter;
 
   let preview = null;
   let scss = null;
@@ -67,12 +60,11 @@ export default function Post({location, data: { mdx: post }, data: { allFile: fi
 
   return (
     <Layout location={location}>
-      <Seo title={title} location={location} />
       <main id="content" className="l-component">
         <div className="container">
           <div className="l-component__header">
             <h1 className="l-component__title">{title}</h1>
-            <p className="lead">{post.frontmatter.lead}</p>
+            <p className="lead">{lead}</p>
           </div>
           <div className="l-component__code-tab">
             {codeURL &&
@@ -96,17 +88,17 @@ export default function Post({location, data: { mdx: post }, data: { allFile: fi
             <SidebarComponent />
             <div className="l-component__body-helper">
               <div className="l-component__body">
-                {post.headings.length !== 0 &&
-                <div className="l-component__table-of-content">
-                  <section className="toc" aria-labelledby="toc-title">
-                    <h2 className="toc__title" id="toc-title">On this page</h2>
-                    <nav className="toc__navigation">
-                      <TableOfContents headings={post.headings} />
-                    </nav>
-                  </section>
-                </div>}
+                {mdx.tableOfContents.items && mdx.tableOfContents.items.length !== 0 &&
+                  <div className="l-component__table-of-content">
+                    <section className="toc" aria-labelledby="toc-title">
+                      <h3 className="toc__title" id="toc-title">On this page</h3>
+                      <nav className="toc__navigation">
+                        <TableOfContents headings={mdx.tableOfContents.items} />
+                      </nav>
+                    </section>
+                  </div>}
                 <article className="l-component__content post-content">
-                  <MDXRenderer>{body}</MDXRenderer>
+                  {children}
                 </article>
               </div>
               <PostNavigation prev={prev} next={next}/>
@@ -116,4 +108,12 @@ export default function Post({location, data: { mdx: post }, data: { allFile: fi
       </main>
     </Layout>
   );
+}
+
+export function Head({ location, data: { mdx } }) {
+  const { title } = mdx.frontmatter;
+
+  return (
+    <Seo title={title} location={location} />
+  )
 }

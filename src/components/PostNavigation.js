@@ -9,7 +9,7 @@ export default function PostNavigation({ prev, next, type }) {
   return (
     <div className="post-navigation">
       {prev &&
-        <Link className="post-navigation-item post-navigation-item--prev" to={`${type === 'doc' ? '/docs' : ''}/${prev.slug}`}>
+        <Link className="post-navigation-item post-navigation-item--prev" to={`${type === 'doc' ? '/docs' : ''}${prev.fields.slug}`}>
           <span className="post-navigation-item__icon">
             <ArrowLeft />
           </span>
@@ -20,7 +20,7 @@ export default function PostNavigation({ prev, next, type }) {
         </Link>
       }
       {next &&
-        <Link className="post-navigation-item post-navigation-item--next" to={`${type === 'doc' ? '/docs' : ''}/${next.slug}`}>
+        <Link className="post-navigation-item post-navigation-item--next" to={`${type === 'doc' ? '/docs' : ''}${next.fields.slug}`}>
           <span className="post-navigation-item__caption">
             Next
             <span className="post-navigation-item__title">{next.frontmatter.title}</span>

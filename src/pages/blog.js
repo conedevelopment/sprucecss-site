@@ -3,14 +3,13 @@ import { graphql } from 'gatsby';
 
 // Import components
 import Layout from '../components/Layout';
-import Seo from '../components/SearchEngineOptimalization';
+import Seo from '../components/Seo';
 import PageHeading from '../components/PageHeading';
 import Card from '../components/card/Blog';
 
 export default function Blog({ data }) {
   return (
     <Layout>
-      <Seo title="Blog" />
       <main id="content" className="l-blog">
         <div className="container">
           <PageHeading
@@ -20,7 +19,7 @@ export default function Blog({ data }) {
           <div className="l-blog__inner">
             {data.allMdx.nodes.map((post) => {
               return (
-                <Card key={post.slug} post={post} />
+                <Card key={post.fields.slug} post={post} />
               )
             })}
           </div>
@@ -30,14 +29,22 @@ export default function Blog({ data }) {
   );
 }
 
+export function Head() {
+  return (
+    <Seo title="Blog" />
+  )
+}
+
 export const pageQuery = graphql`
   query {
     allMdx(
-      sort: {order: DESC, fields: frontmatter___date}
+      sort: {frontmatter: {date: DESC}}
       filter: {fields: {collection: {eq: "blog"}}, frontmatter: {published: {eq: true}}}
     ) {
       nodes {
-        slug
+        fields {
+          slug
+        }
         frontmatter {
           date(formatString: "MMMM DD, YYYY")
           title

@@ -1,10 +1,11 @@
-const dotenv = require('dotenv');
+import remarkGfm from 'remark-gfm';
+import * as dotenv from 'dotenv';
 
 dotenv.config({ path: '.env' });
 
-module.exports = {
+const config = {
   siteMetadata: {
-    description: 'Spruce CSS is a modern, minimal CSS Framework built on Sass.',
+    description: 'A low-level, lightweight and modern CSS design system, authoring tool built on Sass. Give your project a solid foundation.',
     github: 'conedevelopment',
     version: '1.2.0',
     siteUrl: 'https://sprucecss.com',
@@ -22,19 +23,18 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `docs`,
-        path: `${__dirname}/src/docs`
+        path: `./src/docs`
       }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `blog`,
-        path: `${__dirname}/src/blog`
+        path: `./src/blog`
       }
     },
     'gatsby-plugin-sass',
     'gatsby-plugin-image',
-    'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-manifest',
@@ -45,12 +45,10 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
-        gatsbyRemarkPlugins: [
-          {
-            resolve: 'gatsby-remark-responsive-iframe'
-          }
-        ]
-      }
+        mdxOptions: {
+          remarkPlugins: [remarkGfm],
+        },
+      },
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
@@ -86,16 +84,7 @@ module.exports = {
         }
       }
     },
-    {
-      resolve: `gatsby-plugin-gdpr-cookies`,
-      options: {
-        googleAnalytics: {
-          cookieName: 'spruce-gdpr-cookies',
-          trackingId: process.env.ANALYTICS_ID,
-          anonymize: true
-        },
-        environments: ['production', 'development']
-      },
-    },
   ],
 };
+
+export default config;
