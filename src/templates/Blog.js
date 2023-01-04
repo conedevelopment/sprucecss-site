@@ -5,9 +5,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 // Import components
 import GettingStarted from '../components/GettingStarted';
 import Layout from '../components/Layout';
-import Seo from '../components/SearchEngineOptimalization';
-
-// https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/
+import Seo from '../components/Seo';
 
 export default function Post({ data: { mdx }, children }) {
   const { title, featuredImage, tags, date, alt } = mdx.frontmatter;
@@ -15,7 +13,6 @@ export default function Post({ data: { mdx }, children }) {
 
   return (
     <Layout>
-      <Seo title={title} image={`https://sprucecss.com${featuredImage.childImageSharp.gatsbyImageData.images.fallback.src}`} />
       <main id="content" className="post">
         <article>
           <div className="post-heading">
@@ -70,6 +67,15 @@ export default function Post({ data: { mdx }, children }) {
       <GettingStarted />
     </Layout>
   );
+}
+
+export function Head({ data: { mdx } }) {
+  const { title, featuredImage} = mdx.frontmatter;
+  const image = getImage(featuredImage);
+
+  return (
+    <Seo title={title} image={`https://sprucecss.com${image.images.fallback.src}`} />
+  )
 }
 
 export const query = graphql`

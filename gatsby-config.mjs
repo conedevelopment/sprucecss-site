@@ -5,7 +5,7 @@ dotenv.config({ path: '.env' });
 
 const config = {
   siteMetadata: {
-    description: 'Spruce CSS is a modern, minimal CSS Framework built on Sass.',
+    description: 'A low-level, lightweight and modern CSS design system, authoring tool built on Sass. Give your project a solid foundation.',
     github: 'conedevelopment',
     version: '1.2.0',
     siteUrl: 'https://sprucecss.com',
@@ -35,7 +35,6 @@ const config = {
     },
     'gatsby-plugin-sass',
     'gatsby-plugin-image',
-    'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-manifest',

@@ -3,7 +3,7 @@ import Cookies from 'universal-cookie';
 
 // Import components
 import Layout from '../components/Layout';
-import Seo from '../components/SearchEngineOptimalization';
+import Seo from '../components/Seo';
 
 export default function PrivacyPolicy() {
   const cookies = new Cookies();
@@ -26,7 +26,6 @@ export default function PrivacyPolicy() {
 
   return (
     <Layout>
-      <Seo title="Privacy Policy" />
       <main id="content" className="l-page">
         <div className="l-page__container">
           <article className="l-page__inner entry-content">
@@ -52,4 +51,10 @@ export default function PrivacyPolicy() {
       </main>
     </Layout>
   );
+}
+
+export function Head() {
+  return (
+    <Seo title="Privacy Policy" />
+  )
 }

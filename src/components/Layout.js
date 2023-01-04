@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { MDXProvider } from '@mdx-js/react';
 
 // Components
@@ -31,11 +30,6 @@ const shortcodes = {
 export default function Layout(props) {
   return (
     <>
-      <Helmet>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&family=Sora:wght@400;500;600;700&display=swap" />
-      </Helmet>
       <SiteHeader location={props.location} />
       <MDXProvider components={shortcodes}>
         {props.children}
@@ -44,3 +38,15 @@ export default function Layout(props) {
     </>
   );
 }
+
+/*
+export function Head() {
+  return (
+    <>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&family=Sora:wght@400;500;600;700&display=swap" />
+    </>
+  )
+}
+*/

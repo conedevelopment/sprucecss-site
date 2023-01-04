@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 
 // Import components
 import Layout from '../components/Layout';
-import Seo from '../components/SearchEngineOptimalization';
+import Seo from '../components/Seo';
 import PageHeading from '../components/PageHeading';
 import Card from '../components/card/Blog';
 
@@ -27,6 +27,12 @@ export default function TagPage({ data, pageContext: { tag }}) {
       </main>
     </Layout>
   );
+}
+
+export function Head({ pageContext: { tag }}) {
+  return (
+    <Seo title={`#${tag}`} />
+  )
 }
 
 export const pageQuery = graphql`

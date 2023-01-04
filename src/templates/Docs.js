@@ -5,7 +5,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import TableOfContents from '../components/TableOfContents';
 import Sidebar from '../components/Sidebar';
-import Seo from '../components/SearchEngineOptimalization';
+import Seo from '../components/Seo';
 import PostNavigation from '../components/PostNavigation';
 
 export const query = graphql`
@@ -26,7 +26,6 @@ export default function Post({ data: { mdx }, children, pageContext }) {
 
   return (
     <Layout>
-      <Seo title={title} />
       <main id="content" className="l-documentation">
         <div className="container">
           <div className="l-documentation__inner">
@@ -55,4 +54,12 @@ export default function Post({ data: { mdx }, children, pageContext }) {
       </main>
     </Layout>
   );
+}
+
+export function Head({ data: { mdx } }) {
+  const { title } = mdx.frontmatter;
+
+  return (
+    <Seo title={title} />
+  )
 }

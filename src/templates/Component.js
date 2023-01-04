@@ -7,7 +7,7 @@ import CodeTabContent from '../components/CodeTabContent';
 import Layout from '../components/Layout';
 import TableOfContents from '../components/TableOfContents';
 import SidebarComponent from '../components/SidebarComponent';
-import Seo from '../components/SearchEngineOptimalization';
+import Seo from '../components/Seo';
 import PostNavigation from '../components/PostNavigation';
 
 export const query = graphql`
@@ -60,7 +60,6 @@ export default function Post({location, data: { mdx }, children, data: { allFile
 
   return (
     <Layout location={location}>
-      <Seo title={title} location={location} />
       <main id="content" className="l-component">
         <div className="container">
           <div className="l-component__header">
@@ -109,4 +108,12 @@ export default function Post({location, data: { mdx }, children, data: { allFile
       </main>
     </Layout>
   );
+}
+
+export function Head({ location, data: { mdx } }) {
+  const { title } = mdx.frontmatter;
+
+  return (
+    <Seo title={title} location={location} />
+  )
 }

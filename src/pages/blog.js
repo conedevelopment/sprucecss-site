@@ -3,14 +3,13 @@ import { graphql } from 'gatsby';
 
 // Import components
 import Layout from '../components/Layout';
-import Seo from '../components/SearchEngineOptimalization';
+import Seo from '../components/Seo';
 import PageHeading from '../components/PageHeading';
 import Card from '../components/card/Blog';
 
 export default function Blog({ data }) {
   return (
     <Layout>
-      <Seo title="Blog" />
       <main id="content" className="l-blog">
         <div className="container">
           <PageHeading
@@ -28,6 +27,12 @@ export default function Blog({ data }) {
       </main>
     </Layout>
   );
+}
+
+export function Head() {
+  return (
+    <Seo title="Blog" />
+  )
 }
 
 export const pageQuery = graphql`
