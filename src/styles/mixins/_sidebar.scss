@@ -2,7 +2,7 @@
 
 @mixin sidebar-active-menu-marker {
   color: spruce.color(heading);
-  font-weight: 600;
+  font-weight: 700;
   position: relative;
 
   &::before {

@@ -1,0 +1,29 @@
+@use '~sprucecss/scss/spruce';
+
+@include spruce.font-face(
+  'Open Sans',
+  '../fonts/open-sans-v34-latin-regular.woff2'
+);
+
+@include spruce.font-face(
+  'Open Sans',
+  '../fonts/open-sans-v34-latin-700.woff2',
+  700
+);
+
+@include spruce.font-face(
+  'Sora',
+  '../fonts/sora-v11-latin-regular.woff2'
+);
+
+@include spruce.font-face(
+  'Sora',
+  '../fonts/sora-v11-latin-500.woff2',
+  500
+);
+
+@include spruce.font-face(
+  'Sora',
+  '../fonts/sora-v11-latin-700.woff2',
+  700
+);
