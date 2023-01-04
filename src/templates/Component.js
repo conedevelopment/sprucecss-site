@@ -38,16 +38,13 @@ export const query = graphql`
 `;
 
 export default function Post({location, data: { mdx }, children, data: { allFile: files }, pageContext }) {
-  const {next, prev} = pageContext;
-
+  const { next, prev } = pageContext;
   const { title, codeURL, previewHeight, lead } = mdx.frontmatter;
 
   let preview = null;
   let scss = null;
   let html = null;
   let js = null;
-
-  console.log(files);
 
   files.nodes.length && files.nodes.map((node) => {
     if (node.fields.type === 'scss') {
