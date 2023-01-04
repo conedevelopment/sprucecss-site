@@ -4,35 +4,37 @@ order: 18
 github: 'https://github.com/conedevelopment/sprucecss-site/blob/main/src/docs/elements/tables.mdx'
 ---
 
-<p class="lead">Spruce ships with some basic table styling targeted only with classes to opt-in.</p>
+<p className="lead">Spruce ships with some basic table styling targeted only with classes to opt-in.</p>
 
 ## Default Style
 
 Use the `table` class on an HTML `<table>` element to use the default styling.
 
 <Preview>
-  <table>
-    <caption>A generic introduction to the table.</caption>
-    <thead>
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Name</th>
-        <th scope="col">Block of Text</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>John&nbsp;Doe</td>
-        <td>Nullam quis risus eget urna mollis ornare vel eu leo.</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td><a href="#">Jane&nbsp;Doe</a></td>
-        <td>Vestibulum id ligula porta felis euismod semper. Donec ullamcorper nulla non metus auctor fringilla.</td>
-      </tr>
-    </tbody>
-  </table>
+  {
+    <table>
+      <caption>A generic introduction to the table.</caption>
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Block of Text</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>John&nbsp;Doe</td>
+          <td>Nullam quis risus eget urna mollis ornare vel eu leo.</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td><a href="#">Jane&nbsp;Doe</a></td>
+          <td>Vestibulum id ligula porta felis euismod semper. Donec ullamcorper nulla non metus auctor fringilla.</td>
+        </tr>
+      </tbody>
+    </table>
+  }
 </Preview>
 
 ```html

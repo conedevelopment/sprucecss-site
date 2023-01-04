@@ -1,8 +1,9 @@
-const dotenv = require('dotenv');
+import remarkGfm from 'remark-gfm';
+import * as dotenv from 'dotenv';
 
 dotenv.config({ path: '.env' });
 
-module.exports = {
+const config = {
   siteMetadata: {
     description: 'Spruce CSS is a modern, minimal CSS Framework built on Sass.',
     github: 'conedevelopment',
@@ -22,14 +23,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `docs`,
-        path: `${__dirname}/src/docs`
+        path: `./src/docs`
       }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `blog`,
-        path: `${__dirname}/src/blog`
+        path: `./src/blog`
       }
     },
     'gatsby-plugin-sass',
@@ -43,7 +44,12 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-mdx'
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        mdxOptions: {
+          remarkPlugins: [remarkGfm],
+        },
+      },
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
@@ -79,13 +85,7 @@ module.exports = {
         }
       }
     },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        footnotes: true,
-        gfm: true,
-        plugins: [],
-      },
-    },
   ],
 };
+
+export default config;
