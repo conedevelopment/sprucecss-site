@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, graphql  } from 'gatsby';
+import { graphql } from 'gatsby';
 
 // Import components
 import Layout from '../components/Layout';
@@ -34,7 +34,7 @@ export default function Post({ data: { mdx }, children, pageContext }) {
             <div className="l-documentation__body-helper">
               <article className="l-documentation__body">
                 <h1 className="l-documentation__title">{title}</h1>
-                {mdx.tableOfContents.length !== 0 &&
+                {mdx.tableOfContents.items && mdx.tableOfContents.items.length !== 0 &&
                   <div className="l-documentation__table-of-content">
                     <section className="toc" aria-labelledby="toc-title">
                       <h3 className="toc__title" id="toc-title">On this page</h3>

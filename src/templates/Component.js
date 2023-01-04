@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 // Import components
 import CodeTab from '../components/CodeTab';
@@ -20,7 +19,7 @@ export const query = graphql`
         codeURL
         previewHeight
       }
-      body
+      tableOfContents(maxDepth: 3)
     },
     allFile(
       filter: {sourceInstanceName: {eq: "component"}, fields: {slug: {eq: $slug}}}
@@ -93,15 +92,15 @@ export default function Post({location, data: { mdx }, children, data: { allFile
             <SidebarComponent />
             <div className="l-component__body-helper">
               <div className="l-component__body">
-                {/* post.headings.length !== 0 &&
-                <div className="l-component__table-of-content">
-                  <section className="toc" aria-labelledby="toc-title">
-                    <h3 className="toc__title" id="toc-title">On this page</h3>
-                    <nav className="toc__navigation">
-                      <TableOfContents headings={post.headings} />
-                    </nav>
-                  </section>
-              </div> */}
+                {mdx.tableOfContents.items && mdx.tableOfContents.items.length !== 0 &&
+                  <div className="l-component__table-of-content">
+                    <section className="toc" aria-labelledby="toc-title">
+                      <h3 className="toc__title" id="toc-title">On this page</h3>
+                      <nav className="toc__navigation">
+                        <TableOfContents headings={mdx.tableOfContents.items} />
+                      </nav>
+                    </section>
+                  </div>}
                 <article className="l-component__content post-content">
                   {children}
                 </article>
