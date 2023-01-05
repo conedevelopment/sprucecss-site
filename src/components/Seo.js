@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Script } from 'gatsby';
 import useSiteMetadata from "../hooks/use-site-metadata";
+import Cookies from 'universal-cookie';
 
 export default function Seo({ children, location, description, title, image, frontPage = false }) {
   const siteMetadata = useSiteMetadata();
+  const [cookie, setCookie] = useState(false);
+  const cookies = new Cookies();
+
+  useEffect(() => {
+    if (cookies.get('spruce-gdpr-cookies')) {
+      setCookie(true);
+    }
+  }, []);
 
   return (
     <>
@@ -29,6 +39,21 @@ export default function Seo({ children, location, description, title, image, fro
       {siteMetadata.twitter && <meta name="twitter:creator" content={siteMetadata.twitter} />}
       <meta name="twitter:title" content={frontPage ? `${title}` : `${title} - ${siteMetadata.title}`} />
       <meta name="twitter:image" content={image || `${siteMetadata.siteUrl}/social-card-twitter.png`} />
+
+      {cookie && <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${siteMetadata.analyticsID}`}
+        strategy="off-main-thread"
+      />}
+
+      {cookie && <Script id="gtag-config" strategy="off-main-thread" forward={[`gtag`]}>
+        {`
+          console.log('hi from gtag');
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+          gtag('config', ${siteMetadata.analyticsID}, { page_path: location ? location.pathname + location.search + location.hash : undefined })
+        `}
+      </Script>}
 
       {children}
     </>
