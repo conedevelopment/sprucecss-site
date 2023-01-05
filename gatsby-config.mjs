@@ -86,6 +86,7 @@ const config = {
       }
     },
   ],
+  partytownProxiedURLs: [`https://www.googletagmanager.com/gtag/js?id=${process.env.ANALYTICS_ID}`]
 };
 
 export default config;

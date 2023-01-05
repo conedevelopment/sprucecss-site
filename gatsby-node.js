@@ -134,9 +134,6 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
-
-  // const tags = dataBlog.data.tagsGroup.group;
-
   docsNodes.forEach((node, index) => {
     actions.createPage({
       path: `docs${node.fields.slug}`,

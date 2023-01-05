@@ -42,16 +42,14 @@ export default function Seo({ children, location, description, title, image, fro
 
       {cookie && <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${siteMetadata.analyticsID}`}
-        strategy="off-main-thread"
       />}
 
-      {cookie && <Script id="gtag-config" strategy="off-main-thread" forward={[`gtag`]}>
+      {cookie && <Script id="gtag-config" forward={[`gtag`]}>
         {`
-          console.log('hi from gtag');
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments)};
           gtag('js', new Date());
-          gtag('config', ${siteMetadata.analyticsID}, { page_path: location ? location.pathname + location.search + location.hash : undefined })
+          gtag('config', '${siteMetadata.analyticsID}', { send_page_view: false })
         `}
       </Script>}
 
