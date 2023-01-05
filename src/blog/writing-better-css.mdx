@@ -11,9 +11,7 @@ tags: ['css']
 
 I think in CSS, determining what’s good is usually opinionated. Of course, there are some absolute truths, but many things in code depends on the context. A lousy code can do a job well; still, we should go for the better. Every project and team has its own needs, so using a universal solution is rarely possible.
 
-<Notification type="info">
-  This article isn’t the solution for all of our problems with styles but only my personal experience.
-</Notification>
+<Notification type="info">This article isn’t the solution for all of our problems with styles but only my personal experience.</Notification>
 
 ## What Can Qualifies as Better CSS?
 
@@ -33,9 +31,7 @@ In CSS, we can create different property grouping logics like typography, layout
 
 Using the ABC is nothing more than simplification. It is worth giving a try. With Stylelint, you can quickly check the order (or fix it). For this, we use the [Sass Guidelines config](https://www.npmjs.com/package/stylelint-config-sass-guidelines). [For the implementation, see](https://github.com/conedevelopment/sprucecss/blob/main/.stylelintrc.json).
 
-<Notification type="info">
-  More on this subject: <a href="https://blog.jim-nielsen.com/2022/ordering-css-delcarations/">Ordering CSS Declarations</a>, <a href="https://ericwbailey.design/writing/organize-your-css-declarations-alphabetically/">Organize your CSS declarations alphabetically</a>.
-</Notification>
+<Notification type="info">More on this subject: <a href="https://blog.jim-nielsen.com/2022/ordering-css-delcarations/">Ordering CSS Declarations</a>, <a href="https://ericwbailey.design/writing/organize-your-css-declarations-alphabetically/">Organize your CSS declarations alphabetically</a>.</Notification>
 
 ### Alphabetized Properties Example
 
@@ -154,6 +150,4 @@ This point is an addition to the previous one, but while the `aspect-ratio` is a
 
 These two can make any grid system obsolete (of course, based on the context, there are scenarios where they are still handy). They were created for layout, while the previous solutions were hacks.
 
-<Notification type="info">
-  An excellent exercise for your next project: try to eliminate the grid system. I used the BS grid, which was ~1500 lines of code with its utilities. I used its 4-5%, now - with flex and grid - I achieve the same result with ~200 lines of code.
-</Notification>
+<Notification type="info">An excellent exercise for your next project: try to eliminate the grid system. I used the BS grid, which was ~1500 lines of code with its utilities. I used its 4-5%, now - with flex and grid - I achieve the same result with ~200 lines of code.</Notification>

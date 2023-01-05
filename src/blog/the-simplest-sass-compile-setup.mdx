@@ -71,9 +71,7 @@ As you see, we set up two scripts to compile Sass:
 - **Dev:** which is for development purposes. It isn’t compressed, has a source map and a watcher (to run until we stop it and watch for changes).
 - **Prod:** which is making our production code. It is compressed, doesn’t have a source map, and runs only once.
 
-<Notification type="info" icon={true}>
-  <strong>What is a source map?</strong> A particular file that allows the browser to map back from the processed, concatenated files to the original ones. It is helpful because we can see the original file names when we debug the CSS in the developer tools.
-</Notification>
+<Notification type="info" icon={true}><strong>What is a source map?</strong> A particular file that allows the browser to map back from the processed, concatenated files to the original ones. It is helpful because we can see the original file names when we debug the CSS in the developer tools.</Notification>
 
 **Our project’s folder structure (should) look like this:**
 
@@ -95,9 +93,7 @@ We compile our Sass files from the `scss` to the `css` folder. **We don’t have
 
 For more information about the flags (the text in the command which stats with —), please visit the [official CLI page](https://sass-lang.com/documentation/cli).
 
-<Notification type="info" icon={true}>
-  As you see, the npm scripts work like an alias (right now we only use the Sass CLI). You can run any of the commands directly in your terminal (in any order or parallel), but this example doesn’t show the full potential. Please note that this article is only about about the Sass compile. Based on the different needs, it can be a little bit complicated and more structured.
-</Notification>
+<Notification type="info" icon={true}>As you see, the npm scripts work like an alias (right now we only use the Sass CLI). You can run any of the commands directly in your terminal (in any order or parallel), but this example doesn’t show the full potential. Please note that this article is only about about the Sass compile. Based on the different needs, it can be a little bit complicated and more structured.</Notification>
 
 ## 5. Run The Scripts
 
@@ -112,7 +108,4 @@ npm run sass-dev
 ```bash
 npm run sass-prod
 ```
-<Notification type="info" icon={true}>
-  Visit the <a href="https://github.com/conedevelopment/sprucecss-starter-kit">Spruce CSS Starter Kit</a> to see all of this work.
-</Notification>
-
+<Notification type="info" icon={true}>Visit the <a href="https://github.com/conedevelopment/sprucecss-starter-kit">Spruce CSS Starter Kit</a> to see all of this work.</Notification>
