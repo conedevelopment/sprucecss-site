@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useStaticQuery, graphql } from 'gatsby';
+import { Link, useStaticQuery, graphql, Script } from 'gatsby';
 import CookieConsent from 'react-cookie-consent';
+import Cookies from 'universal-cookie';
+import useSiteMetadata from "../hooks/use-site-metadata";
 
 // Images
 import MenuIcon from '../images/icons/menu.svg';
@@ -20,7 +22,8 @@ export default function SiteHeader({ location }) {
       }
     }
   `);
-
+  const { analyticsID } = useSiteMetadata();
+  const cookies = new Cookies();
   const isUI = location && location.pathname.indexOf('ui') > -1 ? 'ui-page' : '';
   const [menuVisible, setMenuVisible] = useState(false);
   const [slogan, setSlogan] = useState(site.siteMetadata.slogan[Math.floor(Math.random() * site.siteMetadata.slogan.length)]);
@@ -30,6 +33,26 @@ export default function SiteHeader({ location }) {
       document.querySelector(".site-header__navigation ul").firstChild.focus();
     }
   }, [menuVisible]);
+
+  useEffect(() => {
+    console.log('analyticsID', analyticsID);
+    if (cookies.get('spruce-gdpr-cookies')) {
+      <>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${analyticsID}`}
+          strategy="off-main-thread"
+        />
+        <Script id="gtag-config" strategy="off-main-thread" forward={[`gtag`]}>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments)};
+            gtag('js', new Date());
+            gtag('config', ${analyticsID}, { page_path: location ? location.pathname + location.search + location.hash : undefined })
+          `}
+        </Script>
+      </>
+    }
+  }, []);
 
   function handleSlogan() {
     getSlogan();

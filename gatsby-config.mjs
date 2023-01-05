@@ -16,7 +16,8 @@ const config = {
       '👔 It is far from elegant'
     ],
     title: 'Spruce CSS',
-    twitter: 'conedevelopment'
+    twitter: 'conedevelopment',
+    analyticsID: process.env.ANALYTICS_ID,
   },
   plugins: [
     {
