@@ -35,7 +35,6 @@ export default function SiteHeader({ location }) {
   }, [menuVisible]);
 
   useEffect(() => {
-    console.log('analyticsID', analyticsID);
     if (cookies.get('spruce-gdpr-cookies')) {
       <>
         <Script
