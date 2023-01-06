@@ -43,7 +43,7 @@
     @include spruce.breakpoint(sm) {
       border-inline-start: 1px solid spruce.color(border);
       display: inline;
-      font-family: spruce.$font-family-heading;
+      font-family: var(--doc-body-font-family);
       line-height: 1;
       margin-inline-start: spruce.spacer(m);
       padding-inline-start: spruce.spacer(m);
@@ -64,7 +64,7 @@
     align-items: center;
     display: flex;
     flex-grow: 1;
-    font-family: spruce.$font-family-heading;
+    font-family: var(--doc-body-font-family);
     justify-content: flex-end;
 
     @include spruce.breakpoint(md) {
