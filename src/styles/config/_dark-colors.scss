@@ -45,7 +45,11 @@ $colors: (
     secondary-foreground: $color-white,
     install-background: hsl(207 39% 17%),
     install-background-hover: hsl(207 23% 26%),
-    install-foreground: hsl(0 0% 100%)
+    install-foreground: hsl(0 0% 100%),
+    discrete-background: hsl(0 0% 96% / 0.1),
+    discrete-background-hover: hsl(261 52% 59%),
+    discrete-foreground: hsl(0 0% 100%),
+    discrete-foreground-hover: hsl(0 0% 100%)
   ),
   form: (
     background: color.scale($color-black, $lightness: 5%),
