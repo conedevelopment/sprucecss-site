@@ -29,7 +29,8 @@ $colors: (
     code-background: hsl(207 64% 18%),
     code-foreground: $color-white,
     blockquote-border: $color-primary,
-    footer-background: hsl(0 0% 0% / 0.15)
+    footer-background: hsl(0 0% 0% / 0.15),
+    code-tab-background: hsl(0 0% 0% / 0.15)
   ),
   selection: (
     foreground: $color-white,
