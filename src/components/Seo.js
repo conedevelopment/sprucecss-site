@@ -28,7 +28,7 @@ export default function Seo({ children, location, description, title, image, fro
       <meta property="og:image" content={image || `${siteMetadata.siteUrl}/social-card.png`} />
       <meta property="og:title" content={frontPage ? `${title}` : `${title} - ${siteMetadata.title}`} key="ogtitle" />
       <meta
-        propery="og:site_name"
+        property="og:site_name"
         content={siteMetadata.title}
         key="ogsitename"
       />
