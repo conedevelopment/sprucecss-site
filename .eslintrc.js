@@ -21,8 +21,11 @@ module.exports = {
     'react'
   ],
   rules: {
-    'react/prop-types': 0,
+    'react/prop-types': 0, // @TODO This rule is muted.
     'semi': ['error', 'always'],
-    'space-before-function-paren': ['error', 'never']
+    'space-before-function-paren': ['error', {
+        'anonymous': 'always',
+        'named': 'never'
+    }]
   }
 }
