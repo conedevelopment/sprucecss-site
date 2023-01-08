@@ -13,7 +13,7 @@ export default function Docs() {
             <span className="doc-card__serial-number">01</span>
             <h3 className="doc-card__title">
                 <Link to="/docs/getting-started/installation" className="doc-card__link">
-                  Install&shy;lation
+                  Instal&shy;lation
                 </Link>
               </h3>
           </div>
