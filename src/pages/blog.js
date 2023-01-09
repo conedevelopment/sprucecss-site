@@ -20,7 +20,7 @@ export default function Blog({ data }) {
             {data.allMdx.nodes.map((post) => {
               return (
                 <Card key={post.fields.slug} post={post} />
-              )
+              );
             })}
           </div>
         </div>
@@ -32,7 +32,7 @@ export default function Blog({ data }) {
 export function Head() {
   return (
     <Seo title="Blog" />
-  )
+  );
 }
 
 export const pageQuery = graphql`
@@ -59,4 +59,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

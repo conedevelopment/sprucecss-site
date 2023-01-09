@@ -15,11 +15,11 @@ export default function PrivacyPolicy() {
   });
 
   function handleCookie(e) {
-    setCookieConsent(! cookieConsent);
+    setCookieConsent(!cookieConsent);
     cookies.remove('spruce-gdpr-cookies', {
       path: '/',
       sameSite: 'lax',
-      secure: true,
+      secure: true
     });
     window.location.reload();
   }
@@ -34,8 +34,8 @@ export default function PrivacyPolicy() {
             <h2>Cookies</h2>
             <p>If you accept the cookies in the consent banner, you accept <a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/cookie-usage">Google Analytics tracking</a>, which uses cookies.</p>
             <p>We store this choice of you in the <code>spruce-gdpr-cookies</code> cookie.</p>
-            {cookieConsent ?
-              <div>
+            {cookieConsent
+              ? <div>
                 <p>If you want to opt-out or accept our cookies, please press the button below.</p>
                 <div>
                   <button className="btn btn--decline btn--rounded" onClick={handleCookie}>Decline Cookies</button>
@@ -56,5 +56,5 @@ export default function PrivacyPolicy() {
 export function Head() {
   return (
     <Seo title="Privacy Policy" />
-  )
+  );
 }

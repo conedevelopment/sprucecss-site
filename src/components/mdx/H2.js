@@ -8,13 +8,13 @@ export default function H2(props) {
   return (
     <>
       {(props.className !== 'preview-heading')
-      ? <h2 className="anchor-heading" id={anchor}>
+        ? <h2 className="anchor-heading" id={anchor}>
           {props.children}
           <a href={link} className="anchor-link" aria-label={props.children}>
             <Link />
           </a>
         </h2>
-      : <h2 className="preview-heading">{props.children}</h2>}
+        : <h2 className="preview-heading">{props.children}</h2>}
     </>
   );
 };

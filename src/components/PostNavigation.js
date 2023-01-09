@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link  } from 'gatsby';
+import { Link } from 'gatsby';
 
 // Images
 import ArrowLeft from '../images/icons/arrow-left.svg';

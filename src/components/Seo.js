@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import { Script } from 'gatsby';
-import useSiteMetadata from "../hooks/use-site-metadata";
+import useSiteMetadata from '../hooks/use-site-metadata';
 import Cookies from 'universal-cookie';
 
 export default function Seo({ children, location, description, title, image, frontPage = false }) {
@@ -28,7 +28,7 @@ export default function Seo({ children, location, description, title, image, fro
       <meta property="og:image" content={image || `${siteMetadata.siteUrl}/social-card.png`} />
       <meta property="og:title" content={frontPage ? `${title}` : `${title} - ${siteMetadata.title}`} key="ogtitle" />
       <meta
-        propery="og:site_name"
+        property="og:site_name"
         content={siteMetadata.title}
         key="ogsitename"
       />
@@ -44,7 +44,7 @@ export default function Seo({ children, location, description, title, image, fro
         src={`https://www.googletagmanager.com/gtag/js?id=${siteMetadata.analyticsID}`}
       />}
 
-      {cookie && <Script id="gtag-config" forward={[`gtag`]}>
+      {cookie && <Script id="gtag-config" forward={['gtag']}>
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments)};

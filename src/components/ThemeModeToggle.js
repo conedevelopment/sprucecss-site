@@ -6,7 +6,7 @@ import LightMode from '../images/icons/theme-mode/light-mode.svg';
 import DarkMode from '../images/icons/theme-mode/dark-mode.svg';
 
 export default function ThemeModeToggle() {
-  let [theme, setTheme] = useState('system');
+  const [theme, setTheme] = useState('system');
 
   function handleChange(e) {
     setTheme(e.target.value);

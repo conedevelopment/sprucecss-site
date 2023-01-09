@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, graphql  } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 // Import components
@@ -37,15 +37,15 @@ export default function Post({ data: { mdx }, children }) {
                   </a>
                   <span>
                     Posted in {tags
-                      .filter(tag => tag.length > 0)
-                      .map((tag, i) => (
+                    .filter(tag => tag.length > 0)
+                    .map((tag, i) => (
                         <span key={tag}>
                           <Link to={`/blog/tag/${tag}`} className="blog-card__tag">
                             #{tag}
                           </Link>
                           {i < tags.length - 1 ? ', ' : ''}
                         </span>
-                      ))
+                    ))
                     }
                   </span>
                   <span>
@@ -70,12 +70,12 @@ export default function Post({ data: { mdx }, children }) {
 }
 
 export function Head({ data: { mdx } }) {
-  const { title, featuredImage} = mdx.frontmatter;
+  const { title, featuredImage } = mdx.frontmatter;
   const image = getImage(featuredImage);
 
   return (
     <Seo title={title} image={`https://sprucecss.com${image.images.fallback.src}`} />
-  )
+  );
 }
 
 export const query = graphql`

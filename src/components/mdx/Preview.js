@@ -5,5 +5,5 @@ export default function Preview(props) {
     <div className="preview">
       {props.children}
     </div>
-  )
+  );
 }

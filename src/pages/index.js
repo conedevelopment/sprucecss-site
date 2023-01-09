@@ -5,7 +5,7 @@ import Docs from '../components/Docs';
 import GettingStarted from '../components/GettingStarted';
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
-import Seo from '../components/Seo'
+import Seo from '../components/Seo';
 
 export default function IndexPage() {
   return (
@@ -22,5 +22,5 @@ export default function IndexPage() {
 export function Head() {
   return (
     <Seo title="Spruce CSS - Minimal, modern CSS framework" frontPage={true} />
-  )
+  );
 }
