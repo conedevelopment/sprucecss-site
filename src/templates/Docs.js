@@ -61,5 +61,5 @@ export function Head({ data: { mdx } }) {
 
   return (
     <Seo title={title} />
-  )
+  );
 }

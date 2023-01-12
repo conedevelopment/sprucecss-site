@@ -7,7 +7,7 @@ import Seo from '../components/Seo';
 import PageHeading from '../components/PageHeading';
 import Card from '../components/card/Blog';
 
-export default function TagPage({ data, pageContext: { tag }}) {
+export default function TagPage({ data, pageContext: { tag } }) {
   return (
     <Layout>
       <Seo title={`#${tag}`} />
@@ -20,7 +20,7 @@ export default function TagPage({ data, pageContext: { tag }}) {
             {data.allMdx.edges.map((post) => {
               return (
                 <Card key={post.slug} post={post.node} />
-              )
+              );
             })}
           </div>
         </div>
@@ -29,10 +29,10 @@ export default function TagPage({ data, pageContext: { tag }}) {
   );
 }
 
-export function Head({ pageContext: { tag }}) {
+export function Head({ pageContext: { tag } }) {
   return (
     <Seo title={`#${tag}`} />
-  )
+  );
 }
 
 export const pageQuery = graphql`
@@ -61,4 +61,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

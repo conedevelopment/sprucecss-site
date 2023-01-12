@@ -37,7 +37,7 @@ export const query = graphql`
   }
 `;
 
-export default function Post({location, data: { mdx }, children, data: { allFile: files }, pageContext }) {
+export default function Post({ location, data: { mdx }, children, data: { allFile: files }, pageContext }) {
   const { next, prev } = pageContext;
   const { title, codeURL, previewHeight, lead } = mdx.frontmatter;
 
@@ -74,7 +74,7 @@ export default function Post({location, data: { mdx }, children, data: { allFile
             >
               {preview &&
               <CodeTabContent title='Preview' id='preview'>
-                <iframe srcDoc={preview} frameBorder='0' title={title} style={{height: previewHeight}} loading='lazy'></iframe>
+                <iframe srcDoc={preview} frameBorder='0' title={title} style={{ height: previewHeight }} loading='lazy'></iframe>
               </CodeTabContent>}
               {scss &&
               <CodeTabContent title="SCSS" id="scss" code={scss}></CodeTabContent>}
@@ -115,5 +115,5 @@ export function Head({ location, data: { mdx } }) {
 
   return (
     <Seo title={title} location={location} />
-  )
+  );
 }

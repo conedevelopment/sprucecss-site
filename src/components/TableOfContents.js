@@ -5,7 +5,7 @@ export default function TableOfContents({ headings }) {
   function handleScroll(e) {
     e.preventDefault();
 
-    let hash = e.target.getAttribute('href');
+    const hash = e.target.getAttribute('href');
 
     document.querySelector(hash).scrollIntoView({
       behavior: 'smooth',

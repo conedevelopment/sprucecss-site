@@ -26,8 +26,8 @@ export default function SiteHeader({ location }) {
   const [slogan, setSlogan] = useState(site.siteMetadata.slogan[Math.floor(Math.random() * site.siteMetadata.slogan.length)]);
 
   useEffect(() => {
-    if(menuVisible === true) {
-      document.querySelector(".site-header__navigation ul").firstChild.focus();
+    if (menuVisible === true) {
+      document.querySelector('.site-header__navigation ul').firstChild.focus();
     }
   }, [menuVisible]);
 
@@ -36,7 +36,7 @@ export default function SiteHeader({ location }) {
   }
 
   function getSlogan() {
-    let newSlogan = site.siteMetadata.slogan[Math.floor(Math.random() * site.siteMetadata.slogan.length)];
+    const newSlogan = site.siteMetadata.slogan[Math.floor(Math.random() * site.siteMetadata.slogan.length)];
 
     if (newSlogan !== slogan) {
       setSlogan(newSlogan);
@@ -69,7 +69,7 @@ export default function SiteHeader({ location }) {
           window.location.reload();
         }}
         onDecline={() => {
-          document.cookie = "spruce-gdpr-cookies=false; expires=0; path=/";
+          document.cookie = 'spruce-gdpr-cookies=false; expires=0; path=/';
         }}
       >
         <p>We use cookies to track analytics data. It helps us to understand how our site is used.</p>
@@ -85,7 +85,7 @@ export default function SiteHeader({ location }) {
               <button className="site-header__slogan" onClick={handleSlogan} aria-live="assertive">{slogan}</button>
             </div>
             <nav className="site-header__navigation">
-              <button className="btn btn--primary btn--icon btn--rounded site-header__toggle" onClick={handleMenuClick} aria-controls="primary-menu" aria-expanded={menuVisible ? "true" : "false"} aria-label={menuVisible ? "Close navigation" : "Open navigation"}>
+              <button className="btn btn--primary btn--icon btn--rounded site-header__toggle" onClick={handleMenuClick} aria-controls="primary-menu" aria-expanded={menuVisible ? 'true' : 'false'} aria-label={menuVisible ? 'Close navigation' : 'Open navigation'}>
                 <MenuIcon className="btn__icon" width="30" height="30" />
               </button>
               <ul>

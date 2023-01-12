@@ -32,5 +32,5 @@ export default function NotFoundPage() {
 export function Head() {
   return (
     <Seo title="Error 404" />
-  )
+  );
 }

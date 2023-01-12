@@ -1,21 +1,21 @@
 import React from 'react';
-import Highlight, { defaultProps } from "prism-react-renderer"
+import Highlight, { defaultProps } from 'prism-react-renderer';
 
 const CodeBlock = ({ children, className }) => {
-	const language = className ? className.replace(/language-/, "") : "javascript"
-	return (
+  const language = className ? className.replace(/language-/, '') : 'javascript';
+  return (
     <Highlight { ...defaultProps }
       code={children}
-			language={language}
+            language={language}
       theme={false}>
-      {({className, style, tokens, getLineProps, getTokenProps}) => (
+      {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <div className="prism-code-wrapper">
-          <pre className={className} style={{...style}}>
+          <pre className={className} style={{ ...style }}>
             <code>
               {tokens.map((line, i) => (
-                <div key={i} {...getLineProps({line, key: i})}>
+                <div key={i} {...getLineProps({ line, key: i })}>
                   {line.map((token, key) => (
-                    <span key={key} {...getTokenProps({token, key})} />
+                    <span key={key} {...getTokenProps({ token, key })} />
                   ))}
                 </div>
               ))}
@@ -24,7 +24,7 @@ const CodeBlock = ({ children, className }) => {
         </div>
       )}
     </Highlight>
-	)
-}
+  );
+};
 
-export default CodeBlock
+export default CodeBlock;

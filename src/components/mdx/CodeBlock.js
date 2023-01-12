@@ -14,15 +14,15 @@ export default function CodeBlock(props) {
           : ''
       }
       theme={false}>
-      {({className, style, tokens, getLineProps, getTokenProps}) => (
+      {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <div className="prism-code-wrapper">
-          <pre className={className} style={{...style}}>
+          <pre className={className} style={{ ...style }}>
             <span className="prism-code__language">{matches?.groups?.lang || ''}</span>
             <code>
               {tokens.map((line, i) => (
-                <div key={i} {...getLineProps({line, key: i})}>
+                <div key={i} {...getLineProps({ line, key: i })}>
                   {line.map((token, key) => (
-                    <span key={key} {...getTokenProps({token, key})} />
+                    <span key={key} {...getTokenProps({ token, key })} />
                   ))}
                 </div>
               ))}

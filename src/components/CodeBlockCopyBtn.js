@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import CopyIcon from '../images/icons/copy.svg';
 import Check from '../images/icons/check-simple.svg';
 
@@ -27,7 +27,7 @@ export default function CodeBlockCopyBtn(props) {
   }
 
   return (
-    <button disabled={props.id !== 'preview' ? false : true} onClick={handleCopyClick} className="btn btn--primary btn--icon btn--sm copy-btn" aria-label=
+    <button disabled={props.id === 'preview'} onClick={handleCopyClick} className="btn btn--primary btn--icon btn--sm copy-btn" aria-label=
     {isCopied ? 'Copied!' : 'Copy'}>
       {isCopied ? <Check className="btn__icon" /> : <CopyIcon className="btn__icon" />}
     </button>
