@@ -12,7 +12,7 @@ export default function Seo({ children, location, description, title, image, fro
     if (cookies.get('spruce-gdpr-cookies')) {
       setCookie(true);
     }
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>

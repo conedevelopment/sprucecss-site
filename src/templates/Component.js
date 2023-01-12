@@ -46,7 +46,7 @@ export default function Post({ location, data: { mdx }, children, data: { allFil
   let html = null;
   let js = null;
 
-  files.nodes.length && files.nodes.map((node) => {
+  files.nodes.length && files.nodes.map((node) => { // eslint-disable-line array-callback-return
     if (node.fields.type === 'scss') {
       scss = node.internal.content;
     } else if (node.fields.type === 'html') {

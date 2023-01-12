@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 // Import components
 import CodeTabControl from './CodeTabControl';
@@ -25,6 +25,8 @@ export default function CodeTab({ defaultTab = 'preview', title, url, children }
           {children.map((child) => {
             if (child !== null && typeof child.props !== 'undefined') {
               return <li role="presentation" key={child.props.id}><CodeTabControl title={child.props.title} id={child.props.id} activeTab={activeTab} setActiveTab={setActiveTab}/></li>;
+            } else {
+              return null;
             }
           })}
         </ul>
@@ -34,6 +36,8 @@ export default function CodeTab({ defaultTab = 'preview', title, url, children }
         {children.map((child) => {
           if (child !== null && typeof child.props !== 'undefined') {
             return <CodeTabContent key={child.props.id} id={child.props.id} code={child.props.code} activeTab={activeTab}>{child.props.children}</CodeTabContent>;
+          } else {
+            return null;
           }
         })}
       </div>
