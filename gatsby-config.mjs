@@ -10,28 +10,29 @@ const config = {
     version: '1.2.0',
     siteUrl: 'https://sprucecss.com',
     slogan: [
-      '🎉 Another CSS Framework',
+      '🎉 Another CSS framework',
       '😳 Yesterday I liked it',
       '🤨 It could be worse, I think',
-      '👔 It is far from elegant'
+      '👔 It is far from elegant',
+      '🤭 An okayish CSS framework'
     ],
     title: 'Spruce CSS',
     twitter: 'conedevelopment',
-    analyticsID: process.env.ANALYTICS_ID,
+    analyticsID: process.env.ANALYTICS_ID
   },
   plugins: [
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `docs`,
-        path: `./src/docs`
+        name: 'docs',
+        path: './src/docs'
       }
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `blog`,
-        path: `./src/blog`
+        name: 'blog',
+        path: './src/blog'
       }
     },
     'gatsby-plugin-sass',
@@ -40,16 +41,16 @@ const config = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/images/icon.png',
-      },
+        icon: 'src/images/icon.png'
+      }
     },
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
         mdxOptions: {
-          remarkPlugins: [remarkGfm],
-        },
-      },
+          remarkPlugins: [remarkGfm]
+        }
+      }
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
@@ -57,24 +58,24 @@ const config = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: './src/images/',
+        path: './src/images/'
       },
-      __key: 'images',
+      __key: 'images'
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'pages',
-        path: './src/pages/',
+        path: './src/pages/'
       },
-      __key: 'pages',
+      __key: 'pages'
     },
     {
-      resolve: `gatsby-source-git`,
+      resolve: 'gatsby-source-git',
       options: {
-        name: `component`,
+        name: 'component',
         remote: `https://adamlaki:${process.env.GITHUB_PERSONAL_ACCESS_TOKEN}@github.com/conedevelopment/spruceui`,
-        branch: `main`
+        branch: 'main'
       }
     },
     {
@@ -84,7 +85,7 @@ const config = {
           include: /images/
         }
       }
-    },
+    }
   ],
   partytownProxiedURLs: [`https://www.googletagmanager.com/gtag/js?id=${process.env.ANALYTICS_ID}`]
 };
