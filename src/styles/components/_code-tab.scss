@@ -64,5 +64,16 @@
     .prism-code {
       max-height: 40rem;
     }
+
+    .preview-iframe {
+      @include spruce.transition;
+      opacity: 0;
+      visibility: hidden;
+
+      &--loaded  {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
   }
 }

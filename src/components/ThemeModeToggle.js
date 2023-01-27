@@ -17,6 +17,16 @@ export default function ThemeModeToggle() {
   };
 
   useEffect(() => {
+    const receiver = document.querySelector('#tab-content-preview > iframe');
+
+    if (receiver) {
+      receiver.contentWindow.postMessage({
+        type: theme
+      });
+    }
+  }, [theme]);
+
+  useEffect(() => {
     setTheme(localStorage.getItem('preferred-theme') ?? 'system');
   }, []);
 
