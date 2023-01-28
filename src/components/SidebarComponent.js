@@ -20,12 +20,16 @@ export default function Sidebar() {
           <ul>
             <li><Link to="/ui/component/accordion-card">Accordion Card</Link></li>
             <li><Link to="/ui/component/accordion-list">Accordion List</Link></li>
+            <li><Link to="/ui/component/alert">Alert</Link></li>
             <li><Link to="/ui/component/auth-form">Auth Form</Link></li>
             <li><Link to="/ui/component/breadcrumb-list">Breadcrumb List</Link></li>
             <li><Link to="/ui/component/container">Container</Link></li>
             <li><Link to="/ui/component/cookie-consent">Cookie Consent</Link></li>
+            <li><Link to="/ui/component/invoice">Invoice</Link></li>
+            <li><Link to="/ui/component/pagination">Pagination</Link></li>
             <li><Link to="/ui/component/post-author">Post Author</Link></li>
             <li><Link to="/ui/component/post-card">Post Card</Link></li>
+            <li><Link to="/ui/component/preloader">Preloader</Link></li>
             <li><Link to="/ui/component/site-navigation">Site Navigation</Link></li>
             <li><Link to="/ui/component/skip-link">Skip Link</Link></li>
             <li><Link to="/ui/component/theme-switcher">Theme Switcher</Link></li>
@@ -36,6 +40,7 @@ export default function Sidebar() {
         <h3 className="sidebar-section__title">Sections</h3>
         <nav className="sidebar-section__navigation">
           <ul>
+            <li><Link to="/ui/section/feature">Feature</Link></li>
             <li><Link to="/ui/section/gallery">Gallery</Link></li>
             <li><Link to="/ui/section/post-content">Post Content</Link></li>
             <li><Link to="/ui/section/post-heading">Post Heading</Link></li>

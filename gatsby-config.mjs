@@ -7,7 +7,7 @@ const config = {
   siteMetadata: {
     description: 'A low-level, lightweight and modern CSS design system, authoring tool built on Sass. Give your project a solid foundation.',
     github: 'conedevelopment',
-    version: '1.2.0',
+    version: '1.2.1',
     siteUrl: 'https://sprucecss.com',
     slogan: [
       '🎉 Another CSS framework',

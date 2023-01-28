@@ -39,7 +39,7 @@
     "react-dom": "^18.2.0",
     "remark-gfm": "^3.0.1",
     "sass": "^1.57.1",
-    "sprucecss": "^1.2.0",
+    "sprucecss": "^1.2.1",
     "universal-cookie": "^4.0.4"
   },
   "devDependencies": {
