@@ -72,6 +72,12 @@ $color-danger: hsl(0 71% 51%);
 $color-success: hsl(150 100% 33%);
 
 $colors: (
+  alert: (
+    danger: $color-danger,
+    info: hsl(195 100% 42%),
+    success: $color-success,
+    warning: hsl(48 89% 55%)
+  ),
   base: (
     primary: $color-primary,
     secondary: $color-secondary,
@@ -87,16 +93,6 @@ $colors: (
     code-background: color.change($color-primary, $lightness: 95%),
     code-foreground: $color-black,
     blockquote-border: $color-primary
-  ),
-  selection: (
-    foreground: $color-white,
-    background: $color-primary
-  ),
-  alert: (
-    danger: $color-danger,
-    info: hsl(195 100% 42%),
-    success: $color-success,
-    warning: hsl(48 89% 55%)
   ),
   btn: (
     primary-background: $color-primary,
@@ -127,6 +123,15 @@ $colors: (
     valid: $color-success,
     valid-focus-ring: color.adjust($color-success, $alpha: -0.75)
   ),
+  selection: (
+    foreground: $color-white,
+    background: $color-primary
+  ),
+  scrollbar: (
+    thumb-background: hsl(0 0% 0% / 0.15),
+    thumb-background-hover:	hsl(0 0% 0% / 0.25),
+    track-background:	hsl(0 0% 0% / 0.05)
+  ),
   table: (
     border: $color-gray-light,
     caption: $color-gray,
@@ -134,11 +139,6 @@ $colors: (
     hover: hsl(0 0% 0% / 0.05),
     text: $color-gray,
     stripe: hsl(0 0% 0% / 0.025)
-  ),
-  scrollbar: (
-    thumb-background: hsl(0 0% 0% / 0.15),
-    thumb-background-hover:	hsl(0 0% 0% / 0.25),
-    track-background:	hsl(0 0% 0% / 0.05)
   )
 );
 ```

@@ -32,9 +32,8 @@ $colors: (
     footer-background: hsl(0 0% 0% / 0.15),
     code-tab-background: hsl(0 0% 0% / 0.15)
   ),
-  selection: (
-    foreground: $color-white,
-    background: $color-primary
+  breadcrumb: (
+    arrow: hsl(0 0% 100% / 0.1)
   ),
   btn: (
     primary-background: hsl(261 52% 59%),
@@ -74,22 +73,6 @@ $colors: (
     valid: $color-success,
     valid-focus-ring: color.adjust($color-success, $alpha: -0.75)
   ),
-  table: (
-    border: $color-gray-dark,
-    caption: $color-gray,
-    heading: $color-white,
-    hover: hsl(0 0% 100% / 0.05),
-    text: $color-gray,
-    stripe: hsl(0 0% 100% / 0.025)
-  ),
-  scrollbar: (
-    thumb-background: hsl(0 0% 100% / 0.15),
-    thumb-background-hover:	hsl(0 0% 100% / 0.25),
-    track-background:	hsl(0 0% 100% / 0.05)
-  ),
-  breadcrumb: (
-    arrow: hsl(0 0% 100% / 0.1)
-  ),
   prism: (
     color: hsl(217 34% 88%),
     background: hsl(207 83% 10%),
@@ -102,5 +85,22 @@ $colors: (
     constant: hsl(221 100% 75%),
     class-name: hsl(33 100% 77%),
     regex: hsl(217 34% 88%)
+  ),
+  selection: (
+    foreground: $color-white,
+    background: $color-primary
+  ),
+  scrollbar: (
+    thumb-background: hsl(0 0% 100% / 0.15),
+    thumb-background-hover:	hsl(0 0% 100% / 0.25),
+    track-background:	hsl(0 0% 100% / 0.05)
+  ),
+  table: (
+    border: $color-gray-dark,
+    caption: $color-gray,
+    heading: $color-white,
+    hover: hsl(0 0% 100% / 0.05),
+    text: $color-gray,
+    stripe: hsl(0 0% 100% / 0.025)
   )
 );

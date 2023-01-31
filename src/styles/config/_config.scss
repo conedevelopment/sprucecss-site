@@ -11,6 +11,9 @@
       footer-background: hsl(222 100% 98%),
       code-tab-background: hsl(222 100% 98%)
     ),
+    breadcrumb: (
+      arrow: hsl(0 0% 0% / 0.1)
+    ),
     btn: (
       install-background: hsl(0 0% 95%),
       install-background-hover: hsl(0 0% 90%),
@@ -26,14 +29,6 @@
       background: hsl(207 95% 8%),
       foreground: hsl(0 0% 100%),
     ),
-    scrollbar: (
-      thumb-background: hsl(0 0% 0% / 0.15),
-      thumb-background-hover:	hsl(0 0% 0% / 0.25),
-      track-background:	hsl(0 0% 0% / 0.05)
-    ),
-    breadcrumb: (
-      arrow: hsl(0 0% 0% / 0.1)
-    ),
     prism: (
       color: hsl(243 14% 29%),
       background: hsl(0 0% 98%),
@@ -46,6 +41,11 @@
       constant: rgb(63, 107, 202),
       class-name: hsl(0 0% 7%),
       regex: hsl(1 66% 47%)
+    ),
+    scrollbar: (
+      thumb-background: hsl(0 0% 0% / 0.15),
+      thumb-background-hover:	hsl(0 0% 0% / 0.25),
+      track-background:	hsl(0 0% 0% / 0.05)
     )
   ),
   $dark-colors: dark.$colors,
