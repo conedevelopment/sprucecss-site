@@ -60,13 +60,11 @@ export default function Post({ location, data: { mdx }, children, data: { allFil
   });
 
   function handleIframeLoad() {
-    if (title !== 'Theme Switcher') {
-      const receiver = document.querySelector('#tab-content-preview > iframe').contentWindow;
+    const receiver = document.querySelector('#tab-content-preview > iframe').contentWindow;
 
-      receiver.postMessage({
-        type: localStorage.getItem('preferred-theme') ?? 'system'
-      });
-    }
+    receiver.postMessage({
+      type: localStorage.getItem('preferred-theme') ?? 'system'
+    });
 
     setIframe(true);
   }
