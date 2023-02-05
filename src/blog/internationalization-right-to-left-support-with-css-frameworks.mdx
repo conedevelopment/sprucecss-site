@@ -2,7 +2,7 @@
 title: 'Internationalization (right-to-left support) with CSS Frameworks'
 date: 2023-02-05
 featuredImage: '../images/blog/internationalization-right-to-left-support-with-css-frameworks.png'
-alt: 'Internationalization (i18n from this point) is quite an exciting and complicated process for web-based projects.'
+alt: 'Abstract geometric vector illustration'
 published: true
 tags: ['sass']
 ---
@@ -25,7 +25,7 @@ The logical properties and values give us control over our layout with logical d
 
 Although this article is mainly about LTR and RTL, you can not just control your layout horizontally but vertically if you wish so.
 
-You can set your writing mode with the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir"><code>dir</code></a> attribute or the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode"><code>writing-mode</code></a> CSS property.
+You can set your writing mode with the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir" className="code-link"><code>dir</code></a> attribute or the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode" className="code-link"><code>writing-mode</code></a> CSS property.
 
 [The support for the logical properties can be mixed](https://caniuse.com/?search=logical%20properties), but with a prefixer, you can easily support the newer browsers.
 
@@ -35,17 +35,21 @@ Let's see some simple example of how this change our code.
 
 If you want to align any text right in a physical way, you will do the following:
 
+```css
 p {
   text-align: right;
 }
+```
 
 With logical values (here, we only have new values), you don’t specify actual direction based on what you see but logical ones based on the context (writing mode) using the `end` value.
 
+```css
 p {
   text-align: end;
 }
+```
 
-## *-block, *-inline
+### *-block, *-inline
 
 The writing direction is based on two axes: vertical (inline) and horizontal (block). I think the horizontal one is the more popular one (hence we use them in this post because I know more about it).
 
@@ -72,7 +76,7 @@ div {
 
 In this case, this is a shorthand but also a logical layout.
 
-## Inset
+### Inset
 
 For controlling the positioning, we got the `inset-*` properties instead of the physical ones: `top`, `right`, `bottom`, and `left`.
 
@@ -114,6 +118,10 @@ The Flex and Grid layout methods support RTL quite well out of the box. These tw
 These two layout modes will handle the direction switching by mirroring your structure (on the right axis). Which was an additional CSS code to address, now is a default.
 
 The values that we use for our flex or grid properties are and were logical ones. Before `start` and `end` for the `justify-content` property, we used `flex-start` and `flex-end`. These values mean the same but are unified (we can use them now in many cases).
+
+
+
+<Notification type="info">To see all of this in action, check out this <a href="https://ui.sprucecss.com/html/page/post-preview.html?dir=rtl">complex example from Spruce UI</a>. You can remove the <code>dir</code> attribute from the URL to see the RTL version.</Notification>
 
 ## I18n With CSS Summary
 
