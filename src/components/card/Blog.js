@@ -27,7 +27,7 @@ export default function Card({ post }) {
         <span className="blog-card__date">{post.frontmatter.date}</span>
       </div>
       <h2 className="blog-card__title">
-        <Link to={`/blog/${post.slug}`}>{post.frontmatter.title}</Link>
+        <Link to={`/blog${post.fields.slug}`}>{post.frontmatter.title}</Link>
       </h2>
     </div>
   );
