@@ -5,6 +5,13 @@
     clamp(spruce.spacer(m), 5vw, spruce.spacer(l))
   );
 
+  &--wide {
+    @include spruce.layout-center(
+      clamp(spruce.spacer(m), 5vw, spruce.spacer(l)),
+      100%
+    );
+  }
+
   &--narrow {
     @include spruce.layout-center(
       clamp(spruce.spacer(m), 5vw, spruce.spacer(l)),

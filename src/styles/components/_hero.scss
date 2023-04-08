@@ -2,17 +2,20 @@
 @use '~sprucecss/scss/spruce';
 
 .hero {
-  padding: clamp(spruce.spacer(xxl), 15vh, 8rem) 0;
-  text-align: center;
+  &__inner {
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: spruce.spacer-clamp(l, xl);
+  }
 
   &__title {
     font-size: spruce.responsive-font-size(
-      $size: 4.2rem,
+      $size: 4.25rem,
       $scaler: 30,
       $optimal-size: '4vw + 1rem'
     );
     letter-spacing: -3px;
-    line-height: 1;
     margin-block: 0;
     max-width: 50ch;
 
@@ -28,7 +31,6 @@
       $optimal-size: '1vw + 1rem'
     );
     margin-block: 1.25rem 0;
-    margin-inline: auto;
     max-width: 60ch;
   }
 
@@ -37,7 +39,6 @@
     display: flex;
     flex-wrap: wrap;
     gap: spruce.spacer(m);
-    justify-content: center;
     margin-top: 2.15rem;
   }
 }

@@ -3,11 +3,12 @@
 @use '~sprucecss/scss/spruce' with (
   $colors: (
     base: (
+      border: rgb(224, 234, 248),
       card-border: hsl(220 32% 87%),
       primary-lightest: hsl(259 53% 94%),
       primary-dark: hsl(261deg 52% 35%),
       primary-darkest: hsl(272 100% 9%),
-      heading: hsl(0 0% 0%),
+      heading: hsl(261.91deg 69.46% 15.63%),
       footer-background: hsl(222 100% 98%),
       code-tab-background: hsl(222 100% 98%)
     ),

@@ -7,6 +7,12 @@
 
 @include spruce.font-face(
   'Open Sans',
+  '../fonts/open-sans-v34-latin-300.woff2',
+  300
+);
+
+@include spruce.font-face(
+  'Open Sans',
   '../fonts/open-sans-v34-latin-500.woff2',
   500
 );
