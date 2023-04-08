@@ -5,22 +5,40 @@
   &__inner {
     align-items: center;
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
     gap: spruce.spacer-clamp(l, xl);
+  }
+
+  &__image {
+    animation: rotate infinite 100s ease-in-out;
+    transform: scale(1.15);
+  }
+
+  @keyframes rotate {
+    0% {
+        transform: scale(1.15) rotate(-15deg);
+    }
+    50% {
+        transform: scale(1.15) rotate(0deg);
+    }
+    100% {
+        transform: scale(1.15) rotate(15deg);
+    }
   }
 
   &__title {
     font-size: spruce.responsive-font-size(
-      $size: 4.25rem,
+      $size: 4.5rem,
       $scaler: 30,
       $optimal-size: '4vw + 1rem'
     );
     letter-spacing: -3px;
     margin-block: 0;
     max-width: 50ch;
+    font-weight: 400;
 
     span {
-      font-weight: 400;
+      font-weight: 700;
     }
   }
 

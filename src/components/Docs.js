@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 export default function Docs() {
   return (
     <div className="doc-cards">
-      <div className="container">
+      <div className="container container--wide">
         <div className="heading">
           <h2 className="heading__title">Documentation</h2>
         </div>

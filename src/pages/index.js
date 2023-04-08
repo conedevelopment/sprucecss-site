@@ -14,6 +14,14 @@ export default function IndexPage() {
         <Hero />
         <GettingStarted />
         <Docs />
+        <div className="cta">
+          <div className="container container--wide">
+            <div className="cta__inner">
+              <h2 className="cta__title">Ready to get started?</h2>
+
+            </div>
+          </div>
+        </div>
       </main>
     </Layout>
   );

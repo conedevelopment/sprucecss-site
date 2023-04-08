@@ -20,7 +20,7 @@ export default function SiteFooter() {
 
   return (
     <footer className="site-footer">
-      <div className="container">
+      <div className="container container--wide">
         <div className="site-footer__top">
           <div className="site-footer__col">
             <Link className="site-footer__logo" to="/" title={site.siteMetadata.title}>

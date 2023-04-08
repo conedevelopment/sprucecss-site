@@ -1,7 +1,8 @@
 @use '~sprucecss/scss/spruce';
 
 .site-footer {
-  background-color: spruce.color(footer-background);
+  background-color: hsl(261.91deg 70.82% 6.2%);
+  color: hsl(0 0% 100% / 75%);
   font-size: 1rem;
   padding-block: spruce.spacer(xxl);
 
@@ -15,6 +16,7 @@
   }
 
   &__title {
+    color: hsl(0 0% 100%);
     font-size: spruce.font-size(h4);
     margin-block: 0 spruce.spacer(m);
   }
@@ -25,7 +27,7 @@
     font-size: 1rem;
 
     a {
-      color: spruce.color(text);
+      color: hsl(0 0% 100% / 75%);
       text-decoration: none;
 
       &:hover,

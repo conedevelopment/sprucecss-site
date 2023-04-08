@@ -8,7 +8,8 @@ export default function Hero() {
       <div className="container container--wide">
         <div className="hero__inner">
           <div className="hero__caption">
-            <h1 className="hero__title">A minimalistic, low-level CSS framework</h1>
+            <div className="note-bar">The v2 is just out, check out whats changed!</div>
+            <h1 className="hero__title">A minimalistic, low-level <span>CSS framework</span></h1>
             <p className="hero__description">A low-level, lightweight and modern CSS design system, authoring tool built on Sass. Give your project a solid foundation.</p>
             <div className="hero__btns">
               <Link to="/docs/getting-started/introduction" className="btn btn--primary btn--lg btn--rounded">Get Started</Link>
@@ -16,6 +17,7 @@ export default function Hero() {
             </div>
           </div>
           <StaticImage
+            className="hero__image"
             src="../images/torus.png"
             alt=""
             placeholder="blurred"

@@ -9,7 +9,7 @@ import Blog from '../images/icons/blog.svg';
 export default function GettingStarted({ classes }) {
   return (
     <div className="getting-started">
-      <div className="container">
+      <div className="container container--wide">
         <div className="heading">
           <h2 className="heading__title">Explore</h2>
         </div>
