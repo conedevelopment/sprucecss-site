@@ -23,6 +23,7 @@ export default function SiteFooter() {
       <div className="container container--wide">
         <div className="site-footer__top">
           <div className="site-footer__col">
+            <p className="site-footer__slogen">Your hundreths of CSS framework is here.</p>
             <Link className="site-footer__logo" to="/" title={site.siteMetadata.title}>
               <Logo />
             </Link>

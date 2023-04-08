@@ -4,10 +4,24 @@
   background-color: hsl(261.91deg 70.82% 6.2%);
   color: hsl(0 0% 100% / 75%);
   font-size: 1rem;
-  padding-block: spruce.spacer(xxl);
+  padding-block-start: spruce.spacer(xxl);
+
+  &__slogen {
+    font-family: spruce.$font-family-heading;
+    font-size: spruce.responsive-font-size(
+      $size: 4rem,
+      $scaler: 30,
+      $optimal-size: '4vw + 1rem'
+    );
+    color: #fff;
+    line-height: spruce.$line-height-heading;
+    margin-block: 0 2rem;
+  }
 
   &__top {
-    @include spruce.layout-grid(spruce.spacer(l), 14rem);
+    display: grid;
+    gap: spruce.spacer(l);
+    grid-template-columns: 3fr 1fr 1fr 1fr;
   }
 
   &__logo {
@@ -44,7 +58,9 @@
   }
 
   &__bottom {
-    padding-block-start: spruce.spacer(l);
+    border-top: 1px solid hsl(0 0% 100% / 15%);
+    margin-block-start: spruce.spacer(xl);
+    padding-block: spruce.spacer(m);
 
     @include spruce.breakpoint(md) {
       align-items: center;
