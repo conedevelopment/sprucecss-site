@@ -1,13 +1,11 @@
 @use '~sprucecss/scss/spruce';
 
 .site-header {
-  // border-bottom: 1px solid spruce.color(border);
-
   &__inner {
     align-items: center;
     display: flex;
     gap: clamp(#{spruce.spacer(xs)}, 3vw, #{spruce.spacer(l)});
-    height: 6rem;
+    height: 5rem;
     justify-content: space-between;
     position: relative;
   }
@@ -68,6 +66,10 @@
     flex-grow: 1;
     font-family: var(--doc-body-font-family);
     justify-content: flex-end;
+
+    @include spruce.breakpoint(md) {
+      justify-content: flex-start;
+    }
 
     ul {
       @include spruce.clear-list;

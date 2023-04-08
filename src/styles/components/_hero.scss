@@ -11,18 +11,18 @@
 
   &__image {
     animation: rotate infinite 100s ease-in-out;
-    transform: scale(1.15);
+    transform: scale(105%);
   }
 
   @keyframes rotate {
     0% {
-        transform: scale(1.15) rotate(-15deg);
+        transform: scale(105%) rotate(-15deg);
     }
     50% {
-        transform: scale(1.15) rotate(0deg);
+        transform: scale(105%) rotate(0deg);
     }
     100% {
-        transform: scale(1.15) rotate(15deg);
+        transform: scale(105%) rotate(15deg);
     }
   }
 

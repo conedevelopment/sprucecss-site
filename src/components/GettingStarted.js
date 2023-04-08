@@ -20,6 +20,7 @@ export default function GettingStarted({ classes }) {
               <Link className="getting-started-card__link" to="/docs/getting-started/introduction">Documentation</Link>
             </h3>
             <p>Learn about Spruce CSS through our extensive documentation.</p>
+            <a href="#">Read more</a>
           </div>
           <div className="getting-started-card">
             <Components className="getting-started-card__icon" />
@@ -27,6 +28,7 @@ export default function GettingStarted({ classes }) {
               <Link className="getting-started-card__link" to="/ui/getting-started/introduction">Components</Link>
             </h3>
             <p>Explore our extensive UI library built with Spruce CSS.</p>
+            <a href="#">Read more</a>
           </div>
           <div className="getting-started-card">
             <Blog className="getting-started-card__icon" />
@@ -34,6 +36,7 @@ export default function GettingStarted({ classes }) {
               <Link className="getting-started-card__link" to="/blog">Blog</Link>
             </h3>
             <p>Read about front-end development and concepts of Spruce CSS.</p>
+            <a href="#">Read more</a>
           </div>
         </div>
       </div>

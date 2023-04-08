@@ -3,7 +3,6 @@
 .heading {
   @include spruce.layout-stack(spruce.spacer(m));
   margin-block-end: spruce.spacer(l);
-  text-align: center;
 
   &__title {
     font-size: spruce.responsive-font-size(2.4rem);

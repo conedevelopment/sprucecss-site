@@ -82,7 +82,6 @@ export default function SiteHeader({ location }) {
               <Link to="/" title={site.siteMetadata.title}>
                 {isUI ? <LogoUI width="131" height="30" /> : <Logo width="131" height="30" />}
               </Link>
-              <button className="site-header__slogan" onClick={handleSlogan} aria-live="assertive">{slogan}</button>
             </div>
             <nav className="site-header__navigation">
               <button className="btn btn--primary btn--icon btn--rounded site-header__toggle" onClick={handleMenuClick} aria-controls="primary-menu" aria-expanded={menuVisible ? 'true' : 'false'} aria-label={menuVisible ? 'Close navigation' : 'Open navigation'}>

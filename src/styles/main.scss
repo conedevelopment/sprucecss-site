@@ -109,3 +109,24 @@ h6 {
 main {
   @include spruce.layout-stack(6rem);
 }
+
+.cta {
+  background-image: linear-gradient(
+    45deg,
+    hsl(180deg 63% 50%) 0%,
+    hsl(185deg 100% 40%) 11%,
+    hsl(190deg 100% 40%) 22%,
+    hsl(195deg 100% 39%) 33%,
+    hsl(200deg 100% 38%) 44%,
+    hsl(205deg 100% 36%) 56%,
+    hsl(209deg 100% 33%) 67%,
+    hsl(214deg 100% 30%) 78%,
+    hsl(232deg 66% 31%) 89%,
+    hsl(267deg 86% 22%) 100%
+  );
+  padding-block: 4rem;
+
+  &__title {
+    color: #fff !important;
+  }
+}
