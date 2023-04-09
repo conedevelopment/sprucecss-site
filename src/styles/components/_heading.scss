@@ -1,11 +1,16 @@
 @use '~sprucecss/scss/spruce';
 
 .heading {
-  @include spruce.layout-stack(spruce.spacer(m));
+  @include spruce.layout-stack(spruce.spacer(xs));
   margin-block-end: spruce.spacer(l);
 
   &__title {
-    font-size: spruce.responsive-font-size(2.4rem);
+    font-size: spruce.responsive-font-size(3.4rem);
     margin-block: 0;
+  }
+
+  &__description {
+    font-size: spruce.responsive-font-size(1.4rem);
+    max-width: 50ch;
   }
 }

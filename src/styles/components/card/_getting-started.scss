@@ -7,6 +7,9 @@
   @include spruce.layout-stack(spruce.spacer(s));
 
   background-color: spruce.color(background);
+  border: 1px solid spruce.color(border);
+  border-radius: spruce.$border-radius-lg;
+  padding: 2rem;
   transition-duration: spruce.transition(duration);
   transition-property: all;
   transition-timing-function: spruce.transition(timing-function);

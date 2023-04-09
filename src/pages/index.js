@@ -12,13 +12,14 @@ export default function IndexPage() {
     <Layout>
       <main id="content">
         <Hero />
-        <GettingStarted />
         <Docs />
+        <GettingStarted />
         <div className="cta">
           <div className="container container--wide">
             <div className="cta__inner">
-              <h2 className="cta__title">Ready to get started?</h2>
-
+              <h2 className="cta__title">Find us on GitHub</h2>
+              <p>Did you found a bug? Have an idea or a question? Open an issue to help us develop the project.</p>
+              <a href="#" className="btn btn--lg">GibHub</a>
             </div>
           </div>
         </div>
