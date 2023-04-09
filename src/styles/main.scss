@@ -96,7 +96,7 @@ h6 {
 }
 
 .note-bar {
-  background-color: #e0efff;
+  background-color: #eff7ff;
   border-radius: 0.425rem;
   color: #3865a9;
   display: inline-flex;
@@ -126,7 +126,62 @@ main {
   );
   padding-block: 4rem;
 
+  &__inner {
+    @include spruce.layout-stack(s);
+  }
+
   &__title {
+    font-size: spruce.responsive-font-size(3.4rem);
+    font-weight: 400;
+  }
+
+  * {
     color: #fff !important;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+}
+
+.ide {
+  border: 1px solid spruce.color(border);
+  border-radius: spruce.$border-radius-sm;
+  box-shadow: 0 0 3rem hsl(0 0% 0% / 5%);
+
+  &__header {
+    align-items: center;
+    border-bottom: 1px solid spruce.color(border);
+    padding: 0.35rem 1.25rem;
+    font-size: 1rem;
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__controls {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &__control {
+    border-radius: 50%;
+    height: 0.75rem;
+    width: 0.75rem;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 15rem 1fr;
+  }
+
+  &__sidebar {
+    padding: 1.5rem;
+    ul {
+      @include spruce.clear-list;
+    }
+
+    li {
+      font-size: 1rem;
+    }
   }
 }

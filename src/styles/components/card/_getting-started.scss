@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use '~sprucecss/scss/spruce';
 
 .getting-started-card {
@@ -16,7 +17,7 @@
 
   &:hover,
   &:focus {
-    background-color: spruce.color(primary);
+    background-color: spruce.color(heading);
     border-color: spruce.color(primary);
     color: hsl(0 0% 100%);
 
