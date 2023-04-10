@@ -113,37 +113,17 @@ h6 {
   padding: 0.25em 1em;
 }
 
-main {
-  @include spruce.layout-stack(6rem);
-}
-
 .ide-container {
   // background: gray;
   // padding-block: spruce.spacer-clamp(l, xl);
-  background: linear-gradient(0deg, #f5faff 0%, #fff 100%);
-  padding-bottom: 8rem;
+  padding-bottom: spruce.get-css-variable(--section-gap);
   margin-top: 4rem;
   border-bottom: 1px solid spruce.color(border);
 }
 
 .ide-wrapper {
-  display: flex;
-  gap: 2.5rem;
-  flex-direction: column;
-  border-radius: spruce.$border-radius-lg;
-
-  &__caption {
-    @include spruce.layout-stack(xs);
-    text-align: center;
-
-    h2 {
-      font-size: clamp(2.89rem, 2vw + 1rem, 3.4rem);
-    }
-
-    p {
-      font-size: clamp(1.19rem, 2vw + 1rem, 1.4rem);
-    }
-  }
+  margin-inline: auto;
+  max-width: 70rem;
 }
 
 .ide {
@@ -195,4 +175,8 @@ main {
   &__body {
     width: 55rem;
   }
+}
+
+.helper {
+  background: linear-gradient(0deg, #f5faff 0%, #fff 100%);
 }

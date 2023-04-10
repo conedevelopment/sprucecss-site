@@ -28,9 +28,8 @@
     @include spruce.layout-stack(s);
   }
 
-  &__title {
-    font-size: spruce.responsive-font-size(3.4rem);
-    font-weight: 400;
+  .heading {
+    margin-block-end: 0;
   }
 
   * {
@@ -39,5 +38,6 @@
 
   p {
     font-size: 1.2rem;
+    max-width: 55ch;
   }
 }

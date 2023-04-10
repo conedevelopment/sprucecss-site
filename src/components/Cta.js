@@ -7,7 +7,9 @@ export default function Cta() {
       <div className="container container--wide">
         <div className="cta__inner">
           <div className="cta__caption">
-            <h2 className="cta__title">Find us on GitHub</h2>
+            <div className="heading">
+              <h2 className="heading__title cta__title">Find us on GitHub</h2>
+            </div>
             <p>Did you found a bug? Have an idea or a question? Open an issue to help us develop the project.</p>
           </div>
           <div className="cta__actions">

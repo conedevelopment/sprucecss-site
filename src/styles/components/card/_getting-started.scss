@@ -5,15 +5,17 @@
   $this: &;
 
   @include spruce.a11y-card-link('.getting-started-card__link', true);
-  @include spruce.layout-stack(spruce.spacer(s));
 
+  align-items: flex-start;
   background-color: spruce.color(background);
-  border: 1px solid spruce.color(border);
+  // border: 1px solid spruce.color(border);
   border-radius: spruce.$border-radius-lg;
-  padding: 2rem;
+  // padding: 2rem 1.5rem;
   transition-duration: spruce.transition(duration);
   transition-property: all;
   transition-timing-function: spruce.transition(timing-function);
+  display: flex;
+  gap: spruce.spacer(m);
 
   /*
   &:hover,
@@ -28,15 +30,26 @@
   }
   */
 
-  &__icon {
-    --dimension: 4rem;
+  &__caption {
+    @include spruce.layout-stack(xs);
+  }
 
+  &__icon {
+    --dimension: 5rem;
+
+    flex-shrink: 0;
     height: var(--dimension);
     width: var(--dimension);
   }
 
+  p {
+    margin-block-end: 0.25rem;
+  }
+
   &__link {
-    color: spruce.color(heading);
+    font-size: spruce.$font-size-sm;
+    font-weight: 700;
     text-decoration: none;
+    text-transform: uppercase;
   }
 }

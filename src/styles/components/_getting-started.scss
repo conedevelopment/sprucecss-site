@@ -1,16 +1,15 @@
 @use '~sprucecss/scss/spruce';
 
 .getting-started {
-  margin-block-end: clamp(spruce.spacer(xl), 8vw, 7rem);
+  border-bottom: 1px solid spruce.color(border);
+  padding-block: 3rem;
 
   &__inner {
-    --columns: 1;
-
-    display: grid;
-    gap: spruce.spacer(l);
-    grid-template-columns: repeat(var(--columns), minmax(0, 2fr));
-
-    @include spruce.breakpoint(sm) { --columns: 2; }
-    @include spruce.breakpoint(md) { --columns: 3; }
+    align-items: flex-start;
+    @include spruce.layout-grid(l, 20rem);
   }
+}
+
+.faq {
+  padding-block: spruce.get-css-variable(--section-gap-half) spruce.get-css-variable(--section-gap);
 }
