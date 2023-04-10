@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import CookieConsent from 'react-cookie-consent';
-
-// Images
 import MenuIcon from '../images/icons/menu.svg';
 import Logo from '../images/spruce-logo.svg';
 import LogoUI from '../images/spruce-ui-logo.svg';

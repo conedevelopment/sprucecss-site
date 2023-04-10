@@ -1,0 +1,43 @@
+@use '~sprucecss/scss/spruce';
+
+.cta {
+  background-image: linear-gradient(
+    45deg,
+    hsl(262deg 71% 49%) 0%,
+    hsl(247deg 71% 55%) 11%,
+    hsl(232deg 75% 55%) 22%,
+    hsl(219deg 86% 48%) 33%,
+    hsl(213deg 100% 45%) 44%,
+    hsl(211deg 100% 45%) 56%,
+    hsl(208deg 100% 45%) 67%,
+    hsl(205deg 100% 44%) 78%,
+    hsl(202deg 100% 43%) 89%,
+    hsl(203deg 71% 49%) 100%
+  );
+  padding-block: spruce.get-css-variable(--section-gap-half);
+
+  &__inner {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: spruce.spacer(l);
+    justify-content: space-between;
+  }
+
+  &__caption {
+    @include spruce.layout-stack(s);
+  }
+
+  &__title {
+    font-size: spruce.responsive-font-size(3.4rem);
+    font-weight: 400;
+  }
+
+  * {
+    color: #fff !important;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+}

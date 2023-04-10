@@ -3,7 +3,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby';
 import ThemeModeToggle from './ThemeModeToggle';
 
 // Images
-import Logo from '../images/spruce-logo-footer.svg';
+import Logo from '../images/spruce-logo-without-text.svg';
 import ConeLogo from '../images/cone-logo.svg';
 
 export default function SiteFooter() {
@@ -20,10 +20,10 @@ export default function SiteFooter() {
 
   return (
     <footer className="site-footer">
-      <div className="container container--wide">
+      <div className="container">
         <div className="site-footer__top">
           <div className="site-footer__col">
-            <p className="site-footer__slogen">Your hundreths of CSS framework is here.</p>
+            <p className="site-footer__slogen">Your hundredth of <br/>CSS framework.</p>
             <Link className="site-footer__logo" to="/" title={site.siteMetadata.title}>
               <Logo />
             </Link>

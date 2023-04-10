@@ -1,6 +1,7 @@
 @use 'dark-colors' as dark;
 
 @use '~sprucecss/scss/spruce' with (
+  $color-black: hsl(260deg 70% 6%),
   $colors: (
     base: (
       border: rgb(224, 234, 248),
@@ -8,7 +9,6 @@
       primary-lightest: hsl(259 53% 94%),
       primary-dark: hsl(261deg 52% 35%),
       primary-darkest: hsl(272 100% 9%),
-      heading: hsl(261.91deg 69.46% 15.63%),
       footer-background: hsl(222 100% 98%),
       code-tab-background: hsl(222 100% 98%)
     ),
@@ -51,7 +51,7 @@
   ),
   $dark-colors: dark.$colors,
   $font-size-base: 1.063rem,
-  $container-width: 88rem,
+  $container-width: 94rem,
   $form-control-font-size: 1rem,
   $btn-font-size: 1rem
 );

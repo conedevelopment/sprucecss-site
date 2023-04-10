@@ -7,6 +7,13 @@
 
 @use '~sprucecss/scss/spruce';
 
+:root {
+  @include spruce.set-css-variable((
+    --section-gap: clamp(5rem, 8vw, 9rem),
+    --section-gap-half: clamp(3.5rem, 8vw, 6rem),
+  ));
+}
+
 body {
   --doc-heading-font-family: 'Sora', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --doc-body-font-family: 'Open Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -110,46 +117,13 @@ main {
   @include spruce.layout-stack(6rem);
 }
 
-.cta {
-  background-image: linear-gradient(
-    45deg,
-    hsl(262deg 71% 49%) 0%,
-    hsl(247deg 71% 55%) 11%,
-    hsl(232deg 75% 55%) 22%,
-    hsl(219deg 86% 48%) 33%,
-    hsl(213deg 100% 45%) 44%,
-    hsl(211deg 100% 45%) 56%,
-    hsl(208deg 100% 45%) 67%,
-    hsl(205deg 100% 44%) 78%,
-    hsl(202deg 100% 43%) 89%,
-    hsl(203deg 71% 49%) 100%
-  );
-  padding-block: 4rem;
-
-  &__inner {
-    @include spruce.layout-stack(s);
-  }
-
-  &__title {
-    font-size: spruce.responsive-font-size(3.4rem);
-    font-weight: 400;
-  }
-
-  * {
-    color: #fff !important;
-  }
-
-  p {
-    font-size: 1.2rem;
-  }
-}
-
 .ide-container {
   // background: gray;
   // padding-block: spruce.spacer-clamp(l, xl);
-  background: linear-gradient(0deg, #eff7ff 0%, #fff 100%);
+  background: linear-gradient(0deg, #f5faff 0%, #fff 100%);
   padding-bottom: 8rem;
   margin-top: 4rem;
+  border-bottom: 1px solid spruce.color(border);
 }
 
 .ide-wrapper {
@@ -176,17 +150,19 @@ main {
   background-color: #fff;
   border: 1px solid spruce.color(border);
   border-radius: spruce.$border-radius-sm;
-  box-shadow: 0 0 3rem hsl(0 0% 0% / 5%);
-  max-width: 70rem;
+  box-shadow: 0 0 3rem hsl(0 0% 0% / 10%);
   margin-inline: auto;
 
   &__header {
     align-items: center;
+    background-color: hsl(261.91deg 70.82% 6.2%);
+    border-radius: spruce.$border-radius-sm spruce.$border-radius-sm 0 0;
     border-bottom: 1px solid spruce.color(border);
     padding: 0.35rem 1.25rem;
     font-size: 1rem;
     display: flex;
     gap: 1rem;
+    color: #fff;
   }
 
   &__controls {
@@ -214,5 +190,9 @@ main {
     li {
       font-size: 1rem;
     }
+  }
+
+  &__body {
+    width: 55rem;
   }
 }

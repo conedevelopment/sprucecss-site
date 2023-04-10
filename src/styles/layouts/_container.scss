@@ -8,7 +8,7 @@
   &--wide {
     @include spruce.layout-center(
       clamp(spruce.spacer(m), 5vw, spruce.spacer(l)),
-      100%
+      94rem
     );
   }
 

@@ -8,6 +8,10 @@
     height: 5rem;
     justify-content: space-between;
     position: relative;
+
+    @include spruce.breakpoint(md) {
+      height: 6rem;
+    }
   }
 
   &__logo {
