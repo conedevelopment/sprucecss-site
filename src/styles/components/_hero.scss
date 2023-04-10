@@ -10,7 +10,7 @@
   }
 
   &__image {
-    animation: rotate infinite 100s ease-in-out;
+    animation: rotate infinite 100s linear;
     transform: scale(105%);
   }
 

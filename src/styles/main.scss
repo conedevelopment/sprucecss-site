@@ -144,10 +144,41 @@ main {
   }
 }
 
+.ide-container {
+  // background: gray;
+  // padding-block: spruce.spacer-clamp(l, xl);
+  background: linear-gradient(0deg, #eff7ff 0%, #fff 100%);
+  padding-bottom: 8rem;
+  margin-top: 4rem;
+}
+
+.ide-wrapper {
+  display: flex;
+  gap: 2.5rem;
+  flex-direction: column;
+  border-radius: spruce.$border-radius-lg;
+
+  &__caption {
+    @include spruce.layout-stack(xs);
+    text-align: center;
+
+    h2 {
+      font-size: clamp(2.89rem, 2vw + 1rem, 3.4rem);
+    }
+
+    p {
+      font-size: clamp(1.19rem, 2vw + 1rem, 1.4rem);
+    }
+  }
+}
+
 .ide {
+  background-color: #fff;
   border: 1px solid spruce.color(border);
   border-radius: spruce.$border-radius-sm;
   box-shadow: 0 0 3rem hsl(0 0% 0% / 5%);
+  max-width: 70rem;
+  margin-inline: auto;
 
   &__header {
     align-items: center;
