@@ -56,7 +56,7 @@ export default function GettingStarted({ classes }) {
       </div>
     </div>
     <div className="faq">
-      <div className="container container--narrow">
+      <div className="container container--narrower">
         <div className="faq__inner">
           <div className="heading heading--center">
             <h2 className="heading__title">Good to Know</h2>
