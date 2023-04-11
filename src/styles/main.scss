@@ -43,6 +43,7 @@ h6 {
 .btn--install { @include spruce.btn-variant(install); }
 .btn--decline { @include spruce.btn-variant(decline); }
 .btn--discrete { @include spruce.btn-variant(discrete); }
+.btn--dark { @include spruce.btn-variant(dark); }
 
 .lead {
   color: spruce.color(heading);
