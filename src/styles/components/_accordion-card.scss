@@ -4,35 +4,13 @@
   $this: &;
 
   background-color: spruce.color(background);
-
-  &--box {
-    border: 1px solid spruce.color(border);
-    border-radius: spruce.$border-radius-sm;
-
-    #{$this}__title {
-      padding: spruce.spacer(m);
-    }
-
-    #{$this}__toggle {
-      padding: spruce.spacer(m);
-    }
-
-    #{$this}__content {
-      padding-inline: spruce.spacer(m);
-    }
-  }
-
-  &--js {
-    #{$this}__title {
-      padding: 0;
-    }
-  }
+  border: 1px solid spruce.color(border);
+  border-radius: spruce.$border-radius-sm;
 
   &__title {
     font-family: spruce.$font-family-base;
     font-size: spruce.font-size(h4);
     margin-block: 0;
-    padding-block: spruce.spacer(m);
   }
 
   &__toggle {
@@ -41,7 +19,7 @@
     display: flex;
     gap: spruce.spacer(m);
     justify-content: space-between;
-    padding-block: spruce.spacer(m);
+    padding: spruce.spacer(m);
     text-align: start;
     width: 100%;
 
@@ -74,6 +52,7 @@
 
   &__content {
     @include spruce.layout-stack(xs);
-    padding-block-end: spruce.spacer(m);
+    padding-block: 0 spruce.spacer(m);
+    padding-inline: spruce.spacer(m);
   }
 }
