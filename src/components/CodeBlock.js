@@ -1,5 +1,5 @@
-import React from 'react';
 import Highlight, { defaultProps } from 'prism-react-renderer';
+import React from 'react';
 
 const CodeBlock = ({ children, className }) => {
   const language = className ? className.replace(/language-/, '') : 'javascript';

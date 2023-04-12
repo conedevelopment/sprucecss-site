@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import CookieConsent from 'react-cookie-consent';
-import MenuIcon from '../images/icons/menu.svg';
+import GitHubIcon from '../images/icons/github.svg';
 import Logo from '../images/spruce-logo.svg';
 import LogoUI from '../images/spruce-ui-logo.svg';
-import GitHubIcon from '../images/icons/github.svg';
+import MenuIcon from '../images/icons/menu.svg';
+import React, { useState, useEffect } from 'react';
 import TwitterIcon from '../images/icons/twitter.svg';
 
 export default function SiteHeader({ location }) {
@@ -21,28 +21,12 @@ export default function SiteHeader({ location }) {
 
   const isUI = location && location.pathname.indexOf('ui') > -1 ? 'ui-page' : '';
   const [menuVisible, setMenuVisible] = useState(false);
-  const [slogan, setSlogan] = useState(site.siteMetadata.slogan[Math.floor(Math.random() * site.siteMetadata.slogan.length)]);
 
   useEffect(() => {
     if (menuVisible === true) {
       document.querySelector('.site-header__navigation ul').firstChild.focus();
     }
   }, [menuVisible]);
-
-  function handleSlogan() {
-    getSlogan();
-  }
-
-  function getSlogan() {
-    const newSlogan = site.siteMetadata.slogan[Math.floor(Math.random() * site.siteMetadata.slogan.length)];
-
-    if (newSlogan !== slogan) {
-      setSlogan(newSlogan);
-      return;
-    }
-
-    getSlogan();
-  }
 
   function handleMenuClick() {
     setMenuVisible(!menuVisible);

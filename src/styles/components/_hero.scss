@@ -11,19 +11,18 @@
 
   &__image {
     animation: rotate infinite 100s linear;
-    transform: scale(105%);
     animation-direction: alternate;
   }
 
   @keyframes rotate {
     0% {
-        transform: scale(105%) rotate(-15deg);
+        transform: rotate(-15deg);
     }
     50% {
-        transform: scale(105%) rotate(0deg);
+        transform: rotate(0deg);
     }
     100% {
-        transform: scale(105%) rotate(15deg);
+        transform: rotate(15deg);
     }
   }
 

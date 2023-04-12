@@ -1,5 +1,5 @@
-import React from 'react';
 import GitHubIcon from '../images/icons/github.svg';
+import React from 'react';
 
 export default function Cta() {
   return (

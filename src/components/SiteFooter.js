@@ -1,10 +1,8 @@
-import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
-import ThemeModeToggle from './ThemeModeToggle';
-
-// Images
-import Logo from '../images/spruce-logo-without-text.svg';
 import ConeLogo from '../images/cone-logo.svg';
+import Logo from '../images/spruce-logo-without-text.svg';
+import React from 'react';
+import ThemeModeToggle from './ThemeModeToggle';
 
 export default function SiteFooter() {
   const { site } = useStaticQuery(graphql`

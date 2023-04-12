@@ -1,6 +1,6 @@
-import React from 'react';
 import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
+import React from 'react';
 
 export default function Hero() {
   return (
@@ -18,7 +18,7 @@ export default function Hero() {
           </div>
           <StaticImage
             className="hero__image"
-            src="../images/torus.png"
+            src="../images/hero.png"
             alt=""
             placeholder="blurred"
           />
