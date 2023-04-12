@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="container container--wide">
         <div className="hero__inner">
           <div className="hero__caption">
-            <div className="note-bar">The v2 is just out, check out whats changed!</div>
+            <div className="note-bar">Version 2 is out, check out what is changed!</div>
             <h1 className="hero__title">A minimalistic, low-level <span>CSS framework</span></h1>
             <p className="hero__description">A low-level, lightweight and modern CSS design system, authoring tool built on Sass. Give your project a solid foundation.</p>
             <div className="hero__btns">

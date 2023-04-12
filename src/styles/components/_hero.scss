@@ -5,33 +5,40 @@
   &__inner {
     align-items: center;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    grid-template-columns: minmax(0, 1fr);
     gap: spruce.spacer-clamp(l, xl);
+    padding-block: spruce.get-css-variable(--section-gap-half);
+
+    @include spruce.breakpoint(md) {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+      padding-block-start: 0;
+    }
   }
 
   &__image {
     animation: rotate infinite 100s linear;
     animation-direction: alternate;
+    margin-inline: auto;
+    max-width: 13.5rem;
+    order: -1;
+
+    @include spruce.breakpoint(md) {
+      max-width: 100%;
+      order: 2;
+    }
   }
 
-  @keyframes rotate {
-    0% {
-        transform: rotate(-15deg);
-    }
-    50% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(15deg);
+  &__caption {
+    text-align: center;
+
+    @include spruce.breakpoint(md) {
+      padding-block: spruce.get-css-variable(--section-gap-half);
+      text-align: start;
     }
   }
 
   &__title {
-    font-size: spruce.responsive-font-size(
-      $size: 4.5rem,
-      $scaler: 30,
-      $optimal-size: '4vw + 1rem'
-    );
+    font-size: spruce.responsive-font-size(4.5rem, 35, '4vw + 1rem');
     letter-spacing: -3px;
     margin-block: 0;
     max-width: 50ch;
@@ -43,11 +50,7 @@
   }
 
   &__description {
-    font-size: spruce.responsive-font-size(
-      $size: 1.35rem,
-      $scaler: 30,
-      $optimal-size: '1vw + 1rem'
-    );
+    font-size: spruce.responsive-font-size(1.35rem, 30, '1vw + 1rem');
     margin-block: 1.25rem 0;
     max-width: 60ch;
   }
@@ -57,6 +60,23 @@
     display: flex;
     flex-wrap: wrap;
     gap: spruce.spacer(m);
+    justify-content: center;
     margin-top: 2.15rem;
+
+    @include spruce.breakpoint(md) {
+      justify-content: start;
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+      transform: rotate(-15deg);
+  }
+  50% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(15deg);
   }
 }
