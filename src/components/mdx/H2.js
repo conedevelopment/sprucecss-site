@@ -1,6 +1,6 @@
-import React from 'react';
-import Link from '../../images/icons/link.svg';
 import getAnchor from '../../utils/getAnchor.js';
+import Link from '../../images/icons/link.svg';
+import React from 'react';
 
 export default function H2(props) {
   const anchor = getAnchor(props.children);

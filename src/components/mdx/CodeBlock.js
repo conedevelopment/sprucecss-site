@@ -1,5 +1,5 @@
-import React from 'react';
 import Highlight, { defaultProps } from 'prism-react-renderer';
+import React from 'react';
 
 export default function CodeBlock(props) {
   const className = props?.children?.props?.className || '';
