@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PlusIcon from '../images/icons/plus.svg';
+import PlusIcon from '../../images/icons/plus.svg';
 
 export default function AccordionCard(props) {
   const [isOpen, setIsOpen] = useState(false);

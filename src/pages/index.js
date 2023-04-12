@@ -1,12 +1,11 @@
-import React from 'react';
-
-// Components
+import CodeBlock from '../components/CodeBlock';
 import Cta from '../components/Cta';
+import Faq from '../components/Faq';
 import GettingStarted from '../components/GettingStarted';
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
+import React from 'react';
 import Seo from '../components/Seo';
-import CodeBlock from '../components/CodeBlock';
 
 export default function IndexPage() {
   return (
@@ -67,7 +66,7 @@ export default function IndexPage() {
           </div>
         </div>
         <GettingStarted />
-        <Cta />
+        <Faq />
       </main>
     </Layout>
   );

@@ -1,9 +1,7 @@
-import React from 'react';
 import { Link } from 'gatsby';
-
-// Images
 import ArrowLeft from '../images/icons/arrow-left.svg';
 import ArrowRight from '../images/icons/arrow-right.svg';
+import React from 'react';
 
 export default function PostNavigation({ prev, next, type }) {
   return (

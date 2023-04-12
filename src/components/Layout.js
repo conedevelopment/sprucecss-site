@@ -1,21 +1,16 @@
-import React from 'react';
+import '../styles/main.scss';
 import { MDXProvider } from '@mdx-js/react';
-
-// Components
-import SiteFooter from './SiteFooter';
-import SiteHeader from './SiteHeader';
-
-// MDX components
 import CodeBlock from './mdx/CodeBlock';
-import Icon from './mdx/Icon';
+import Cta from './Cta';
 import H2 from './mdx/H2';
 import H3 from './mdx/H3';
+import Icon from './mdx/Icon';
 import Notification from './mdx/Notification';
 import Preview from './mdx/Preview';
+import React from 'react';
+import SiteFooter from './SiteFooter';
+import SiteHeader from './SiteHeader';
 import Table from './mdx/Table';
-
-// Styles
-import '../styles/main.scss';
 
 const shortcodes = {
   h2: H2,
@@ -34,6 +29,7 @@ export default function Layout(props) {
       <MDXProvider components={shortcodes}>
         {props.children}
       </MDXProvider>
+      <Cta />
       <SiteFooter />
     </>
   );

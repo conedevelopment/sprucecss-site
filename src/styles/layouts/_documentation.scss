@@ -50,6 +50,9 @@
   }
 
   &__content {
+    margin-inline: auto;
+    max-width: 75ch;
+
     @include spruce.breakpoint(lg) {
       grid-column: 1 / 2;
     }
