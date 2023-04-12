@@ -1,11 +1,9 @@
-import React from 'react';
 import { graphql } from 'gatsby';
-
-// Import components
-import Layout from '../components/Layout';
-import Seo from '../components/Seo';
-import PageHeading from '../components/PageHeading';
 import Card from '../components/card/Blog';
+import Layout from '../components/Layout';
+import PageHeading from '../components/PageHeading';
+import React from 'react';
+import Seo from '../components/Seo';
 
 export default function TagPage({ data, pageContext: { tag } }) {
   return (

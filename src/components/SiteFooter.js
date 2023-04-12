@@ -21,7 +21,7 @@ export default function SiteFooter() {
       <div className="container">
         <div className="site-footer__top">
           <div className="site-footer__col">
-            <p className="site-footer__slogen">Your hundredth of <br/>CSS framework.</p>
+            <p className="site-footer__slogen">Another <br/>CSS framework.</p>
             <Link className="site-footer__logo" to="/" title={site.siteMetadata.title}>
               <Logo />
             </Link>

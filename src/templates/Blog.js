@@ -1,10 +1,8 @@
-import React from 'react';
-import { Link, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-
-// Import components
+import { Link, graphql } from 'gatsby';
 import GettingStarted from '../components/GettingStarted';
 import Layout from '../components/Layout';
+import React from 'react';
 import Seo from '../components/Seo';
 
 export default function Post({ data: { mdx }, children }) {

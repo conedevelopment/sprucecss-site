@@ -6,8 +6,9 @@ const CodeBlock = ({ children, className }) => {
   return (
     <Highlight { ...defaultProps }
       code={children}
-            language={language}
-      theme={false}>
+      language={language}
+      theme={false}
+    >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <div className="prism-code-wrapper">
           <pre className={className} style={{ ...style }}>

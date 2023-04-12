@@ -1,0 +1,14 @@
+@use '~sprucecss/scss/spruce';
+
+.text-btn {
+  align-items: center;
+  display: inline-flex;
+  gap: spruce.spacer(xxs);
+  line-height: 1;
+
+  &__icon {
+    --dimension: 0.65em;
+    height: var(--dimension);
+    width: var(--dimension);
+  }
+}

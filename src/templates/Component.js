@@ -1,14 +1,12 @@
-import React, { useState } from 'react';
 import { graphql } from 'gatsby';
-
-// Import components
 import CodeTab from '../components/CodeTab';
 import CodeTabContent from '../components/CodeTabContent';
 import Layout from '../components/Layout';
-import TableOfContents from '../components/TableOfContents';
-import SidebarComponent from '../components/SidebarComponent';
-import Seo from '../components/Seo';
 import PostNavigation from '../components/PostNavigation';
+import React, { useState } from 'react';
+import Seo from '../components/Seo';
+import SidebarComponent from '../components/SidebarComponent';
+import TableOfContents from '../components/TableOfContents';
 
 export const query = graphql`
   query ($slug: String!) {

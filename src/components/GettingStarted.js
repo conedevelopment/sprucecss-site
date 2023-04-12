@@ -33,7 +33,6 @@ export default function GettingStarted() {
               placeholder="blurred"
               src="../images/icons/components.png"
               width={160}
-              quality={50}
             />
           </GettingStartedCard>
           <GettingStartedCard

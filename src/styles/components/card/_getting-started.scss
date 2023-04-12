@@ -8,27 +8,9 @@
 
   align-items: flex-start;
   background-color: spruce.color(background);
-  // border: 1px solid spruce.color(border);
   border-radius: spruce.$border-radius-lg;
-  // padding: 2rem 1.5rem;
-  transition-duration: spruce.transition(duration);
-  transition-property: all;
-  transition-timing-function: spruce.transition(timing-function);
   display: flex;
   gap: spruce.spacer(m);
-
-  /*
-  &:hover,
-  &:focus {
-    background-color: spruce.color(heading);
-    border-color: spruce.color(primary);
-    color: hsl(0 0% 100%);
-
-    #{$this}__link {
-      color: hsl(0 0% 100%);
-    }
-  }
-  */
 
   &__caption {
     @include spruce.layout-stack(xs);
@@ -40,10 +22,6 @@
     flex-shrink: 0;
     height: var(--dimension);
     width: var(--dimension);
-  }
-
-  p {
-    margin-block-end: 0.25rem;
   }
 
   &__link {
