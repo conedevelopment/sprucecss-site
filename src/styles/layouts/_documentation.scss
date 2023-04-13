@@ -50,21 +50,22 @@
   }
 
   &__content {
-    margin-inline: auto;
-    max-width: 75ch;
-
     @include spruce.breakpoint(lg) {
       grid-column: 1 / 2;
+    }
+
+    .post-content {
+      margin-inline: auto;
+      max-width: 45rem;
+      width: 100%;
     }
   }
 
   &__title {
-    font-size: spruce.responsive-font-size(
-      $size: 3.3rem,
-      $scaler: 40,
-      $optimal-size: '3vw + 1rem'
-    );
-    margin: 0;
+    font-size: spruce.responsive-font-size(3.3rem, 40, '3vw + 1rem');
+    margin-block: 0;
+    margin-inline: auto;
+    max-width: 45rem;
 
     @include spruce.breakpoint(lg) {
       grid-column: 1 / 2;

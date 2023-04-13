@@ -11,11 +11,7 @@
   }
 
   &__title {
-    font-size: spruce.responsive-font-size(
-      $size: 3.3rem,
-      $scaler: 40,
-      $optimal-size: '3vw + 1rem'
-    );
+    font-size: spruce.responsive-font-size(3.3rem, 40, '3vw + 1rem');
     margin-block: 0;
   }
 

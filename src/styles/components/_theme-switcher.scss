@@ -1,13 +1,13 @@
+@use '../config/dark-colors' as dark;
 @use '~sprucecss/scss/spruce';
 
 .theme-switcher {
-  color: spruce.color(text);
   display: inline-flex;
   position: relative;
 
   &__icon {
     align-items: center;
-    color: spruce.color(heading);
+    color: spruce.color(text, $only-color: true, $map: dark.$colors);
     display: flex;
     inset: 0 auto 0 0;
     justify-content: center;
@@ -29,6 +29,28 @@
   }
 
   &__select {
+    background-color: spruce.color(background, footer);
+    border-color: spruce.color(border, $only-color: true, $map: dark.$colors);
+    color: spruce.color(text, $only-color: true, $map: dark.$colors);
+    font-size: 0.9375rem;
     padding-inline-start: 2rem;
+
+    &:focus {
+      @include spruce.focus-ring(
+        $type: spruce.$form-control-focus-ring-type,
+        $border-color: spruce.color(border-focus, form, true, dark.$colors),
+        $ring-color: spruce.color(ring-focus, form, true, dark.$colors),
+        $box-shadow-type: spruce.$form-control-focus-ring-box-shadow-type,
+        $ring-width: spruce.$form-control-focus-ring-width,
+        $ring-offset: spruce.$form-control-focus-ring-offset
+      );
+    }
+  }
+
+  select.form-control:not([multiple]):not([size]) {
+    @include spruce.field-icon(
+      spruce.$select-icon,
+      spruce.color(select-foreground, form, true, dark.$colors)
+    );
   }
 }

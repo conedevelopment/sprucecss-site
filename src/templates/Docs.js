@@ -30,7 +30,9 @@ export default function Post({ data: { mdx }, children, pageContext }) {
             <Sidebar />
             <div className="l-documentation__body-helper">
               <article className="l-documentation__body">
-                <h1 className="l-documentation__title">{title}</h1>
+                <div className="l-documentation__title-helper">
+                  <h1 className="l-documentation__title">{title}</h1>
+                </div>
                 {mdx.tableOfContents.items && mdx.tableOfContents.items.length !== 0 &&
                   <div className="l-documentation__table-of-content">
                     <section className="toc" aria-labelledby="toc-title">
@@ -40,9 +42,11 @@ export default function Post({ data: { mdx }, children, pageContext }) {
                       </nav>
                     </section>
                   </div>}
-                <div className="l-documentation__content post-content">
-                  {children}
-                  {github && <div><a href={github}>Edit on GitHub</a></div>}
+                <div className="l-documentation__content">
+                  <div className="post-content">
+                    {children}
+                    {github && <div><a href={github}>Edit on GitHub</a></div>}
+                  </div>
                 </div>
               </article>
               <PostNavigation prev={prev} next={next} type='doc'/>
