@@ -1,30 +1,25 @@
 @use '~sprucecss/scss/spruce';
 
-.ide-container {
-  padding-bottom: spruce.get-css-variable(--section-gap);
-  margin-top: 4rem;
-  border-bottom: 1px solid spruce.color(border);
-}
-
 .ide-wrapper {
   margin-inline: auto;
-  max-width: 65rem;
+  max-width: 70rem;
+  padding-block-end: spruce.get-css-variable(--section-gap);
 }
 
 .ide {
-  background-color: #fff;
+  background-color: spruce.color(background);
   border: 1px solid spruce.color(border);
   border-radius: spruce.$border-radius-sm;
   box-shadow: 0 0 3rem hsl(0 0% 0% / 10%);
+  font-size: 0.9375rem;
   margin-inline: auto;
 
   &__header {
     align-items: center;
-    background-color: hsl(261.91deg 70.82% 6.2%);
+    background-color: spruce.color(header-background, ide);
     border-radius: spruce.$border-radius-sm spruce.$border-radius-sm 0 0;
     border-bottom: 1px solid spruce.color(border);
     padding: 0.35rem 1.25rem;
-    font-size: 1rem;
     display: flex;
     gap: 1rem;
     color: #fff;
@@ -36,9 +31,10 @@
   }
 
   &__control {
+    --dimension: 0.75rem;
     border-radius: 50%;
-    height: 0.75rem;
-    width: 0.75rem;
+    height: var(--dimension);
+    width: var(--dimension);
   }
 
   &__inner {
@@ -47,17 +43,73 @@
   }
 
   &__sidebar {
-    padding: 1.5rem;
-    ul {
-      @include spruce.clear-list;
-    }
+    @include spruce.layout-stack(s);
+    padding: spruce.spacer(m);
+  }
 
-    li {
-      font-size: 1rem;
+  &__editor,
+  .prism-code-wrapper,
+  .prism-code {
+    height: 100%;
+    max-height: 28rem;
+  }
+
+  pre[class*=language-] {
+    border-radius: 0 0 spruce.$border-radius-sm 0;
+  }
+}
+
+.ide-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65em;
+
+  &__title {
+    align-items: center;
+    display: flex;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    gap: spruce.spacer(xs);
+    line-height: 1;
+    margin-block: 0;
+
+    svg {
+      --dimension: 0.9rem;
+      color: hsl(207deg 90% 61%);
+      flex-shrink: 0;
+      height: var(--dimension);
+      width: var(--dimension);
     }
   }
 
-  &__body {
+  &__list {
+    @include spruce.clear-list;
+    @include spruce.layout-stack(0.75em);
 
+    &--border {
+      border-inline-start: 1px solid spruce.color(border);
+      margin-inline-start: spruce.spacer(xs);
+      padding-inline-start: spruce.spacer(s);
+    }
+  }
+
+  button {
+    @include spruce.clear-btn;
+    align-items: center;
+    display: flex;
+    gap: spruce.spacer(xs);
+    line-height: 1;
+
+    &.active {
+      font-weight: 500;
+    }
+
+    svg {
+      --dimension: 0.85rem;
+      color: hsl(330deg 53% 60%);
+      flex-shrink: 0;
+      height: var(--dimension);
+      width: var(--dimension);
+    }
   }
 }

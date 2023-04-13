@@ -1,9 +1,12 @@
 @use 'sass:color';
 @use '~sprucecss/scss/spruce';
 
-
 .hero-wrapper {
-  background: linear-gradient(0deg, spruce.color(gradient-start, hero) 0%, spruce.color(gradient-end, hero) 100%);
+  background: linear-gradient(
+    0deg,
+    spruce.color(gradient-start, hero) 0%,
+    spruce.color(gradient-end, hero) 100%
+  );
 }
 
 .hero {
@@ -12,7 +15,7 @@
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     gap: spruce.spacer-clamp(l, xl);
-    padding-block: spruce.get-css-variable(--section-gap-half);
+    padding-block: spruce.get-css-variable(--section-gap-half) spruce.get-css-variable(--section-gap);
 
     @include spruce.breakpoint(md) {
       grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
@@ -50,6 +53,7 @@
     font-size: 1rem;
     margin-block-end: 1.5rem;
     padding: 0.25em 1em;
+    text-decoration: none;
   }
 
   &__title {

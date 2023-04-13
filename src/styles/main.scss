@@ -40,6 +40,17 @@ h6 {
 }
 
 .btn--rounded { border-radius: spruce.$border-radius-lg; }
+
+.btn--rounded:not(.btn--icon) {
+  text-transform: uppercase;
+  font-size: 0.91375rem;
+  font-weight: 700;
+}
+
+.btn--rounded.btn--lg {
+  padding: 1.25em 1.5em;
+}
+
 .btn--install { @include spruce.btn-variant(install); }
 .btn--decline { @include spruce.btn-variant(decline); }
 .btn--discrete { @include spruce.btn-variant(discrete); }
@@ -94,11 +105,4 @@ h6 {
       width: 1.25rem;
     }
   }
-}
-
-.btn:not(.btn--icon) {
-  text-transform: uppercase;
-  font-size: 0.91375rem;
-  font-weight: 700;
-  padding: 1.25em 1.5em;
 }

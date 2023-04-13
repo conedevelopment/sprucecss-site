@@ -1,7 +1,9 @@
 @use 'dark-colors' as dark;
 
+$color-dark: hsl(260deg 70% 6%);
+
 @use '~sprucecss/scss/spruce' with (
-  $color-black: hsl(260deg 70% 6%),
+  $color-black: $color-dark,
   $colors: (
     base: (
       border: rgb(224, 234, 248),
@@ -25,7 +27,7 @@
       discrete-background-hover: hsl(262 71% 49%),
       discrete-foreground: hsl(0 0% 10%),
       discrete-foreground-hover: hsl(0 0% 100%),
-      dark-background: hsl(260deg 70% 6%),
+      dark-background: $color-dark,
       dark-background-hover: hsl(260deg 70% 12%),
       dark-foreground: hsl(0 0% 100%),
     ),
@@ -34,13 +36,16 @@
       foreground: hsl(0 0% 100%),
     ),
     footer: (
-      background: hsl(260deg 70% 6%),
+      background: $color-dark,
     ),
     hero: (
       note-color: hsl(216deg 50% 44%),
       note-background: hsl(210deg 100% 97%),
       gradient-start: hsl(210deg 100% 98%),
       gradient-end: hsl(0deg 0% 100%),
+    ),
+    ide: (
+      header-background: $color-dark,
     ),
     prism: (
       color: hsl(243 14% 29%),

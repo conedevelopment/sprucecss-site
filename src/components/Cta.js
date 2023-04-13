@@ -13,9 +13,9 @@ export default function Cta() {
             <p>Did you found a bug? Have an idea or a question? Open an issue to help us develop the project.</p>
           </div>
           <div className="cta__actions">
-            <a href="https://github.com/conedevelopment/sprucecss" className="btn btn--dark btn--lg">
+            <a href="https://github.com/conedevelopment/sprucecss" className="btn btn--dark btn--rounded btn--lg">
               <GitHubIcon className="btn__icon" />
-              GibHub
+              GitHub
             </a>
           </div>
         </div>
