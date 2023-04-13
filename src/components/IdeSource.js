@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function IdeSource({ type }) {
   if (type === '_config.scss') {
-    return (<CodeBlock>
+    return (<CodeBlock className="scss">
 {`@use 'sass:color';
 @use 'dark-colors' as dark;
 
@@ -40,8 +40,8 @@ $color-secondary: hsl(186deg 100% 60%);
     ),
     'scrollbar': (
       'thumb-background': hsl(229deg 26% 48% / 15%),
-      'thumb-background-hover':	hsl(0deg 0% 0% / 25%),
-      'track-background':	hsl(226deg 100% 87% / 15%)
+      'thumb-background-hover': hsl(0deg 0% 0% / 25%),
+      'track-background': hsl(226deg 100% 87% / 15%)
     )
   ),
   $dark-colors: dark.$colors,
@@ -58,7 +58,7 @@ $color-secondary: hsl(186deg 100% 60%);
   }
 
   if (type === '_dark-colors.scss') {
-    return (<CodeBlock>
+    return (<CodeBlock className="scss">
 {`@use 'sass:color';
 
 $dark-color-primary: hsl(186 100% 60%);
@@ -162,7 +162,7 @@ $colors: (
   }
 
   if (type === '_dark-mode.scss') {
-    return (<CodeBlock>
+    return (<CodeBlock className="scss">
 {`@use 'sprucecss/scss/spruce' as *;
 
 @include generate-color-variables(
@@ -189,7 +189,7 @@ $colors: (
   }
 
   if (type === '_fonts.scss') {
-    return (<CodeBlock>
+    return (<CodeBlock className="scss">
 {`@use 'sprucecss/scss/spruce' as *;
 
 @include font-face(
@@ -235,18 +235,17 @@ $colors: (
   }
 
   if (type === '_index.scss') {
-    return (<CodeBlock>
+    return (<CodeBlock className="scss">
 {`@forward 'config';
 @forward 'font';
 @forward 'styles';
 @forward 'dark-colors';
-@forward 'dark-mode';
-`}
+@forward 'dark-mode';`}
     </CodeBlock>);
   }
 
   if (type === '_styles.scss') {
-    return (<CodeBlock>
+    return (<CodeBlock className="scss">
 {`@use 'sprucecss/scss/spruce' as *;
 
 @include generate-content;
