@@ -16,7 +16,7 @@
     grid-template-columns: minmax(0, 1fr);
 
     @include spruce.breakpoint(sm) {
-      grid-template-columns: minmax(0, 15rem) minmax(0, 3.5fr);
+      grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
     }
   }
 
@@ -36,7 +36,7 @@
     row-gap: spruce.spacer(m);
 
     @include spruce.breakpoint(lg) {
-      grid-template-columns: minmax(0, 3.5fr) minmax(0, 15rem);
+      grid-template-columns: minmax(0, 1fr) minmax(0, 15rem);
     }
   }
 
@@ -57,6 +57,11 @@
   }
 
   &__content {
+    .post-content {
+      margin-inline: auto;
+      max-width: 45rem;
+    }
+
     @include spruce.breakpoint(lg) {
       grid-column: 1 / 2;
     }

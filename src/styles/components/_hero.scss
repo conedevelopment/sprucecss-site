@@ -1,6 +1,11 @@
 @use 'sass:color';
 @use '~sprucecss/scss/spruce';
 
+
+.hero-wrapper {
+  background: linear-gradient(0deg, spruce.color(gradient-start, hero) 0%, spruce.color(gradient-end, hero) 100%);
+}
+
 .hero {
   &__inner {
     align-items: center;
@@ -35,6 +40,16 @@
       padding-block: spruce.get-css-variable(--section-gap-half);
       text-align: start;
     }
+  }
+
+  &__note {
+    background-color: spruce.color(note-background, hero);
+    border-radius: spruce.$border-radius-sm;
+    color: spruce.color(note-color, hero);
+    display: inline-flex;
+    font-size: 1rem;
+    margin-block-end: 1.5rem;
+    padding: 0.25em 1em;
   }
 
   &__title {

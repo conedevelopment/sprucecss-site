@@ -1,5 +1,4 @@
 import CodeBlock from '../components/CodeBlock';
-import Cta from '../components/Cta';
 import Faq from '../components/Faq';
 import GettingStarted from '../components/GettingStarted';
 import Hero from '../components/Hero';
@@ -11,9 +10,8 @@ export default function IndexPage() {
   return (
     <Layout>
       <main id="content">
-        <div className="helper">
+        <div className="hero-wrapper">
           <Hero />
-          {/* <Docs /> */}
           <div className="ide-container">
             <div className="container container--wide">
               <div className="ide-wrapper">

@@ -116,8 +116,10 @@ export default function Post({ location, data: { mdx }, children, data: { allFil
                       </nav>
                     </section>
                   </div>}
-                <article className="l-component__content post-content">
-                  {children}
+                <article className="l-component__content">
+                  <div className="post-content">
+                    {children}
+                  </div>
                 </article>
               </div>
               <PostNavigation prev={prev} next={next}/>
