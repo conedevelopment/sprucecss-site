@@ -13,7 +13,6 @@ export default function SiteHeader({ location }) {
       site {
         siteMetadata {
           title
-          slogan
         }
       }
     }

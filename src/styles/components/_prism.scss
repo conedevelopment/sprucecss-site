@@ -1,7 +1,7 @@
 @use '~sprucecss/scss/spruce';
 
 .prism-code-wrapper {
-  font-size: 1rem;
+  font-size: 0.9375rem;
   overflow: hidden;
   position: relative;
 }
@@ -27,7 +27,7 @@ pre[class*='language-'] {
   color: spruce.color(color, prism);
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   hyphens: none;
-  line-height: 1.5;
+  line-height: 1.65;
   tab-size: 4;
   text-align: left;
   white-space: pre;

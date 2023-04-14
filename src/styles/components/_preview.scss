@@ -5,10 +5,6 @@
     spruce.spacer(m),
     $important: true
   );
-  border: 1px solid spruce.color(border);
-  border-radius: spruce.$border-radius-sm;
-  font-size: 1rem;
-  padding: spruce.spacer(m);
 
   > * {
     font-family: spruce.$font-family-base;

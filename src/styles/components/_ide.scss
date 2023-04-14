@@ -97,6 +97,7 @@
     @include spruce.clear-btn;
     align-items: center;
     display: flex;
+    font-family: spruce.$font-family-heading;
     gap: spruce.spacer(xs);
     line-height: 1;
 
