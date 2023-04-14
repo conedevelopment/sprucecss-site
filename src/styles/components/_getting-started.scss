@@ -1,8 +1,15 @@
 @use '~sprucecss/scss/spruce';
 
 .getting-started {
-  border-bottom: 1px solid spruce.color(border);
   padding-block: 3rem;
+
+  &--border-block-end {
+    border-block-end: 1px solid spruce.color(border);
+  }
+
+  &--border-block-start {
+    border-block-start: 1px solid spruce.color(border);
+  }
 
   &__inner {
     align-items: flex-start;

@@ -1,5 +1,6 @@
 import { graphql } from 'gatsby';
 import Card from '../components/card/Blog';
+import GettingStarted from '../components/GettingStarted';
 import Layout from '../components/Layout';
 import PageHeading from '../components/PageHeading';
 import React from 'react';
@@ -22,6 +23,7 @@ export default function TagPage({ data, pageContext: { tag } }) {
             })}
           </div>
         </div>
+      <GettingStarted type="bottom" />
       </main>
     </Layout>
   );

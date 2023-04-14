@@ -62,7 +62,7 @@ export default function Post({ data: { mdx }, children }) {
           </div>
         </article>
       </main>
-      <GettingStarted />
+      <GettingStarted type="bottom" />
     </Layout>
   );
 }

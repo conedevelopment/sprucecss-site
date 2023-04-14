@@ -1,4 +1,5 @@
 import { graphql } from 'gatsby';
+import GettingStarted from '../components/GettingStarted';
 import Layout from '../components/Layout';
 import PostNavigation from '../components/PostNavigation';
 import React from 'react';
@@ -54,6 +55,7 @@ export default function Post({ data: { mdx }, children, pageContext }) {
           </div>
         </div>
       </main>
+      <GettingStarted type="bottom" />
     </Layout>
   );
 }

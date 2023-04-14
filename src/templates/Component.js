@@ -1,6 +1,7 @@
 import { graphql } from 'gatsby';
 import CodeTab from '../components/CodeTab';
 import CodeTabContent from '../components/CodeTabContent';
+import GettingStarted from '../components/GettingStarted';
 import Layout from '../components/Layout';
 import PostNavigation from '../components/PostNavigation';
 import React, { useState } from 'react';
@@ -127,6 +128,7 @@ export default function Post({ location, data: { mdx }, children, data: { allFil
           </div>
         </div>
       </main>
+      <GettingStarted type="bottom" />
     </Layout>
   );
 }
