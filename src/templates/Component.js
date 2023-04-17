@@ -14,7 +14,6 @@ export const query = graphql`
     mdx(fields: {slug: {eq: $slug}}) {
       frontmatter {
         title
-        lead
         codeURL
         previewHeight
       }
@@ -38,7 +37,7 @@ export const query = graphql`
 
 export default function Post({ location, data: { mdx }, children, data: { allFile: files }, pageContext }) {
   const { next, prev } = pageContext;
-  const { title, codeURL, previewHeight, lead } = mdx.frontmatter;
+  const { title, codeURL, previewHeight } = mdx.frontmatter;
   const [iframe, setIframe] = useState(false);
 
   let preview = null;
@@ -70,54 +69,54 @@ export default function Post({ location, data: { mdx }, children, data: { allFil
 
   return (
     <Layout location={location}>
-      <main id="content" className="l-component">
+      <main id="content" className="l-documentation">
         <div className="container">
-          <div className="l-component__header">
-            <h1 className="l-component__title">{title}</h1>
-            <p className="lead">{lead}</p>
-          </div>
-          <div className="l-component__code-tab">
-            {codeURL &&
-            <CodeTab
-              title={title}
-              url={codeURL}
-              iframe={iframe}
-              setIframe={setIframe}
-            >
-              {preview &&
-              <CodeTabContent title='Preview' id='preview'>
-                <iframe
-                  srcDoc={preview}
-                  frameBorder='0'
-                  title={title}
-                  style={{ height: previewHeight }}
-                  loading='lazy'
-                  onLoad={handleIframeLoad}
-                  className={`preview-iframe ${iframe ? 'preview-iframe--loaded' : ''}`}
-                ></iframe>
-              </CodeTabContent>}
-              {scss &&
-              <CodeTabContent title="SCSS" id="scss" code={scss}></CodeTabContent>}
-              {html &&
-              <CodeTabContent title="HTML" id="html" code={html}></CodeTabContent>}
-              {js &&
-              <CodeTabContent title="JS" id="js" code={js}></CodeTabContent>}
-            </CodeTab>}
-          </div>
-          <div className="l-component__inner">
+          <div className="l-documentation__inner">
             <SidebarComponent />
-            <div className="l-component__body-helper">
-              <div className="l-component__body">
+            <div className="l-documentation__body-helper">
+            {codeURL && <div className="l-documentation__code-tab">
+                <CodeTab
+                  title={title}
+                  url={codeURL}
+                  iframe={iframe}
+                  setIframe={setIframe}
+                >
+                  {preview &&
+                  <CodeTabContent title='Preview' id='preview'>
+                    <iframe
+                      srcDoc={preview}
+                      frameBorder='0'
+                      title={title}
+                      style={{ height: previewHeight }}
+                      loading='lazy'
+                      onLoad={handleIframeLoad}
+                      className={`preview-iframe ${iframe ? 'preview-iframe--loaded' : ''}`}
+                    ></iframe>
+                  </CodeTabContent>}
+                  {scss &&
+                  <CodeTabContent title="SCSS" id="scss" code={scss}></CodeTabContent>}
+                  {html &&
+                  <CodeTabContent title="HTML" id="html" code={html}></CodeTabContent>}
+                  {js &&
+                  <CodeTabContent title="JS" id="js" code={js}></CodeTabContent>}
+                </CodeTab>
+              </div>}
+              <div className="l-documentation__body">
+                <div className="l-documentation__title-helper">
+                  <h1 className="l-documentation__title">{title}</h1>
+                </div>
                 {mdx.tableOfContents.items && mdx.tableOfContents.items.length !== 0 &&
-                  <div className="l-component__table-of-content">
-                    <section className="toc" aria-labelledby="toc-title">
-                      <h3 className="toc__title" id="toc-title">On this page</h3>
-                      <nav className="toc__navigation">
-                        <TableOfContents headings={mdx.tableOfContents.items} />
-                      </nav>
-                    </section>
+                  <div className="l-documentation__table-of-content-helper">
+                    <div className="l-documentation__table-of-content">
+                      <section className="toc" aria-labelledby="toc-title">
+                        <h3 className="toc__title" id="toc-title">On this page</h3>
+                        <nav className="toc__navigation">
+                          <TableOfContents headings={mdx.tableOfContents.items} />
+                        </nav>
+                      </section>
+                    </div>
                   </div>}
-                <article className="l-component__content">
+                <article className="l-documentation__content">
                   <div className="post-content">
                     {children}
                   </div>

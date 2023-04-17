@@ -2,7 +2,7 @@
 
 .ide-wrapper {
   margin-inline: auto;
-  max-width: 70rem;
+  max-width: 74rem;
   padding-block-end: spruce.get-css-variable(--section-gap);
 }
 
@@ -19,7 +19,7 @@
     background-color: spruce.color(header-background, ide);
     border-radius: spruce.$border-radius-sm spruce.$border-radius-sm 0 0;
     border-bottom: 1px solid spruce.color(border);
-    padding: 0.35rem 1.25rem;
+    padding: 0.45rem 1.25rem;
     display: flex;
     gap: 1rem;
     color: #fff;
@@ -44,7 +44,7 @@
 
   &__sidebar {
     @include spruce.layout-stack(s);
-    padding: spruce.spacer(m);
+    padding: 2rem;
   }
 
   &__editor,
@@ -56,6 +56,7 @@
 
   pre[class*=language-] {
     border-radius: 0 0 spruce.$border-radius-sm 0;
+    padding: 2rem 2.25rem;
   }
 }
 

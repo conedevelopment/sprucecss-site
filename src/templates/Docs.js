@@ -35,13 +35,15 @@ export default function Post({ data: { mdx }, children, pageContext }) {
                   <h1 className="l-documentation__title">{title}</h1>
                 </div>
                 {mdx.tableOfContents.items && mdx.tableOfContents.items.length !== 0 &&
-                  <div className="l-documentation__table-of-content">
-                    <section className="toc" aria-labelledby="toc-title">
-                      <h3 className="toc__title" id="toc-title">On this page</h3>
-                      <nav className="toc__navigation">
-                        <TableOfContents headings={mdx.tableOfContents.items} />
-                      </nav>
-                    </section>
+                  <div className="l-documentation__table-of-content-helper">
+                    <div className="l-documentation__table-of-content">
+                      <section className="toc" aria-labelledby="toc-title">
+                        <h3 className="toc__title" id="toc-title">On this page</h3>
+                        <nav className="toc__navigation">
+                          <TableOfContents headings={mdx.tableOfContents.items} />
+                        </nav>
+                      </section>
+                    </div>
                   </div>}
                 <div className="l-documentation__content">
                   <div className="post-content">

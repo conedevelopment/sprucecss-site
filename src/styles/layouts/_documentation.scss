@@ -1,7 +1,7 @@
 @use '~sprucecss/scss/spruce';
 
 .l-documentation {
-  padding-block: clamp(spruce.spacer(m), 5vw, spruce.spacer(l)) clamp(spruce.spacer(l), 5vw, spruce.spacer(xl));
+  padding-block: spruce.spacer-clamp(m, l) spruce.spacer-clamp(l, xl);
 
   &__inner {
     display: grid;
@@ -41,11 +41,14 @@
   }
 
   &__table-of-content {
-    font-size: 1rem;
+    margin-inline: auto;
+    max-width: 45rem;
 
-    @include spruce.breakpoint(lg) {
-      grid-column: 2 / 3;
-      order: 2;
+    &-helper {
+      @include spruce.breakpoint(lg) {
+        grid-column: 2 / 3;
+        order: 2;
+      }
     }
   }
 
@@ -69,5 +72,9 @@
     @include spruce.breakpoint(lg) {
       grid-column: 1 / 2;
     }
+  }
+
+  &__code-tab {
+    margin-block-end: spruce.spacer-clamp(l, xl);
   }
 }
