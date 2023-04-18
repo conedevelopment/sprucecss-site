@@ -1,22 +1,22 @@
-@use '~sprucecss/scss/spruce';
+@use '~sprucecss/scss/spruce' as *;
 
 .getting-started {
   padding-block: 3rem;
 
   &--border-block-end {
-    border-block-end: 1px solid spruce.color(border);
+    border-block-end: 1px solid color(border);
   }
 
   &--border-block-start {
-    border-block-start: 1px solid spruce.color(border);
+    border-block-start: 1px solid color(border);
   }
 
   &__inner {
     align-items: flex-start;
-    @include spruce.layout-grid(l, 20rem);
+    @include layout-grid(l, 20rem);
   }
 }
 
 .faq {
-  padding-block: spruce.get-css-variable(--section-gap-half) spruce.get-css-variable(--section-gap);
+  padding-block: get-css-variable(--section-gap-half) get-css-variable(--section-gap);
 }

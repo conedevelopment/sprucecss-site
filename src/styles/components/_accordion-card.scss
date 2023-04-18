@@ -1,35 +1,35 @@
-@use '~sprucecss/scss/spruce';
+@use '~sprucecss/scss/spruce' as *;
 
 .accordion-card {
   $this: &;
 
-  background-color: spruce.color(background);
-  border: 1px solid spruce.color(border);
-  border-radius: spruce.$border-radius-sm;
+  background-color: color(background);
+  border: 1px solid color(border);
+  border-radius: config('border-radius-sm', $display);
 
   &__title {
-    font-family: spruce.$font-family-base;
-    font-size: spruce.font-size(h4);
+    font-family: config('font-family-base', $typography);
+    font-size: font-size(h4);
     margin-block: 0;
   }
 
   &__toggle {
-    @include spruce.clear-btn;
+    @include clear-btn;
     align-items: center;
     display: flex;
-    gap: spruce.spacer(m);
+    gap: spacer(m);
     justify-content: space-between;
-    padding: spruce.spacer(m);
+    padding: spacer(m);
     text-align: start;
     width: 100%;
 
     &:focus-visible {
       svg {
-        @include spruce.focus-ring(
-          $type: spruce.$btn-focus-ring-type,
-          $ring-color: spruce.color(primary),
-          $ring-width: spruce.$btn-focus-ring-width,
-          $ring-offset: spruce.$btn-focus-ring-offset
+        @include focus-ring(
+          $type: config('focus-ring-type', $btn),
+          $ring-color: color(primary),
+          $ring-width: config('focus-ring-width', $btn),
+          $ring-offset: config('focus-ring-offset', $btn),
         );
       }
     }
@@ -37,8 +37,8 @@
     svg {
       --dimension: 1.75rem;
 
-      background-color: spruce.color(primary);
-      border-radius: spruce.$border-radius-sm;
+      background-color: color(primary);
+      border-radius: config('border-radius-sm', $display);
       color: hsl(0 0% 100%);
       flex-shrink: 0;
       height: var(--dimension);
@@ -51,8 +51,8 @@
   }
 
   &__content {
-    @include spruce.layout-stack(xs);
-    padding-block: 0 spruce.spacer(m);
-    padding-inline: spruce.spacer(m);
+    @include layout-stack(xs);
+    padding-block: 0 spacer(m);
+    padding-inline: spacer(m);
   }
 }

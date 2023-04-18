@@ -1,15 +1,15 @@
-@use '~sprucecss/scss/spruce';
+@use '~sprucecss/scss/spruce' as *;
 @use '../mixins' as *;
 
 .toc {
   inset-block-start: 2rem;
   position: sticky;
 
-  @include spruce.breakpoint(lg) {
-    @include spruce.scrollbar(
-      spruce.color(thumb-background, scrollbar),
-      spruce.color(thumb-background-hover, scrollbar),
-      spruce.color(track-background, scrollbar),
+  @include breakpoint(lg) {
+    @include scrollbar(
+      color(thumb-background, scrollbar),
+      color(thumb-background-hover, scrollbar),
+      color(track-background, scrollbar),
       0.5rem
     );
     max-height: calc(100vh - 4rem);
@@ -25,26 +25,26 @@
     margin-block-start: 1rem;
 
     ol {
-      @include spruce.clear-list;
-      @include spruce.layout-stack(spruce.spacer(xs));
+      @include clear-list;
+      @include layout-stack(spacer(xs));
 
       max-width: 95%;
 
       ol {
-        margin-block-start: spruce.spacer(xs);
-        margin-inline-start: spruce.spacer(s);
+        margin-block-start: spacer(xs);
+        margin-inline-start: spacer(s);
       }
     }
 
     a {
-      color: spruce.color(text);
+      color: color(text);
       display: inline-flex;
-      line-height: spruce.$line-height-md;
+      line-height: config('line-height-md', $typography);
       text-decoration: none;
 
       &:hover,
       &:focus {
-        color: spruce.color(primary);
+        color: color(primary);
       }
     }
   }

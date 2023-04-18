@@ -1,33 +1,33 @@
-@use '~sprucecss/scss/spruce';
+@use '~sprucecss/scss/spruce' as *;
 
 .code-tab {
-  border: 1px solid spruce.color(border);
-  border-radius: spruce.$border-radius-sm;
+  border: 1px solid color(border);
+  border-radius: config('border-radius-sm', $display);
   overflow: hidden;
 
   &__header {
     align-items: center;
-    background-color: spruce.color(code-tab-background);
-    border-block-end: 1px solid spruce.color(border);
-    border-start-end-radius: spruce.$border-radius-sm;
-    border-start-start-radius: spruce.$border-radius-sm;
+    background-color: color(code-tab-background);
+    border-block-end: 1px solid color(border);
+    border-start-end-radius: config('border-radius-sm', $display);
+    border-start-start-radius: config('border-radius-sm', $display);
     display: flex;
     flex-wrap: wrap;
-    gap: spruce.spacer(xs) spruce.spacer(m);
+    gap: spacer(xs) spacer(m);
     justify-content: space-between;
-    padding: spruce.spacer(s);
+    padding: spacer(s);
   }
 
   &__title {
-    font-size: spruce.font-size(h5);
+    font-size: font-size(h5);
     margin-block: 0;
   }
 
   &__open-new {
     align-items: center;
     display: flex;
-    font-size: spruce.$font-size-sm;
-    gap: spruce.spacer(xs);
+    font-size: config('font-size-sm', $typography);
+    gap: spacer(xs);
     line-height: 1;
 
     svg {
@@ -37,20 +37,20 @@
   }
 
   &__group {
-    @include spruce.clear-list;
+    @include clear-list;
     align-items: center;
     display: flex;
     flex-wrap: wrap;
-    gap: spruce.spacer(xxs) spruce.spacer(xs);
+    gap: spacer(xxs) spacer(xs);
 
     > * + * { margin-block-start: 0; }
 
     &--title {
-      gap: spruce.spacer(xxs) spruce.spacer(s);
+      gap: spacer(xxs) spacer(s);
     }
 
     &--tabs {
-      @include spruce.breakpoint(sm) {
+      @include breakpoint(sm) {
         margin-inline-start: auto;
       }
 
@@ -66,7 +66,7 @@
     }
 
     .preview-iframe {
-      @include spruce.transition;
+      @include transition;
       opacity: 0;
       visibility: hidden;
 

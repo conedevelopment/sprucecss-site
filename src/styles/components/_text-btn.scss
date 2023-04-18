@@ -1,9 +1,9 @@
-@use '~sprucecss/scss/spruce';
+@use '~sprucecss/scss/spruce' as *;
 
 .text-btn {
   align-items: center;
   display: inline-flex;
-  gap: spruce.spacer(xxs);
+  gap: spacer(xxs);
   line-height: 1;
 
   &__icon {

@@ -1,27 +1,27 @@
-@use '~sprucecss/scss/spruce';
+@use '~sprucecss/scss/spruce' as *;
 
 .container {
-  @include spruce.layout-center(
-    clamp(spruce.spacer(m), 5vw, spruce.spacer(l))
+  @include layout-center(
+    clamp(spacer(m), 5vw, spacer(l))
   );
 
   &--wide {
-    @include spruce.layout-center(
-      clamp(spruce.spacer(m), 5vw, spruce.spacer(l)),
+    @include layout-center(
+      clamp(spacer(m), 5vw, spacer(l)),
       94rem
     );
   }
 
   &--narrow {
-    @include spruce.layout-center(
-      clamp(spruce.spacer(m), 5vw, spruce.spacer(l)),
+    @include layout-center(
+      clamp(spacer(m), 5vw, spacer(l)),
       60rem
     );
   }
 
   &--narrower {
-    @include spruce.layout-center(
-      clamp(spruce.spacer(m), 5vw, spruce.spacer(l)),
+    @include layout-center(
+      clamp(spacer(m), 5vw, spacer(l)),
       50rem
     );
   }

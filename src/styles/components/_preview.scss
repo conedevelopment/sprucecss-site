@@ -1,13 +1,13 @@
-@use '~sprucecss/scss/spruce';
+@use '~sprucecss/scss/spruce' as *;
 
 .preview {
-  @include spruce.layout-stack(
-    spruce.spacer(m),
+  @include layout-stack(
+    spacer(m),
     $important: true
   );
 
   > * {
-    font-family: spruce.$font-family-base;
+    font-family: config('font-family-base', $typography);
   }
 
   ul > li > p {
@@ -18,7 +18,7 @@
 .button-grid {
   align-items: flex-start;
   display: flex;
-  gap: spruce.spacer(m);
+  gap: spacer(m);
 
   &--stacked {
     flex-wrap: wrap;
@@ -26,11 +26,11 @@
 }
 
 .inline-text-element-list {
-  @include spruce.clear-list;
-  @include spruce.layout-stack(spruce.spacer(s));
+  @include clear-list;
+  @include layout-stack(spacer(s));
 
-  @include spruce.breakpoint(sm) {
-    column-gap: spruce.spacer(l);
+  @include breakpoint(sm) {
+    column-gap: spacer(l);
     columns: 2 auto;
   }
 }

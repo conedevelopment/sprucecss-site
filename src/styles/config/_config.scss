@@ -5,69 +5,72 @@ $color-dark: hsl(260deg 70% 6%);
 @use '~sprucecss/scss/spruce' with (
   $color-black: $color-dark,
   $colors: (
-    base: (
-      border: rgb(224, 234, 248),
-      card-border: hsl(220 32% 87%),
-      primary-lightest: hsl(259 53% 94%),
-      primary-dark: hsl(261deg 52% 35%),
-      primary-darkest: hsl(272 100% 9%),
-      footer-background: hsl(222 100% 98%),
-      code-tab-background: hsl(222 100% 98%)
+    'base': (
+      'border': hsl(215deg 63% 93%),
+      'card-border': hsl(220deg 32% 87%),
+      'primary-lightest': hsl(259deg 53% 94%),
+      'primary-dark': hsl(261deg 52% 35%),
+      'primary-darkest': hsl(272deg 100% 9%),
+      'footer-background': hsl(222deg 100% 98%),
+      'code-tab-background': hsl(222deg 100% 98%),
     ),
-    breadcrumb: (
-      arrow: hsl(0 0% 0% / 0.1)
+    'breadcrumb': (
+      'arrow': hsl(0deg 0% 0% / 0.1),
     ),
-    btn: (
-      install-background: hsl(0 0% 95%),
-      install-background-hover: hsl(0 0% 90%),
-      install-foreground: hsl(0 0% 10%),
-      decline-background: hsl(207 39% 17%),
-      decline-foreground: hsl(0 0% 100%),
-      discrete-background: hsla(206 40% 17% / 0.1),
-      discrete-background-hover: hsl(262 71% 49%),
-      discrete-foreground: hsl(0 0% 10%),
-      discrete-foreground-hover: hsl(0 0% 100%),
-      dark-background: $color-dark,
-      dark-background-hover: hsl(260deg 70% 12%),
-      dark-foreground: hsl(0 0% 100%),
+    'btn': (
+      'install-background': hsl(0deg 0% 95%),
+      'install-background-hover': hsl(0deg 0% 90%),
+      'install-foreground': hsl(0deg 0% 10%),
+      'decline-background': hsl(207deg 39% 17%),
+      'decline-foreground': hsl(0deg 0% 100%),
+      'discrete-background': hsla(206deg 40% 17% / 0.1),
+      'discrete-background-hover': hsl(262deg 71% 49%),
+      'discrete-foreground': hsl(0deg 0% 10%),
+      'discrete-foreground-hover': hsl(0deg 0% 100%),
+      'dark-background': $color-dark,
+      'dark-background-hover': hsl(260deg 70% 12%),
+      'dark-foreground': hsl(0deg 0% 100%),
     ),
-    cookie: (
-      background: hsl(207 95% 8%),
-      foreground: hsl(0 0% 100%),
+    'cookie': (
+      'background': hsl(207deg 95% 8%),
+      'foreground': hsl(0deg 0% 100%),
     ),
-    footer: (
-      background: $color-dark,
+    'footer': (
+      'background': $color-dark,
     ),
-    hero: (
-      note-color: hsl(216deg 50% 44%),
-      note-background: hsl(210deg 100% 97%),
-      gradient-start: hsl(210deg 100% 98%),
-      gradient-end: hsl(0deg 0% 100%),
+    'hero': (
+      'note-color': hsl(216deg 50% 44%),
+      'note-background': hsl(210deg 100% 97%),
+      'gradient-start': hsl(210deg 100% 98%),
+      'gradient-end': hsl(0deg 0% 100%),
     ),
-    ide: (
-      header-background: $color-dark,
+    'ide': (
+      'header-background': $color-dark,
     ),
-    prism: (
-      color: hsl(243 14% 29%),
-      background: hsl(0 0% 98%),
-      comment: hsl(225 14% 46%),
-      punctuation: hsl(279 50% 53%),
-      namespace: hsl(173 100% 24%),
-      deleted: hsla(1 83% 63% / 0.56),
-      boolean: hsl(0 44% 53%),
-      number: hsl(315 90% 35%),
-      constant: rgb(63, 107, 202),
-      class-name: hsl(0 0% 7%),
-      regex: hsl(1 66% 47%)
+    'prism': (
+      'color': hsl(243deg 14% 29%),
+      'background': hsl(0deg 0% 98%),
+      'comment': hsl(225deg 14% 46%),
+      'punctuation': hsl(279deg 50% 53%),
+      'namespace': hsl(173deg 100% 24%),
+      'deleted': hsla(1deg 83% 63% / 0.56),
+      'boolean': hsl(0deg 44% 53%),
+      'number': hsl(315deg 90% 35%),
+      'constant': hsl(221deg 57% 52%),
+      'class-name': hsl(0deg 0% 7%),
+      'regex': hsl(1deg 66% 47%),
     ),
-    scrollbar: (
-      thumb-background: hsl(0 0% 0% / 0.15),
-      thumb-background-hover:	hsl(0 0% 0% / 0.25),
-      track-background:	hsl(0 0% 0% / 0.05)
-    )
+    'scrollbar': (
+      'thumb-background': hsl(0deg 0% 0% / 0.15),
+      'thumb-background-hover':	hsl(0deg 0% 0% / 0.25),
+      'track-background':	hsl(0deg 0% 0% / 0.05),
+    ),
   ),
   $dark-colors: dark.$colors,
-  $container-width: 94rem,
-  $form-control-font-size: 1rem,
-  $btn-font-size: 1rem
+  $layout: (
+    'container-width': '94rem',
+  ),
+  // $container-width: 94rem,
+  // $form-control-font-size: 1rem,
+  // $btn-font-size: 1rem
 );

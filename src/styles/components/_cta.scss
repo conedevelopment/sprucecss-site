@@ -1,4 +1,4 @@
-@use '~sprucecss/scss/spruce';
+@use '~sprucecss/scss/spruce' as *;
 
 .cta {
   background-image: linear-gradient(
@@ -29,18 +29,18 @@
     hsl(228deg 54% 44%) 81%,
     hsl(235deg 79% 38%) 100%
   );
-  padding-block: spruce.get-css-variable(--section-gap-half);
+  padding-block: get-css-variable(--section-gap-half);
 
   &__inner {
     align-items: center;
     display: flex;
     flex-wrap: wrap;
-    gap: spruce.spacer(m) spruce.spacer(l);
+    gap: spacer(m) spacer(l);
     justify-content: space-between;
   }
 
   &__caption {
-    @include spruce.layout-stack(s);
+    @include layout-stack(s);
   }
 
   .heading {

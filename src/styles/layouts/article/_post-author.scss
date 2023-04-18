@@ -1,9 +1,9 @@
-@use 'sprucecss/scss/spruce';
+@use '~sprucecss/scss/spruce' as *;
 
 .post-author {
   align-items: center;
   display: flex;
-  gap: spruce.spacer(xs);
+  gap: spacer(xs);
   text-decoration: none;
 
   &__avatar {
@@ -15,6 +15,6 @@
   }
 
   &__name {
-    color: spruce.color(text);
+    color: color(text);
   }
 }

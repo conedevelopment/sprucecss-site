@@ -1,15 +1,15 @@
-@use 'sprucecss/scss/spruce';
+@use '~sprucecss/scss/spruce' as *;
 
 .post-content {
-  @include spruce.layout-stack(spruce.spacer(m));
+  @include layout-stack(spacer(m));
 
-  @include spruce.breakpoint(lg) {
+  @include breakpoint(lg) {
     font-size: 1.0375rem;
   }
 
   &--blog {
     > :is(dd, dl, dl, h1, h2, h3, h4, h5, h6, hr, ul, ol, p, blockquote, .prism-code-wrapper, .notification) {
-      @include spruce.layout-center(
+      @include layout-center(
         null,
         45rem
       );
@@ -21,23 +21,23 @@
   * + h4,
   * + h5,
   * + h6 {
-    margin-block-start: spruce.spacer-clamp(m, l);
+    margin-block-start: spacer-clamp(m, l);
   }
 
   h2 + h3 {
-    margin-block-start: spruce.spacer(m);
+    margin-block-start: spacer(m);
   }
 
   .code-link {
     text-decoration: none;
 
     code {
-      transition: var(--#{spruce.setting(prefix)}-transition-duration) var(--#{spruce.setting(prefix)}-transition-timing-function);
+      transition: var(--#{setting(prefix)}-transition-duration) var(--#{setting(prefix)}-transition-timing-function);
     }
 
     &:hover {
       code {
-        background-color: spruce.color(primary);
+        background-color: color(primary);
         color: #fff;
       }
     }
@@ -45,7 +45,7 @@
 
   img,
   iframe {
-    border-radius: spruce.$border-radius-sm;
+    border-radius: config('border-radius-sm', $display);
   }
 
   iframe {
@@ -55,6 +55,6 @@
   }
 
   > .gatsby-image-wrapper:first-child + * {
-    margin-block-start: spruce.spacer(l);
+    margin-block-start: spacer(l);
   }
 }

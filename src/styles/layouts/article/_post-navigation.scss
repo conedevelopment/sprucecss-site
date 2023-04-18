@@ -1,14 +1,14 @@
-@use '~sprucecss/scss/spruce';
+@use '~sprucecss/scss/spruce' as *;
 
 .post-navigation {
   align-items: center;
-  border-block-start: 1px solid spruce.color(border);
+  border-block-start: 1px solid color(border);
   display: flex;
   flex-wrap: wrap;
-  gap: spruce.spacer(m);
+  gap: spacer(m);
   justify-content: space-between;
-  margin-block-start: spruce.spacer(xl);
-  padding-block-start: spruce.spacer(m);
+  margin-block-start: spacer(xl);
+  padding-block-start: spacer(m);
 }
 
 .post-navigation-item {
@@ -16,12 +16,12 @@
 
   align-items: center;
   display: flex;
-  gap: spruce.spacer(s);
+  gap: spacer(s);
   text-decoration: none;
 
   &:hover {
     #{$this}__icon {
-      background-color: spruce.color(primary);
+      background-color: color(primary);
       color: hsl(0 0% 100%);
     }
   }
@@ -33,13 +33,13 @@
 
   &__icon {
     align-items: center;
-    background-color: spruce.color(primary-lightest);
-    border-radius: spruce.$border-radius-lg;
+    background-color: color(primary-lightest);
+    border-radius: config('border-radius-lg', $display);
     display: flex;
     flex-shrink: 0;
     height: 3rem;
     justify-content: center;
-    transition: all var(--#{spruce.setting(prefix)}-transition-duration) var(--#{spruce.setting(prefix)}-transition-timing-function);
+    transition: all var(--#{setting(prefix)}-transition-duration) var(--#{setting(prefix)}-transition-timing-function);
     width: 3rem;
 
     svg {
@@ -51,12 +51,12 @@
   }
 
   &__caption {
-    color: spruce.color(text);
-    line-height: spruce.$line-height-md;
+    color: color(text);
+    line-height: config('line-height-md', $typography);
   }
 
   &__title {
-    color: spruce.color(primary);
+    color: color(primary);
     display: block;
     font-weight: 700;
   }

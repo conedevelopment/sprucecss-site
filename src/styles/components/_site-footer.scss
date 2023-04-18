@@ -1,38 +1,38 @@
 @use '../config/dark-colors' as dark;
-@use '~sprucecss/scss/spruce';
+@use '~sprucecss/scss/spruce' as *;
 
 .site-footer {
-  background-color: spruce.color(background, footer);
+  background-color: color(background, footer);
   color: hsl(0deg 0% 100% / 85%);
   font-size: 1rem;
 
   a {
-    color: spruce.color(link, $only-color: true, $map: dark.$colors);
+    color: color(link, $only-color: true, $map: dark.$colors);
 
     &:hover,
     &:focus {
-      color: spruce.color(link-hover, $only-color: true, $map: dark.$colors);
+      color: color(link-hover, $only-color: true, $map: dark.$colors);
     }
   }
 
   &__slogen {
     color: hsl(0deg 0% 100%);
     font-family: var(--doc-heading-font-family);
-    font-size: spruce.responsive-font-size(3rem, 30, '4vw + 1rem');
+    font-size: responsive-font-size(3rem, 30, '4vw + 1rem');
     font-weight: 700;
     grid-auto-rows: auto;
-    line-height: calc(#{spruce.$line-height-heading} * 1.15);
+    line-height: calc(#{config('line-height-heading', $typography)} * 1.15);
     margin-block: 0 2rem;
   }
 
   &__top {
     --gtc: minmax(0, 1fr);
     display: grid;
-    gap: spruce.spacer(l);
+    gap: spacer(l);
     grid-template-columns: var(--gtc);
-    padding-block: spruce.get-css-variable(--section-gap);
+    padding-block: get-css-variable(--section-gap);
 
-    @include spruce.breakpoint(md) {
+    @include breakpoint(md) {
       --gtc: minmax(0, 2.5fr) repeat(3, minmax(0, 1fr));
     }
   }
@@ -45,13 +45,13 @@
 
   &__title {
     color: hsl(0 0% 100%);
-    font-size: spruce.font-size(h4);
-    margin-block: 0 spruce.spacer(m);
+    font-size: font-size(h4);
+    margin-block: 0 spacer(m);
   }
 
   &__navigation {
-    @include spruce.clear-list;
-    @include spruce.layout-stack(spruce.spacer(xs));
+    @include clear-list;
+    @include layout-stack(spacer(xs));
     font-size: 1rem;
 
     a {
@@ -62,7 +62,7 @@
       &:focus,
       &:active,
       &[aria-current='page'] {
-        color: spruce.color(link-hover, $only-color: true, $map: dark.$colors);
+        color: color(link-hover, $only-color: true, $map: dark.$colors);
       }
 
       &[aria-current='page'] {
@@ -72,10 +72,10 @@
   }
 
   &__bottom {
-    border-block-start: 1px solid spruce.color(border, $only-color: true, $map: dark.$colors);
-    padding-block: spruce.spacer(m);
+    border-block-start: 1px solid color(border, $only-color: true, $map: dark.$colors);
+    padding-block: spacer(m);
 
-    @include spruce.breakpoint(md) {
+    @include breakpoint(md) {
       align-items: center;
       display: flex;
       justify-content: space-between;
@@ -86,7 +86,7 @@
     align-items: center;
     display: inline-flex;
     height: 0.9rem;
-    margin-inline-end: spruce.spacer(xs);
+    margin-inline-end: spacer(xs);
 
     svg {
       height: 100%;
@@ -98,6 +98,6 @@
     align-items: center;
     display: flex;
     flex-wrap: wrap;
-    gap: spruce.spacer(s);
+    gap: spacer(s);
   }
 }

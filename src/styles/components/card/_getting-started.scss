@@ -1,19 +1,19 @@
 @use 'sass:color';
-@use '~sprucecss/scss/spruce';
+@use '~sprucecss/scss/spruce' as *;
 
 .getting-started-card {
   $this: &;
 
-  @include spruce.a11y-card-link('.getting-started-card__link', true);
+  @include a11y-card-link('.getting-started-card__link', true);
 
   align-items: flex-start;
-  background-color: spruce.color(background);
-  border-radius: spruce.$border-radius-lg;
+  background-color: color(background);
+  border-radius: config('border-radius-lg', $display);
   display: flex;
-  gap: spruce.spacer(m);
+  gap: spacer(m);
 
   &__caption {
-    @include spruce.layout-stack(xs);
+    @include layout-stack(xs);
   }
 
   &__icon {
@@ -25,7 +25,7 @@
   }
 
   &__link {
-    font-size: spruce.$font-size-sm;
+    font-size: config('font-size-sm', $typography);
     font-weight: 700;
     text-decoration: none;
     text-transform: uppercase;

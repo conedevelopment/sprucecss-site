@@ -1,14 +1,14 @@
-@use '~sprucecss/scss/spruce';
+@use '~sprucecss/scss/spruce' as *;
 
 .cookie-consent {
   align-items: center;
-  background-color: spruce.color(background, cookie);
-  color: spruce.color(foreground, cookie);
+  background-color: color(background, cookie);
+  color: color(foreground, cookie);
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
-  padding: spruce.spacer(m);
+  padding: spacer(m);
   z-index: 1;
 
   &__body {

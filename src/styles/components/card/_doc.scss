@@ -1,27 +1,27 @@
-@use '~sprucecss/scss/spruce';
+@use '~sprucecss/scss/spruce' as *;
 
 .doc-card {
   $this: &;
 
-  @include spruce.a11y-card-link('.doc-card__link', true);
+  @include a11y-card-link('.doc-card__link', true);
 
-  background-color: spruce.color(background);
-  border: 1px solid spruce.color(card-border);
+  background-color: color(background);
+  border: 1px solid color(card-border);
   border-radius: var(--doc-border-radius-sm);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 20rem;
-  padding: clamp(spruce.spacer(m), 7vw, spruce.spacer(l));
+  padding: clamp(spacer(m), 7vw, spacer(l));
   text-decoration: none;
-  transition-duration: spruce.transition(duration);
+  transition-duration: transition(duration);
   transition-property: all;
-  transition-timing-function: spruce.transition(timing-function);
+  transition-timing-function: transition(timing-function);
 
   &:hover,
   &:focus {
-    background-color: spruce.color(primary);
-    border-color: spruce.color(primary);
+    background-color: color(primary);
+    border-color: color(primary);
 
     #{$this}__serial-number,
     #{$this}__link {
@@ -30,20 +30,20 @@
   }
 
   &__serial-number {
-    color: spruce.color(primary);
+    color: color(primary);
     font-family: var(--doc-heading-font-family);
-    font-size: spruce.responsive-font-size(4rem, 30, '4vw + 1rem');
+    font-size: responsive-font-size(4rem, 30, '4vw + 1rem');
     font-weight: 700;
     line-height: 1;
   }
 
   &__title {
     font-family: var(--doc-heading-font-family);
-    margin-block: spruce.spacer(m) 0;
+    margin-block: spacer(m) 0;
   }
 
   &__link {
-    color: spruce.color(heading);
+    color: color(heading);
     text-decoration: none;
   }
 }

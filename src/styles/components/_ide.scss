@@ -1,24 +1,24 @@
-@use '~sprucecss/scss/spruce';
+@use '~sprucecss/scss/spruce' as *;
 
 .ide-wrapper {
   margin-inline: auto;
   max-width: 74rem;
-  padding-block-end: spruce.get-css-variable(--section-gap);
+  padding-block-end: get-css-variable(--section-gap);
 }
 
 .ide {
-  background-color: spruce.color(background);
-  border: 1px solid spruce.color(border);
-  border-radius: spruce.$border-radius-sm;
+  background-color: color(background);
+  border: 1px solid color(border);
+  border-radius: config('border-radius-sm', $display);
   box-shadow: 0 0 3rem hsl(0 0% 0% / 10%);
   font-size: 0.9375rem;
   margin-inline: auto;
 
   &__header {
     align-items: center;
-    background-color: spruce.color(header-background, ide);
-    border-radius: spruce.$border-radius-sm spruce.$border-radius-sm 0 0;
-    border-bottom: 1px solid spruce.color(border);
+    background-color: color(header-background, ide);
+    border-radius: config('border-radius-sm', $display) config('border-radius-sm', $display) 0 0;
+    border-bottom: 1px solid color(border);
     padding: 0.45rem 1.25rem;
     display: flex;
     gap: 1rem;
@@ -43,7 +43,7 @@
   }
 
   &__sidebar {
-    @include spruce.layout-stack(s);
+    @include layout-stack(s);
     padding: 2rem;
   }
 
@@ -55,7 +55,7 @@
   }
 
   pre[class*=language-] {
-    border-radius: 0 0 spruce.$border-radius-sm 0;
+    border-radius: 0 0 config('border-radius-sm', $display) 0;
     padding: 2rem 2.25rem;
   }
 }
@@ -70,7 +70,7 @@
     display: flex;
     font-size: 0.9375rem;
     font-weight: 500;
-    gap: spruce.spacer(xs);
+    gap: spacer(xs);
     line-height: 1;
     margin-block: 0;
 
@@ -84,22 +84,22 @@
   }
 
   &__list {
-    @include spruce.clear-list;
-    @include spruce.layout-stack(0.75em);
+    @include clear-list;
+    @include layout-stack(0.75em);
 
     &--border {
-      border-inline-start: 1px solid spruce.color(border);
-      margin-inline-start: spruce.spacer(xs);
-      padding-inline-start: spruce.spacer(s);
+      border-inline-start: 1px solid color(border);
+      margin-inline-start: spacer(xs);
+      padding-inline-start: spacer(s);
     }
   }
 
   button {
-    @include spruce.clear-btn;
+    @include clear-btn;
     align-items: center;
     display: flex;
-    font-family: spruce.$font-family-heading;
-    gap: spruce.spacer(xs);
+    font-family: config('font-family-heading', $typography);
+    gap: spacer(xs);
     line-height: 1;
 
     &.active {

@@ -1,14 +1,11 @@
-// Load Spruce CSS
 @forward 'config';
-
-// Load components
 @forward 'components';
 @forward 'layouts';
 
-@use '~sprucecss/scss/spruce';
+@use '~sprucecss/scss/spruce' as *;
 
 :root {
-  @include spruce.set-css-variable((
+  @include set-css-variable((
     --section-gap: clamp(5rem, 8vw, 9rem),
     --section-gap-half: clamp(3.5rem, 8vw, 6rem),
   ));
@@ -20,7 +17,7 @@ body {
   --doc-border-radius-sm: 0.75rem;
   --doc-border-radius-lg: 2rem;
 
-  background-color: spruce.color(background);
+  background-color: color(background);
   font-family: var(--doc-body-font-family);
   overflow-x: hidden;
 }
@@ -38,7 +35,9 @@ h6 {
   font-family: var(--doc-heading-font-family);
 }
 
-.btn--rounded { border-radius: spruce.$border-radius-lg; }
+.btn--rounded {
+  border-radius: 0.925rem;
+}
 
 .btn--rounded:not(.btn--icon) {
   text-transform: uppercase;
@@ -50,13 +49,13 @@ h6 {
   padding: 1.25em 1.5em;
 }
 
-.btn--install { @include spruce.btn-variant(install); }
-.btn--decline { @include spruce.btn-variant(decline); }
-.btn--discrete { @include spruce.btn-variant(discrete); }
-.btn--dark { @include spruce.btn-variant(dark); }
+.btn--install { @include btn-variant(install); }
+.btn--decline { @include btn-variant(decline); }
+.btn--discrete { @include btn-variant(discrete); }
+.btn--dark { @include btn-variant(dark); }
 
 .lead {
-  color: spruce.color(heading);
+  color: color(heading);
 }
 
 .table {
@@ -70,7 +69,7 @@ h6 {
   }
 
   &--striped > tbody > tr:nth-child(odd) {
-    background-color: spruce.color(stripe, table);
+    background-color: color(stripe, table);
   }
 
   &--striped > tbody > tr:nth-child(even) {
