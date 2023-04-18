@@ -4,8 +4,8 @@
 .hero-wrapper {
   background: linear-gradient(
     0deg,
-    color(gradient-start, hero) 0%,
-    color(gradient-end, hero) 100%
+    color('gradient-start', 'hero') 0%,
+    color('gradient-end', 'hero') 100%
   );
 }
 
@@ -14,10 +14,10 @@
     align-items: center;
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    gap: spacer-clamp(l, xl);
+    gap: spacer-clamp('l', 'xl');
     padding-block: get-css-variable(--section-gap-half) get-css-variable(--section-gap);
 
-    @include breakpoint(md) {
+    @include breakpoint('md') {
       grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
       padding-block-start: 0;
     }
@@ -30,7 +30,7 @@
     max-width: 13.5rem;
     order: -1;
 
-    @include breakpoint(md) {
+    @include breakpoint('md') {
       max-width: 100%;
       order: 2;
     }
@@ -39,20 +39,21 @@
   &__caption {
     text-align: center;
 
-    @include breakpoint(md) {
+    @include breakpoint('md') {
       padding-block: get-css-variable(--section-gap-half);
       text-align: start;
     }
   }
 
   &__note {
-    background-color: color(note-background, hero);
+    background-color: color('note-background', 'hero');
     border-radius: config('border-radius-sm', $display);
-    color: color(note-color, hero);
+    color: color('note-color', 'hero');
     display: inline-flex;
     font-size: 1rem;
+    line-height: config('line-height-md', $typography);
     margin-block-end: 1.5rem;
-    padding: 0.25em 1em;
+    padding: 0.5em 1em;
     text-decoration: none;
   }
 
@@ -78,11 +79,11 @@
     align-items: center;
     display: flex;
     flex-wrap: wrap;
-    gap: spacer(m);
+    gap: spacer('m');
     justify-content: center;
     margin-top: 2.15rem;
 
-    @include breakpoint(md) {
+    @include breakpoint('md') {
       justify-content: start;
     }
   }

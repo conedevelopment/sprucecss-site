@@ -4,7 +4,7 @@ import React from 'react';
 export default function Cta() {
   return (
     <div className="cta">
-      <div className="container container--wide">
+      <div className="container">
         <div className="cta__inner">
           <div className="cta__caption">
             <div className="heading">

@@ -17,13 +17,9 @@ body {
   --doc-border-radius-sm: 0.75rem;
   --doc-border-radius-lg: 2rem;
 
-  background-color: color(background);
+  background-color: color('background');
   font-family: var(--doc-body-font-family);
   overflow-x: hidden;
-}
-
-html {
-  scroll-behavior: unset;
 }
 
 h1,
@@ -49,14 +45,10 @@ h6 {
   padding: 1.25em 1.5em;
 }
 
-.btn--install { @include btn-variant(install); }
-.btn--decline { @include btn-variant(decline); }
-.btn--discrete { @include btn-variant(discrete); }
-.btn--dark { @include btn-variant(dark); }
-
-.lead {
-  color: color(heading);
-}
+.btn--install { @include btn-variant('install'); }
+.btn--decline { @include btn-variant('decline'); }
+.btn--discrete { @include btn-variant('discrete'); }
+.btn--dark { @include btn-variant('dark'); }
 
 .table {
   &--font-size-reset {
@@ -66,41 +58,5 @@ h6 {
   th,
   td {
     min-width: 10rem;
-  }
-
-  &--striped > tbody > tr:nth-child(odd) {
-    background-color: color(stripe, table);
-  }
-
-  &--striped > tbody > tr:nth-child(even) {
-    background-color: transparent;
-  }
-}
-
-.anchor-heading {
-  padding-inline-end: 2rem;
-  position: relative;
-
-  &:hover {
-    > a {
-      opacity: 1;
-    }
-  }
-
-  > a {
-    inset-inline-end: 0;
-    opacity: 0;
-    position: absolute;
-    text-decoration: none;
-    top: calc(50% - 0.625em);
-
-    &:focus {
-      opacity: 1;
-    }
-
-    svg {
-      height: 1.25rem;
-      width: 1.25rem;
-    }
   }
 }

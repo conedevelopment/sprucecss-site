@@ -1,6 +1,7 @@
 @use '~sprucecss/scss/spruce' as *;
 
 .preview {
+  font-size: 1rem;
   @include layout-stack(
     spacer(m),
     $important: true

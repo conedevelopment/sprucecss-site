@@ -21,7 +21,7 @@ export default function Cta() {
 
   return (
     <div className="ide-wrapper">
-      <div className="container container--wide">
+      <div className="container">
         <Heading
           type="center"
           title="How to use Spruce CSS"

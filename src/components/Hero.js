@@ -5,7 +5,7 @@ import React from 'react';
 export default function Hero() {
   return (
     <div className="hero">
-      <div className="container container--wide">
+      <div className="container">
         <div className="hero__inner">
           <div className="hero__caption">
             <Link to="/" className="hero__note">Version 2 is out, check out what is changed!</Link>

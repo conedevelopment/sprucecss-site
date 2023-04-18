@@ -3,7 +3,7 @@
 
 .l-error-404 {
   &__inner {
-    padding: clamp(spacer(xxl), 6vw, spacer(xxxl)) 0;
+    padding: spacer-clamp('xxl', 'xxxl') 0;
     text-align: center;
   }
 
@@ -13,8 +13,8 @@
   }
 
   &__caption {
-    @include layout-stack(spacer(s), false);
-    margin-block-start: spacer(m);
+    @include layout-stack('s', false);
+    margin-block-start: spacer('s');
     margin-inline: auto;
     max-width: 45rem;
   }
@@ -24,20 +24,16 @@
   }
 
   &__description {
-    font-size: responsive-font-size(
-      $size: 1.35rem,
-      $scaler: 30,
-      $optimal-size: '1vw + 1rem'
-    );
-    margin-block: spacer(s) 0;
+    font-size: responsive-font-size(1.35rem, 30, '1vw + 1rem');
+    margin-block: spacer('s') 0;
   }
 
   &__btns {
     align-items: center;
     display: flex;
     flex-wrap: wrap;
-    gap: spacer(m);
+    gap: spacer('m');
     justify-content: center;
-    margin-block-start: spacer(m);
+    margin-block-start: spacer('m');
   }
 }

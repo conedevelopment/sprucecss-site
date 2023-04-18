@@ -2,9 +2,6 @@
 @use '../mixins' as *;
 
 .toc {
-  inset-block-start: 2rem;
-  position: sticky;
-
   @include breakpoint(lg) {
     @include scrollbar(
       color(thumb-background, scrollbar),

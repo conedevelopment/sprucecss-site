@@ -1,11 +1,11 @@
 @use '~sprucecss/scss/spruce' as *;
 
 .l-page {
-  padding-block: clamp(spacer(l), 5vw, spacer(xl));
+  padding-block: spacer-clamp('l', 'xl');
 
   &__container {
     @include layout-center(
-      clamp(spacer(m), 5vw, spacer(l)),
+      spacer-clamp('m', 'l'),
       50rem
     );
   }
@@ -16,6 +16,6 @@
   }
 
   &__meta {
-    margin-block-start: spacer(xs);
+    margin-block-start: spacer('xs');
   }
 }

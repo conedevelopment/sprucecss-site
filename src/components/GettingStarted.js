@@ -5,7 +5,7 @@ import GettingStartedCard from './card/GettingStarted';
 export default function GettingStarted({ type }) {
   return (
     <div className={`getting-started ${type === 'bottom' ? 'getting-started--border-block-start' : 'getting-started--border-block-end'}`}>
-      <div className="container container--wide">
+      <div className="container">
         <div className="getting-started__inner">
           <GettingStartedCard
             description="Learn about Spruce CSS through our extensive documentation."

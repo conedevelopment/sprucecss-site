@@ -57,7 +57,7 @@ export default function SiteHeader({ location }) {
       </CookieConsent>
       <a className="btn btn--primary skip-link" href="#content">Skip to content</a>
       <header className="site-header">
-        <div className="container container--wide">
+        <div className="container">
           <div className="site-header__inner">
             <div className={`site-header__logo ${isUI ? 'site-header__logo--ui' : ''}`}>
               <Link to="/" title={site.siteMetadata.title}>
