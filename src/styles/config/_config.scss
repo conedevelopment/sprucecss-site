@@ -47,6 +47,12 @@ $color-dark: hsl(260deg 70% 6%);
     'ide': (
       'header-background': $color-dark,
     ),
+    'navigation': (
+      'icon-background': hsl(259deg 53% 94%),
+      'icon-background-hover': hsl(262deg 71% 49%),
+      'icon-foreground': hsl(262deg 71% 49%),
+      'icon-foreground-hover': hsl(0deg 0% 100%),
+    ),
     'prism': (
       'background': hsl(0deg 0% 98%),
       'boolean': hsl(0deg 44% 53%),
@@ -71,6 +77,7 @@ $color-dark: hsl(260deg 70% 6%);
     'container-width': 94rem,
   ),
   $settings: (
+    'css-custom-properties': true,
     'html-smooth-scrolling': false,
   ),
 );

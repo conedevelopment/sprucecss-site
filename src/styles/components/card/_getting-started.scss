@@ -7,13 +7,13 @@
   @include a11y-card-link('.getting-started-card__link', true);
 
   align-items: flex-start;
-  background-color: color(background);
+  background-color: color('background');
   border-radius: config('border-radius-lg', $display);
   display: flex;
-  gap: spacer(m);
+  gap: spacer('m');
 
   &__caption {
-    @include layout-stack(xs);
+    @include layout-stack('xs');
   }
 
   &__icon {

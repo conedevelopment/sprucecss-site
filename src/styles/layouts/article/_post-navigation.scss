@@ -21,8 +21,8 @@
 
   &:hover {
     #{$this}__icon {
-      background-color: color(primary);
-      color: hsl(0 0% 100%);
+      background-color: color('icon-background-hover', 'navigation');
+      color: color('icon-foreground-hover', 'navigation');
     }
   }
 
@@ -32,14 +32,15 @@
   }
 
   &__icon {
+    @include transition;
     align-items: center;
-    background-color: color(primary-lightest);
-    border-radius: config('border-radius-lg', $display);
+    background-color: color('icon-background', 'navigation');
+    border-radius: var(--doc-border-radius-md);
+    color: color('icon-foreground', 'navigation');
     display: flex;
     flex-shrink: 0;
     height: 3rem;
     justify-content: center;
-    transition: all var(--#{setting(prefix)}-transition-duration) var(--#{setting(prefix)}-transition-timing-function);
     width: 3rem;
 
     svg {

@@ -1,5 +1,5 @@
 @use '~sprucecss/scss/spruce' as *;
 
 .post {
-  padding-block-end: clamp(spacer(l), 5vw, spacer(xl));
+  padding-block-end: spacer-clamp('l', 'xl');
 }

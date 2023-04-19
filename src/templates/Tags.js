@@ -23,8 +23,8 @@ export default function TagPage({ data, pageContext: { tag } }) {
             })}
           </div>
         </div>
-      <GettingStarted type="bottom" />
       </main>
+      <GettingStarted type="bottom" />
     </Layout>
   );
 }

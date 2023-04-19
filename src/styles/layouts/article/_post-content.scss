@@ -1,9 +1,9 @@
 @use '~sprucecss/scss/spruce' as *;
 
 .post-content {
-  @include layout-stack(spacer(m));
+  @include layout-stack('m');
 
-  @include breakpoint(lg) {
+  @include breakpoint('lg') {
     font-size: 1.0375rem;
   }
 
@@ -21,24 +21,24 @@
   * + h4,
   * + h5,
   * + h6 {
-    margin-block-start: spacer-clamp(m, l);
+    margin-block-start: spacer-clamp('m', 'l');
   }
 
   h2 + h3 {
-    margin-block-start: spacer(m);
+    margin-block-start: spacer('m');
   }
 
   .code-link {
     text-decoration: none;
 
     code {
-      transition: var(--#{setting(prefix)}-transition-duration) var(--#{setting(prefix)}-transition-timing-function);
+      @include transition;
     }
 
     &:hover {
       code {
-        background-color: color(primary);
-        color: #fff;
+        background-color: color('primary');
+        color: hsl(0deg 0% 100%);
       }
     }
   }
@@ -55,6 +55,6 @@
   }
 
   > .gatsby-image-wrapper:first-child + * {
-    margin-block-start: spacer(l);
+    margin-block-start: spacer('l');
   }
 }

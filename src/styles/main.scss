@@ -15,6 +15,7 @@ body {
   --doc-heading-font-family: 'Sora', sans-serif;
   --doc-body-font-family: 'Inter', cursive;
   --doc-border-radius-sm: 0.75rem;
+  --doc-border-radius-md: 0.925rem;
   --doc-border-radius-lg: 2rem;
 
   background-color: color('background');
@@ -32,7 +33,7 @@ h6 {
 }
 
 .btn--rounded {
-  border-radius: 0.925rem;
+  border-radius: var(--doc-border-radius-md);
 }
 
 .btn--rounded:not(.btn--icon) {

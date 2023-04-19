@@ -1,12 +1,9 @@
-import React from 'react';
 import { Link } from 'gatsby';
-
-// Import components
+import GettingStarted from '../components/GettingStarted';
 import Layout from '../components/Layout';
-import Seo from '../components/Seo';
-
-// Images
 import NotFoundImage from '../images/not-found.svg';
+import React from 'react';
+import Seo from '../components/Seo';
 
 export default function NotFoundPage() {
   return (
@@ -25,6 +22,7 @@ export default function NotFoundPage() {
           </div>
         </div>
       </main>
+      <GettingStarted type="bottom" />
     </Layout>
   );
 }

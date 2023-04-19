@@ -4,12 +4,12 @@
   &__inner {
     align-items: center;
     display: flex;
-    gap: clamp(#{spacer(xs)}, 3vw, #{spacer(l)});
+    gap: spacer-clamp('xs', 'l', 3vw);
     height: 5rem;
     justify-content: space-between;
     position: relative;
 
-    @include breakpoint(md) {
+    @include breakpoint('md') {
       height: 6rem;
     }
   }
@@ -44,18 +44,18 @@
     display: none;
     user-select: none;
 
-    @include breakpoint(sm) {
+    @include breakpoint('sm') {
       border-inline-start: 1px solid color(border);
       display: inline;
       font-family: var(--doc-body-font-family);
       line-height: 1;
-      margin-inline-start: spacer(m);
-      padding-inline-start: spacer(m);
+      margin-inline-start: spacer('m');
+      padding-inline-start: spacer('m');
     }
   }
 
   &__toggle {
-    @include breakpoint(md) {
+    @include breakpoint('md') {
       display: none;
     }
 
@@ -71,25 +71,25 @@
     font-family: var(--doc-body-font-family);
     justify-content: flex-end;
 
-    @include breakpoint(md) {
+    @include breakpoint('md') {
       justify-content: flex-start;
     }
 
     ul {
       @include clear-list;
-      background-color: color(background);
+      background-color: color('background');
       border-block-start: 1px dashed color(border);
-      column-gap: spacer(l);
+      column-gap: spacer('l');
       display: none;
       flex-direction: column;
       flex-wrap: wrap;
       inset: 100% 0 auto 0;
-      padding-block: spacer(m);
+      padding-block: spacer('m');
       position: absolute;
-      row-gap: spacer(m);
+      row-gap: spacer('m');
       z-index: 10;
 
-      @include breakpoint(md) {
+      @include breakpoint('md') {
         background-color: transparent;
         border: 0;
         display: flex;
@@ -106,29 +106,29 @@
     }
 
     a {
-      color: color(heading);
+      color: color('heading');
       text-decoration: none;
 
       &[aria-current='page'] {
-        color: color(primary);
+        color: color('primary');
         font-weight: 700;
       }
 
       &:hover,
       &:focus {
-        color: color(primary);
+        color: color('primary');
       }
     }
   }
 
   &__actions {
     display: flex;
-    gap: spacer(s);
+    gap: spacer('s');
 
     .btn--twitter {
       display: none;
 
-      @include breakpoint(md) {
+      @include breakpoint('md') {
         display: inline-flex;
       }
     }

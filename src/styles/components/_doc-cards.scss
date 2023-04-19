@@ -1,9 +1,0 @@
-@use '~sprucecss/scss/spruce' as *;
-
-.doc-cards {
-  margin-block-end: clamp(spacer(xl), 8vw, 7rem);
-
-  &__inner {
-    @include layout-grid(spacer(l), 20rem);
-  }
-}

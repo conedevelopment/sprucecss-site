@@ -2,17 +2,17 @@
 @use '../mixins' as *;
 
 .sidebar {
-  @include layout-stack(spacer(l));
+  @include layout-stack('l');
   @include scrollbar(
-    color(thumb-background, scrollbar),
-    color(thumb-background-hover, scrollbar),
-    color(track-background, scrollbar),
+    color('thumb-background', 'scrollbar'),
+    color('thumb-background-hover', 'scrollbar'),
+    color('track-background', 'scrollbar'),
     0.5rem,
     0.15rem
   );
   inset-block-start: 2rem;
   overflow-y: auto;
-  padding-inline-end: spacer(m);
+  padding-inline-end: spacer('m');
 }
 
 .sidebar-section {
@@ -21,7 +21,7 @@
   }
 
   &__navigation {
-    border-inline-start: 1px solid color(border);
+    border-inline-start: 1px solid color('border');
     font-size: 1rem;
     margin-block-start: 1rem;
     padding-inline-start: 1rem;
@@ -31,7 +31,7 @@
     }
 
     a {
-      color: color(text);
+      color: color('text');
       text-decoration: none;
 
       &[aria-current='page'] {

@@ -11,23 +11,7 @@
   select.form-control:not([multiple]):not([size]) {
     @include field-icon(
       config('select', $form-icon, false),
-      color(select-foreground, form, true, $dark-colors),
+      color('select-foreground', 'form', true, $dark-colors),
     );
-  }
-
-  .post-navigation-item {
-    $this: &;
-
-    &:hover {
-      .post-navigation-item__icon {
-        background-color: hsl(207deg 23% 26%);
-        color: hsl(0deg 0% 100%);
-      }
-    }
-
-    &__icon {
-      background-color: hsl(207deg 39% 17%);
-      color: hsl(0deg 0% 100%);
-    }
   }
 }

@@ -14,7 +14,7 @@ export default function Post({ data: { mdx }, children }) {
       <main id="content" className="post">
         <article>
           <div className="post-heading">
-            <div className="container--narrow">
+            <div className="container container--narrow">
               <div className="post-heading__inner">
                 <h1 className="post-heading__title">{title}</h1>
                 <ul className="breadcrumb-list">
@@ -54,7 +54,7 @@ export default function Post({ data: { mdx }, children }) {
               </div>
             </div>
           </div>
-          <div className="container--narrow">
+          <div className="container container--narrow">
             <div className="post-content post-content--blog">
               <GatsbyImage image={image} alt={alt} />
               {children}

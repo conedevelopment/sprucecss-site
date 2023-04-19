@@ -1,11 +1,11 @@
 @use '~sprucecss/scss/spruce' as *;
 
 .preview {
+  @include layout-stack('m', $important: true);
+  border: 1px solid color('border');
+  border-radius: config('border-radius-sm', $display);
   font-size: 1rem;
-  @include layout-stack(
-    spacer(m),
-    $important: true
-  );
+  padding: spacer('m');
 
   > * {
     font-family: config('font-family-base', $typography);
@@ -19,7 +19,7 @@
 .button-grid {
   align-items: flex-start;
   display: flex;
-  gap: spacer(m);
+  gap: spacer('m');
 
   &--stacked {
     flex-wrap: wrap;
@@ -28,10 +28,10 @@
 
 .inline-text-element-list {
   @include clear-list;
-  @include layout-stack(spacer(s));
+  @include layout-stack('s');
 
-  @include breakpoint(sm) {
-    column-gap: spacer(l);
+  @include breakpoint('sm') {
+    column-gap: spacer('l');
     columns: 2 auto;
   }
 }

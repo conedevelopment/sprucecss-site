@@ -1,27 +1,25 @@
 @use '~sprucecss/scss/spruce' as *;
 
 .blog-card {
-  @include layout-stack(
-    spacer(s)
-  );
+  @include layout-stack('s');
 
   &__thumbnail {
     border-radius: config('border-radius-sm', $display);
   }
 
   &__meta {
-    column-gap: spacer(m);
+    column-gap: spacer('m');
     display: flex;
     flex-wrap: wrap;
-    row-gap: spacer(xs);
+    row-gap: spacer('xs');
   }
 
   &__title {
-    font-size: font-size(h3);
-    margin-block-start: spacer(xs);
+    font-size: font-size('h3');
+    margin-block-start: spacer('xs');
 
     a {
-      color: color(heading);
+      color: color('heading');
       text-decoration: none;
     }
   }

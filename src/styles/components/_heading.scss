@@ -3,8 +3,8 @@
 .heading {
   $this: &;
 
-  @include layout-stack(spacer(xs));
-  margin-block-end: spacer(l);
+  @include layout-stack('xs');
+  margin-block-end: spacer('l');
 
   &--center {
     text-align: center;

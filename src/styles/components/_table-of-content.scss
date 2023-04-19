@@ -2,11 +2,11 @@
 @use '../mixins' as *;
 
 .toc {
-  @include breakpoint(lg) {
+  @include breakpoint('lg') {
     @include scrollbar(
-      color(thumb-background, scrollbar),
-      color(thumb-background-hover, scrollbar),
-      color(track-background, scrollbar),
+      color('thumb-background', 'scrollbar'),
+      color('thumb-background-hover', 'scrollbar'),
+      color('track-background', 'scrollbar'),
       0.5rem
     );
     max-height: calc(100vh - 4rem);
@@ -23,13 +23,13 @@
 
     ol {
       @include clear-list;
-      @include layout-stack(spacer(xs));
+      @include layout-stack('xs');
 
       max-width: 95%;
 
       ol {
-        margin-block-start: spacer(xs);
-        margin-inline-start: spacer(s);
+        margin-block-start: spacer('xs');
+        margin-inline-start: spacer('s');
       }
     }
 
@@ -41,7 +41,7 @@
 
       &:hover,
       &:focus {
-        color: color(primary);
+        color: color('primary');
       }
     }
   }

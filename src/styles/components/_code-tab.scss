@@ -1,25 +1,25 @@
 @use '~sprucecss/scss/spruce' as *;
 
 .code-tab {
-  border: 1px solid color(border);
+  border: 1px solid color('border');
   border-radius: config('border-radius-sm', $display);
   overflow: hidden;
 
   &__header {
     align-items: center;
-    background-color: color(code-tab-background);
-    border-block-end: 1px solid color(border);
+    background-color: color('code-tab-background');
+    border-block-end: 1px solid color('border');
     border-start-end-radius: config('border-radius-sm', $display);
     border-start-start-radius: config('border-radius-sm', $display);
     display: flex;
     flex-wrap: wrap;
-    gap: spacer(xs) spacer(m);
+    gap: spacer('xs') spacer('m');
     justify-content: space-between;
-    padding: spacer(s);
+    padding: spacer('s');
   }
 
   &__title {
-    font-size: font-size(h5);
+    font-size: font-size('h5');
     margin-block: 0;
   }
 
@@ -27,7 +27,7 @@
     align-items: center;
     display: flex;
     font-size: config('font-size-sm', $typography);
-    gap: spacer(xs);
+    gap: spacer('xs');
     line-height: 1;
 
     svg {
@@ -41,16 +41,16 @@
     align-items: center;
     display: flex;
     flex-wrap: wrap;
-    gap: spacer(xxs) spacer(xs);
+    gap: spacer('xxs') spacer('xs');
 
     > * + * { margin-block-start: 0; }
 
     &--title {
-      gap: spacer(xxs) spacer(s);
+      gap: spacer('xxs') spacer('s');
     }
 
     &--tabs {
-      @include breakpoint(sm) {
+      @include breakpoint('sm') {
         margin-inline-start: auto;
       }
 
@@ -70,7 +70,7 @@
       opacity: 0;
       visibility: hidden;
 
-      &--loaded  {
+      &--loaded {
         opacity: 1;
         visibility: visible;
       }

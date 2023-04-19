@@ -3,13 +3,13 @@
 .accordion-card {
   $this: &;
 
-  background-color: color(background);
-  border: 1px solid color(border);
+  background-color: color('background');
+  border: 1px solid color('border');
   border-radius: config('border-radius-sm', $display);
 
   &__title {
     font-family: config('font-family-base', $typography);
-    font-size: font-size(h4);
+    font-size: font-size('h4');
     margin-block: 0;
   }
 
@@ -17,9 +17,9 @@
     @include clear-btn;
     align-items: center;
     display: flex;
-    gap: spacer(m);
+    gap: spacer('m');
     justify-content: space-between;
-    padding: spacer(m);
+    padding: spacer('m');
     text-align: start;
     width: 100%;
 
@@ -27,7 +27,7 @@
       svg {
         @include focus-ring(
           $type: config('focus-ring-type', $btn),
-          $ring-color: color(primary),
+          $ring-color: color('primary'),
           $ring-width: config('focus-ring-width', $btn),
           $ring-offset: config('focus-ring-offset', $btn),
         );
@@ -37,9 +37,9 @@
     svg {
       --dimension: 1.75rem;
 
-      background-color: color(primary);
+      background-color: color('primary');
       border-radius: config('border-radius-sm', $display);
-      color: hsl(0 0% 100%);
+      color: hsl(0deg 0% 100%);
       flex-shrink: 0;
       height: var(--dimension);
       width: var(--dimension);
@@ -51,8 +51,8 @@
   }
 
   &__content {
-    @include layout-stack(xs);
-    padding-block: 0 spacer(m);
-    padding-inline: spacer(m);
+    @include layout-stack('xs');
+    padding-block: 0 spacer('m');
+    padding-inline: spacer('m');
   }
 }

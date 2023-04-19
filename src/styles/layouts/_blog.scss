@@ -10,7 +10,7 @@
     gap: spacer('l');
     grid-template-columns: repeat(var(--columns), minmax(0, 2fr));
 
-    @include breakpoint(sm) { --columns: 2; }
-    @include breakpoint(lg) { --columns: 3; }
+    @include breakpoint('sm') { --columns: 2; }
+    @include breakpoint('lg') { --columns: 3; }
   }
 }

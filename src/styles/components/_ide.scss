@@ -7,8 +7,8 @@
 }
 
 .ide {
-  background-color: color(background);
-  border: 1px solid color(border);
+  background-color: color('background');
+  border: 1px solid color('border');
   border-radius: config('border-radius-sm', $display);
   box-shadow: 0 0 3rem hsl(0 0% 0% / 10%);
   font-size: 0.9375rem;
@@ -16,13 +16,13 @@
 
   &__header {
     align-items: center;
-    background-color: color(header-background, ide);
+    background-color: color('header-background', 'ide');
     border-radius: config('border-radius-sm', $display) config('border-radius-sm', $display) 0 0;
     border-bottom: 1px solid color(border);
     padding: 0.45rem 1.25rem;
     display: flex;
     gap: 1rem;
-    color: #fff;
+    color: hsl(0deg 0% 100%);
   }
 
   &__controls {
@@ -43,7 +43,7 @@
   }
 
   &__sidebar {
-    @include layout-stack(s);
+    @include layout-stack('s');
     padding: 2rem;
   }
 
@@ -70,7 +70,7 @@
     display: flex;
     font-size: 0.9375rem;
     font-weight: 500;
-    gap: spacer(xs);
+    gap: spacer('xs');
     line-height: 1;
     margin-block: 0;
 
@@ -88,9 +88,9 @@
     @include layout-stack(0.75em);
 
     &--border {
-      border-inline-start: 1px solid color(border);
-      margin-inline-start: spacer(xs);
-      padding-inline-start: spacer(s);
+      border-inline-start: 1px solid color('border');
+      margin-inline-start: spacer('xs');
+      padding-inline-start: spacer('s');
     }
   }
 
@@ -99,7 +99,7 @@
     align-items: center;
     display: flex;
     font-family: config('font-family-heading', $typography);
-    gap: spacer(xs);
+    gap: spacer('xs');
     line-height: 1;
 
     &.active {

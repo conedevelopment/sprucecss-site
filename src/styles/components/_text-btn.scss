@@ -3,7 +3,7 @@
 .text-btn {
   align-items: center;
   display: inline-flex;
-  gap: spacer(xxs);
+  gap: spacer('xxs');
   line-height: 1;
 
   &__icon {
