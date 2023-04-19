@@ -43,7 +43,7 @@
     overflow: hidden;
 
     @include breakpoint('md') {
-      grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 16.5rem) minmax(0, 1fr);
     }
   }
 
@@ -99,7 +99,7 @@
 .ide-section {
   display: flex;
   flex-direction: column;
-  gap: 0.65em;
+  gap: 0.85em;
 
   &__title {
     align-items: center;
@@ -121,7 +121,7 @@
 
   &__list {
     @include clear-list;
-    @include layout-stack(0.75em);
+    @include layout-stack(0.85em);
 
     &--border {
       border-inline-start: 1px solid color('border');
@@ -134,13 +134,16 @@
     align-items: center;
     background: none;
     border: 0;
+    cursor: pointer;
     display: flex;
-    font-family: config('font-family-heading', $typography);
+    font-family: var(--doc-heading-font-family);
     gap: spacer('xs');
     line-height: 1;
     padding: 0;
+    text-align: start;
 
     &.active {
+      color: color('heading');
       font-weight: 500;
     }
 
