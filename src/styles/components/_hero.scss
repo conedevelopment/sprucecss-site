@@ -55,6 +55,11 @@
     margin-block-end: 1.5rem;
     padding: 0.5em 1em;
     text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: color('note-color', 'hero');
+    }
   }
 
   &__title {

@@ -19,6 +19,7 @@ export default function Cta() {
 
   function handleButtonClick(title) {
     setActiveTab(title);
+    setSidebarVisible(false);
   }
 
   function handleMenuClick() {
