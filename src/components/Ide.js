@@ -1,12 +1,13 @@
 import Heading from '../components/Heading';
-import React, { useState } from 'react';
 import IconFolder from '../images/icons/folder.svg';
 import IconSass from '../images/icons/sass.svg';
 import IdeSource from './IdeSource';
+import MenuIcon from '../images/icons/menu.svg';
+import React, { useState } from 'react';
 
 function Button({ activeTab, title, handleClick }) {
   return (
-    <button onClick={() => handleClick(title)} className={`${title === activeTab ? 'active' : null}`}>
+    <button onClick={() => handleClick(title)} className={`${title === activeTab ? 'active' : ''}`}>
       <IconSass /> {title}
     </button>
   );
@@ -14,9 +15,14 @@ function Button({ activeTab, title, handleClick }) {
 
 export default function Cta() {
   const [activeTab, setActiveTab] = useState('_config.scss');
+  const [sidebarVisible, setSidebarVisible] = useState(false);
 
   function handleButtonClick(title) {
     setActiveTab(title);
+  }
+
+  function handleMenuClick() {
+    setSidebarVisible(!sidebarVisible);
   }
 
   return (
@@ -40,6 +46,10 @@ export default function Cta() {
           </div>
           <div className="ide__inner">
             <aside className="ide__sidebar">
+              <button className="btn btn--primary btn--icon btn--rounded ide__toggle" onClick={handleMenuClick} aria-controls="primary-menu" aria-expanded={sidebarVisible ? 'true' : 'false'} aria-label={sidebarVisible ? 'Close sidebar' : 'Open sidebar'}>
+                <MenuIcon className="btn__icon" width="30" height="30" />
+              </button>
+              <div className="ide__sidebar-helper" style={{ display: sidebarVisible ? 'block' : 'none' }}>
                 <div className="ide-section">
                   <h3 className="ide-section__title">
                     <IconFolder />
@@ -130,6 +140,7 @@ export default function Cta() {
                       </li>
                   </ul>
                 </div>
+              </div>
             </aside>
             <div className="ide__body">
               <div className="ide__editor">
