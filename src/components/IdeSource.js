@@ -2,166 +2,111 @@ import CodeBlock from '../components/CodeBlock';
 import React from 'react';
 
 export default function IdeSource({ type }) {
-  if (type === '_config.scss') {
+  if (type === 'config/_config.scss') {
     return (<CodeBlock className="scss">
-{`@use 'sass:color';
-@use 'dark-colors' as dark;
-
-$color-primary: hsl(238deg 100% 50%);
-$color-secondary: hsl(186deg 100% 60%);
+{`@use 'dark-colors' as dark;
 
 @use 'sprucecss/scss/spruce' with (
-  $btn: (
-    'font-family': #{'Manrope', sans - serif},
-    'font-weight': 700,
-    'icon-padding-sm': 0.6em,
-    'padding-lg': 1em 2em,
-    'padding-sm': 0.6em,
-    'padding': 0.75em 1.5em,
-  ),
-  $color-primary: $color-primary,
-  $color-secondary: $color-secondary,
   $colors: (
-    'base': (
-      'background': hsl(270deg 100% 99%),
-      'border': hsl(0deg 0% 0% / 5%),
-      'code-background': hsl(224deg 94% 97%),
-      'heading': hsl(232deg 68% 11%),
-      'text': hsl(208deg 22% 34%)
-    ),
-    'breadcrumb': (
-      'separator': hsl(0deg 0% 80%)
-    ),
-    'card': (
-      'background': hsl(0deg 0% 100%)
-    ),
-    'search': (
-      'icon': hsl(229deg 26% 48% / 25%)
-    ),
-    'scrollbar': (
-      'thumb-background': hsl(229deg 26% 48% / 15%),
-      'thumb-background-hover': hsl(0deg 0% 0% / 25%),
-      'track-background': hsl(226deg 100% 87% / 15%)
+    'footer': (
+      'background': hsl(215deg 100% 98%),
     )
   ),
   $dark-colors: dark.$colors,
   $typography: (
-    'font-family-base': #{'Open Sans', sans - serif},
-    'font-family-heading': #{'Manrope', sans - serif},
-    'font-weight-heading': 800,
+    'font-family-base': #{'Open Sans', sans-serif},
+    'font-family-heading': #{'Manrope', sans-serif},
   ),
-  $settings: (
-    'css-custom-properties': true,
-  )
 );`}
     </CodeBlock>);
   }
 
-  if (type === '_dark-colors.scss') {
+  if (type === 'config/_dark-colors.scss') {
     return (<CodeBlock className="scss">
 {`@use 'sass:color';
 
-$dark-color-primary: hsl(186 100% 60%);
-$dark-color-secondary: hsl(227 92% 55%);
-
-$dark-color-black: hsl(245 38% 11%);
-$dark-color-white: hsl(0 0% 95%);
-
-$dark-color-gray: hsl(0 0% 97%);
-$dark-color-gray-dark: hsl(0 0% 100% / 8%);
-
-$dark-color-danger: hsl(0 71% 51%);
-$dark-color-success: hsl(150 100% 33%);
+$color-black: hsl(206deg 100% 7%);
+$color-danger: hsl(0deg 71% 51%);
+$color-gray-dark: hsl(0deg 0% 100% / 8%);
+$color-gray: hsl(0deg 0% 97%);
+$color-primary: hsl(261deg 54% 70%);
+$color-secondary: hsl(227deg 92% 55%);
+$color-success: hsl(150deg 100% 33%);
+$color-white: hsl(0deg 0% 95%);
 
 $colors: (
-  base: (
-    card-border: hsl(207 90% 13%),
-    primary: $dark-color-primary,
-    secondary: $dark-color-secondary,
-    background: $dark-color-black,
-    heading: $dark-color-white,
-    text: $dark-color-gray,
-    link: $dark-color-primary,
-    link-hover: color.scale($dark-color-primary, $lightness: 10%),
-    border: $dark-color-gray-dark,
-    mark-background: hsl(50 100% 80%),
-    mark-foreground: $dark-color-black,
-    marker: $dark-color-primary,
-    code-background: hsl(207 64% 21%),
-    code-foreground: $dark-color-white,
-    blockquote-border: $dark-color-primary,
-    footer-background: hsl(0 0% 0% / 0.15)
+  'base': (
+    'background': $color-black,
+    'blockquote-border': $color-primary,
+    'border': $color-gray-dark,
+    'code-background': hsl(207deg 64% 18%),
+    'code-foreground': $color-white,
+    'heading': $color-white,
+    'link': $color-primary,
+    'link-hover': color.scale($color-primary, $lightness: -20%),
+    'mark-background': hsl(50 100% 80%),
+    'mark-foreground': $color-black,
+    'marker': $color-primary,
+    'primary': $color-primary,
+    'secondary': $color-secondary,
+    'text': $color-gray,
   ),
-  breadcrumb: (
-    arrow: hsl(0 0% 100% / 0.1)
+  'btn': (
+    'primary-background': hsl(261 52% 59%),
+    'primary-background-hover': hsl(261 52% 65%),
+    'primary-foreground': $color-white,
+    'secondary-background': $color-secondary,
+    'secondary-background-hover': color.adjust($color-secondary, $lightness: 5%),
+    'secondary-foreground': $color-white,
   ),
-  btn: (
-    primary-background: $dark-color-primary,
-    primary-background-hover: hsl(186 100% 45%),
-    primary-foreground: hsl(186 100% 5%),
-    secondary-background: $dark-color-secondary,
-    secondary-background-hover: color.adjust($dark-color-secondary, $lightness: 5%),
-    secondary-foreground: $dark-color-white
+  'footer': (
+    'background': hsl(206deg 100% 5%),
   ),
-  card: (
-    background: $dark-color-black
+  'form': (
+    'background': color.scale($color-black, $lightness: 5%),
+    'background-disabled': $color-black,
+    'border': $color-gray-dark,
+    'border-disabled': $color-gray-dark,
+    'border-focus': $color-primary,
+    'check-background': $color-primary,
+    'check-focus-ring': $color-primary,
+    'check-foreground': $color-black,
+    'invalid': $color-danger,
+    'invalid-focus-ring': color.adjust($color-danger, $alpha: -0.75),
+    'label': $color-white,
+    'legend': $color-white,
+    'placeholder': hsl(0deg 0% 60%),
+    'range-thumb-background': $color-primary,
+    'range-thumb-focus-ring': $color-primary,
+    'range-track-background': $color-gray-dark,
+    'ring-focus': color.adjust($color-primary, $alpha: -0.75),
+    'select-foreground': hsl(0deg 0% 100%),
+    'text': $color-gray,
+    'valid': $color-success,
+    'valid-focus-ring': color.adjust($color-success, $alpha: -0.75),
   ),
-  container: (
-    background: hsl(207 92% 12%)
+  'selection': (
+    'background': $color-primary,
+    'foreground': $color-white,
   ),
-  form: (
-    background: color.scale($dark-color-black, $lightness: 5%),
-    background-disabled: $dark-color-black,
-    border: $dark-color-gray-dark,
-    border-disabled: $dark-color-gray-dark,
-    border-focus: $dark-color-primary,
-    shadow-focus: color.adjust($dark-color-primary, $alpha: -0.75),
-    check-foreground: $dark-color-black,
-    check-background: $dark-color-primary,
-    invalid: $dark-color-danger,
-    invalid-shadow: color.adjust($dark-color-danger, $alpha: -0.75),
-    label: $dark-color-white,
-    legend: $dark-color-white,
-    placeholder: hsl(0 0% 60%),
-    text: $dark-color-gray,
-    select-foreground: hsl(0 0% 100%),
-    valid: $dark-color-success,
-    valid-shadow: color.adjust($dark-color-success, $alpha: -0.75)
+  'scrollbar': (
+    'thumb-background': hsl(0deg 0% 100% / 15%),
+    'thumb-background-hover':	hsl(0deg 0% 100% / 25%),
+    'track-background':	hsl(0deg 0% 100% / 5%),
   ),
-  footer: (
-    background: hsl(207 97% 6%)
-  ),
-  invoice: (
-    background: hsl(234 49% 6%)
-  ),
-  tab: (
-    background: hsl(207 84% 10%)
-  ),
-  table: (
-    border: $dark-color-gray-dark,
-    caption: $dark-color-gray,
-    heading: $dark-color-white,
-    hover: hsl(0 0% 100% / 0.05),
-    text: $dark-color-gray,
-    stripe: hsl(0 0% 100% / 0.025)
-  ),
-  selection: (
-    foreground: $dark-color-white,
-    background: $dark-color-primary
-  ),
-  search: (
-    icon: hsla(0, 0%, 100%, 0.25)
-  ),
-  scrollbar: (
-    thumb-background: hsl(0 0% 100% / 0.15),
-    thumb-background-hover:	hsl(0 0% 100% / 0.25),
-    track-background:	hsl(0 0% 100% / 0.05)
+  'table': (
+    'border': $color-gray-dark,
+    'caption': $color-gray,
+    'heading': $color-white,
+    'hover': hsl(0deg 0% 100% / 5%),
+    'text': $color-gray,
+    'stripe': hsl(0deg 0% 100% / 2.5%),
   )
 );`}
     </CodeBlock>);
   }
 
-  if (type === '_dark-mode.scss') {
+  if (type === 'config/_dark-mode.scss') {
     return (<CodeBlock className="scss">
 {`@use 'sprucecss/scss/spruce' as *;
 
@@ -171,97 +116,214 @@ $colors: (
 );
 
 [data-theme-mode='dark'] {
-  @include selection(primary);
-
   color-scheme: dark;
-
-  body::before { display: none; }
-  .card { border: 1px solid color(border); }
-
-  select.form-control:not([multiple]):not([size]) {
-    @include field-icon(
-      config('select', $form-icon, false),
-      color(select-foreground, form, true, $dark-colors)
-    );
-  }
 }`}
     </CodeBlock>);
   }
 
-  if (type === '_fonts.scss') {
+  if (type === 'config/_fonts.scss') {
     return (<CodeBlock className="scss">
 {`@use 'sprucecss/scss/spruce' as *;
 
 @include font-face(
   'Manrope',
-  '../font/manrope-v13-latin-ext_latin-regular.woff2'
+  '../../font/manrope-v13-latin_latin-ext-regular.woff2'
 );
 
 @include font-face(
   'Manrope',
-  '../font/manrope-v13-latin-ext_latin-300.woff2',
+  '../../font/manrope-v13-latin_latin-ext-300.woff2',
   300
 );
 
 @include font-face(
   'Manrope',
-  '../font/manrope-v13-latin-ext_latin-600.woff2',
+  '../../font/manrope-v13-latin_latin-ext-600.woff2',
   600
 );
 
 @include font-face(
   'Manrope',
-  '../font/manrope-v13-latin-ext_latin-700.woff2',
+  '../../font/manrope-v13-latin_latin-ext-700.woff2',
   700
 );
 
 @include font-face(
   'Manrope',
-  '../font/manrope-v13-latin-ext_latin-800.woff2',
+  '../../font/manrope-v13-latin_latin-ext-800.woff2',
   800
 );
 
 @include font-face(
   'Open Sans',
-  '../font/open-sans-v34-latin-regular.woff2'
+  '../../font/open-sans-v34-latin_latin-ext-regular.woff2'
 );
 
 @include font-face(
   'Open Sans',
-  '../font/open-sans-v34-latin-700.woff2',
+  '../../font/open-sans-v34-latin_latin-ext-700.woff2',
   700
 );`}
     </CodeBlock>);
   }
 
-  if (type === '_index.scss') {
+  if (type === 'config/_index.scss') {
     return (<CodeBlock className="scss">
 {`@forward 'config';
 @forward 'font';
 @forward 'styles';
-@forward 'dark-colors';
 @forward 'dark-mode';`}
     </CodeBlock>);
   }
 
-  if (type === '_styles.scss') {
+  if (type === 'config/_styles.scss') {
     return (<CodeBlock className="scss">
 {`@use 'sprucecss/scss/spruce' as *;
 
-@include generate-content;
-@include generate-btn('.btn');
+@include generate-styles;`}
+    </CodeBlock>);
+  }
 
-.btn--primary { @include btn-variant(primary); }
-.btn--outline-primary { @include btn-variant-outline(primary); }
+  if (type === 'component/_index.scss') {
+    return (<CodeBlock className="scss">
+{`@forward 'skip-link';
+@forward 'header';
+@forward 'footer';`}
+    </CodeBlock>);
+  }
 
-@include generate-form-control(
-  '.form-control',
-  true,
-  true,
-  true
-);
+  if (type === 'component/_footer.scss') {
+    return (<CodeBlock className="scss">
+{`@use 'sprucecss/scss/spruce' as *;
 
-`}
+.site-footer {
+  background-color: color('background', 'footer');
+  padding-block: spacer-clamp('xl', 'xxl');
+
+  &__top {
+    @include layout-grid(spacer('l'), 14rem);
+  }
+
+  &__logo {
+    --dimension: 4rem;
+    display: inline-flex;
+    height: var(--dimension);
+    width: var(--dimension);
+  }
+
+  &__title {
+    font-size: font-size('h4');
+    margin-block: 0 spacer('m');
+  }
+
+  &__navigation {
+    @include clear-list;
+    @include layout-stack(spacer('xs'));
+
+    a {
+      color: color(text);
+      text-decoration: none;
+
+      &:hover,
+      &:focus,
+      &:active,
+      &[aria-current='page'] {
+        color: color('primary');
+      }
+
+      &[aria-current='page'] {
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__bottom {
+    padding-block-start: spacer('l');
+
+    @include breakpoint('md') {
+      align-items: center;
+      display: flex;
+      gap: spacer('s');
+      justify-content: space-between;
+    }
+  }
+
+  &__copyright {
+    margin-block: 0;
+  }
+}`}
+    </CodeBlock>);
+  }
+
+  if (type === 'component/_header.scss') {
+    return (<CodeBlock className="scss">
+{`@use 'sprucecss/scss/spruce' as *;
+
+.site-header {
+  position: relative;
+
+  &__inner {
+    --height: 6rem;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: spacer-clamp('s', 'l');
+    height: var(--height);
+    justify-content: space-between;
+  }
+
+  &__column {
+    align-items: center;
+    display: flex;
+    flex-grow: 1;
+    gap: spacer-clamp('s', 'l');
+  }
+
+  &__actions {
+    align-items: center;
+    display: flex;
+    gap: spacer-clamp('s', 'm');
+  }
+
+  &__logo {
+    --dimension: 4rem;
+    display: inline-flex;
+    height: var(--dimension);
+    width: var(--dimension);
+  }
+
+  &__email {
+    display: none;
+    text-decoration: none;
+
+    @include breakpoint('sm') {
+      display: inline-block;
+    }
+  }
+
+  &__navigation {
+    margin-inline-start: auto;
+
+    @include breakpoint('md') {
+      margin-inline-start: 0;
+    }
+
+    ul {
+      border-block-start: 1px solid color('border');
+
+      @include breakpoint('sm') {
+        border-block: none;
+      }
+    }
+  }
+}`}
+    </CodeBlock>);
+  }
+
+  if (type === 'main.scss') {
+    return (<CodeBlock className="scss">
+{`@forward 'config';
+@forward 'component';`}
     </CodeBlock>);
   }
 }

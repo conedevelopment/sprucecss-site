@@ -8,13 +8,13 @@ import React, { useState } from 'react';
 function Button({ activeTab, title, handleClick }) {
   return (
     <button onClick={() => handleClick(title)} className={`${title === activeTab ? 'active' : ''}`}>
-      <IconSass /> {title}
+      <IconSass /> {title.search('/') > 0 ? title.split('/')[1] : title}
     </button>
   );
 }
 
 export default function Cta() {
-  const [activeTab, setActiveTab] = useState('_config.scss');
+  const [activeTab, setActiveTab] = useState('config/_config.scss');
   const [sidebarVisible, setSidebarVisible] = useState(false);
 
   function handleButtonClick(title) {
@@ -54,26 +54,26 @@ export default function Cta() {
                 <div className="ide-section">
                   <h3 className="ide-section__title">
                     <IconFolder />
-                    components
+                    component
                   </h3>
                   <ul className="ide-section__list ide-section__list--border">
                     <li>
                       <Button
-                        title="_index.scss"
+                        title="component/_index.scss"
                         activeTab={activeTab}
                         handleClick={handleButtonClick}
                       />
                     </li>
                     <li>
                       <Button
-                        title="_site-footer.scss"
+                        title="component/_footer.scss"
                         activeTab={activeTab}
                         handleClick={handleButtonClick}
                       />
                     </li>
                     <li>
                       <Button
-                        title="_site-header.scss"
+                        title="component/_header.scss"
                         activeTab={activeTab}
                         handleClick={handleButtonClick}
                       />
@@ -88,42 +88,42 @@ export default function Cta() {
                   <ul className="ide-section__list ide-section__list--border">
                     <li>
                       <Button
-                        title="_config.scss"
+                        title="config/_config.scss"
                         activeTab={activeTab}
                         handleClick={handleButtonClick}
                       />
                     </li>
                     <li>
                       <Button
-                        title="_dark-colors.scss"
+                        title="config/_dark-colors.scss"
                         activeTab={activeTab}
                         handleClick={handleButtonClick}
                       />
                     </li>
                     <li>
                       <Button
-                        title="_dark-mode.scss"
+                        title="config/_dark-mode.scss"
                         activeTab={activeTab}
                         handleClick={handleButtonClick}
                       />
                     </li>
                     <li>
                       <Button
-                        title="_fonts.scss"
+                        title="config/_fonts.scss"
                         activeTab={activeTab}
                         handleClick={handleButtonClick}
                       />
                     </li>
                     <li>
                       <Button
-                        title="_index.scss"
+                        title="config/_index.scss"
                         activeTab={activeTab}
                         handleClick={handleButtonClick}
                       />
                     </li>
                     <li>
                       <Button
-                        title="_styles.scss"
+                        title="config/_styles.scss"
                         activeTab={activeTab}
                         handleClick={handleButtonClick}
                       />
