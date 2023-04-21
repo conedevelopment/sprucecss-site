@@ -4,17 +4,17 @@ order: 2
 github: 'https://github.com/conedevelopment/sprucecss-site/blob/main/src/docs/getting-started/installation.mdx'
 ---
 
-<p className="lead">Spruce CSS is built on Sass; to get the full potential, you should use with it. If you want, you can load the compiled CSS too, but you will lose many features.</p>
+<p className="lead">Spruce CSS is built on Sass; to get its full potential, you should use with it. If you want, you can load the compiled CSS too, but you will lose many features.</p>
 
 ## Install with NPM
 
-```bash
+```terminal
 npm install sprucecss --save
 ```
 
 ## Install with Yarn
 
-```bash
+```terminal
 yarn add sprucecss
 ```
 
@@ -29,63 +29,58 @@ yarn add sprucecss
 
 ## Using Spruce CSS with Sass
 
-The manageability of Spruce CSS comes from its Sass features which are variables, mixins, and functions. You should use the preprocessor for the proper workflow (e.g., overwriting the default [variables](/docs/sass/variables)).
+The manageability of Spruce CSS comes from its Sass features, mixins, and functions. You should use the preprocessor for the proper workflow (e.g., overwriting the default [variables](/docs/sass/variables)).
 
 With the help of the [mixins](/docs/sass/mixins) and [functions](/docs/sass/functions), you can write code and access values easier.
 
 ### Import It With @use
 
-To import it into your project, you must use Sass’s `@use`, a newer type of `@import` similar to the JavaScript modules. Unlike using `@import`, you have to import (use it) it in every file where you want to use Spruce, its variables, functions, or mixins.
+To import it into your project, you must use Sass’s `@use`, a newer type of `@import` similar to the JavaScript modules. Unlike using `@import`, you must import (use it) it in every file where you want to use Spruce, its variables, functions, or mixins.
 
 ``` scss
-@use '~sprucecss/scss/spruce';
+@use '~sprucecss/scss/spruce' as *;
 ```
 
 ### Namespacing
 
-The `@use` rule loads the mixins, functions, and variables in a namespaced way. If you use the import above, you can refer to the Spruce assets using the “spruce” namespace like so:
+The `@use` rule loads the mixins, functions, and variables without a namespace, so you can simply refer to anything by its name:
 
 ```scss
 .section {
-  @include spruce.layout-stack(spruce.spacer(m));
+  @include layout-stack('m');
 }
 ```
 
-We include the <a href="/docs/sass/mixins/#layout-stack" className="code-link">`layout-stack`</a> mixin in this example and use the <a href="/docs/sass/functions#spacer" className="code-link">`spacer`</a> function to get the “m” sized spacer.
+We include the <a href="/docs/sass/mixins/#layout-stack" className="code-link">`layout-stack`</a> mixin that will make a simple stacked layout.
 
-If you don’t want to use namespacing, you have to import like the following:
-
-```scss
-@use '~sprucecss/scss/spruce' as *;
-
-.section {
-  @include layout-stack(spacer(m));
-}
-```
-
-Although the namespacing doesn’t necessary for a simple project, we will show you the examples this way because we like the idea and think it is more future proof.
-
-<Notification type="info">The tilde <code>~</code> character means (at the @use) a shorthand to the <code>node_modules</code> folder in a Webpack configuration, so you don’t have to use a relative path.</Notification>
-
-If you need a [simple Sass compile setup](https://pineco.de/the-simplest-sass-compile-setup/), check out our article on Pine.
-
-### Load Styles
-
-Importing Spruce means you load its variables, functions, and mixins. To use its styles, you have to include them with a mixin explicitly.
-
-To load the styles, you need to include a generator mixin. A generator (a naming convention in Spruce CSS only) mixin is a wrapper mixin whose goal is to import a specified style, usually once in your project. These are complete declarations with selectors, so you can’t use them inside code blocks.
-
-You can control the flow of the style generation in a lot of ways (for more information, [please visit our Generators page](/docs/elements/generators)), but there are two main mixins to use:
+If you prefer the namespaces, leave the `as *` part out and use the following:
 
 ```scss
 @use '~sprucecss/scss/spruce';
 
-@include spruce.generate-content;
-@include spruce.generate-form;
+.section {
+  @include layout-stack('m');
+}
+```
+
+<Notification type="info">The tilde <code>~</code> character means (at the @use) a shorthand to the <code>node_modules</code> folder in a Webpack configuration, so you don’t have to use a relative path.</Notification>
+
+### Load Styles
+
+Importing Spruce means you load its variables, functions, and mixins. To use its styles, you must include them explicitly with a mixin.
+
+To load the styles, you need to include a generator mixin. A generator (a naming convention in Spruce CSS only) mixin is a wrapper mixin whose goal is to generate a specified style, usually once in your project. These are complete declarations with selectors, so you can’t use them inside code blocks.
+
+You can control the flow of the style generation in a lot of ways (for more information, [please visit our Generators page](/docs/elements/generators)), but there is one main mixin to use:
+
+```scss
+@use '~sprucecss/scss/spruce' as *;
+
+@include spruce.generate-styles;
 ```
 
 ## Compiling Sass
 
-Depending on your development setup, using Sass could be a burden. We think that Sass is a handy tool and easy to use. One of the more significant barriers is compiling; because of this reason, we wrote an article about [a simple Sass compile setup](https://pineco.de/the-simplest-sass-compile-setup/).
+Depending on your development setup, using Sass could be a burden. We think that Sass is a handy tool and easy to use. Compiling is one of the more significant barriers; for this reason, we wrote an article about [a simple Sass compile setup](https://pineco.de/the-simplest-sass-compile-setup/).
 
-Also, we made a [Spruce CSS Starter Kit](https://github.com/conedevelopment/sprucecss-starter-kit) which is a starter template. It includes a basic compile setup and, of course, Spruce CSS. You can find more information about it on GitHub.
+Also, we made a [Spruce CSS Eleventy Starter](https://github.com/conedevelopment/sprucecss-eleventy-starter), a boilerplate  starter template based on the popular static site generator 11ty. It includes a basic compile setup and, of course, Spruce CSS. You can find more information about it on GitHub.
