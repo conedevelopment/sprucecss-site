@@ -28,7 +28,7 @@ export default function TableOfContents({ headings }) {
   };
 
   useEffect(() => {
-    const headings = document.querySelectorAll('.anchor-heading:not([id="arguments"]):not([id="arguments"]):not([id="examples"]');
+    const headings = document.querySelectorAll('.anchor-heading:not([id="arguments"]):not([id="arguments"]):not([id="examples"]):not([id="references"])');
     const observer = new IntersectionObserver(spyItem, {
       rootMargin: '-3% 0% -97% 0%',
       root: document,
