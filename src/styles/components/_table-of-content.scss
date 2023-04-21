@@ -19,7 +19,9 @@
   }
 
   &__navigation {
+    border-inline-start: 1px solid color('border');
     margin-block-start: 1rem;
+    padding-inline-start: 1rem;
 
     ol {
       @include clear-list;
@@ -40,8 +42,12 @@
       text-decoration: none;
 
       &:hover,
-      &:focus {
+      &.active {
         color: color('primary');
+      }
+
+      &.active {
+        @include sidebar-active-menu-marker;
       }
     }
   }
