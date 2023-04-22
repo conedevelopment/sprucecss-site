@@ -694,17 +694,17 @@ To learn more about the print option, [please visit the related page](/docs/gett
 <table class="table table--striped table--clear-border table--sm table--rounded table--font-size-reset">
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Key</th>
       <th>Value</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>$print-page-margin</td>
+      <td>page-margin</td>
       <td>2cm</td>
     </tr>
     <tr>
-      <td>$print-hidden-elements</td>
+      <td>hidden-elements</td>
       <td>'header, footer, aside, nav, form, iframe, [class^="aspect-ratio"]'</td>
     </tr>
   </tbody>
@@ -712,7 +712,9 @@ To learn more about the print option, [please visit the related page](/docs/gett
 
 ```scss
 @use '~sprucecss/scss/spruce' with (
-  $print-page-margin: 2cm,
-  $print-hidden-elements: 'header, footer, aside, nav, form, iframe, [class^="aspect-ratio"]'
+  $print: (
+    'page-margin': 2cm,
+    'hidden-elements': 'header, footer, aside, nav, form, iframe, [class^="aspect-ratio"]',
+  ),
 );
 ```
