@@ -14,6 +14,7 @@ export const query = graphql`
     mdx(fields: {slug: {eq: $slug}}) {
       frontmatter {
         title
+        description
         codeURL
         previewHeight
       }
@@ -133,9 +134,9 @@ export default function Post({ location, data: { mdx }, children, data: { allFil
 }
 
 export function Head({ location, data: { mdx } }) {
-  const { title } = mdx.frontmatter;
+  const { title, description } = mdx.frontmatter;
 
   return (
-    <Seo title={title} location={location} />
+    <Seo title={title} location={location} description={description} />
   );
 }

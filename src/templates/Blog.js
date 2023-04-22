@@ -68,11 +68,11 @@ export default function Post({ data: { mdx }, children }) {
 }
 
 export function Head({ data: { mdx } }) {
-  const { title, featuredImage } = mdx.frontmatter;
+  const { title, description, featuredImage } = mdx.frontmatter;
   const image = getImage(featuredImage);
 
   return (
-    <Seo title={title} image={`https://sprucecss.com${image.images.fallback.src}`} />
+    <Seo title={title} image={`https://sprucecss.com${image.images.fallback.src}`} description={description} />
   );
 }
 
@@ -85,6 +85,7 @@ export const query = graphql`
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
+        description
         tags
         featuredImage {
           childImageSharp {

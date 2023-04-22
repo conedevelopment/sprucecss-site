@@ -12,6 +12,7 @@ export const query = graphql`
     mdx(fields: {slug: {eq: $slug}}) {
       frontmatter {
         title
+        description
         github
       }
       tableOfContents(maxDepth: 3)
@@ -63,9 +64,9 @@ export default function Post({ data: { mdx }, children, pageContext }) {
 }
 
 export function Head({ data: { mdx } }) {
-  const { title } = mdx.frontmatter;
+  const { title, description } = mdx.frontmatter;
 
   return (
-    <Seo title={title} />
+    <Seo title={title} description={description} />
   );
 }
