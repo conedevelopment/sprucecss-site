@@ -33,6 +33,7 @@ export default function Sidebar() {
         <h3 className="sidebar-section__title">Sass</h3>
         <nav className="sidebar-section__navigation">
           <ul>
+            <li><Link to="/docs/sass/colors">Colors</Link></li>
             <li><Link to="/docs/sass/variables">Variables</Link></li>
             <li><Link to="/docs/sass/mixins">Mixins</Link></li>
             <li><Link to="/docs/sass/functions">Functions</Link></li>
