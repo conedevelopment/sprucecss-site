@@ -4,11 +4,11 @@ order: 3
 github: 'https://github.com/conedevelopment/sprucecss-site/blob/main/src/docs/getting-started/structure-and-code.mdx'
 ---
 
-<p className="lead">Spruce tries to be customizable and straightforward. On this page, you can find some core principles and the structure.</p>
+<p className="lead">Spruce tries to be customizable and straightforward. You can find some core principles and the main structure on this page.</p>
 
 ## Coding Style Guide and Practices
 
-- Where it is possible, we use elements and/or attributes to style elements, but it is still a class-based framework.
+- Where possible, we use elements and/or attributes to style elements, but it is still a class-based framework.
 - We use Stylelint with a [modified configuration](https://github.com/conedevelopment/sprucecss/blob/main/.stylelintrc.json) with [stylelint-config-sass-guidelines](https://www.npmjs.com/package/stylelint-config-sass-guidelines) preset to quality control.
 - We [alphabetize](https://jerrylowm.medium.com/alphabetize-your-css-properties-for-crying-out-loud-780eb1852153) the property declaration order. It is practical, no joke.
 - We use mostly BEM when a more complicated structure is necessary.
@@ -17,25 +17,25 @@ github: 'https://github.com/conedevelopment/sprucecss-site/blob/main/src/docs/ge
 
 ## BEM (Block Element Modifier)
 
-For writing complex components, we use [BEM](http://getbem.com/naming/), a simple naming convention that helps to create manageable code. A simple example looks like this:
+We use [BEM](http://getbem.com/naming/), a simple naming convention that helps create manageable code for writing complex components. A simple example looks like this:
 
 - Block: a component element, like `.btn`.
 - Element: a child element of the component like `.btn__icon`.
-- Modifier: a flag that someway modifies the component like `.btn--primary`.
+- Modifier: a flag that modifies the component like `.btn--primary`.
 
 ## Class vs. Classless Frameworks
 
-A classless framework doesn’t specify classes and special markup for your elements. You use regular HTML elements. The advantage is that you only need to load a CSS file and get many styling right away.
+A classless framework doesn’t specify classes and special markup for your elements. You use regular HTML elements. The advantage is that you only need to load a CSS file and get many styling immediately.
 
-We think this approach has more problems in the long run, so we use classes. Of course, we also style just elements where it is convenient (like text-related elements).
+We think this approach has more problems in the long run, so we use classes. Of course, we also style just elements where it is convenient (like text-related ones).
 
 ## The Source Code of Spruce
 
-Spruce uses npm scripts to compile Sass and to do other tasks. You can see all of the scripts in the [package.json file](https://github.com/conedevelopment/sprucecss/blob/main/package.json).
+Spruce uses npm scripts to compile Sass and to do other tasks. The scripts are in the [package.json file](https://github.com/conedevelopment/sprucecss/blob/main/package.json).
 
 **Our two main scripts are:**
 
-- `npm run dev` is for development purposes. It will fire up the development preview (which is a sandbox for us), a pug-based, simple HTML page where you can see all the styled elements.
+- `npm start` is for development purposes. It will fire up the development preview (which is a sandbox for us), a pug-based, simple HTML page where you can see all the styled elements.
 - `npm run prod` is for production. It will create the right compiled CSS files.
 
 ### The Structure of the Project
@@ -59,18 +59,19 @@ sprucecss/
 │  ├─ function/
 │  ├─ mixin/
 │  ├─ plugin/
-│  ├─ ...
+│  ├─ print/
 │  ├─ spruce.scss
+├─ test/
 ├─ .gitignore
 ├─ package.json
 ├─ README.md
 ├─ ...
 ```
 
-If you plan to contribute first, please visit our [contributon](/docs/getting-started/contribution/). Thank you!
+If you plan to contribute first, please visit our [contribution](/docs/getting-started/contribution/). Thank you!
 
 ## Browser Support
 
 Spruce uses [Autoprefixer](https://github.com/postcss/autoprefixer) with the [default configurations](https://github.com/browserslist/browserslist#best-practices).
 
-The browser support is not set in stone, but one of the goals of this framework is to be a modern one. We will plan to support new features early, but we understand the browser landscape is not so simple. Please [open an issue](https://github.com/conedevelopment/sprucecss/issues/new) if you have any questions or ideas regarding this topic.
+The browser support is flexible, but one of the goals of this framework is to be modern. We plan to support new features early, but we understand the browser landscape is not so simple. Please [open an issue](https://github.com/conedevelopment/sprucecss/issues/new) if you have any questions or ideas regarding this topic.
