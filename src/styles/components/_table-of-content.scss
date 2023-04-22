@@ -32,6 +32,10 @@
       ol {
         margin-block-start: spacer('xs');
         margin-inline-start: spacer('s');
+
+        .active::before {
+          inset-inline-start: -2rem;
+        }
       }
     }
 
@@ -48,6 +52,7 @@
 
       &.active {
         @include sidebar-active-menu-marker;
+
       }
     }
   }
