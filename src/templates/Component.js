@@ -59,20 +59,19 @@ export default function Post({ location, data: { mdx }, children, data: { allFil
     }
   });
 
-  useEffect(() => {
-    iframeRef.current?.addEventListener('load', () => {
-      const receiver = document.querySelector('#tab-content-preview > iframe').contentWindow;
+  function onLoadListener() {
+    console.log('iframe loaded');
+    const receiver = document.querySelector('#tab-content-preview > iframe').contentWindow;
 
-      receiver.postMessage({
-        type: localStorage.getItem('preferred-theme') ?? 'system'
-      });
-
-      setIframe(true);
+    receiver.postMessage({
+      type: localStorage.getItem('preferred-theme') ?? 'system'
     });
 
-    return () => {
-      iframeRef.current?.removeEventListener('load', () => setIFrameLoaded(true));
-    };
+    setIframe(true);
+  }
+
+  useEffect(() => {
+    iframeRef.current?.addEventListener('load', onLoadListener);
   }, [iframeRef]);
 
   return (
