@@ -4,7 +4,7 @@ import CodeTabContent from '../components/CodeTabContent';
 import GettingStarted from '../components/GettingStarted';
 import Layout from '../components/Layout';
 import PostNavigation from '../components/PostNavigation';
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Seo from '../components/Seo';
 import SidebarComponent from '../components/SidebarComponent';
 import TableOfContents from '../components/TableOfContents';
@@ -40,6 +40,7 @@ export default function Post({ location, data: { mdx }, children, data: { allFil
   const { next, prev } = pageContext;
   const { title, codeURL, previewHeight } = mdx.frontmatter;
   const [iframe, setIframe] = useState(false);
+  const iframeRef = useRef(null);
 
   let preview = null;
   let scss = null;
@@ -56,6 +57,21 @@ export default function Post({ location, data: { mdx }, children, data: { allFil
     } else if (node.fields.type === 'javascript') {
       js = node.internal.content;
     }
+  });
+
+  useEffect(() => {
+    const iframe = iframeRef.current;
+    if (!iframe) return undefined;
+
+    // not sure if we need to check if the iframe already loaded (e.g. readyState)
+
+    const listener = () => console.log('event listener');
+
+    iframe.addEventListener('load', listener);
+
+    return () => {
+      iframe.removeEventListener('load', listener);
+    };
   });
 
   function handleIframeLoad() {
@@ -89,7 +105,7 @@ export default function Post({ location, data: { mdx }, children, data: { allFil
                       frameBorder='0'
                       title={title}
                       style={{ height: previewHeight }}
-                      onLoad={() => handleIframeLoad()}
+                      ref={iframeRef}
                       className={`preview-iframe ${iframe ? 'preview-iframe--loaded' : ''}`}
                     ></iframe>
                   </CodeTabContent>}
