@@ -31,7 +31,6 @@
     }
 
     &--ui {
-
       svg {
         height: 2.14rem;
       }
@@ -83,7 +82,7 @@
       display: none;
       flex-direction: column;
       flex-wrap: wrap;
-      inset: 100% 0 auto 0;
+      inset: 100% 0 auto;
       padding-block: spacer('m');
       position: absolute;
       row-gap: spacer('m');
