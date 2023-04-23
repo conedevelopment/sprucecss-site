@@ -4,7 +4,7 @@ import CodeTabContent from '../components/CodeTabContent';
 import GettingStarted from '../components/GettingStarted';
 import Layout from '../components/Layout';
 import PostNavigation from '../components/PostNavigation';
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import Seo from '../components/Seo';
 import SidebarComponent from '../components/SidebarComponent';
 import TableOfContents from '../components/TableOfContents';
@@ -40,7 +40,6 @@ export default function Post({ location, data: { mdx }, children, data: { allFil
   const { next, prev } = pageContext;
   const { title, codeURL, previewHeight } = mdx.frontmatter;
   const [iframe, setIframe] = useState(false);
-  const iframeRef = useRef(null);
 
   let preview = null;
   let scss = null;
@@ -59,8 +58,7 @@ export default function Post({ location, data: { mdx }, children, data: { allFil
     }
   });
 
-  function onLoadListener() {
-    console.log('iframe loaded');
+  function handleIframeLoad() {
     const receiver = document.querySelector('#tab-content-preview > iframe').contentWindow;
 
     receiver.postMessage({
@@ -69,10 +67,6 @@ export default function Post({ location, data: { mdx }, children, data: { allFil
 
     setIframe(true);
   }
-
-  useEffect(() => {
-    iframeRef.current?.addEventListener('load', onLoadListener);
-  }, [iframeRef]);
 
   return (
     <Layout location={location}>
@@ -95,8 +89,7 @@ export default function Post({ location, data: { mdx }, children, data: { allFil
                       frameBorder='0'
                       title={title}
                       style={{ height: previewHeight }}
-                      loading='lazy'
-                      ref={iframeRef}
+                      onLoad={handleIframeLoad}
                       className={`preview-iframe ${iframe ? 'preview-iframe--loaded' : ''}`}
                     ></iframe>
                   </CodeTabContent>}
