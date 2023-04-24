@@ -89,7 +89,8 @@ export default function Post({ location, data: { mdx }, children, data: { allFil
                       frameBorder='0'
                       title={title}
                       style={{ height: previewHeight }}
-                      onLoad={() => handleIframeLoad()}
+                      loading='lazy'
+                      onLoad={handleIframeLoad}
                       className={`preview-iframe ${iframe ? 'preview-iframe--loaded' : ''}`}
                     ></iframe>
                   </CodeTabContent>}

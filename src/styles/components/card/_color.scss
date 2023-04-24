@@ -1,0 +1,33 @@
+@use '~sprucecss/scss/spruce' as *;
+
+.color-card {
+  align-items: start;
+  display: flex;
+  gap: spacer(m);
+
+  &--bordered &__color {
+    box-shadow: 0 0 0 1px color('border') inset;
+  }
+
+  &__color {
+    border-radius: config('border-radius-lg', $display);
+    flex-shrink: 0;
+    height: 3rem;
+    width: 3rem;
+  }
+
+  &__caption {
+    display: flex;
+    flex-direction: column;
+    line-height: config('line-height-md', $typography);
+  }
+
+  &__name {
+    color: color('heading');
+    font-weight: 700;
+  }
+
+  &__value {
+    font-weight: 300;
+  }
+}

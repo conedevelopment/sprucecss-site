@@ -1,6 +1,7 @@
 import '../styles/main.scss';
 import { MDXProvider } from '@mdx-js/react';
 import CodeBlock from './mdx/CodeBlock';
+import ColorCard from './card/Color';
 import Cta from './Cta';
 import H2 from './mdx/H2';
 import H3 from './mdx/H3';
@@ -19,7 +20,8 @@ const shortcodes = {
   Notification,
   Preview,
   Icon,
-  table: Table
+  table: Table,
+  ColorCard
 };
 
 export default function Layout(props) {
