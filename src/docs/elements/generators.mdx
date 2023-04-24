@@ -28,30 +28,32 @@ Using `generate-color-variables`, we can generate our CSS variables from a map o
 
 | Name                  | Default Value          | Description                                                |
 |-----------------------|------------------------|------------------------------------------------------------|
-| `$colors`             | `spruce.$colors`       | The color Sass map.                                        |
+| `$colors`             | `$colors`              | The color Sass map.                                        |
 | `$selector`           | `:root`                | The selector which will scope the CSS custom properties.   |
 
 #### Example(s)
 
 ```scss
-@include spruce.generate-color-variables(
-  spruce.$colors,
+@use '~sprucecss/scss/spruce' as *;
+
+@include generate-color-variables(
+  $colors,
   ':root'
 );
 
 ```
 
-## generate-content
+## generate-styles
 
-To generate the element related styles (everything under the element folder), use `generate-content`. It is a shorthand to call all the mixins from below the list.
+The `generate-styles` is a shorthand to call all the mixins from below the list. You can control the output by the [$generators](/docs/sass/variables/#generators) map.
 
 ```scss
-@use '~sprucecss/scss/spruce';
+@use '~sprucecss/scss/spruce' as *;
 
-@include spruce.generate-content;
+@include generate-style;
 ```
 
-[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_generator.scss#L6)
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_generator.scss)
 
 - [generate-normalize](https://github.com/conedevelopment/sprucecss/blob/main/scss/plugin/_normalize.scss)
 - [generate-root](https://github.com/conedevelopment/sprucecss/blob/main/scss/element/_root.scss)
@@ -63,16 +65,6 @@ To generate the element related styles (everything under the element folder), us
 - [generate-typography](https://github.com/conedevelopment/sprucecss/blob/main/scss/element/_typography.scss)
 - [generate-utilities](https://github.com/conedevelopment/sprucecss/blob/main/scss/element/_utilities.scss)
 - [generate-print](https://github.com/conedevelopment/sprucecss/blob/main/scss/print/_index.scss)
-
-## generate-form
-
-To generate the form related styles (everything under the form folder), use `generate-form`. It is a shorthand to call all the mixins from below the list.
-
-```scss
-@use '~sprucecss/scss/spruce';
-
-@include spruce.generate-form;
-```
 - [generate-btn](https://github.com/conedevelopment/sprucecss/blob/main/scss/form/_button.scss)
 - [generate-file-btn](https://github.com/conedevelopment/sprucecss/blob/main/scss/form/_file.scss)
 - [generate-form-check](https://github.com/conedevelopment/sprucecss/blob/main/scss/form/_check.scss)
