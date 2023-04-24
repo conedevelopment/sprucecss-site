@@ -17,7 +17,7 @@ Get color value by key and type name from the `$colors` map. The `$colors` map i
 | Name              | Default Value | Description                                                       |
 |-------------------|---------------|-------------------------------------------------------------------|
 | `$key`            |               | The name of the color.                                            |
-| `$type`           | `base`        | The group of the color.                                           |
+| `$type`           | `'base'`        | The group of the color.                                           |
 | `$only-color`     | `false`       | Wheater to get just the color value or the CSS custom property.   |
 | `$map`            | `$colors`     | The name of the map from which the function will get the values.  |
 
@@ -53,7 +53,7 @@ Get a contrast color (black or white) based on the given one. Spruce use this fu
 
 ```scss
 a {
-  color: color-contrast(blue); // return white (hsl(0 0% 100%))
+  color: color-contrast('blue'); // return white (hsl(0 0% 100%))
 }
 ```
 
