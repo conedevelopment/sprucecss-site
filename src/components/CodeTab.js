@@ -2,16 +2,10 @@ import CodeBlockCopyBtn from './CodeBlockCopyBtn';
 import CodeTabContent from './CodeTabContent';
 import CodeTabControl from './CodeTabControl';
 import OpenNew from '../images/icons/open-in-new.svg';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-export default function CodeTab({ defaultTab = 'preview', title, url, iframe, setIframe, children }) {
+export default function CodeTab({ defaultTab = 'preview', title, url, children }) {
   const [activeTab, setActiveTab] = useState(defaultTab);
-
-  useEffect(() => {
-    if (activeTab !== iframe) {
-      setIframe(false);
-    }
-  }, [activeTab]);
 
   return (
     <div className="code-tab">

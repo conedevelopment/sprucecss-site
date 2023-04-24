@@ -4,7 +4,7 @@ import CodeTabContent from '../components/CodeTabContent';
 import GettingStarted from '../components/GettingStarted';
 import Layout from '../components/Layout';
 import PostNavigation from '../components/PostNavigation';
-import React, { useState } from 'react';
+import React from 'react';
 import Seo from '../components/Seo';
 import SidebarComponent from '../components/SidebarComponent';
 import TableOfContents from '../components/TableOfContents';
@@ -39,7 +39,6 @@ export const query = graphql`
 export default function Post({ location, data: { mdx }, children, data: { allFile: files }, pageContext }) {
   const { next, prev } = pageContext;
   const { title, codeURL, previewHeight } = mdx.frontmatter;
-  const [iframe, setIframe] = useState(false);
 
   let preview = null;
   let scss = null;
@@ -58,16 +57,6 @@ export default function Post({ location, data: { mdx }, children, data: { allFil
     }
   });
 
-  function handleIframeLoad() {
-    const receiver = document.querySelector('#tab-content-preview > iframe').contentWindow;
-
-    receiver.postMessage({
-      type: localStorage.getItem('preferred-theme') ?? 'system'
-    });
-
-    setIframe(true);
-  }
-
   return (
     <Layout location={location}>
       <main id="content" className="l-documentation">
@@ -79,8 +68,6 @@ export default function Post({ location, data: { mdx }, children, data: { allFil
                 <CodeTab
                   title={title}
                   url={codeURL}
-                  iframe={iframe}
-                  setIframe={setIframe}
                 >
                   {preview &&
                   <CodeTabContent title='Preview' id='preview'>
@@ -90,8 +77,7 @@ export default function Post({ location, data: { mdx }, children, data: { allFil
                       title={title}
                       style={{ height: previewHeight }}
                       loading='lazy'
-                      onLoad={handleIframeLoad}
-                      className={`preview-iframe ${iframe ? 'preview-iframe--loaded' : ''}`}
+                      className='preview-iframe'
                     ></iframe>
                   </CodeTabContent>}
                   {scss &&

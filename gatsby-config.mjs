@@ -68,7 +68,7 @@ const config = {
       options: {
         name: 'component',
         remote: `https://adamlaki:${process.env.GITHUB_PERSONAL_ACCESS_TOKEN}@github.com/conedevelopment/spruceui`,
-        branch: 'main'
+        branch: 'v2'
       }
     },
     {
