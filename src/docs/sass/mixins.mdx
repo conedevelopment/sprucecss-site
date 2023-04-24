@@ -56,13 +56,11 @@ $breakpoints: (
 }
 ```
 
-## Button
-
-### btn-variant
+## btn-variant
 
 Using the `btn-variant` mixin, you can create a new button variant. First, you must declare the colors of the new button (background, foreground is required) in the `$colors` map at the very first `@use` of Spruce.
 
-#### Argument(s)
+### Argument(s)
 
 | Name              | Default Value        | Description                                                |
 |-------------------|----------------------|------------------------------------------------------------|
@@ -71,7 +69,7 @@ Using the `btn-variant` mixin, you can create a new button variant. First, you m
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_button.scss#L32)
 
-#### Example(s)
+### Example(s)
 
 Declare the colors of the button. The mixin will search for the keys under the btn object.
 
@@ -112,11 +110,11 @@ In many cases, declaring just the background and foreground color is enough. Spr
 <a href="https://conedevelopment.com" class="btn btn--custom btn--lg">Go to Cone</a>
 ```
 
-### btn-variant-outline
+## btn-variant-outline
 
 Using the `btn-variant-outline` mixin, you can create a new outlined button variant. First, you must declare the colors of the new button (background, foreground is required) in the `$colors` map at the very first `@use` of Spruce.
 
-#### Argument(s)
+### Argument(s)
 
 | Name              | Default Value        | Description                                                |
 |-------------------|----------------------|------------------------------------------------------------|
@@ -125,7 +123,7 @@ Using the `btn-variant-outline` mixin, you can create a new outlined button vari
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_button.scss#L63)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 .btn--outline-primary { @include btn-variant-outline(primary); }
@@ -148,7 +146,7 @@ The `font-face` mixin is a helper to generate a `@font-face` declaration. This i
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_font-face.scss#L3)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 @include spruce.font-face(
@@ -163,13 +161,11 @@ The `font-face` mixin is a helper to generate a `@font-face` declaration. This i
 );
 ```
 
-## Form
-
-### focus-ring
+## focus-ring
 
 The `focus-ring()` is a small internal helper mixin to set up the focus state of the form fields, buttons (or anything). We call it on the `.form-control`, `.form-check`, `.form-switch`, `.form-range`, and button variants. For these calls, it works with global, related variables.
 
-#### Argument(s)
+### Argument(s)
 
 | Name               | Default Value            | Description                                                   |
 |--------------------|--------------------------|---------------------------------------------------------------|
@@ -182,7 +178,7 @@ The `focus-ring()` is a small internal helper mixin to set up the focus state of
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_form.scss#L6)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 .form-control:focus {
@@ -197,11 +193,11 @@ The `focus-ring()` is a small internal helper mixin to set up the focus state of
 }
 ```
 
-### field-disabled
+## field-disabled
 
 The `field-disabled()` is a small internal helper mixin to set up the disabled state on form fields. We call it on the `.form-control` and `.form-check` classes.
 
-#### Argument(s)
+### Argument(s)
 
 | Name                         | Default Value            | Description                                 |
 |------------------------------|--------------------------|---------------------------------------------|
@@ -210,7 +206,7 @@ The `field-disabled()` is a small internal helper mixin to set up the disabled s
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_form.scss#L16)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 .form-control:[disabled],
@@ -222,7 +218,7 @@ The `field-disabled()` is a small internal helper mixin to set up the disabled s
 }
 ```
 
-### field-icon
+## field-icon
 
 The `field-icon()` mixin is a getter function for form input backgrounds. Spruce CSS uses custom images (used as [inline SVG](https://github.com/conedevelopment/sprucecss/blob/main/scss/variable/_index.scss#L229)) for various inputs (checkbox, radio, select, success, error states).
 
@@ -230,7 +226,7 @@ This mixin first replaces the given color value as a fill value on the SVG image
 
 It is helpful for dark mode because we can’t pass a CSS variable to an inline SVG, so we have to overwrite it.
 
-#### Argument(s)
+### Argument(s)
 
 | Name                         | Default Value            | Description                                 |
 |------------------------------|--------------------------|---------------------------------------------|
@@ -239,7 +235,7 @@ It is helpful for dark mode because we can’t pass a CSS variable to an inline 
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_form.scss#L26)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 select {
@@ -253,13 +249,13 @@ select {
 
 ```
 
-### form-check
+## form-check
 
 The `form-check()` mixin is a helper to create custom checkboxes. It accepts three selectors and generates radio and checkbox styles.
 
 <Notification type="info">There are scenarios (unfortunately) where it is easier to modify the CSS code than the HTML markup. In our case, we usually style the checkboxes and radios in the <a href="https://hu.wordpress.org/plugins/contact-form-7/">Custom Form 7</a> plugin.</Notification>
 
-#### Argument(s)
+### Argument(s)
 
 | Name                         | Default Value            | Description                                    |
 |------------------------------|--------------------------|------------------------------------------------|
@@ -270,19 +266,17 @@ The `form-check()` mixin is a helper to create custom checkboxes. It accepts thr
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_form.scss#L34)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 @include form-check('.form-check', '.form-check__control', '.form-check__label', true);
 ```
 
-## Layout
-
-### layout-center
+## layout-center
 
 With the help of the `layout-center` mixin, you can center any element.  It is most useful for the generic container element for the main layouts.
 
-#### Argument(s)
+### Argument(s)
 
 | Name             | Default Value             | Description                                                                                                                        |
 |------------------|---------------------------|------------------------------------------------------------------------------------------------------------------------------------|
@@ -291,7 +285,7 @@ With the help of the `layout-center` mixin, you can center any element.  It is m
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_layout.scss#L6)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 .hero {
@@ -303,11 +297,11 @@ With the help of the `layout-center` mixin, you can center any element.  It is m
 }
 ```
 
-### layout-stack
+## layout-stack
 
 Using the help of the `layout-stack` mixin, you can classical stack layout where the elements are stacked under each other.
 
-#### Argument(s)
+### Argument(s)
 
 | Name          | Default Value            | Description                                                                                                              |
 |---------------|--------------------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -319,7 +313,7 @@ Using the help of the `layout-stack` mixin, you can classical stack layout where
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_layout.scss#L16)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 ul {
@@ -327,11 +321,11 @@ ul {
 }
 ```
 
-### layout-grid
+## layout-grid
 
 With the help of the `layout-grid` mixin you can create auto-fit grid layouts where you can determine the columns' min-width.
 
-#### Argument(s)
+### Argument(s)
 
 | Name           | Default Value          | Description                                                                                                              |
 |----------------|------------------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -340,7 +334,7 @@ With the help of the `layout-grid` mixin you can create auto-fit grid layouts wh
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_layout.scss#L64)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 .docs-cards {
@@ -350,11 +344,11 @@ With the help of the `layout-grid` mixin you can create auto-fit grid layouts wh
 }
 ```
 
-### layout-sidebar
+## layout-sidebar
 
 Using the `layout-sidebar` mixin, you can create a two-column sidebar layout declaring the sidebar width explicitly.
 
-#### Argument(s)
+### Argument(s)
 
 | Name                 | Default Value          | Description                                                                                                              |
 |----------------------|------------------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -363,7 +357,7 @@ Using the `layout-sidebar` mixin, you can create a two-column sidebar layout dec
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_layout.scss#L79)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 .docs-template {
@@ -371,11 +365,11 @@ Using the `layout-sidebar` mixin, you can create a two-column sidebar layout dec
 }
 ```
 
-### layout-flex
+## layout-flex
 
 Using the `layout-flex` mixin, you can create intrinsic flexbox grids with explicit column width.
 
-#### Argument(s)
+### Argument(s)
 
 | Name                  | Default Value          | Description                                                                                                              |
 |-----------------------|------------------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -384,7 +378,7 @@ Using the `layout-flex` mixin, you can create intrinsic flexbox grids with expli
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_layout.scss#L100)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 .form-row--mixed {
@@ -397,7 +391,8 @@ Using the `layout-flex` mixin, you can create intrinsic flexbox grids with expli
 ## selection
 
 Using the `selection` mixin, you can simplify the `::selection` declarations.  Pick a background color value from the `base` subsection by name and let it calculate the contrast color for the foreground automatically.
-#### Argument(s)
+
+### Argument(s)
 
 | Name          | Default Value          | Description                                                                                                               |
 |---------------|------------------------|---------------------------------------------------------------------------------------------------------------------------|
@@ -406,7 +401,7 @@ Using the `selection` mixin, you can simplify the `::selection` declarations.  P
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_selection.scss)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 .footer {
@@ -419,7 +414,7 @@ Using the `selection` mixin, you can simplify the `::selection` declarations.  P
 
 Declare CSS custom properties through Spruce CSS to add the prefix. To get any CSS variable with prefix use the <code><a href="/docs/sass/functions#get-css-variable">get-css-variable</a></code> function.
 
-#### Argument(s)
+### Argument(s)
 
 | Name        | Description                              |
 |-------------|------------------------------------------|
@@ -427,7 +422,7 @@ Declare CSS custom properties through Spruce CSS to add the prefix. To get any C
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_css-variable.scss#L6)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 :root {
@@ -441,7 +436,7 @@ Declare CSS custom properties through Spruce CSS to add the prefix. To get any C
 
 This mixin aims to query the [transition variables](/docs/sass/variables#transition-and-animation) easier. Usually, you only need the global values (e.g., for anything with a custom hover animation), but you can also overwrite the three basic arguments.
 
-#### Argument(s)
+### Argument(s)
 
 | Name              | Default Value     | Description                                                      |
 |-------------------|-------------------|------------------------------------------------------------------|
@@ -451,7 +446,7 @@ This mixin aims to query the [transition variables](/docs/sass/variables#transit
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_transition.scss#L3)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 .custom-link {
@@ -463,13 +458,11 @@ This mixin aims to query the [transition variables](/docs/sass/variables#transit
 }
 ```
 
-## Utilities
-
-### text-ellipsis
+## text-ellipsis
 
 Crop text and display an ellipsis with multiline support where possible.
 
-#### Argument(s)
+### Argument(s)
 
 | Name                   | Default Value | Description                              |
 |------------------------|---------------|------------------------------------------|
@@ -477,7 +470,7 @@ Crop text and display an ellipsis with multiline support where possible.
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L18)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 .crop-text {
@@ -488,13 +481,13 @@ Crop text and display an ellipsis with multiline support where possible.
 
 <Notification type="info">Be careful when using the <code>text-ellipsis</code> mixin with flex displays because it will break.</Notification>
 
-### visually-hidden
+## visually-hidden
 
 Hide something from the screen but keep it visible for assistive technology.
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L5)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 .sr-only {
@@ -502,11 +495,11 @@ Hide something from the screen but keep it visible for assistive technology.
 }
 ```
 
-### scrollbar
+## scrollbar
 
 Create natively styled custom scrollbars.
 
-#### Argument(s)
+### Argument(s)
 
 | Name                            | Default Value                                     | Description                                       |
 | ------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
@@ -518,7 +511,7 @@ Create natively styled custom scrollbars.
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L36)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 code {
@@ -533,14 +526,14 @@ code {
 }
 ```
 
-### clear-btn
+## clear-btn
 
 Clear the default browser button styles.
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L64)
 
 
-#### Example(s)
+### Example(s)
 
 ```scss
 .remove-button-styles {
@@ -548,13 +541,13 @@ Clear the default browser button styles.
 }
 ```
 
-### clear-list
+## clear-list
 
 Remove the `list-style`, `margin`, and `padding` stylings from the element.
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L75)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 ul {
@@ -562,7 +555,7 @@ ul {
 }
 ```
 
-### a11y-card-link
+## a11y-card-link
 
 Create better card component linking by only using the title’s link (and not the whole block). [Please visit this article about cards](https://inclusive-components.design/cards/) by Heydon Pickering for more information about the technique.
 
@@ -573,7 +566,7 @@ Create better card component linking by only using the title’s link (and not t
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L82)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 .card {
@@ -591,13 +584,13 @@ Create better card component linking by only using the title’s link (and not t
 }
 ```
 
-### word-wrap
+## word-wrap
 
 Break long strings of text.
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L105)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 .break-long-url {
