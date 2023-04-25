@@ -24,6 +24,7 @@ export default function Sidebar() {
         <h3 className="sidebar-section__title">Customization</h3>
         <nav className="sidebar-section__navigation">
           <ul>
+            <li><Link to="/docs/customization/variables">Variables</Link></li>
             <li><Link to="/docs/customization/settings">Settings</Link></li>
             <li><Link to="/docs/customization/themes">Themes</Link></li>
           </ul>
