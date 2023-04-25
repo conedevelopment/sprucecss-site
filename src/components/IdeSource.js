@@ -201,7 +201,7 @@ $colors: (
   padding-block: spacer-clamp('xl', 'xxl');
 
   &__top {
-    @include layout-grid(spacer('l'), 14rem);
+    @include layout-grid('l', 14rem);
   }
 
   &__logo {
@@ -218,7 +218,7 @@ $colors: (
 
   &__navigation {
     @include clear-list;
-    @include layout-stack(spacer('xs'));
+    @include layout-stack('xs');
 
     a {
       color: color(text);
