@@ -45,14 +45,8 @@
       line-height: config('line-height-md', $typography);
       text-decoration: none;
 
-      &:hover,
-      &.active {
+      &:hover {
         color: color('primary');
-      }
-
-      &.active {
-        @include sidebar-active-menu-marker;
-
       }
     }
   }

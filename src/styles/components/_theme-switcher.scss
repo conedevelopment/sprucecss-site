@@ -47,6 +47,7 @@
     }
   }
 
+  /* stylelint-disable-next-line selector-no-qualifying-type */
   select.form-control:not([multiple]):not([size]) {
     @include field-icon(
       config('select', $form-icon, false),

@@ -3,10 +3,6 @@
 .l-colors {
   @include layout-stack('m');
 
-  &__title {
-
-  }
-
   &__inner {
     @include layout-grid($minimum: 15rem);
   }

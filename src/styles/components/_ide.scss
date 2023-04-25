@@ -142,11 +142,6 @@
     padding: 0;
     text-align: start;
 
-    &.active {
-      color: color('heading');
-      font-weight: 500;
-    }
-
     svg {
       --dimension: 0.85rem;
       color: hsl(330deg 53% 60%);
@@ -154,5 +149,10 @@
       height: var(--dimension);
       width: var(--dimension);
     }
+  }
+
+  .active {
+    color: color('heading');
+    font-weight: 500;
   }
 }
