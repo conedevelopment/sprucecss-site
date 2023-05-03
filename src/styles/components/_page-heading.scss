@@ -6,7 +6,7 @@
   gap: spacer('s');
   grid-template-columns: minmax(0, 1fr);
   justify-content: center;
-  padding-block: clamp(spacer('xxl'), 10vw, 6rem) clamp(spacer('xxl'), 10vw, 8rem);
+  padding-block: clamp(spacer('l'), 10vw, 5rem) clamp(spacer('xl'), 10vw, 8rem);
   text-align: center;
 
   @include breakpoint('md') {
