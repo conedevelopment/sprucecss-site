@@ -12,7 +12,7 @@ You can access any setting with the [setting() helper function](/docs/sass/funct
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/config/_setting.scss)
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $settings: (
     'color-fallback': false,
     'css-custom-properties': false,
@@ -51,7 +51,7 @@ body {
 Turn on the color fallback:
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $settings: (
     'color-fallback': true,
   ),
@@ -65,7 +65,7 @@ By default, Spruce doesn't generate unnecessary CSS variables only for the color
 <Notification type="info">If you want to see this in action, debug any button on this site.</Notification>
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $settings: (
     'css-custom-properties': true,
   ),
@@ -77,7 +77,7 @@ By default, Spruce doesn't generate unnecessary CSS variables only for the color
 Turn off the smooth scrolling (`scroll-behavior: smooth;`) on the html element. You maybe need this because you work with a SPA, and it interferes with its transitions.
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $settings: (
     'html-smooth-scrolling': false,
   ),
@@ -92,7 +92,7 @@ By default Spruce uses a simple hyphenation setup [which you can find here](http
 Turn off the hyphenation:
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $settings: (
     'hyphens': false,
   ),
@@ -108,7 +108,7 @@ Using the mentioned functions, you can modify this value per call too. A global 
 Modify the optimal font-size value:
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $settings: (
     'optimal-responsive-font-size': '5vw + 1',
   ),
@@ -131,7 +131,7 @@ Using the mentioned function, you can modify this value per call too. A global f
 Modify the optimal spacer size value:
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $settings: (
     'optimal-spacer-size': '5vw',
   ),
@@ -148,7 +148,7 @@ Spruce CSS uses this prefix for generating the custom properties.
 Modify the prefix value:
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $settings: (
     'prefix': 'my-custom-prefix',
   ),
@@ -174,7 +174,7 @@ You can also set `null` value to remove them.
 Spruce comes with a small set of print styles. To turn them on, set the `print` value to `true`.
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $settings: (
     'print': true,
   ),
@@ -186,7 +186,7 @@ Spruce comes with a small set of print styles. To turn them on, set the `print` 
 We use just a few classical utility classes. We don’t plan to add too much in the future, but it can change. If we create more, it sure will always be opt-in.
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $settings: (
     'utilities': (
       'display': true,

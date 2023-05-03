@@ -39,7 +39,7 @@ With the help of the [mixins](/docs/sass/mixins) and [functions](/docs/sass/func
 To import it into your project, you must use Sass’s `@use`, a newer type of `@import` similar to the JavaScript modules. Unlike using `@import`, you must import (use it) it in every file where you want to use Spruce, its variables, functions, or mixins.
 
 ``` scss
-@use '~sprucecss/scss/spruce' as *;
+@use 'sprucecss/scss/spruce' as *;
 ```
 
 ### Namespacing
@@ -57,7 +57,7 @@ We include the <a href="/docs/sass/mixins/#layout-stack" className="code-link">`
 If you prefer the namespaces, leave the `as *` part out and use the following:
 
 ```scss
-@use '~sprucecss/scss/spruce';
+@use 'sprucecss/scss/spruce';
 
 .section {
   @include spruce.layout-stack('m');
@@ -75,7 +75,7 @@ To load the styles, you need to include a generator mixin. A generator (a naming
 You can control the flow of the style generation in a lot of ways (for more information, [please visit our Generators page](/docs/elements/generators)), but there is one main mixin to use:
 
 ```scss
-@use '~sprucecss/scss/spruce' as *;
+@use 'sprucecss/scss/spruce' as *;
 
 @include spruce.generate-styles;
 ```

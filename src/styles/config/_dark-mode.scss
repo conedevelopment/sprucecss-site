@@ -1,4 +1,4 @@
-@use '~sprucecss/scss/spruce' as *;
+@use 'sprucecss/scss/spruce' as *;
 
 @include generate-color-variables(
   $dark-colors,

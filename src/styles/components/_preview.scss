@@ -1,4 +1,4 @@
-@use '~sprucecss/scss/spruce' as *;
+@use 'sprucecss/scss/spruce' as *;
 
 .preview {
   @include layout-stack('m', $important: true);

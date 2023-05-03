@@ -2,7 +2,7 @@
 @forward 'components';
 @forward 'layouts';
 
-@use '~sprucecss/scss/spruce' as *;
+@use 'sprucecss/scss/spruce' as *;
 
 :root {
   @include set-css-variable((

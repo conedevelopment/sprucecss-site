@@ -394,7 +394,7 @@ We store the color values in a central map named `$colors`. It is a nested objec
 To eliminate the repetition, we use some helper variables for the more generic colors (which we use more than once). You can overwrite these directly to make the theming easier or from the object one by one.
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $color-black: hsl(205deg 100% 2%),
   $color-danger: hsl(0deg 71% 51%),
   $color-gray: hsl(208deg 9% 42%),
@@ -411,7 +411,7 @@ To eliminate the repetition, we use some helper variables for the more generic c
 Below is the full declaration of the `$colors` map.
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $colors: (
     'alert': (
       'danger': $color-danger,
@@ -507,7 +507,7 @@ Because the colors are in a Sass map, it is easy to overwrite them or add new va
 
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $colors: (
     'base': (
       'primary': hsl(0 0% 15%),
@@ -535,7 +535,7 @@ In this example, you can see how you can generate a component - an alert - using
 ```scss
 @use 'sass:color';
 @use 'sass:map';
-@use '~sprucecss/scss/spruce' as *;
+@use 'sprucecss/scss/spruce' as *;
 
 .alert {
   border: 1px solid;

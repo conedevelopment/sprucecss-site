@@ -34,7 +34,7 @@ Using `generate-color-variables`, we can generate our CSS variables from a map o
 #### Example(s)
 
 ```scss
-@use '~sprucecss/scss/spruce' as *;
+@use 'sprucecss/scss/spruce' as *;
 
 @include generate-color-variables(
   $colors,
@@ -48,7 +48,7 @@ Using `generate-color-variables`, we can generate our CSS variables from a map o
 The `generate-styles` is a shorthand to call all the mixins from below the list. You can control the output by the [$generators](/docs/sass/variables/#generators) map.
 
 ```scss
-@use '~sprucecss/scss/spruce' as *;
+@use 'sprucecss/scss/spruce' as *;
 
 @include generate-style;
 ```

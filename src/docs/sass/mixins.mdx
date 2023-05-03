@@ -63,7 +63,7 @@ Using the `btn-variant` mixin, you can create a new button variant. First, you m
 Declare the colors of the button. The mixin will search for the keys under the btn object.
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $colors: (
     'btn': (
       'custom-background': hsl(0deg 0% 95%),
@@ -76,7 +76,7 @@ Declare the colors of the button. The mixin will search for the keys under the b
 In many cases, declaring just the background and foreground color is enough. Spruce will generate the rest (hover states). But if you want to control more or use dark mode (where you want to overwrite the color values), you can be more specific.
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $colors: (
     'btn': (
       'primary-background': hsl(261deg 52% 59%),

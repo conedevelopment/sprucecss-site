@@ -69,7 +69,7 @@ Under the **_config.scss** file load these colors:
 ```scss
 @use 'dark-colors' as dark;
 
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $dark-colors: dark.$colors
 );
 ```
@@ -85,7 +85,7 @@ If you create a dark mode, you must identify the theme mode somehow. A typical p
 After this, we can target our `<html>` element (with :root) with the `data-theme-mode="dark"` attribute selector. Hence overwrite the default colors if the attribute with the correct value is present.
 
 ```scss
-@use '~sprucecss/scss/spruce' as *;
+@use 'sprucecss/scss/spruce' as *;
 
 @include generate-color-variables(
   $dark-colors,
@@ -110,7 +110,7 @@ This will control your browser’s UI color, like the dark sidebar.
 In Spruce, the icon of the select element is an inline SVG, so we can’t use CSS variables. Just typical color values to color it. Because of this, we must regenerate it under our theme modes (if needed).
 
 ```scss
-@use '~sprucecss/scss/spruce' as *;
+@use 'sprucecss/scss/spruce' as *;
 
 [data-theme-mode='dark'] {
   select.form-control:not([multiple]):not([size]) {

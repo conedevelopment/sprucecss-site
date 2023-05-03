@@ -1,5 +1,5 @@
 @use '../config/dark-colors' as dark;
-@use '~sprucecss/scss/spruce' as *;
+@use 'sprucecss/scss/spruce' as *;
 
 .site-footer {
   background-color: color('background', 'footer');

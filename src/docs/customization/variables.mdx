@@ -14,7 +14,7 @@ To get a variable, you have to use one of the getters or the variable name with 
 To see the complete list of the getter functions, please visit the [functions page](/docs/sass/functions).
 
 ```scss
-@use '~sprucecss/scss/spruce' as *;
+@use 'sprucecss/scss/spruce' as *;
 
 .component {
   border-radius: config('border-radius-lg', $display);
@@ -29,7 +29,7 @@ To see the complete list of the getter functions, please visit the [functions pa
 There are two types of variables: single one and map. All of them are overwritable, expandable with ```@use```'s ```with``` option.
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $colors: (
     'base': (
       'primary-darkest': hsl(272deg 100% 9%),

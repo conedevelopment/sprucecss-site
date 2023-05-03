@@ -12,7 +12,7 @@ Our central concept is not to expose a CSS custom property that isn’t needed f
 By default, Spruce only generates CSS variables for the colors and transition settings. If you turn on the `css-custom-properties` to true, it will also generate additional ones for the buttons, form elements, etc.
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $settings: (
     'css-custom-properties': true,
   ),
@@ -31,7 +31,7 @@ We store the breakpoints in the `$breakpoints` map, which we use in the <code><a
 [View on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/config/_breakpoint.scss)
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $breakpoints: (
     'xs': 32em,
     'sm': 48em,
@@ -46,7 +46,7 @@ We store the breakpoints in the `$breakpoints` map, which we use in the <code><a
 ## Buttons
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $btn: (
     'border-radius': map.get($display, 'border-radius-sm'),
     'focus-ring-box-shadow-type': outside,
@@ -88,7 +88,7 @@ We use the `$escaping-characters` under the <code><a href="/docs/sass/functions/
 [View on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/config/_escaping-characters.scss)
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $escaping-characters: (
     ('<', '%3c'),
     ('>', '%3e'),
@@ -102,7 +102,7 @@ We use the `$escaping-characters` under the <code><a href="/docs/sass/functions/
 ## Display
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $display: (
     'border-radius-lg': 0.725rem,
     'border-radius-sm': 0.325rem,
@@ -113,7 +113,7 @@ We use the `$escaping-characters` under the <code><a href="/docs/sass/functions/
 ## Form Check
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $form-check: (
     'border-width': 1px,
     'border-radius': map.get($display, border-radius-sm),
@@ -139,7 +139,7 @@ We use the `$escaping-characters` under the <code><a href="/docs/sass/functions/
 ## Form Control
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $form-control: (
     'font-size': map.get($typography, 'font-size-base'),
     'font-weight': null,
@@ -186,7 +186,7 @@ We use the `$escaping-characters` under the <code><a href="/docs/sass/functions/
 ## Form Description
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $form-description: (
     'font-size': null,
     'font-style': null,
@@ -198,7 +198,7 @@ We use the `$escaping-characters` under the <code><a href="/docs/sass/functions/
 ## Form Fieldset
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $form-fieldset: (
     'gap': map.get($spacers, 's'),
     'legend-font-size': clamp(#{map.get($font-sizes, 'h5')}, 5vw, #{map.get($font-sizes, 'h4')}),
@@ -210,7 +210,7 @@ We use the `$escaping-characters` under the <code><a href="/docs/sass/functions/
 ## Form File
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $form-file: (
     'background': 'primary',
   ),
@@ -220,7 +220,7 @@ We use the `$escaping-characters` under the <code><a href="/docs/sass/functions/
 ## Form Icon
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $form-icon: (
     'checkbox-indeterminate': '<svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M19.5,11.1c-0,-0.331 -0.269,-0.6 -0.6,-0.6l-13.8,0c-0.331,0 -0.6,0.269 -0.6,0.6l0,1.8c0,0.331 0.269,0.6 0.6,0.6l13.8,0c0.331,0 0.6,-0.269 0.6,-0.6l-0,-1.8Z" style="fill:#COLOR#;"/></svg>',
     'checkbox': '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.525,13.777l-2.411,-2.412c-0.234,-0.233 -0.613,-0.233 -0.846,0l-1.27,1.27c-0.233,0.233 -0.233,0.612 0,0.846l4.104,4.103c0.116,0.117 0.269,0.175 0.422,0.175l0.003,0c0.152,0 0.305,-0.058 0.421,-0.175l9.054,-9.053c0.233,-0.234 0.233,-0.613 -0,-0.846l-1.27,-1.269c-0.233,-0.234 -0.612,-0.234 -0.846,-0l-7.361,7.361Z" style="fill:#COLOR#;"/></svg>',
@@ -236,7 +236,7 @@ We use the `$escaping-characters` under the <code><a href="/docs/sass/functions/
 ## Form Label
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $form-label: (
     'font-size': null,
     'font-style': null,
@@ -248,7 +248,7 @@ We use the `$escaping-characters` under the <code><a href="/docs/sass/functions/
 ## Form Range
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $form-range: (
     'focus-ring-box-shadow-type': outside,
     'focus-ring-offset': 2px,
@@ -266,7 +266,7 @@ We use the `$escaping-characters` under the <code><a href="/docs/sass/functions/
 ## Form Row
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $form-row: (
     'col-width': 20ch,
   ),
@@ -276,7 +276,7 @@ We use the `$escaping-characters` under the <code><a href="/docs/sass/functions/
 ## Form Select
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $form-select: (
     'icon-width': 1.25em,
     'icon-right-offset': 0.5em,
@@ -288,7 +288,7 @@ We use the `$escaping-characters` under the <code><a href="/docs/sass/functions/
 ## Form Switch
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $form-switch: (
     'border-width': 1px,
     'font-size': 1.125rem,
@@ -308,7 +308,7 @@ We use the `$escaping-characters` under the <code><a href="/docs/sass/functions/
 ## Generators
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $generators: (
     'content': (
       'accessibility': true,
@@ -345,7 +345,7 @@ We use the `$escaping-characters` under the <code><a href="/docs/sass/functions/
 ## Layout
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $layout: (
     'container-width': 84rem,
   ),
@@ -360,7 +360,7 @@ To learn more about the print option, [please visit the related page](/docs/gett
 [View on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/config/_print.scss)
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $print: (
     'page-margin': 2cm,
     'hidden-elements': 'header, footer, aside, nav, form, iframe, [class^="aspect-ratio"]',
@@ -376,7 +376,7 @@ Spacers are generated by a predefined $spacer value, and the `$spacers` map with
 Using the [spacer()](/docs/sass/functions/#spacer) helper function we can get any value by key name from the `$spacers` map.
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $spacer: 1rem,
   $spacers: (
     'xxs': $spacer * 0.25,
@@ -394,7 +394,7 @@ Using the [spacer()](/docs/sass/functions/#spacer) helper function we can get an
 ## Tables
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $table: (
     'caption-font-size': null,
     'caption-font-style': null,
@@ -413,7 +413,7 @@ Using the [spacer()](/docs/sass/functions/#spacer) helper function we can get an
 ## Transition and Animation
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $transition: (
     'duration': 0.15s,
     'timing-function': ease-in-out,
@@ -427,7 +427,7 @@ Using the [spacer()](/docs/sass/functions/#spacer) helper function we can get an
 You can access any font size with the [font-size() helper function](/docs/sass/functions#font-size).
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $typography: (
     'font-family-base': #{eravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif},
     'font-family-cursive': #{ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace},
