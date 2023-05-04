@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const onRenderBody = ({ setHeadComponents, setHtmlAttributes }) => {
-  setHtmlAttributes({ lang: "en" });
+  setHtmlAttributes({ lang: 'en' });
 
   setHeadComponents([
     <script
@@ -40,6 +40,6 @@ export const onRenderBody = ({ setHeadComponents, setHtmlAttributes }) => {
           })();
         `
       }}
-    />,
+    />
   ]);
 };

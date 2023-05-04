@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { Link } from 'gatsby';
+import React from 'react';
 
 export default function Card({ post }) {
   const image = getImage(post.frontmatter.featuredImage);

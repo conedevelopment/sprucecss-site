@@ -1,9 +1,7 @@
-import React from 'react';
-
-// Images
 import CheckIcon from '../../images/icons/check.svg';
-import InfoIcon from '../../images/icons/info.svg';
 import CrossIcon from '../../images/icons/cross.svg';
+import InfoIcon from '../../images/icons/info.svg';
+import React from 'react';
 
 export default function Notification({ children, type, icon = true }) {
   let iconSVG;

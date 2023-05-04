@@ -1,40 +1,54 @@
+import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
-import { Link } from 'gatsby';
+import GettingStartedCard from './card/GettingStarted';
 
-// Images
-import Documentation from '../images/icons/documentation.svg';
-import Components from '../images/icons/components.svg';
-import Blog from '../images/icons/blog.svg';
-
-export default function GettingStarted({ classes }) {
+export default function GettingStarted({ type }) {
   return (
-    <div className="getting-started">
+    <div className={`getting-started ${type === 'bottom' ? 'getting-started--border-block-start' : 'getting-started--border-block-end'}`}>
       <div className="container">
-        <div className="heading">
-          <h2 className="heading__title">Explore</h2>
-        </div>
         <div className="getting-started__inner">
-          <div className="getting-started-card">
-            <Documentation className="getting-started-card__icon" />
-            <h3>
-              <Link className="getting-started-card__link" to="/docs/getting-started/introduction">Documentation</Link>
-            </h3>
-            <p>Learn about Spruce CSS through our extensive documentation.</p>
-          </div>
-          <div className="getting-started-card">
-            <Components className="getting-started-card__icon" />
-            <h3>
-              <Link className="getting-started-card__link" to="/ui/getting-started/introduction">Components</Link>
-            </h3>
-            <p>Explore our extensive UI library built with Spruce CSS.</p>
-          </div>
-          <div className="getting-started-card">
-            <Blog className="getting-started-card__icon" />
-            <h3>
-              <Link className="getting-started-card__link" to="/blog">Blog</Link>
-            </h3>
-            <p>Read about front-end development and concepts of Spruce CSS.</p>
-          </div>
+          <GettingStartedCard
+            description="Learn about Spruce CSS through our extensive documentation."
+            link="/docs/getting-started/introduction"
+            title="Documentation"
+          >
+            <StaticImage
+              alt=""
+              className="getting-started-card__icon"
+              objectFit="contain"
+              placeholder="blurred"
+              src="../images/icons/documentation.png"
+              width={160}
+            />
+          </GettingStartedCard>
+          <GettingStartedCard
+            description="Explore our extensive UI library built with Spruce CSS."
+            link="/ui/getting-started/introduction"
+            title="Components"
+          >
+            <StaticImage
+              alt=""
+              className="getting-started-card__icon"
+              objectFit="contain"
+              placeholder="blurred"
+              src="../images/icons/components.png"
+              width={160}
+            />
+          </GettingStartedCard>
+          <GettingStartedCard
+            description="Read about front-end development and concepts of Spruce CSS."
+            link="/blog"
+            title="Blog"
+          >
+            <StaticImage
+              alt=""
+              className="getting-started-card__icon"
+              objectFit="contain"
+              placeholder="blurred"
+              src="../images/icons/blog.png"
+              width={160}
+            />
+          </GettingStartedCard>
         </div>
       </div>
     </div>

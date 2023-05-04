@@ -1,10 +1,8 @@
-import React from 'react';
-import { Link, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-
-// Import components
+import { Link, graphql } from 'gatsby';
 import GettingStarted from '../components/GettingStarted';
 import Layout from '../components/Layout';
+import React from 'react';
 import Seo from '../components/Seo';
 
 export default function Post({ data: { mdx }, children }) {
@@ -16,7 +14,7 @@ export default function Post({ data: { mdx }, children }) {
       <main id="content" className="post">
         <article>
           <div className="post-heading">
-            <div className="container--narrow">
+            <div className="container container--narrow">
               <div className="post-heading__inner">
                 <h1 className="post-heading__title">{title}</h1>
                 <ul className="breadcrumb-list">
@@ -56,7 +54,7 @@ export default function Post({ data: { mdx }, children }) {
               </div>
             </div>
           </div>
-          <div className="container--narrow">
+          <div className="container container--narrow">
             <div className="post-content post-content--blog">
               <GatsbyImage image={image} alt={alt} />
               {children}
@@ -64,17 +62,17 @@ export default function Post({ data: { mdx }, children }) {
           </div>
         </article>
       </main>
-      <GettingStarted />
+      <GettingStarted type="bottom" />
     </Layout>
   );
 }
 
 export function Head({ data: { mdx } }) {
-  const { title, featuredImage } = mdx.frontmatter;
+  const { title, description, featuredImage } = mdx.frontmatter;
   const image = getImage(featuredImage);
 
   return (
-    <Seo title={title} image={`https://sprucecss.com${image.images.fallback.src}`} />
+    <Seo title={title} image={`https://sprucecss.com${image.images.fallback.src}`} description={description} />
   );
 }
 
@@ -87,6 +85,7 @@ export const query = graphql`
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
+        description
         tags
         featuredImage {
           childImageSharp {

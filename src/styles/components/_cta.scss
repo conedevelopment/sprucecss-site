@@ -1,0 +1,45 @@
+@use 'sprucecss/scss/spruce' as *;
+
+.cta {
+  background-image: linear-gradient(
+    250deg,
+    hsl(345deg 100% 42%) 0%,
+    hsl(16deg 65% 53%) 19%,
+    hsl(36deg 62% 53%) 27%,
+    hsl(58deg 54% 51%) 34%,
+    hsl(78deg 66% 58%) 41%,
+    hsl(95deg 50% 61%) 47%,
+    hsl(135deg 40% 60%) 53%,
+    hsl(168deg 53% 47%) 59%,
+    hsl(187deg 57% 42%) 66%,
+    hsl(209deg 49% 45%) 73%,
+    hsl(228deg 54% 44%) 81%,
+    hsl(235deg 79% 38%) 100%
+  );
+  padding-block: get-css-variable(--section-gap-half);
+
+  &__inner {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: spacer('m') spacer('l');
+    justify-content: space-between;
+  }
+
+  &__caption {
+    @include layout-stack('s');
+  }
+
+  .heading {
+    margin-block-end: 0;
+  }
+
+  * {
+    color: hsl(0deg 0% 100%);
+  }
+
+  p {
+    font-size: 1.2rem;
+    max-width: 55ch;
+  }
+}

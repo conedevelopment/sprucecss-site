@@ -1,13 +1,13 @@
-@use '~sprucecss/scss/spruce';
+@use '../config/dark-colors' as dark;
+@use 'sprucecss/scss/spruce' as *;
 
 .theme-switcher {
-  color: spruce.color(text);
   display: inline-flex;
   position: relative;
 
   &__icon {
     align-items: center;
-    color: spruce.color(heading);
+    color: color('text', $only-color: true, $map: dark.$colors);
     display: flex;
     inset: 0 auto 0 0;
     justify-content: center;
@@ -29,6 +29,29 @@
   }
 
   &__select {
+    background-color: color('background', 'footer');
+    border-color: color('border', $only-color: true, $map: dark.$colors);
+    color: color('text', $only-color: true, $map: dark.$colors);
+    font-size: 0.9375rem;
     padding-inline-start: 2rem;
+
+    &:focus {
+      @include focus-ring(
+        $type: config('focus-ring-type', $form-control),
+        $border-color: color('border-focus', 'form', true, dark.$colors),
+        $ring-color: color('ring-focus', 'form', true, dark.$colors),
+        $box-shadow-type: config('focus-ring-box-shadow-type', $form-control),
+        $ring-width: config('focus-ring-width', $form-control),
+        $ring-offset: config('focus-ring-offset', $form-control),
+      );
+    }
+  }
+
+  /* stylelint-disable-next-line selector-no-qualifying-type */
+  select.form-control:not([multiple]):not([size]) {
+    @include field-icon(
+      config('select', $form-icon, false),
+      color('select-foreground', 'form', true, dark.$colors)
+    );
   }
 }

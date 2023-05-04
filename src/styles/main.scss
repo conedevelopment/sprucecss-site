@@ -1,24 +1,26 @@
-// Load Spruce CSS
 @forward 'config';
-
-// Load components
 @forward 'components';
 @forward 'layouts';
 
-@use '~sprucecss/scss/spruce';
+@use 'sprucecss/scss/spruce' as *;
 
-body {
-  --doc-heading-font-family: 'Sora', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --doc-body-font-family: 'Open Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --doc-border-radius-sm: 0.75rem;
-  --doc-border-radius-lg: 2rem;
-
-  background-color: spruce.color(background);
-  font-family: var(--doc-body-font-family);
+:root {
+  @include set-css-variable((
+    --section-gap: clamp(5rem, 8vw, 9rem),
+    --section-gap-half: clamp(3.5rem, 8vw, 6rem),
+  ));
 }
 
-html {
-  scroll-behavior: unset;
+body {
+  --doc-heading-font-family: 'Sora', sans-serif;
+  --doc-body-font-family: 'Inter', sans-serif;
+  --doc-border-radius-sm: 0.75rem;
+  --doc-border-radius-md: 0.925rem;
+  --doc-border-radius-lg: 2rem;
+
+  background-color: color('background');
+  font-family: var(--doc-body-font-family);
+  overflow-x: hidden;
 }
 
 h1,
@@ -30,14 +32,24 @@ h6 {
   font-family: var(--doc-heading-font-family);
 }
 
-.btn--rounded { border-radius: spruce.$border-radius-lg; }
-.btn--install { @include spruce.btn-variant(install); }
-.btn--decline { @include spruce.btn-variant(decline); }
-.btn--discrete { @include spruce.btn-variant(discrete); }
-
-.lead {
-  color: spruce.color(heading);
+.btn--rounded {
+  border-radius: var(--doc-border-radius-md);
 }
+
+.btn--rounded:not(.btn--icon) {
+  text-transform: uppercase;
+  font-size: 0.91375rem;
+  font-weight: 700;
+}
+
+.btn--rounded.btn--lg {
+  padding: 1.25em 1.5em;
+}
+
+.btn--install { @include btn-variant('install'); }
+.btn--decline { @include btn-variant('decline'); }
+.btn--discrete { @include btn-variant('discrete'); }
+.btn--dark { @include btn-variant('dark'); }
 
 .table {
   &--font-size-reset {
@@ -47,41 +59,5 @@ h6 {
   th,
   td {
     min-width: 10rem;
-  }
-
-  &--striped > tbody > tr:nth-child(odd) {
-    background-color: spruce.color(stripe, table);
-  }
-
-  &--striped > tbody > tr:nth-child(even) {
-    background-color: transparent;
-  }
-}
-
-.anchor-heading {
-  padding-inline-end: 2rem;
-  position: relative;
-
-  &:hover {
-    > a {
-      opacity: 1;
-    }
-  }
-
-  > a {
-    inset-inline-end: 0;
-    opacity: 0;
-    position: absolute;
-    text-decoration: none;
-    top: calc(50% - 0.625em);
-
-    &:focus {
-      opacity: 1;
-    }
-
-    svg {
-      height: 1.25rem;
-      width: 1.25rem;
-    }
   }
 }

@@ -1,0 +1,158 @@
+@use 'sprucecss/scss/spruce' as *;
+
+.ide-wrapper {
+  margin-inline: auto;
+  max-width: 74rem;
+  padding-block-end: get-css-variable(--section-gap);
+}
+
+.ide {
+  background-color: color('background');
+  border: 1px solid color('border');
+  border-radius: config('border-radius-sm', $display);
+  box-shadow: 0 0 3rem hsl(0deg 0% 0% / 10%);
+  font-size: 0.9375rem;
+  margin-inline: auto;
+
+  &__header {
+    align-items: center;
+    background-color: color('header-background', 'ide');
+    border-radius: config('border-radius-sm', $display) config('border-radius-sm', $display) 0 0;
+    padding: 0.45rem 1.25rem;
+    display: flex;
+    gap: 1rem;
+    color: hsl(0deg 0% 100%);
+  }
+
+  &__controls {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &__control {
+    --dimension: 0.75rem;
+    border-radius: 50%;
+    height: var(--dimension);
+    width: var(--dimension);
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    position: relative;
+    overflow: hidden;
+
+    @include breakpoint('md') {
+      grid-template-columns: minmax(0, 16.5rem) minmax(0, 1fr);
+    }
+  }
+
+  &__toggle {
+    border-start-end-radius: 0 !important;
+    border-end-end-radius: 0 !important;
+    border-end-start-radius: 0 !important;
+    inset: auto 0 0 auto;
+    position: absolute;
+
+    @include breakpoint('md') {
+      display: none;
+      position: relative;
+    }
+  }
+
+  &__sidebar {
+    background-color: color('background');
+    inset: 0 0 0 auto;
+    position: absolute;
+    z-index: 2;
+
+    @include breakpoint('md') {
+      position: relative;
+    }
+
+    &-helper {
+      @include layout-stack('s');
+      display: none;
+      height: 100%;
+      padding: 2rem;
+      overflow-y: auto;
+
+      @include breakpoint('md') {
+        display: block !important;
+      }
+    }
+  }
+
+  &__editor,
+  .prism-code-wrapper,
+  .prism-code {
+    height: 100%;
+    max-height: 28rem;
+  }
+
+  pre[class*=language-] {
+    border-radius: 0 0 config('border-radius-sm', $display) 0;
+    padding: 2rem 2.25rem;
+  }
+}
+
+.ide-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85em;
+
+  &__title {
+    align-items: center;
+    display: flex;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    gap: spacer('xs');
+    line-height: 1;
+    margin-block: 0;
+
+    svg {
+      --dimension: 0.9rem;
+      color: hsl(207deg 90% 61%);
+      flex-shrink: 0;
+      height: var(--dimension);
+      width: var(--dimension);
+    }
+  }
+
+  &__list {
+    @include clear-list;
+    @include layout-stack(0.85em);
+
+    &--border {
+      border-inline-start: 1px solid color('border');
+      margin-inline-start: spacer('xs');
+      padding-inline-start: spacer('s');
+    }
+  }
+
+  button {
+    align-items: center;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    font-family: var(--doc-heading-font-family);
+    gap: spacer('xs');
+    line-height: 1;
+    padding: 0;
+    text-align: start;
+
+    svg {
+      --dimension: 0.85rem;
+      color: hsl(330deg 53% 60%);
+      flex-shrink: 0;
+      height: var(--dimension);
+      width: var(--dimension);
+    }
+  }
+
+  .active {
+    color: color('heading');
+    font-weight: 500;
+  }
+}

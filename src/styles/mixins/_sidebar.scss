@@ -1,13 +1,13 @@
-@use '~sprucecss/scss/spruce';
+@use 'sprucecss/scss/spruce' as *;
 
 @mixin sidebar-active-menu-marker {
-  color: spruce.color(heading);
+  color: color('heading');
   font-weight: 700;
   position: relative;
 
   &::before {
-    background-color: spruce.color(primary);
-    border-radius: 0 spruce.$border-radius-sm spruce.$border-radius-sm 0;
+    background-color: color('primary');
+    border-radius: 0 config('border-radius-sm', $display) config('border-radius-sm', $display) 0;
     bottom: 0;
     content: '';
     inset-inline-start: -1rem;
@@ -18,7 +18,7 @@
 }
 
 @mixin sidebar-title {
-  color: spruce.color(heading);
-  font-size: spruce.$font-size-base;
+  color: color('heading');
+  font-size: config('font-size-base', $typography);
   margin-block: 0;
 }

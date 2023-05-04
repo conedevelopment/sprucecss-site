@@ -34,36 +34,31 @@ Declaring the colors can be extensive, so it is best to separate it into its fil
 ```scss
 @use 'sass:color';
 
-$color-primary: hsl(261 54% 70%);
-$color-secondary: hsl(227 92% 55%);
-
-$color-black: hsl(206 100% 7%);
-$color-white: hsl(0 0% 95%);
-
-$color-gray: hsl(0 0% 97%);
-$color-gray-dark: hsl(0 0% 100% / 8%);
-
-$color-danger: hsl(0 71% 51%);
-$color-success: hsl(150 100% 33%);
+$color-black: hsl(206deg 100% 7%);
+$color-danger: hsl(0deg 71% 51%);
+$color-gray: hsl(0deg 0% 97%);
+$color-gray-dark: hsl(0deg 0% 100% / 8%);
+$color-primary: hsl(261deg 54% 70%);
+$color-secondary: hsl(227deg 92% 55%);
+$color-success: hsl(150deg 100% 33%);
+$color-white: hsl(0deg 0% 95%);
 
 $colors: (
-  base: (
-    card-border: hsl(207 90% 13%),
-    primary: $color-primary,
-    secondary: $color-secondary,
-    background: $color-black,
-    heading: $color-white,
-    text: $color-gray,
-    link: $color-primary,
-    link-hover: color.scale($color-primary, $lightness: -20%),
-    border: $color-gray-dark,
-    mark-background: hsl(50 100% 80%),
-    mark-foreground: $color-black,
-    marker: $color-primary,
-    code-background: hsl(207 64% 21%),
-    code-foreground: $color-white,
-    blockquote-border: $color-primary,
-    footer-background: hsl(0 0% 0% / 0.15)
+  'base': (
+    'background': $color-black,
+    'blockquote-border': $color-primary,
+    'border': $color-gray-dark,
+    'code-background': hsl(207deg 64% 18%),
+    'code-foreground': $color-white,
+    'heading': $color-white,
+    'link': $color-primary,
+    'link-hover': color.scale($color-primary, $lightness: -20%),
+    'mark-background': hsl(50deg 100% 80%),
+    'mark-foreground': $color-black,
+    'marker': $color-primary,
+    'primary': $color-primary,
+    'secondary': $color-secondary,
+    'text': $color-gray,
   ),
   ...
 );
@@ -74,7 +69,7 @@ Under the **_config.scss** file load these colors:
 ```scss
 @use 'dark-colors' as dark;
 
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $dark-colors: dark.$colors
 );
 ```
@@ -90,10 +85,10 @@ If you create a dark mode, you must identify the theme mode somehow. A typical p
 After this, we can target our `<html>` element (with :root) with the `data-theme-mode="dark"` attribute selector. Hence overwrite the default colors if the attribute with the correct value is present.
 
 ```scss
-@use '~sprucecss/scss/spruce';
+@use 'sprucecss/scss/spruce' as *;
 
-@include spruce.generate-color-variables(
-  spruce.$dark-colors,
+@include generate-color-variables(
+  $dark-colors,
   ':root[data-theme-mode="dark"]'
 );
 ```
@@ -115,13 +110,13 @@ This will control your browser’s UI color, like the dark sidebar.
 In Spruce, the icon of the select element is an inline SVG, so we can’t use CSS variables. Just typical color values to color it. Because of this, we must regenerate it under our theme modes (if needed).
 
 ```scss
-@use '~sprucecss/scss/spruce';
+@use 'sprucecss/scss/spruce' as *;
 
 [data-theme-mode='dark'] {
   select.form-control:not([multiple]):not([size]) {
-    @include spruce.field-icon(
-      spruce.$select-icon,
-      spruce.color(select-foreground, form, true, spruce.$dark-colors)
+    @include field-icon(
+      config('select', $form-icon, false),
+      color('select-foreground', 'form', true, $dark-colors)
     );
   }
 }

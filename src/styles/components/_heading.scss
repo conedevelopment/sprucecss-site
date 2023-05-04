@@ -1,12 +1,26 @@
-@use '~sprucecss/scss/spruce';
+@use 'sprucecss/scss/spruce' as *;
 
 .heading {
-  @include spruce.layout-stack(spruce.spacer(m));
-  margin-block-end: spruce.spacer(l);
-  text-align: center;
+  $this: &;
+
+  @include layout-stack('xs');
+  margin-block-end: spacer('l');
+
+  &--center {
+    text-align: center;
+
+    #{$this}__description {
+      margin-inline: auto;
+    }
+  }
 
   &__title {
-    font-size: spruce.responsive-font-size(2.4rem);
-    margin-block: 0;
+    font-size: responsive-font-size(3rem, 30);
+  }
+
+  &__description {
+    font-size: responsive-font-size(1.25rem, 20, '0.5rem + 1vw');
+    line-height: config('line-height-md', $typography);
+    max-width: 50ch;
   }
 }

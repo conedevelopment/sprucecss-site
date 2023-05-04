@@ -1,6 +1,6 @@
 ---
 title: 'Tables'
-order: 18
+order: 20
 github: 'https://github.com/conedevelopment/sprucecss-site/blob/main/src/docs/elements/tables.mdx'
 ---
 
@@ -12,7 +12,7 @@ Use the `table` class on an HTML `<table>` element to use the default styling.
 
 <Preview>
   {
-    <table>
+    <table className="table">
       <caption>A generic introduction to the table.</caption>
       <thead>
         <tr>
@@ -63,7 +63,7 @@ Use the `table` class on an HTML `<table>` element to use the default styling.
 
 Use the `table--striped` class on a `<table>` to display a zebra-striped styling. To add hover style to the table rows, use the `table--hover` class.
 
-You control the stripe pattern with the <code><a href="/docs/sass/variables#tables">$table-stripe</a></code> variable (odd, even).
+You control the stripe pattern with the <code><a href="/docs/sass/variables#tables">config('stripe', $table)</a></code> variable (odd, even).
 
 <Preview>
   {
@@ -315,7 +315,7 @@ Use the `table--in-line` class on a `<table>` to remove the inline padding from 
 
 Adding the `<div class="table-responsive"></div>` as a wrapper element you can make the tables horizontally scrollable.
 
-You can control the width of the scrollable table with the `$table-responsive-width` globally and locally with the `--min-width` custom property.
+You can control the width of the scrollable table with the `config('responsive-width', $table)` globally and locally with the `--min-width` custom property.
 
 ```html
 <div class="table-responsive">

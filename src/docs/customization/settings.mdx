@@ -1,42 +1,49 @@
 ---
 title: 'Settings'
+description: 'By changing the settings parameters, you can customize a generic part of the behavior of Spruce CSS.'
 order: 11
 github: 'https://github.com/conedevelopment/sprucecss-site/blob/main/src/docs/customization/settings.mdx'
 ---
 
 <p className="lead">In Spruce CSS, the settings are global options controlled through a Sass map.</p>
 
-You can access any setting with the [setting() helper function](/docs/sass/functions#setting). Below, you can see the `$settings` object with its default values.
+You can access any setting with the [setting() helper function](/docs/sass/functions#setting). Below, you can see the `$settings` map (object) with its default values.
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/config/_setting.scss)
 
 ```scss
-$settings: (
-  color-fallback: false,
-  html-smooth-scrolling: true,
-  hyphens: true,
-  optimal-responsive-font-size: '2vw + 1rem',
-  optimal-spacer-size: '5vw',
-  prefix: 'spruce',
-  utilities: false,
-  print: false
+@use 'sprucecss/scss/spruce' with (
+  $settings: (
+    'color-fallback': false,
+    'css-custom-properties': false,
+    'html-smooth-scrolling': true,
+    'hyphens': true,
+    'optimal-responsive-font-size': '2vw + 1rem',
+    'optimal-spacer-size': '5vw',
+    'prefix': 'spruce',
+    'print': false,
+    'utilities': (
+      'display': true,
+      'typography': true,
+    ),
+  ),
 );
 ```
 
 ## color-fallback
 
-Setting the `color-fallback` key to true, you can turn the color fallback when using `spruce.color()` function.
+Setting the `color-fallback` key to true, you can turn the color fallback when using `color()` function.
 
 ```scss
 // Without fallback
 body {
-  // color: spruce.color(text);
+  // color: color(text);
   color: var(--spruce-base-color-text);
 }
 
 // With fallback
 body {
-  // color: spruce.color(text);
+  // color: color(text);
   color: var(--spruce-base-color-text, #474d52);
 }
 ```
@@ -44,10 +51,24 @@ body {
 Turn on the color fallback:
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $settings: (
-    color-fallback: true
-  )
+    'color-fallback': true,
+  ),
+);
+```
+
+## css-custom-properties
+
+By default, Spruce doesn't generate unnecessary CSS variables only for the colors. Turning this option to `true`, you will get more CSS custom properties (for example, for buttons and inputs) that you can control directly without compiling.
+
+<Notification type="info">If you want to see this in action, debug any button on this site.</Notification>
+
+```scss
+@use 'sprucecss/scss/spruce' with (
+  $settings: (
+    'css-custom-properties': true,
+  ),
 );
 ```
 
@@ -56,10 +77,10 @@ Turn on the color fallback:
 Turn off the smooth scrolling (`scroll-behavior: smooth;`) on the html element. You maybe need this because you work with a SPA, and it interferes with its transitions.
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $settings: (
-    html-smooth-scrolling: false
-  )
+    'html-smooth-scrolling': false,
+  ),
 );
 ```
 
@@ -71,10 +92,10 @@ By default Spruce uses a simple hyphenation setup [which you can find here](http
 Turn off the hyphenation:
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $settings: (
-    hyphens: false
-  )
+    'hyphens': false,
+  ),
 );
 ```
 
@@ -87,10 +108,10 @@ Using the mentioned functions, you can modify this value per call too. A global 
 Modify the optimal font-size value:
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $settings: (
-    optimal-responsive-font-size: '5vw + 1'
-  )
+    'optimal-responsive-font-size': '5vw + 1',
+  ),
 );
 ```
 <Notification type="info">We added a simple formula: one value with a relative viewport unit (vw) to make it responsive and one value with a root-relative unit (to set up a minimum value, it never will be smaller than 1rem). You can specify any numerical value, but use quotations if you use an operation.</Notification>
@@ -110,10 +131,10 @@ Using the mentioned function, you can modify this value per call too. A global f
 Modify the optimal spacer size value:
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $settings: (
-    optimal-spacer-size: '5vw'
-  )
+    'optimal-spacer-size': '5vw',
+  ),
 );
 ```
 
@@ -127,10 +148,10 @@ Spruce CSS uses this prefix for generating the custom properties.
 Modify the prefix value:
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $settings: (
-    prefix: 'my-custom-prefix'
-  )
+    'prefix': 'my-custom-prefix',
+  ),
 );
 ```
 Generated CSS custom properties:
@@ -148,28 +169,31 @@ You can also set `null` value to remove them.
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/_root.scss)
 
-## utilities
-
-We use just a few classical utility classes. We don’t plan to add too much in the future, but it can change. If we create more, it sure will always be opt-in.
-
-Right now, you can globally turn them on using this snippet:
-
-```scss
-@use '~sprucecss/scss/spruce' with (
-  $settings: (
-    utilities: true
-  )
-);
-```
-
 ## print
 
 Spruce comes with a small set of print styles. To turn them on, set the `print` value to `true`.
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $settings: (
-    print: true
-  )
+    'print': true,
+  ),
 );
 ```
+
+## utilities
+
+We use just a few classical utility classes. We don’t plan to add too much in the future, but it can change. If we create more, it sure will always be opt-in.
+
+```scss
+@use 'sprucecss/scss/spruce' with (
+  $settings: (
+    'utilities': (
+      'display': true,
+      'typography': true,
+    ),
+  ),
+);
+```
+
+You can find the [complete list of utilities on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/element/_utilities.scss).

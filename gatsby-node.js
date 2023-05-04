@@ -6,14 +6,14 @@ exports.onCreateNode = async ({ node, getNode, actions, loadNodeContent }) => {
   const type = node.internal.type;
   const mediaType = node.internal.mediaType;
 
-  if (type === `Mdx`) {
+  if (type === 'Mdx') {
     const parent = getNode(node.parent);
     const collection = parent.sourceInstanceName;
 
     createNodeField({
       node,
       name: 'collection',
-      value: collection,
+      value: collection
     });
 
     createNodeField({
@@ -32,7 +32,7 @@ exports.onCreateNode = async ({ node, getNode, actions, loadNodeContent }) => {
     let slug = `/ui/${path.parse(node.relativePath).dir.split('/')[1]}/${path.parse(node.relativePath).name}/`;
 
     if (mediaType && path.parse(node.relativePath).name.includes('preview')) {
-      slug = `/ui/${path.parse(node.relativePath).dir.split('/')[1]}/${path.parse(node.relativePath).name.replace('-preview','')}/`;
+      slug = `/ui/${path.parse(node.relativePath).dir.split('/')[1]}/${path.parse(node.relativePath).name.replace('-preview', '')}/`;
     }
 
     if (mediaType === 'text/x-scss') {
@@ -48,19 +48,18 @@ exports.onCreateNode = async ({ node, getNode, actions, loadNodeContent }) => {
     createNodeField({
       node,
       name: 'slug',
-      value: slug,
+      value: slug
     });
 
     createNodeField({
       node,
       name: 'type',
-      value: shortMediaType,
+      value: shortMediaType
     });
   }
 };
 
 exports.createPages = async ({ graphql, actions }) => {
-
   const { data: { docs: { nodes: docsNodes } } } = await graphql(`
     query {
       docs: allMdx(
@@ -103,7 +102,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
-  const { data: { posts: { nodes: blogNodes }, tagsGroup: { group: tagNodes} } } = await graphql(`
+  const { data: { posts: { nodes: blogNodes }, tagsGroup: { group: tagNodes } } } = await graphql(`
     query {
       posts: allMdx(
         sort: {frontmatter: {date: DESC}}
@@ -165,7 +164,7 @@ exports.createPages = async ({ graphql, actions }) => {
       path: `blog${node.fields.slug}`,
       component: `${path.resolve('./src/templates/Blog.js')}?__contentFilePath=${node.internal.contentFilePath}`,
       context: {
-        slug: node.fields.slug,
+        slug: node.fields.slug
       }
     });
   });
@@ -175,8 +174,8 @@ exports.createPages = async ({ graphql, actions }) => {
       path: `blog/tag/${node.fieldValue}`,
       component: path.resolve('./src/templates/Tags.js'),
       context: {
-        tag: node.fieldValue,
-      },
+        tag: node.fieldValue
+      }
     });
   });
-}
+};

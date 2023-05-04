@@ -1,6 +1,7 @@
 ---
 title: 'Functions'
-order: 15
+description: 'The functions are an essential part of the Spruce CSS framework. You can get values, set up your fluid typography, and more.'
+order: 17
 github: 'https://github.com/conedevelopment/sprucecss-site/blob/main/src/docs/sass/functions.mdx'
 ---
 
@@ -17,7 +18,7 @@ Get color value by key and type name from the `$colors` map. The `$colors` map i
 | Name              | Default Value | Description                                                       |
 |-------------------|---------------|-------------------------------------------------------------------|
 | `$key`            |               | The name of the color.                                            |
-| `$type`           | `base`        | The group of the color.                                           |
+| `$type`           | `'base'`        | The group of the color.                                           |
 | `$only-color`     | `false`       | Wheater to get just the color value or the CSS custom property.   |
 | `$map`            | `$colors`     | The name of the map from which the function will get the values.  |
 
@@ -28,11 +29,11 @@ Get color value by key and type name from the `$colors` map. The `$colors` map i
 
 ```scss
 a {
-  color: spruce.color(primary);
+  color: color('primary');
 }
 
 .has-error {
-  color: spruce.color(danger, alert);
+  color: color('danger', 'alert');
 }
 ```
 
@@ -53,7 +54,33 @@ Get a contrast color (black or white) based on the given one. Spruce use this fu
 
 ```scss
 a {
-  color: spruce.color-contrast(blue); // return white (hsl(0 0% 100%))
+  color: color-contrast('blue'); // return white (hsl(0 0% 100%))
+}
+```
+
+## config
+
+Using the `config()` function, you can get any key value from any map. It is a wrapper function for `map.get`.
+
+If you use the CSS custom property mode, you should always use this function because this will return you the proper custom property.
+
+### Argument(s)
+
+| Name               | Default Value     | Description                                         |
+|--------------------|-------------------|-----------------------------------------------------|
+| `$key`             |                   | The name of the key.                                |
+| `$map`             |                   | The name of the map.                                |
+| `$custom-property` | `true`            | Wheater if you want CSS custom property or not.     |
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/function/_config.scss#L29)
+
+### Example(s)
+
+```scss
+.element {
+  border-radius: config('border-radius-lg', $display);
+  height: 3rem;
+  width: 3rem;
 }
 ```
 
@@ -76,12 +103,12 @@ Get a value from the `$font-sizes` map by key name. By default, the function giv
 
 ```scss
 .title {
-  font-size: spruce.font-size(h2);
+  font-size: font-size('h2');
 }
 
 .serial-number {
-  color: spruce.color(primary);
-  font-size: spruce.font-size(h3, $scaler: 30);
+  color: color('primary');
+  font-size: font-size('h3', 30);
 }
 ```
 
@@ -102,8 +129,8 @@ Add the prefix value to a CSS custom properties. To set any CSS variable with pr
 
 ```scss
 .container {
-  @include spruce.layout-center(
-    spruce.get-css-variable(--container-gap)
+  @include layout-center(
+    get-css-variable(--container-gap)
   );
 }
 ```
@@ -126,7 +153,7 @@ It is hard to get generic font sizes that we can use throughout a whole project.
 
 ```scss
 .testimonial-title {
-  font-size: spruce.responsive-font-size(4rem, 30);
+  font-size: responsive-font-size(4rem, 30);
 }
 ```
 
@@ -145,7 +172,7 @@ Get a value by key name from the `$settings` map.
 ### Example(s)
 
 ```scss
-@if spruce.setting(hyphens) {
+@if setting('hyphens') {
   p,
   li,
   h1,
@@ -176,7 +203,7 @@ Get a value by key name from the `$spacers` map.
 
 ```scss
 .prism-code {
-  padding: spruce.spacer(xs) spruce.spacer(m);
+  padding: spacer('xs') spacer('m');
 }
 ```
 
@@ -198,15 +225,15 @@ Create a `clamp()` declaration with values from the `$spacers` map or from any g
 
 ```scss
 .block {
-  padding: spruce.spacer-clamp(m, l);
+  padding: spacer-clamp('m', 'l');
 }
 
 .block {
-  padding: spruce.spacer-clamp(xs, s, '2vw');
+  padding: spacer-clamp('xs', 's', '2vw');
 }
 
 .block {
-  padding: spruce.spacer-clamp(2rem, l);
+  padding: spacer-clamp(2rem, 'l');
 }
 ```
 
@@ -276,8 +303,8 @@ Get the transition values by key name. **The function returns a CSS custom prope
 
 ```scss
 .custom-link {
-  transition-duration: spruce.transition(duration);
+  transition-duration: transition('duration');
   transition-property: all;
-  transition-timing-function: spruce.transition(timing-function);
+  transition-timing-function: transition('timing-function');
 }
 ```

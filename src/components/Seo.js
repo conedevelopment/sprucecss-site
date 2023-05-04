@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
 import { Script } from 'gatsby';
-import useSiteMetadata from '../hooks/use-site-metadata';
 import Cookies from 'universal-cookie';
+import React, { useState, useEffect } from 'react';
+import useSiteMetadata from '../hooks/use-site-metadata';
 
 export default function Seo({ children, location, description, title, image, frontPage = false }) {
   const siteMetadata = useSiteMetadata();

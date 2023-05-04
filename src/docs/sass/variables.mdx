@@ -1,618 +1,84 @@
 ---
 title: 'Variables'
-order: 13
+description: 'The variables are fundamental for better customisability. Luckily Spruce CSS gives you a lot of them.'
+order: 15
 github: 'https://github.com/conedevelopment/sprucecss-site/blob/main/src/docs/sass/variables.mdx'
 ---
 
-<p className="lead">Spruce CSS comes with a bunch of Sass variables. It also uses CSS custom properties for colors and transitions.</p>
+<p className="lead">Spruce CSS has several Sass variables that it can generate into CSS custom properties.</p>
 
-Our central concept is not to expose a CSS custom property that isn’t needed for later customization, like the colors (for `prefers-color-scheme` or any later overwrite) or the transitions (for `prefers-reduced-motion`). Also, this is a framework for better customization Sass variables are needed (even if we generate CSS custom properties based on them). Like most things, this can change in the future depending on the use cases.
+Our central concept is not to expose a CSS custom property that isn’t needed for later customization, but with version 2, you can opt-in to the fully CSS custom property mode.
 
-More information about the [difference between Sass variables and CSS variables](https://css-tricks.com/difference-between-types-of-css-variables/).
-
-[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/variable/_index.scss)
-
-## Get Any Variable
-
-To get a variable, you have to use one of the getters or the variable name with the spruce namespace (or without one if you imported the code that way).
-
-To see the complete list of the getter functions, please visit the [functions page](/docs/sass/functions).
+By default, Spruce only generates CSS variables for the colors and transition settings. If you turn on the `css-custom-properties` to true, it will also generate additional ones for the buttons, form elements, etc.
 
 ```scss
-.component {
-  border-radius: spruce.$border-radius-lg;
-  color: spruce.color(secondary);
-  font-size: spruce.font-size(h2);
-  padding-block: spruce.spacer(m);
-}
-```
-
-## Override Variables
-
-There are two types of variables: single one and map. All of them are overwritable, expandable with ```@use```'s ```with``` option.
-
-```scss
-@use '~sprucecss/scss/spruce' with (
-  $colors: (
-    base: (
-      primary-darkest: hsl(272, 100%, 9%),
-      heading: hsl(271deg, 100%, 9%)
-    ),
-    btn: (
-      new-background: hsl(0, 0%, 95%), // Expanded new color values for buttons.
-      new-foreground: hsl(0, 0%, 10%)
-    )
+@use 'sprucecss/scss/spruce' with (
+  $settings: (
+    'css-custom-properties': true,
   ),
-  $font-size-base: 1.063rem,
-  $font-size-ratio: 1.250,
-  $container-width: 86rem
-);
-```
-<Notification type="info">You must do the overwrite (of any of the variables or maps) at the first use of <code>@use</code> in your code — <a href="https://sass-lang.com/documentation/at-rules/use">more information about the newer imports in Sass</a>.</Notification>
-
-## Colors
-
-We store the color values in a central map named `$color`. It is a nested object separated by components.
-
-To eliminate the repetition, we use some helper variables for the more generic colors (which we use more than once). You can overwrite these directly to make the theming easier or from the object one by one.
-
-You can access any color with the [color() helper function](/docs/sass/functions#color).
-
-```scss
-$color-primary: hsl(261 52% 59%);
-$color-secondary: hsl(227 92% 55%);
-
-$color-black: hsl(205 100% 2%);
-$color-white: hsl(0 0% 100%);
-
-$color-gray-light: hsl(0 0% 90%);
-$color-gray: hsl(208 7% 30%);
-
-$color-danger: hsl(0 71% 51%);
-$color-success: hsl(150 100% 33%);
-
-$colors: (
-  alert: (
-    danger: $color-danger,
-    info: hsl(195 100% 42%),
-    success: $color-success,
-    warning: hsl(48 89% 55%)
-  ),
-  base: (
-    primary: $color-primary,
-    secondary: $color-secondary,
-    background: $color-white,
-    heading: $color-black,
-    text: $color-gray,
-    link: $color-primary,
-    link-hover: color.scale($color-primary, $lightness: 10%),
-    border: $color-gray-light,
-    mark-background: hsl(50 100% 80%),
-    mark-foreground: $color-black,
-    marker: $color-primary,
-    code-background: color.change($color-primary, $lightness: 95%),
-    code-foreground: $color-black,
-    blockquote-border: $color-primary
-  ),
-  btn: (
-    primary-background: $color-primary,
-    primary-foreground: $color-white,
-    secondary-background: $color-secondary,
-    secondary-foreground: $color-white
-  ),
-  form: (
-    background: $color-white,
-    background-disabled: hsl(0 0% 95%),
-    border: hsl(260 4% 70%),
-    border-disabled: $color-gray-light,
-    border-focus: $color-primary,
-    ring-focus: color.adjust($color-primary, $alpha: -0.75),
-    check-foreground: $color-white,
-    check-background: $color-primary,
-    check-focus-ring: $color-primary,
-    invalid: $color-danger,
-    invalid-focus-ring: color.adjust($color-danger, $alpha: -0.75),
-    label: $color-black,
-    legend: $color-black,
-    placeholder: hsl(208 7% 40%),
-    range-thumb-background: $color-primary,
-    range-thumb-focus-ring: $color-primary,
-    range-track-background: $color-gray-light,
-    text: $color-gray,
-    select-foreground: $color-black,
-    valid: $color-success,
-    valid-focus-ring: color.adjust($color-success, $alpha: -0.75)
-  ),
-  selection: (
-    foreground: $color-white,
-    background: $color-primary
-  ),
-  scrollbar: (
-    thumb-background: hsl(0 0% 0% / 0.15),
-    thumb-background-hover:	hsl(0 0% 0% / 0.25),
-    track-background:	hsl(0 0% 0% / 0.05)
-  ),
-  table: (
-    border: $color-gray-light,
-    caption: $color-gray,
-    heading: $color-black,
-    hover: hsl(0 0% 0% / 0.05),
-    text: $color-gray,
-    stripe: hsl(0 0% 0% / 0.025)
-  )
 );
 ```
 
-<Notification type="info">We declare the colors with the modern HSL syntax. The generated values are given and converted by Sass by default.</Notification>
+More information about the [difference between Sass and CSS variables](https://css-tricks.com/difference-between-types-of-css-variables/).
 
-### Get Color Values
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/tree/main/scss/config)
 
-Spruce generates prefixed CSS variables at `:root` by group from the nested map above.
 
-You can always access a generated variable by name, but it is easier to use the custom getter function named <a href="/docs/sass/functions/#color"><code>color()</code></a>.
+## Breakpoints
 
-```scss
-a {
-  color: spruce.color(primary);
-}
-```
+We store the breakpoints in the `$breakpoints` map, which we use in the <code><a href="/docs/sass/mixins#breakpoint">breakpoint</a></code> mixin.
 
-### Overwrite, Add New Color
-
-Because the colors are in a Sass map, it is easy to overwrite them or add new values, blocks.
-
+[View on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/config/_breakpoint.scss)
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
-  $colors: (
-    base: (
-      primary: rgb(75 38% 110%),
-      tertiary: hsl(332 49% 29%)
-    ),
-    my-custom-component: (
-      background: hsl(0 0% 100%)
-    )
-  )
-);
-```
-
-### Dark Colors
-
-Spruce CSS supports dark-mode, which we mainly achieve through CSS Custom Properties. You can use the `$dark-colors` map to set up your dark colors.
-
-```scss
-$dark-colors: ();
-```
-
-### List Colors
-
-In this example, you can see how you can generate a component - an alert - using Spruce’s colors with Sass’s `@each` and `map.get`.
-
-```scss
-@use 'sass:color';
-@use 'sass:map';
-@use '~sprucecss/scss/spruce';
-
-.alert {
-  border: 1px solid;
-  border-left: 0.35rem solid;
-  border-radius: spruce.$border-radius-lg;
-  font-weight: 500;
-  gap: spruce.spacer(m);
-  justify-content: space-between;
-  padding: 0.65em 1em;
-
-  @each $name, $value in map.get(spruce.$colors, alert) {
-    @at-root .alert--#{$name} {
-      background-color: color.scale($value, $lightness: 90%);
-      color: color.scale($value, $lightness: -30%);
-    }
-  }
-}
-```
-
-## Spacers
-
-Spacers are generated by a predefined $spacer value, and the `$spacers` map with added multiplication.
-
-```scss
-$spacer: 1rem;
-
-$spacers: (
-  xxs:  $spacer * 0.25,
-  xs:   $spacer * 0.5,
-  s:    $spacer,
-  m:    $spacer * 1.5,
-  l:    $spacer * 3,
-  xl:   $spacer * 4.5,
-  xxl:  $spacer * 5,
-  xxxl: $spacer * 10
-);
-```
-
-### Get Spacers
-
-Using the [spacer()](/docs/sass/functions/#spacer) helper function we can get any value by key name from the `$spacers` map.
-
-```scss
-.component {
-  padding-inline: spruce.spacer(m);
-}
-```
-
-### Overwrite Spacers
-
-You can easily overwrite each value or add new ones.
-
-```scss
-@use '~sprucecss/scss/spruce' with (
-  $spacer: 2rem,
-  $spacers: (
-    xl: 10rem
-  )
-);
-```
-
-Overwriting the values using `@use`’s with can be tricky because we can’t reference other values under the `with` block. So in our new declaration under $spacers map, we can’t access the $spacer map inside Spruce.
-
-A solution for this problem looks like something like this:
-
-```scss
-$spacer: 1.5rem
-
-@use '~sprucecss/scss/spruce' with (
-  $spacer: $spacer,
-  $spacers: (
-    xl: $spacer  * 6
-  )
-);
-```
-
-We create our own `$spacer` variable passing it down to Spruce.
-
-## Display
-
-```scss
-$border-radius-sm: 0.25rem;
-$border-radius-lg: 0.5rem;
-```
-
-## Typography
-
-You can access any font size with the [font-size() helper function](/docs/sass/functions#font-size).
-
-
-### Font Size
-
-```scss
-$font-size-ratio: 1.333;
-
-$font-size-base: 1rem;
-
-$font-size-sm: 0.9rem;
-$font-size-lg: 1.1rem;
-
-$font-size-lead: clamp(#{$font-size-lg}, 2vw, #{map.get($font-sizes, h4)});
-
-$font-sizes: ();
-$font-sizes: map.merge(
-  (
-    h1: math.pow($font-size-ratio, 4) * $font-size-base,
-    h2: math.pow($font-size-ratio, 3) * $font-size-base,
-    h3: math.pow($font-size-ratio, 2) * $font-size-base,
-    h4: math.pow($font-size-ratio, 1) * $font-size-base,
-    h5: $font-size-base,
-    h6: $font-size-base
+@use 'sprucecss/scss/spruce' with (
+  $breakpoints: (
+    'xs': 32em,
+    'sm': 48em,
+    'md': 64em,
+    'lg': 80em,
+    'xl': 90em,
+    'xxl': 110em,
   ),
-  $font-sizes
 );
-```
-
-### Font Weight
-
-```scss
-$font-weight-base: null;
-```
-
-### Font Family
-
-```scss
-$font-family-base: #{system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'};
-$font-family-heading: $font-family-base;
-$font-family-cursive: #{SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace};
-```
-
-### Heading
-
-```scss
-$heading-font-weight: 700;
-```
-
-### Line Height
-
-The `line-height`  is always an interesting property when we set up the base typography. In Spruce, we use the:
-
-- `$line-height-base`, which is set on the `body` element,
-- `$line-height-heading`, which is set on the headings.
-The other variables (*-sm, *-md, *-lg) are generic helpers because there aren’t too many good answers here.
-
-We use the formula for `$line-height-heding` from [Jesús Ricarte](https://kittygiraudel.com/2020/05/18/using-calc-to-figure-out-optimal-line-height/); give it a read!
-
-[View on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/config/_typography.scss#L33)
-
-<table class="table table--striped table--clear-border table--sm table--rounded table--font-size-reset">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>$line-height-sm</td>
-      <td>1.2</td>
-    </tr>
-    <tr>
-      <td>$line-height-md</td>
-      <td>1.5</td>
-    </tr>
-    <tr>
-      <td>$line-height-lg</td>
-      <td>1.8</td>
-    </tr>
-    <tr>
-      <td>$line-height-base</td>
-      <td>$line-height-lg</td>
-    </tr>
-    <tr>
-      <td>$line-height-heading</td>
-      <td>calc(2px + 2ex + 2px)</td>
-    </tr>
-  </tbody>
-</table>
-
-```scss
-@use '~sprucecss/scss/spruce' with (
-  $line-height-sm: 1.2,
-  $line-height-md: 1.5,
-  $line-height-lg: 1.8,
-  $line-height-base: $line-height-lg,
-  $line-height-heading: calc(2px + 2ex + 2px)
-);
-```
-
-### Inline Elements
-
-```scss
-$inline-text-element-padding: 0.1em 0.3em;
-$inline-text-element-border-radius: $border-radius-sm;
 ```
 
 ## Buttons
 
 ```scss
-$btn-border-radius: $border-radius-sm;
-
-$btn-font-family: null;
-$btn-font-style: null;
-$btn-font-weight: 500;
-$btn-font-size: $font-size-base;
-$btn-font-size-sm: 0.8rem;
-$btn-font-size-lg: 1.15rem;
-
-$btn-shadow-width: 0.25rem;
-
-$btn-outline-width: 1px;
-
-$btn-padding: 0.75em 1em;
-$btn-padding-sm: 0.5em;
-$btn-padding-lg: 0.9em 1.15em;
-
-$btn-icon-padding: 0.75em;
-$btn-icon-padding-sm: 0.5em;
-$btn-icon-padding-lg: 0.9em;
-
-$btn-icon-size-sm: 0.85em;
-$btn-icon-size: 1em;
-
-$btn-focus-ring-type: outline;
-$btn-focus-ring-box-shadow-type: outside;
-$btn-focus-ring-width: 2px;
-$btn-focus-ring-offset: 2px;
-```
-
-## Forms
-
-### Label
-
-```scss
-$form-label-font-size: null;
-$form-label-font-size-sm: $font-size-sm;
-$form-label-font-size-lg: $font-size-lg;
-
-$form-label-font-style: null;
-$form-label-font-weight: null;
-```
-
-### Fieldset
-
-```scss
-$fieldset-gap-size: map.get($spacers, s);
-
-$legend-font-size: clamp(#{map.get($font-sizes, 'h5')}, 5vw, #{map.get($font-sizes, 'h4')});
-$legend-font-weight: 700;
-```
-
-### Description
-
-```scss
-$form-description-font-size: $font-size-base;
-$form-description-font-style: null;
-$form-description-font-weight: null;
-```
-
-### Control
-
-```scss
-$form-control-font-size: $font-size-base;
-$form-control-font-size-sm: $font-size-sm;
-$form-control-font-size-lg: $font-size-lg;
-
-$form-control-font-weight: null;
-$form-control-line-height: 1.5;
-$form-control-padding: 0.5em 0.75em;
-$form-control-padding-sm: 0.25em 0.5em;
-$form-control-padding-lg: 0.65em 1em;
-$form-control-border-width: 1px;
-$form-control-border-radius: $border-radius-sm;
-
-$form-control-focus-ring-type: box-shadow;
-$form-control-focus-ring-box-shadow-type: outside;
-$form-control-focus-ring-width: 0.25rem;
-$form-control-focus-ring-offset: 2px;
-
-$form-control-color-padding: 0.5em;
-$form-control-color-padding-sm: 0.25em;
-$form-control-color-padding-lg: 0.75em;
-$form-control-color-height: calc(#{$form-control-line-height}em + ( #{$form-control-color-padding} + #{$form-control-border-width} ) * 2);
-$form-control-color-height-sm: calc(#{$form-control-line-height}em + ( #{$form-control-color-padding-sm} + #{$form-control-border-width} ) * 2);
-$form-control-color-height-lg: calc(#{$form-control-line-height}em + ( #{$form-control-color-padding-lg} + #{$form-control-border-width} ) * 2);
-
-$form-control-textarea-height: 6rem;
-
-```
-
-### File
-
-```scss
-$form-file-background: primary;
-```
-
-### Range
-
-```scss
-$form-range-track-height: 0.25rem;
-$form-range-track-broder-radius: 0.15rem;
-$form-range-thumb-height: 1rem;
-$form-range-thumb-width: 1rem;
-$form-range-thumb-broder-radius: 0.25rem;
-
-$form-range-focus-ring-type: outline;
-$form-range-focus-ring-box-shadow-type: outside;
-$form-range-focus-ring-width: 2px;
-$form-range-focus-ring-offset: 2px;
-```
-
-### Check
-
-```scss
-$form-check-border-width: 1px;
-$form-check-checkbox-border-radius: $border-radius-sm;
-$form-check-font-size: 1.125rem;
-$form-check-font-size-sm: $font-size-base;
-$form-check-font-size-lg: $font-size-lg;
-$form-check-font-weight: $form-label-font-weight;
-$form-check-line-height: $line-height-heading;
-$form-check-margin-block-start: 0.1em;
-$form-check-vertical-alignment: center;
-
-$form-check-focus-ring-type: outline;
-$form-check-focus-ring-box-shadow-type: outside;
-$form-check-focus-ring-width: 2px;
-$form-check-focus-ring-offset: 2px;
-```
-
-### Switch
-
-```scss
-$form-switch-border-width: 1px;
-$form-switch-font-size: 1.125rem;
-$form-switch-font-size-sm: $font-size-base;
-$form-switch-font-size-lg: $font-size-lg;
-$form-switch-font-weight: $form-label-font-weight;
-$form-switch-line-height: $line-height-heading;
-$form-switch-margin-bottom: $form-check-margin-bottom;
-```
-
-### Select
-
-```scss
-$select-icon-width: 1.25em;
-$select-icon-right-offset: 0.5em;
-$select-padding-right: calc(0.75em + $select-icon-width);
-```
-
-### Icons
-
-```scss
-$select-icon: '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12,12.507l-3.816,-3.815c-0.171,-0.172 -0.45,-0.172 -0.622,-0l-0.933,0.933c-0.172,0.172 -0.172,0.451 0,0.623l5.06,5.06c0.172,0.172 0.45,0.172 0.622,0l5.06,-5.06c0.172,-0.172 0.172,-0.451 -0,-0.623l-0.933,-0.933c-0.172,-0.172 -0.451,-0.172 -0.622,-0l-3.816,3.815Z" style="fill:#COLOR#;"/></svg>';
-
-$form-radio-icon: '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="6" style="fill:#COLOR#;"/></svg>';
-$form-checkbox-icon: '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.525,13.777l-2.411,-2.412c-0.234,-0.233 -0.613,-0.233 -0.846,0l-1.27,1.27c-0.233,0.233 -0.233,0.612 0,0.846l4.104,4.103c0.116,0.117 0.269,0.175 0.422,0.175l0.003,0c0.152,0 0.305,-0.058 0.421,-0.175l9.054,-9.053c0.233,-0.234 0.233,-0.613 -0,-0.846l-1.27,-1.269c-0.233,-0.234 -0.612,-0.234 -0.846,-0l-7.361,7.361Z" style="fill:#COLOR#;"/></svg>';
-$form-checkbox-indeterminate-icon: '<svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M19.5,11.1c-0,-0.331 -0.269,-0.6 -0.6,-0.6l-13.8,0c-0.331,0 -0.6,0.269 -0.6,0.6l0,1.8c0,0.331 0.269,0.6 0.6,0.6l13.8,0c0.331,0 0.6,-0.269 0.6,-0.6l-0,-1.8Z" style="fill:#COLOR#;"/></svg>';
-
-$form-switch-icon: '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="8.5" style="fill:#COLOR#;"/></svg>';
-
-$form-valid-icon: '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><path d="M12,2c5.519,0 10,4.481 10,10c0,5.519 -4.481,10 -10,10c-5.519,0 -10,-4.481 -10,-10c0,-5.519 4.481,-10 10,-10Zm0,1.667c4.599,-0 8.333,3.734 8.333,8.333c0,4.599 -3.734,8.333 -8.333,8.333c-4.599,0 -8.333,-3.734 -8.333,-8.333c-0,-4.599 3.734,-8.333 8.333,-8.333Zm-1.476,10.182l-2.984,-2.984c-0.065,-0.065 -0.17,-0.065 -0.235,0l-0.943,0.943c-0.065,0.065 -0.065,0.171 -0,0.236l4.043,4.042c0.033,0.033 0.076,0.05 0.119,0.049c0.044,0.001 0.087,-0.016 0.12,-0.049l6.994,-6.994c0.065,-0.065 0.065,-0.17 0,-0.235l-0.943,-0.943c-0.065,-0.065 -0.17,-0.065 -0.235,-0l-5.936,5.935Z" style="fill:#COLOR#;"/></svg>';
-$form-invalid-icon: '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><path d="M12,2c5.519,0 10,4.481 10,10c0,5.519 -4.481,10 -10,10c-5.519,0 -10,-4.481 -10,-10c0,-5.519 4.481,-10 10,-10Zm0,1.667c4.599,-0 8.333,3.734 8.333,8.333c0,4.599 -3.734,8.333 -8.333,8.333c-4.599,0 -8.333,-3.734 -8.333,-8.333c-0,-4.599 3.734,-8.333 8.333,-8.333Zm0.813,11.649c-0,-0.081 -0.065,-0.146 -0.146,-0.146l-1.334,0c-0.081,0 -0.146,0.065 -0.146,0.146l0,1.169c0,0.08 0.065,0.146 0.146,0.146l1.334,-0c0.081,-0 0.146,-0.066 0.146,-0.146l-0,-1.169Zm-0,-7.784c-0,-0.09 -0.073,-0.163 -0.163,-0.163l-1.3,0c-0.09,0 -0.163,0.073 -0.163,0.163l0,6.351c0,0.09 0.073,0.163 0.163,0.163l1.3,-0c0.09,-0 0.163,-0.073 0.163,-0.163l-0,-6.351Z" style="fill:#COLOR#;"/></svg>';
-```
-
-### Other
-
-```scss
-$form-row-col-width: 20ch;
-$form-input-shadow-width: 0.25rem;
-```
-
-## Tables
-
-```scss
-$table-responsive-width: 40rem;
-$table-line-height: $line-height-md;
-$table-padding: map.get($spacers, s);
-$table-padding-sm: map.get($spacers, xs);
-
-$table-caption-font-size: null;
-$table-caption-font-style: null;
-$table-caption-font-weight: null;
-
-$table-stripe: odd;
-
-```
-
-## Layout
-
-```scss
-$container-width: 84rem;
-```
-
-## Transition and Animation
-
-<table class="table table--striped table--clear-border table--sm table--rounded table--font-size-reset">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>$transition-duration</td>
-      <td>0.15s</td>
-    </tr>
-    <tr>
-      <td>$transition-timing-function</td>
-      <td>ease-in-out</td>
-    </tr>
-  </tbody>
-</table>
-
-```scss
-@use '~sprucecss/scss/spruce' with (
-  $transition-duration: 0.15s,
-  $transition-timing-function: ease-in-out
+@use 'sprucecss/scss/spruce' with (
+  $btn: (
+    'border-radius': map.get($display, 'border-radius-sm'),
+    'focus-ring-box-shadow-type': outside,
+    'focus-ring-offset': 2px,
+    'focus-ring-type': outline,
+    'focus-ring-width': 2px,
+    'font-family': null,
+    'font-size': map.get($typography, 'font-size-base'),
+    'font-style': null,
+    'font-weight': 500,
+    'gap': map.get($spacers, 'xs'),
+    'icon-padding': 0.75em,
+    'icon-size': 1em,
+    'outline-width': 1px,
+    'padding': 0.75em 1em,
+    'shadow-width': 0.25rem,
+    'text-transform': null,
+  ),
+  $btn-lg: (
+    'font-size': 1.15rem,
+    'gap': map.get($spacers, 'xs'),
+    'icon-padding': 0.9em,
+    'padding': 0.9em 1.15em,
+  ),
+  $btn-sm: (
+    'font-size': 0.8rem,
+    'gap': map.get($spacers, 'xxs'),
+    'icon-padding': 0.5em,
+    'icon-size': 0.8rem,
+    'padding': 0.5em 0.75em,
+  ),
 );
-
 ```
 
 ## Character escaping
@@ -622,67 +88,269 @@ We use the `$escaping-characters` under the <code><a href="/docs/sass/functions/
 [View on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/config/_escaping-characters.scss)
 
 ```scss
-$escaping-characters: (
-  ('<', '%3c'),
-  ('>', '%3e'),
-  ('#', '%23'),
-  ('(', '%28'),
-  (')', '%29'),
+@use 'sprucecss/scss/spruce' with (
+  $escaping-characters: (
+    ('<', '%3c'),
+    ('>', '%3e'),
+    ('#', '%23'),
+    ('(', '%28'),
+    (')', '%29'),
+  ),
 );
 ```
 
-## Breakpoints
-
-We store the breakpoints in the `$breakpoints` map, which we use in the <code><a href="/docs/sass/mixins#breakpoint">breakpoint</a></code> mixin.
-
-[View on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/config/_breakpoint.scss)
-
-<table class="table table--striped table--clear-border table--sm table--rounded table--font-size-reset">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>xs</td>
-      <td>32em</td>
-    </tr>
-    <tr>
-      <td>sm</td>
-      <td>48em</td>
-    </tr>
-    <tr>
-      <td>md</td>
-      <td>64em</td>
-    </tr>
-    <tr>
-      <td>lg</td>
-      <td>80em</td>
-    </tr>
-    <tr>
-      <td>xl</td>
-      <td>90em</td>
-    </tr>
-    <tr>
-      <td>xxl</td>
-      <td>110em</td>
-    </tr>
-  </tbody>
-</table>
+## Display
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
-  $breakpoints: (
-    xs: 32em,
-    sm: 48em,
-    md: 64em,
-    lg: 80em,
-    xl: 90em,
-    xxl: 110em
-  )
+@use 'sprucecss/scss/spruce' with (
+  $display: (
+    'border-radius-lg': 0.725rem,
+    'border-radius-sm': 0.325rem,
+  ),
 );
+```
+
+## Form Check
+
+```scss
+@use 'sprucecss/scss/spruce' with (
+  $form-check: (
+    'border-width': 1px,
+    'border-radius': map.get($display, border-radius-sm),
+    'font-size': 1.125rem,
+    'font-weight': map.get($form-check, 'font-weight'),
+    'line-height': map.get($typography, 'line-height-heading'),
+    'margin-block-start': 0.1em,
+    'vertical-alignment': center,
+    'focus-ring-type': outline,
+    'focus-ring-box-shadow-type': outside,
+    'focus-ring-width': 2px,
+    'focus-ring-offset': 2px,
+  ),
+  $form-check-lg: (
+    'font-size': map.get($typography, 'size-lg'),
+  ),
+  $form-check-sm: (
+    'font-size': map.get($typography, 'font-size-base'),
+  ),
+);
+```
+
+## Form Control
+
+```scss
+@use 'sprucecss/scss/spruce' with (
+  $form-control: (
+    'font-size': map.get($typography, 'font-size-base'),
+    'font-weight': null,
+    'line-height': 1.5,
+    'padding': 0.5em 0.75em,
+    'border-width': 1px,
+    'border-radius': map.get($display, 'border-radius-sm'),
+    'focus-ring-type': box-shadow,
+    'focus-ring-box-shadow-type': outside,
+    'focus-ring-width': 0.25rem,
+    'focus-ring-offset': 2px,
+    'textarea-height': 6rem,
+  ),
+  $form-control-lg: (
+    'font-size': map.get($typography, 'size-lg'),
+    'padding': 0.65em 1em,
+  ),
+  $form-control-sm: (
+    'border-radius': 0.35em,
+    'font-size': map.get($typography, 'size-sm'),
+    'padding': 0.25em 0.5em,
+  ),
+  $form-control-color: (
+    'aspect-ratio': 1,
+    'height': 100%,
+    'padding': 0.5em,
+    'width': 2.625rem,
+  ),
+  $form-control-color-lg: (
+    'aspect-ratio': 1,
+    'height': 100%,
+    'padding': 0.5em,
+    'width': 3.204rem,
+  ),
+  $form-control-color-sm: (
+    'aspect-ratio': 1,
+    'height': 100%,
+    'padding': 0.25em,
+    'width': 1.925rem,
+  ),
+);
+```
+
+## Form Description
+
+```scss
+@use 'sprucecss/scss/spruce' with (
+  $form-description: (
+    'font-size': null,
+    'font-style': null,
+    'font-weight': null,
+  ),
+);
+```
+
+## Form Fieldset
+
+```scss
+@use 'sprucecss/scss/spruce' with (
+  $form-fieldset: (
+    'gap': map.get($spacers, 's'),
+    'legend-font-size': clamp(#{map.get($font-sizes, 'h5')}, 5vw, #{map.get($font-sizes, 'h4')}),
+    'legend-font-weight': 700,
+  ),
+);
+```
+
+## Form File
+
+```scss
+@use 'sprucecss/scss/spruce' with (
+  $form-file: (
+    'background': 'primary',
+  ),
+);
+```
+
+## Form Icon
+
+```scss
+@use 'sprucecss/scss/spruce' with (
+  $form-icon: (
+    'checkbox-indeterminate': '<svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M19.5,11.1c-0,-0.331 -0.269,-0.6 -0.6,-0.6l-13.8,0c-0.331,0 -0.6,0.269 -0.6,0.6l0,1.8c0,0.331 0.269,0.6 0.6,0.6l13.8,0c0.331,0 0.6,-0.269 0.6,-0.6l-0,-1.8Z" style="fill:#COLOR#;"/></svg>',
+    'checkbox': '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.525,13.777l-2.411,-2.412c-0.234,-0.233 -0.613,-0.233 -0.846,0l-1.27,1.27c-0.233,0.233 -0.233,0.612 0,0.846l4.104,4.103c0.116,0.117 0.269,0.175 0.422,0.175l0.003,0c0.152,0 0.305,-0.058 0.421,-0.175l9.054,-9.053c0.233,-0.234 0.233,-0.613 -0,-0.846l-1.27,-1.269c-0.233,-0.234 -0.612,-0.234 -0.846,-0l-7.361,7.361Z" style="fill:#COLOR#;"/></svg>',
+    'invalid': '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><path d="M12,2c5.519,0 10,4.481 10,10c0,5.519 -4.481,10 -10,10c-5.519,0 -10,-4.481 -10,-10c0,-5.519 4.481,-10 10,-10Zm0,1.667c4.599,-0 8.333,3.734 8.333,8.333c0,4.599 -3.734,8.333 -8.333,8.333c-4.599,0 -8.333,-3.734 -8.333,-8.333c-0,-4.599 3.734,-8.333 8.333,-8.333Zm0.813,11.649c-0,-0.081 -0.065,-0.146 -0.146,-0.146l-1.334,0c-0.081,0 -0.146,0.065 -0.146,0.146l0,1.169c0,0.08 0.065,0.146 0.146,0.146l1.334,-0c0.081,-0 0.146,-0.066 0.146,-0.146l-0,-1.169Zm-0,-7.784c-0,-0.09 -0.073,-0.163 -0.163,-0.163l-1.3,0c-0.09,0 -0.163,0.073 -0.163,0.163l0,6.351c0,0.09 0.073,0.163 0.163,0.163l1.3,-0c0.09,-0 0.163,-0.073 0.163,-0.163l-0,-6.351Z" style="fill:#COLOR#;"/></svg>',
+    'radio': '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="6" style="fill:#COLOR#;"/></svg>',
+    'select': '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12,12.507l-3.816,-3.815c-0.171,-0.172 -0.45,-0.172 -0.622,-0l-0.933,0.933c-0.172,0.172 -0.172,0.451 0,0.623l5.06,5.06c0.172,0.172 0.45,0.172 0.622,0l5.06,-5.06c0.172,-0.172 0.172,-0.451 -0,-0.623l-0.933,-0.933c-0.172,-0.172 -0.451,-0.172 -0.622,-0l-3.816,3.815Z" style="fill:#COLOR#;"/></svg>',
+    'switch': '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="8.5" style="fill:#COLOR#;"/></svg>',
+    'valid': '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><path d="M12,2c5.519,0 10,4.481 10,10c0,5.519 -4.481,10 -10,10c-5.519,0 -10,-4.481 -10,-10c0,-5.519 4.481,-10 10,-10Zm0,1.667c4.599,-0 8.333,3.734 8.333,8.333c0,4.599 -3.734,8.333 -8.333,8.333c-4.599,0 -8.333,-3.734 -8.333,-8.333c-0,-4.599 3.734,-8.333 8.333,-8.333Zm-1.476,10.182l-2.984,-2.984c-0.065,-0.065 -0.17,-0.065 -0.235,0l-0.943,0.943c-0.065,0.065 -0.065,0.171 -0,0.236l4.043,4.042c0.033,0.033 0.076,0.05 0.119,0.049c0.044,0.001 0.087,-0.016 0.12,-0.049l6.994,-6.994c0.065,-0.065 0.065,-0.17 0,-0.235l-0.943,-0.943c-0.065,-0.065 -0.17,-0.065 -0.235,-0l-5.936,5.935Z" style="fill:#COLOR#;"/></svg>',
+  ),
+);
+```
+
+## Form Label
+
+```scss
+@use 'sprucecss/scss/spruce' with (
+  $form-label: (
+    'font-size': null,
+    'font-style': null,
+    'font-weight': null,
+  ),
+);
+```
+
+## Form Range
+
+```scss
+@use 'sprucecss/scss/spruce' with (
+  $form-range: (
+    'focus-ring-box-shadow-type': outside,
+    'focus-ring-offset': 2px,
+    'focus-ring-type': outline,
+    'focus-ring-width': 2px,
+    'thumb-border-radius': 0.5rem,
+    'thumb-height': 1rem,
+    'thumb-width': 1rem,
+    'track-border-radius': 0.15rem,
+    'track-height': 0.25rem,
+  ),
+);
+```
+
+## Form Row
+
+```scss
+@use 'sprucecss/scss/spruce' with (
+  $form-row: (
+    'col-width': 20ch,
+  ),
+);
+```
+
+## Form Select
+
+```scss
+@use 'sprucecss/scss/spruce' with (
+  $form-select: (
+    'icon-width': 1.25em,
+    'icon-right-offset': 0.5em,
+    'padding-right': calc(0.75em + 1.25em),
+  ),
+);
+```
+
+## Form Switch
+
+```scss
+@use 'sprucecss/scss/spruce' with (
+  $form-switch: (
+    'border-width': 1px,
+    'font-size': 1.125rem,
+    'font-weight': map.get($form-label, 'font-weight'),
+    'line-height': map.get($typography, 'line-height-heading'),
+    'margin-block-start': 0.25em,
+  ),
+  $form-switch-lg: (
+    'font-size': map.get($typography, 'size-lg'),
+  ),
+  $form-switch-sm: (
+    'font-size': map.get($typography, 'font-size-base'),
+  ),
+);
+```
+
+## Generators
+
+```scss
+@use 'sprucecss/scss/spruce' with (
+  $generators: (
+    'content': (
+      'accessibility': true,
+      'default': true,
+      'display': true,
+      'divider': true,
+      'layout': true,
+      'media': true,
+      'normalize': true,
+      'print': true,
+      'root': true,
+      'table': true,
+      'typography': true,
+      'utilities': true,
+    ),
+    'form': (
+      'btn': true,
+      'file-btn': true,
+      'form-check': true,
+      'form-control': true,
+      'form-description': true,
+      'form-feedback': true,
+      'form-fieldset': true,
+      'form-group': true,
+      'form-label': true,
+      'form-range': true,
+      'form-row': true,
+      'form-switch': true,
+    ),
+  ),
+);
+```
+
+## Layout
+
+```scss
+@use 'sprucecss/scss/spruce' with (
+  $layout: (
+    'container-width': 84rem,
+  ),
+);
+
 ```
 
 ## Print
@@ -691,28 +359,101 @@ To learn more about the print option, [please visit the related page](/docs/gett
 
 [View on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/config/_print.scss)
 
-<table class="table table--striped table--clear-border table--sm table--rounded table--font-size-reset">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>$print-page-margin</td>
-      <td>2cm</td>
-    </tr>
-    <tr>
-      <td>$print-hidden-elements</td>
-      <td>'header, footer, aside, nav, form, iframe, [class^="aspect-ratio"]'</td>
-    </tr>
-  </tbody>
-</table>
+```scss
+@use 'sprucecss/scss/spruce' with (
+  $print: (
+    'page-margin': 2cm,
+    'hidden-elements': 'header, footer, aside, nav, form, iframe, [class^="aspect-ratio"]',
+  ),
+);
+```
+
+
+## Spacers
+
+Spacers are generated by a predefined $spacer value, and the `$spacers` map with added multiplication.
+
+Using the [spacer()](/docs/sass/functions/#spacer) helper function we can get any value by key name from the `$spacers` map.
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
-  $print-page-margin: 2cm,
-  $print-hidden-elements: 'header, footer, aside, nav, form, iframe, [class^="aspect-ratio"]'
+@use 'sprucecss/scss/spruce' with (
+  $spacer: 1rem,
+  $spacers: (
+    'xxs': $spacer * 0.25,
+    'xs': $spacer * 0.5,
+    's': $spacer,
+    'm': $spacer * 1.5,
+    'l': $spacer * 3,
+    'xl': $spacer * 4.5,
+    'xxl': $spacer * 7,
+    'xxxl': $spacer * 10,
+  ),
+);
+```
+
+## Tables
+
+```scss
+@use 'sprucecss/scss/spruce' with (
+  $table: (
+    'caption-font-size': null,
+    'caption-font-style': null,
+    'caption-font-weight': null,
+    'line-height': map.get($typography, 'line-height-md'),
+    'padding': map.get($spacers, 's'),
+    'responsive-width': 40rem,
+    'stripe': odd,
+  ),
+  $table-sm: (
+    'padding': map.get($spacers, 'xs'),
+  ),
+);
+```
+
+## Transition and Animation
+
+```scss
+@use 'sprucecss/scss/spruce' with (
+  $transition: (
+    'duration': 0.15s,
+    'timing-function': ease-in-out,
+  ),
+);
+
+```
+
+## Typography
+
+You can access any font size with the [font-size() helper function](/docs/sass/functions#font-size).
+
+```scss
+@use 'sprucecss/scss/spruce' with (
+  $typography: (
+    'font-family-base': #{eravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif},
+    'font-family-cursive': #{ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace},
+    'font-family-heading': #{Avenir, 'Avenir Next LT Pro', Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif},
+    'font-size-base': 1rem,
+    'font-size-lead': clamp(1.15rem, 2vw, 1.35rem),
+    'font-size-lg': 1.125rem,
+    'font-size-ratio': 1.25,
+    'font-size-sm': 0.875rem,
+    'font-weight-base': null,
+    'font-weight-heading': 700,
+    'inline-border-radius': map.get($display, 'border-radius-sm'),
+    'inline-padding': 0.1em 0.3em,
+    'line-height-base': 1.8,
+    'line-height-heading': calc(2px + 2ex + 2px),
+    'line-height-lg': 1.8,
+    'line-height-md': 1.5,
+    'line-height-sm': 1.2,
+  ),
+  $font-sizes: (
+    h1: math.pow(map.get($typography, 'font-size-ratio'), 4) * map.get($typography, 'font-size-base'),
+    h2: math.pow(map.get($typography, 'font-size-ratio'), 3) * map.get($typography, 'font-size-base'),
+    h3: math.pow(map.get($typography, 'font-size-ratio'), 2) * map.get($typography, 'font-size-base'),
+    h4: math.pow(map.get($typography, 'font-size-ratio'), 1) * map.get($typography, 'font-size-base'),
+    h5: map.get($typography, 'font-size-base'),
+    h6: map.get($typography, 'font-size-base'),
+  ),
 );
 ```

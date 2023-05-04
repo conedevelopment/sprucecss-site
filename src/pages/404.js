@@ -1,12 +1,9 @@
-import React from 'react';
 import { Link } from 'gatsby';
-
-// Import components
+import GettingStarted from '../components/GettingStarted';
 import Layout from '../components/Layout';
-import Seo from '../components/Seo';
-
-// Images
 import NotFoundImage from '../images/not-found.svg';
+import React from 'react';
+import Seo from '../components/Seo';
 
 export default function NotFoundPage() {
   return (
@@ -19,12 +16,13 @@ export default function NotFoundPage() {
               <h1 className="l-error-404__title">Ooops! You weren’t supposed to see this</h1>
               <p className="l-error-404__description">We couldn’t find the page you were looking for.</p>
               <div className="l-error-404__btns">
-                <Link to="/" className="btn btn--primary btn--rounded">Go home</Link>
+                <Link to="/" className="btn btn--primary btn--lg btn--rounded">Go home</Link>
               </div>
             </div>
           </div>
         </div>
       </main>
+      <GettingStarted type="bottom" />
     </Layout>
   );
 }

@@ -1,17 +1,14 @@
-@use '~sprucecss/scss/spruce';
+@use 'sprucecss/scss/spruce' as *;
 
 .preview {
-  @include spruce.layout-stack(
-    spruce.spacer(m),
-    $important: true
-  );
-  border: 1px solid spruce.color(border);
-  border-radius: spruce.$border-radius-sm;
+  @include layout-stack('m', $important: true);
+  border: 1px solid color('border');
+  border-radius: config('border-radius-sm', $display);
   font-size: 1rem;
-  padding: spruce.spacer(m);
+  padding: spacer('m');
 
   > * {
-    font-family: spruce.$font-family-base;
+    font-family: config('font-family-base', $typography);
   }
 
   ul > li > p {
@@ -22,7 +19,7 @@
 .button-grid {
   align-items: flex-start;
   display: flex;
-  gap: spruce.spacer(m);
+  gap: spacer('m');
 
   &--stacked {
     flex-wrap: wrap;
@@ -30,11 +27,11 @@
 }
 
 .inline-text-element-list {
-  @include spruce.clear-list;
-  @include spruce.layout-stack(spruce.spacer(s));
+  @include clear-list;
+  @include layout-stack('s');
 
-  @include spruce.breakpoint(sm) {
-    column-gap: spruce.spacer(l);
+  @include breakpoint('sm') {
+    column-gap: spacer('l');
     columns: 2 auto;
   }
 }

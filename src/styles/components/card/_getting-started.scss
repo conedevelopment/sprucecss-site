@@ -1,39 +1,33 @@
-@use '~sprucecss/scss/spruce';
+@use 'sass:color';
+@use 'sprucecss/scss/spruce' as *;
 
 .getting-started-card {
   $this: &;
 
-  @include spruce.a11y-card-link('.getting-started-card__link', true);
-  @include spruce.layout-stack(spruce.spacer(s));
+  @include a11y-card-link('.getting-started-card__link', true);
 
-  background-color: spruce.color(background);
-  border: 1px solid spruce.color(card-border);
-  border-radius: var(--doc-border-radius-sm);
-  padding: clamp(spruce.spacer(m), 7vw, spruce.spacer(l));
-  transition-duration: spruce.transition(duration);
-  transition-property: all;
-  transition-timing-function: spruce.transition(timing-function);
+  align-items: flex-start;
+  background-color: color('background');
+  border-radius: config('border-radius-lg', $display);
+  display: flex;
+  gap: spacer('m');
 
-  &:hover,
-  &:focus {
-    background-color: spruce.color(primary);
-    border-color: spruce.color(primary);
-    color: hsl(0 0% 100%);
-
-    #{$this}__link {
-      color: hsl(0 0% 100%);
-    }
+  &__caption {
+    @include layout-stack('xs');
   }
 
   &__icon {
-    --dimension: 4rem;
+    --dimension: 5rem;
 
+    flex-shrink: 0;
     height: var(--dimension);
     width: var(--dimension);
   }
 
   &__link {
-    color: spruce.color(heading);
+    font-size: config('font-size-sm', $typography);
+    font-weight: 700;
     text-decoration: none;
+    text-transform: uppercase;
   }
 }

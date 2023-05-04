@@ -1,13 +1,17 @@
-@use '~sprucecss/scss/spruce';
+@use 'sprucecss/scss/spruce' as *;
 
 .site-header {
   &__inner {
     align-items: center;
     display: flex;
-    gap: clamp(#{spruce.spacer(xs)}, 3vw, #{spruce.spacer(l)});
+    gap: spacer-clamp('xs', 'l', 3vw);
     height: 5rem;
     justify-content: space-between;
     position: relative;
+
+    @include breakpoint('md') {
+      height: 6rem;
+    }
   }
 
   &__logo {
@@ -27,7 +31,6 @@
     }
 
     &--ui {
-
       svg {
         height: 2.14rem;
       }
@@ -35,23 +38,23 @@
   }
 
   &__slogan {
-    @include spruce.clear-btn;
+    @include clear-btn;
     cursor: default;
     display: none;
     user-select: none;
 
-    @include spruce.breakpoint(sm) {
-      border-inline-start: 1px solid spruce.color(border);
+    @include breakpoint('sm') {
+      border-inline-start: 1px solid color(border);
       display: inline;
       font-family: var(--doc-body-font-family);
       line-height: 1;
-      margin-inline-start: spruce.spacer(m);
-      padding-inline-start: spruce.spacer(m);
+      margin-inline-start: spacer('m');
+      padding-inline-start: spacer('m');
     }
   }
 
   &__toggle {
-    @include spruce.breakpoint(md) {
+    @include breakpoint('md') {
       display: none;
     }
 
@@ -67,25 +70,25 @@
     font-family: var(--doc-body-font-family);
     justify-content: flex-end;
 
-    @include spruce.breakpoint(md) {
-      justify-content: center;
+    @include breakpoint('md') {
+      justify-content: flex-start;
     }
 
     ul {
-      @include spruce.clear-list;
-      background-color: spruce.color(background);
-      border-block-start: 1px dashed spruce.color(border);
-      column-gap: spruce.spacer(l);
+      @include clear-list;
+      background-color: color('background');
+      border-block-start: 1px dashed color(border);
+      column-gap: spacer('l');
       display: none;
       flex-direction: column;
       flex-wrap: wrap;
-      inset: 100% 0 auto 0;
-      padding-block: spruce.spacer(m);
+      inset: 100% 0 auto;
+      padding-block: spacer('m');
       position: absolute;
-      row-gap: spruce.spacer(m);
+      row-gap: spacer('m');
       z-index: 10;
 
-      @include spruce.breakpoint(md) {
+      @include breakpoint('md') {
         background-color: transparent;
         border: 0;
         display: flex;
@@ -102,29 +105,29 @@
     }
 
     a {
-      color: spruce.color(heading);
+      color: color('heading');
       text-decoration: none;
 
       &[aria-current='page'] {
-        color: spruce.color(primary);
+        color: color('primary');
         font-weight: 700;
       }
 
       &:hover,
       &:focus {
-        color: spruce.color(primary);
+        color: color('primary');
       }
     }
   }
 
   &__actions {
     display: flex;
-    gap: spruce.spacer(s);
+    gap: spacer('s');
 
     .btn--twitter {
       display: none;
 
-      @include spruce.breakpoint(md) {
+      @include breakpoint('md') {
         display: inline-flex;
       }
     }

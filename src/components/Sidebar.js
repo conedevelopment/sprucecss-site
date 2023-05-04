@@ -1,5 +1,5 @@
-import React from 'react';
 import { Link } from 'gatsby';
+import React from 'react';
 
 export default function Sidebar() {
   return (
@@ -15,7 +15,6 @@ export default function Sidebar() {
             <li><Link to="/docs/getting-started/accessibility">Accessibility</Link></li>
             <li><Link to="/docs/getting-started/internationalization">Internationalization</Link></li>
             <li><Link to="/docs/getting-started/print">Print</Link></li>
-            <li><Link to="/docs/getting-started/js">JS</Link></li>
             <li><Link to="/docs/getting-started/contribution">Contribution</Link></li>
             <li><Link to="/docs/getting-started/appendix">Appendix</Link></li>
           </ul>
@@ -25,6 +24,7 @@ export default function Sidebar() {
         <h3 className="sidebar-section__title">Customization</h3>
         <nav className="sidebar-section__navigation">
           <ul>
+            <li><Link to="/docs/customization/variables">Variables</Link></li>
             <li><Link to="/docs/customization/settings">Settings</Link></li>
             <li><Link to="/docs/customization/themes">Themes</Link></li>
           </ul>
@@ -34,6 +34,7 @@ export default function Sidebar() {
         <h3 className="sidebar-section__title">Sass</h3>
         <nav className="sidebar-section__navigation">
           <ul>
+            <li><Link to="/docs/sass/colors">Colors</Link></li>
             <li><Link to="/docs/sass/variables">Variables</Link></li>
             <li><Link to="/docs/sass/mixins">Mixins</Link></li>
             <li><Link to="/docs/sass/functions">Functions</Link></li>

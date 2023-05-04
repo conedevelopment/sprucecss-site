@@ -1,15 +1,15 @@
-@use '~sprucecss/scss/spruce';
+@use 'sprucecss/scss/spruce' as *;
 
 .prism-code-wrapper {
-  font-size: 1rem;
+  font-size: 0.9375rem;
   overflow: hidden;
   position: relative;
 }
 
 .prism-code {
   &__language {
-    border-radius: 0 0 spruce.$border-radius-sm spruce.$border-radius-sm;
-    color: spruce.color(comment, prism);
+    border-radius: 0 0 config('border-radius-sm', $display) config('border-radius-sm', $display);
+    color: color('comment', 'prism');
     display: inline-block;
     font-family: var(--doc-heading-font-family);
     font-size: 0.6rem;
@@ -24,10 +24,10 @@
 
 code[class*='language-'],
 pre[class*='language-'] {
-  color: spruce.color(color, prism);
+  color: color('color', 'prism');
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   hyphens: none;
-  line-height: 1.5;
+  line-height: 1.65;
   tab-size: 4;
   text-align: left;
   white-space: pre;
@@ -45,11 +45,11 @@ pre[class*='language-'] {
 
 /* Code blocks */
 pre[class*='language-'] {
-  border-radius: spruce.$border-radius-sm;
+  border-radius: config('border-radius-sm', $display);
   display: grid;
   margin-block: 0;
   overflow: auto;
-  padding: spruce.spacer(m);
+  padding: spacer('m');
 }
 
 pre[class*='language-'] code {
@@ -59,27 +59,27 @@ pre[class*='language-'] code {
 
 :not(pre) > code[class*='language-'],
 pre[class*='language-'] {
-  background: spruce.color(background, prism);
+  background: color('background', 'prism');
   overflow-x: auto;
 }
 
 .token.comment,
 .token.prolog,
 .token.cdata {
-  color: spruce.color(comment, prism);
+  color: color('comment', 'prism');
   font-style: italic;
 }
 
 .token.punctuation {
-  color: spruce.color(punctuation, prism);
+  color: color('punctuation', 'prism');
 }
 
 .namespace {
-  color: spruce.color(namespace, prism);
+  color: color(namespace, prism);
 }
 
 .token.deleted {
-  color: spruce.color(deleted, prism);
+  color: color(deleted, prism);
   font-style: italic;
 }
 
@@ -87,19 +87,19 @@ pre[class*='language-'] {
 .token.operator,
 .token.keyword,
 .token.property {
-  color: spruce.color(namespace, prism);
+  color: color(namespace, prism);
 }
 
 .token.tag {
-  color: spruce.color(punctuation, prism);
+  color: color(punctuation, prism);
 }
 
 .token.boolean {
-  color: spruce.color(boolean, prism);
+  color: color(boolean, prism);
 }
 
 .token.number {
-  color: spruce.color(number, prism);
+  color: color(number, prism);
 }
 
 .token.constant,
@@ -110,31 +110,31 @@ pre[class*='language-'] {
 .language-css .token.string,
 .style .token.string,
 .token.char {
-  color: spruce.color(constant, prism);
+  color: color(constant, prism);
 }
 
 .token.selector,
 .token.function,
 .token.doctype {
-  color: spruce.color(punctuation, prism);
+  color: color(punctuation, prism);
   font-style: italic;
 }
 
 .token.attr-name,
 .token.inserted {
-  color: spruce.color(constant, prism);
+  color: color(constant, prism);
   font-style: italic;
 }
 
 .token.class-name,
 .token.atrule {
-  color: spruce.color(class-name, prism);
+  color: color(class-name, prism);
 }
 
 .token.regex,
 .token.important,
 .token.variable {
-  color: spruce.color(regex, prism);
+  color: color(regex, prism);
 }
 
 .token.important,

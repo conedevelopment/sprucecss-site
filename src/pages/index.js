@@ -1,19 +1,21 @@
-import React from 'react';
-
-// Components
-import Docs from '../components/Docs';
+import Faq from '../components/Faq';
 import GettingStarted from '../components/GettingStarted';
 import Hero from '../components/Hero';
+import Ide from '../components/Ide';
 import Layout from '../components/Layout';
+import React from 'react';
 import Seo from '../components/Seo';
 
 export default function IndexPage() {
   return (
     <Layout>
       <main id="content">
-        <Hero />
+        <div className="hero-wrapper">
+          <Hero />
+          <Ide />
+        </div>
         <GettingStarted />
-        <Docs />
+        <Faq />
       </main>
     </Layout>
   );

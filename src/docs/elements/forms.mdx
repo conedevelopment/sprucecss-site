@@ -1,6 +1,7 @@
 ---
 title: 'Forms'
-order: 20
+description: 'Spruce CSS comes with overall form support for styling the different native elements.'
+order: 22
 github: 'https://github.com/conedevelopment/sprucecss-site/blob/main/src/docs/elements/forms.mdx'
 ---
 
@@ -137,7 +138,7 @@ Use the `form-range` class on an `input[type="range"]` to natively style the ran
 
 ## Textarea
 
-Use the `form-control` class on any textarea element to style it. To set the global height of it use the <code><a href="/docs/sass/variables#control">$form-control-textarea-height</a></code> variable.
+Use the `form-control` class on any textarea element to style it. To set the global height of it use the <code><a href="/docs/sass/variables#control">config('textarea-height', $form-control)</a></code> variable.
 
 <Preview>
   <div class="form-group">
@@ -359,7 +360,7 @@ Use the `form-check` class on the label element for styling checkbox elements an
   </div>
 </fieldset>
 ```
-Using the`$form-check-vertical-alignment` variable, you can control the checkbox and radio input's vertical alignment. Also, with the additional `.form-check--vertical-start` and `.form-check--vertical--center` you can do it individually.
+Using the`config('vertical-alignment', $form-control)` variable, you can control the checkbox and radio input's vertical alignment. Also, with the additional `.form-check--vertical-start` and `.form-check--vertical--center` you can do it individually.
 
 <Preview>
   <fieldset>

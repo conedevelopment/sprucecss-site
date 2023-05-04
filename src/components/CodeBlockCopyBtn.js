@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import CopyIcon from '../images/icons/copy.svg';
 import Check from '../images/icons/check-simple.svg';
+import CopyIcon from '../images/icons/copy.svg';
+import React, { useState } from 'react';
 
 export default function CodeBlockCopyBtn(props) {
   const [isCopied, setIsCopied] = useState(false);

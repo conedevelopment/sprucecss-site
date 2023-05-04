@@ -1,14 +1,19 @@
-@use '~sprucecss/scss/spruce';
+@use 'sprucecss/scss/spruce' as *;
 
 .container {
-  @include spruce.layout-center(
-    clamp(spruce.spacer(m), 5vw, spruce.spacer(l))
+  --container-width: #{config('container-width', $layout)};
+  --container-gap: #{spacer-clamp('m', 'l')};
+
+  @include layout-center(
+    var(--container-gap),
+    var(--container-width)
   );
 
   &--narrow {
-    @include spruce.layout-center(
-      clamp(spruce.spacer(m), 5vw, spruce.spacer(l)),
-      60rem
-    );
+    --container-width: 60rem;
+  }
+
+  &--narrower {
+    --container-width: 50rem;
   }
 }

@@ -1,33 +1,18 @@
-@use '~sprucecss/scss/spruce';
+@use 'sprucecss/scss/spruce' as *;
 
-@include spruce.generate-color-variables(
-  spruce.$dark-colors,
+@include generate-color-variables(
+  $dark-colors,
   ':root[data-theme-mode="dark"]'
 );
 
 [data-theme-mode='dark'] {
   color-scheme: dark;
 
+  /* stylelint-disable-next-line selector-no-qualifying-type */
   select.form-control:not([multiple]):not([size]) {
-    @include spruce.field-icon(
-      spruce.$select-icon,
-      spruce.color(select-foreground, form, true, spruce.$dark-colors)
+    @include field-icon(
+      config('select', $form-icon, false),
+      color('select-foreground', 'form', true, $dark-colors),
     );
-  }
-
-  .post-navigation-item {
-    $this: &;
-
-    &:hover {
-      .post-navigation-item__icon {
-        background-color: hsl(207 23% 26%);
-        color: hsl(0 0% 100%);
-      }
-    }
-
-    &__icon {
-      background-color: hsl(207 39% 17%);
-      color: hsl(0 0% 100%);
-    }
   }
 }

@@ -1,9 +1,9 @@
-import React from 'react';
 import { Link } from 'gatsby';
+import React from 'react';
 
 export default function Sidebar() {
   return (
-    <aside className="sidebar l-component__sidebar">
+    <aside className="sidebar l-documentation__sidebar">
       <section className="sidebar-section">
         <h3 className="sidebar-section__title">Getting Started</h3>
         <nav className="sidebar-section__navigation">

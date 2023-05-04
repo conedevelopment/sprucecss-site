@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from 'react';
-
-// Images
-import SystemMode from '../images/icons/theme-mode/system-mode.svg';
-import LightMode from '../images/icons/theme-mode/light-mode.svg';
 import DarkMode from '../images/icons/theme-mode/dark-mode.svg';
+import LightMode from '../images/icons/theme-mode/light-mode.svg';
+import React, { useEffect, useState } from 'react';
+import SystemMode from '../images/icons/theme-mode/system-mode.svg';
 
 export default function ThemeModeToggle() {
   const [theme, setTheme] = useState('system');

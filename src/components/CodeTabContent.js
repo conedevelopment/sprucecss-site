@@ -1,5 +1,5 @@
-import React from 'react';
 import CodeBlock from './CodeBlock';
+import React from 'react';
 
 export default function CodeTabContent({ id, activeTab, code, children }) {
   return (

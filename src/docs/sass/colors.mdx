@@ -1,0 +1,556 @@
+---
+title: 'Colors'
+description: 'Through colors, you can genuinely make Spruce CSS your own. Control everything with the $colors map.'
+order: 14
+github: 'https://github.com/conedevelopment/sprucecss-site/blob/main/src/docs/sass/variables.mdx'
+---
+
+<p className="lead">Spruce CSS comes with a bunch of Sass variables and generates CSS custom properties.</p>
+
+## List of Colors
+
+You can access the following colors through Spruce’s `$colors` map by default. You can also use the [color() helper function](/docs/sass/functions#color) to access the colors.
+
+<div className="l-colors">
+  <h3 className="l-colors__title">Shared</h3>
+  <div className="l-colors__inner">
+    <ColorCard
+      color="hsl(205deg 100% 2%)"
+      name="black"
+      value="$color-black"
+    />
+    <ColorCard
+      color="hsl(0deg 71% 51%)"
+      name="danger"
+      value="$color-danger"
+    />
+    <ColorCard
+      color="hsl(208deg 9% 42%)"
+      name="gray"
+      value="$color-gray"
+    />
+    <ColorCard
+      color="hsl(215deg 63% 93%)"
+      name="gray light"
+      value="$color-gray-light"
+    />
+    <ColorCard
+      color="hsl(262deg 71% 49%)"
+      name="primary"
+      value="$color-primary"
+    />
+    <ColorCard
+      color="hsl(227deg 92% 55%)"
+      name="secondary"
+      value="$color-secondary"
+    />
+    <ColorCard
+      color="hsl(150deg 100% 33%)"
+      name="success"
+      value="$color-success"
+    />
+    <ColorCard
+      bordered={true}
+      color="hsl(0deg 0% 100%)"
+      name="white"
+      value="$color-white"
+    />
+  </div>
+</div>
+
+<div className="l-colors">
+  <h3 className="l-colors__title">Alert</h3>
+  <div className="l-colors__inner">
+    <ColorCard
+      color="hsl(0deg 71% 51%)"
+      name="danger"
+      value="$color-danger"
+    />
+    <ColorCard
+      color="hsl(195deg 100% 42%)"
+      name="info"
+      value="hsl(195deg 100% 42%)"
+    />
+    <ColorCard
+      color="hsl(150deg 100% 33%)"
+      name="success"
+      value="$color-success"
+    />
+    <ColorCard
+      color="hsl(48deg 89% 55%)"
+      name="warning"
+      value="hsl(48deg 89% 55%)"
+    />
+  </div>
+</div>
+
+<div className="l-colors">
+  <h3 className="l-colors__title">Base</h3>
+  <div className="l-colors__inner">
+    <ColorCard
+      bordered={true}
+      color="hsl(0deg 0% 100%)"
+      name="background"
+      value="$color-white"
+    />
+    <ColorCard
+      color="hsl(262deg 71% 49%)"
+      name="blockquote-border"
+      value="$color-primary"
+    />
+    <ColorCard
+      color="hsl(215deg 63% 93%)"
+      name="border"
+      value="$color-gray-light"
+    />
+    <ColorCard
+      color="hsl(261.82deg 73.33% 97.06%)"
+      name="code-background"
+      value="color.change($color-primary, $lightness: 97%)"
+    />
+    <ColorCard
+      color="hsl(205deg 100% 2%)"
+      name="code-foreground"
+      value="$color-black"
+    />
+    <ColorCard
+      color="hsl(205deg 100% 2%)"
+      name="heading"
+      value="$color-black"
+    />
+    <ColorCard
+      color="hsl(262deg 71% 49%)"
+      name="link"
+      value="$color-primary"
+    />
+    <ColorCard
+      color="hsl(261.97deg 71% 39.22%)"
+      name="link-hover"
+      value="color.scale($color-primary, $lightness: -20%)"
+    />
+    <ColorCard
+      color="hsl(50deg 100% 80%)"
+      name="mark-background"
+      value="hsl(50deg 100% 80%)"
+    />
+    <ColorCard
+      color="hsl(205deg 100% 2%)"
+      name="mark-foreground"
+      value="$color-black"
+    />
+    <ColorCard
+      color="hsl(262deg 71% 49%)"
+      name="marker"
+      value="$color-primary"
+    />
+    <ColorCard
+      color="hsl(262deg 71% 49%)"
+      name="primary"
+      value="$color-primary"
+    />
+    <ColorCard
+      color="hsl(227deg 92% 55%)"
+      name="secondary"
+      value="$color-secondary"
+    />
+    <ColorCard
+      color="hsl(208deg 9% 42%)"
+      name="text"
+      value="$color-gray"
+    />
+  </div>
+</div>
+
+<div className="l-colors">
+  <h3 className="l-colors__title">Btn (Button)</h3>
+  <div className="l-colors__inner">
+    <ColorCard
+      color="hsl(262deg 71% 49%)"
+      name="primary-background"
+      value="$color-primary"
+    />
+    <ColorCard
+      color="hsl(262.13deg 70.85% 39.02%)"
+      name="primary-background-hover"
+      value="color.adjust($color-primary, $lightness: -10%)"
+    />
+    <ColorCard
+      bordered={true}
+      color="hsl(0deg 0% 100%)"
+      name="primary-foreground"
+      value="$color-white"
+    />
+    <ColorCard
+      color="hsl(227deg 92% 55%)"
+      name="secondary-background"
+      value="$color-secondary"
+    />
+    <ColorCard
+      color="hsl(226.92deg 92.14% 44.9%)"
+      name="secondary-background-hover"
+      value="color.adjust($color-secondary, $lightness: -10%)"
+    />
+    <ColorCard
+      bordered={true}
+      color="hsl(0deg 0% 100%)"
+      name="secondary-foreground"
+      value="$color-white"
+    />
+  </div>
+</div>
+
+<div className="l-colors">
+  <h3 className="l-colors__title">Form</h3>
+  <div className="l-colors__inner">
+    <ColorCard
+      bordered={true}
+      color="hsl(0deg 0% 100%)"
+      name="background"
+      value="$color-white"
+    />
+    <ColorCard
+      color="hsl(0deg 0% 95%)"
+      name="background-disabled"
+      value="hsl(0deg 0% 95%)"
+    />
+    <ColorCard
+      color="hsl(260deg 4% 70%)"
+      name="border"
+      value="hsl(260deg 4% 70%)"
+    />
+    <ColorCard
+      color="hsl(215deg 63% 93%)"
+      name="border-disabled"
+      value="$color-gray-light"
+    />
+    <ColorCard
+      color="hsl(262deg 71% 49%)"
+      name="border-focus"
+      value="$color-primary"
+    />
+    <ColorCard
+      color="hsl(262deg 71% 49%)"
+      name="check-background"
+      value="$color-primary"
+    />
+    <ColorCard
+      color="hsl(262deg 71% 49%)"
+      name="check-focus-ring"
+      value="$color-primary"
+    />
+    <ColorCard
+      bordered={true}
+      color="hsl(0deg 0% 100%)"
+      name="check-foreground"
+      value="$color-white"
+    />
+    <ColorCard
+      color="hsl(0deg 71% 51%)"
+      name="invalid"
+      value="$color-danger"
+    />
+    <ColorCard
+      color="hsl(0deg 71.2% 50.98% / 25%)"
+      name="invalid-focus-ring"
+      value="color.adjust($color-danger, $alpha: -0.75)"
+    />
+    <ColorCard
+      color="hsl(205deg 100% 2%)"
+      name="label"
+      value="$color-black"
+    />
+    <ColorCard
+      color="hsl(205deg 100% 2%)"
+      name="legend"
+      value="$color-black"
+    />
+    <ColorCard
+      color="hsl(208deg 7% 40%)"
+      name="placeholder"
+      value="hsl(208deg 7% 40%)"
+    />
+    <ColorCard
+      color="hsl(262deg 71% 49%)"
+      name="range-thumb-background"
+      value="$color-primary"
+    />
+    <ColorCard
+      color="hsl(262deg 71% 49%)"
+      name="range-thumb-focus-ring"
+      value="$color-primary"
+    />
+    <ColorCard
+      color="hsl(215deg 63% 93%)"
+      name="range-track-background"
+      value="$color-gray-light"
+    />
+    <ColorCard
+      color="hsl(261.91deg 71.2% 49.02% / 25%)"
+      name="ring-focus"
+      value="color.adjust($color-primary, $alpha: -0.75)"
+    />
+    <ColorCard
+      color="hsl(205deg 100% 2%)"
+      name="select-foreground"
+      value="$color-black"
+    />
+    <ColorCard
+      color="hsl(208deg 9% 42%)"
+      name="text"
+      value="$color-gray"
+    />
+    <ColorCard
+      color="hsl(150deg 100% 33%)"
+      name="valid"
+      value="$color-success"
+    />
+    <ColorCard
+      color="hsl(150deg 100% 32.94% / 25%)"
+      name="valid-focus-ring"
+      value="color.adjust($color-success, $alpha: -0.75)"
+    />
+  </div>
+</div>
+
+<div className="l-colors">
+  <h3 className="l-colors__title">Selection</h3>
+  <div className="l-colors__inner">
+    <ColorCard
+      bordered={true}
+      color="hsl(0deg 0% 100%)"
+      name="foreground"
+      value="$color-white"
+    />
+    <ColorCard
+      color="hsl(262deg 71% 49%)"
+      name="background"
+      value="$color-primary"
+    />
+  </div>
+</div>
+
+<div className="l-colors">
+  <h3 className="l-colors__title">Scrollbar</h3>
+  <div className="l-colors__inner">
+    <ColorCard
+      color="hsl(0deg 0% 0% / 15%)"
+      name="thumb-background"
+      value="hsl(0deg 0% 0% / 15%)"
+    />
+    <ColorCard
+      color="hsl(0deg 0% 0% / 25%)"
+      name="thumb-background-hover"
+      value="hsl(0deg 0% 0% / 25%)"
+    />
+    <ColorCard
+      color="hsl(0deg 0% 0% / 5%)"
+      name="track-background"
+      value="hsl(0deg 0% 0% / 5%)"
+    />
+  </div>
+</div>
+
+<div className="l-colors">
+  <h3 className="l-colors__title">Table</h3>
+  <div className="l-colors__inner">
+    <ColorCard
+      color="hsl(215deg 63% 93%)"
+      name="border"
+      value="$color-gray-light"
+    />
+    <ColorCard
+      color="hsl(208deg 9% 42%)"
+      name="caption"
+      value="$color-gray"
+    />
+    <ColorCard
+      color="hsl(205deg 100% 2%)"
+      name="heading"
+      value="$color-black"
+    />
+    <ColorCard
+      color="hsl(0deg 0% 0% / 5%)"
+      name="hover"
+      value="hsl(0deg 0% 0% / 5%)"
+    />
+    <ColorCard
+      bordered={true}
+      color="hsl(0deg 0% 0% / 2.5%)"
+      name="stripe"
+      value="hsl(0deg 0% 0% / 2.5%)"
+    />
+    <ColorCard
+      color="hsl(208deg 9% 42%)"
+      name="text"
+      value="$color-gray"
+    />
+  </div>
+</div>
+
+## Shared Colors
+
+We store the color values in a central map named `$colors`. It is a nested object separated by components.
+
+To eliminate the repetition, we use some helper variables for the more generic colors (which we use more than once). You can overwrite these directly to make the theming easier or from the object one by one.
+
+```scss
+@use 'sprucecss/scss/spruce' with (
+  $color-black: hsl(205deg 100% 2%),
+  $color-danger: hsl(0deg 71% 51%),
+  $color-gray: hsl(208deg 9% 42%),
+  $color-gray-light: hsl(215deg 63% 93%),
+  $color-primary: hsl(262deg 71% 49%),
+  $color-secondary: hsl(227deg 92% 55%),
+  $color-success: hsl(150deg 100% 33%),
+  $color-white: hsl(0deg 0% 100%),
+);
+```
+
+## Customize Colors
+
+Below is the full declaration of the `$colors` map.
+
+```scss
+@use 'sprucecss/scss/spruce' with (
+  $colors: (
+    'alert': (
+      'danger': $color-danger,
+      'info': hsl(195deg 100% 42%),
+      'success': $color-success,
+      'warning': hsl(48deg 89% 55%),
+    ),
+    'base': (
+      'background': $color-white,
+      'blockquote-border': $color-primary,
+      'border': $color-gray-light,
+      'code-background': color.change($color-primary, $lightness: 97%),
+      'code-foreground': $color-black,
+      'heading': $color-black,
+      'link': $color-primary,
+      'link-hover': color.scale($color-primary, $lightness: -20%),
+      'mark-background': hsl(50deg 100% 80%),
+      'mark-foreground': $color-black,
+      'marker': $color-primary,
+      'primary': $color-primary,
+      'secondary': $color-secondary,
+      'text': $color-gray,
+    ),
+    'btn': (
+      'primary-background': $color-primary,
+      'primary-background-hover': color.adjust($color-primary, $lightness: -10%),
+      'primary-foreground': $color-white,
+      'secondary-background': $color-secondary,
+      'secondary-background-hover': color.adjust($color-secondary, $lightness: -10%),
+      'secondary-foreground': $color-white,
+    ),
+    'form': (
+      'background': $color-white,
+      'background-disabled': hsl(0deg 0% 95%),
+      'border': hsl(260deg 4% 70%),
+      'border-disabled': $color-gray-light,
+      'border-focus': $color-primary,
+      'check-background': $color-primary,
+      'check-focus-ring': $color-primary,
+      'check-foreground': $color-white,
+      'invalid': $color-danger,
+      'invalid-focus-ring': color.adjust($color-danger, $alpha: -0.75),
+      'label': $color-black,
+      'legend': $color-black,
+      'placeholder': hsl(208deg 7% 40%),
+      'range-thumb-background': $color-primary,
+      'range-thumb-focus-ring': $color-primary,
+      'range-track-background': $color-gray-light,
+      'ring-focus': color.adjust($color-primary, $alpha: -0.75),
+      'select-foreground': $color-black,
+      'text': $color-gray,
+      'valid': $color-success,
+      'valid-focus-ring': color.adjust($color-success, $alpha: -0.75),
+    ),
+    'selection': (
+      'foreground': $color-white,
+      'background': $color-primary,
+    ),
+    'scrollbar': (
+      'thumb-background': hsl(0deg 0% 0% / 15%),
+      'thumb-background-hover':	hsl(0deg 0% 0% / 25%),
+      'track-background':	hsl(0deg 0% 0% / 5%),
+    ),
+    'table': (
+      'border': $color-gray-light,
+      'caption': $color-gray,
+      'heading': $color-black,
+      'hover': hsl(0deg 0% 0% / 5%),
+      'stripe': hsl(0deg 0% 0% / 2.5%),
+      'text': $color-gray,
+    ),
+  );
+);
+```
+
+<Notification type="info">We declare the colors with the modern HSL syntax. The generated values are given and converted by Sass by default.</Notification>
+
+## Get Color Values
+
+Spruce generates prefixed CSS variables at `:root` by group from the nested map above.
+
+You can always access a generated variable by name, but it is easier to use the custom getter function named <a href="/docs/sass/functions/#color"><code>color()</code></a>.
+
+```scss
+a {
+  color: color('primary');
+}
+```
+
+## Overwrite, Add New Color
+
+Because the colors are in a Sass map, it is easy to overwrite them or add new values, blocks.
+
+
+```scss
+@use 'sprucecss/scss/spruce' with (
+  $colors: (
+    'base': (
+      'primary': hsl(0 0% 15%),
+      'tertiary': hsl(332deg 49% 29%),
+    ),
+    'my-custom-component': (
+      'background': hsl(0deg 0% 100%),
+    ),
+  ),
+);
+```
+
+## Dark Colors
+
+Spruce CSS supports dark-mode, which we mainly achieve through CSS Custom Properties. You can use the `$dark-colors` map to set up your dark colors.
+
+```scss
+$dark-colors: ();
+```
+
+## List Colors
+
+In this example, you can see how you can generate a component - an alert - using Spruce’s colors with Sass’s `@each` and `map.get`.
+
+```scss
+@use 'sass:color';
+@use 'sass:map';
+@use 'sprucecss/scss/spruce' as *;
+
+.alert {
+  border: 1px solid;
+  border-left: 0.35rem solid;
+  border-radius: config('border-radius-lg', $display);
+  font-weight: 500;
+  gap: spacer('m');
+  justify-content: space-between;
+  padding: 0.65em 1em;
+
+  @each $name, $value in map.get($colors, 'alert') {
+    @at-root .alert--#{$name} {
+      background-color: color.scale($value, $lightness: 90%);
+      color: color.scale($value, $lightness: -30%);
+    }
+  }
+}
+```

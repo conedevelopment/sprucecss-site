@@ -7,15 +7,8 @@ const config = {
   siteMetadata: {
     description: 'A low-level, lightweight and modern CSS design system, authoring tool built on Sass. Give your project a solid foundation.',
     github: 'conedevelopment',
-    version: '1.2.1',
+    version: '2.0.0',
     siteUrl: 'https://sprucecss.com',
-    slogan: [
-      '🎉 Another CSS framework',
-      '😳 Yesterday I liked it',
-      '🤨 It could be worse, I think',
-      '👔 It is far from elegant',
-      '🤭 An okayish CSS framework'
-    ],
     title: 'Spruce CSS',
     twitter: 'conedevelopment',
     analyticsID: process.env.ANALYTICS_ID
@@ -75,7 +68,7 @@ const config = {
       options: {
         name: 'component',
         remote: `https://adamlaki:${process.env.GITHUB_PERSONAL_ACCESS_TOKEN}@github.com/conedevelopment/spruceui`,
-        branch: 'main'
+        branch: 'v2'
       }
     },
     {

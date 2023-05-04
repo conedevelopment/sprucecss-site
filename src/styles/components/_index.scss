@@ -1,11 +1,12 @@
 @forward 'cookie-consent';
 @forward 'site-header';
-@forward 'doc-cards';
 @forward 'site-footer';
 @forward 'hero';
+@forward 'cta';
 @forward 'card';
 @forward 'notification';
 @forward 'preview';
+@forward 'anchor-heading';
 @forward 'sidebar';
 @forward 'skip-link';
 @forward 'table-of-content';
@@ -14,4 +15,7 @@
 @forward 'heading';
 @forward 'getting-started';
 @forward 'code-tab';
+@forward 'text-btn';
+@forward 'accordion-list';
 @forward 'prism';
+@forward 'ide';

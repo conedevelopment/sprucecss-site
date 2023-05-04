@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
 import Cookies from 'universal-cookie';
-
-// Import components
+import GettingStarted from '../components/GettingStarted';
 import Layout from '../components/Layout';
+import React, { useState } from 'react';
 import Seo from '../components/Seo';
 
 export default function PrivacyPolicy() {
@@ -49,6 +48,7 @@ export default function PrivacyPolicy() {
           </article>
         </div>
       </main>
+      <GettingStarted type="bottom" />
     </Layout>
   );
 }

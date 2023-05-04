@@ -1,6 +1,7 @@
 ---
 title: 'Mixins'
-order: 14
+description: 'You can do more with less code with the mixins in Spruce CSS micro-framework.'
+order: 16
 github: 'https://github.com/conedevelopment/sprucecss-site/blob/main/src/docs/sass/mixins.mdx'
 ---
 
@@ -12,12 +13,12 @@ The predefined breakpoints are the following:
 
 ```scss
 $breakpoints: (
-  xs: 32em,
-  sm: 48em,
-  md: 64em,
-  lg: 80em,
-  xl: 90em,
-  xxl: 110em
+  'xs': 32em,
+  'sm': 48em,
+  'md': 64em,
+  'lg': 80em,
+  'xl': 90em,
+  'xxl': 110em,
 );
 ```
 
@@ -37,74 +38,60 @@ $breakpoints: (
   display: block;
   align-items: center;
 
-  @include spruce.breakpoint(md) { // @media (min-width: 64em)
+  @include breakpoint('md') { // @media (min-width: 64em)
     display: flex;
     justify-content: space-between;
   }
 }
 ```
 
-```scss
-.footer {
-  display: block;
-  align-items: center;
+## btn-variant
 
-  @include spruce.breakpoint(md) { // @media screen and (min-width: 64em)
-    display: flex;
-    justify-content: space-between;
-  }
-}
-```
+Using the `btn-variant` mixin, you can create a new button variant. First, you must declare the colors of the new button (background, foreground is required) in the `$colors` map at the very first `@use` of
 
-## Button
-
-### btn-variant
-
-Using the `btn-variant` mixin, you can create a new button variant. First, you must declare the colors of the new button (background, foreground is required) in the `$colors` map at the very first `@use` of Spruce.
-
-#### Argument(s)
+### Argument(s)
 
 | Name              | Default Value        | Description                                                |
 |-------------------|----------------------|------------------------------------------------------------|
-| `$type`           | `primary`            | The name/prefix of the related colors under the `btn` map. |
+| `$type`           | `'primary'`            | The name/prefix of the related colors under the `btn` map. |
 | `$focus`          | `true`               | Set it `true` if you want to display a focus outline ring. |
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_button.scss#L32)
 
-#### Example(s)
+### Example(s)
 
 Declare the colors of the button. The mixin will search for the keys under the btn object.
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $colors: (
-    btn: (
-      custom-background: hsl(0, 0%, 95%),
-      custom-foreground: hsl(0, 0%, 10%)
-    )
-  )
+    'btn': (
+      'custom-background': hsl(0deg 0% 95%),
+      'custom-foreground': hsl(0deg 0% 10%),
+    ),
+  ),
 );
 ```
 
 In many cases, declaring just the background and foreground color is enough. Spruce will generate the rest (hover states). But if you want to control more or use dark mode (where you want to overwrite the color values), you can be more specific.
 
 ```scss
-@use '~sprucecss/scss/spruce' with (
+@use 'sprucecss/scss/spruce' with (
   $colors: (
-    btn: (
-      primary-background: hsl(261 52% 59%),
-      primary-background-hover: hsl(261 52% 49%),
-      primary-foreground: hsl(0 0% 100%),
-      primary-foreground-hover: hsl(0 0% 100%),
-      primary-shadow-focus: hsl(261 52% 59% / 0.25),
-    )
-  )
+    'btn': (
+      'primary-background': hsl(261deg 52% 59%),
+      'primary-background-hover': hsl(261deg 52% 49%),
+      'primary-foreground': hsl(0deg 0% 100%),
+      'primary-foreground-hover': hsl(0deg 0% 100%),
+      'primary-focus-ring': hsl(261deg 52% 59% / 0.25),
+    ),
+  ),
 );
 ```
 
 ```scss
 .btn--custom {
-  @include spruce.btn-variant(custom);
+  @include btn-variant('custom');
 }
 ```
 
@@ -112,24 +99,24 @@ In many cases, declaring just the background and foreground color is enough. Spr
 <a href="https://conedevelopment.com" class="btn btn--custom btn--lg">Go to Cone</a>
 ```
 
-### btn-variant-outline
+## btn-variant-outline
 
-Using the `btn-variant-outline` mixin, you can create a new outlined button variant. First, you must declare the colors of the new button (background, foreground is required) in the `$colors` map at the very first `@use` of Spruce.
+Using the `btn-variant-outline` mixin, you can create a new outlined button variant. First, you must declare the colors of the new button (background, foreground is required) in the `$colors` map at the very first `@use` of
 
-#### Argument(s)
+### Argument(s)
 
 | Name              | Default Value        | Description                                                |
 |-------------------|----------------------|------------------------------------------------------------|
-| `$type`           | `primary`            | The name/prefix of the related colors under the `btn` map. |
+| `$type`           | `'primary'`            | The name/prefix of the related colors under the `btn` map. |
 | `$focus`          | `true`               | Set it `true` if you want to display a focus outline ring. |
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_button.scss#L63)
 
-#### Example(s)
+### Example(s)
 
 ```scss
-.btn--outline-primary { @include btn-variant-outline(primary); }
-.btn--outline-secondary { @include btn-variant-outline(secondary); }
+.btn--outline-primary { @include btn-variant-outline('primary'); }
+.btn--outline-secondary { @include btn-variant-outline('secondary'); }
 ```
 
 ## font-face
@@ -148,32 +135,30 @@ The `font-face` mixin is a helper to generate a `@font-face` declaration. This i
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_font-face.scss#L3)
 
-#### Example(s)
+### Example(s)
 
 ```scss
-@include spruce.font-face(
+@include font-face(
   'Montserrat',
   '../fonts/montserrat-v25-latin-ext_latin-regular.woff2'
 );
 
-@include spruce.font-face(
+@include font-face(
   'Montserrat',
   '../fonts/montserrat-v25-latin-ext_latin-700.woff2',
   '700'
 );
 ```
 
-## Form
-
-### focus-ring
+## focus-ring
 
 The `focus-ring()` is a small internal helper mixin to set up the focus state of the form fields, buttons (or anything). We call it on the `.form-control`, `.form-check`, `.form-switch`, `.form-range`, and button variants. For these calls, it works with global, related variables.
 
-#### Argument(s)
+### Argument(s)
 
 | Name               | Default Value            | Description                                                   |
 |--------------------|--------------------------|---------------------------------------------------------------|
-| `$type`            | `box-shadow`             | The type of the focus ring: `outline` or `box-shadow`.        |
+| `$type`            | `'box-shadow'`             | The type of the focus ring: `outline` or `box-shadow`.        |
 | `$border-color`    | `null`                   | The color value of the border. It is needed mostly on inputs. |
 | `$ring-color`      |                          | The color of the focus ring.                                  |
 | `$box-shadow-type` |                          | Where should it place the box-shadow: `outside` or `inside`.  |
@@ -182,47 +167,47 @@ The `focus-ring()` is a small internal helper mixin to set up the focus state of
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_form.scss#L6)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 .form-control:focus {
-  @include spruce.focus-ring(
-    $type: $form-control-focus-ring-type,
-    $border-color: spruce.color(border-focus, form),
-    $ring-color: spruce.color(ring-focus, form),
-    $box-shadow-type: $form-control-focus-ring-box-shadow-type,
-    $ring-width: $form-control-focus-ring-width,
-    $ring-offset: $form-control-focus-ring-offset
+  @include focus-ring(
+    $type: config('focus-ring-type', $form-control, false),
+    $border-color: color('border-focus', 'form'),
+    $ring-color: color('ring-focus', 'form'),
+    $box-shadow-type: config('focus-ring-box-shadow-type', $form-control, false),
+    $ring-width: config('focus-ring-width', $form-control, false),
+    $ring-offset: config('focus-ring-offset', $form-control, false)
   );
 }
 ```
 
-### field-disabled
+## field-disabled
 
 The `field-disabled()` is a small internal helper mixin to set up the disabled state on form fields. We call it on the `.form-control` and `.form-check` classes.
 
-#### Argument(s)
+### Argument(s)
 
-| Name                         | Default Value            | Description                                 |
-|------------------------------|--------------------------|---------------------------------------------|
-| `$background`                |                          | The color value of the background.          |
-| `$border`                    |                          | The color value of the border.              |
+| Name                   | Description                                 |
+|------------------------|---------------------------------------------|
+| `$background`          | The color value of the background.          |
+| `$border`              | The color value of the border.              |
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_form.scss#L16)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 .form-control:[disabled],
 .form-control:[disabled='true'] {
-  @include spruce.field-disabled(
-    spruce.color(background-disabled, form),
-    spruce.color(border-disabled, form)
+  @include field-disabled(
+    color('background-disabled', 'form'),
+    color('border-disabled', 'form')
   );
 }
 ```
 
-### field-icon
+## field-icon
 
 The `field-icon()` mixin is a getter function for form input backgrounds. Spruce CSS uses custom images (used as [inline SVG](https://github.com/conedevelopment/sprucecss/blob/main/scss/variable/_index.scss#L229)) for various inputs (checkbox, radio, select, success, error states).
 
@@ -230,36 +215,36 @@ This mixin first replaces the given color value as a fill value on the SVG image
 
 It is helpful for dark mode because we can’t pass a CSS variable to an inline SVG, so we have to overwrite it.
 
-#### Argument(s)
+### Argument(s)
 
-| Name                         | Default Value            | Description                                 |
-|------------------------------|--------------------------|---------------------------------------------|
-| `$icon`                      |                          | The name of the icon variable.              |
-| `$color`                     |                          | The color value of the fill.              |
+| Name                    | Description                                 |
+|-------------------------|---------------------------------------------|
+| `$icon`                 | The name of the icon variable.              |
+| `$color`                | The color value of the fill.                |
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_form.scss#L26)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 select {
-  &:not([multiple]):not([size]) {
-    @include spruce.field-icon(
-      spruce.$select-image,
-      spruce.color(select-foreground, form)
+  select.form-control:not([multiple]):not([size]) {
+    @include field-icon(
+      config('select', $form-icon, false),
+      color('select-foreground', 'form')
     );
   }
 }
 
 ```
 
-### form-check
+## form-check
 
 The `form-check()` mixin is a helper to create custom checkboxes. It accepts three selectors and generates radio and checkbox styles.
 
 <Notification type="info">There are scenarios (unfortunately) where it is easier to modify the CSS code than the HTML markup. In our case, we usually style the checkboxes and radios in the <a href="https://hu.wordpress.org/plugins/contact-form-7/">Custom Form 7</a> plugin.</Notification>
 
-#### Argument(s)
+### Argument(s)
 
 | Name                         | Default Value            | Description                                    |
 |------------------------------|--------------------------|------------------------------------------------|
@@ -270,48 +255,46 @@ The `form-check()` mixin is a helper to create custom checkboxes. It accepts thr
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_form.scss#L34)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 @include form-check('.form-check', '.form-check__control', '.form-check__label', true);
 ```
 
-## Layout
-
-### layout-center
+## layout-center
 
 With the help of the `layout-center` mixin, you can center any element.  It is most useful for the generic container element for the main layouts.
 
-#### Argument(s)
+### Argument(s)
 
 | Name             | Default Value             | Description                                                                                                                        |
 |------------------|---------------------------|------------------------------------------------------------------------------------------------------------------------------------|
-| `$gap`           | `m`                       | The padding value on either side of the element. The value comes from the `$spacers` map, use any declared key name for shorthand. |
-| `$max-width`     | `spruce.$container-width` | Set the max-width value of the element.                                                                                            |
+| `$gap`           | `'m'`                       | The padding value on either side of the element. The value comes from the `$spacers` map, use any declared key name for shorthand. |
+| `$max-width`     | `$container-width` | Set the max-width value of the element.                                                                                            |
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_layout.scss#L6)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 .hero {
   &__container {
-    @include spruce.layout-center(
-      clamp(spruce.spacer(m), 5vw, spruce.spacer(l))
+    @include layout-center(
+      spacer-clamp('m', 'l')
     );
   }
 }
 ```
 
-### layout-stack
+## layout-stack
 
 Using the help of the `layout-stack` mixin, you can classical stack layout where the elements are stacked under each other.
 
-#### Argument(s)
+### Argument(s)
 
 | Name          | Default Value            | Description                                                                                                              |
 |---------------|--------------------------|--------------------------------------------------------------------------------------------------------------------------|
-| `$gap`        | `m`                      | The margin value between the elements. The value comes from the `$spacers` map, use any declared key name for shorthand. |
+| `$gap`        | `'m'`                      | The margin value between the elements. The value comes from the `$spacers` map, use any declared key name for shorthand. |
 | `$width`      | `false`                  | Set `width: 100%;` on the stacked elements.                                                                              |
 | `$align`      | `none`                   | Set explicit align to the elements(`none`, `left`, `right`).                                                             |
 | `$important`  | `false`                  | Add !important on descandent elements to `margin-block-start`.                                                           |
@@ -319,99 +302,100 @@ Using the help of the `layout-stack` mixin, you can classical stack layout where
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_layout.scss#L16)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 ul {
-  @include spruce.layout-stack(xs);
+  @include layout-stack('xs');
 }
 ```
 
-### layout-grid
+## layout-grid
 
 With the help of the `layout-grid` mixin you can create auto-fit grid layouts where you can determine the columns' min-width.
 
-#### Argument(s)
+### Argument(s)
 
 | Name           | Default Value          | Description                                                                                                              |
 |----------------|------------------------|--------------------------------------------------------------------------------------------------------------------------|
-| `$gap`         | `m`                    | The gutter value between the elements. The value comes from the `$spacers` map, use any declared key name for shorthand. |
+| `$gap`         | `'m'`                    | The gutter value between the elements. The value comes from the `$spacers` map, use any declared key name for shorthand. |
 | `$minimum`     | `12.5rem`              | The minimum value of the child elements where it automatically breaks.                                                   |
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_layout.scss#L64)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 .docs-cards {
   &__inner {
-    @include spruce.layout-grid(l, 20rem);
+    @include layout-grid('l', 20rem);
   }
 }
 ```
 
-### layout-sidebar
+## layout-sidebar
 
 Using the `layout-sidebar` mixin, you can create a two-column sidebar layout declaring the sidebar width explicitly.
 
-#### Argument(s)
+### Argument(s)
 
 | Name                 | Default Value          | Description                                                                                                              |
 |----------------------|------------------------|--------------------------------------------------------------------------------------------------------------------------|
-| `$gap`               | `m`                    | The gutter value between the elements. The value comes from the `$spacers` map, use any declared key name for shorthand. |
+| `$gap`               | `'m'`                    | The gutter value between the elements. The value comes from the `$spacers` map, use any declared key name for shorthand. |
 | `$sidebar-width`     | `18.75rem`             | The width of the sidebar element.                                                                                        |
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_layout.scss#L79)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 .docs-template {
-  @include spruce.layout-sidebar(l, 22rem);
+  @include layout-sidebar('l', 22rem);
 }
 ```
 
-### layout-flex
+## layout-flex
 
 Using the `layout-flex` mixin, you can create intrinsic flexbox grids with explicit column width.
 
-#### Argument(s)
+### Argument(s)
 
 | Name                  | Default Value          | Description                                                                                                              |
 |-----------------------|------------------------|--------------------------------------------------------------------------------------------------------------------------|
-| `$gap`                | `m`                    | The gutter value between the elements. The value comes from the `$spacers` map, use any declared key name for shorthand. |
+| `$gap`                | `'m'`                    | The gutter value between the elements. The value comes from the `$spacers` map, use any declared key name for shorthand. |
 | `$width-variable`     | `--col-width`          | The optimal width of the columns.                                                                                        |
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_layout.scss#L100)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 .form-row--mixed {
   --col-width: 10rem;
 
-  @include spruce.layout-flex;
+  @include layout-flex;
 }
 ```
 
 ## selection
 
 Using the `selection` mixin, you can simplify the `::selection` declarations.  Pick a background color value from the `base` subsection by name and let it calculate the contrast color for the foreground automatically.
-#### Argument(s)
+
+### Argument(s)
 
 | Name          | Default Value          | Description                                                                                                               |
 |---------------|------------------------|---------------------------------------------------------------------------------------------------------------------------|
-| `$background` | `primary`              | The background color code or the name of the color from the `base` subsection from `$colors` map.                         |
+| `$background` | `'primary'`              | The background color code or the name of the color from the `base` subsection from `$colors` map.                         |
 | `$foreground` | `null`                 | The foreground color code. It will get a contrasting pair (black or white) if left empty, based on the background value.  |
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_selection.scss)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 .footer {
-  // @include spruce.selection(hsl(262 71% 49%));
-  @include spruce.selection(secondary);
+  // @include selection(hsl(262 71% 49%));
+  @include selection('secondary');
 }
 ```
 
@@ -419,7 +403,7 @@ Using the `selection` mixin, you can simplify the `::selection` declarations.  P
 
 Declare CSS custom properties through Spruce CSS to add the prefix. To get any CSS variable with prefix use the <code><a href="/docs/sass/functions#get-css-variable">get-css-variable</a></code> function.
 
-#### Argument(s)
+### Argument(s)
 
 | Name        | Description                              |
 |-------------|------------------------------------------|
@@ -427,12 +411,12 @@ Declare CSS custom properties through Spruce CSS to add the prefix. To get any C
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_css-variable.scss#L6)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 :root {
-  @include spruce.set-css-variable((
-    --container-gap: spruce.spacer-clamp(m, l)
+  @include set-css-variable((
+    --container-gap: spacer-clamp('m', 'l')
   ));
 }
 ```
@@ -441,21 +425,21 @@ Declare CSS custom properties through Spruce CSS to add the prefix. To get any C
 
 This mixin aims to query the [transition variables](/docs/sass/variables#transition-and-animation) easier. Usually, you only need the global values (e.g., for anything with a custom hover animation), but you can also overwrite the three basic arguments.
 
-#### Argument(s)
+### Argument(s)
 
 | Name              | Default Value     | Description                                                      |
 |-------------------|-------------------|------------------------------------------------------------------|
-| `$duration`       | `duration`        | Get the `$transition-duration` value or set a custom one.        |
+| `$duration`       | `'duration'`        | Get the `config('duration', $transition)` value or set a custom one.        |
 | `$property`       | `all`             | Set the `transition-property` to `all`.                          |
-| `$timing-function`| `timing-function` | Get the `$transition-timing-function` value or set a custom one. |
+| `$timing-function`| `'timing-function'` | Get the `config('timing-function', $transition)` value or set a custom one. |
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_transition.scss#L3)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 .custom-link {
-  @include spruce.transition;
+  @include transition;
 
   &:hover {
     background-color: pink;
@@ -463,13 +447,11 @@ This mixin aims to query the [transition variables](/docs/sass/variables#transit
 }
 ```
 
-## Utilities
-
-### text-ellipsis
+## text-ellipsis
 
 Crop text and display an ellipsis with multiline support where possible.
 
-#### Argument(s)
+### Argument(s)
 
 | Name                   | Default Value | Description                              |
 |------------------------|---------------|------------------------------------------|
@@ -477,70 +459,70 @@ Crop text and display an ellipsis with multiline support where possible.
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L18)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 .crop-text {
-  @include spruce.text-ellipsis(2);
+  @include text-ellipsis(2);
   width: 20rem;
 }
 ```
 
 <Notification type="info">Be careful when using the <code>text-ellipsis</code> mixin with flex displays because it will break.</Notification>
 
-### visually-hidden
+## visually-hidden
 
 Hide something from the screen but keep it visible for assistive technology.
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L5)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 .sr-only {
-  @include spruce.visually-hidden;
+  @include visually-hidden;
 }
 ```
 
-### scrollbar
+## scrollbar
 
 Create natively styled custom scrollbars.
 
-#### Argument(s)
+### Argument(s)
 
 | Name                            | Default Value                                     | Description                                       |
 | ------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
-| `$thumb-background-color`       | `spruce.color(thumb-background, scrollbar)`       | The color of the scrollbar handle.                |
-| `$thumb-background-color-hover` | `spruce.color(thumb-background-hover, scrollbar)` | The color of the scrollbar handle on hover state. |
-| `$track-background-color`       | `spruce.color(track-background, scrollbar)`       | The background color of the scrollbar.            |
+| `$thumb-background-color`       | `color(thumb-background, scrollbar)`       | The color of the scrollbar handle.                |
+| `$thumb-background-color-hover` | `color(thumb-background-hover, scrollbar)` | The color of the scrollbar handle on hover state. |
+| `$track-background-color`       | `color(track-background, scrollbar)`       | The background color of the scrollbar.            |
 | `$size`                         | `0.5rem`                                          | The width or height of the scrollbar.             |
-| `$border-radius`                | `spruce.$border-radius-sm`                        | The border-radius of the scrollbar and handle.    |
+| `$border-radius`                | `$border-radius-sm`                        | The border-radius of the scrollbar and handle.    |
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L36)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 code {
-  @include spruce.scrollbar(
-    $thumb-background-color: spruce.color(primary)
+  @include scrollbar(
+    $thumb-background-color: color('primary')
   );
   background-color: transparent;
   border-radius: 0;
   display: block;
   overflow-x: auto;
-  padding: spruce.spacer(xs) 0;
+  padding: spacer('xs') 0;
 }
 ```
 
-### clear-btn
+## clear-btn
 
 Clear the default browser button styles.
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L64)
 
 
-#### Example(s)
+### Example(s)
 
 ```scss
 .remove-button-styles {
@@ -548,13 +530,13 @@ Clear the default browser button styles.
 }
 ```
 
-### clear-list
+## clear-list
 
 Remove the `list-style`, `margin`, and `padding` stylings from the element.
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L75)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 ul {
@@ -562,7 +544,7 @@ ul {
 }
 ```
 
-### a11y-card-link
+## a11y-card-link
 
 Create better card component linking by only using the title’s link (and not the whole block). [Please visit this article about cards](https://inclusive-components.design/cards/) by Heydon Pickering for more information about the technique.
 
@@ -573,35 +555,35 @@ Create better card component linking by only using the title’s link (and not t
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L82)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 .card {
-  @include spruce.a11y-card-link('.card__link', true);
-  border: 1px solid spruce.color(border);
-  border-radius: spruce.$border-radius-lg;
-  padding: spruce.spacer(m);
+  @include a11y-card-link('.card__link', true);
+  border: 1px solid color('border');
+  border-radius: config('border-radius-lg', $display);
+  padding: spacer('m');
 
   &__link {
-    color: spruce.color(heading);
-    font-size: spruce.font-size(h3);
+    color: color('heading');
+    font-size: font-size('h3');
     font-weight: 700;
     text-decoration: none;
   }
 }
 ```
 
-### word-wrap
+## word-wrap
 
 Break long strings of text.
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L105)
 
-#### Example(s)
+### Example(s)
 
 ```scss
 .break-long-url {
-  @include spruce.word-wrap;
+  @include word-wrap;
 }
 
 ```
