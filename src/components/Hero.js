@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="container">
         <div className="hero__inner">
           <div className="hero__caption">
-            <Link to="/" className="hero__note">Version 2 is out, check out what is changed!</Link>
+            <a href="https://github.com/conedevelopment/sprucecss/releases/tag/v2.0.0" className="hero__note">Version 2 is out, check out what is changed!</a>
             <h1 className="hero__title">A minimalistic, low-level <span>CSS framework</span></h1>
             <p className="hero__description">A low-level, lightweight and modern CSS design system, authoring tool built on Sass. Give your project a solid foundation.</p>
             <div className="hero__btns">

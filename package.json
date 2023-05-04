@@ -1,6 +1,6 @@
 {
   "name": "spruce-site",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "private": true,
   "description": "Spruce CSS Documentation",
   "author": "Cone",
@@ -39,7 +39,7 @@
     "react-dom": "^18.2.0",
     "remark-gfm": "^3.0.1",
     "sass": "^1.62.0",
-    "sprucecss": "^2.0.0-beta.8",
+    "sprucecss": "^2.0.0",
     "universal-cookie": "^4.0.4"
   },
   "devDependencies": {
