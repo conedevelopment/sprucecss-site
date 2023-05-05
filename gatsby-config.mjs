@@ -31,6 +31,7 @@ const config = {
     'gatsby-plugin-sass',
     'gatsby-plugin-image',
     'gatsby-plugin-sitemap',
+    'gatsby-plugin-preload-fonts',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
