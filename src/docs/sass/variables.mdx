@@ -448,12 +448,12 @@ You can access any font size with the [font-size() helper function](/docs/sass/f
     'line-height-sm': 1.2,
   ),
   $font-sizes: (
-    h1: math.pow(map.get($typography, 'font-size-ratio'), 4) * map.get($typography, 'font-size-base'),
-    h2: math.pow(map.get($typography, 'font-size-ratio'), 3) * map.get($typography, 'font-size-base'),
-    h3: math.pow(map.get($typography, 'font-size-ratio'), 2) * map.get($typography, 'font-size-base'),
-    h4: math.pow(map.get($typography, 'font-size-ratio'), 1) * map.get($typography, 'font-size-base'),
-    h5: map.get($typography, 'font-size-base'),
-    h6: map.get($typography, 'font-size-base'),
+    'h1': math.pow(map.get($typography, 'font-size-ratio'), 4) * map.get($typography, 'font-size-base'),
+    'h2': math.pow(map.get($typography, 'font-size-ratio'), 3) * map.get($typography, 'font-size-base'),
+    'h3': math.pow(map.get($typography, 'font-size-ratio'), 2) * map.get($typography, 'font-size-base'),
+    'h4': math.pow(map.get($typography, 'font-size-ratio'), 1) * map.get($typography, 'font-size-base'),
+    'h5': map.get($typography, 'font-size-base'),
+    'h6': map.get($typography, 'font-size-base'),
   ),
 );
 ```
