@@ -18,7 +18,7 @@ export default function GettingStarted({ type }) {
               objectFit="contain"
               placeholder="blurred"
               src="../images/icons/documentation.png"
-              width={160}
+              width={135}
             />
           </GettingStartedCard>
           <GettingStartedCard
@@ -32,7 +32,7 @@ export default function GettingStarted({ type }) {
               objectFit="contain"
               placeholder="blurred"
               src="../images/icons/components.png"
-              width={160}
+              width={135}
             />
           </GettingStartedCard>
           <GettingStartedCard
@@ -46,7 +46,7 @@ export default function GettingStarted({ type }) {
               objectFit="contain"
               placeholder="blurred"
               src="../images/icons/blog.png"
-              width={160}
+              width={135}
             />
           </GettingStartedCard>
         </div>

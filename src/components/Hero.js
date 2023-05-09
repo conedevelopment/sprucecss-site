@@ -21,6 +21,7 @@ export default function Hero() {
             src="../images/hero.png"
             alt=""
             placeholder="blurred"
+            width={900}
           />
         </div>
       </div>

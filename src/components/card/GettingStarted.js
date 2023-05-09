@@ -12,6 +12,7 @@ export default function GettingStartedCard({ title, children, link, description 
         <div style={{ lineHeight: '1', marginBlockStart: '0.75rem' }}>
           <Link className="text-btn getting-started-card__link" to={link}>
             Read more
+            <div className="sr-only">{title}</div>
             <PlayIcon className="text-btn__icon" />
           </Link>
         </div>

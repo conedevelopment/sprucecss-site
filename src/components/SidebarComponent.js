@@ -30,9 +30,11 @@ export default function Sidebar() {
             <li><Link to="/ui/component/post-author">Post Author</Link></li>
             <li><Link to="/ui/component/post-card">Post Card</Link></li>
             <li><Link to="/ui/component/preloader">Preloader</Link></li>
+            <li><Link to="/ui/component/range-group">Range Group</Link></li>
             <li><Link to="/ui/component/site-navigation">Site Navigation</Link></li>
             <li><Link to="/ui/component/skip-link">Skip Link</Link></li>
             <li><Link to="/ui/component/theme-switcher">Theme Switcher</Link></li>
+            <li><Link to="/ui/component/timeline">Timeline</Link></li>
           </ul>
         </nav>
       </section>
