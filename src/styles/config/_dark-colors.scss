@@ -28,7 +28,7 @@ $colors: (
     'text': $color-gray,
   ),
   'breadcrumb': (
-    arrow: hsl(0deg 0% 100% / 10%)
+    arrow: hsl(0deg 0% 100% / 10%),
   ),
   'btn': (
     'discrete-background-hover': hsl(261deg 52% 59%),
@@ -91,7 +91,7 @@ $colors: (
     'number': hsl(14deg 90% 70%),
     'constant': hsl(221deg 100% 75%),
     'class-name': hsl(33deg 100% 77%),
-    'regex': hsl(217deg 34% 88%)
+    'regex': hsl(217deg 34% 88%),
   ),
   'selection': (
     'background': $color-primary,
@@ -109,5 +109,5 @@ $colors: (
     'hover': hsl(0deg 0% 100% / 5%),
     'text': $color-gray,
     'stripe': hsl(0deg 0% 100% / 2.5%),
-  )
+  ),
 );
