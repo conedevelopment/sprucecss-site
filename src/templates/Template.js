@@ -2,29 +2,37 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { graphql } from 'gatsby';
 import GettingStarted from '../components/GettingStarted';
 import Layout from '../components/Layout';
+import PageHeading from '../components/PageHeading';
 import React from 'react';
 import Seo from '../components/Seo';
 
 export default function Post({ data: { mdx }, children }) {
-  const { title, featuredImage, alt } = mdx.frontmatter;
+  const { title, description, featuredImage, alt } = mdx.frontmatter;
   const image = getImage(featuredImage);
 
   return (
     <Layout>
-      <main id="content" className="post">
-        <article>
-          <div className="post-heading">
-            <div className="container container--narrow">
-              <div className="post-heading__inner">
-                <h1 className="post-heading__title">{title}</h1>
-              </div>
+      <main id="content" className="l-template">
+        <article className="container">
+          <PageHeading
+            title={title}
+            description={description}
+          />
+          <div className="l-template__previews">
+            <div className="l-template__preview">
+              <GatsbyImage image={image} alt={alt} />
+            </div>
+            <div className="l-template__preview">
+              <GatsbyImage image={image} alt={alt} />
             </div>
           </div>
-          <div className="container container--narrow">
-            <div className="post-content post-content--blog">
-              <GatsbyImage image={image} alt={alt} />
+          <div className="l-template__inner">
+            <div className="post-content l-template__content">
               {children}
             </div>
+            <aside className="l-template__sidebar">
+
+            </aside>
           </div>
         </article>
       </main>

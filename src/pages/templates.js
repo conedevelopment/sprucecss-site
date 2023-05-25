@@ -12,7 +12,6 @@ export default function Blog({ data }) {
       <main id="content" className="l-templates">
         <div className="container">
           <PageHeading
-            classes="page-heading--even"
             title="Templates"
             description="High quality templates to help you get started with Spruce UI."
           />

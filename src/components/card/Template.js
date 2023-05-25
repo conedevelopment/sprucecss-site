@@ -7,11 +7,11 @@ export default function Card({ post }) {
 
   return (
     <div className="template-card">
-      <div className="template-card__thumbnail-wrapper">
-        <Link to={`/templates${post.fields.slug}`}>
+      <Link to={`/templates${post.fields.slug}`}>
+        <div className="template-card__thumbnail-wrapper">
           <GatsbyImage className="template-card__thumbnail" image={image} alt={post.frontmatter.alt} />
-        </Link>
-      </div>
+        </div>
+      </Link>
       <h2 className="template-card__title">
         <Link to={`/templates${post.fields.slug}`}>{post.frontmatter.title}</Link>
       </h2>
