@@ -133,6 +133,30 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
+  const { data: { posts: { nodes: templateNodes } } } = await graphql(`
+    query {
+      posts: allMdx(
+        sort: {frontmatter: {date: DESC}}
+        filter: {fields: {collection: {eq: "template"}}}
+      ) {
+        nodes {
+          frontmatter {
+            title
+            description
+            date
+            tags
+          }
+          fields {
+            slug
+          }
+          internal {
+            contentFilePath
+          }
+        }
+      }
+    }
+  `);
+
   docsNodes.forEach((node, index) => {
     actions.createPage({
       path: `docs${node.fields.slug}`,
@@ -175,6 +199,16 @@ exports.createPages = async ({ graphql, actions }) => {
       component: path.resolve('./src/templates/Tags.js'),
       context: {
         tag: node.fieldValue
+      }
+    });
+  });
+
+  templateNodes.forEach((node) => {
+    actions.createPage({
+      path: `templates${node.fields.slug}`,
+      component: `${path.resolve('./src/templates/Template.js')}?__contentFilePath=${node.internal.contentFilePath}`,
+      context: {
+        slug: node.fields.slug
       }
     });
   });

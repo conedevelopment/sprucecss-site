@@ -28,6 +28,13 @@ const config = {
         path: './src/blog'
       }
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'template',
+        path: './src/template'
+      }
+    },
     'gatsby-plugin-sass',
     'gatsby-plugin-image',
     'gatsby-plugin-sitemap',

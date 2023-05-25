@@ -9,6 +9,10 @@
   padding-block: clamp(spacer('l'), 10vw, 5rem) clamp(spacer('xl'), 10vw, 8rem);
   text-align: center;
 
+  &--even {
+    padding-block: clamp(spacer('l'), 10vw, 5rem) clamp(spacer('xl'), 10vw, 7rem);
+  }
+
   @include breakpoint('md') {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
     justify-content: flex-start;

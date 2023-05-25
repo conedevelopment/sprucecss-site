@@ -1,0 +1,55 @@
+@use 'sprucecss/scss/spruce' as *;
+
+.template-card {
+  @include layout-stack('xs');
+
+  &__thumbnail-wrapper {
+    background-color: hsl(0deg 0% 97%);
+    border-radius: config('border-radius-sm', $display);
+    padding: 2rem;
+  }
+
+  &__thumbnail {
+    border-radius: config('border-radius-sm', $display);
+    box-shadow: 0 0 1.25rem hsl(0deg 0% 0% / 5%);
+  }
+
+  &__title {
+    font-size: font-size('h1');
+    margin-block-start: 2rem;
+
+    a {
+      color: color('heading');
+      text-decoration: none;
+    }
+  }
+
+  &__description {
+    font-size: responsive-font-size(1.2rem);
+  }
+
+  &__meta {
+    column-gap: spacer('m');
+    display: flex;
+    flex-wrap: wrap;
+    margin-block-start: spacer('s');
+    row-gap: spacer('xs');
+  }
+
+  &__tags {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: spacer('s');
+  }
+
+  &__tag {
+    background-color: color('dark-background', 'btn');
+    border-radius: config('border-radius-sm', $display);
+    color: color('dark-foreground', 'btn');
+    font-size: config('font-size-sm', $typography);
+    font-weight: 700;
+    padding: spacer('xxs') spacer('s');
+    text-transform: uppercase;
+  }
+}

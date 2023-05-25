@@ -1,0 +1,15 @@
+@use 'sprucecss/scss/spruce' as *;
+
+.l-templates {
+  padding-block: 0 clamp(spacer('xl'), 8vw, 7rem);
+
+  &__inner {
+    --columns: 1;
+
+    display: grid;
+    gap: spacer('l');
+    grid-template-columns: repeat(var(--columns), minmax(0, 2fr));
+
+    @include breakpoint('sm') { --columns: 2; }
+  }
+}
