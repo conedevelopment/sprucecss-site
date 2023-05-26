@@ -3,19 +3,8 @@
 .template-card {
   @include layout-stack('xs');
 
-  &__thumbnail-wrapper {
-    background-color: hsl(0deg 0% 97%);
-    border-radius: config('border-radius-sm', $display);
-    padding: 2rem;
-  }
-
-  &__thumbnail {
-    border-radius: config('border-radius-sm', $display);
-    box-shadow: 0 0 1.25rem hsl(0deg 0% 0% / 5%);
-  }
-
   &__title {
-    font-size: font-size('h1');
+    font-size: responsive-font-size(2.5rem, 25, '2vw + 1rem');
     margin-block-start: 2rem;
 
     a {
@@ -25,7 +14,7 @@
   }
 
   &__description {
-    font-size: responsive-font-size(1.2rem);
+    font-size: responsive-font-size(1.2rem, 30, '1vw + 0.75rem');
   }
 
   &__meta {
@@ -41,15 +30,5 @@
     display: flex;
     flex-wrap: wrap;
     gap: spacer('s');
-  }
-
-  &__tag {
-    background-color: color('dark-background', 'btn');
-    border-radius: config('border-radius-sm', $display);
-    color: color('dark-foreground', 'btn');
-    font-size: config('font-size-sm', $typography);
-    font-weight: 700;
-    padding: spacer('xxs') spacer('s');
-    text-transform: uppercase;
   }
 }

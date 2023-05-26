@@ -1,0 +1,68 @@
+@use 'sass:color';
+@use 'sprucecss/scss/spruce' as *;
+
+.template-preview {
+  background-color: hsl(0deg 0% 97%);
+  border-radius: config('border-radius-sm', $display);
+  display: flex;
+  padding: spacer-clamp('s', 2rem);
+
+  .gatsby-image-wrapper {
+    border-radius: config('border-radius-sm', $display);
+    box-shadow: 0 0 1.25rem hsl(0deg 0% 0% / 5%);
+  }
+}
+
+.template-tag {
+  background-color: color('dark-background', 'btn');
+  border-radius: config('border-radius-sm', $display);
+  color: color('dark-foreground', 'btn');
+  font-size: config('font-size-sm', $typography);
+  font-weight: 700;
+  padding: spacer('xxs') spacer('s');
+  text-transform: uppercase;
+
+  &--free {
+    background-color: color.adjust(color('success', 'alert', true), $lightness: 60%);
+    color: color.adjust(color('success', 'alert', true), $lightness: -15%);
+  }
+}
+
+.template-actions {
+  --columns: 1;
+  display: grid;
+  gap: spacer('m');
+  grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+
+  @include breakpoint('md') {
+    --columns: 2;
+  }
+}
+
+.template-meta {
+  @include clear-list;
+  border: 1px solid color('border');
+  border-radius: config('border-radius-sm', $display);
+  padding: spacer('m');
+
+  > * + * {
+    border-block-start: 1px dashed color('border');
+    margin-block-start: spacer('s');
+    padding-block-start: spacer('s');
+  }
+
+  &__item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: spacer('m');
+    justify-content: space-between;
+
+    &--tags {
+      justify-content: end;
+    }
+
+    strong {
+      color: color('heading');
+    }
+  }
+}

@@ -6,14 +6,14 @@ import PageHeading from '../components/PageHeading';
 import React from 'react';
 import Seo from '../components/Seo';
 
-export default function Blog({ data }) {
+export default function Templates({ data }) {
   return (
     <Layout>
       <main id="content" className="l-templates">
         <div className="container">
           <PageHeading
             title="Templates"
-            description="High quality templates to help you get started with Spruce UI."
+            description="High-quality templates to help you build better and faster."
           />
           <div className="l-templates__inner">
             {data.allMdx.nodes.map((post) => {
@@ -31,7 +31,7 @@ export default function Blog({ data }) {
 
 export function Head() {
   return (
-    <Seo title="Blog" />
+    <Seo title="Templates" description="High-quality templates to help you build better and faster." />
   );
 }
 

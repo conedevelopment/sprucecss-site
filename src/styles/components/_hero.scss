@@ -13,8 +13,8 @@
   &__inner {
     align-items: center;
     display: grid;
-    grid-template-columns: minmax(0, 1fr);
     gap: spacer-clamp('l', 'xl');
+    grid-template-columns: minmax(0, 1fr);
     padding-block: get-css-variable(--section-gap-half) get-css-variable(--section-gap);
 
     @include breakpoint('md') {
@@ -64,10 +64,10 @@
 
   &__title {
     font-size: responsive-font-size(4.5rem, 35, '4vw + 1rem');
+    font-weight: 400;
     letter-spacing: -3px;
     margin-block: 0;
     max-width: 50ch;
-    font-weight: 400;
 
     span {
       font-weight: 700;

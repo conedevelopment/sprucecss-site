@@ -1,10 +1,52 @@
 ---
 title: 'Documentation'
-description: 'With modern CSS, we got some great tools that we can utilize to solve legacy problems or handle them better.'
+description: 'A simple and modern documentation template with categories, code highlighting, RTL support and dark mode built on Eleventy.'
 featuredImage: '../images/templates/documentation.png'
-alt: 'A minimalistic documentation template.'
+alt: 'The preview of the documentation template in a browser.'
+darkImage: '../images/templates/documentation-dark.png'
+github: 'https://github.com/conedevelopment/sprucecss-eleventy-documentation-template'
+demo: 'https://eleventy-documentation.sprucecss.com/'
+license: 'MIT'
+version: 'v1.0.4'
+date: '2023-05-23'
+updated: '2023-05-24'
 published: true
 tags: ['Eleventy', 'Free']
 ---
 
-<p className="lead">With modern CSS, we got some great tools that we can utilize to solve legacy problems or handle them better.</p>
+<p className="lead">Welcome to the official documentation of **Spruce Docs** Elventy theme. A small template you can use to document any of your projects.</p>
+
+A documentation template is always helpful. There are a lot of solutions to make one; we wanted to create our self-hosted version based on our favorite static site generator [Eleventy](https://www.11ty.dev/).
+
+By structure, it is simple, with two levels and additional custom templates like [FAQ]([/faq/](https://eleventy-documentation.sprucecss.com/faq/)) and [Changelog]([/changelog/](https://eleventy-documentation.sprucecss.com/changelog/)).
+
+## Features
+
+- Breadcrumb navigation built on [11ty Navigation Plugin](https://www.11ty.dev/docs/plugins/navigation/).
+- HTML minification in production mode.
+- Anchor headings.
+- Table of Content.
+- FAQ template.
+- Changelog template.
+- Static search integration with [pagefind](https://pagefind.app/).
+- Code highlighting.
+- RTL support.
+- Dark theme mode.
+- [svgIcon](https://github.com/conedevelopment/sprucecss-eleventy-documentation-template/blob/main/src/shortcodes/svg-icon.js) shortcode: render any SVG icon inline and add optional classes.
+- [markdownRenderer](https://github.com/conedevelopment/sprucecss-eleventy-documentation-template/blob/main/src/shortcodes/markdown-render.js): render any string (markdown) into HTML.
+
+## Content Managment
+
+Adding content to the template is easy as almost everything is in Eleventy.
+
+### The Basic Structure
+
+Our base folder for the documentation pages is the `posts` folder. You must follow the folder structure, which means the `category` here. If you create a folder, you must make a list page with the same name as the folder. You must also create another `posts` folder under the `category` folder where your posts go. You must create the `posts.json` file that will parameter your `layout` and `permalink` values.
+
+### Eleventy Navigation
+
+The theme utilizes the [Eleventy Navigation plugin](https://www.11ty.dev/docs/plugins/navigation/), so you must explicitly set up the hierarchy. This is needed for the automatic sidebar navigation, the navigation order, and breadcrumb generation.
+
+### Other Pages
+
+To create simple pages, make a file directly under the `src` folder and configure it with the available front matter.

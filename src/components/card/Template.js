@@ -7,10 +7,8 @@ export default function Card({ post }) {
 
   return (
     <div className="template-card">
-      <Link to={`/templates${post.fields.slug}`}>
-        <div className="template-card__thumbnail-wrapper">
-          <GatsbyImage className="template-card__thumbnail" image={image} alt={post.frontmatter.alt} />
-        </div>
+      <Link to={`/templates${post.fields.slug}`} className="template-preview">
+        <GatsbyImage image={image} alt={post.frontmatter.alt} />
       </Link>
       <h2 className="template-card__title">
         <Link to={`/templates${post.fields.slug}`}>{post.frontmatter.title}</Link>
@@ -21,7 +19,7 @@ export default function Card({ post }) {
           {post.frontmatter.tags
             .filter(tag => tag.length > 0)
             .map((tag, i) => (
-              <span key={tag} className="template-card__tag">
+              <span key={tag} className={`template-tag template-tag--${tag.toLowerCase()}`}>
                 {tag}
               </span>
             ))

@@ -4,18 +4,33 @@
   padding-block: 0 clamp(spacer('xl'), 8vw, 7rem);
 
   &__inner {
-    --columns: 1;
-
     display: grid;
-    gap: spacer('l');
-    grid-template-columns: repeat(var(--columns), minmax(0, 2fr));
+    gap: spacer-clamp('l', 'xl');
+    grid-template-columns: minmax(0, 2fr);
+    margin-block-start: spacer-clamp('xl', 'xxl');
 
-    @include breakpoint('sm') { --columns: 2; }
+    @include breakpoint('md') {
+      grid-template-columns: minmax(0, 2fr) 28rem;
+    }
+  }
+
+  &__sidebar {
+    @include layout-stack('l');
+    order: -1;
+
+    @include breakpoint('md') {
+      order: 0;
+    }
   }
 
   &__previews {
     display: flex;
+    flex-direction: column;
     gap: spacer('l');
+
+    @include breakpoint('md') {
+      flex-direction: row;
+    }
   }
 
   &__preview {

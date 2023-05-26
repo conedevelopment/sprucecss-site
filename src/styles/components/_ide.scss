@@ -18,10 +18,10 @@
     align-items: center;
     background-color: color('header-background', 'ide');
     border-radius: config('border-radius-sm', $display) config('border-radius-sm', $display) 0 0;
-    padding: 0.45rem 1.25rem;
+    color: hsl(0deg 0% 100%);
     display: flex;
     gap: 1rem;
-    color: hsl(0deg 0% 100%);
+    padding: 0.45rem 1.25rem;
   }
 
   &__controls {
@@ -39,8 +39,8 @@
   &__inner {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    position: relative;
     overflow: hidden;
+    position: relative;
 
     @include breakpoint('md') {
       grid-template-columns: minmax(0, 16.5rem) minmax(0, 1fr);
@@ -48,9 +48,9 @@
   }
 
   &__toggle {
-    border-start-end-radius: 0 !important;
     border-end-end-radius: 0 !important;
     border-end-start-radius: 0 !important;
+    border-start-end-radius: 0 !important;
     inset: auto 0 0 auto;
     position: absolute;
 
@@ -74,8 +74,8 @@
       @include layout-stack('s');
       display: none;
       height: 100%;
-      padding: 2rem;
       overflow-y: auto;
+      padding: 2rem;
 
       @include breakpoint('md') {
         display: block !important;

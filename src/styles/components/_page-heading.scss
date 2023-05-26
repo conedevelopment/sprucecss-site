@@ -10,7 +10,7 @@
   text-align: center;
 
   @include breakpoint('md') {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
     justify-content: flex-start;
     text-align: start;
   }
@@ -34,7 +34,7 @@
   }
 
   &__description {
-    font-size: responsive-font-size(1.25rem, 30, '1vw + 1rem');
+    font-size: responsive-font-size(1.25rem, 30, '1vw + 0.75rem');
     margin: spacer('m') 0 0;
     margin-block: 0;
     max-width: 50ch;
