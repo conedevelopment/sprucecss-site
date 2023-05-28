@@ -35,13 +35,13 @@
     @include transition;
     align-items: center;
     background-color: color('icon-background', 'navigation');
+    block-size: 3rem;
     border-radius: var(--doc-border-radius-md);
     color: color('icon-foreground', 'navigation');
     display: flex;
     flex-shrink: 0;
-    block-size: 3rem;
-    justify-content: center;
     inline-size: 3rem;
+    justify-content: center;
 
     svg {
       --dimension: 1rem;

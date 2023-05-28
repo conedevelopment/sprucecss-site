@@ -38,8 +38,8 @@
   }
 
   &__logo {
-    display: inline-flex;
     block-size: 2.5rem;
+    display: inline-flex;
     opacity: 0.15;
   }
 
@@ -84,8 +84,8 @@
 
   &__cone-logo {
     align-items: center;
-    display: inline-flex;
     block-size: 0.9rem;
+    display: inline-flex;
     margin-inline-end: spacer('xs');
 
     svg {

@@ -10,9 +10,9 @@
   }
 
   &__color {
+    block-size: 3rem;
     border-radius: config('border-radius-lg', $display);
     flex-shrink: 0;
-    block-size: 3rem;
     inline-size: 3rem;
   }
 

@@ -67,11 +67,11 @@
 
   &__icon {
     background-color: color('background');
+    block-size: 2rem;
     border: 4px solid color('background');
     border-radius: 1rem;
-    block-size: 2rem;
+    inline-size: 2rem;
     inset: calc(-1rem - 4px) -1rem auto auto;
     position: absolute;
-    inline-size: 2rem;
   }
 }

@@ -3,9 +3,9 @@
 .site-header {
   &__inner {
     align-items: center;
+    block-size: 5rem;
     display: flex;
     gap: spacer-clamp('xs', 'l', 3vw);
-    block-size: 5rem;
     justify-content: space-between;
     position: relative;
 
@@ -24,10 +24,10 @@
     }
 
     svg {
-      bottom: -0.1em;
       block-size: 1.75rem;
-      position: relative;
+      bottom: -0.1em;
       inline-size: auto;
+      position: relative;
     }
 
     &--ui {

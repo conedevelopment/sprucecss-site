@@ -8,11 +8,11 @@
   &::before {
     background-color: color('primary');
     border-radius: 0 config('border-radius-sm', $display) config('border-radius-sm', $display) 0;
-    inset-block: 0;
     content: '';
+    inline-size: 0.3rem;
+    inset-block: 0;
     inset-inline-start: -1rem;
     position: absolute;
-    inline-size: 0.3rem;
   }
 }
 

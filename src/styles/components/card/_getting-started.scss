@@ -18,9 +18,9 @@
 
   &__icon {
     --dimension: 5rem;
+    block-size: var(--dimension);
 
     flex-shrink: 0;
-    block-size: var(--dimension);
     inline-size: var(--dimension);
   }
 

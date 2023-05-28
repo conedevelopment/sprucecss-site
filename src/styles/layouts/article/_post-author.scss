@@ -8,9 +8,9 @@
 
   &__avatar {
     --dimension: 2.5rem;
+    block-size: var(--dimension);
 
     border-radius: calc(var(--dimension) / 2);
-    block-size: var(--dimension);
     inline-size: var(--dimension);
   }
 

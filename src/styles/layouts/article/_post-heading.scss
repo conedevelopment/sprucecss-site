@@ -42,21 +42,21 @@
     margin-block: 0;
 
     + li::before {
+      block-size: 0.4em;
       border-block-end: 2px solid color('arrow', 'breadcrumb');
       border-inline-end: 2px solid color('arrow', 'breadcrumb');
       content: '';
       display: inline-flex;
-      block-size: 0.4em;
+      inline-size: 0.4em;
       margin-inline: 0.75em;
       transform: rotate(-45deg);
-      inline-size: 0.4em;
     }
   }
 
   [aria-current='page'] {
     @include text-ellipsis(1);
     display: inline-block;
-    text-align: start;
     inline-size: 20ch;
+    text-align: start;
   }
 }
