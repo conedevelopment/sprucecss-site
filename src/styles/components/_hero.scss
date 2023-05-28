@@ -27,11 +27,11 @@
     animation: rotate infinite 100s linear;
     animation-direction: alternate;
     margin-inline: auto;
-    max-width: 13.5rem;
+    max-inline-size: 13.5rem;
     order: -1;
 
     @include breakpoint('md') {
-      max-width: 100%;
+      max-inline-size: 100%;
       order: 2;
     }
   }
@@ -67,7 +67,7 @@
     font-weight: 400;
     letter-spacing: -3px;
     margin-block: 0;
-    max-width: 50ch;
+    max-inline-size: 50ch;
 
     span {
       font-weight: 700;
@@ -77,7 +77,7 @@
   &__description {
     font-size: responsive-font-size(1.35rem, 30, '1vw + 1rem');
     margin-block: 1.25rem 0;
-    max-width: 60ch;
+    max-inline-size: 60ch;
   }
 
   &__btns {

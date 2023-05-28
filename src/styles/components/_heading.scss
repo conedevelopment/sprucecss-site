@@ -21,6 +21,6 @@
   &__description {
     font-size: responsive-font-size(1.25rem, 20, '0.5rem + 1vw');
     line-height: config('line-height-md', $typography);
-    max-width: 50ch;
+    max-inline-size: 50ch;
   }
 }

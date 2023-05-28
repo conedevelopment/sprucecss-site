@@ -15,7 +15,7 @@
 
   &__sidebar {
     @include breakpoint('sm') {
-      max-height: calc(100vh - 4rem);
+      max-block-size: calc(100vh - 4rem);
       position: sticky;
     }
   }
@@ -43,7 +43,7 @@
   &__table-of-content {
     inset-block-start: 2rem;
     margin-inline: auto;
-    max-width: 45rem;
+    max-inline-size: 45rem;
     position: sticky;
 
     &-helper {
@@ -61,7 +61,7 @@
 
     .post-content {
       margin-inline: auto;
-      max-width: 45rem;
+      max-inline-size: 45rem;
     }
   }
 
@@ -69,7 +69,7 @@
     font-size: responsive-font-size(3.3rem, 27.5, '3vw + 1rem');
     margin-block: 0;
     margin-inline: auto;
-    max-width: 45rem;
+    max-inline-size: 45rem;
 
     @include breakpoint('lg') {
       grid-column: 1 / 2;

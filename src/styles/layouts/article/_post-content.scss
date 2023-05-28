@@ -50,8 +50,8 @@
 
   iframe {
     aspect-ratio: 16 / 10;
-    height: auto;
-    width: 100;
+    block-size: auto;
+    inline-size: 100;
   }
 
   > .gatsby-image-wrapper:first-child + * {

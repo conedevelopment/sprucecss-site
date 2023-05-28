@@ -39,7 +39,7 @@
 
   &__logo {
     display: inline-flex;
-    height: 2.5rem;
+    block-size: 2.5rem;
     opacity: 0.15;
   }
 
@@ -85,12 +85,12 @@
   &__cone-logo {
     align-items: center;
     display: inline-flex;
-    height: 0.9rem;
+    block-size: 0.9rem;
     margin-inline-end: spacer('xs');
 
     svg {
-      height: 100%;
-      width: auto;
+      block-size: 100%;
+      inline-size: auto;
     }
   }
 

@@ -5,12 +5,12 @@
     align-items: center;
     display: flex;
     gap: spacer-clamp('xs', 'l', 3vw);
-    height: 5rem;
+    block-size: 5rem;
     justify-content: space-between;
     position: relative;
 
     @include breakpoint('md') {
-      height: 6rem;
+      block-size: 6rem;
     }
   }
 
@@ -25,14 +25,14 @@
 
     svg {
       bottom: -0.1em;
-      height: 1.75rem;
+      block-size: 1.75rem;
       position: relative;
-      width: auto;
+      inline-size: auto;
     }
 
     &--ui {
       svg {
-        height: 2.14rem;
+        block-size: 2.14rem;
       }
     }
   }

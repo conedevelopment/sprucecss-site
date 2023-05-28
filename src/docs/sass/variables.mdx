@@ -49,10 +49,11 @@ We store the breakpoints in the `$breakpoints` map, which we use in the <code><a
 @use 'sprucecss/scss/spruce' with (
   $btn: (
     'border-radius': map.get($display, 'border-radius-sm'),
+    'border-width': 1px,
     'focus-ring-box-shadow-type': outside,
     'focus-ring-offset': 2px,
+    'focus-ring-size': 2px,
     'focus-ring-type': outline,
-    'focus-ring-width': 2px,
     'font-family': null,
     'font-size': map.get($typography, 'font-size-base'),
     'font-style': null,
@@ -60,9 +61,8 @@ We store the breakpoints in the `$breakpoints` map, which we use in the <code><a
     'gap': map.get($spacers, 'xs'),
     'icon-padding': 0.75em,
     'icon-size': 1em,
-    'outline-width': 1px,
     'padding': 0.75em 1em,
-    'shadow-width': 0.25rem,
+    'shadow-size': 0.25rem,
     'text-transform': null,
   ),
   $btn-lg: (
@@ -115,17 +115,17 @@ We use the `$escaping-characters` under the <code><a href="/docs/sass/functions/
 ```scss
 @use 'sprucecss/scss/spruce' with (
   $form-check: (
-    'border-width': 1px,
     'border-radius': map.get($display, border-radius-sm),
+    'border-width': 1px,
+    'focus-ring-box-shadow-type': outside,
+    'focus-ring-offset': 2px,
+    'focus-ring-size': 2px,
+    'focus-ring-type': outline,
     'font-size': 1.125rem,
     'font-weight': map.get($form-check, 'font-weight'),
     'line-height': map.get($typography, 'line-height-heading'),
     'margin-block-start': 0.1em,
     'vertical-alignment': center,
-    'focus-ring-type': outline,
-    'focus-ring-box-shadow-type': outside,
-    'focus-ring-width': 2px,
-    'focus-ring-offset': 2px,
   ),
   $form-check-lg: (
     'font-size': map.get($typography, 'size-lg'),
@@ -141,17 +141,17 @@ We use the `$escaping-characters` under the <code><a href="/docs/sass/functions/
 ```scss
 @use 'sprucecss/scss/spruce' with (
   $form-control: (
+    'border-radius': map.get($display, 'border-radius-sm'),
+    'border-width': 1px,
+    'focus-ring-box-shadow-type': outside,
+    'focus-ring-offset': 2px,
+    'focus-ring-size': 0.25rem,
+    'focus-ring-type': box-shadow,
     'font-size': map.get($typography, 'font-size-base'),
     'font-weight': null,
     'line-height': 1.5,
     'padding': 0.5em 0.75em,
-    'border-width': 1px,
-    'border-radius': map.get($display, 'border-radius-sm'),
-    'focus-ring-type': box-shadow,
-    'focus-ring-box-shadow-type': outside,
-    'focus-ring-width': 0.25rem,
-    'focus-ring-offset': 2px,
-    'textarea-height': 6rem,
+    'textarea-block-size': 6rem,
   ),
   $form-control-lg: (
     'font-size': map.get($typography, 'size-lg'),
@@ -164,21 +164,21 @@ We use the `$escaping-characters` under the <code><a href="/docs/sass/functions/
   ),
   $form-control-color: (
     'aspect-ratio': 1,
-    'height': 100%,
+    'block-size': 100%,
+    'inline-size': 2.625rem,
     'padding': 0.5em,
-    'width': 2.625rem,
   ),
   $form-control-color-lg: (
     'aspect-ratio': 1,
-    'height': 100%,
+    'block-size': 100%,
+    'inline-size': 3.204rem,
     'padding': 0.5em,
-    'width': 3.204rem,
   ),
   $form-control-color-sm: (
     'aspect-ratio': 1,
-    'height': 100%,
+    'block-size': 100%,
+    'inline-size': 1.925rem,
     'padding': 0.25em,
-    'width': 1.925rem,
   ),
 );
 ```
@@ -252,13 +252,13 @@ We use the `$escaping-characters` under the <code><a href="/docs/sass/functions/
   $form-range: (
     'focus-ring-box-shadow-type': outside,
     'focus-ring-offset': 2px,
+    'focus-ring-size': 2px,
     'focus-ring-type': outline,
-    'focus-ring-width': 2px,
+    'thumb-block-size': 1rem,
     'thumb-border-radius': 0.5rem,
-    'thumb-height': 1rem,
-    'thumb-width': 1rem,
+    'thumb-inline-size': 1rem,
+    'track-block-size': 0.25rem,
     'track-border-radius': 0.15rem,
-    'track-height': 0.25rem,
   ),
 );
 ```
@@ -268,7 +268,7 @@ We use the `$escaping-characters` under the <code><a href="/docs/sass/functions/
 ```scss
 @use 'sprucecss/scss/spruce' with (
   $form-row: (
-    'col-width': 20ch,
+    'inline-size': 20ch,
   ),
 );
 ```
@@ -347,7 +347,7 @@ We use the `$escaping-characters` under the <code><a href="/docs/sass/functions/
 ```scss
 @use 'sprucecss/scss/spruce' with (
   $layout: (
-    'container-width': 84rem,
+    'container-inline-size': 84rem,
   ),
 );
 
@@ -401,7 +401,7 @@ Using the [spacer()](/docs/sass/functions/#spacer) helper function we can get an
     'caption-font-weight': null,
     'line-height': map.get($typography, 'line-height-md'),
     'padding': map.get($spacers, 's'),
-    'responsive-width': 40rem,
+    'responsive-inline-size': 40rem,
     'stripe': odd,
   ),
   $table-sm: (

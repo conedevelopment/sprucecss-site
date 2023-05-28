@@ -10,8 +10,8 @@
     --dimension: 2.5rem;
 
     border-radius: calc(var(--dimension) / 2);
-    height: var(--dimension);
-    width: var(--dimension);
+    block-size: var(--dimension);
+    inline-size: var(--dimension);
   }
 
   &__name {

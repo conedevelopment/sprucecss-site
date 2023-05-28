@@ -20,8 +20,8 @@
     --dimension: 5rem;
 
     flex-shrink: 0;
-    height: var(--dimension);
-    width: var(--dimension);
+    block-size: var(--dimension);
+    inline-size: var(--dimension);
   }
 
   &__link {

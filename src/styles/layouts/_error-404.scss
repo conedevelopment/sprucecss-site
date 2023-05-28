@@ -8,15 +8,15 @@
   }
 
   &__image {
-    height: auto;
-    max-width: 10rem;
+    block-size: auto;
+    max-inline-size: 10rem;
   }
 
   &__caption {
     @include layout-stack('s', false);
     margin-block-start: spacer('s');
     margin-inline: auto;
-    max-width: 45rem;
+    max-inline-size: 45rem;
   }
 
   &__title {

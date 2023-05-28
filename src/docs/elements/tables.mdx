@@ -315,7 +315,7 @@ Use the `table--in-line` class on a `<table>` to remove the inline padding from 
 
 Adding the `<div class="table-responsive"></div>` as a wrapper element you can make the tables horizontally scrollable.
 
-You can control the width of the scrollable table with the `config('responsive-width', $table)` globally and locally with the `--min-width` custom property.
+You can control the width of the scrollable table with the `config('responsive-inline-size', $table)` globally and locally with the `--inline-size` custom property.
 
 ```html
 <div class="table-responsive">
@@ -331,7 +331,7 @@ You can control the width of the scrollable table with the `config('responsive-w
 ```
 
 ```html
-<div class="table-responsive" style="--min-width: 20rem;">
+<div class="table-responsive" style="--inline-size: 20rem;">
   <table class="table">
     ...
   </table>

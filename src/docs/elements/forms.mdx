@@ -138,7 +138,7 @@ Use the `form-range` class on an `input[type="range"]` to natively style the ran
 
 ## Textarea
 
-Use the `form-control` class on any textarea element to style it. To set the global height of it use the <code><a href="/docs/sass/variables#control">config('textarea-height', $form-control)</a></code> variable.
+Use the `form-control` class on any textarea element to style it. To set the global height of it use the <code><a href="/docs/sass/variables#control">config('textarea-block-size', $form-control)</a></code> variable.
 
 <Preview>
   <div class="form-group">
@@ -611,11 +611,11 @@ Form-group is the generic container class for form elements. Besides the basic i
 
 ## Row
 
-You can create a row stack using `form-row--mixed` class. It uses flexbox and automatically sets the columns based on the `--col-width` custom property.
+You can create a row stack using `form-row--mixed` class. It uses flexbox and automatically sets the columns based on the `--inline-size` custom property.
 
 <Preview>
   <div class="form-row--mixed">
-    <div class="form-group" style={{'--col-width': '30ch'}}>
+    <div class="form-group" style={{'--inline-size': '30ch'}}>
       <label class="form-label" for="city">City</label>
       <input class="form-control" id="city" name="city" type="text"/>
     </div>
@@ -632,7 +632,7 @@ You can create a row stack using `form-row--mixed` class. It uses flexbox and au
 
 ```html
 <div class="form-row--mixed">
-  <div class="form-group" style="--col-width: 30ch">
+  <div class="form-group" style="--inline-size: 30ch">
     <label class="form-label" for="city">City</label>
     <input class="form-control" id="city" name="city" type="text"/>
   </div>

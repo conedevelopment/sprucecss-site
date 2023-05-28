@@ -8,7 +8,7 @@
 
   &__icon {
     --dimension: 0.65em;
-    height: var(--dimension);
-    width: var(--dimension);
+    block-size: var(--dimension);
+    inline-size: var(--dimension);
   }
 }

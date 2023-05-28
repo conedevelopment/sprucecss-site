@@ -2,13 +2,13 @@
 
 .post-navigation {
   align-items: center;
-  border-block-start: 1px solid color(border);
+  border-block-start: 1px solid color('border');
   display: flex;
   flex-wrap: wrap;
-  gap: spacer(m);
+  gap: spacer('m');
   justify-content: space-between;
-  margin-block-start: spacer(xl);
-  padding-block-start: spacer(m);
+  margin-block-start: spacer('xl');
+  padding-block-start: spacer('m');
 }
 
 .post-navigation-item {
@@ -16,7 +16,7 @@
 
   align-items: center;
   display: flex;
-  gap: spacer(s);
+  gap: spacer('s');
   text-decoration: none;
 
   &:hover {
@@ -39,25 +39,25 @@
     color: color('icon-foreground', 'navigation');
     display: flex;
     flex-shrink: 0;
-    height: 3rem;
+    block-size: 3rem;
     justify-content: center;
-    width: 3rem;
+    inline-size: 3rem;
 
     svg {
       --dimension: 1rem;
 
-      height: var(--dimension);
-      width: var(--dimension);
+      block-size: var(--dimension);
+      inline-size: var(--dimension);
     }
   }
 
   &__caption {
-    color: color(text);
+    color: color('text');
     line-height: config('line-height-md', $typography);
   }
 
   &__title {
-    color: color(primary);
+    color: color('primary');
     display: block;
     font-weight: 700;
   }

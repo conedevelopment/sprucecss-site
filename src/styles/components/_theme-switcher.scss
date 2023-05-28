@@ -13,7 +13,7 @@
     justify-content: center;
     pointer-events: none;
     position: absolute;
-    width: 2rem;
+    inline-size: 2rem;
 
     &--system .system { display: inline-block; }
     &--light .light { display: inline-block; }
@@ -23,8 +23,8 @@
       --dimension: 1rem;
 
       display: none;
-      height: var(--dimension);
-      width: var(--dimension);
+      block-size: var(--dimension);
+      inline-size: var(--dimension);
     }
   }
 
@@ -41,7 +41,7 @@
         $border-color: color('border-focus', 'form', true, dark.$colors),
         $ring-color: color('ring-focus', 'form', true, dark.$colors),
         $box-shadow-type: config('focus-ring-box-shadow-type', $form-control),
-        $ring-width: config('focus-ring-width', $form-control),
+        $ring-size: config('focus-ring-size', $form-control),
         $ring-offset: config('focus-ring-offset', $form-control),
       );
     }

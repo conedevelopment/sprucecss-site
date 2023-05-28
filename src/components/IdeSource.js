@@ -206,9 +206,9 @@ $colors: (
 
   &__logo {
     --dimension: 4rem;
+    block-size: var(--dimension);
     display: inline-flex;
-    height: var(--dimension);
-    width: var(--dimension);
+    inline-size: var(--dimension);
   }
 
   &__title {
@@ -263,12 +263,12 @@ $colors: (
   position: relative;
 
   &__inner {
-    --height: 6rem;
+    --block-size: 6rem;
     align-items: center;
+    block-size: var(--block-size);
     display: flex;
     flex-wrap: wrap;
     gap: spacer-clamp('s', 'l');
-    height: var(--height);
     justify-content: space-between;
   }
 
@@ -287,9 +287,9 @@ $colors: (
 
   &__logo {
     --dimension: 4rem;
+    block-size: var(--dimension);
     display: inline-flex;
-    height: var(--dimension);
-    width: var(--dimension);
+    inline-size: var(--dimension);
   }
 
   &__email {

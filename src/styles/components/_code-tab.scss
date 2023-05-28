@@ -31,8 +31,8 @@
     line-height: 1;
 
     svg {
-      height: 0.85em;
-      width: 0.85em;
+      block-size: 0.85em;
+      inline-size: 0.85em;
     }
   }
 
@@ -62,7 +62,7 @@
 
   &__body {
     .prism-code {
-      max-height: 40rem;
+      max-block-size: 40rem;
     }
   }
 }

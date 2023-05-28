@@ -20,7 +20,7 @@
     letter-spacing: -2px;
     line-height: 1;
     margin-block: 0;
-    max-width: 50ch;
+    max-inline-size: 50ch;
   }
 
   &__caption {
@@ -37,7 +37,7 @@
     font-size: responsive-font-size(1.25rem, 30, '1vw + 0.75rem');
     margin: spacer('m') 0 0;
     margin-block: 0;
-    max-width: 50ch;
+    max-inline-size: 50ch;
   }
 
   &__btns {
