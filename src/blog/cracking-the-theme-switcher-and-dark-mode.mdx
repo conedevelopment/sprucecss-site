@@ -1,0 +1,186 @@
+---
+title: 'Cracking the Theme Switcher and Dark Mode'
+date: 2023-05-30
+featuredImage: '../images/blog/cracking-the-theme-switcher-and-dark-mode.png'
+alt: 'An abstract 3D illustration of a webpage in the browser.'
+published: true
+tags: ['css', 'ui']
+---
+
+<p className="lead">Creating a dark theme can be challenging but manageable with modern CSS. On the other hand, switching between and detecting themes can be tricky.</p>
+
+In this article, I will show you my logic behind handling multi-themed (light, dark, and system) projects with all their in and outs. Please, note that this is my way of doing it. It can be wrong in some places and out of style for you, which is fine.
+
+<Notification type="info">This article is partly based on the method we use in Spruce CSS, but in the end, there is nothing magic here; you can apply it anywhere.</Notification>
+
+Let's look at the thought process and go forward step by step.
+
+## Create a CSS Theme
+
+As I wrote, creating a new theme using custom properties is not a big deal; you overwrite your colors individually. If you build your system with this in mind from the start, you won't have a problem.
+
+You have a theme like this:
+
+```css
+:root {
+  --primary: hsl(262deg 71% 49%);
+  --heading: hsl(205deg 100% 2%);
+  --text: hsl(208deg 9% 42%);
+}
+```
+
+And a dark theme like this:
+
+```css
+:root[data-theme-mode="dark"] {
+  --primary: hsl(261deg 54% 70%);
+  --heading: hsl(206deg 100% 7%);
+  --text: hsl(0deg 0% 97%);
+}
+```
+
+We add the `data-theme-mode="dark"` to the root element, which is the `html` tag. We want to update this attribute based on our theme switcher, previously saved value, or system preference to get the right colors.
+
+## Identify the Theme
+
+As the previous section shows, we used a data attribute to identify the dark theme. Only the dark theme; we handle the light one as a default.
+
+You can identify and handle the theme as you wish; data attribute is just one convenient solution.
+
+On the first visit, we want the system settings that will complicate our code.
+
+<Notification type="info">This example has three states: <code>system</code>, <code>dark</code>, and <code>light</code>. In practice, it will be reduced to two: <code>light</code> and <code>dark</code>. We handle the light as a default (we write our code as always) and dark as an overwriting to redeclare the color variables.</Notification>
+
+## 1. Switching Between Themes
+
+The UI of this is totally on you. I usually use a select at the footer, but many great patterns are available out there. The things you need to pay attention to are:
+
+- The active state.
+- The accessibility: a native element is always a good choice to tackle  a11y.
+
+You need a small JS script that detects which option the user chooses and updates the option at the `html` tag (and the state of the theme switcher).
+
+You may want to store the selected theme in the user's system but where?
+
+You have two options:
+
+- [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage): a client-side data storage system.
+- [Cookie](https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie): a small data storage system that can travel through an HTTP request.
+
+Both options are valid and usable for us. Which one you choose will depend on your stack. A cookie is a better option if you use PHP and your cache doesn't interfere with it (doesn't cache it). In this case, you can do the hard lifting on the server side.
+
+The localStorage is easier to handle from the front-end side because it has a capable API. It also doesn't travel to the server, only live on the client system. We need it because we don't use a back-end, we have a static site, or our server cache kills the cookies.
+
+Knowing all of this, here is our theme switcher JS code that you can also find in the [Spruce UI](https://sprucecss.com/ui/component/theme-switcher/) with the markup and styling.
+
+```js
+(() => {
+  const themeSwitcher = document.querySelector('#theme-switcher');
+  const preferredTheme = localStorage.getItem('preferred-theme') ?? 'system';
+
+  themeSwitcher.addEventListener('input', (e) => {
+    const theme = e.target.value;
+    const systemMode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+
+    localStorage.setItem('preferred-theme', theme);
+    document.documentElement.setAttribute('data-theme-mode', theme === 'system' ? systemMode : theme);
+    themeSwitcher.setAttribute('data-theme-mode', theme);
+    themeSwitcher.querySelector(`option[value="${theme}"]`).selected = 'selected';
+  });
+
+  themeSwitcher.setAttribute('data-theme-mode', preferredTheme);
+  themeSwitcher.querySelector(`option[value="${preferredTheme}"]`).selected = 'selected';
+})();
+```
+
+As you see, everything is simple here.
+- We store the data in localStorage. We check for any saved data from previous visits on the first load.
+- We store two states: one for the root element, which also checks the system preference, and one for the theme switcher, which the user chooses from the select.
+- As you see - and this is true for the other parts, too - the html element can only get light or dark values, not system. If you are in system mode, it still gets one of the two mentioned values.
+
+## 2. Theme Detection
+
+Once you can switch between themes, you must detect them—both the previous user and system settings.
+
+The tricky part here is the user's system preference. We want to query the preferred color scheme if the theme switcher is in system mode (on purpose) or in the default "empty" state.
+
+The [prefers-color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) is a CSS media feature that we can use to detect the system preferences with the [matchMedia](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) method.
+
+We can also watch for changes in this setting to reflect the system change in real-time (no need for browser refresh).
+
+```js
+(() => {
+  const systemMode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  const preferredTheme = localStorage.getItem('preferred-theme');
+
+  function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme-mode', theme === 'system' ? systemMode : theme);
+  }
+
+  window
+    .matchMedia('(prefers-color-scheme: dark)')
+    .addEventListener('change', (e) => {
+      if (localStorage.getItem('preferred-theme') === 'system' || localStorage.getItem('preferred-theme') === null) {
+        setTheme(e.matches ? 'dark' : 'light');
+      }
+    });
+
+  setTheme(preferredTheme || systemMode);
+})();
+```
+
+## 3. Changing Assets
+
+The last step that needs to be added is handling the media files. There are cases where we want to display separate images for each theme. This can happen with any cover image or thumbnail, but one place where it will almost always be the case is your site's logo.
+
+We can use a data attribute for each related asset (light and dark) and switch them on load (or on the back-end based on cookie value) based on the preferred setting. If you change them on the front-end with JS, you can also use them for lazyloading while initially serving a smaller placeholder.
+
+In the code below, we use the [MutationObserver](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver) to observe the html element for any change and call the changeAssets function.
+
+```js
+(() => {
+  const htmlElement = document.querySelector('html');
+  const systemMode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+
+  function changeAssets(theme) {
+    if (!theme) return;
+    const themeAssets = document.querySelectorAll('img[data-theme-mode]');
+
+    themeAssets.forEach((el) => {
+      el.src = el.getAttribute(`data-${theme}-asset`);
+    });
+  }
+
+  changeAssets(htmlElement.getAttribute('data-theme-mode') === 'system' ? systemMode : htmlElement.getAttribute('data-theme-mode'));
+
+  const observer = new MutationObserver(() => {
+    changeAssets(htmlElement.getAttribute('data-theme-mode') === 'system' ? systemMode : htmlElement.getAttribute('data-theme-mode'));
+  });
+
+  observer.observe(htmlElement, { attributes: true });
+})();
+```
+
+You can use this code with the following HTML structure.
+
+```html
+<img
+  src="logo-dark.svg"
+  alt="Spruce CSS"
+  data-theme-mode
+  data-light-asset="logo-dark.svg"
+  data-dark-asset="logo-light.svg"
+>
+```
+
+## GDPR and Privacy Policy
+
+Making a theme switcher, we store cookies (or cookie-like data) on the user's system. As far as I know, there isn't any precedent court ruling related to whether we can (or not) store this data on the user's computer without consent, but in the future, it can happen.
+
+If we have to ask for permission beforehand, we have to add a new acceptance layer to the theme switcher (this is the point where we write any local storage).
+
+## Summary
+
+You can see this in action in our [Spruce Docs](https://github.com/conedevelopment/sprucecss-eleventy-documentation-template) theme with a sligthly modified theme switcher (it still has 95% the same code but using buttons not a select). Because of Spruce CSS, the theme handling is a bit more abstract, but if you compile the code, you will see the same CSS custom property structure we showed you here.
+
+Right now, for us, this is quite a good solution. Because it does the work on the client side, the asset handling is not our favorite because there can be some unnecessary flashing. This is primarily noticeable with the logo, but we try to tackle this with an embedded SVG with its own CSS for recoloring.
