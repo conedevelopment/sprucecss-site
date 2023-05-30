@@ -71,7 +71,7 @@ Both options are valid and usable for us. Which one you choose will depend on yo
 
 The localStorage is easier to handle from the front-end side because it has a capable API. It also doesn't travel to the server, only live on the client system. We need it because we don't use a back-end, we have a static site, or our server cache kills the cookies.
 
-Knowing all of this, here is our theme switcher JS code that you can also find in the [Spruce UI](https://sprucecss.com/ui/component/theme-switcher/) with the markup and styling.
+**Knowing all of this, here is our theme switcher JS code that you can also find in the [Spruce UI](https://sprucecss.com/ui/component/theme-switcher/) with the markup and styling.**
 
 ```js
 (() => {
@@ -102,7 +102,7 @@ As you see, everything is simple here.
 
 Once you can switch between themes, you must detect them—both the previous user and system settings.
 
-The tricky part here is the user's system preference. We want to query the preferred color scheme if the theme switcher is in system mode (on purpose) or in the default "empty" state.
+**The tricky part here is the user's system preference. We want to query the preferred color scheme if the theme switcher is in system mode (on purpose) or in the default "empty" state.**
 
 The [prefers-color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) is a CSS media feature that we can use to detect the system preferences with the [matchMedia](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) method.
 
