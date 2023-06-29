@@ -5,6 +5,35 @@ order: 16
 github: 'https://github.com/conedevelopment/sprucecss-site/blob/main/src/docs/sass/mixins.mdx'
 ---
 
+## a11y-card-link
+
+Create better card component linking by only using the title’s link (and not the whole block). [Please visit this article about cards](https://inclusive-components.design/cards/) by Heydon Pickering for more information about the technique.
+
+| Name                            | Default Value  | Description                                                                      |
+| ------------------------------- | -------------- | -------------------------------------------------------------------------------- |
+| `$link`                         |                | The selector of the link element.                                                |
+| `$at-root`                      | `false`        | Wheater output the link as a child of the parent component or at the root level. |
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L82)
+
+### Example(s)
+
+```scss
+.card {
+  @include a11y-card-link('.card__link', true);
+  border: 1px solid color('border');
+  border-radius: config('border-radius-lg', $display);
+  padding: spacer('m');
+
+  &__link {
+    color: color('heading');
+    font-size: font-size('h3');
+    font-weight: 700;
+    text-decoration: none;
+  }
+}
+```
+
 ## breakpoint
 
 With the `breakpoint` mixin, you can create a `min-width` based (mobile-first) breakpoint on a predefined breakpoint from the `$breakpoints` map.
@@ -119,66 +148,32 @@ Using the `btn-variant-outline` mixin, you can create a new outlined button vari
 .btn--outline-secondary { @include btn-variant-outline('secondary'); }
 ```
 
-## font-face
+## clear-btn
 
-The `font-face` mixin is a helper to generate a `@font-face` declaration. This is a minimal and modern font-face declaration, so it only supports the `.woff2` format (under the `$src` argument).
+Clear the default browser button styles.
 
-### Argument(s)
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L64)
 
-| Name             | Default Value | Description                                                                                                                          |
-|------------------|---------------|--------------------------------------------------------------------------------------------------------------------------------------|
-| `$font-family`   | `null`        | The name of the font family.                                                                                                         |
-| `$src`           | `null`        | The URL path to the font file.                                                                                                       |
-| `$font-weight`   | `400`         | The weight of the font.                                                                                                              |
-| `$font-style`    | `normal`      | The style of the font.                                                                                                               |
-| `$font-display`  | `swap`        | The <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display">font-display</a></code> property value. |
-
-[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_font-face.scss#L3)
 
 ### Example(s)
 
 ```scss
-@include font-face(
-  'Montserrat',
-  '../fonts/montserrat-v25-latin-ext_latin-regular.woff2'
-);
-
-@include font-face(
-  'Montserrat',
-  '../fonts/montserrat-v25-latin-ext_latin-700.woff2',
-  '700'
-);
+.remove-button-styles {
+  @include clear-btn;
+}
 ```
 
-## focus-ring
+## clear-list
 
-The `focus-ring()` is a small internal helper mixin to set up the focus state of the form fields, buttons (or anything). We call it on the `.form-control`, `.form-check`, `.form-switch`, `.form-range`, and button variants. For these calls, it works with global, related variables.
+Remove the `list-style`, `margin`, and `padding` stylings from the element.
 
-### Argument(s)
-
-| Name               | Default Value            | Description                                                   |
-|--------------------|--------------------------|---------------------------------------------------------------|
-| `$type`            | `'box-shadow'`             | The type of the focus ring: `outline` or `box-shadow`.        |
-| `$border-color`    | `null`                   | The color value of the border. It is needed mostly on inputs. |
-| `$ring-color`      |                          | The color of the focus ring.                                  |
-| `$box-shadow-type` |                          | Where should it place the box-shadow: `outside` or `inside`.  |
-| `$ring-size`      |                          | The width of the focus ring.                                  |
-| `$ring-offset`     |                          | The offset of the focus ring if the type is `outline`.        |
-
-[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_form.scss#L6)
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L75)
 
 ### Example(s)
 
 ```scss
-.form-control:focus {
-  @include focus-ring(
-    $type: config('focus-ring-type', $form-control, false),
-    $border-color: color('border-focus', 'form'),
-    $ring-color: color('ring-focus', 'form'),
-    $box-shadow-type: config('focus-ring-box-shadow-type', $form-control, false),
-    $ring-size: config('focus-ring-size', $form-control, false),
-    $ring-offset: config('focus-ring-offset', $form-control, false)
-  );
+ul {
+  @include clear-list;
 }
 ```
 
@@ -238,6 +233,69 @@ select {
 
 ```
 
+## focus-ring
+
+The `focus-ring()` is a small internal helper mixin to set up the focus state of the form fields, buttons (or anything). We call it on the `.form-control`, `.form-check`, `.form-switch`, `.form-range`, and button variants. For these calls, it works with global, related variables.
+
+### Argument(s)
+
+| Name               | Default Value            | Description                                                   |
+|--------------------|--------------------------|---------------------------------------------------------------|
+| `$type`            | `'box-shadow'`             | The type of the focus ring: `outline` or `box-shadow`.        |
+| `$border-color`    | `null`                   | The color value of the border. It is needed mostly on inputs. |
+| `$ring-color`      |                          | The color of the focus ring.                                  |
+| `$box-shadow-type` |                          | Where should it place the box-shadow: `outside` or `inside`.  |
+| `$ring-size`      |                          | The width of the focus ring.                                  |
+| `$ring-offset`     |                          | The offset of the focus ring if the type is `outline`.        |
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_form.scss#L6)
+
+### Example(s)
+
+```scss
+.form-control:focus {
+  @include focus-ring(
+    $type: config('focus-ring-type', $form-control, false),
+    $border-color: color('border-focus', 'form'),
+    $ring-color: color('ring-focus', 'form'),
+    $box-shadow-type: config('focus-ring-box-shadow-type', $form-control, false),
+    $ring-size: config('focus-ring-size', $form-control, false),
+    $ring-offset: config('focus-ring-offset', $form-control, false)
+  );
+}
+```
+
+## font-face
+
+The `font-face` mixin is a helper to generate a `@font-face` declaration. This is a minimal and modern font-face declaration, so it only supports the `.woff2` format (under the `$src` argument).
+
+### Argument(s)
+
+| Name             | Default Value | Description                                                                                                                          |
+|------------------|---------------|--------------------------------------------------------------------------------------------------------------------------------------|
+| `$font-family`   | `null`        | The name of the font family.                                                                                                         |
+| `$src`           | `null`        | The URL path to the font file.                                                                                                       |
+| `$font-weight`   | `400`         | The weight of the font.                                                                                                              |
+| `$font-style`    | `normal`      | The style of the font.                                                                                                               |
+| `$font-display`  | `swap`        | The <code><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display">font-display</a></code> property value. |
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_font-face.scss#L3)
+
+### Example(s)
+
+```scss
+@include font-face(
+  'Montserrat',
+  '../fonts/montserrat-v25-latin-ext_latin-regular.woff2'
+);
+
+@include font-face(
+  'Montserrat',
+  '../fonts/montserrat-v25-latin-ext_latin-700.woff2',
+  '700'
+);
+```
+
 ## form-check
 
 The `form-check()` mixin is a helper to create custom checkboxes. It accepts three selectors and generates radio and checkbox styles.
@@ -286,27 +344,26 @@ With the help of the `layout-center` mixin, you can center any element.  It is m
 }
 ```
 
-## layout-stack
+## layout-flex
 
-Using the help of the `layout-stack` mixin, you can classical stack layout where the elements are stacked under each other.
+Using the `layout-flex` mixin, you can create intrinsic flexbox grids with explicit column width.
 
 ### Argument(s)
 
-| Name           | Default Value            | Description                                                                                                              |
-|----------------|--------------------------|--------------------------------------------------------------------------------------------------------------------------|
-| `$gap`         | `'m'`                    | The margin value between the elements. The value comes from the `$spacers` map, use any declared key name for shorthand. |
-| `$inline-size` | `false`                  | Whether it has explicit width (inline-size).                                                                             |
-| `$align`       | `none`                   | Set explicit align to the elements(`none`, `left`, `right`).                                                             |
-| `$important`   | `false`                  | Add !important on descandent elements to `margin-block-start`.                                                           |
-| `$split`       | `0`                      | Split the elements vertically from the nth element.                                                                      |
+| Name                  | Default Value          | Description                                                                                                              |
+|-----------------------|------------------------|--------------------------------------------------------------------------------------------------------------------------|
+| `$gap`                | `'m'`                  | The gutter value between the elements. The value comes from the `$spacers` map, use any declared key name for shorthand. |
+| `$inline-size`        | `--inline-size`        | The optimal width of the columns.                                                                                        |
 
-[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_layout.scss#L16)
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_layout.scss#L100)
 
 ### Example(s)
 
 ```scss
-ul {
-  @include layout-stack('xs');
+.form-row--mixed {
+  --inline-size: 10rem;
+
+  @include layout-flex;
 }
 ```
 
@@ -354,26 +411,58 @@ Using the `layout-sidebar` mixin, you can create a two-column sidebar layout dec
 }
 ```
 
-## layout-flex
+## layout-stack
 
-Using the `layout-flex` mixin, you can create intrinsic flexbox grids with explicit column width.
+Using the help of the `layout-stack` mixin, you can classical stack layout where the elements are stacked under each other.
 
 ### Argument(s)
 
-| Name                  | Default Value          | Description                                                                                                              |
-|-----------------------|------------------------|--------------------------------------------------------------------------------------------------------------------------|
-| `$gap`                | `'m'`                  | The gutter value between the elements. The value comes from the `$spacers` map, use any declared key name for shorthand. |
-| `$inline-size`        | `--inline-size`        | The optimal width of the columns.                                                                                        |
+| Name           | Default Value            | Description                                                                                                              |
+|----------------|--------------------------|--------------------------------------------------------------------------------------------------------------------------|
+| `$gap`         | `'m'`                    | The margin value between the elements. The value comes from the `$spacers` map, use any declared key name for shorthand. |
+| `$inline-size` | `false`                  | Whether it has explicit width (inline-size).                                                                             |
+| `$align`       | `none`                   | Set explicit align to the elements(`none`, `left`, `right`).                                                             |
+| `$important`   | `false`                  | Add !important on descandent elements to `margin-block-start`.                                                           |
+| `$split`       | `0`                      | Split the elements vertically from the nth element.                                                                      |
 
-[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_layout.scss#L100)
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_layout.scss#L16)
 
 ### Example(s)
 
 ```scss
-.form-row--mixed {
-  --inline-size: 10rem;
+ul {
+  @include layout-stack('xs');
+}
+```
 
-  @include layout-flex;
+## scrollbar
+
+Create natively styled custom scrollbars.
+
+### Argument(s)
+
+| Name                            | Default Value                                     | Description                                       |
+| ------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| `$thumb-background-color`       | `color(thumb-background, scrollbar)`              | The color of the scrollbar handle.                |
+| `$thumb-background-color-hover` | `color(thumb-background-hover, scrollbar)`        | The color of the scrollbar handle on hover state. |
+| `$track-background-color`       | `color(track-background, scrollbar)`              | The background color of the scrollbar.            |
+| `$size`                         | `0.5rem`                                          | The width or height of the scrollbar.             |
+| `$border-radius`                | `$border-radius-sm`                               | The border-radius of the scrollbar and handle.    |
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L36)
+
+### Example(s)
+
+```scss
+code {
+  @include scrollbar(
+    $thumb-background-color: color('primary')
+  );
+  background-color: transparent;
+  border-radius: 0;
+  display: block;
+  overflow-x: auto;
+  padding: spacer('xs') 0;
 }
 ```
 
@@ -421,6 +510,30 @@ Declare CSS custom properties through Spruce CSS to add the prefix. To get any C
 }
 ```
 
+
+## text-ellipsis
+
+Crop text and display an ellipsis with multiline support where possible.
+
+### Argument(s)
+
+| Name                   | Default Value | Description                              |
+|------------------------|---------------|------------------------------------------|
+| `$number-of-lines`     | `1`           | Multiline text cropping where supported. |
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L18)
+
+### Example(s)
+
+```scss
+.crop-text {
+  @include text-ellipsis(2);
+  inline-size: 20rem;
+}
+```
+
+<Notification type="info">Be careful when using the <code>text-ellipsis</code> mixin with flex displays because it will break.</Notification>
+
 ## transition
 
 This mixin aims to query the [transition variables](/docs/sass/variables#transition-and-animation) easier. Usually, you only need the global values (e.g., for anything with a custom hover animation), but you can also overwrite the three basic arguments.
@@ -447,29 +560,6 @@ This mixin aims to query the [transition variables](/docs/sass/variables#transit
 }
 ```
 
-## text-ellipsis
-
-Crop text and display an ellipsis with multiline support where possible.
-
-### Argument(s)
-
-| Name                   | Default Value | Description                              |
-|------------------------|---------------|------------------------------------------|
-| `$number-of-lines`     | `1`           | Multiline text cropping where supported. |
-
-[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L18)
-
-### Example(s)
-
-```scss
-.crop-text {
-  @include text-ellipsis(2);
-  inline-size: 20rem;
-}
-```
-
-<Notification type="info">Be careful when using the <code>text-ellipsis</code> mixin with flex displays because it will break.</Notification>
-
 ## visually-hidden
 
 Hide something from the screen but keep it visible for assistive technology.
@@ -481,95 +571,6 @@ Hide something from the screen but keep it visible for assistive technology.
 ```scss
 .sr-only {
   @include visually-hidden;
-}
-```
-
-## scrollbar
-
-Create natively styled custom scrollbars.
-
-### Argument(s)
-
-| Name                            | Default Value                                     | Description                                       |
-| ------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
-| `$thumb-background-color`       | `color(thumb-background, scrollbar)`              | The color of the scrollbar handle.                |
-| `$thumb-background-color-hover` | `color(thumb-background-hover, scrollbar)`        | The color of the scrollbar handle on hover state. |
-| `$track-background-color`       | `color(track-background, scrollbar)`              | The background color of the scrollbar.            |
-| `$size`                         | `0.5rem`                                          | The width or height of the scrollbar.             |
-| `$border-radius`                | `$border-radius-sm`                               | The border-radius of the scrollbar and handle.    |
-
-[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L36)
-
-### Example(s)
-
-```scss
-code {
-  @include scrollbar(
-    $thumb-background-color: color('primary')
-  );
-  background-color: transparent;
-  border-radius: 0;
-  display: block;
-  overflow-x: auto;
-  padding: spacer('xs') 0;
-}
-```
-
-## clear-btn
-
-Clear the default browser button styles.
-
-[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L64)
-
-
-### Example(s)
-
-```scss
-.remove-button-styles {
-  @include clear-btn;
-}
-```
-
-## clear-list
-
-Remove the `list-style`, `margin`, and `padding` stylings from the element.
-
-[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L75)
-
-### Example(s)
-
-```scss
-ul {
-  @include clear-list;
-}
-```
-
-## a11y-card-link
-
-Create better card component linking by only using the title’s link (and not the whole block). [Please visit this article about cards](https://inclusive-components.design/cards/) by Heydon Pickering for more information about the technique.
-
-| Name                            | Default Value  | Description                                                                      |
-| ------------------------------- | -------------- | -------------------------------------------------------------------------------- |
-| `$link`                         |                | The selector of the link element.                                                |
-| `$at-root`                      | `false`        | Wheater output the link as a child of the parent component or at the root level. |
-
-[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L82)
-
-### Example(s)
-
-```scss
-.card {
-  @include a11y-card-link('.card__link', true);
-  border: 1px solid color('border');
-  border-radius: config('border-radius-lg', $display);
-  padding: spacer('m');
-
-  &__link {
-    color: color('heading');
-    font-size: font-size('h3');
-    font-weight: 700;
-    text-decoration: none;
-  }
 }
 ```
 
