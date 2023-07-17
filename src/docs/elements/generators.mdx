@@ -24,14 +24,14 @@ Using `generate-color-variables`, we can generate our CSS variables from a map o
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_color.scss#L4)
 
-#### Argument(s)
+### Argument(s)
 
 | Name                  | Default Value          | Description                                                |
 |-----------------------|------------------------|------------------------------------------------------------|
 | `$colors`             | `$colors`              | The color Sass map.                                        |
 | `$selector`           | `:root`                | The selector which will scope the CSS custom properties.   |
 
-#### Example(s)
+### Example(s)
 
 ```scss
 @use 'sprucecss/scss/spruce' as *;
@@ -42,6 +42,22 @@ Using `generate-color-variables`, we can generate our CSS variables from a map o
 );
 
 ```
+
+## generate-variables
+
+A useful internal utility mixin to generate CSS custom properties anywhere. We use this in custom property mode to generate the scoped variables where needed.
+
+<Notification type="info">If you want to see it in action check out the <a href="https://github.com/conedevelopment/sprucecss/blob/main/scss/form/_check.scss#L14">check form component</a>.</Notification>
+
+### Argument(s)
+
+| Name                  | Default Value          | Description                                                |
+|-----------------------|------------------------|------------------------------------------------------------|
+| `$map`                |                        | The name Sass map.                                         |
+| `$exclude`            | `null`                 | A Sass list what to exclude from the map.                  |
+| `$include `           | `null`                 | A Sass list what to include from the map.                  |
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_variables.scss)
 
 ## generate-styles
 

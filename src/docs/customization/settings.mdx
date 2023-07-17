@@ -22,6 +22,7 @@ You can access any setting with the [setting() helper function](/docs/sass/funct
     'optimal-spacer-size': '5vw',
     'prefix': 'spruce',
     'print': false,
+    'scaler': 15,
     'utilities': (
       'display': true,
       'typography': true,
@@ -177,6 +178,18 @@ Spruce comes with a small set of print styles. To turn them on, set the `print` 
 @use 'sprucecss/scss/spruce' with (
   $settings: (
     'print': true,
+  ),
+);
+```
+
+## scaler
+
+A global setting for the `scaler` value used by the [font size functions](https://github.com/conedevelopment/sprucecss/blob/main/scss/function/_font-size.scss).
+
+```scss
+@use 'sprucecss/scss/spruce' with (
+  $settings: (
+    'scaler': 15,
   ),
 );
 ```

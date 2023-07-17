@@ -215,6 +215,25 @@ We use the `$escaping-characters` under the <code><a href="/docs/sass/functions/
     'background': 'primary',
   ),
 );
+
+```
+## Form Group
+
+```scss
+@use 'sprucecss/scss/spruce' with (
+  $form-group: (
+    'gap': map.get($spacers, 'xs'),
+  ),
+  $form-group-check: (
+    'gap': map.get($spacers, 's'),
+  ),
+  $form-group-row: (
+    'container-inline-size': 38rem,
+    'gap': map.get($spacers, 'xxs') map.get($spacers, 's'),
+    'label-inline-size': 10rem,
+    'vertical-alignment': center,
+  ),
+);
 ```
 
 ## Form Icon

@@ -18,7 +18,7 @@ Get color value by key and type name from the `$colors` map. The `$colors` map i
 | Name              | Default Value | Description                                                       |
 |-------------------|---------------|-------------------------------------------------------------------|
 | `$key`            |               | The name of the color.                                            |
-| `$type`           | `'base'`        | The group of the color.                                           |
+| `$type`           | `'base'`        | The group of the color.                                         |
 | `$only-color`     | `false`       | Wheater to get just the color value or the CSS custom property.   |
 | `$map`            | `$colors`     | The name of the map from which the function will get the values.  |
 
@@ -34,6 +34,32 @@ a {
 
 .has-error {
   color: color('danger', 'alert');
+}
+```
+## color-value
+
+Get only the color value by key and type name from the `$colors` map.
+
+### Argument(s)
+
+| Name              | Default Value | Description                                                       |
+|-------------------|---------------|-------------------------------------------------------------------|
+| `$key`            |               | The name of the color.                                            |
+| `$type`           | `'base'`        | The group of the color.                                         |
+| `$map`            | `$colors`     | The name of the map from which the function will get the values.  |
+
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/function/_color.scss#L38)
+
+### Example(s)
+
+```scss
+a {
+  color: color-value('primary');
+}
+
+.has-error {
+  color: color-value('danger', 'alert');
 }
 ```
 

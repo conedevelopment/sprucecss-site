@@ -26,6 +26,27 @@ You can use two default color variants named: primary and secondary. To overwrit
 
 ## Outlined
 
+Use the `btn--outline-*` modifier class for outlined buttons. If you want to have more control over the look, use the following specific color values under the `btn` at the `$colors` map, like in this example:
+
+```scss
+@use 'sprucecss/scss/spruce' with (
+  $colors: (
+    'btn': (
+      'dark-background': hsl(0deg 0% 0%),
+      'dark-background-hover': hsl(0deg 0% 20%),
+      'dark-foreground': hsl(0deg 0% 100%),
+      'dark-outline-border': hsl(260deg 4% 70%),
+      'dark-outline-foreground': hsl(0deg 0% 0%),
+      'dark-outline-foreground-hover': hsl(0deg 0% 100%),
+      'dark-outline-background-hover': hsl(0deg 0% 0%),
+      'dark-outline-focus-ring': hsl(295deg 100% 50%),
+    ),
+  ),
+);
+```
+
+To make a custom outline button, you need to use the <a href="/docs/sass/mixins/#btn-variant-outline"><code>btn-variant-outline</code></a> mixin.
+
 <Preview>
   <div class="button-grid">
     <button type="button" class="btn btn--outline-primary">Primary</button>
@@ -36,6 +57,22 @@ You can use two default color variants named: primary and secondary. To overwrit
 ```html
 <button type="button" class="btn btn--outline-primary">Primary</button>
 <a href="https://conedevelopment.com" class="btn btn--outline-secondary">Secondary</a>
+```
+
+## Shadow
+
+Use the `btn--*-shadow` modifier class to add a shadow to the button. This class is generated automatically if there is a color value under the `btn` section with the `*-shadow` key in the `$colors` map.
+
+<Preview>
+  <div class="button-grid">
+    <button type="button" class="btn btn--primary btn--primary-shadow">Primary</button>
+    <a href="https://conedevelopment.com" class="btn btn--secondary btn--secondary-shadow">Secondary</a>
+  </div>
+</Preview>
+
+```html
+<button type="button" class="btn btn--primary btn--primary-shadow">Primary</button>
+<a href="https://conedevelopment.com" class="btn btn--secondary btn--secondary-shadow">Secondary</a>
 ```
 
 ## Sizes

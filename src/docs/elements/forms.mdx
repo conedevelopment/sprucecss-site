@@ -408,6 +408,10 @@ You can set two additional sizes with `form-switch--sm` and `form-switch--lg` mo
     <span class="form-label form-switch__label">Enable notifications</span>
     <input class="form-switch__control" type="checkbox" value="true"/>
   </label>
+  <label class="form-switch form-switch--vertical-start">
+    <input class="form-switch__control" type="checkbox" value="true"/>
+    <span class="form-label form-switch__label">Nulla egestas dui ac quam vulputate, in iaculis elit semper. Nullam vel dapibus nisl. Integer efficitur leo quis tincidunt fermentum. Aliquam erat volutpat. Duis condimentum maximus mi ut porta. In luctus ac sapien eget rutrum.</span>
+  </label>
   <label class="form-switch">
     <input class="form-switch__control" type="checkbox" value="true"/>
     <span class="form-label form-switch__label">Enable notifications</span>
@@ -428,6 +432,10 @@ You can set two additional sizes with `form-switch--sm` and `form-switch--lg` mo
   <label class="form-switch form-switch--sm">
     <span class="form-label form-switch__label">Enable notifications</span>
     <input class="form-switch__control" type="checkbox" value="true"/>
+  </label>
+  <label class="form-switch form-switch--vertical-start">
+    <input class="form-switch__control" type="checkbox" value="true"/>
+    <span class="form-label form-switch__label">Nulla egestas dui ac quam vulputate, in iaculis elit semper. Nullam vel dapibus nisl. Integer efficitur leo quis tincidunt fermentum. Aliquam erat volutpat. Duis condimentum maximus mi ut porta. In luctus ac sapien eget rutrum.</span>
   </label>
   <label class="form-switch">
     <input class="form-switch__control" type="checkbox" value="true"/>
@@ -488,6 +496,14 @@ Use the `form-description` class to create a description text under an input ele
   </div>
 </Preview>
 
+```html
+<div class="form-group">
+  <label class="form-label" for="first-name-2">First Name</label>
+  <input class="form-control" id="first-name-2" name="first-name-2" type="text" aria-describedby="first-name-description"/>
+  <span id="first-name-description" class="form-description">Just a help text for presentation purposes.</span>
+</div>
+```
+
 ## Validation
 
 You can set valid and invalid states on `form-control` elements using the `form-control--valid` and `form-control--invalid` class modifiers.
@@ -533,14 +549,14 @@ Using the `disabled` attribute, you can create disabled state on inputs.
 ## Form Group
 
 Form-group is the generic container class for form elements. Besides the basic implementations, you can use the following:
-
+- `form-group`: to group a label and an input element.
 - `form-group--vertical-check`: to stack the radio, checkbox, and switches vertically.
 - `form-group--horizontal-check`: to stack the radio, checkbox, and switches horizontally.
-- `form-group--row`: to align the label to the left side of the group.
+- `form-group--row`: to align the label to the left side of the group. This layout using `@container` so you also need a wrapper with the `form-group-container` class like in the example.
 - `form-group--stacked`: to stack the inputs beside each other.
 
 <Preview>
-  <fieldset>
+  <fieldset class="form-group-container">
     <legend>Form Group Row</legend>
     <div class="form-group--row">
       <label class="form-label" for="first-name-row">First Name</label>
@@ -560,7 +576,7 @@ Form-group is the generic container class for form elements. Besides the basic i
 </Preview>
 
 ```html
-<fieldset>
+<fieldset class="form-group-container">
   <legend>Form Group Row</legend>
   <div class="form-group--row">
     <label class="form-label" for="first-name-row">First Name</label>
@@ -607,6 +623,32 @@ Form-group is the generic container class for form elements. Besides the basic i
     <button class="btn btn--primary">Submit</button>
   </div>
 </fieldset>
+```
+
+## Group Label
+
+Add custom prefix or suffix "labels" to a form group (probably you want to use this with `.form-group--stacked`).
+
+<Preview>
+  <div class="form-group--row">
+    <label class="form-label" for="product-price">Price</label>
+    <div class="form-group--stacked">
+      <div class="form-group-label">$</div>
+      <input class="form-control" id="product-price" name="product-price" type="text"/>
+      <div class="form-group-label">.00</div>
+    </div>
+  </div>
+</Preview>
+
+```html
+<div class="form-group--row">
+  <label class="form-label" for="product-price">Price</label>
+  <div class="form-group--stacked">
+    <div class="form-group-label">$</div>
+    <input class="form-control" id="product-price" name="product-price" type="text">
+    <div class="form-group-label">.00</div>
+  </div>
+</div>
 ```
 
 ## Row

@@ -181,6 +181,12 @@ You can access the following colors through Spruce’s `$colors` map by default.
       value="$color-white"
     />
     <ColorCard
+      bordered={false}
+      color="hsl(261.72deg 70.73% 83.92%)"
+      name="primary-shadow"
+      value="color.adjust($color-primary, $lightness: 35%)"
+    />
+    <ColorCard
       color="hsl(227deg 92% 55%)"
       name="secondary-background"
       value="$color-secondary"
@@ -195,6 +201,12 @@ You can access the following colors through Spruce’s `$colors` map by default.
       color="hsl(0deg 0% 100%)"
       name="secondary-foreground"
       value="$color-white"
+    />
+    <ColorCard
+      bordered={false}
+      color="hsl(227.23deg 92.16% 90%)"
+      name="secondary-shadow"
+      value="color.adjust($color-secondary, $lightness: 35%)"
     />
   </div>
 </div>
@@ -243,6 +255,17 @@ You can access the following colors through Spruce’s `$colors` map by default.
       color="hsl(0deg 0% 100%)"
       name="check-foreground"
       value="$color-white"
+    />
+    <ColorCard
+      bordered={true}
+      color="hsl(210deg 60% 98%)"
+      name="group-label-background"
+      value="hsl(210deg 60% 98%)"
+    />
+    <ColorCard
+      color="hsl(208deg 9% 42%)"
+      name="group-label-foreground"
+      value="$color-gray"
     />
     <ColorCard
       color="hsl(0deg 71% 51%)"
