@@ -319,6 +319,24 @@ The `form-check()` mixin is a helper to create custom checkboxes. It accepts thr
 @include form-check('.form-check', '.form-check__control', '.form-check__label', true);
 ```
 
+## form-group-stacked
+
+Using the `form-group-stacked` mixin, you can create a stacked form group with a breakpoint. Under the breaking point the layout will be stack vertically.
+
+### Argument(s)
+
+| Name                         | Default Value            | Description                |
+|------------------------------|--------------------------|----------------------------|
+| `$breakpoint`                | `'sm'`                   | The breakpoint.            |
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_form.scss#L63)
+
+```scss
+.form-group--stacked\:md {
+  @include form-group-stacked('md');
+}
+```
+
 ## layout-center
 
 With the help of the `layout-center` mixin, you can center any element.  It is most useful for the generic container element for the main layouts.
