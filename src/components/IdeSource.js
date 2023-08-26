@@ -170,7 +170,7 @@ $colors: (
   if (type === 'config/_index.scss') {
     return (<CodeBlock className="scss">
 {`@forward 'config';
-@forward 'font';
+@forward 'fonts';
 @forward 'styles';
 @forward 'dark-mode';`}
     </CodeBlock>);
@@ -186,8 +186,7 @@ $colors: (
 
   if (type === 'component/_index.scss') {
     return (<CodeBlock className="scss">
-{`@forward 'skip-link';
-@forward 'header';
+{`@forward 'header';
 @forward 'footer';`}
     </CodeBlock>);
   }

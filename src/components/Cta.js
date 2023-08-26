@@ -10,7 +10,7 @@ export default function Cta() {
             <div className="heading">
               <h2 className="heading__title cta__title">Find us on GitHub</h2>
             </div>
-            <p>Did you found a bug? Have an idea or a question? Open an issue to help us develop the project.</p>
+            <p>Did you find a bug? Have an idea or a question? Please open an issue to help us develop the project.</p>
           </div>
           <div className="cta__actions">
             <a href="https://github.com/conedevelopment/sprucecss" className="btn btn--dark btn--rounded btn--lg">

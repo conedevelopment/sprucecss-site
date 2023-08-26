@@ -23,6 +23,6 @@ export default function IndexPage() {
 
 export function Head() {
   return (
-    <Seo title="Spruce CSS - Minimal, modern CSS framework" frontPage={true} />
+    <Seo title="Spruce CSS - Minimal, modern CSS framework" description="A low-level, lightweight and modern CSS system, authoring tool built on Sass. Give your project a solid foundation." frontPage={true} />
   );
 }
