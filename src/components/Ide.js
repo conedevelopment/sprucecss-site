@@ -1,4 +1,3 @@
-import Heading from '../components/Heading';
 import IconFolder from '../images/icons/folder.svg';
 import IconSass from '../images/icons/sass.svg';
 import IdeSource from './IdeSource';
@@ -29,11 +28,6 @@ export default function Cta() {
   return (
     <div className="ide-wrapper">
       <div className="container">
-        <Heading
-          type="center"
-          title="How to use Spruce CSS"
-          description="Import the Spruce CSS library into your project."
-        />
         <div className="ide">
           <div className="ide__header">
             <div className="ide__controls">

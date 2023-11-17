@@ -43,7 +43,11 @@ h6 {
 }
 
 .btn--rounded.btn--lg {
-  padding: 1.25em 1.5em;
+  padding: 1.05em 1.25em;
+
+  @include breakpoint('md') {
+    padding: 1.25em 1.5em;
+  }
 }
 
 .btn--install { @include btn-variant('install'); }

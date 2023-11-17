@@ -106,7 +106,7 @@
     align-items: center;
     display: flex;
     font-size: 0.9375rem;
-    font-weight: 500;
+    font-weight: 700;
     gap: spacer('xs');
     line-height: 1;
     margin-block: 0;
@@ -154,6 +154,6 @@
 
   .active {
     color: color('heading');
-    font-weight: 500;
+    font-weight: 700;
   }
 }

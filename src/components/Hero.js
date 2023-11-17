@@ -1,5 +1,4 @@
 import { Link } from 'gatsby';
-import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 
 export default function Hero() {
@@ -16,13 +15,6 @@ export default function Hero() {
               <Link to="/ui/getting-started/introduction/" className="btn btn--primary-outlined btn--lg btn--rounded">Components</Link>
             </div>
           </div>
-          <StaticImage
-            className="hero__image"
-            src="../images/hero.png"
-            alt=""
-            placeholder="blurred"
-            width={900}
-          />
         </div>
       </div>
     </div>

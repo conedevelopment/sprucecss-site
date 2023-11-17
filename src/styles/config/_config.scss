@@ -1,6 +1,6 @@
 @use 'dark-colors' as dark;
 
-$color-dark: hsl(260deg 70% 6%);
+$color-dark: hsl(260deg 70% 4%);
 
 @use 'sprucecss/scss/spruce' with (
   $color-black: $color-dark,
