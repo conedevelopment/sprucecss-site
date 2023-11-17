@@ -1,20 +1,9 @@
+@use '../config/dark-colors' as dark;
 @use 'sprucecss/scss/spruce' as *;
 
 .cta {
-  background-image: linear-gradient(
-    70deg,
-    hsl(251deg 86% 56%) 0%,
-    hsl(258deg 87% 63%) 10%,
-    hsl(263deg 87% 69%) 20%,
-    hsl(267deg 88% 75%) 30%,
-    hsl(270deg 91% 81%) 40%,
-    hsl(274deg 97% 88%) 50%,
-    hsl(257deg 100% 89%) 60%,
-    hsl(240deg 100% 89%) 70%,
-    hsl(226deg 100% 86%) 80%,
-    hsl(218deg 100% 83%) 90%,
-    hsl(211deg 92% 80%) 100%
-  );
+  background-color: color('background', 'footer');
+  border-block-end: 1px solid color('border', $only-color: true, $map: dark.$colors);
   padding-block: get-css-variable(--section-gap-half);
 
   &__inner {

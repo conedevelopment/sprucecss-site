@@ -13,7 +13,7 @@ export default function Cta() {
             <p>Did you find a bug? Have an idea or a question? Please open an issue to help us develop the project.</p>
           </div>
           <div className="cta__actions">
-            <a href="https://github.com/conedevelopment/sprucecss" className="btn btn--dark btn--rounded btn--lg">
+            <a href="https://github.com/conedevelopment/sprucecss" className="btn btn--primary btn--rounded btn--lg">
               <GitHubIcon className="btn__icon" />
               GitHub
             </a>

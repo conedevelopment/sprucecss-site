@@ -53,6 +53,27 @@
 
     span {
       font-weight: 700;
+      background-image: linear-gradient(
+        70deg,
+        hsl(262deg 71% 49%) 0%,
+        hsl(262deg 69% 55%) 10%,
+        hsl(262deg 70% 59%) 20%,
+        hsl(262deg 71% 64%) 30%,
+        hsl(262deg 72% 68%) 40%,
+        hsl(262deg 73% 73%) 50%,
+        hsl(262deg 73% 70%) 60%,
+        hsl(262deg 73% 67%) 70%,
+        hsl(262deg 73% 64%) 80%,
+        hsl(262deg 72% 61%) 90%,
+        hsl(262deg 72% 58%) 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      &::selection {
+        -webkit-background-clip: initial;
+        -webkit-text-fill-color: initial;
+      }
     }
   }
 
