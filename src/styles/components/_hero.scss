@@ -11,10 +11,10 @@
 
 .hero {
   &__caption {
-    text-align: center;
     margin-inline: auto;
     max-inline-size: 52rem;
     padding-block: get-css-variable(--section-gap-half);
+    text-align: center;
 
     @include breakpoint('md') {
       padding-block: calc(#{get-css-variable(--section-gap-half)} / 1.25) get-css-variable(--section-gap-half);
@@ -24,7 +24,7 @@
   &__note {
     background-color: color('note-background', 'hero');
     border-radius: config('border-radius-sm', $display);
-    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
     box-decoration-break: clone;
     color: color('note-color', 'hero');
     display: inline;
@@ -52,7 +52,7 @@
     text-wrap: balance;
 
     span {
-      font-weight: 700;
+      background-clip: text;
       background-image: linear-gradient(
         70deg,
         hsl(262deg 71% 49%) 0%,
@@ -67,11 +67,11 @@
         hsl(262deg 72% 61%) 90%,
         hsl(262deg 72% 58%) 100%
       );
-      -webkit-background-clip: text;
+      font-weight: 700;
       -webkit-text-fill-color: transparent;
 
       &::selection {
-        -webkit-background-clip: initial;
+        background-clip: initial;
         -webkit-text-fill-color: initial;
       }
     }
