@@ -5,7 +5,7 @@
 
   background-color: color('background');
   border: 1px solid color('border');
-  border-radius: config('border-radius-sm', $display);
+  border-radius: 0.925rem;
 
   &__title {
     font-family: config('font-family-base', $typography);
@@ -39,7 +39,7 @@
 
       background-color: color('primary');
       block-size: var(--dimension);
-      border-radius: config('border-radius-sm', $display);
+      border-radius: 0.625rem;
       color: hsl(0deg 0% 100%);
       flex-shrink: 0;
       inline-size: var(--dimension);

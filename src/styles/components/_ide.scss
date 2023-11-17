@@ -9,7 +9,7 @@
 .ide {
   background-color: color('background');
   border: 1px solid color('border');
-  border-radius: config('border-radius-sm', $display);
+  border-radius: 0.925rem;
   box-shadow: 0 0 3rem hsl(0deg 0% 0% / 10%);
   font-size: 0.9375rem;
   margin-inline: auto;
@@ -17,8 +17,8 @@
   &__header {
     align-items: center;
     background-color: color('header-background', 'ide');
-    border-radius: config('border-radius-sm', $display) config('border-radius-sm', $display) 0 0;
-    color: hsl(0deg 0% 100%);
+    border-block-end: 1px solid color('border');
+    border-radius: 0.925rem 0.925rem 0 0;
     display: flex;
     gap: 1rem;
     padding: 0.45rem 1.25rem;
@@ -62,6 +62,7 @@
 
   &__sidebar {
     background-color: color('background');
+    border-end-start-radius: 0.925rem;
     inset: 0 0 0 auto;
     position: absolute;
     z-index: 2;
@@ -91,7 +92,7 @@
   }
 
   pre[class*=language-] {
-    border-radius: 0 0 config('border-radius-sm', $display) 0;
+    border-radius: 0 0 0.925rem 0;
     padding: 2rem 2.25rem;
   }
 }

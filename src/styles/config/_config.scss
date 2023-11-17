@@ -42,7 +42,7 @@ $color-dark: hsl(260deg 70% 6%);
       'note-color': hsl(216deg 50% 44%),
     ),
     'ide': (
-      'header-background': $color-dark,
+      'header-background': hsl(0deg 0% 100%),
     ),
     'navigation': (
       'icon-background': hsl(259deg 53% 94%),
