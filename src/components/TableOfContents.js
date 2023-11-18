@@ -1,4 +1,5 @@
 import getAnchor from '../utils/getAnchor.js';
+import React from 'react';
 
 export default function TableOfContents({ headings }) {
   function handleScroll(e) {
