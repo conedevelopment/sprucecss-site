@@ -61,8 +61,8 @@
 
   &__sidebar {
     background-color: color('background');
-    border-end-start-radius: var(--doc-border-radius-md);
     border-end-end-radius: var(--doc-border-radius-md);
+    border-end-start-radius: var(--doc-border-radius-md);
     inset: 0 0 0 auto;
     position: absolute;
     z-index: 2;
