@@ -8,9 +8,9 @@ export default function Hero() {
       <div className="container">
         <div className="hero__inner">
           <div className="hero__caption">
-            <Link to="/templates/documentation/" className="hero__note">
+            <Link to="/templates/root/" className="hero__note">
               <IconLightning />
-              Check out our free Eleventy documentation template!
+              Check out our Root admin template!
             </Link>
             <h1 className="hero__title">A minimalistic, low-level <span>CSS framework</span></h1>
             <p className="hero__description">A low-level, lightweight and modern CSS system, authoring tool built on Sass. Give your project a solid foundation.</p>
