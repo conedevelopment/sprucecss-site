@@ -38,7 +38,7 @@ export default function Seo({ children, location, description, title, image, fro
       <meta name="twitter:card" content="summary_large_image" />
       {siteMetadata.twitter && <meta name="twitter:creator" content={siteMetadata.twitter} />}
       <meta name="twitter:title" content={frontPage ? `${title}` : `${title} - ${siteMetadata.title}`} />
-      <meta name="twitter:image" content={image || `${siteMetadata.siteUrl}/social-card-twitter.png`} />
+      <meta name="twitter:image" content={image || `${siteMetadata.siteUrl}/social-card.png`} />
 
       {cookie && <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${siteMetadata.analyticsID}`}
