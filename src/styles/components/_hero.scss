@@ -30,12 +30,22 @@
     display: inline;
     font-size: 1rem;
     line-height: config('line-height-md', $typography);
-    padding: 0.5em 1em;
+    padding: 0.5em 0.8em 0.5em 0.65em;
     text-decoration: none;
 
     &:hover,
     &:focus {
       color: color('note-color', 'hero');
+    }
+
+    svg {
+      --size: 1em;
+      block-size: var(--size);
+      color: hsl(45deg 100% 50%);
+      inline-size: var(--size);
+      inset-block-end: -0.15em;
+      margin-inline-end: 0.35em;
+      position: relative;
     }
 
     + * {

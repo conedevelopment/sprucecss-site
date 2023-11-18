@@ -1,4 +1,5 @@
 import { Link } from 'gatsby';
+import IconLightning from '../images/icons/lightning.svg';
 import React from 'react';
 
 export default function Hero() {
@@ -7,7 +8,10 @@ export default function Hero() {
       <div className="container">
         <div className="hero__inner">
           <div className="hero__caption">
-            <Link to="/templates/documentation/" className="hero__note">Check out our free Eleventy documentation template!</Link>
+            <Link to="/templates/documentation/" className="hero__note">
+              <IconLightning />
+              Check out our free Eleventy documentation template!
+            </Link>
             <h1 className="hero__title">A minimalistic, low-level <span>CSS framework</span></h1>
             <p className="hero__description">A low-level, lightweight and modern CSS system, authoring tool built on Sass. Give your project a solid foundation.</p>
             <div className="hero__btns">

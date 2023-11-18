@@ -6,6 +6,14 @@
   color: hsl(0deg 0% 100% / 85%);
   font-size: 1rem;
 
+  &__col {
+    &--slogan {
+      align-items: start;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
   a {
     color: color('link', $only-color: true, $map: dark.$colors);
 
