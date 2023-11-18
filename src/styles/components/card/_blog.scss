@@ -4,7 +4,7 @@
   @include layout-stack('s');
 
   &__thumbnail {
-    border-radius: config('border-radius-sm', $display);
+    border-radius: var(--doc-border-radius-sm);
   }
 
   &__meta {

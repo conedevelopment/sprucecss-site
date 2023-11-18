@@ -9,7 +9,7 @@
 .ide {
   background-color: color('background');
   border: 1px solid color('border');
-  border-radius: 0.925rem;
+  border-radius: var(--doc-border-radius-md);
   box-shadow: 0 0 3rem hsl(0deg 0% 0% / 10%);
   font-size: 0.9375rem;
   margin-inline: auto;
@@ -18,7 +18,7 @@
     align-items: center;
     background-color: color('header-background', 'ide');
     border-block-end: 1px solid color('border');
-    border-radius: 0.925rem 0.925rem 0 0;
+    border-radius: var(--doc-border-radius-md) var(--doc-border-radius-md) 0 0;
     display: flex;
     gap: 1rem;
     padding: 0.45rem 1.25rem;
@@ -48,7 +48,6 @@
   }
 
   &__toggle {
-    border-end-end-radius: 0 !important;
     border-end-start-radius: 0 !important;
     border-start-end-radius: 0 !important;
     inset: auto 0 0 auto;
@@ -62,12 +61,14 @@
 
   &__sidebar {
     background-color: color('background');
-    border-end-start-radius: 0.925rem;
+    border-end-start-radius: var(--doc-border-radius-md);
+    border-end-end-radius: var(--doc-border-radius-md);
     inset: 0 0 0 auto;
     position: absolute;
     z-index: 2;
 
     @include breakpoint('md') {
+      border-end-end-radius: 0;
       position: relative;
     }
 
@@ -84,6 +85,15 @@
     }
   }
 
+  &__editor {
+    border-end-start-radius: var(--doc-border-radius-md);
+    overflow: hidden;
+
+    @include breakpoint('md') {
+      border-end-start-radius: 0;
+    }
+  }
+
   &__editor,
   .prism-code-wrapper,
   .prism-code {
@@ -92,7 +102,7 @@
   }
 
   pre[class*=language-] {
-    border-radius: 0 0 0.925rem;
+    border-radius: 0 0 var(--doc-border-radius-md);
     padding: 2rem 2.25rem;
   }
 }

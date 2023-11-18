@@ -3,12 +3,12 @@
 
 .template-preview {
   background-color: hsl(0deg 0% 97%);
-  border-radius: config('border-radius-sm', $display);
+  border-radius: var(--doc-border-radius-sm);
   display: flex;
   padding: spacer-clamp('s', 2rem);
 
   .gatsby-image-wrapper {
-    border-radius: config('border-radius-sm', $display);
+    border-radius: var(--doc-border-radius-sm);
     box-shadow: 0 0 1.25rem hsl(0deg 0% 0% / 5%);
   }
 }

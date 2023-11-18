@@ -45,7 +45,7 @@
 
   img,
   iframe {
-    border-radius: config('border-radius-sm', $display);
+    border-radius: var(--doc-border-radius-sm);
   }
 
   iframe {
