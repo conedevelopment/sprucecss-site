@@ -1,5 +1,5 @@
 import getAnchor from '../utils/getAnchor.js';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 export default function TableOfContents({ headings }) {
   function handleScroll(e) {
