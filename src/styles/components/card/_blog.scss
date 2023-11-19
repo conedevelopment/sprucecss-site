@@ -5,6 +5,10 @@
 
   &__thumbnail {
     border-radius: var(--doc-border-radius-sm);
+
+    img {
+      border-radius: var(--doc-border-radius-sm);
+    }
   }
 
   &__meta {

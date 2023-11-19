@@ -85,20 +85,16 @@
     }
   }
 
-  &__editor {
+  &__editor,
+  .prism-code-wrapper,
+  .prism-code {
     border-end-start-radius: var(--doc-border-radius-md);
-    overflow: hidden;
+    block-size: 100%;
+    max-block-size: 28rem;
 
     @include breakpoint('md') {
       border-end-start-radius: 0;
     }
-  }
-
-  &__editor,
-  .prism-code-wrapper,
-  .prism-code {
-    block-size: 100%;
-    max-block-size: 28rem;
   }
 
   pre[class*=language-] {
