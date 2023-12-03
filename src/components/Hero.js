@@ -16,7 +16,7 @@ export default function Hero() {
             <p className="hero__description">A low-level, lightweight and modern CSS system, authoring tool built on Sass. Give your project a solid foundation.</p>
             <div className="hero__btns">
               <Link to="/docs/getting-started/introduction/" className="btn btn--primary btn--lg btn--rounded">Get Started</Link>
-              <Link to="/ui/getting-started/introduction/" className="btn btn--primary-outlined btn--lg btn--rounded">Components</Link>
+              <Link to="/ui/getting-started/introduction/" className="btn btn--outline-primary btn--lg btn--rounded">Components</Link>
             </div>
           </div>
         </div>
