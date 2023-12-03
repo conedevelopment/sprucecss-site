@@ -5,7 +5,7 @@ import Logo from '../images/spruce-logo.svg';
 import LogoUI from '../images/spruce-ui-logo.svg';
 import MenuIcon from '../images/icons/menu.svg';
 import React, { useState, useEffect } from 'react';
-import TwitterIcon from '../images/icons/twitter.svg';
+import XIcon from '../images/icons/x.svg';
 
 export default function SiteHeader({ location }) {
   const { site } = useStaticQuery(graphql`
@@ -80,8 +80,8 @@ export default function SiteHeader({ location }) {
               <a href="https://github.com/conedevelopment/sprucecss" aria-label="GitHub" className="btn btn--primary btn--icon btn--github btn--rounded">
                 <GitHubIcon className="btn__icon" width="30" height="30" />
               </a>
-              <a href="https://twitter.com/conedevelopment" aria-label="Twitter" className="btn btn--primary btn--icon btn--twitter btn--rounded">
-                <TwitterIcon className="btn__icon" width="30" height="30" />
+              <a href="https://twitter.com/conedevelopment" aria-label="X" className="btn btn--primary btn--icon btn--twitter btn--rounded">
+                <XIcon className="btn__icon" width="30" height="30" />
               </a>
             </div>
           </div>
