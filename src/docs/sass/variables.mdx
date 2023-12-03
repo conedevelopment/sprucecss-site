@@ -201,6 +201,7 @@ We use the `$escaping-characters` under the <code><a href="/docs/sass/functions/
 @use 'sprucecss/scss/spruce' with (
   $form-fieldset: (
     'gap': map.get($spacers, 's'),
+    'legend-font-family': null,
     'legend-font-size': clamp(#{map.get($font-sizes, 'h5')}, 5vw, #{map.get($font-sizes, 'h4')}),
     'legend-font-weight': 700,
   ),
@@ -449,7 +450,8 @@ You can access any font size with the [font-size() helper function](/docs/sass/f
 ```scss
 @use 'sprucecss/scss/spruce' with (
   $typography: (
-    'font-family-base': #{eravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif},
+    'border-radius': map.get($display, 'border-radius-sm'),
+    'font-family-base': #{Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif},
     'font-family-cursive': #{ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace},
     'font-family-heading': #{Avenir, 'Avenir Next LT Pro', Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif},
     'font-size-base': 1rem,
@@ -459,8 +461,8 @@ You can access any font size with the [font-size() helper function](/docs/sass/f
     'font-size-sm': 0.875rem,
     'font-weight-base': null,
     'font-weight-heading': 700,
-    'inline-border-radius': map.get($display, 'border-radius-sm'),
     'inline-padding': 0.1em 0.3em,
+    'letter-spacing-heading': null,
     'line-height-base': 1.8,
     'line-height-heading': calc(2px + 2ex + 2px),
     'line-height-lg': 1.8,

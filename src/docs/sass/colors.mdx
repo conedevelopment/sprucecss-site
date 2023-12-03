@@ -154,6 +154,11 @@ You can access the following colors through Spruce’s `$colors` map by default.
       value="$color-secondary"
     />
     <ColorCard
+      color="hsl(205deg 100% 2%)"
+      name="strong"
+      value="$color-black"
+    />
+    <ColorCard
       color="hsl(208deg 9% 42%)"
       name="text"
       value="$color-gray"
@@ -456,6 +461,7 @@ Below is the full declaration of the `$colors` map.
       'marker': $color-primary,
       'primary': $color-primary,
       'secondary': $color-secondary,
+      'strong': $color-black,
       'text': $color-gray,
     ),
     'btn': (
@@ -525,6 +531,10 @@ You can always access a generated variable by name, but it is easier to use the 
 ```scss
 a {
   color: color('primary');
+}
+
+.control {
+  background-color: color('primary-background', 'btn');
 }
 ```
 
