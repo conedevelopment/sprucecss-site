@@ -215,13 +215,13 @@ Get a value by key name from the `$settings` map.
 
 ## spacer
 
-Get a value by key name from the `$spacers` map.
+Get one or two (separeted with colon) value by key name from the `$spacers` map.
 
 ### Argument(s)
 
-| Name          | Description              |
-|---------------|--------------------------|
-| `$key`        | The name of the spacer.  |
+| Name          | Description                                                                          |
+|---------------|--------------------------------------------------------------------------------------|
+| `$key`        | The name of the spacer or a shorthand for two value separeted with a colon ('m:l').  |
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/function/_spacer.scss#L5)
 
@@ -231,7 +231,13 @@ Get a value by key name from the `$spacers` map.
 .prism-code {
   padding: spacer('xs') spacer('m');
 }
+
+.prism-code {
+  padding: spacer('xs:m');
+}
 ```
+
+The shorthand syntax is useful when you want a separate value for block and inline. It only supports two value.
 
 ## spacer-clamp
 
@@ -310,27 +316,5 @@ Escape the special characters in SVG when used as a `data:image`. The characters
   $color
 ) {
   background-image: url('#{svg-escape(str-replace($icon, "#COLOR#", $color))}');
-}
-```
-
-## transition
-
-Get the transition values by key name. **The function returns a CSS custom property**.
-
-### Argument(s)
-
-| Name       | Description                                                                             |
-|------------|-----------------------------------------------------------------------------------------|
-| `$key`     | The name of the transition attribute. Possible values: `duration` and `timing-function`. |
-
-[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/function/_transition.scss)
-
-### Example(s)
-
-```scss
-.custom-link {
-  transition-duration: transition('duration');
-  transition-property: all;
-  transition-timing-function: transition('timing-function');
 }
 ```

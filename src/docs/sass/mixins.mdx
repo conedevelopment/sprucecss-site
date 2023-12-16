@@ -385,6 +385,16 @@ Using the `layout-flex` mixin, you can create intrinsic flexbox grids with expli
 }
 ```
 
+For the `$gap` you can also use a shorthand like in the <code><a href="/docs/sass/functions/#spacer">spacer()</a></code> function for setting separate value for the block and inline gap.
+
+```scss
+.form-row--mixed {
+  --inline-size: 10rem;
+
+  @include layout-flex('m:l');
+}
+```
+
 ## layout-grid
 
 With the help of the `layout-grid` mixin you can create auto-fit grid layouts where you can determine the columns' min-width.
@@ -408,6 +418,16 @@ With the help of the `layout-grid` mixin you can create auto-fit grid layouts wh
 }
 ```
 
+For the `$gap` you can also use a shorthand like in the <code><a href="/docs/sass/functions/#spacer">spacer()</a></code> function for setting separate value for the block and inline gap.
+
+```scss
+.docs-cards {
+  &__inner {
+    @include layout-grid('m:l', 20rem);
+  }
+}
+```
+
 ## layout-sidebar
 
 Using the `layout-sidebar` mixin, you can create a two-column sidebar layout declaring the sidebar width explicitly.
@@ -426,6 +446,14 @@ Using the `layout-sidebar` mixin, you can create a two-column sidebar layout dec
 ```scss
 .docs-template {
   @include layout-sidebar('l', 22rem);
+}
+```
+
+For the `$gap` you can also use a shorthand like in the <code><a href="/docs/sass/functions/#spacer">spacer()</a></code> function for setting separate value for the block and inline gap.
+
+```scss
+.docs-template {
+  @include layout-sidebar('m:l', 22rem);
 }
 ```
 
@@ -529,6 +557,35 @@ Declare CSS custom properties through Spruce CSS to add the prefix. To get any C
 ```
 
 
+## short-ring
+
+A shorthand function to get the default focus ring styles both for `input` and `button` elements.
+
+### Argument(s)
+
+| Name                   | Default Value  | Description                                                                                                                        |
+|------------------------|----------------|----------------------------------------------------------------------|
+| `$type`                | `'input'`      | The type of the focus ring. It can be `input` or `button`.           |
+| `$btn-type`            | `'primary'`    | The color - or button type - of the button to match the ring color.  |
+
+[View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L134)
+
+### Example(s)
+
+```scss
+.search-form {
+  &:focus-visible input[type='search'] {
+    @include short-ring('input');
+  }
+}
+
+.accordion-card {
+  &:focus-visible svg {
+    @include short-ring('button', 'secondary');
+  }
+}
+```
+
 ## text-ellipsis
 
 Crop text and display an ellipsis with multiline support where possible.
@@ -558,11 +615,11 @@ This mixin aims to query the [transition variables](/docs/sass/variables#transit
 
 ### Argument(s)
 
-| Name              | Default Value     | Description                                                      |
-|-------------------|-------------------|------------------------------------------------------------------|
-| `$duration`       | `'duration'`        | Get the `config('duration', $transition)` value or set a custom one.        |
-| `$property`       | `all`             | Set the `transition-property` to `all`.                          |
-| `$timing-function`| `'timing-function'` | Get the `config('timing-function', $transition)` value or set a custom one. |
+| Name              | Default Value       | Description                                                                                       |
+|-------------------|---------------------|---------------------------------------------------------------------------------------------------|
+| `$duration`       | `config('duration', $transition)`  | The default duration value is `0.15s`.                                             |
+| `$property`       | `all`               | Set the `transition-property` to `all`. For multiple value use quotes like `'transition, color'`. |
+| `$timing-function`| `config('timing-function', $transition)` | The default timing-function value is `ease-in-out`.                        |
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_transition.scss#L3)
 
