@@ -53,6 +53,10 @@
     margin-block: 0 spacer('m');
   }
 
+  strong {
+    color: hsl(0 0% 100%);
+  }
+
   &__navigation {
     @include clear-list;
     @include layout-stack('xs');

@@ -493,7 +493,7 @@ Create natively styled custom scrollbars.
 | `$thumb-background-color-hover` | `color(thumb-background-hover, scrollbar)`        | The color of the scrollbar handle on hover state. |
 | `$track-background-color`       | `color(track-background, scrollbar)`              | The background color of the scrollbar.            |
 | `$size`                         | `0.5rem`                                          | The width or height of the scrollbar.             |
-| `$border-radius`                | `$border-radius-sm`                               | The border-radius of the scrollbar and handle.    |
+| `$border-radius`                | `config('border-radius-sm', $display)`                               | The border-radius of the scrollbar and handle.    |
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L36)
 
@@ -559,14 +559,14 @@ Declare CSS custom properties through Spruce CSS to add the prefix. To get any C
 
 ## short-ring
 
-A shorthand function to get the default focus ring styles both for `input` and `button` elements.
+A shorthand function to get the default focus ring styles for `input` and `button` elements.
 
 ### Argument(s)
 
-| Name                   | Default Value  | Description                                                                                                                        |
-|------------------------|----------------|----------------------------------------------------------------------|
-| `$type`                | `'input'`      | The type of the focus ring. It can be `input` or `button`.           |
-| `$btn-type`            | `'primary'`    | The color - or button type - of the button to match the ring color.  |
+| Name                   | Default Value  | Description                                                                                       |
+|------------------------|----------------|---------------------------------------------------------------------------------------------------|
+| `$type`                | `'input'`      | The type of the focus ring. It can be `input` or `button`.                                        |
+| `$btn-type`            | `'primary'`    | The color - or button type - of the button (if the `$type` is `button`) to match the ring color.  |
 
 [View Source on GitHub](https://github.com/conedevelopment/sprucecss/blob/main/scss/mixin/_utilities.scss#L134)
 
