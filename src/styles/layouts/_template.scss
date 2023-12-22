@@ -12,6 +12,10 @@
     @include breakpoint('md') {
       grid-template-columns: minmax(0, 2fr) 28rem;
     }
+
+    @include breakpoint('lg') {
+      grid-template-columns: minmax(0, 2fr) 32rem;
+    }
   }
 
   &__sidebar {

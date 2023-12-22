@@ -3,6 +3,10 @@
 .l-documentation {
   padding-block: spacer-clamp('m', 'l') spacer-clamp('l', 'xl');
 
+  &--code {
+    padding-block: 0 spacer-clamp('l', 'xl');
+  }
+
   &__inner {
     display: grid;
     gap: spacer('xl');
@@ -76,7 +80,15 @@
     }
   }
 
-  &__code-tab {
+  &__navigation-top {
+    border-block-end: 1px solid color('border');
     margin-block-end: spacer-clamp('l', 'xl');
+    padding-block: spacer('m');
+  }
+
+  &__navigation-bottom {
+    border-block-start: 1px solid color('border');
+    margin-block-start: spacer('xl');
+    padding-block-start: spacer('m');
   }
 }

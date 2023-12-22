@@ -53,7 +53,9 @@ export default function Post({ data: { mdx }, children, pageContext }) {
                   </div>
                 </div>
               </article>
-              <PostNavigation prev={prev} next={next} type='doc'/>
+              <div className="l-documentation__navigation-bottom">
+                <PostNavigation prev={prev} next={next} type='doc'/>
+              </div>
             </div>
           </div>
         </div>

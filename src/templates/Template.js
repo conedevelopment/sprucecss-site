@@ -29,7 +29,7 @@ export default function Post({ data: { mdx }, children }) {
               </div>
             </div>
           </div>
-          <div className="container" style={{ '--inline-size': '76rem' }}>
+          <div className="container">
             <div className="l-template__inner">
               <div className="post-content l-template__content">
                 {children}

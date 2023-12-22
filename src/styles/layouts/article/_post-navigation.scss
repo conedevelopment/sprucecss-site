@@ -2,13 +2,10 @@
 
 .post-navigation {
   align-items: center;
-  border-block-start: 1px solid color('border');
   display: flex;
   flex-wrap: wrap;
   gap: spacer('m');
   justify-content: space-between;
-  margin-block-start: spacer('xl');
-  padding-block-start: spacer('m');
 }
 
 .post-navigation-item {

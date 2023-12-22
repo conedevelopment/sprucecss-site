@@ -59,35 +59,38 @@ export default function Post({ location, data: { mdx }, children, data: { allFil
 
   return (
     <Layout location={location}>
-      <main id="content" className="l-documentation">
+      <main id="content" className={`l-documentation ${codeURL ? 'l-documentation--code' : ''}`}>
         <div className="container">
+          {codeURL && <div className="l-documentation__code-tab">
+            <CodeTab
+              title={title}
+              url={codeURL}
+            >
+              {preview &&
+              <CodeTabContent title='Preview' id='preview'>
+                <iframe
+                  srcDoc={preview}
+                  frameBorder='0'
+                  title={title}
+                  style={{ height: previewHeight }}
+                  loading='lazy'
+                  className='preview-iframe'
+                ></iframe>
+              </CodeTabContent>}
+              {scss &&
+              <CodeTabContent title="SCSS" id="scss" code={scss}></CodeTabContent>}
+              {html &&
+              <CodeTabContent title="HTML" id="html" code={html}></CodeTabContent>}
+              {js &&
+              <CodeTabContent title="JS" id="js" code={js}></CodeTabContent>}
+            </CodeTab>
+          </div>}
+          {codeURL && <div className="l-documentation__navigation-top">
+            <PostNavigation prev={prev} next={next}/>
+          </div>}
           <div className="l-documentation__inner">
             <SidebarComponent />
             <div className="l-documentation__body-helper">
-            {codeURL && <div className="l-documentation__code-tab">
-                <CodeTab
-                  title={title}
-                  url={codeURL}
-                >
-                  {preview &&
-                  <CodeTabContent title='Preview' id='preview'>
-                    <iframe
-                      srcDoc={preview}
-                      frameBorder='0'
-                      title={title}
-                      style={{ height: previewHeight }}
-                      loading='lazy'
-                      className='preview-iframe'
-                    ></iframe>
-                  </CodeTabContent>}
-                  {scss &&
-                  <CodeTabContent title="SCSS" id="scss" code={scss}></CodeTabContent>}
-                  {html &&
-                  <CodeTabContent title="HTML" id="html" code={html}></CodeTabContent>}
-                  {js &&
-                  <CodeTabContent title="JS" id="js" code={js}></CodeTabContent>}
-                </CodeTab>
-              </div>}
               <div className="l-documentation__body">
                 <div className="l-documentation__title-helper">
                   <h1 className="l-documentation__title">{title}</h1>
@@ -109,7 +112,9 @@ export default function Post({ location, data: { mdx }, children, data: { allFil
                   </div>
                 </article>
               </div>
-              <PostNavigation prev={prev} next={next}/>
+              {!codeURL && <div className="l-documentation__navigation-bottom">
+                <PostNavigation prev={prev} next={next}/>
+              </div>}
             </div>
           </div>
         </div>
