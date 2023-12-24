@@ -92,13 +92,13 @@
 
   &__cone-logo {
     align-items: center;
-    block-size: 0.9rem;
     display: inline-flex;
     margin-inline-end: spacer('xs');
 
     svg {
-      block-size: 100%;
-      inline-size: auto;
+      --size: 1.5rem;
+      block-size: var(--size);
+      inline-size: var(--size);
     }
   }
 

@@ -2,7 +2,7 @@
 @use '../mixins' as *;
 
 .sidebar {
-  @include layout-stack('l');
+  @include layout-stack('m');
   @include scrollbar(
     color('thumb-background', 'scrollbar'),
     color('thumb-background-hover', 'scrollbar'),
