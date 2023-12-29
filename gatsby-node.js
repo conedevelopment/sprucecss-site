@@ -30,8 +30,7 @@ exports.onCreateNode = async ({ node, getNode, actions, loadNodeContent }) => {
 
     let shortMediaType = null;
 
-    // Need to use this to get the correct path for the slug (depth of the folder structure).
-    const part = mediaType === 'text/html' ? 2 : 2;
+    const part = 2;
 
     let slug = `/ui/${path.parse(node.relativePath).dir.split('/')[part]}/${path.parse(node.relativePath).name}/`;
 
