@@ -29,10 +29,14 @@ exports.onCreateNode = async ({ node, getNode, actions, loadNodeContent }) => {
     await loadNodeContent(node);
 
     let shortMediaType = null;
-    let slug = `/ui/${path.parse(node.relativePath).dir.split('/')[1]}/${path.parse(node.relativePath).name}/`;
+
+    // Need to use this to get the correct path for the slug (depth of the folder structure).
+    const part = mediaType === 'text/html' ? 2 : 2;
+
+    let slug = `/ui/${path.parse(node.relativePath).dir.split('/')[part]}/${path.parse(node.relativePath).name}/`;
 
     if (mediaType && path.parse(node.relativePath).name.includes('preview')) {
-      slug = `/ui/${path.parse(node.relativePath).dir.split('/')[1]}/${path.parse(node.relativePath).name.replace('-preview', '')}/`;
+      slug = `/ui/${path.parse(node.relativePath).dir.split('/')[part]}/${path.parse(node.relativePath).name.replace('-preview', '')}/`;
     }
 
     if (mediaType === 'text/x-scss') {
